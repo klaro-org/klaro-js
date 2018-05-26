@@ -1,0 +1,31 @@
+consent-modal:
+  title:
+    de: Informationen die wir sammeln
+    en: Information that we collect
+  description:
+    de: >
+      Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
+    en: >
+      Here you can see and customize, which information we collect about you.
+  privacy-policy:
+    name:
+      de: Datenschutzerklärung
+      en: privacy policy
+    text:
+      de: >
+        Bitte lesen Sie unsere {privacyPolicy} für weitere Informationen.
+      en: >
+        For further information, please read our {privacyPolicy}.
+consent-notice:
+  description:
+    de: >
+      Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
+    en: >
+      We collect and process your personal information for the following purposes: {purposes}.
+  learn-more:
+    de: Mehr erfahren
+    en: Learn more
+ok:
+  de: OK
+  en: OK
+  
