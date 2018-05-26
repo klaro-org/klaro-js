@@ -19,4 +19,4 @@ deploy:
     - echo "Deploying $CI_COMMIT_REF_NAME..."
     - if [ "$CI_COMMIT_REF_NAME" = "gl-master" ]; then export DIRECTORY=consent-master; fi;
     - if [ "$CI_COMMIT_REF_NAME" = "gl-staging" ]; then export DIRECTORY=consent-staging; fi;
-    - if [ -n "$DIRECTORY" ]; then rsync --progress -r -e "ssh -o StrictHostKeyChecking=no -o identityFile=~/.ssh/id_rsa" docs/* $SERVER_USERNAME@$SERVER_IP:/dpkit/$DIRECTORY; fi;
+    - if [ -n "$DIRECTORY" ]; then rsync --progress -r -e "ssh -o StrictHostKeyChecking=no -o identityFile=~/.ssh/id_rsa" dist/* $SERVER_USERNAME@$SERVER_IP:/dpkit/$DIRECTORY; fi;

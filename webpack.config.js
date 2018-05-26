@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'docs');
+var BUILD_DIR = path.resolve(__dirname, 'dist');
 var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
 
@@ -70,7 +70,7 @@ var config = {
     hot: true,
     // enable HMR on the server
 
-    contentBase: ['docs'],
+    contentBase: ['dist'],
     // match the output path
 
     publicPath: '',
