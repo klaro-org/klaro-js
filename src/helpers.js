@@ -25,6 +25,8 @@ export function getCookies(){
     for(var i=0;i<cookieStrings.length;i++){
         const cookieStr = cookieStrings[0]
         const match = regex.exec(cookieStr)
+        if (match === null)
+            continue
         cookies.push({
             name: match[1],
             value: match[2],

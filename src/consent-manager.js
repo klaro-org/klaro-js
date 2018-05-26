@@ -16,6 +16,7 @@ export default class ConsentManager {
 
     loadConsent(){
         const consent = getCookie(this.cookieName)
+        console.log(consent)
         if (consent !== null)
             return JSON.parse(consent.value)
         return null
