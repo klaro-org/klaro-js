@@ -1,0 +1,22 @@
+image: node:latest
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y rsync 
+  script:
+    - if [ ! -n "$CI_COMMIT_REF_NAME" ]; then exit 0; fi
+    - if [ -n "$CI_COMMIT_TAG" ]; then exit 0; fi
+    - if [ ! -n "$SERVER_SSH_KEY" ]; then exit 0; fi
+    - mkdir ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SERVER_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - npm install
+    - npm run-script make
+    - echo "Deploying $CI_COMMIT_REF_NAME..."
+    - if [ "$CI_COMMIT_REF_NAME" = "gl-master" ]; then export DIRECTORY=consent-master; fi;
+    - if [ "$CI_COMMIT_REF_NAME" = "gl-staging" ]; then export DIRECTORY=consent-staging; fi;
+    - if [ -n "$DIRECTORY" ]; then rsync --progress -r -e "ssh -o StrictHostKeyChecking=no -o identityFile=~/.ssh/id_rsa" docs/* $SERVER_USERNAME@$SERVER_IP:/dpkit/$DIRECTORY; fi;
