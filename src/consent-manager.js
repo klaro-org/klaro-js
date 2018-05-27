@@ -6,6 +6,7 @@ export default class ConsentManager {
         this.config = config
         this.consents = this.defaultConsents
         this.consented = false
+        this.changed = false
         this.loadConsents()
         if (this.consented || this.config.optOut)
             this.applyConsents()
@@ -22,16 +23,20 @@ export default class ConsentManager {
         return undefined
     }
 
+    getDefaultConsent(app){
+        let consent = app.default
+        if (consent === undefined)
+            consent = this.config.appDefault
+        if (consent === undefined)
+            consent = false
+        return consent
+    }
+
     get defaultConsents(){
         const consents = {}
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
-            let consent = app.default
-            if (consent === undefined)
-                consent = this.config.appDefault
-            if (consent === undefined)
-                consent = false
-            consents[app.name] = consent
+            consents[app.name] = this.getDefaultConsent(app)
         }
         return consents
     }
@@ -48,11 +53,31 @@ export default class ConsentManager {
         return this.consents[name] || false
     }
 
+    checkConsents(){
+        let complete = true
+        const apps = new Set(this.config.apps.map((app)=>{return app.name}))
+        const consents = new Set(Object.keys(this.consents))
+        for(var key of Object.keys(this.consents)){
+            if (!apps.has(key)){
+                delete this.consents[key]
+            }
+        }
+        for(var app of this.config.apps){
+            if (!consents.has(app.name)){
+                this.consents[app.name] = this.getDefaultConsent(app)
+                complete = false
+            }
+        }
+        this.consented = complete
+        if (!complete)
+            this.changed = true
+    }
+
     loadConsents(){
         const consentCookie = getCookie(this.cookieName)
         if (consentCookie !== null){
-            this.consented = true
             this.consents = JSON.parse(consentCookie.value)
+            this.checkConsents()
         }
         return this.consents
     }
@@ -68,6 +93,7 @@ export default class ConsentManager {
         const v = JSON.stringify(this.consents)
         setCookie(this.cookieName, v, 120)
         this.consented = true
+        this.changed = false
     }
 
     applyConsents(){

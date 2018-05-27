@@ -10,8 +10,8 @@ export default class Apps extends React.Component {
             }
             const checked = manager.getConsent(app.name)
             return <li>
-                <Switch checked={checked} onToggle={toggleApp} />
-                <span><b>{app.title}</b></span>
+                <Switch disabled={app.required} checked={checked || app.required} onToggle={toggleApp} />
+                <span><b>{app.title}{app.required ? ' ' + t(['app', 'required']) : ''}</b></span>
                 <p>{t([app.name, 'description'])}</p>
             </li>
         })

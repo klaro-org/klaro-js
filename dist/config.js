@@ -1,4 +1,4 @@
-window.consentConfig = {
+window.klaroConfig = {
     privacyPolicy: '/privacy.html',
     appDefault: true,
 //    required: true,
@@ -20,6 +20,12 @@ window.consentConfig = {
             description : {
                 de : 'Sammeln von Besucherstatistiken',
                 en : 'Collecting of visitor statistics',
+            },
+        },
+        cloudflare : {
+            description : {
+                de : 'Schutz gegen DDoS-Angriffe',
+                en : 'Protection against DDoS attacks',
             },
         },
         intercom : {
@@ -57,7 +63,7 @@ window.consentConfig = {
         {
             name : 'googleAnalytics',
             default: true,
-            title : 'Google Analytics',
+            title : 'Google Analytics (just an example)',
             purposes : ['analytics'],
             
             cookies : [/^ga_/i],
@@ -66,26 +72,32 @@ window.consentConfig = {
             },
         },
         {
-            name : 'matomo',
-            title : 'Matomo/Piwik',
-            purposes : ['analytics'],
-        },
-        {
-            name : 'intercom',
-            title : 'Intercom',
-            purposes : ['livechat'],
-        },
-        {
             name : 'mouseflow',
             title : 'Mouseflow',
             cookies : [/mouseflow/i],
             purposes : ['analytics']
         },
         {
+            name : 'matomo',
+            title : 'Matomo/Piwik',
+            purposes : ['analytics'],
+        },
+        {
+            name : 'intercom',
+            title : 'Intercom (just an example)',
+            purposes : ['livechat'],
+        },
+        {
             name : 'adsense',
-            title : 'Google AdSense',
+            title : 'Google AdSense (just an example)',
             cookies : [/adsense/i],
             purposes : ['advertising']
+        },
+        {
+            name : 'cloudflare',
+            title : 'Cloudflare',
+            purposes : ['security'],
+            required: true,
         },
     ],
 }

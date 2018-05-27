@@ -8,9 +8,6 @@
         <title>Klaro! Consent Manager Utility</title>
         <link rel="stylesheet" href="assets/bulma.min.css" />
         <link rel="stylesheet" href="assets/prism.css" />
-        <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css" />
-        <link rel="stylesheet" href="assets/fa/css/fa-solid.min.css" />
-        <link rel="stylesheet" href="assets/fa/css/fa-brands.min.css" />
         <script defer type="text/javascript" src="assets/bulma.js"></script>
         <script defer type="text/javascript" src="assets/prism.js"></script>
         <script defer type="text/javascript" src="config.js"></script>
@@ -21,8 +18,71 @@
         </script>
         <style type="text/css">
 
+            .container {
+                padding-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            @media(min-width: 768px){
+
+                section {
+                    margin-bottom: 20px;
+                }
+
+                .container h1.title, .container h2.subtitle {
+                margin-top: 40px;
+                margin-bottom: 40px;
+                }
+            }
+
+            .container h2.subtitle {
+                padding-top: 20px;
+                padding-bottom: 8px;
+                border-bottom :1px solid #eee;
+                color: #0a4;
+            }
+
+            .hero-body h2.subtitle {
+                border-bottom: none;
+            }
+
+            .container p {
+                font-size: 18px;
+            }
+
+            pre {
+                border: 10px solid #555;
+            }
+
+            .button {
+                margin-bottom: 8px;
+            }
+            @media(max-width: 767px){
+                .hero-body .button {
+                    width: 100%;
+                }
+            }
+
+            .hero-body {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;           
+            }
+
             .hero-body .container {
                 max-width: 900px;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .hero-body img.screenshot {
+                display: block;
+                padding-top: 20px;
+            }
+            @media(min-width: 1024px){
+                .hero-body img.screenshot {
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
             }
 
             h1.title {
@@ -81,7 +141,7 @@
                                         <li><a href="#help">Help</a></li>
                                     </ul>
                                     <span class="navbar-item">
-                                        <a class="button is-white is-outlined" href="https://github.com/dpkit/consent-manager">
+                                        <a class="button is-white is-outlined" href="https://github.com/dpkit/klaro">
                                             <span>View on Github</span>
                                         </a>
                                     </span>
@@ -94,16 +154,20 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                    Klaro! - Simple and user-friendly consent manager.
+                    <u>Klaro!</u> Simple and user-friendly consent manager.
                     </h1>
                     <h2 class="subtitle">
-                        Klaro! helps you to collect, document user consent
-                        for your website. It is easy to use and configure, lightweight
-                        and open-source. This website uses it, btw!
+                        Klaro is a free &amp; open-source tool that provides
+                        an intuitive, user-friendly and compliant way to manage
+                        consent on your website. Klaro is easy to use and configure, 
+                        lightweight and compatible with all modern browsers.
                     </h2>
                     <p>
-                        <a class="button is-success" onClick="klaro.show()">Show manager</a>
+                        <a class="button is-success" onClick="klaro.show();return false;">Show manager</a>
                         <a class="button is-warning" onClick="klaro.getManager().resetConsent();location.reload()">Reset consent</a>
+                    </p>
+                    <p>
+                        <img class="screenshot" src="assets/klaro-screenshot.png"/>
                     </p>
                 </div>
             </div>
@@ -111,20 +175,21 @@
 
         <section>
             <div class="container features">
-                <h1 class="title"><a name="features">Features</a></h1>
+                <a name="features"></a>
                 <div class="columns">
                     <div class="column is-4 column-eq">
                         <div class="card">
-                            <div class="card-image logo">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
                             <div class="card-content">
-                                <p class="subtitle">
+                                <p class="title">
                                         Simple &amp; user-friendly
                                 </p>
                                 <div class="content">
                                     <p>
-                                        fsdf sdfs fsfdsfs fd
+                                        Klaro is simple, unobtrusive and
+                                        optimized for mobile as well as
+                                        desktop browsers. It tries to stay
+                                        out of the way while helping you to
+                                        be fully transparent and compliant.
                                     </p>
                                 </div>
 
@@ -134,16 +199,17 @@
 
                     <div class="column is-4 column-eq">
                         <div class="card">
-                            <div class="card-image logo">
-                                <i class="fab fa-osi"></i>
-                            </div>
                             <div class="card-content">
-                                <p class="subtitle">
+                                <p class="title">
                                     Open Source
                                 </p>
                                 <div class="content">
                                     <p>
-                                        fsdf sdfs fsfdsfs fd
+                                        Klaro is licensed under a permissive
+                                        <strong>BSD-3</strong> license, which
+                                        means that you can use it freely for
+                                        commercial and non-commercial purposes.
+                                        No hidden fees or gotchas.
                                     </p>
                                 </div>
 
@@ -153,16 +219,17 @@
 
                     <div class="column is-4 column-eq">
                         <div class="card">
-                            <div class="card-image logo">
-                                <i class="fas fa-clipboard-list"></i>
-                            </div>
                             <div class="card-content">
-                                <p class="subtitle">
+                                <p class="title">
                                     Easy to customize
                                 </p>
                                 <div class="content">
                                     <p>
-                                        fsdf sdfs fsfdsfs fd
+                                        Klaro can manage both inline and
+                                        external scripts as well as static
+                                        tracking elements like images or
+                                        stylesheet links. New apps can be added
+                                        with just a few lines of code.
                                     </p>
                                 </div>
 
@@ -179,7 +246,7 @@
         <section>
             <div class="container getting-started">
                 <h1 class="title"><a name="getting-started">Getting Started</a></h1>
-                <h2 class="subtitle">Test</h2>
+                <h2 class="subtitle">Write the config file (no worries, you can do it!)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript">window.consentConfig = {
@@ -201,12 +268,33 @@
                     </div>
                     <div class="column is-6 column-eq">
                         <div class="content">
+                            <p class="lead">
+                                First, you need to tell Klaro about the third-party
+                                apps and trackers on your site. To do this, you write
+                                a simple Javascript config. To get started, take a
+                                look at the one used on this site <a href="https://github.com/dpkit/klaro">here</a>
+                                and modify it according to your needs.
+                                No rocket science involved.
+                            </p>
+                            <p>
+                                <a href="https://github.com/DPKit/klaro/blob/master/dist/config.js" class="button is-warning">
+                                    View example config
+                                </a>
+
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Stay tuned:</strong> We're working on an
+                                online configuration editor that will allow you
+                                to edit and download a config file without writing
+                                a single line of code!
+                            </p>
                         </div>
                     </div>
 
                 </div>
 
-                <h2 class="subtitle">Test</h2>
+                <h2 class="subtitle">Modify your tracking scripts (just a little bit)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript" data-name="google-analytics"># Inline scripts:
@@ -225,21 +313,45 @@
                     </div>
                     <div class="column is-6 column-eq">
                         <div class="content">
+                            <p>
+                                To make sure that no tracking scripts and third-party apps are
+                                loaded without consent, you need to modify your HTML code a tiny bit.
+                                For inline script, replace the value of <code>type</code> attribute with
+                                <code>opt-in</code> and add a data attribute with the original type,
+                                e.g. <code>data-type="text/javascript"</code>. Also add a data name
+                                attribute to identify the app, e.g. <code>data-name="google-analytics"</code>.
+                            </p>
+                            <p>
+                                For external script do the same, but in addition rename the <code>src</code>
+                                attribute to <code>data-src</code>. This also works for other tags such
+                                as images and stylesheets. Just remember to always add a <code>data-name</code>
+                                attribute as well so that Klaro knows which element belongs to which app.
+                            </p>
                         </div>
                     </div>
 
                 </div>
 
-                <h2 class="subtitle">Test</h2>
+                <h2 class="subtitle">Load the config and the script (last step, promised)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript">&lt;script defer type="text/javascript"
         src="config.js"&gt;&lt;/script&gt;
 &lt;script defer type="text/javascript"
-        src="consent.js"&gt;&lt;/script&gt;</code></pre>
+        src="klaro.js"&gt;&lt;/script&gt;</code></pre>
                     </div>
                     <div class="column is-6 column-eq">
                         <div class="content">
+                            <p>
+                                Finally, include both the config script as well as the Klaro
+                                code on your page. You can defer the loading of the scripts,
+                                just make sure the config is initialized when Klaro loads.
+                            </p>
+                            <p>
+                                <a href="https://github.com/DPKit/klaro/raw/master/dist/klaro.js" class="button is-warning">
+                                    Download klaro.js
+                                </a>
+                            </p>
                         </div>
                     </div>
 
@@ -248,6 +360,46 @@
             </div>
 
         </section>
-        <div id="consent-manager"></div>
+
+        <section>
+                <div class="container questions">
+                    <h1 class="title"><a name="help">Questions?</a></h1>
+                    <div class="content">
+                        <p>
+                            Do you have questions or problems? Then just head
+                            over to our <a href="https://github.com/dpkit/klaro">Github page</a>
+                            and feel free to open an <a href="https://github.com/dpkit/klaro/issues">issue</a>.
+                            If you want to contribute to Klaro, feel free to
+                            open a <a href="https://github.com/dpkit/klaro/pulls">pull request</a>
+                            (but better ask us for advice before you make large changes).
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <div class="container questions">
+                <h1 class="title"><a name="help">Privacy Policy</a></h1>
+                <div class="content">
+                    <p>
+                        This website is a project by <a href="https://dpkit.com/impressum.html">DPKit</a>,
+                        which is the data controller.
+                        We use third-party applications and cookies on this site
+                        for analytics, demonstration purposes and for improving security.
+                        You can review your consents
+                        for these <a href="#" onClick="klaro.show();return false;">here</a>.
+                        You have the following rights regarding your personal
+                        data: Erasure, rectification, access / download,
+                        portability, restriction of processing and filing a
+                        complaint at a responsible data protection agency.
+                    </p>
+                    <p>
+                        You can reach us at <a href="mailto:privacy@dpkit.com">privacy@dpkit.com</a>
+                        if you have any questions regarding this website or
+                        your personal data.
+                    </p>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

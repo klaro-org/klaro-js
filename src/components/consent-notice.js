@@ -42,6 +42,11 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
+        var changesText
+
+        if (manager.changed)
+            changesText = <p className="cn-changes">{t(['consent-notice', 'change-description'])}</p>
+
         if (manager.consented && !show)
             return <div />
 
@@ -53,6 +58,7 @@ export default class ConsentNotice extends React.Component {
                     <p>
                         {t(['consent-notice', 'description'], {purposes: <b>{purposesText}</b>})}
                     </p>
+                    {changesText}
                     <p className="cn-ok">
                         <a className="cm-btn cm-btn-sm cm-btn-success" href="#" onClick={saveAndHide}>{t(['ok'])}</a>
                         <a className="cm-btn cm-btn-sm cm-btn-info" href="#" onClick={showModal}>{t(['consent-notice', 'learn-more'])}</a>

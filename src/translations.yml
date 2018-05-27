@@ -17,6 +17,9 @@ consent-modal:
       en: >
         For further information, please read our {privacyPolicy}.
 consent-notice:
+  change-description:
+    de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
+    en: There were changes since your last visit, please update your consent.
   description:
     de: >
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
@@ -28,4 +31,7 @@ consent-notice:
 ok:
   de: OK
   en: OK
-  
+app:
+  required:
+    de: (immer notwendig)
+    en: (always required)
