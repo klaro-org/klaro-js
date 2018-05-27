@@ -78,22 +78,29 @@ export default class ConsentManager {
     }
 
     updateAppElements(app, consent){
-        const elements = document.querySelectorAll("[data-name='"+app.name+"'][data-src]")
+        const elements = document.querySelectorAll("[data-name='"+app.name+"']")
         for(var i=0;i<elements.length;i++){
             const element = elements[i]
 
             const parent = element.parentElement
             const name = element.dataset.name
             const src = element.dataset.src
+            const type = element.dataset.type
 
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
 
             const newElement = element.cloneNode(true)
-            if (consent)
-                newElement.src = src
-            else
+            if (consent){
+                if (src !== undefined)
+                    newElement.src = src
+                if (type !== undefined)
+                    newElement.type = type
+            }
+            else{
                 delete newElement.src
+                newElement.type = "opt-in"
+            }
             //we remove the original element and insert a new one
             parent.insertBefore(newElement, element)
             parent.removeChild(element)

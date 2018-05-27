@@ -1,7 +1,9 @@
 import 'scss/consent.scss'
 
-import App from 'components/app.js'
 import React from 'react'
+
+import App from 'components/app.js'
+import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations.yml'
 import {convertToMap, update} from 'utils/maps'
@@ -18,11 +20,15 @@ if (module.hot) {
     module.hot.accept()
 }
 
+function getConfig(element){
+    const configName = element.dataset.config || 'consentConfig'
+    return window[configName]
+}
+
 export function renderApp(element, show){
     if (element === null)
         return //no element found, aborting...
-    const configName = element.dataset.config || 'consentConfig'
-    const config = window[configName]
+    const config = getConfig(element)
     if (config === undefined || config === null)
         return //no config found, aborting...
 
@@ -44,6 +50,11 @@ export function initialize(e){
     if (originalOnLoad !== null){
         originalOnLoad(e)
     }
+}
+
+export function getManager(){
+    return new ConsentManager(getConfig(element))
+
 }
 
 export function show(){
