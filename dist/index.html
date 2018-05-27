@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DPKit - Consent Manager Utility</title>
+        <title>Klaro! Consent Manager Utility</title>
         <link rel="stylesheet" href="assets/bulma.min.css" />
         <link rel="stylesheet" href="assets/prism.css" />
         <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css" />
@@ -14,7 +14,7 @@
         <script defer type="text/javascript" src="assets/bulma.js"></script>
         <script defer type="text/javascript" src="assets/prism.js"></script>
         <script defer type="text/javascript" src="config.js"></script>
-        <script defer type="text/javascript" src="consent.js"></script>
+        <script defer type="text/javascript" src="klaro.js"></script>
         <script type="opt-in" data-src="tracker.js" data-type="text/javascript" data-name="googleAnalytics"></script>
         <script type="opt-in" data-type="text/javascript" data-name="matomo">
             console.log("Matomo is active!")
@@ -64,7 +64,7 @@
                     <div class="container">
                         <div class="navbar-brand">
                             <a class="navbar-item" href="../">
-                                DPKit - Consent Manager
+                                Klaro!
                             </a>
                             <span class="navbar-burger burger" data-target="navbarMenu">
                                 <span></span>
@@ -94,15 +94,16 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                    Consentful - Simple and user-friendly consent manager.
+                    Klaro! - Simple and user-friendly consent manager.
                     </h1>
                     <h2 class="subtitle">
-                        Consentful helps you to collect, document user consent
+                        Klaro! helps you to collect, document user consent
                         for your website. It is easy to use and configure, lightweight
                         and open-source. This website uses it, btw!
                     </h2>
                     <p>
-                        <a class="button is-success" onClick="consent.show()">Show manager</a>
+                        <a class="button is-success" onClick="klaro.show()">Show manager</a>
+                        <a class="button is-warning" onClick="klaro.getManager().resetConsent();location.reload()">Reset consent</a>
                     </p>
                 </div>
             </div>

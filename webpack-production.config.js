@@ -46,12 +46,12 @@ var config = {
     ]
   },
   entry: [
-    SRC_DIR + '/consent.js'
+    SRC_DIR + '/klaro.js'
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'consent.js',
-    library: 'consent',
+    filename: 'klaro.js',
+    library: 'klaro',
     libraryTarget: 'umd',
     publicPath: '',
   },

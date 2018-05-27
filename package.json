@@ -1,13 +1,14 @@
 {
-  "name": "cookie-compliance-helper",
+  "name": "klaro",
   "version": "1.0.0",
-  "description": "A simple template for implementing Cookie compliance / GDPR informed consent on your website without using expensive third-party tools.",
+  "description": "A simple consent manager.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dpkit/cookie-compliance.git"
   },
   "keywords": [
     "cookie",
+    "consent",
     "gdpr",
     "compliance"
   ],

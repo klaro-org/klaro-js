@@ -40,6 +40,10 @@ export default class ConsentManager {
         this.consents[name] = value
     }
 
+    resetConsent(){
+        deleteCookie(this.cookieName)
+    }
+
     getConsent(name){
         return this.consents[name] || false
     }

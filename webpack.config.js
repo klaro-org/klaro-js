@@ -59,12 +59,12 @@ var config = {
   },
   entry: [
     'webpack/hot/only-dev-server',
-    SRC_DIR + '/consent.js' 
+    SRC_DIR + '/klaro.js' 
   ],
   output: {
     path: PUBLIC_DIR,
-    filename: 'consent.js',
-    library: 'consent',
+    filename: 'klaro.js',
+    library: 'klaro',
     libraryTarget: 'umd',
     publicPath: ''
   },

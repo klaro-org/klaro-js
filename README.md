@@ -1,6 +1,6 @@
-# DP-Kit: Consent Manager
+# Klaro! A Simple Consent Manager
 
-This is a simple consent manager that helps you to be transparent about the
+Klaro is a simple consent manager that helps you to be transparent about the
 third-party applications on your website. It is designed to be extremely
 simple, intuitive and easy to use while allowing you to be compliant will
 all relevant regulations (notably GDPR and ePrivacy).
@@ -25,7 +25,7 @@ all relevant regulations (notably GDPR and ePrivacy).
 
 ## Goals
 
-The consent manager ensures compliance and builds trust by doing the following:
+Klaro helps you to ensures compliance and builds trust by doing the following things:
 
 * Ensure that no third-party apps/integrations are executing before the user
   has given explicit (or -if you dare- implicit) consent.
@@ -40,7 +40,7 @@ instructions below to adapt the configuration to your needs and then include
 the two files in your website like this:
 
     <script defer type="text/javascript" src="config.js"></script>
-    <script defer type="text/javascript" src="consent.js"></script>
+    <script defer type="text/javascript" src="klaro.js"></script>
 
 ## Managing Third-Party Scripts
 
@@ -48,15 +48,15 @@ To manage third-party scripts and ensure they only run if the user consents
 with their use, you simply replace the `src` attribute with `data-src`,
 and add a data field containing the name of the app as given in your config:
 
-    <script data-name="optimizely" data-src="https://cdn.optimizely.com/js/10196010078.js" type="text/javascript"></script>
+    <script data-type="text/javascript" data-name="optimizely" data-src="https://cdn.optimizely.com/js/10196010078.js" type="opt-in"></script>
 
 ConsentManager will then take care of only executing the scripts if consent was
 given (or if you chose to execute them before getting explicit consent).
 
 The same method applies for HTML-based apps/integrations like stylesheets or
-tracking pixels. Simply replace `src` with `data-src` and add a `data-name`
-attribute that matches with the name given in your configuration and you're
-good to go!
+tracking pixels. Simply replace `src` with `data-src`, `type` with `data-type`
+and add a `data-name` attribute that matches with the name given in your
+configuration and you're good to go!
 
 ### Configuration File
 
