@@ -51,7 +51,9 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'consent.js',
-    publicPath: '/public'
+    library: 'consent',
+    libraryTarget: 'umd',
+    publicPath: '',
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
