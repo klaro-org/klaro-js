@@ -1,5 +1,3 @@
-import translations from 'translations.yml'
-
 String.prototype.format = function () {
     "use strict";
     var str = this.toString();
@@ -38,7 +36,7 @@ String.prototype.format = function () {
 }
 
 export function language(){
-    return window.language || 'en'
+    return window.language || document.documentElement.lang || 'en'
 }
 
 function hget(d, key, defaultValue){
@@ -49,19 +47,17 @@ function hget(d, key, defaultValue){
     for(var i=0;i<kl.length;i++){
         if (cv === undefined)
             return defaultValue
-        cv = cv[kl[i]]
+        if (cv instanceof Map)
+            cv = cv.get(kl[i])
+        else
+            cv = cv[kl[i]]
     }
     if (cv === undefined)
         return defaultValue
     return cv
 }
 
-export function t(key){
-    const params = Array.prototype.slice.call(arguments, 1)
-    return tt(key, translations, ...params)
-}
-
-export function tt(key, trans){
+export function t(trans, key){
     var kl = key
     const lang = language()
     if (!Array.isArray(kl))

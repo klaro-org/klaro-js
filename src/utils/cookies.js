@@ -1,29 +1,9 @@
-import {tt} from 'i18n'
-
-export function getPurposes(config){
-    const purposes = new Set([])
-    for(var i=0;i<config.apps.length;i++){
-        const appPurposes = config.apps[i].purposes || []
-        for(var j=0;j<appPurposes.length;j++)
-            purposes.add(appPurposes[j])
-    }
-    return Array.from(purposes)
-}
-
-export function getPurposesNames(config){
-    const purposes = getPurposes(config)
-    const purposesNames = purposes.map((purpose) => {
-        return tt([purpose], config.purposes)
-    })
-    return purposesNames
-}
-
 export function getCookies(){
     const cookieStrings = document.cookie.split(";")
     const cookies = []
-    const regex = new RegExp('^([^=]+)\=(.*)$')
+    const regex = new RegExp('^\\s*([^=]+)\\s*\=\\s*(.*?)$')
     for(var i=0;i<cookieStrings.length;i++){
-        const cookieStr = cookieStrings[0]
+        const cookieStr = cookieStrings[i]
         const match = regex.exec(cookieStr)
         if (match === null)
             continue
@@ -56,8 +36,6 @@ export function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 
-export function eraseCookie(name) {
+export function deleteCookie(name) {
     setCookie(name,"",-1)
 }
-
-

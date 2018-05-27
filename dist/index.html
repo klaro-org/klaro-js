@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,7 @@
         <script defer type="text/javascript" src="assets/bulma.js"></script>
         <script defer type="text/javascript" src="config.js"></script>
         <script defer type="text/javascript" src="consent.js"></script>
+        <script data-src="tracker.js" type="text/javascript" data-name="google-analytics"></script>
     </head>
     <body>
         <section class="hero is-info is-medium is-bold">
@@ -59,6 +60,9 @@
                     <h2 class="subtitle">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </h2>
+                    <p>
+                        <a class="button is-success" onClick="consent.show()">Show consent tool</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -67,10 +71,6 @@
                 <span class="tag is-primary">New</span> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
         </div>
-        <section class="container">
-            <div class="content">
-                <div id="demo"></div>
-            </div>
-        </section>
+        <div id="consent-manager"></div>
     </body>
 </html>

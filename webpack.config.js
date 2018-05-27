@@ -64,6 +64,8 @@ var config = {
   output: {
     path: PUBLIC_DIR,
     filename: 'consent.js',
+    library: 'consent',
+    libraryTarget: 'umd',
     publicPath: ''
   },
   devServer: {
