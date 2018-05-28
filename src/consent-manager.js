@@ -130,7 +130,7 @@ export default class ConsentManager {
                 for(var key of Object.keys(element.dataset)){
                     newElement.dataset[key] = element.dataset[key]
                 }
-                newElement.type = element.type
+                newElement.type = 'opt-in'
                 newElement.innerText = element.innerText
                 newElement.text = element.text
                 newElement.class = element.class
