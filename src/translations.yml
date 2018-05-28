@@ -32,9 +32,20 @@ ok:
   de: OK
   en: OK
 app:
+  optOut:
+    title:
+      de: (Opt-Out)
+      en: (opt-out)
+    description:
+      de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
+      en: This app is loaded by default (but you can opt out)
   required:
-    de: (immer notwendig)
-    en: (always required)
+    title:
+      de: (immer notwendig)
+      en: (always required)
+    description:
+      de: Diese Anwendung wird immer benötigt 
+      en: This application is always required
 poweredBy:
   en:
     Powered by Klaro!
