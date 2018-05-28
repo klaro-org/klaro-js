@@ -1,4 +1,4 @@
-import 'scss/consent.scss'
+import 'scss/klaro.scss'
 
 import React from 'react'
 import App from 'components/app.js'
@@ -6,57 +6,79 @@ import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations.yml'
 import {convertToMap, update} from 'utils/maps'
-import {t} from 'utils/i18n'
+import {t, language} from 'utils/i18n'
 
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
+const configName = document.currentScript.dataset.config || "klaroConfig"
+const noAutoLoad = document.currentScript.dataset.noAutoLoad == "true"
+const stylePrefix = document.currentScript.dataset.stylePrefix || "klaro"
+const config = window[configName]
+const managers = {}
 
 window.onload = initialize
 
 if (module.hot) {
-    renderKlaro()
+    if (!noAutoLoad)
+        renderKlaro(config)
     module.hot.accept()
 }
 
-function getConfig(element){
-    return window.klaroConfig
+function getElementID(config){
+    return config.elementID || 'klaro'
 }
 
-function getElement(){
-    var element = document.getElementById('klaro-manager')
+function getElement(config){
+    const id = getElementID(config)
+    var element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
-        element.id = 'klaro-manager'
+        element.id = id
         document.body.appendChild(element)
     }
     return element
 }
 
-export function renderKlaro(show){
-    const config = getConfig(element)
-    if (config === undefined)
-        return //no config found, aborting...
-    const element = getElement()
-    //we initialize the translations
-    const translations = update(convertedTranslations, convertToMap(config.translations || {}))
-    const tt = (...args) => {
-        return t(translations, ...args)
-    }
+function getTranslations(config){
+    const trans = new Map([])
+    update(trans, convertedTranslations)
+    update(trans, convertToMap(config.translations || {}))
+    return trans
+}
 
-    const app = render(<App t={tt} config={config} show={show || false} />, element)
+export function renderKlaro(config, show){
+    if (config === undefined)
+        return
+    const element = getElement(config)
+    const trans = getTranslations(config)
+    const manager = getManager(config)
+    const lang = config.lang || language()
+    const tt = (...args) => {return t(trans, lang, ...args)}
+    const app = render(<App t={tt}
+                            stylePrefix={stylePrefix}
+                            manager={manager}
+                            config={config}
+                            show={show || false} />, element)
+    return app
 }
 
 export function initialize(e){
-    renderKlaro()
+    if (!noAutoLoad)
+        renderKlaro(config)
     if (originalOnLoad !== null){
         originalOnLoad(e)
     }
 }
 
-export function getManager(){
-    return new ConsentManager(getConfig())
+export function getManager(conf){
+    conf = conf || config
+    const name = getElementID(conf)
+    if (managers[name] === undefined)
+        managers[name] = new ConsentManager(conf)
+    return managers[name]
 }
 
-export function show(){
-    renderKlaro(true)
+export function show(conf){
+    conf = conf || config
+    renderKlaro(conf, true)
 }

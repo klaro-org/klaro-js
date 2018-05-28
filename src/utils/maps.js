@@ -15,6 +15,17 @@ export function convertToMap(d){
 }
 
 export function update(d, ed, overwrite, clone){
+
+    const assign = (d, key, value) => {
+        if (value instanceof Map){
+            const map = new Map([])
+            //we deep-clone the map
+            update(map, value, true, false)
+            d.set(key, map)
+        } else
+            d.set(key, value)    
+    }
+
     if (!(ed instanceof Map) || !(d instanceof Map))
         throw "Parameters are not maps!"
     if (overwrite === undefined)
@@ -26,15 +37,16 @@ export function update(d, ed, overwrite, clone){
     for(let key of ed.keys()){
         let value = ed.get(key)
         let dvalue = d.get(key)
-        if (!d.has(key))
-            d.set(key, value)
+        if (!d.has(key)){
+            assign(d, key, value)
+        }
         else if (value instanceof Map && dvalue instanceof Map){
             d.set(key, update(dvalue, value, overwrite, clone))
         }
         else {
             if (!overwrite)
                 continue
-            d.set(key, value)
+            assign(d, key, value)
         }
     }
     return d

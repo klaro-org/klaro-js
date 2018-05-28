@@ -1,4 +1,4 @@
-consent-modal:
+consentModal:
   title:
     de: Informationen die wir sammeln
     en: Information that we collect
@@ -7,17 +7,17 @@ consent-modal:
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
     en: >
       Here you can see and customize the information that we collect about you.
-  privacy-policy:
+  privacyPolicy:
     name:
       de: Datenschutzerklärung
       en: privacy policy
     text:
       de: >
-        Bitte lesen Sie unsere {privacyPolicy} für weitere Informationen.
+        Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
       en: >
-        For further information, please read our {privacyPolicy}.
-consent-notice:
-  change-description:
+        To learn more, please read our {privacyPolicy}.
+consentNotice:
+  changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
   description:
@@ -25,7 +25,7 @@ consent-notice:
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
     en: >
       We collect and process your personal information for the following purposes: {purposes}.
-  learn-more:
+  learnMore:
     de: Mehr erfahren
     en: Learn more
 ok:
@@ -35,3 +35,8 @@ app:
   required:
     de: (immer notwendig)
     en: (always required)
+poweredBy:
+  en:
+    Powered by Klaro!
+  de:
+    Realisiert mit Klaro!

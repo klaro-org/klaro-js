@@ -11,7 +11,8 @@
         <script defer type="text/javascript" src="assets/bulma.js"></script>
         <script defer type="text/javascript" src="assets/prism.js"></script>
         <script defer type="text/javascript" src="config.js"></script>
-        <script defer type="text/javascript" src="klaro.js"></script>
+        <script defer type="text/javascript" src="configs/i18n.js"></script>
+        <script defer type="text/javascript" src="klaro.js" data-config="klaroConfig" data-style-prefix="klaro"></script>
         <script type="opt-in" data-src="tracker.js" data-type="text/javascript" data-name="googleAnalytics"></script>
         <script type="opt-in" data-type="text/javascript" data-name="matomo">
             console.log("Matomo is active!")
@@ -209,7 +210,7 @@
                                         <strong>BSD-3</strong> license, which
                                         means that you can use it freely for
                                         commercial and non-commercial purposes.
-                                        No hidden fees or gotchas.
+                                        No hidden fees or restrictions.
                                     </p>
                                 </div>
 
@@ -244,9 +245,83 @@
         </section>
 
         <section>
+            <div class="container questions">
+                <h1 class="subtitle"><a name="more-features">More features</a></h1>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <strong>Privacy By design &amp; default</strong>: Klaro
+                                    supports implicit and explicit (our favorite!) modes of consent and can
+                                    make sure that no third-party apps are loaded without the
+                                    consent of the user.
+                                </li>
+                                <li>
+                                    <strong>Smart change detection</strong>: Klaro automatically detects
+                                    config changes and will renew consent whenever you add a new app
+                                    for which the user didn't give consent yet.
+                                </li>
+                                <li>
+                                    <strong>Multilingual</strong>: Klaro has full support for
+                                    internationalization and makes it easy to add or modify translations
+                                    with just a few lines of code:
+                                    <span style="display: inline-block;">
+                                            <a onClick="klaro.show(klaroI18nConfig);return false;">Example in </a>
+                                            <div class="select is-small">
+                                                <select class="select" name="lang" onChange="klaroI18nConfig.lang = this.value;">
+                                                    <option value="de">Deutsch</option>
+                                                    <option value="en" selected>English</option>
+                                                </select>
+                                            </div>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="column is-6">
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <strong>Mobile-friendly and compatible with all modern browsers</strong>: Klaro
+                                    works with all major browsers and is optimized for both desktop
+                                    and mobile clients.
+                                </li>
+                                <li>
+                                    <strong>Lightweight &amp; fast</strong>: Klaro.js is less than 20 kB
+                                    of Javascript (minified + gzipped) and is lightning-fast so that your
+                                    users won't notice any difference when using it.
+                                </li>
+                                <li>
+                                    <strong>Easy to customize</strong>: Klaro lets you change
+                                    the stylesheet to better match your own design and lets you
+                                    access its functionality via Javascript as well.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <section>
             <div class="container getting-started">
                 <h1 class="title"><a name="getting-started">Getting Started</a></h1>
-                <h2 class="subtitle">Write the config file (no worries, you can do it!)</h2>
+                <div class="content">
+                    <p>
+                        Setting up Klaro on your website is easy and usually takes
+                        less than 10 minutes. All you need to do is write a small
+                        config file, load the <code>klaro.js</code> script and make
+                        a few small changes to your third-party/tracking scripts on your page
+                        so that Klaro can manage them.
+                        <strong>Let's get started!</strong>
+                    </p>
+                </div>
+                <h2 class="subtitle">Write the config file (no worries, it's easy)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript">window.consentConfig = {
@@ -270,43 +345,44 @@
                         <div class="content">
                             <p class="lead">
                                 First, you need to tell Klaro about the third-party
-                                apps and trackers on your site. To do this, you write
-                                a simple Javascript config. To get started, take a
-                                look at the one used on this site <a href="https://github.com/dpkit/klaro">here</a>
-                                and modify it according to your needs.
-                                No rocket science involved.
+                                apps and trackers on your site. To do this you write
+                                a simple Javascript config. The easiest way to get started is
+                                by looking at the annotated config file used for this site
+                                and simply modify it according to your needs.
+                                No rocket science involved, promised. There are some
+                                <a href="https://github.com/DPKit/klaro/blob/master/dist/configs/">more examples</a> on Github as well.
                             </p>
                             <p>
                                 <a href="https://github.com/DPKit/klaro/blob/master/dist/config.js" class="button is-warning">
                                     View example config
                                 </a>
-
                             </p>
-                            <hr />
-                            <p>
-                                <strong>Stay tuned:</strong> We're working on an
-                                online configuration editor that will allow you
-                                to edit and download a config file without writing
-                                a single line of code!
-                            </p>
+                            <article class="message is-info">
+                                <div class="message-body">
+                                    <strong>Stay tuned:</strong> We're working on an
+                                    online configuration editor that will allow you
+                                    to edit and download a config file without writing
+                                    a single line of code!
+                                </div>
+                            </article>
                         </div>
                     </div>
 
                 </div>
 
-                <h2 class="subtitle">Modify your tracking scripts (just a little bit)</h2>
+                <h2 class="subtitle">Modify your third-party/tracking scripts (just a little bit)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript" data-name="google-analytics"># Inline scripts:
 &lt;script type="opt-in"
-        data-type="[original type]"
+        data-type="text/javascript"
         data-name="google-analytics"&gt;
 //...
 &lt;/script&gt;
 
 # External scripts and resources (img, link, ...):
 &lt;script type="opt-in"
-        data-src="[original src attribute]"
+        data-src="https://analytics.dpkit.com/matomo.js"
         data-name="matomo"&gt;
 &lt;/script&gt;
 </code></pre>
@@ -315,17 +391,21 @@
                         <div class="content">
                             <p>
                                 To make sure that no tracking scripts and third-party apps are
-                                loaded without consent, you need to modify your HTML code a tiny bit.
-                                For inline script, replace the value of <code>type</code> attribute with
-                                <code>opt-in</code> and add a data attribute with the original type,
-                                e.g. <code>data-type="text/javascript"</code>. Also add a data name
-                                attribute to identify the app, e.g. <code>data-name="google-analytics"</code>.
+                                loaded without consent, you need to modify your HTML code a tiny bit:
+                                For inline scripts, replace the value of the <code>type</code> attribute with
+                                <code>opt-in</code> (this keeps the browser from executing the script)
+                                and add a data attribute with the original type,
+                                e.g. <code>data-type="text/javascript"</code>. Also add a <code>data-name</code>
+                                attribute that matches the name of the given app in your config,
+                                e.g. <code>data-name="googleAnalytics"</code>.
                             </p>
                             <p>
                                 For external script do the same, but in addition rename the <code>src</code>
-                                attribute to <code>data-src</code>. This also works for other tags such
+                                attribute to <code>data-src</code> (this ensures that the browser won't load the script
+                                without the consent of the user). This also works for other tags such
                                 as images and stylesheets. Just remember to always add a <code>data-name</code>
-                                attribute as well so that Klaro knows which element belongs to which app.
+                                attribute that matches the name of the app in your config
+                                so that Klaro knows which element belongs to which app.
                             </p>
                         </div>
                     </div>
@@ -344,8 +424,8 @@
                         <div class="content">
                             <p>
                                 Finally, include both the config script as well as the Klaro
-                                code on your page. You can defer the loading of the scripts,
-                                just make sure the config is initialized when Klaro loads.
+                                code on your page. You can defer the loading of the scripts
+                                if you like, just make sure the config is initialized when Klaro loads.
                             </p>
                             <p>
                                 <a href="https://github.com/DPKit/klaro/raw/master/dist/klaro.js" class="button is-warning">
@@ -361,6 +441,74 @@
 
         </section>
 
+        <hr />
+
+
+        <section>
+            <div class="container questions">
+                <h1 class="subtitle"><a name="advanced-config">Advanced Configuration</a></h1>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <strong>Customizing texts and translations</strong>: You can
+                                    overwrite default translations and add your own if you like.
+                                    For an example, check out <a href="https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js">this example config</a>.
+                                </li>
+                                <li>
+                                    <strong>Opening Klaro via a link</strong>: To allow you users
+                                    to review and customize their consent decisions, you will need
+                                    to let them open the Klaro manager on demand. You can do this
+                                    by using the JS library (which is loaded by default), e.g.
+                                    like this: <code style="display: inline-block">&lt;a onClick="klaro.show();return false;"&gt;manage your consents&lt;a&gt;</code>.
+                                </li>
+                                <li>
+                                    <strong>Accessing the consent manager</strong>: You can access
+                                    the consent manager via Javascript by using the <code>klaro.getManager(config)</code>
+                                    function. Please not that currently the manager class does not
+                                    notify the user interface of changes (yet), so make sure to call
+                                    <code>klaro.show(config)</code> to update the UI after making
+                                    changes to the consent configuration.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="column is-6">
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <strong>Managing cookies</strong>: Klaro can automatically delete
+                                    third-party cookies for you when the user withdraws consent. To
+                                    make use of this, simply define a 'cookie' entry in the app config, e.g.
+                                    like this: <code>'cookies' : ['_ga', '_gid', '_gat', /^_gac_.*$/i]</code>. You can
+                                    also use regular expressions.
+                                </li>
+                                <li>
+                                    <strong>Custom callbacks</strong>: You can define custom callbacks
+                                    for your applications that will be called with the given consent
+                                    state, both when the page is loaded and each time the user updates
+                                    the consent choices. This allows you to perform more advanced management
+                                    tasks such as calling API endpoints to remove data.
+                                </li>
+                                <li>
+                                    <strong>Custom styling</strong>: If you want to build your own
+                                    stylesheet for Klaro, you can use the <code>style-prefix</code>
+                                    data attribute to customize the class of the main DIV element,
+                                    e.g. like this: <code>&lt;script src="klaro.js" data-style-prefix="my-styles"&gt;&lt;/script&gt;</code>
+                                    This will assign the class <code>my-styles</code> to Klaro's main DIV element.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
         <section>
                 <div class="container questions">
                     <h1 class="title"><a name="help">Questions?</a></h1>
@@ -371,19 +519,24 @@
                             and feel free to open an <a href="https://github.com/dpkit/klaro/issues">issue</a>.
                             If you want to contribute to Klaro, feel free to
                             open a <a href="https://github.com/dpkit/klaro/pulls">pull request</a>
-                            (but better ask us for advice before you make large changes).
+                            (but better ask us for advice before you make large changes). You can
+                            also reach us by e-mail at <a href="mailto:klaro@kiprotect.com">klaro@kiprotect.com</a>.
+                            We're looking forward to hear from you!
                         </p>
                     </div>
                 </div>
         </section>
 
+        <hr />
+
         <section>
             <div class="container questions">
-                <h1 class="title"><a name="help">Privacy Policy</a></h1>
+                <h1 class="title"><a name="privacy">Privacy Policy</a></h1>
                 <div class="content">
                     <p>
-                        This website is a project by <a href="https://dpkit.com/impressum.html">DPKit</a>,
-                        which is the data controller.
+                        This website is a project by <a href="https://dpkit.com/impressum.html">DPKit</a>
+                        &amp; <a href="https://kiprotect.com/imprint.html">KIProtect</a> (DPKit
+                        is the responsible data controller).
                         We use third-party applications and cookies on this site
                         for analytics, demonstration purposes and for improving security.
                         You can review your consents
@@ -394,7 +547,7 @@
                         complaint at a responsible data protection agency.
                     </p>
                     <p>
-                        You can reach us at <a href="mailto:privacy@dpkit.com">privacy@dpkit.com</a>
+                        You can reach us at <a href="mailto:privacy@kiprotect.com">privacy@dpkit.com</a>
                         if you have any questions regarding this website or
                         your personal data.
                     </p>

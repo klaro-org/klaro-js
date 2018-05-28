@@ -16,16 +16,16 @@ export default class ConsentModal extends React.Component {
         if (!config.required)
             closeLink = <a className="hide" onClick={hide} href="#"><Close /></a>
 
-        const ppLink = <a href={config.privacyPolicy}>{t(['consent-modal','privacy-policy','name'])}</a>
+        const ppLink = <a href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
                 <div className="cm-header">
                     {closeLink}
-                    <h1 className="title">{t(['consent-modal', 'title'])}</h1>
+                    <h1 className="title">{t(['consentModal', 'title'])}</h1>
                     <p>
-                        {t(['consent-modal','description'])} &nbsp;
-                        {t(['consent-modal','privacy-policy','text'], {privacyPolicy : ppLink})}
+                        {t(['consentModal','description'])} &nbsp;
+                        {t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})}
                     </p>
                 </div>
                 <div className="cm-body">
@@ -33,6 +33,7 @@ export default class ConsentModal extends React.Component {
                 </div>
                 <div className="cm-footer">
                     <a className="cm-btn cm-btn-success" href="#" onClick={saveAndHide}>{t(['ok'])}</a>
+                    <a target="_blank" className="cm-powered-by" href={config.poweredBy || 'https://klaro.dpkit.com'}>{t(['poweredBy'])}</a>
                 </div>
             </div>
         </div>

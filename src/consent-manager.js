@@ -8,12 +8,11 @@ export default class ConsentManager {
         this.consented = false
         this.changed = false
         this.loadConsents()
-        if (this.consented || this.config.optOut)
-            this.applyConsents()
+        this.applyConsents()
     }
 
     get cookieName(){
-        return this.config.cookieName || 'consent-cookie'
+        return this.config.cookieName || 'klaro'
     }
 
     getApp(name){
@@ -100,10 +99,12 @@ export default class ConsentManager {
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
             const consent = this.getConsent(app.name)
-            this.updateAppElements(app, consent)
-            this.updateAppCookies(app, consent)
-            if (app.callback !== undefined)
-                app.callback(consent, app)
+            if (this.consented || this.optOut || app.optOut){
+                this.updateAppElements(app, consent)
+                this.updateAppCookies(app, consent)
+                if (app.callback !== undefined)
+                    app.callback(consent, app)    
+            }
         }
     }
 
