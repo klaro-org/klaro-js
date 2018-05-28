@@ -5,7 +5,7 @@
 // <script src="klaro.js" data-config="myConfigVariableName" />
 // You can also disable auto-loading of the consent notice by adding
 // data-no-auto-load=true to the script tag.
-window.klaroConfig = {
+var klaroConfig = {
 
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.

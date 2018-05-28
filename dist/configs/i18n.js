@@ -31,8 +31,8 @@ var klaroI18nConfig = {
             },
         },
         poweredBy : {
-            en : 'Click here to see the config',
-            de : 'Hier klicken um die Konfiguration zu sehen',
+            en : 'view config',
+            de : 'Konfiguration ansehen',
         },
         ok : {
             en : 'Wohoo!',
@@ -73,7 +73,7 @@ var klaroI18nConfig = {
         {
             name : 'googleAnalytics',
             default: true,
-            title : 'Google Analytics (just an example)',
+            title : 'Google Analytics',
             purposes : ['analytics'],            
         },
         {

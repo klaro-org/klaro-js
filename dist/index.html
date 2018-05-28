@@ -310,7 +310,7 @@
                         <div class="content">
                             <ul>
                                 <li>
-                                    <strong>Privacy By design &amp; default</strong>: Klaro
+                                    <strong>Privacy by design &amp; default</strong>: Klaro
                                     supports implicit and explicit (our favorite!) modes of consent and can
                                     make sure that no third-party apps are loaded without the
                                     consent of the user.
@@ -461,7 +461,7 @@
                                 For external script do the same, but in addition rename the <code>src</code>
                                 attribute to <code>data-src</code> (this ensures that the browser won't load the script
                                 without the consent of the user). This also works for other tags such
-                                as images and stylesheets. Just remember to always add a <code>data-name</code>
+                                as images/tracking pixels. Just remember to always add a <code>data-name</code>
                                 attribute that matches the name of the app in your config
                                 so that Klaro knows which element belongs to which app.
                             </p>
@@ -514,14 +514,14 @@
                                 <li>
                                     <strong>Customizing texts and translations</strong>: You can
                                     overwrite default translations and add your own if you like.
-                                    For an example, check out <a href="https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js">this example config</a>.
+                                    As an example, check out <a href="https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js">this config file</a>.
                                 </li>
                                 <li>
                                     <strong>Opening Klaro via a link</strong>: To allow you users
                                     to review and customize their consent decisions, you will need
                                     to let them open the Klaro manager on demand. You can do this
-                                    by using the JS library (which is loaded by default), e.g.
-                                    like this: <code style="display: inline-block">&lt;a onClick="klaro.show();return false;"&gt;manage your consents&lt;a&gt;</code>.
+                                    by calling the <code>show</code> function of the Klaro library, e.g.
+                                    like this: <code>&lt;a onClick="klaro.show();return false;"&gt;manage your consents&lt;/a&gt;</code>.
                                 </li>
                                 <li>
                                     <strong>Accessing the consent manager</strong>: You can access
@@ -541,24 +541,26 @@
                                 <li>
                                     <strong>Managing cookies</strong>: Klaro can automatically delete
                                     third-party cookies for you when the user withdraws consent. To
-                                    make use of this, simply define a 'cookie' entry in the app config, e.g.
+                                    make use of this, simply define a <code>cookies</code> entry in the app config, e.g.
                                     like this: <code>'cookies' : ['_ga', '_gid', '_gat', /^_gac_.*$/i]</code>. You can
                                     also use regular expressions.
                                 </li>
                                 <li>
                                     <strong>Custom callbacks</strong>: You can define custom callbacks
                                     for your applications that will be called with the given consent
-                                    state (<code>true</code> if confirmed, <code>false</code> if unconfirmed).
-                                    It will be called when Klaro is loaded as well as each time the user updates
+                                    state (<code>true</code> if consent was given, <code>false</code> if not).
+                                    They will be called when Klaro is loaded as well as each time the user updates
                                     the consent choices. This allows you to perform more advanced management
                                     tasks such as calling API endpoints to remove data.
                                 </li>
                                 <li>
                                     <strong>Custom styling</strong>: If you want to build your own
-                                    stylesheet for Klaro, you can use the <code>style-prefix</code>
-                                    data attribute to customize the class of the main DIV element,
+                                    stylesheet for Klaro, you can set the <code>style-prefix</code>
+                                    data attribute of the script tag loading the library
+                                    to customize the class of the main DIV element of Klaro's UI,
                                     e.g. like this: <code>&lt;script src="klaro.js" data-style-prefix="my-styles"&gt;&lt;/script&gt;</code>
-                                    This will assign the class <code>my-styles</code> to Klaro's main DIV element.
+                                    This will assign the class <code>my-styles</code> class to Klaro's main DIV element and disable
+                                    all default styles.
                                 </li>
                             </ul>
                         </div>
@@ -605,7 +607,7 @@
                         &amp; <a href="https://kiprotect.com/imprint.html">KIProtect</a> (KIProtect
                         is the responsible data controller).
                         We use third-party applications and cookies on this site
-                        for analytics, demonstration purposes and ensuring security.
+                        for analytics, demonstration purposes and security.
                         You can review your consents
                         for these <a href="#" onClick="klaro.show();return false;">here</a>.
                         You have the following rights regarding your personal
