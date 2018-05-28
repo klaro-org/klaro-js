@@ -81,4 +81,5 @@ export function getManager(conf){
 export function show(conf){
     conf = conf || config
     renderKlaro(conf, true)
+    return false
 }

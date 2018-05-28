@@ -39,6 +39,48 @@
                 margin-bottom: 20px;
             }
 
+            .pulse {
+                background: #f00;
+                animation: pulse 2s infinite;
+            }
+
+            @-webkit-keyframes pulse {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 rgba(255,169,44,1.0);
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+            }
+            }
+            @keyframes pulse {
+            0% {
+                -moz-box-shadow: 0 0 0 0 rgba(255,169,44, 1.0);
+                box-shadow: 0 0 0 0 rgba(255,169,44, 1.0);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+                box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+                box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+            }
+            }
+
+            .camera {
+                position: fixed;
+                opacity: 0.7;
+                display: block;
+                top: 60px;
+                right: 28px;
+                z-index: 1000;
+                width: 40px;
+                border-radius: 5px;
+            }
+
             @media(min-width: 768px){
 
                 section {
@@ -134,6 +176,7 @@
         </style>
     </head>
     <body>
+        <img data-hide=true data-title="We're watching you (for your own safety)" class="camera pulse" data-src="assets/Surveillance-camera-small.png" data-name="camera" />
         <section class="hero is-info is-medium is-bold">
             <div class="hero-head">
                 <nav class="navbar">
@@ -179,11 +222,11 @@
                         lightweight and compatible with all modern browsers.
                     </h2>
                     <p>
-                        <a class="button is-success" onClick="klaro.show();return false;">Show manager</a>
+                        <a class="button is-success" onClick="return klaro.show();">Show manager</a>
                         <a class="button is-warning" onClick="klaro.getManager().resetConsent();location.reload()">Reset consent</a>
                     </p>
                     <p>
-                        <img class="screenshot" src="assets/klaro-screenshot.png"/>
+                        <img class="screenshot" src="assets/klaro-screenshot-cut.png"/>
                     </p>
                 </div>
             </div>
@@ -441,6 +484,8 @@
                                 Finally, include both the config script as well as the Klaro
                                 code on your page. You can defer the loading of the scripts
                                 if you like, just make sure the config is initialized when Klaro loads.
+                                You can have a look at our <a href="examples/simple.html">simple example page</a>
+                                to get an idea of how to do this.
                             </p>
                             <p>
                                 <a href="https://github.com/KIProtect/klaro/raw/master/dist/klaro.js" class="button is-warning">
@@ -577,19 +622,5 @@
             </div>
         </section>
 
-        <script type="opt-in" data-type="application/javascript" data-name="matomo">
-        var _paq = _paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//analytics.7scientists.com/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', '7']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='application/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
-        </script>
-        <noscript><p><img data-name="matomo" data-src="//analytics.7scientists.com/piwik.php?idsite=7&rec=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>

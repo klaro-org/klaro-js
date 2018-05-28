@@ -80,6 +80,12 @@ window.klaroConfig = {
                 en : 'Collecting of visitor statistics',
             },
         },
+        camera : {
+            description : {
+                de : 'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)',
+                en : 'A surveillance camera (just a silly example for an IMG tag)'
+            }
+        },
         cloudflare : {
             description : {
                 de : 'Schutz gegen DDoS-Angriffe',
@@ -191,6 +197,11 @@ window.klaroConfig = {
             name : 'adsense',
             title : 'Google AdSense',
             purposes : ['advertising']
+        },
+        {
+            name : 'camera',
+            title : 'Surveillance Camera',
+            purposes : ['security']
         },
         {
             name : 'cloudflare',

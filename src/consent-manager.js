@@ -152,12 +152,24 @@ export default class ConsentManager {
             } else {
                 // all other elements (images etc.) are modified in place...
                 if (consent){
-                    element.dataset.oldSrc = element.src
+                    if (element.dataset.originalSrc === undefined)
+                        element.dataset.originalSrc = element.src
+                    if (element.dataset.title !== undefined)
+                        element.title = element.dataset.title
+                    if (element.dataset.originalDisplay !== undefined)
+                        element.style.display = element.dataset.originalDisplay
                     element.src = src
                 }
                 else{
-                    if (element.dataset.oldSrc !== undefined)
-                        element.src = element.dataset.oldSrc
+                    if (element.dataset.title !== undefined)
+                        element.removeAttribute('title')
+                    if (element.dataset.hide === "true"){
+                        if (element.dataset.originalDisplay === undefined)
+                            element.dataset.originalDisplay = element.style.display
+                        element.style.display = 'none'
+                    }
+                    if (element.dataset.originalSrc !== undefined)
+                        element.src = element.dataset.originalSrc
                 }
             }
          }

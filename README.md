@@ -1,6 +1,6 @@
 # Klaro! A Simple Consent Manager
 
-Klaro [klɛro]is a simple consent manager that helps you to be transparent about the
+Klaro [klɛro] is a simple consent manager that helps you to be transparent about the
 third-party applications on your website. It is designed to be extremely
 simple, intuitive and easy to use while allowing you to be compliant will
 all relevant regulations (notably GDPR and ePrivacy).
@@ -89,4 +89,5 @@ can be found in the [package.js](package.js) file.
 
 The accompanying website
 uses [Bulma](https://bulma.io), [Bootstrap](https://getbootstrap.com)
-and [Prism](http://prismjs.com/).
+and [Prism](http://prismjs.com/) and a [surveillance camera image](https://upload.wikimedia.org/wikipedia/commons/5/56/Surveillance-camera.png)
+from Wikipedia.
