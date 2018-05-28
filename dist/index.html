@@ -8,14 +8,29 @@
         <title>Klaro! Consent Manager Utility</title>
         <link rel="stylesheet" href="assets/bulma.min.css" />
         <link rel="stylesheet" href="assets/prism.css" />
-        <script defer type="text/javascript" src="assets/bulma.js"></script>
-        <script defer type="text/javascript" src="assets/prism.js"></script>
-        <script defer type="text/javascript" src="config.js"></script>
-        <script defer type="text/javascript" src="configs/i18n.js"></script>
-        <script defer type="text/javascript" src="klaro.js" data-config="klaroConfig" data-style-prefix="klaro"></script>
-        <script type="opt-in" data-src="tracker.js" data-type="text/javascript" data-name="googleAnalytics"></script>
-        <script type="opt-in" data-type="text/javascript" data-name="matomo">
-            console.log("Matomo is active!")
+        <script defer type="application/javascript" src="assets/bulma.js"></script>
+        <script defer type="application/javascript" src="assets/prism.js"></script>
+        <script defer type="application/javascript" src="config.js"></script>
+        <script defer type="application/javascript" src="configs/i18n.js"></script>
+        <script defer type="application/javascript" src="klaro.js" data-config="klaroConfig" data-style-prefix="klaro"></script>
+        <script type="opt-in" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker"></script>
+        <script type="opt-in" data-type="application/javascript" data-name="inlineTracker">
+
+            console.log("This is an example of an inline tracking script.")
+
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days*24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+            }
+
+            //we set a tracking cookie as an example
+            setCookie("inline-tracker", "foo", 120)
+
         </script>
         <style type="text/css">
 
@@ -182,7 +197,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <p class="title">
-                                        Simple &amp; user-friendly
+                                        Simple &amp; User-Friendly
                                 </p>
                                 <div class="content">
                                     <p>
@@ -222,7 +237,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <p class="title">
-                                    Easy to customize
+                                    Easy to Customize
                                 </p>
                                 <div class="content">
                                     <p>
@@ -375,7 +390,7 @@
                     <div class="column is-6 column-eq">
                         <pre><code class="language-javascript" data-name="google-analytics"># Inline scripts:
 &lt;script type="opt-in"
-        data-type="text/javascript"
+        data-type="application/javascript"
         data-name="google-analytics"&gt;
 //...
 &lt;/script&gt;
@@ -395,7 +410,7 @@
                                 For inline scripts, replace the value of the <code>type</code> attribute with
                                 <code>opt-in</code> (this keeps the browser from executing the script)
                                 and add a data attribute with the original type,
-                                e.g. <code>data-type="text/javascript"</code>. Also add a <code>data-name</code>
+                                e.g. <code>data-type="application/javascript"</code>. Also add a <code>data-name</code>
                                 attribute that matches the name of the given app in your config,
                                 e.g. <code>data-name="googleAnalytics"</code>.
                             </p>
@@ -415,9 +430,9 @@
                 <h2 class="subtitle">Load the config and the script (last step, promised)</h2>
                 <div class="columns">
                     <div class="column is-6 column-eq">
-                        <pre><code class="language-javascript">&lt;script defer type="text/javascript"
+                        <pre><code class="language-javascript">&lt;script defer type="application/javascript"
         src="config.js"&gt;&lt;/script&gt;
-&lt;script defer type="text/javascript"
+&lt;script defer type="application/javascript"
         src="klaro.js"&gt;&lt;/script&gt;</code></pre>
                     </div>
                     <div class="column is-6 column-eq">
@@ -488,7 +503,8 @@
                                 <li>
                                     <strong>Custom callbacks</strong>: You can define custom callbacks
                                     for your applications that will be called with the given consent
-                                    state, both when the page is loaded and each time the user updates
+                                    state (<code>true</code> if confirmed, <code>false</code> if unconfirmed).
+                                    It will be called when Klaro is loaded as well as each time the user updates
                                     the consent choices. This allows you to perform more advanced management
                                     tasks such as calling API endpoints to remove data.
                                 </li>
@@ -523,6 +539,12 @@
                             also reach us by e-mail at <a href="mailto:klaro@kiprotect.com">klaro@kiprotect.com</a>.
                             We're looking forward to hear from you!
                         </p>
+                        <article class="message is-success">
+                            <div class="message-body">
+                            By the way, Klaro is pronounced [klɛro] and is a colloquial German word that means
+                            "alright" or "got it".
+                            </div>
+                        </article>
                     </div>
                 </div>
         </section>
@@ -538,7 +560,7 @@
                         &amp; <a href="https://kiprotect.com/imprint.html">KIProtect</a> (DPKit
                         is the responsible data controller).
                         We use third-party applications and cookies on this site
-                        for analytics, demonstration purposes and for improving security.
+                        for analytics, demonstration purposes and ensuring security.
                         You can review your consents
                         for these <a href="#" onClick="klaro.show();return false;">here</a>.
                         You have the following rights regarding your personal
@@ -547,12 +569,27 @@
                         complaint at a responsible data protection agency.
                     </p>
                     <p>
-                        You can reach us at <a href="mailto:privacy@kiprotect.com">privacy@dpkit.com</a>
+                        You can reach us at <a href="mailto:privacy@kiprotect.com">privacy@kiprotect.com</a>
                         if you have any questions regarding this website or
                         your personal data.
                     </p>
                 </div>
             </div>
         </section>
+
+        <script type="opt-in" data-type="application/javascript" data-name="matomo">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//analytics.7scientists.com/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '7']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='application/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+        </script>
+        <noscript><p><img data-name="matomo" data-src="//analytics.7scientists.com/piwik.php?idsite=7&rec=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>

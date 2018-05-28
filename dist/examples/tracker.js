@@ -1,4 +1,4 @@
-console.log("Tracking active!")
+console.log("This is an example of an external tracking script.")
 
 function setCookie(name, value, days) {
     var expires = "";
@@ -11,4 +11,4 @@ function setCookie(name, value, days) {
 }
 
 //we set a tracking cookie as an example
-setCookie("ga__foobar", "foo", 120)
+setCookie("external-tracker", "foo", 120)

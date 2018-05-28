@@ -75,15 +75,10 @@ var klaroI18nConfig = {
             default: true,
             title : 'Google Analytics (just an example)',
             purposes : ['analytics'],            
-            cookies : [/^ga_/i],
-            callback : function(consent, app){
-                //this is an example callback function...
-            },
         },
         {
             name : 'mouseflow',
             title : 'Mouseflow',
-            cookies : [/mouseflow/i],
             purposes : ['analytics']
         },
     ],

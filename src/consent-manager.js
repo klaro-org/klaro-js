@@ -5,7 +5,7 @@ export default class ConsentManager {
     constructor(config){
         this.config = config
         this.consents = this.defaultConsents
-        this.consented = false
+        this.confirmed = false
         this.changed = false
         this.loadConsents()
         this.applyConsents()
@@ -45,6 +45,9 @@ export default class ConsentManager {
     }
 
     resetConsent(){
+        this.consents = this.defaultConsents
+        this.confirmed = false
+        this.applyConsents()
         deleteCookie(this.cookieName)
     }
 
@@ -67,7 +70,7 @@ export default class ConsentManager {
                 complete = false
             }
         }
-        this.consented = complete
+        this.confirmed = complete
         if (!complete)
             this.changed = true
     }
@@ -91,20 +94,19 @@ export default class ConsentManager {
             deleteCookie(this.cookieName)
         const v = JSON.stringify(this.consents)
         setCookie(this.cookieName, v, 120)
-        this.consented = true
+        this.confirmed = true
         this.changed = false
     }
 
     applyConsents(){
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
-            const consent = this.getConsent(app.name)
-            if (this.consented || this.optOut || app.optOut){
-                this.updateAppElements(app, consent)
-                this.updateAppCookies(app, consent)
-                if (app.callback !== undefined)
-                    app.callback(consent, app)    
-            }
+            const confirmed = this.confirmed || (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
+            const consent = this.getConsent(app.name) && confirmed
+            this.updateAppElements(app, consent)
+            this.updateAppCookies(app, consent)
+            if (app.callback !== undefined)
+                app.callback(consent, app)
         }
     }
 
@@ -121,21 +123,44 @@ export default class ConsentManager {
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
 
-            const newElement = element.cloneNode(true)
-            if (consent){
-                if (src !== undefined)
-                    newElement.src = src
-                if (type !== undefined)
+            if (element.tagName == 'SCRIPT'){
+                // we create a new script instead of updating the node in
+                // place, as the script won't start correctly otherwise
+                const newElement = document.createElement('script')
+                for(var key of Object.keys(element.dataset)){
+                    console.log(key, element.dataset[key])
+                    newElement.dataset[key] = element.dataset[key]
+                }
+                newElement.type = element.type
+                newElement.innerText = element.innerText
+                newElement.text = element.text
+                newElement.class = element.class
+                newElement.style = element.style
+                newElement.id = element.id
+                newElement.name = element.name
+                newElement.defer = element.defer
+                newElement.async = element.async
+
+                if (consent){
                     newElement.type = type
+                    if (src !== undefined)
+                        newElement.src = src
+                }
+                //we remove the original element and insert a new one
+                parent.insertBefore(newElement, element)
+                parent.removeChild(element)
+            } else {
+                // all other elements (images etc.) are modified in place...
+                if (consent){
+                    element.dataset.oldSrc = element.src
+                    element.src = src
+                }
+                else{
+                    if (element.dataset.oldSrc !== undefined)
+                        element.src = element.dataset.oldSrc
+                }
             }
-            else{
-                delete newElement.src
-                newElement.type = "opt-in"
-            }
-            //we remove the original element and insert a new one
-            parent.insertBefore(newElement, element)
-            parent.removeChild(element)
-        }
+         }
         
     }
 

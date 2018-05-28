@@ -47,13 +47,13 @@ export default class ConsentNotice extends React.Component {
         if (manager.changed)
             changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>
 
-        if (manager.consented && !show)
+        if (manager.confirmed && !show)
             return <div />
         
-        if (modal || (show && modal === undefined) || (config.required && !manager.consented))
+        if (modal || (show && modal === undefined) || (config.required && !manager.confirmed))
             return <ConsentModal t={t} config={config} hide={hide} saveAndHide={saveAndHide} manager={manager} />
         
-        if (!manager.consented && !config.noNotice)
+        if (!manager.confirmed && !config.noNotice)
             return <div className="cookie-notice">
                 <div className="cn-body">
                     <p>

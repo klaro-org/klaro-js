@@ -8,7 +8,7 @@ export default class ConsentModal extends React.Component {
         const {hide, saveAndHide, apps, config, manager, t} = this.props
         const toggle = (app, value) => {
             manager.updateConsent(app.name, value)
-            if (manager.consented)
+            if (manager.confirmed)
                 manager.saveAndApplyConsents()
         }
 
@@ -29,7 +29,7 @@ export default class ConsentModal extends React.Component {
                     </p>
                 </div>
                 <div className="cm-body">
-                    <Apps t={t} apps={config.apps} toggle={toggle} manager={manager} />
+                    <Apps t={t} config={config} toggle={toggle} manager={manager} />
                 </div>
                 <div className="cm-footer">
                     <a className="cm-btn cm-btn-success" href="#" onClick={saveAndHide}>{t(['ok'])}</a>

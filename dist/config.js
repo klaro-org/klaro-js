@@ -32,7 +32,7 @@ window.klaroConfig = {
     // If "optOut" is set to true, Klaro will enable all apps by default even
     // before the user actively consents (not recommended).
     // Can be overwritten on a per-app basis.
-    optOut: true,
+    optOut: false,
 
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
@@ -50,19 +50,28 @@ window.klaroConfig = {
         },
         // Add an entry for each app that you define below, using the name of
         // the app that you chose.
-        googleAnalytics : {
+        inlineTracker : {
 
             // Add translations for the description of the app for all
             // languages that you want to support.
             description : {
-                de : 'Sammeln von Besucherstatistiken (Beispiel)',
-                en : 'Collecting of visitor statistics (Example)',
+                de : 'Beispiel für ein Inline-Tracking Skript',
+                en : 'Example of an inline tracking script',
+            },
+        },
+        externalTracker : {
+
+            // Add translations for the description of the app for all
+            // languages that you want to support.
+            description : {
+                de : 'Beispiel für ein externes Tracking Skript',
+                en : 'Example of an external tracking script',
             },
         },
         adsense : {
             description : {
                 de : 'Anzeigen von Werbeanzeigen (Beispiel)',
-                en : 'Displaying of advertisements (Example)',
+                en : 'Displaying of advertisements (just an example)',
             },
         },
         matomo : {
@@ -79,14 +88,14 @@ window.klaroConfig = {
         },
         intercom : {
             description : {
-                de : 'Chat Widget & Sammeln von Besucherstatistiken (Beispiel)',
-                en : 'Chat widget & collecting of visitor statistics (Example)',
+                de : 'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)',
+                en : 'Chat widget & collecting of visitor statistics (just an example)',
             },            
         },
         mouseflow : {
             description : {
-                de : 'Echtzeit-Benutzeranalyse (Beispiel)',
-                en : 'Real-Time user analytics (Example)',
+                de : 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
+                en : 'Real-Time user analytics (just an example)',
             },            
         },
 
@@ -116,14 +125,14 @@ window.klaroConfig = {
     apps : [
         {
             // Each app should have a unique (and short) name.
-            name : 'googleAnalytics',
+            name : 'matomo',
 
             // Tf "default" is set to true, the app will be enabled by default
-            // (overwrites global "appDefault" setting).
+            // Overwrites global "appDefault" setting.
             default: true,
             
             // The title of you app as listed in the consent modal.
-            title : 'Google Analytics',
+            title : 'Matomo/Piwik',
 
             // The purpose(s) of this app. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
@@ -133,35 +142,40 @@ window.klaroConfig = {
             // cookies set by this app. If the user withdraws consent for a
             // given app, Klaro will then automatically delete all matching
             // cookies.
-            cookies : [/^ga_/i],
+            cookies : [/^_pk_/i, 'piwik_ignore'],
             
             // An optional callback function that will be called each time
             // the consent state for the app changes (true=consented). Passes
             // the `app` config as the second parameter as well.
             callback : function(consent, app){
                 // This is an example callback function.
+                console.log("User consent for app "+app.name+": consent="+consent)
             },
 
             // If "required" is set to true, Klaro will not allow this app to
             // be disabled by the user.
+            // Overwrites global "required" setting.
             required : false,
 
             // If "optOut" is set to true, Klaro will load this app even before
             // the user gave explicit consent. Not recommended.
-            optOut : false,
+            // Overwrite global "optOut" setting.
+            optOut : true,
         },
 
         // The apps will appear in the modal in the same order as defined here.
         {
-            name : 'mouseflow',
-            title : 'Mouseflow',
-            cookies : [/mouseflow/i],
-            purposes : ['analytics']
+            name : 'inlineTracker',
+            title : 'Inline Tracker',
+            purposes : ['analytics'],
+            cookies : ['inline-tracker'],
+            optOut: true,
         },
         {
-            name : 'matomo',
-            title : 'Matomo/Piwik',
+            name : 'externalTracker',
+            title : 'External Tracker',
             purposes : ['analytics'],
+            cookies : ['external-tracker'],
         },
         {
             name : 'intercom',
@@ -169,9 +183,13 @@ window.klaroConfig = {
             purposes : ['livechat'],
         },
         {
+            name : 'mouseflow',
+            title : 'Mouseflow',
+            purposes : ['analytics'],
+        },
+        {
             name : 'adsense',
             title : 'Google AdSense',
-            cookies : [/adsense/i],
             purposes : ['advertising']
         },
         {
