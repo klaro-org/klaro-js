@@ -14,7 +14,7 @@ all relevant regulations (notably GDPR and ePrivacy).
   third-party apps and easily customize the tool according to your needs.
 * **Multilingual**: Full internationalization support with English and
   German translations included. New translations can be added in just a few
-  lines of code.
+  lines of code. (Contributions welcome!)
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
   everything that is required, including stylesheets and images.
 * **Intuitive and responsive**: Klaro is designed to blend in with
@@ -81,6 +81,18 @@ you can build it from scratch using the following commands:
     npm install
     npm run-script make-dev #will run a development server
     npm run-script make #will build the production version
+
+## Contributing
+
+Want to contribute? We'd love that!
+
+If you have a feature request or bug to report, please fill out [a 
+GitHub Issue](https://github.com/KIProtect/klaro/issues) to begin the conversation.
+
+If you want to help out, but don't know where to begin, check out [the open 
+issues tagged "help wanted"](https://github.com/KIProtect/klaro/labels/help%20wanted).
+
+If you are multilingual, consider contributing a translation we don't have yet. 
 
 ## License & Third-Party Libraries
 
