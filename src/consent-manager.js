@@ -128,7 +128,6 @@ export default class ConsentManager {
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
                 for(var key of Object.keys(element.dataset)){
-                    console.log(key, element.dataset[key])
                     newElement.dataset[key] = element.dataset[key]
                 }
                 newElement.type = element.type

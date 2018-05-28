@@ -18,16 +18,19 @@ export default class ConsentNotice extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
 
         const showModal = (e) => {
-            e.preventDefault()
+            if (e !== undefined)
+                e.preventDefault()
             this.setState({modal: true})
         }
         const hide = (e) => {
-            e.preventDefault()
+            if (e !== undefined)
+                e.preventDefault()
             this.setState({modal: false})
         }
 
         const saveAndHide = (e) => {
-            e.preventDefault()
+            if (e !== undefined)
+                e.preventDefault()
             manager.saveAndApplyConsents()
             this.setState({modal: false})
         }

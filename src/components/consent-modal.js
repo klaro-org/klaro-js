@@ -16,7 +16,7 @@ export default class ConsentModal extends React.Component {
         if (!config.required)
             closeLink = <a className="hide" onClick={hide} href="#"><Close /></a>
 
-        const ppLink = <a href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
+        const ppLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
