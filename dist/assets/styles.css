@@ -1,0 +1,140 @@
+
+.container {
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.pulse {
+    background: #f00;
+    animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255,169,44,1.0);
+}
+70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+}
+100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+}
+}
+@keyframes pulse {
+0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255,169,44, 1.0);
+    box-shadow: 0 0 0 0 rgba(255,169,44, 1.0);
+}
+70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+    box-shadow: 0 0 0 10px rgba(255,169,44, 0);
+}
+100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(255,169,44, 0);
+}
+}
+
+.camera {
+    position: fixed;
+    opacity: 0.7;
+    display: block;
+    top: 60px;
+    right: 28px;
+    z-index: 1000;
+    width: 40px;
+    border-radius: 5px;
+}
+
+@media(min-width: 768px){
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    .container h1.title, .container h2.subtitle {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+}
+
+.container h2.subtitle {
+    padding-top: 20px;
+    padding-bottom: 8px;
+    border-bottom :1px solid #eee;
+    color: #0a4;
+}
+
+.hero-body h2.subtitle {
+    border-bottom: none;
+}
+
+.container p {
+    font-size: 18px;
+}
+
+pre {
+    border: 10px solid #555;
+}
+
+.button {
+    margin-bottom: 8px;
+}
+@media(max-width: 767px){
+    .hero-body .button {
+        width: 100%;
+    }
+}
+
+.hero-body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;           
+}
+
+.hero-body .container {
+    max-width: 900px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.hero-body img.screenshot {
+    display: block;
+    padding-top: 20px;
+}
+@media(min-width: 1024px){
+    .hero-body img.screenshot {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+h1.title {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.card-image.logo i {
+    font-size: 120px;
+    margin: 0 auto;
+    display: block;
+    width: 160px;
+    padding: 20px;
+}
+
+@media(max-width: 1088px){
+    .container {
+        padding: 10px;
+    }
+}
+.column-eq {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-eq .card {
+    height: 100%;
+}
+
+.container.features, .container.getting-started {
+    margin-top: 20px;
+}
