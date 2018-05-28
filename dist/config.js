@@ -170,7 +170,7 @@ var klaroConfig = {
             // If "optOut" is set to true, Klaro will load this app even before
             // the user gave explicit consent. Not recommended.
             // Overwrite global "optOut" setting.
-            optOut : true,
+            optOut : false,
         },
 
         // The apps will appear in the modal in the same order as defined here.
@@ -179,7 +179,7 @@ var klaroConfig = {
             title : 'Inline Tracker',
             purposes : ['analytics'],
             cookies : ['inline-tracker'],
-            optOut: true,
+            optOut: false,
         },
         {
             name : 'externalTracker',
