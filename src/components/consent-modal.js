@@ -9,7 +9,7 @@ export default class ConsentModal extends React.Component {
         const toggle = (app, value) => {
             manager.updateConsent(app.name, value)
             if (manager.confirmed)
-                manager.saveAndApplyConsents()
+                manager.saveAndApplyConsents(true)
         }
 
         let closeLink

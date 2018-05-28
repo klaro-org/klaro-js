@@ -133,9 +133,13 @@ var klaroConfig = {
             // Each app should have a unique (and short) name.
             name : 'matomo',
 
-            // Tf "default" is set to true, the app will be enabled by default
+            // If "default" is set to true, the app will be enabled by default
             // Overwrites global "appDefault" setting.
             default: true,
+
+            // If "onlyOnce" is set to true, the app will only be executed
+            // once regardless how often the user toggles it on and off.
+            onlyOnce: true,
             
             // The title of you app as listed in the consent modal.
             title : 'Matomo/Piwik',

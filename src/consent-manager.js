@@ -3,10 +3,12 @@ import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
 export default class ConsentManager {
 
     constructor(config){
-        this.config = config
-        this.consents = this.defaultConsents
-        this.confirmed = false
-        this.changed = false
+        this.config = config // the configuration
+        this.consents = this.defaultConsents // the consent states of the configured apps
+        this.confirmed = false // true if the user actively confirmed his/her consent
+        this.changed = false // true if the app config changed compared to the cookie
+        this.states = {} // keep track of the change (enabled, disabled) of individual apps
+        this.executedOnce = {} //keep track of which apps have been executed at least once
         this.loadConsents()
         this.applyConsents()
     }
@@ -101,12 +103,21 @@ export default class ConsentManager {
     applyConsents(){
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
+            const state = this.states[app.name]
             const confirmed = this.confirmed || (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
             const consent = this.getConsent(app.name) && confirmed
+            if (state === consent)
+                continue
+            // this app was already executed once and should not be executed more than that
+            if (app.onlyOnce && this.executedOnce[app.name])
+                continue
+            if (consent === true)
+                this.executedOnce[app.name] = true
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
             if (app.callback !== undefined)
                 app.callback(consent, app)
+            this.states[app.name] = consent
         }
     }
 
