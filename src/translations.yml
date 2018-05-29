@@ -70,16 +70,13 @@ app:
       de: (Opt-Out)
       en: (opt-out)
       it: (rifiuto)
-      it: (renunță)
+      ro: (renunță)
+      fr: (opt-out)
     description:
       de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
       en: This app is loaded by default (but you can opt out)
       it: Questa app è caricata di default (ma puoi disattivarla)
       ro: Această aplicație este încărcată în mod implicit (dar puteți renunța)
-      fr: (opt-out)
-    description:
-      de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
-      en: This app is loaded by default (but you can opt out)
       fr: Cette application est chargée par défaut (mais vous pouvez la désactiver)
   required:
     title:
