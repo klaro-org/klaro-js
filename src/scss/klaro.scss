@@ -4,8 +4,17 @@ $border-dark: 1px solid #555;
 $font-color-dark: #eee;
 $font-color-dark-deemphasized: #999;
 $bg-dark: #333;
-$blue: #2196F3;
-$green: #0a4;
+$red2: #B24E14;
+$red1: #BA1E04;
+$yellow1: #F8C200;
+$yellow2: #D4D026;
+$blue3: #005091;
+$blue2: #003F8A;
+$blue1: #0885BA;
+$blue4: #9AC3D4;
+$green1: #3A0;
+$green2: #006A4E;
+$green3: #01440C;
 
 .klaro {
 
@@ -20,7 +29,7 @@ $green: #0a4;
         }
     
         a {
-            color: $green;
+            color: $green1;
             text-decoration: none;
         }
     
@@ -52,11 +61,15 @@ $green: #0a4;
             }
     
             &.cm-btn-success {
-                background: $green;
+                background: $green1;
+            }
+
+            &.cm-btn-danger {
+                background: $red1;
             }
     
             &.cm-btn-info {
-                background: $blue;
+                background: $blue1;
             }
         }
     
@@ -150,10 +163,10 @@ $green: #0a4;
                     display: inline-block;
                     width: auto;
                 }
-                ul.apps {
+                ul.cm-apps {
                     padding :0;
                     margin: 0;
-                    li {
+                    li.cm-app {
                         &:first-child{
                             margin-top: 0;
                         }
@@ -173,6 +186,11 @@ $green: #0a4;
                         p.purposes {
                             font-size: 0.8em;
                             color: $font-color-dark-deemphasized;
+                        }
+
+                        &.cm-toggle-all {
+                            border-top: $border-dark;
+                            padding-top: 1em;
                         }
 
                         span.cm-app-title {
@@ -235,6 +253,9 @@ $green: #0a4;
             p.cn-ok {
                 padding-top: 0.5em;
                 margin: 0;
+            }
+
+            a.cn-decline {
             }
         }
     

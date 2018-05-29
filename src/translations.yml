@@ -31,7 +31,17 @@ consentNotice:
 ok:
   de: OK
   en: OK
+decline:
+  de: Ablehnen
+  en: Decline
 app:
+  disableAll:
+    title:
+      en: Toggle all apps
+      de: Alle Anwendungen aktivieren/deaktivieren
+    description:
+      de: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
+      en : Use this switch to enable/disable all apps.
   optOut:
     title:
       de: (Opt-Out)

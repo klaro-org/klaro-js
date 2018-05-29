@@ -10,13 +10,13 @@
     &.disabled {
 
         input:checked + .slider {
-            background-color: $green;
+            background-color: $green1;
           }
         
     }
 
     input:checked + .slider {
-        background-color: $blue;
+        background-color: $blue1;
         }
 
         /* The slider */
@@ -45,7 +45,7 @@
         }
         
         input:focus + .slider {
-        box-shadow: 0 0 1px $blue;
+        box-shadow: 0 0 1px $blue1;
         }
         
         input:checked + .slider:before {
