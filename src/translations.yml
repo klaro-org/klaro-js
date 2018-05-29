@@ -4,6 +4,7 @@ consentModal:
     en: Information that we collect
     it: Informazioni che raccogliamo
     ro: Informațiile pe care le colectăm
+    fr: Les informations que nous collectons
   description:
     de: >
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
@@ -13,12 +14,15 @@ consentModal:
       Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
     ro: >
       Aici puteți vedea și personaliza informațiile pe care le colectăm despre dvs.
+    fr: >
+      Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
   privacyPolicy:
     name:
       de: Datenschutzerklärung
       en: privacy policy
       it: Policy Privacy
       ro: politica privacy
+      fr: politique de confidentialité
     text:
       de: >
         Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
@@ -28,12 +32,15 @@ consentModal:
         Per saperne di più, leggi la nostra {privacyPolicy}.
       ro: >
         Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+      fr: >
+        Pour en savoir plus, merci de lire notre {privacyPolicy}.
 consentNotice:
   changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
     it: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
     ro: Au existat modificări de la ultima vizită, vă rugăm să actualizați consimțământul.
+    fr: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
   description:
     de: >
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
@@ -43,16 +50,20 @@ consentNotice:
       Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
     ro: >
       Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
+    fr: >
+      Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
   learnMore:
     de: Mehr erfahren
     en: Learn more
     it: Scopri di più
     ro: Află mai multe
+    fr: En savoir plus
 ok:
   de: OK
   en: OK
   it: OK
-  it: OK
+  ro: OK
+  fr: OK
 app:
   optOut:
     title:
@@ -65,17 +76,24 @@ app:
       en: This app is loaded by default (but you can opt out)
       it: Questa app è caricata di default (ma puoi disattivarla)
       ro: Această aplicație este încărcată în mod implicit (dar puteți renunța)
+      fr: (opt-out)
+    description:
+      de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
+      en: This app is loaded by default (but you can opt out)
+      fr: Cette application est chargée par défaut (mais vous pouvez la désactiver)
   required:
     title:
       de: (immer notwendig)
       en: (always required)
       it: (sempre richiesto)
       ro: (întotdeauna necesar)
+      fr: (toujours requis)
     description:
       de: Diese Anwendung wird immer benötigt
       en: This application is always required
       it: Quest'applicazione è sempre richiesta
       ro: Această aplicație este întotdeauna necesară
+      fr: Cette application est toujours requise
 poweredBy:
   de:
     Realisiert mit Klaro!
@@ -85,13 +103,17 @@ poweredBy:
     Realizzato da Klaro!
   ro:
     Realizat de Klaro!
+  fr:
+    Propulsé par Klaro!
 purposes:
   de: Zwecke
   en: Purposes
   it: Scopi
   ro: Scopuri
+  fr: Utilisations
 purpose:
   de: Zweck
   en: Purpose
   it: Scopo
   ro: Scop
+  fr: Utilisation
