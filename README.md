@@ -8,11 +8,11 @@ all relevant regulations (notably GDPR and ePrivacy).
 # Demo
 
 This GIF shows how Klaro deletes Cookies as the user disables apps.
-
-A full-length version of the video with subtitles and explanations is available on [Youtube](https://youtu.be/Bve7bh0gZig)
+A full-length version of the video with subtitles and explanations is
+available on [Youtube](https://youtu.be/Bve7bh0gZig)
 as well as in [this repository](dist/assets/demo.mp4).
 
-![Klaro in Action](dist/assets/demo.gif)
+<p align="center"><img src="dist/assets/demo.gif" /></p>
 
 ## Advantages
 
