@@ -5,6 +5,10 @@ third-party applications on your website. It is designed to be extremely
 simple, intuitive and easy to use while allowing you to be compliant will
 all relevant regulations (notably GDPR and ePrivacy).
 
+# Demo
+
+![Klaro in Action](dist/assets/demo.gif)
+
 ## Advantages
 
 * **Free and Open Source**: No hidden fees, subscriptions or restrictions.
