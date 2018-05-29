@@ -2,58 +2,77 @@ consentModal:
   title:
     de: Informationen die wir sammeln
     en: Information that we collect
+    fr: Les informations que nous collectons
   description:
     de: >
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
     en: >
       Here you can see and customize the information that we collect about you.
+    fr: >
+      Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
   privacyPolicy:
     name:
       de: Datenschutzerklärung
       en: privacy policy
+      fr: politique de confidentialité
     text:
       de: >
         Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
       en: >
         To learn more, please read our {privacyPolicy}.
+      fr: >
+        Pour en savoir plus, merci de lire notre {privacyPolicy}.
 consentNotice:
   changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
+    fr: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
   description:
     de: >
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
     en: >
       We collect and process your personal information for the following purposes: {purposes}.
+    fr: >
+      Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
   learnMore:
     de: Mehr erfahren
     en: Learn more
+    fr: En savoir plus
 ok:
   de: OK
   en: OK
+  fr: OK
 app:
   optOut:
     title:
       de: (Opt-Out)
       en: (opt-out)
+      fr: (opt-out)
     description:
       de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
       en: This app is loaded by default (but you can opt out)
+      fr: Cette application est chargée par défaut (mais vous pouvez la désactiver)
   required:
     title:
       de: (immer notwendig)
       en: (always required)
+      fr: (toujours requis)
     description:
       de: Diese Anwendung wird immer benötigt 
       en: This application is always required
+      fr: Cette application est toujours requise
 poweredBy:
   en:
     Powered by Klaro!
   de:
     Realisiert mit Klaro!
+  fr:
+    Propulsé par Klaro !
 purposes:
   de: Zwecke
   en: Purposes
+  fr: Utilisations
 purpose:
   de: Zweck
   en: Purpose
+  fr: Utilisation
