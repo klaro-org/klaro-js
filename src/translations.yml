@@ -2,58 +2,77 @@ consentModal:
   title:
     de: Informationen die wir sammeln
     en: Information that we collect
+    it: Informazioni che raccogliamo
   description:
     de: >
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
     en: >
       Here you can see and customize the information that we collect about you.
+    it: >
+      Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
   privacyPolicy:
     name:
       de: Datenschutzerklärung
       en: privacy policy
+      it: Policy Privacy
     text:
       de: >
         Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
       en: >
         To learn more, please read our {privacyPolicy}.
+      it: >
+        Per saperne di più, leggi la nostra {privacyPolicy}.
 consentNotice:
   changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
+    it: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
   description:
     de: >
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
     en: >
       We collect and process your personal information for the following purposes: {purposes}.
+    it: >
+      Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
   learnMore:
     de: Mehr erfahren
     en: Learn more
+    it: Scopri di più
 ok:
   de: OK
   en: OK
+  it: OK
 app:
   optOut:
     title:
       de: (Opt-Out)
       en: (opt-out)
+      it: (rifiuto)
     description:
       de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
       en: This app is loaded by default (but you can opt out)
+      it: Questa app è caricata di default (ma puoi disattivarla)
   required:
     title:
       de: (immer notwendig)
       en: (always required)
+      it: (sempre richiesto)
     description:
-      de: Diese Anwendung wird immer benötigt 
+      de: Diese Anwendung wird immer benötigt
       en: This application is always required
+      it: Quest'applicazione è sempre richiesta
 poweredBy:
-  en:
-    Powered by Klaro!
   de:
     Realisiert mit Klaro!
+  en:
+    Powered by Klaro!
+  it:
+    Realizzato da Klaro!
 purposes:
   de: Zwecke
   en: Purposes
+  en: Scopi
 purpose:
   de: Zweck
   en: Purpose
+  en: Scopo
