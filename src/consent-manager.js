@@ -134,11 +134,6 @@ export default class ConsentManager {
             const consent = this.getConsent(app.name) && confirmed
             if (state === consent)
                 continue
-            // this app was already executed once and should not be executed more than that
-            if (app.onlyOnce && this.executedOnce[app.name])
-                continue
-            if (consent === true)
-                this.executedOnce[app.name] = true
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
             if (app.callback !== undefined)
@@ -148,6 +143,14 @@ export default class ConsentManager {
     }
 
     updateAppElements(app, consent){
+
+        // we make sure we execute this app only once if the option is set
+        if (consent){
+            if (app.onlyOnce && this.executedOnce[app.name])
+                return
+            this.executedOnce[app.name] = true
+        }
+
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
         for(var i=0;i<elements.length;i++){
             const element = elements[i]
@@ -214,7 +217,7 @@ export default class ConsentManager {
 
     updateAppCookies(app, consent){
 
-        if (consent === true)
+        if (consent)
             return
 
         function escapeRegexStr(str) {

@@ -152,7 +152,7 @@ var klaroConfig = {
             // cookies set by this app. If the user withdraws consent for a
             // given app, Klaro will then automatically delete all matching
             // cookies.
-            cookies : [/^_pk_/i, 'piwik_ignore'],
+            cookies : [/^_pk_.*$/, 'piwik_ignore'],
             
             // An optional callback function that will be called each time
             // the consent state for the app changes (true=consented). Passes
