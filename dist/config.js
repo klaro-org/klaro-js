@@ -24,8 +24,9 @@ var klaroConfig = {
     // Defines the default state for applications (true=enabled by default).
     default: true,
 
-    // If "mustConsent" is set to true, Klaro will not allow the user to close
-    // the modal before having actively consented.
+    // If "mustConsent" is set to true, Klaro will directly display the consent
+    // manager modal and not allow the user to close it before having actively
+    // consented or declines the use of third-party apps.
     mustConsent: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
@@ -182,7 +183,7 @@ var klaroConfig = {
         {
             name : 'externalTracker',
             title : 'External Tracker',
-            purposes : ['analytics'],
+            purposes : ['analytics', 'security'],
             cookies : ['external-tracker'],
         },
         {

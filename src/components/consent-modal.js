@@ -4,44 +4,8 @@ import Apps from './apps'
 
 export default class ConsentModal extends React.Component {
 
-    constructor(props, context){
-        super(props, context)
-        props.manager.watch(this)
-        this.state = {
-            consents : props.manager.consents
-        }
-    }
-
-    componentWillUnmount(){
-        const {manager} = this.props
-        manager.unwatch(this)
-    }
-
-    update(obj, type, data){
-        const {manager} = this.props
-        if (obj == manager && type == 'consents')
-            this.setState({consents : data})
-    }
-
     render(){
         const {hide, saveAndHide, declineAndHide, config, manager, t} = this.props
-        const {consents} = this.state
-
-        const toggle = (app, value) => {
-            manager.updateConsent(app.name, value)
-            if (manager.confirmed)
-                manager.saveAndApplyConsents()
-        }
-
-        const toggleAll = (value) => {
-            config.apps.map((app) => {
-                if (app.required)
-                    return
-                manager.updateConsent(app.name, value)
-            })
-            if (manager.confirmed)
-                manager.saveAndApplyConsents()
-        }
 
         let closeLink
         if (!config.mustConsent)
@@ -60,7 +24,7 @@ export default class ConsentModal extends React.Component {
                     </p>
                 </div>
                 <div className="cm-body">
-                    <Apps t={t} consents={consents} config={config} toggleAll={toggleAll} toggle={toggle} manager={manager} />
+                    <Apps t={t} config={config} manager={manager} />
                 </div>
                 <div className="cm-footer">
                     <a className="cm-btn cm-btn-success" href="#" onClick={saveAndHide}>{t(['ok'])}</a>
