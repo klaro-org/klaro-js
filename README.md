@@ -34,8 +34,8 @@ as well as in [this repository](dist/assets/demo.mp4).
 
 ## Getting Started
 
-To use the widget on your website, simply download [dist/klaro.js](dist/klaro.js)
-as well as the example config [dist/config.js](dist/config.js). Follow the
+To use the widget on your website, simply download [https://klaro.kiprotect.com/klaro.js](klaro.js)
+as well as the example config [https://klaro.kiprotect.com/config.js](dist/config.js). Follow the
 instructions below to adapt the config to your needs and then include
 the two files in your website like this:
 
