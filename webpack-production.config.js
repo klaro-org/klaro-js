@@ -62,7 +62,7 @@ var config = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
-      VERSION : JSON.stringify(process.env.APP_VERSION || 'unknown'),
+      VERSION : JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({

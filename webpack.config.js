@@ -91,7 +91,7 @@ var config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
-      VERSION : JSON.stringify(process.env.APP_VERSION || 'unknown'),
+      VERSION : JSON.stringify('development'),
     }),
   ]
 };
