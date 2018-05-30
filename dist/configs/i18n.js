@@ -5,7 +5,7 @@ var klaroI18nConfig = {
     noNotice: true,
     privacyPolicy: '/#privacy',
     poweredBy : 'https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js',
-    appDefault: true,
+    default: true,
     translations : {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `translations.yml` file in the `src` directory of this repo:
@@ -72,7 +72,6 @@ var klaroI18nConfig = {
     apps : [
         {
             name : 'googleAnalytics',
-            default: true,
             title : 'Google Analytics',
             purposes : ['analytics'],            
         },

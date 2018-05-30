@@ -9,12 +9,29 @@ export default class ConsentManager {
         this.changed = false // true if the app config changed compared to the cookie
         this.states = {} // keep track of the change (enabled, disabled) of individual apps
         this.executedOnce = {} //keep track of which apps have been executed at least once
+        this.watchers = new Set([])
         this.loadConsents()
         this.applyConsents()
     }
 
     get cookieName(){
         return this.config.cookieName || 'klaro'
+    }
+
+    watch(watcher){
+        if (!this.watchers.has(watcher))
+            this.watchers.add(watcher)
+    }
+
+    unwatch(watcher){
+        if (this.watchers.has(watcher))
+            this.watchers.delete(watcher)
+    }
+    
+    notify(name, data){
+        this.watchers.forEach((watcher) => {
+            watcher.update(this, name, data)
+        })
     }
 
     getApp(name){
@@ -27,7 +44,7 @@ export default class ConsentManager {
     getDefaultConsent(app){
         let consent = app.default
         if (consent === undefined)
-            consent = this.config.appDefault
+            consent = this.config.default
         if (consent === undefined)
             consent = false
         return consent
@@ -42,8 +59,15 @@ export default class ConsentManager {
         return consents
     }
 
+    declineAll(){
+        this.config.apps.map((app) => {
+            this.updateConsent(app.name, false)
+        })
+    }
+
     updateConsent(name, value){
         this.consents[name] = value
+        this.notify('consents', this.consents)
     }
 
     resetConsent(){
@@ -51,13 +75,14 @@ export default class ConsentManager {
         this.confirmed = false
         this.applyConsents()
         deleteCookie(this.cookieName)
+        this.notify('consents', this.consents)
     }
 
     getConsent(name){
         return this.consents[name] || false
     }
 
-    checkConsents(){
+    _checkConsents(){
         let complete = true
         const apps = new Set(this.config.apps.map((app)=>{return app.name}))
         const consents = new Set(Object.keys(this.consents))
@@ -81,7 +106,8 @@ export default class ConsentManager {
         const consentCookie = getCookie(this.cookieName)
         if (consentCookie !== null){
             this.consents = JSON.parse(consentCookie.value)
-            this.checkConsents()
+            this._checkConsents()
+            this.notify('consents', this.consents)
         }
         return this.consents
     }
@@ -108,11 +134,6 @@ export default class ConsentManager {
             const consent = this.getConsent(app.name) && confirmed
             if (state === consent)
                 continue
-            // this app was already executed once and should not be executed more than that
-            if (app.onlyOnce && this.executedOnce[app.name])
-                continue
-            if (consent === true)
-                this.executedOnce[app.name] = true
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
             if (app.callback !== undefined)
@@ -122,6 +143,14 @@ export default class ConsentManager {
     }
 
     updateAppElements(app, consent){
+
+        // we make sure we execute this app only once if the option is set
+        if (consent){
+            if (app.onlyOnce && this.executedOnce[app.name])
+                return
+            this.executedOnce[app.name] = true
+        }
+
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
         for(var i=0;i<elements.length;i++){
             const element = elements[i]
@@ -188,7 +217,7 @@ export default class ConsentManager {
 
     updateAppCookies(app, consent){
 
-        if (consent === true)
+        if (consent)
             return
 
         function escapeRegexStr(str) {

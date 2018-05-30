@@ -4,15 +4,15 @@ import {getPurposes} from 'utils/config'
 
 export default class Apps extends React.Component {
     render(){
-        const {config, toggle, manager, t} = this.props
+        const {config, toggle, toggleAll, consents, t} = this.props
         const {apps} = config
         const appItems = apps.map((app) => {
             const toggleApp = (value) => {
                 toggle(app, value)
             }
-            const required = app.required || config.required || false
-            const optOut = app.optOut || config.optOut || false
-            const checked = manager.getConsent(app.name)
+            const required = app.required || false
+            const optOut = app.optOut || false
+            const checked = consents[app.name]
 
             const purposesText = app.purposes.map((purpose) => t(['purposes', purpose])).join(", ")
             
@@ -25,8 +25,20 @@ export default class Apps extends React.Component {
                 <p className="purposes">{t([app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
             </li>
         })
-        return <ul className="apps">
+        const allDisabled = apps.filter((app) => {
+            const required = app.required || false
+            if (required)
+                return false
+            return consents[app.name]
+        }).length == 0 ? true : false
+        const disableAllItem = <li className="cm-app cm-toggle-all">
+            <Switch checked={!allDisabled} onToggle={toggleAll} />
+            <span className="cm-app-title">{t(['app','disableAll','title'])}</span>
+            <p className="cm-app-description">{t(['app', 'disableAll', 'description'])}</p>
+        </li>
+        return <ul className="cm-apps">
             {appItems}
+            {disableAllItem}
         </ul>
 
     }

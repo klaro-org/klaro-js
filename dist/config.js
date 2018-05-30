@@ -22,17 +22,17 @@ var klaroConfig = {
     privacyPolicy: '/#privacy',
     
     // Defines the default state for applications (true=enabled by default).
-    appDefault: true,
+    default: true,
 
-    // If "required" is set to true, Klaro will not allow the user to close
+    // If "mustConsent" is set to true, Klaro will not allow the user to close
     // the modal before having actively consented.
-    // Can be overwritten on a per-app basis.
-    required: false,
+    mustConsent: false,
 
-    // If "optOut" is set to true, Klaro will enable all apps by default even
-    // before the user actively consents (not recommended).
-    // Can be overwritten on a per-app basis.
-    optOut: false,
+    // You can define the UI language directly here. If undefined, Klaro will
+    // use the value given in the global "lang" variable. If that does
+    // not exist, it will use the value given in the "lang" attribute of your
+    // HTML tag. If that also doesn't exist, it will use 'en'.
+    //lang: 'en',
 
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
@@ -134,7 +134,7 @@ var klaroConfig = {
             name : 'matomo',
 
             // If "default" is set to true, the app will be enabled by default
-            // Overwrites global "appDefault" setting.
+            // Overwrites global "default" setting.
             default: true,
 
             // If "onlyOnce" is set to true, the app will only be executed
@@ -152,7 +152,7 @@ var klaroConfig = {
             // cookies set by this app. If the user withdraws consent for a
             // given app, Klaro will then automatically delete all matching
             // cookies.
-            cookies : [/^_pk_/i, 'piwik_ignore'],
+            cookies : [/^_pk_.*$/, 'piwik_ignore'],
             
             // An optional callback function that will be called each time
             // the consent state for the app changes (true=consented). Passes
@@ -164,13 +164,11 @@ var klaroConfig = {
 
             // If "required" is set to true, Klaro will not allow this app to
             // be disabled by the user.
-            // Overwrites global "required" setting.
             required : false,
 
             // If "optOut" is set to true, Klaro will load this app even before
             // the user gave explicit consent. Not recommended.
-            // Overwrite global "optOut" setting.
-            optOut : true,
+            optOut : false,
         },
 
         // The apps will appear in the modal in the same order as defined here.
@@ -179,7 +177,7 @@ var klaroConfig = {
             title : 'Inline Tracker',
             purposes : ['analytics'],
             cookies : ['inline-tracker'],
-            optOut: true,
+            optOut: false,
         },
         {
             name : 'externalTracker',
