@@ -23,24 +23,14 @@ as well as in [this repository](dist/assets/demo.mp4).
   third-party apps and easily customize the tool according to your needs.
 * **Multilingual**: Full internationalization support with English, French, Norwegian, Italian (in progress), Romanian (in progress) and
   German translations included out of the box. New translations can be added in just a few
-  lines of code. (Contributions welcome!)
+  lines of code. Contributions welcome!
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
   everything that is required, including stylesheets and images.
 * **Intuitive and responsive**: Klaro is designed to blend in with
-  your existing design and is optimized for desktop and mobile client. It is
-  compatible with all modern browsers.
+  your existing design and optimized for modern desktop and mobile browsers.
 * **Secure and reliable**: Klaro ensures that no third-party apps or
   trackers are executed without the consent of the user, even when
-  Javascript is disabled or the Klaro itself gets blocked.
-
-## Goals
-
-Klaro helps you to manage user consent and generate trust by doing the following things:
-
-* Ensure that no third-party apps/integrations are executing before the user
-  has given explicit (or -if you dare- implicit) consent.
-* Allow the user to easily manage and customize consent decision.
-
+  Javascript is disabled or Klaro itself gets blocked.
 
 ## Getting Started
 
@@ -53,7 +43,7 @@ the two files in your website like this:
     <script defer type="text/javascript" src="klaro.js"></script>
 
 Do not forget to change your existing apps/trackers as outlined in the next
-section as well.
+section as well so that Klaro can manage them.
 
 ## Managing Third-Party Apps/Trackers
 
@@ -112,3 +102,14 @@ The accompanying website
 uses [Bulma](https://bulma.io), [Bootstrap](https://getbootstrap.com)
 and [Prism](http://prismjs.com/) and a [surveillance camera image](https://upload.wikimedia.org/wikipedia/commons/5/56/Surveillance-camera.png)
 from Wikipedia.
+
+## Troubleshooting
+
+Do you have problems using Klaro? If so, we want to know it! Just open an
+issue here and if possible provide the following information to us:
+
+* The website on which Klaro is installed (if possible)
+* The config file you're using (a link is sufficient)
+* The version of Klaro that you're using (you can get this by opening the
+  developer tools of your browser, going to the "Console" tab and typing
+  `klaro.version()` in the JS console.)
