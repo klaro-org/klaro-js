@@ -9,7 +9,7 @@ var klaroConfig = {
 
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.
-    elementID: 'klaro-manager',
+    elementID: 'klaro',
 
     // You can customize the name of the cookie that Klaro uses for storing
     // user consent decisions. If undefined, Klaro will use 'klaro'.
@@ -47,6 +47,8 @@ var klaroConfig = {
     // Example config that shows how to overwrite translations:
     // https://github.com/DPKit/klaro/blob/master/src/configs/i18n.js
     translations: {
+        // If you erase the "consentModal" translations, Klaro will use the
+        // defaults as defined in translations.yml
         consentModal : {
             description : {
                 de: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
@@ -140,12 +142,10 @@ var klaroConfig = {
 
             // If "default" is set to true, the app will be enabled by default
             // Overwrites global "default" setting.
-            default: true,
+            // We recommend leaving this to "false" for apps that collect
+            // personal information.
+            default: false,
 
-            // If "onlyOnce" is set to true, the app will only be executed
-            // once regardless how often the user toggles it on and off.
-            onlyOnce: true,
-            
             // The title of you app as listed in the consent modal.
             title : 'Matomo/Piwik',
 
@@ -172,8 +172,13 @@ var klaroConfig = {
             required : false,
 
             // If "optOut" is set to true, Klaro will load this app even before
-            // the user gave explicit consent. Not recommended.
+            // the user gave explicit consent.
+            // We recommend always leaving this "false".
             optOut : false,
+
+            // If "onlyOnce" is set to true, the app will only be executed
+            // once regardless how often the user toggles it on and off.
+            onlyOnce: true,
         },
 
         // The apps will appear in the modal in the same order as defined here.
