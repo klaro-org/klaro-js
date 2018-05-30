@@ -21,8 +21,8 @@ as well as in [this repository](dist/assets/demo.mp4).
   you're ready to go!
 * **Flexible and customizable**: Manage consent for all possible types of
   third-party apps and easily customize the tool according to your needs.
-* **Multilingual**: Full internationalization support with English and
-  German translations included. New translations can be added in just a few
+* **Multilingual**: Full internationalization support with English, French, Norwegian, Italian (in progress), Romanian (in progress) and
+  German translations included out of the box. New translations can be added in just a few
   lines of code. (Contributions welcome!)
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
   everything that is required, including stylesheets and images.
