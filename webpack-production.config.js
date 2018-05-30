@@ -61,7 +61,8 @@ var config = {
       debug: false,
     }),
     new webpack.DefinePlugin({
-             'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': '"production"',
+      VERSION : JSON.stringify(process.env.APP_VERSION || 'unknown'),
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({

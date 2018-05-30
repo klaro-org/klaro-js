@@ -32,9 +32,15 @@
             setCookie("inline-tracker", "foo", 120)
 
         </script>
+        <script>
+            function replaceVersion(){
+                var element = document.getElementById("klaro-version")
+                element.innerHTML = klaro.version()
+            }
+        </script>
         <link rel="stylesheet" href="assets/styles.css" />
     </head>
-    <body>
+    <body onload="replaceVersion()">
         <img data-hide=true data-title="We're watching you (for your own safety)" class="camera" data-src="assets/Surveillance-camera-small.png" data-name="camera" />
         <section class="hero is-info is-medium is-bold">
             <div class="hero-head">
@@ -270,7 +276,7 @@
                                 <a href="https://github.com/KIProtect/klaro/blob/master/dist/configs/">more examples</a> on Github as well.
                             </p>
                             <p>
-                                <a href="https://github.com/KIProtect/klaro/blob/master/dist/config.js" class="button is-warning">
+                                <a href="config.js" class="button is-warning">
                                     View example config
                                 </a>
                             </p>
@@ -347,8 +353,8 @@
                                 to get an idea of how to do this.
                             </p>
                             <p>
-                                <a href="https://github.com/KIProtect/klaro/raw/master/dist/klaro.js" class="button is-warning">
-                                    Download klaro.js
+                                <a href="klaro.js" download class="button is-warning">
+                                    Download klaro.js (version: <b id="klaro-version"></b>)
                                 </a>
                             </p>
                         </div>

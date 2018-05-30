@@ -15,6 +15,10 @@ var klaroConfig = {
     // user consent decisions. If undefined, Klaro will use 'klaro'.
     cookieName: 'klaro',
 
+    // You can also set a custom expiration time for the Klaro cookie.
+    // By default, it will expire after 120 days.
+    cookieExpiresAfterDays: 365,
+
     // You can customize the name of the cookie that Klaro will use to
     // store user consent. If undefined, Klaro will use 'klaro'.
  

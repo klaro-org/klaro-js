@@ -121,7 +121,7 @@ export default class ConsentManager {
         if (this.consents === null)
             deleteCookie(this.cookieName)
         const v = JSON.stringify(this.consents)
-        setCookie(this.cookieName, v, 120)
+        setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120)
         this.confirmed = true
         this.changed = false
     }

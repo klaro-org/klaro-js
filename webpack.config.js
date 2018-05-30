@@ -89,7 +89,10 @@ var config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({
+      VERSION : JSON.stringify(process.env.APP_VERSION || 'unknown'),
+    }),
   ]
 };
 

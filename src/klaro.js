@@ -83,3 +83,7 @@ export function show(conf){
     renderKlaro(conf, true)
     return false
 }
+
+export function version(){
+    return VERSION
+}
