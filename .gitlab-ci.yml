@@ -1,10 +1,9 @@
 image: node:latest
-job:
-  only:
-    - tags
 stages:
   - deploy
 deploy:
+  only:
+    - tags
   stage: deploy
   before_script:
     - apt-get update -qy
