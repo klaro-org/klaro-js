@@ -1,4 +1,7 @@
 image: node:latest
+job:
+  only:
+    - tags
 stages:
   - deploy
 deploy:
@@ -15,7 +18,7 @@ deploy:
     - echo "$SERVER_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - npm install
-    - CI_APP_VERSION=$CI_COMMIT_REF_NAME npm run-script make
+    - CI_APP_VERSION=$CI_COMMIT_TAG npm run-script make
     - echo "Deploying $CI_COMMIT_REF_NAME..."
     - if [ "$CI_COMMIT_REF_NAME" = "master" ]; then export DIRECTORY=klaro-master; fi;
     - if [ "$CI_COMMIT_REF_NAME" = "staging" ]; then export DIRECTORY=klaro-staging; fi;
