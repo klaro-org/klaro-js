@@ -3,6 +3,8 @@ stages:
   - deploy
 deploy:
   only:
+    refs:
+      - staging
     - tags
   stage: deploy
   before_script:
