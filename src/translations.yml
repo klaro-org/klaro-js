@@ -3,6 +3,7 @@ consentModal:
     de: Informationen die wir sammeln
     en: Information that we collect
     fr: Les informations que nous collectons
+    nb: Informasjon vi samler inn
   description:
     de: >
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
@@ -10,11 +11,14 @@ consentModal:
       Here you can see and customize the information that we collect about you.
     fr: >
       Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
+    nb: >
+      Her kan du se og velge hvilken informasjon vi samler inn om deg.
   privacyPolicy:
     name:
       de: Datenschutzerklärung
       en: privacy policy
       fr: politique de confidentialité
+      nb: personvernerklæring
     text:
       de: >
         Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
@@ -22,11 +26,14 @@ consentModal:
         To learn more, please read our {privacyPolicy}.
       fr: >
         Pour en savoir plus, merci de lire notre {privacyPolicy}.
+      nb: >
+        For å lære mer, vennligst les vår {privacyPolicy}.
 consentNotice:
   changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
     fr: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
+    nb: Det har skjedd endringer siden ditt siste besøk, vennligst oppdater ditt samtykke.
   description:
     de: >
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
@@ -34,44 +41,55 @@ consentNotice:
       We collect and process your personal information for the following purposes: {purposes}.
     fr: >
       Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
+    nb: >
+      Vi samler inn og prosesserer din personlige informasjon av følgende årsaker: {purposes}.
   learnMore:
     de: Mehr erfahren
     en: Learn more
     fr: En savoir plus
+    nb: Lær mer
 ok:
   de: OK
   en: OK
   fr: OK
+  nb: OK
 decline:
   de: Ablehnen
   en: Decline
   fr: Réfuser
+  nb: Avslå
 app:
   disableAll:
     title:
       en: Toggle all apps
       de: Alle Anwendungen aktivieren/deaktivieren
+      nb: Bytt alle apper
     description:
       de: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
       en : Use this switch to enable/disable all apps.
+      nb: Bruk denne for å skru av/på alle apper.
   optOut:
     title:
       de: (Opt-Out)
       en: (opt-out)
       fr: (opt-out)
+      nb: (opt-out)
     description:
       de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
       en: This app is loaded by default (but you can opt out)
       fr: Cette application est chargée par défaut (mais vous pouvez la désactiver)
+      nb: Denne appen er lastet som standard (men du kan skru det av)
   required:
     title:
       de: (immer notwendig)
       en: (always required)
       fr: (toujours requis)
+      nb: (alltid påkrevd)
     description:
       de: Diese Anwendung wird immer benötigt 
       en: This application is always required
       fr: Cette application est toujours requise
+      nb: Denne applikasjonen er alltid påkrevd
 poweredBy:
   en:
     Powered by Klaro!
@@ -79,11 +97,15 @@ poweredBy:
     Realisiert mit Klaro!
   fr:
     Propulsé par Klaro !
+  nb: 
+    Laget med Klaro!
 purposes:
   de: Zwecke
   en: Purposes
   fr: Utilisations
+  nb: Årsaker
 purpose:
   de: Zweck
   en: Purpose
   fr: Utilisation
+  nb: Årsak
