@@ -164,7 +164,7 @@ var klaroConfig = {
                 // is not the current domain. If you do not set these values
                 // properly, the cookie can't be deleted by Klaro
                 // (there is no way to access the path or domain of a cookie in JS)
-                [/^_pk_.*$/, '/', 'localhost'],
+                [/^_pk_.*$/, '/', 'klaro.kiprotect.com'],
                 'piwik_ignore'],
             
             // An optional callback function that will be called each time
