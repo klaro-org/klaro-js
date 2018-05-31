@@ -228,6 +228,10 @@ export default class ConsentManager {
             const cookies = getCookies()
             for(var i=0;i<app.cookies.length;i++){
                 let cookiePattern = app.cookies[i]
+                let cookiePath, cookieDomain
+                if (cookiePattern instanceof Array){
+                    [cookiePattern, cookiePath, cookieDomain] = cookiePattern
+                }
                 if (!(cookiePattern instanceof RegExp)){
                     cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')
                 }
@@ -235,7 +239,7 @@ export default class ConsentManager {
                     const cookie = cookies[j]
                     const match = cookiePattern.exec(cookie.name)
                     if (match !== null){
-                        deleteCookie(cookie.name)
+                        deleteCookie(cookie.name, cookiePath, cookieDomain)
                     }
                 }
             }

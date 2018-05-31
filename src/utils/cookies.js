@@ -1,3 +1,4 @@
+
 export function getCookies(){
     const cookieStrings = document.cookie.split(";")
     const cookies = []
@@ -36,6 +37,11 @@ export function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 
-export function deleteCookie(name) {
-    setCookie(name,"",-1)
+export function deleteCookie(name, path, domain) {
+    let str = name+'=; Max-Age=-99999999;'
+    if (path !== undefined)
+        str += ' path='+path+';'
+    if (domain !== undefined)
+        str += ' domain='+domain+';'
+    document.cookie = str
 }
