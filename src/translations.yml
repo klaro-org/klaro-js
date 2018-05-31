@@ -61,12 +61,14 @@ decline:
 app:
   disableAll:
     title:
-      en: Toggle all apps
       de: Alle Anwendungen aktivieren/deaktivieren
+      en: Toggle all apps
+      fr: Changer toutes les options
       nb: Bytt alle apper
     description:
       de: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
       en : Use this switch to enable/disable all apps.
+      fr : Utiliser ce bouton pour activer/désactiver toutes les options
       nb: Bruk denne for å skru av/på alle apper.
   optOut:
     title:
@@ -91,10 +93,10 @@ app:
       fr: Cette application est toujours requise
       nb: Denne applikasjonen er alltid påkrevd
 poweredBy:
-  en:
-    Powered by Klaro!
   de:
     Realisiert mit Klaro!
+  en:
+    Powered by Klaro!
   fr:
     Propulsé par Klaro !
   nb: 
