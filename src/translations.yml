@@ -2,6 +2,8 @@ consentModal:
   title:
     de: Informationen die wir sammeln
     en: Information that we collect
+    it: Informazioni che raccogliamo
+    ro: Informațiile pe care le colectăm
     fr: Les informations que nous collectons
     nb: Informasjon vi samler inn
   description:
@@ -9,6 +11,10 @@ consentModal:
       Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
     en: >
       Here you can see and customize the information that we collect about you.
+    it: >
+      Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
+    ro: >
+      Aici puteți vedea și personaliza informațiile pe care le colectăm despre dvs.
     fr: >
       Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
     nb: >
@@ -17,6 +23,8 @@ consentModal:
     name:
       de: Datenschutzerklärung
       en: privacy policy
+      it: Policy Privacy
+      ro: politica privacy
       fr: politique de confidentialité
       nb: personvernerklæring
     text:
@@ -24,6 +32,10 @@ consentModal:
         Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
       en: >
         To learn more, please read our {privacyPolicy}.
+      it: >
+        Per saperne di più, leggi la nostra {privacyPolicy}.
+      ro: >
+        Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
       fr: >
         Pour en savoir plus, merci de lire notre {privacyPolicy}.
       nb: >
@@ -32,6 +44,8 @@ consentNotice:
   changeDescription:
     de: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
     en: There were changes since your last visit, please update your consent.
+    it: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
+    ro: Au existat modificări de la ultima vizită, vă rugăm să actualizați consimțământul.
     fr: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
     nb: Det har skjedd endringer siden ditt siste besøk, vennligst oppdater ditt samtykke.
   description:
@@ -39,6 +53,10 @@ consentNotice:
       Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
     en: >
       We collect and process your personal information for the following purposes: {purposes}.
+    it: >
+      Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
+    ro: >
+      Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
     fr: >
       Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
     nb: >
@@ -46,16 +64,22 @@ consentNotice:
   learnMore:
     de: Mehr erfahren
     en: Learn more
+    it: Scopri di più
+    ro: Află mai multe
     fr: En savoir plus
     nb: Lær mer
 ok:
   de: OK
   en: OK
+  it: OK
+  ro: OK
   fr: OK
   nb: OK
 decline:
   de: Ablehnen
   en: Decline
+  it: Rifiuta
+  ro: Renunță
   fr: Réfuser
   nb: Avslå
 app:
@@ -63,49 +87,69 @@ app:
     title:
       en: Toggle all apps
       de: Alle Anwendungen aktivieren/deaktivieren
+      it: Bytt alle apper
+      ro: Bytt alle apper
       nb: Bytt alle apper
     description:
       de: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
-      en : Use this switch to enable/disable all apps.
+      en: Use this switch to enable/disable all apps.
+      it: Usa questo interruttore per abilitare/disabilitare tutte le app.
+      ro: Utilizați acest switch pentru a activa / dezactiva toate aplicațiile.
       nb: Bruk denne for å skru av/på alle apper.
   optOut:
     title:
       de: (Opt-Out)
       en: (opt-out)
+      it: (opt-out)
+      ro: (opt-out)
       fr: (opt-out)
       nb: (opt-out)
     description:
       de: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
       en: This app is loaded by default (but you can opt out)
+      it: Questa app è caricata di default (ma puoi disattivarla)
+      ro: Această aplicație este încărcată în mod implicit (dar puteți renunța)
       fr: Cette application est chargée par défaut (mais vous pouvez la désactiver)
       nb: Denne appen er lastet som standard (men du kan skru det av)
   required:
     title:
       de: (immer notwendig)
       en: (always required)
+      it: (sempre richiesto)
+      ro: (întotdeauna necesar)
       fr: (toujours requis)
       nb: (alltid påkrevd)
     description:
-      de: Diese Anwendung wird immer benötigt 
+      de: Diese Anwendung wird immer benötigt
       en: This application is always required
+      it: Quest'applicazione è sempre richiesta
+      ro: Această aplicație este întotdeauna necesară
       fr: Cette application est toujours requise
       nb: Denne applikasjonen er alltid påkrevd
 poweredBy:
-  en:
-    Powered by Klaro!
   de:
     Realisiert mit Klaro!
+  en:
+    Powered by Klaro!
+  it:
+    Realizzato da Klaro!
+  ro:
+    Realizat de Klaro!
   fr:
-    Propulsé par Klaro !
-  nb: 
+    Propulsé par Klaro!
+  nb:
     Laget med Klaro!
 purposes:
   de: Zwecke
   en: Purposes
+  it: Scopi
+  ro: Scopuri
   fr: Utilisations
   nb: Årsaker
 purpose:
   de: Zweck
   en: Purpose
+  it: Scopo
+  ro: Scop
   fr: Utilisation
   nb: Årsak
