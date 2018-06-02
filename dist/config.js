@@ -144,7 +144,7 @@ var klaroConfig = {
             // Overwrites global "default" setting.
             // We recommend leaving this to "false" for apps that collect
             // personal information.
-            default: false,
+            default: true,
 
             // The title of you app as listed in the consent modal.
             title : 'Matomo/Piwik',
@@ -164,7 +164,8 @@ var klaroConfig = {
                 // is not the current domain. If you do not set these values
                 // properly, the cookie can't be deleted by Klaro
                 // (there is no way to access the path or domain of a cookie in JS)
-                [/^_pk_.*$/, '/', 'klaro.kiprotect.com'],
+                [/^_pk_.*$/, '/', 'klaro.kiprotect.com'], //for the production version
+                [/^_pk_.*$/, '/', 'localhost'], //for the local version
                 'piwik_ignore'],
             
             // An optional callback function that will be called each time
