@@ -1,0 +1,29 @@
+consentModal:
+  title: Informațiile pe care le colectăm
+  description: >
+    Aici puteți vedea și personaliza informațiile pe care le colectăm despre dvs.
+  privacyPolicy:
+    name: politica privacy
+    text: >
+      Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+consentNotice:
+  changeDescription: Au existat modificări de la ultima vizită, vă rugăm să actualizați consimțământul.
+  description: >
+    Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
+  learnMore: Află mai multe
+ok: OK
+save: Salvează
+decline: Renunță
+app:
+  disableAll:
+    title: Comutați între toate aplicațiile
+    description: Utilizați acest switch pentru a activa/dezactiva toate aplicațiile.
+  optOut:
+    title: (opt-out)
+    description: Această aplicație este încărcată în mod implicit (dar puteți renunța)
+  required:
+    title: (întotdeauna necesar)
+    description: Această aplicație este întotdeauna necesară
+poweredBy: Realizat de Klaro!
+purposes: Scopuri
+purpose: Scop
