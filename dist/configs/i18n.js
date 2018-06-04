@@ -10,63 +10,52 @@ var klaroI18nConfig = {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `translations.yml` file in the `src` directory of this repo:
         // https://github.com/DPKit/klaro/blob/master/src/translations.yml
-        consentModal : {
-            title : {
-                en : 'This is the title of the consent modal',
-                de : 'Dies ist der Titel des Zustimmungs-Dialogs',
+        de: {
+            consentModal: {
+                title: 'Dies ist der Titel des Zustimmungs-Dialogs',
+                description: 'Dies ist die Beschreibung des Zustimmungs-Dialogs.',
             },
-            description : {
-                en : 'This is the description of the consent modal.',
-                de : 'Dies ist die Beschreibung des Zustimmungs-Dialogs.', 
+            privacyPolicy: {
+                text: 'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',
+                name: 'Datenschutzerklärung (Name)',
             },
-            privacyPolicy : {
-                text : {
-                    en : 'This is the text with a link to your {privacyPolicy}.',
-                    de : 'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',    
-                },
-                name : {
-                    en : 'privacy policy (the name)',
-                    de : 'Datenschutzerklärung (Name)',
-                },
+            poweredBy: 'Konfiguration ansehen',
+            ok: 'Los geht\'s!',
+            purposes: {
+                analytics: 'Besucher-Statistiken',
+                security: 'Sicherheit',
+                livechat: 'Live-Chat',
+                advertisting: 'Anzeigen von Werbung',
             },
-        },
-        poweredBy : {
-            en : 'view config',
-            de : 'Konfiguration ansehen',
-        },
-        ok : {
-            en : 'Wohoo!',
-            de : 'Los geht\'s!',
-        },
-        purposes: {
-            analytics : {
-                en : 'Analytics',
-                de : 'Besucher-Statistiken',
+            googleAnalytics: {
+                description: 'Sammeln von Besucherstatistiken',
             },
-            security : {
-                de : 'Sicherheit',
-                en : 'Security',
-            },
-            livechat : {
-                de : 'Livechat',
-                en : 'Live Chat',
-            },
-            advertising : {
-                de : 'Anzeigen von Werbung',
-                en : 'Advertising',
-            },
-        },    
-        googleAnalytics : {
-            description : {
-                de : 'Sammeln von Besucherstatistiken',
-                en : 'Collecting of visitor statistics',
+            mouseflow : {
+                description: 'Echtzeit-Benutzeranalyse'
             },
         },
-        mouseflow : {
-            description : {
-                de : 'Echtzeit-Benutzeranalyse',
-                en : 'Real-Time user analytics',
-            },            
+        en: {
+            consentModal: {
+                title: 'This is the title of the consent modal',
+                description: 'This is the description of the consent modal.',
+            },
+            privacyPolicy: {
+                text: 'This is the text with a link to your {privacyPolicy}.',
+                name: 'privacy policy (the name)',
+            },
+            poweredBy: 'view config',
+            ok: 'Wohoo!',
+            purposes: {
+                analytics: 'Analytics',
+                security: 'Security',
+                livechat: 'Livechat',
+            },
+            googleAnalytics: {
+                description: 'Collection of visitor statistics',
+            },
+            mouseflow: {
+                description: 'Real-time user analytics',
+            }
         },
     },
     apps : [

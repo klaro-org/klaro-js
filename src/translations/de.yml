@@ -1,0 +1,29 @@
+consentModal:
+  title: Informationen die wir sammeln
+  description: >
+    Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
+  privacyPolicy:
+    name: Datenschutzerklärung
+    text: >
+      Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
+consentNotice:
+  changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
+  description: >
+    Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
+  learnMore: Mehr erfahren
+ok: OK
+save: Speichern
+decline: Ablehnen
+app:
+  disableAll:
+    title: Alle Anwendungen aktivieren/deaktivieren
+    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
+  optOut:
+    title: (Opt-Out)
+    description: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
+  required:
+    title: (immer notwendig)
+    description: Diese Anwendung wird immer benötigt
+poweredBy: Realisiert mit Klaro!
+purposes: Zwecke
+purpose: Zweck

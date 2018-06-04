@@ -4,7 +4,7 @@ import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
-import translations from 'translations.yml'
+import translations from 'translations'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
 

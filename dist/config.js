@@ -49,89 +49,76 @@ var klaroConfig = {
     translations: {
         // If you erase the "consentModal" translations, Klaro will use the
         // defaults as defined in translations.yml
-        consentModal : {
-            description : {
-                de: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
-                en: 'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
+        de: {
+            consentModal: {
+                description: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
             },
-        },
-        // Add an entry for each app that you define below, using the name of
-        // the app that you chose.
-        inlineTracker : {
-
-            // Add translations for the description of the app for all
-            // languages that you want to support.
-            description : {
-                de : 'Beispiel für ein Inline-Tracking Skript',
-                en : 'Example of an inline tracking script',
+            inlineTracker: {
+                description: 'Beispiel für ein Inline-Tracking Skript',
             },
-        },
-        externalTracker : {
-
-            // Add translations for the description of the app for all
-            // languages that you want to support.
-            description : {
-                de : 'Beispiel für ein externes Tracking Skript',
-                en : 'Example of an external tracking script',
+            externalTracker: {
+                description: 'Beispiel für ein externes Tracking Skript',
             },
-        },
-        adsense : {
-            description : {
-                de : 'Anzeigen von Werbeanzeigen (Beispiel)',
-                en : 'Displaying of advertisements (just an example)',
+            adsense: {
+                description: 'Anzeigen von Werbeanzeigen (Beispiel)',
             },
-        },
-        matomo : {
-            description : {
-                de : 'Sammeln von Besucherstatistiken',
-                en : 'Collecting of visitor statistics',
+            matomo: {
+                description: 'Sammeln von Besucherstatistiken',
             },
-        },
-        camera : {
-            description : {
-                de : 'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)',
-                en : 'A surveillance camera (just a silly example for an IMG tag)'
+            camera: {
+                description: 'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)',
+            },
+            cloudflare: {
+                description: 'Schutz gegen DDoS-Angriffe',
+            },
+            intercom: {
+                description: 'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)',
+            },
+            mouseflow: {
+                description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
+            },
+            purposes: {
+                analytics: 'Besucher-Statistiken',
+                security: 'Sicherheit',
+                livechat: 'Live Chat',
+                advertising: 'Anzeigen von Werbung',
             }
         },
-        cloudflare : {
-            description : {
-                de : 'Schutz gegen DDoS-Angriffe',
-                en : 'Protection against DDoS attacks',
+        en: {
+            consentModal: {
+                description: 'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
             },
+            inlineTracker: {
+                description: 'Example of an inline tracking script',
+            },
+            externalTracker: {
+                description: 'Example of an external tracking script',
+            },
+            adsense: {
+                description: 'Displaying of advertisements (just an example)',
+            },
+            matomo: {
+                description: 'Collecting of visitor statistics',
+            },
+            camera: {
+                description: 'A surveillance camera (just a silly example for an IMG tag)',
+            },
+            cloudflare: {
+                description: 'Protection against DDoS attacks',
+            },
+            intercom: {
+                description: 'Chat widget & collecting of visitor statistics (just an example)',
+            },
+            mouseflow: {
+                description: 'Real-Time user analytics (just an example)',
+            },
+            purposes: {
+                analytics: 'Analytics',
+                security: 'Security',
+                livechat: 'Livechat',
+                advertising: 'Advertising',
+            }
         },
-        intercom : {
-            description : {
-                de : 'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)',
-                en : 'Chat widget & collecting of visitor statistics (just an example)',
-            },            
-        },
-        mouseflow : {
-            description : {
-                de : 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
-                en : 'Real-Time user analytics (just an example)',
-            },            
-        },
-
-        // The purposes will be displayed in the consent notice, make sure
-        // to add translations for each purposes you give in the 'apps' section.
-        purposes: {
-            analytics : {
-                en : 'Analytics',
-                de : 'Besucher-Statistiken',
-            },
-            security : {
-                de : 'Sicherheit',
-                en : 'Security',
-            },
-            livechat : {
-                de : 'Livechat',
-                en : 'Live Chat',
-            },
-            advertising : {
-                de : 'Anzeigen von Werbung',
-                en : 'Advertising',
-            },
-        },    
     },
 
     // This is a list of third-party apps that Klaro will manage for you.

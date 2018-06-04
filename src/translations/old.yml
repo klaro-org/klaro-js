@@ -75,6 +75,13 @@ ok:
   ro: OK
   fr: OK
   nb: OK
+save:
+  de: Speichern
+  en: Save
+  it: Salvare
+  ro: OK
+  fr: OK
+  nb: OK
 decline:
   de: Ablehnen
   en: Decline
