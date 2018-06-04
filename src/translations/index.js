@@ -6,7 +6,7 @@ import en from './en.yml'
 import fr from './fr.yml'
 import it from './it.yml'
 import ro from './ro.yml'
-import fr from './nb.yml'
+import nb from './nb.yml'
 
 export default {
   de,
