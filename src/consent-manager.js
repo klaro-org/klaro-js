@@ -156,9 +156,9 @@ export default class ConsentManager {
             const element = elements[i]
 
             const parent = element.parentElement
-            const name = element.dataset.name
-            const src = element.dataset.src
-            const type = element.dataset.type
+            const {dataset} = element
+            const {type, name} = dataset
+            const attrs = ['href', 'src']
 
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
@@ -167,8 +167,8 @@ export default class ConsentManager {
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
-                for(var key of Object.keys(element.dataset)){
-                    newElement.dataset[key] = element.dataset[key]
+                for(var key of Object.keys(dataset)){
+                    newElement.dataset[key] = dataset[key]
                 }
                 newElement.type = 'opt-in'
                 newElement.innerText = element.innerText
@@ -182,8 +182,8 @@ export default class ConsentManager {
 
                 if (consent){
                     newElement.type = type
-                    if (src !== undefined)
-                        newElement.src = src
+                    if (dataset.src !== undefined)
+                        newElement.src = dataset.src
                 }
                 //we remove the original element and insert a new one
                 parent.insertBefore(newElement, element)
@@ -191,24 +191,34 @@ export default class ConsentManager {
             } else {
                 // all other elements (images etc.) are modified in place...
                 if (consent){
-                    if (element.dataset.originalSrc === undefined)
-                        element.dataset.originalSrc = element.src
-                    if (element.dataset.title !== undefined)
-                        element.title = element.dataset.title
-                    if (element.dataset.originalDisplay !== undefined)
-                        element.style.display = element.dataset.originalDisplay
-                    element.src = src
+                    for(var attr of attrs){
+                        const attrValue = dataset[attr]
+                        if (attrValue === undefined)
+                            continue
+                        if (dataset['original'+attr] === undefined)
+                            dataset['original'+attr] = element[attr]
+                        element[attr] = attrValue
+                    }
+                    if (dataset.title !== undefined)
+                        element.title = dataset.title
+                    if (dataset.originalDisplay !== undefined)
+                        element.style.display = dataset.originalDisplay
                 }
                 else{
-                    if (element.dataset.title !== undefined)
+                    if (dataset.title !== undefined)
                         element.removeAttribute('title')
-                    if (element.dataset.hide === "true"){
-                        if (element.dataset.originalDisplay === undefined)
-                            element.dataset.originalDisplay = element.style.display
+                    if (dataset.hide === "true"){
+                        if (dataset.originalDisplay === undefined)
+                            dataset.originalDisplay = element.style.display
                         element.style.display = 'none'
                     }
-                    if (element.dataset.originalSrc !== undefined)
-                        element.src = element.dataset.originalSrc
+                    for(var attr of attrs){
+                        const attrValue = dataset[attr]
+                        if (attrValue === undefined)
+                            continue
+                        if (dataset['original'+attr] !== undefined)
+                            element[attr] = dataset['original'+attr]
+                    }
                 }
             }
          }

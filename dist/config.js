@@ -77,11 +77,15 @@ var klaroConfig = {
             mouseflow: {
                 description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
             },
+            googleFonts: {
+                description: 'Web-Schriftarten von Google gehostet'
+            },
             purposes: {
                 analytics: 'Besucher-Statistiken',
                 security: 'Sicherheit',
                 livechat: 'Live Chat',
                 advertising: 'Anzeigen von Werbung',
+                styling: 'Styling',
             }
         },
         en: {
@@ -112,11 +116,15 @@ var klaroConfig = {
             mouseflow: {
                 description: 'Real-Time user analytics (just an example)',
             },
+            googleFonts: {
+                description: 'Web fonts hosted by Google',
+            },
             purposes: {
                 analytics: 'Analytics',
                 security: 'Security',
                 livechat: 'Livechat',
                 advertising: 'Advertising',
+                styling: 'Styling',
             }
         },
     },
@@ -210,6 +218,11 @@ var klaroConfig = {
             name : 'camera',
             title : 'Surveillance Camera',
             purposes : ['security']
+        },
+        {
+            name : 'googleFonts',
+            title : 'Google Fonts',
+            purposes : ['styling']
         },
         {
             name : 'cloudflare',
