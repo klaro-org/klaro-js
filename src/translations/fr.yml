@@ -12,12 +12,12 @@ consentNotice:
     Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
   learnMore: En savoir plus
 ok: OK
-save: OK
-decline: Réfuser
+save: Sauvegarder
+decline: Refuser
 app:
   disableAll:
-    title: Changer tous
-    description: Ici vous pouvez changer l'état de toutes les applications en même temps.
+    title: Changer toutes les options
+    description: Utiliser ce bouton pour activer/désactiver toutes les options
   optOut:
     title: (opt-out)
     description: Cette application est chargée par défaut (mais vous pouvez la désactiver)
