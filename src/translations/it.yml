@@ -1,0 +1,29 @@
+consentModal:
+  title: Informazioni che raccogliamo
+  description: >
+    Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
+  privacyPolicy:
+    name: policy privacy
+    text: >
+      Per saperne di più, leggi la nostra {privacyPolicy}.
+consentNotice:
+  changeDescription: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
+  description: >
+    Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
+  learnMore: Scopri di più
+ok: OK
+save: Salva
+decline: Rifiuta
+app:
+  disableAll:
+    title: Cambia per tutte le app
+    description: Usa questo interruttore per abilitare/disabilitare tutte le app.
+  optOut:
+    title: (opt-out)
+    description: Quest'applicazione è caricata di default (ma puoi disattivarla)
+  required:
+    title: (sempre richiesto)
+    description: Quest'applicazione è sempre richiesta
+poweredBy: Realizzato da Klaro!
+purposes: Scopi
+purpose: Scopo
