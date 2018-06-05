@@ -24,6 +24,6 @@ app:
   required:
     title: (sempre richiesto)
     description: Quest'applicazione è sempre richiesta
+  purposes: Scopi
+  purpose: Scopo
 poweredBy: Realizzato da Klaro!
-purposes: Scopi
-purpose: Scopo

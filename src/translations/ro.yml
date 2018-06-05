@@ -24,6 +24,6 @@ app:
   required:
     title: (întotdeauna necesar)
     description: Această aplicație este întotdeauna necesară
+  purposes: Scopuri
+  purpose: Scop
 poweredBy: Realizat de Klaro!
-purposes: Scopuri
-purpose: Scop

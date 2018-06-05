@@ -24,6 +24,6 @@ app:
   required:
     title: (immer notwendig)
     description: Diese Anwendung wird immer benötigt
+  purposes: Zwecke
+  purpose: Zweck
 poweredBy: Realisiert mit Klaro!
-purposes: Zwecke
-purpose: Zweck

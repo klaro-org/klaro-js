@@ -24,6 +24,6 @@ app:
   required:
     title: (toujours requis)
     description: Cette application est toujours requise
+  purposes: Utilisations
+  purpose: Utilisation
 poweredBy: Propulsé par Klaro!
-purposes: Utilisations
-purpose: Utilisation

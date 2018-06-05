@@ -62,7 +62,7 @@ export default class Apps extends React.Component {
                 <Switch disabled={required} checked={checked || required} onToggle={toggleApp} />
                 <span className="cm-app-title">{app.title}</span>{requiredText}{optOutText}
                 <p className="cm-app-description">{t([app.name, 'description'])}</p>
-                <p className="purposes">{t([app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
+                <p className="purposes">{t(['app', app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
             </li>
         })
         const allDisabled = apps.filter((app) => {
