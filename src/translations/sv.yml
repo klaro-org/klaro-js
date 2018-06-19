@@ -24,6 +24,6 @@ app:
   required:
     title: (Krävs alltid)
     description: Den här applikationen krävs alltid
+  purposes: Syften
+  purpose: Syfte
 poweredBy: Körs på Klaro!
-purposes: Syften
-purpose: Syfte
