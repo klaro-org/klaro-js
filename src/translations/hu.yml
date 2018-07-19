@@ -11,7 +11,7 @@ consentNotice:
   description: >
     Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
   learnMore: Tudj meg többet
-ok: OK
+ok: Elfogad
 save: Mentés
 decline: Elvet
 app:
