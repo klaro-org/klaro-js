@@ -4,6 +4,7 @@
 import de from './de.yml'
 import en from './en.yml'
 import fr from './fr.yml'
+import hu from './hu.yml'
 import it from './it.yml'
 import ro from './ro.yml'
 import nb from './nb.yml'
@@ -12,6 +13,7 @@ export default {
   de,
   en,
   fr,
+  hu,
   it,
   ro,
   nb,
