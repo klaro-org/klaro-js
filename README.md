@@ -19,7 +19,7 @@ as well as in [this repository](dist/assets/demo.mp4).
   you're ready to go!
 * **Flexible and customizable**: Manage consent for all possible types of
   third-party apps and easily customize the tool according to your needs.
-* **Multilingual**: Full internationalization support with English, French, Norwegian, Italian (in progress), Romanian (in progress) and
+* **Multilingual**: Full internationalization support with English, French, Norwegian, Hungarian, Italian (in progress), Romanian (in progress) and
   German translations included out of the box. New translations can be added in just a few
   lines of code. Contributions welcome!
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
@@ -83,13 +83,13 @@ you can build it from scratch using the following commands:
 
 Want to contribute? We'd love that!
 
-If you have a feature request or bug to report, please fill out [a 
+If you have a feature request or bug to report, please fill out [a
 GitHub Issue](https://github.com/KIProtect/klaro/issues) to begin the conversation.
 
-If you want to help out, but don't know where to begin, check out [the open 
+If you want to help out, but don't know where to begin, check out [the open
 issues tagged "help wanted"](https://github.com/KIProtect/klaro/labels/help%20wanted).
 
-If you are multilingual, consider contributing a translation we don't have yet. 
+If you are multilingual, consider contributing a translation we don't have yet.
 
 ## License & Third-Party Libraries
 
