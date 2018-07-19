@@ -5,6 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
 var APP_ENV = process.env.APP_ENV || 'dev';
+var APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 
 var config = {
@@ -59,18 +60,20 @@ var config = {
     library: 'klaro',
     libraryTarget: 'umd',
     publicPath: ''
-  }
+  },
+  plugins: []
 };
 
 if (APP_ENV === 'dev') {
   config.devtool = 'inline-source-maps';
-  config.plugins = [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+  config.plugins.push(
     new webpack.DefinePlugin({
       VERSION : JSON.stringify('development'),
     })
-  ];
+  );
+}
+
+if (APP_DEV_MODE === 'server') {
   config.entry = [
     'webpack/hot/only-dev-server',
     config.entry[0]
@@ -94,10 +97,14 @@ if (APP_ENV === 'dev') {
       }
     }
   };
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  );
 }
 
 if (APP_ENV === 'production') {
-  config.plugins = [
+  config.plugins.push(
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
@@ -116,7 +123,7 @@ if (APP_ENV === 'production') {
       sourceMaps: false,
     }),
     new webpack.optimize.AggressiveMergingPlugin()
-  ];
+  );
 }
 
 module.exports = config;
