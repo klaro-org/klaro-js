@@ -33,10 +33,13 @@ $green3: #01440C;
             text-decoration: none;
         }
 
-        p, h1, h2, ul, li {
-            display: block;
+        p, strong, h1, h2, ul, li {
             font-family: inherit;
             color: $font-color-dark;
+        }
+
+        p, h1, h2, ul, li {
+            display: block;
             text-align: left;
             margin: 0;
             padding: 0;

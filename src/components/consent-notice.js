@@ -56,7 +56,7 @@ export default class ConsentNotice extends React.Component {
             return <div className="cookie-notice">
                 <div className="cn-body">
                     <p>
-                        {t(['consentNotice', 'description'], {purposes: <b>{purposesText}</b>})}
+                        {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
                         <a className="" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</a>
                     </p>
                     {changesText}
