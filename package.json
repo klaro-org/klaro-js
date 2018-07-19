@@ -1,6 +1,6 @@
 {
   "name": "klaro",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "A simple consent manager.",
   "repository": {
     "type": "git",
@@ -12,9 +12,11 @@
     "gdpr",
     "compliance"
   ],
+  "main": "dist/klaro.js",
   "scripts": {
     "make-dev": "APP_ENV=dev webpack-dev-server --config webpack.config.js --history-api-fallback",
-    "make": "APP_VERSION=`git tag --points-at HEAD` APP_COMMIT=`git rev-parse HEAD` webpack --config webpack-production.config.js"
+    "make": "APP_VERSION=`git tag --points-at HEAD` APP_COMMIT=`git rev-parse HEAD` webpack --config webpack-production.config.js",
+    "prepublishOnly": "npm run make"
   },
   "author": "DP-Kit",
   "license": "BSD-3-Clause",
