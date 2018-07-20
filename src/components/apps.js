@@ -1,5 +1,5 @@
 import React from 'react'
-import Switch from './switch'
+import AppItem from './app-item'
 import {getPurposes} from 'utils/config'
 
 class AppGroup extends React.Component {
@@ -46,23 +46,18 @@ export default class Apps extends React.Component {
             toggle(apps, value)
         }
 
-        const appItems = apps.map((app) => {
+        const appItems = apps.map((app, key) => {
             const toggleApp = (value) => {
                 toggle([app], value)
             }
-            const required = app.required || false
-            const optOut = app.optOut || false
             const checked = consents[app.name]
-
-            const purposesText = app.purposes.map((purpose) => t(['purposes', purpose])).join(", ")
-            
-            const optOutText = optOut ? <span class="cm-opt-out" title={t(['app', 'optOut', 'description'])}>{t(['app', 'optOut', 'title'])}</span> : ''
-            const requiredText = required ? <span class="cm-required" title={t(['app', 'required', 'description'])}>{t(['app', 'required', 'title'])}</span> : ''
             return <li className="cm-app">
-                <Switch disabled={required} checked={checked || required} onToggle={toggleApp} />
-                <span className="cm-app-title">{app.title}</span>{requiredText}{optOutText}
-                <p className="cm-app-description">{t([app.name, 'description'])}</p>
-                <p className="purposes">{t(['app', app.purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
+                <AppItem
+                    checked={checked || app.required}
+                    onToggle={toggleApp}
+                    t={t}
+                    {...app}
+                />
             </li>
         })
         const allDisabled = apps.filter((app) => {
@@ -73,9 +68,14 @@ export default class Apps extends React.Component {
         }).length == 0 ? true : false
 
         const disableAllItem = <li className="cm-app cm-toggle-all">
-            <Switch checked={!allDisabled} onToggle={toggleAll} />
-            <span className="cm-app-title">{t(['app','disableAll','title'])}</span>
-            <p className="cm-app-description">{t(['app', 'disableAll', 'description'])}</p>
+            <AppItem
+                name="disableAll"
+                title={t(['app','disableAll','title'])}
+                description={t(['app', 'disableAll', 'description'])}
+                checked={!allDisabled}
+                onToggle={toggleAll}
+                t={t}
+            />
         </li>
         return <ul className="cm-apps">
             {appItems}
