@@ -5,23 +5,32 @@
     width: 50px;
     height: 30px;
 
-    input {display:none;}
-    
     &.disabled {
 
         input:checked + .slider {
             opacity: 0.5;
             background-color: $blue3;
-          }
-        
-    }
-
-    input:checked + .slider {
-        background-color: $blue1;
         }
 
-        /* The slider */
-        .slider {
+    }
+}
+
+.slider {
+    box-shadow: $box-shadow;
+}
+
+.cm-app-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 50px;
+    height: 30px;
+}
+
+.cm-app-label {
+    /* The slider */
+    .slider {
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -31,9 +40,11 @@
         background-color: #ccc;
         -webkit-transition: .4s;
         transition: .4s;
-        }
-        
-        .slider:before {
+        width: 50px;
+        display: inline-block;
+    }
+
+    .slider:before {
         position: absolute;
         content: "";
         height: 20px;
@@ -43,25 +54,38 @@
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
-        }
-        
-        input:focus + .slider {
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 30px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    input:focus + .slider {
         box-shadow: 0 0 1px $blue1;
-        }
-        
-        input:checked + .slider:before {
+    }
+
+    input:checked + .slider:before {
         -webkit-transform: translateX(20px);
         -ms-transform: translateX(20px);
         transform: translateX(20px);
-        }
-        
-        /* Rounded sliders */
-        .slider.round {
-        border-radius: 30px;
-        }
-        
-        .slider.round:before {
-        border-radius: 50%;
-        }
+    }
 }
-  
+
+.cm-app-input:focus + .cm-app-label .slider {
+    box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
+}
+
+.cm-app-input:checked + .cm-app-label .slider {
+    background-color: $blue1;
+}
+
+.cm-app-input:checked + .cm-app-label .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
