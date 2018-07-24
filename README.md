@@ -26,8 +26,8 @@ as well as in [this repository](dist/assets/demo.mp4).
     - French
     - German
     - Hungarian (coming soon)
-    - Norwegian
     - Italian (in progress)
+    - Norwegian
     - Romanian (in progress)
     - Swedish
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
