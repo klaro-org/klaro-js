@@ -17,7 +17,7 @@ export default class AppItem extends React.Component {
 
         return <div>
             <input id={id} class="cm-app-input" aria-describedby={`${id}-description`} disabled={required} checked={checked || required} type="checkbox" onChange={onChange} />
-            <label for={id} class="cm-app-label">
+            <label for={id} class="cm-app-label" {...(required ? {tabIndex: "0"} : {})}>
                 <span className="cm-app-title">{title}</span>{requiredText}{optOutText}
                 <span className={"switch"+(required ? " disabled" : "")}>
                     <div className="slider round active"></div>
