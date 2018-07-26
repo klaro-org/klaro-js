@@ -121,8 +121,10 @@ $green3: #01440C;
             overflow: auto;
             background: $bg-dark;
             color: $font-color-dark;
-
-            a.hide   {
+    
+            .hide   {
+                border: none;
+                background: none;
                 svg {
                     stroke: $font-color-dark;
                 }
