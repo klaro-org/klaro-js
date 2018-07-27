@@ -14,6 +14,7 @@ consentNotice:
 ok: OK
 save: Sauvegarder
 decline: Refuser
+close: Fermer
 app:
   disableAll:
     title: Changer toutes les options

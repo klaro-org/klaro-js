@@ -33,22 +33,26 @@ $green3: #01440C;
             text-decoration: none;
         }
     
-        p, h1, h2, ul, li {
-            display: block;
+        p, strong, h1, h2, ul, li {
             font-family: inherit;
             color: $font-color-dark;
+        }
+
+        p, h1, h2, ul, li {
+            display: block;
             text-align: left;
             margin: 0;
             padding: 0;
             margin-top: 0.7em;
         }
-    
-        a.cm-btn {
+
+        .cm-btn {
             box-shadow: $box-shadow;
             color: $font-color-dark;
             border-radius: 6px;
             padding: 0.5em;
             margin-right: 0.5em;
+            border: 0;
     
             &.cm-btn-sm {
                 padding: 0.4em;
@@ -118,7 +122,9 @@ $green3: #01440C;
             background: $bg-dark;
             color: $font-color-dark;
     
-            a.hide   {
+            .hide   {
+                border: none;
+                background: none;
                 svg {
                     stroke: $font-color-dark;
                 }
@@ -246,8 +252,9 @@ $green3: #01440C;
                 text-decoration: underline;
             }
     
-            a.cn-learn-more {
+            .cn-learn-more {
                 display: inline-block;
+
             }
     
             p.cn-ok {

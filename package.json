@@ -41,6 +41,7 @@
     "preact-compat": "^3.18.0",
     "purify-css": "^1.2.2",
     "purifycss-webpack": "^0.7.0",
+    "react-modal": "^3.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
