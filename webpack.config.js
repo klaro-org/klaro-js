@@ -31,11 +31,11 @@ var config = {
       },
       {
         test: /\.scss|sass$/,
-        loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
+        loaders: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?sourceMap']
+        loaders: ['style-loader', withEnvSourcemap('css-loader')]
       },
       {
         test: /\.yaml|yml$/,
@@ -127,3 +127,7 @@ if (APP_ENV === 'production') {
 }
 
 module.exports = config;
+
+function withEnvSourcemap(loader) {
+  return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
+}
