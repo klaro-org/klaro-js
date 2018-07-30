@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
 var APP_ENV = process.env.APP_ENV || 'dev';
-var APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV;
+var APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 
 var config = {
@@ -31,11 +31,11 @@ var config = {
       },
       {
         test: /\.scss|sass$/,
-        loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
+        loaders: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?sourceMap']
+        loaders: ['style-loader', withEnvSourcemap('css-loader')]
       },
       {
         test: /\.yaml|yml$/,
@@ -127,3 +127,7 @@ if (APP_ENV === 'production') {
 }
 
 module.exports = config;
+
+function withEnvSourcemap(loader) {
+  return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
+}
