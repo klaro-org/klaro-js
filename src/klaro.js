@@ -1,5 +1,3 @@
-import 'scss/klaro.scss'
-
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
