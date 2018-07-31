@@ -5,6 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
 var APP_ENV = process.env.APP_ENV || 'dev';
+var APP_CSS = process.env.APP_CSS || false;
 var APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 
@@ -56,7 +57,7 @@ var config = {
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'klaro.js',
+    filename: 'klaro-no-css.js',
     library: 'klaro',
     libraryTarget: 'umd',
     publicPath: ''
@@ -74,10 +75,7 @@ if (APP_ENV === 'dev') {
 }
 
 if (APP_DEV_MODE === 'server') {
-  config.entry = [
-    'webpack/hot/only-dev-server',
-    config.entry[0]
-  ];
+  config.entry = ['webpack/hot/only-dev-server'].concat(config.entry);
   config.devServer = {
     hot: true,
     // enable HMR on the server
@@ -124,6 +122,11 @@ if (APP_ENV === 'production') {
     }),
     new webpack.optimize.AggressiveMergingPlugin()
   );
+}
+
+if (APP_CSS) {
+  config.entry = [SRC_DIR + '/scss/klaro.scss'].concat(config.entry);
+  config.output.filename = 'klaro.js';
 }
 
 module.exports = config;

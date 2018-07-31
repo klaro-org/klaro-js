@@ -3,3 +3,4 @@ package-lock.json
 .tmp
 node_modules
 dist/klaro.js
+dist/klaro-no-css.js
