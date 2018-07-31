@@ -1,3 +1,12 @@
+# About this fork
+
+This fork was first about making the lib more accessible. It's now starting to notably change also in how components are authored and how the lib can be consumed, so that it can be more easily reused accross projects in our company (and maybe yours).
+
+Original README below.
+
+_____________
+
+
 # Klaro! A Simple Consent Manager
 
 Klaro [klɛro] is a simple consent manager that helps you to be transparent about the
