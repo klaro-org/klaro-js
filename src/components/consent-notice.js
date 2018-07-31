@@ -54,13 +54,6 @@ export default class ConsentNotice extends React.Component {
                 <div className={ns('Notice-body')}>
                     <p className={ns('Notice-description')}>
                         {t(['consentNotice', 'description'], {purposes: <strong className={ns('Notice-purposes')}>{purposesText}</strong>})}
-                        <button
-                            type="button"
-                            className={ns('Button Button--info Notice-learnMoreButton')}
-                            onClick={showModal}
-                        >
-                            {t(['consentNotice', 'learnMore'])}
-                        </button>
                     </p>
 
                     {manager.changed
@@ -81,6 +74,13 @@ export default class ConsentNotice extends React.Component {
                             onClick={declineAndHide}
                         >
                             {t(['decline'])}
+                        </button>
+                        <button
+                            type="button"
+                            className={ns('Button Button--info Notice-learnMoreButton')}
+                            onClick={showModal}
+                        >
+                            {t(['consentNotice', 'learnMore'])}
                         </button>
                     </p>
                 </div>
