@@ -12,7 +12,7 @@ export default class ConsentNotice extends React.Component {
     render(){
 
         const {modal} = this.state
-        const {config, manager, show, t} = this.props
+        const {config, manager, show, t, ns} = this.props
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
@@ -41,30 +41,47 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
-        var changesText
-
-        if (manager.changed)
-            changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>
-
         if (manager.confirmed && !show)
             return <div />
 
-        const modalProps = {t, config, hide, declineAndHide, saveAndHide, manager}
+        const modalProps = {t, ns, config, hide, declineAndHide, saveAndHide, manager}
 
         if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
             return <ConsentModal {...modalProps} isOpen={true} />
 
         if (!manager.confirmed && !config.noNotice)
-            return <div className="cookie-notice">
-                <div className="cn-body">
-                    <p>
-                        {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
-                        <button type="button" className="cm-btn cm-btn-info" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</button>
+            return <div className={ns('Notice')}>
+                <div className={ns('Notice-body')}>
+                    <p className={ns('Notice-description')}>
+                        {t(['consentNotice', 'description'], {purposes: <strong className={ns('Notice-purposes')}>{purposesText}</strong>})}
+                        <button
+                            type="button"
+                            className={ns('Button Button--info Notice-learnMoreButton')}
+                            onClick={showModal}
+                        >
+                            {t(['consentNotice', 'learnMore'])}
+                        </button>
                     </p>
-                    {changesText}
-                    <p className="cn-ok">
-                        <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={saveAndHide}>{t(['ok'])}</button>
-                        <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+
+                    {manager.changed
+                        ? <p className={ns('Notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
+                        : ''}
+
+                    <p className={ns('Notice-actions')}>
+                        <button
+                            className={ns('Button Button--save Notice-button Notice-saveButton')}
+                            type="button"
+                            onClick={saveAndHide}
+                        >
+                            {t(['ok'])}
+                        </button>
+                        <button
+                            className={ns('Button Button--decline Notice-button Notice-declineButton')}
+                            type="button"
+                            onClick={declineAndHide}
+                        >
+                            {t(['decline'])}
+                        </button>
                     </p>
                 </div>
                 <ConsentModal {...modalProps} isOpen={false} />

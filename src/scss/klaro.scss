@@ -1,270 +1,306 @@
 $box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 $border-radius: 4px;
-$border-dark: 1px solid #555;
 $font-color-dark: #eee;
-$font-color-dark-deemphasized: #999;
+$theme-color-light: #999;
 $bg-dark: #333;
 $red2: #B24E14;
 $red1: #BA1E04;
-$yellow1: #F8C200;
-$yellow2: #D4D026;
-$blue3: #005091;
-$blue2: #003F8A;
-$blue1: #0885BA;
-$blue4: #9AC3D4;
-$green1: #00AA3E;
-$green2: #006A4E;
-$green3: #01440C;
+$blue-dark: #005091;
+$blue: #0885BA;
+$green: #00AA3E;
 
-.klaro {
+$theme-bg: #333;
+$theme-border: 1px solid #555;
+$theme-color: #eee;
+$theme-color-light: #999;
 
-    .cookie-modal, .cookie-notice {
+.klaro-Container {
+    font-size: 1em;
+    // a {
+    //     color: $green;
+    //     text-decoration: none;
+    // }
 
-        @import 'switch.scss';
-    
-        font-size: 14px;
-    
-        .slider {
-            box-shadow: $box-shadow;
-        }
-    
-        a {
-            color: $green1;
-            text-decoration: none;
-        }
-    
-        p, strong, h1, h2, ul, li {
-            font-family: inherit;
-            color: $font-color-dark;
-        }
+    // p, strong, h1, h2, ul, li {
+    //     font-family: inherit;
+    //     color: $font-color-dark;
+    // }
 
-        p, h1, h2, ul, li {
-            display: block;
-            text-align: left;
-            margin: 0;
-            padding: 0;
-            margin-top: 0.7em;
-        }
+    // p, h1, h2, ul, li {
+    //     display: block;
+    //     text-align: left;
+    //     margin: 0;
+    //     padding: 0;
+    //     margin-top: 0.7em;
+    // }
+}
 
-        .cm-btn {
-            box-shadow: $box-shadow;
-            color: $font-color-dark;
-            border-radius: 6px;
-            padding: 0.5em;
-            margin-right: 0.5em;
-            border: 0;
-    
-            &.cm-btn-sm {
-                padding: 0.4em;
-                font-size: 1em;
-            }
-    
-            &.cm-btn-close {
-                background: #eee;
-                color: #000;
-            }
-    
-            &.cm-btn-success {
-                background: $green1;
-            }
+.klaro-Button {
+    box-shadow: $box-shadow;
+    color: $theme-color;
+    border-radius: 6px;
+    padding: 0.5em;
+    margin-right: 0.5em;
+    border: 0;
+}
 
-            &.cm-btn-danger {
-                background: $blue3;
-            }
-    
-            &.cm-btn-info {
-                background: $blue1;
-            }
-        }
-    
+.klaro-Button--save {
+    background: $green;
+}
+
+.klaro-Button--decline {
+    background: $blue-dark;
+}
+
+.klaro-Button--info {
+    background: $blue;
+}
+
+.klaro-Notice {
+    background: $bg-dark;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.8em;
+
+    @media (min-width: 990px) {
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        bottom: 20px;
+        right: 20px;
+        max-width: 300px;
     }
-    
-    .cookie-modal {
-        
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        overflow: hidden;
-        left: 0;
-        top: 0;
-        z-index: 1000;
-    
-        .cm-bg {
-            background: rgba(0,0,0,0.5);
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-    
-        .cm-modal {
-            z-index: 1001;
-            box-shadow: $box-shadow;
-    
-            @media(min-width: 1024px){
-                border-radius: $border-radius;
-                position: relative;
-                margin: 0 auto;
-                max-width: 640px;
-                height: auto;
-                width: auto;
-            }
-    
-            width: 100%;
-            max-height: 98%;        
-    
-            top: 50%;
-            transform: translateY(-50%);
-    
-            position: fixed;
-            overflow: auto;
-            background: $bg-dark;
-            color: $font-color-dark;
-    
-            .hide   {
-                border: none;
-                background: none;
-                svg {
-                    stroke: $font-color-dark;
-                }
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-    
-            .cm-footer {
-                padding: 1em;
-                border-top: $border-dark;
-    
-                a.cm-powered-by {
-                    position: absolute;
-                    right: 1em;
-                    color: $font-color-dark-deemphasized;
-                    font-size: 0.8em;
-                    padding-top: 4px;
-                }
-            }
-    
-            .cm-header {
-                padding: 1em;
-                padding-right: 24px;
-                border-bottom: $border-dark;
-                h1 {
-                    margin: 0;
-                    font-size: 2em;
-                    display: block;
-                    &.title {
-                        padding-right: 20px;
-                    }
-                }
-            }
-    
-            .cm-body {
-                padding: 1em;
-                ul {
-                    display: block;
-                }
-                span {
-                    display: inline-block;
-                    width: auto;
-                }
-                ul.cm-apps {
-                    padding :0;
-                    margin: 0;
-                    li.cm-app {
-                        &:first-child{
-                            margin-top: 0;
-                        }
-                        position: relative;
-                        line-height: 20px;
-                        vertical-align: middle;
-                        padding-left: 60px;
-                        min-height: 40px;
-                        .switch {
-                            position: absolute;
-                            left: 0;
-                        }
-                        p {
-                            margin-top: 0;
-                        }
 
-                        p.purposes {
-                            font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
-                        }
-
-                        &.cm-toggle-all {
-                            border-top: $border-dark;
-                            padding-top: 1em;
-                        }
-
-                        span.cm-app-title {
-                            font-weight: 600;
-                        }
-
-                        span.cm-opt-out, span.cm-required {
-                            padding-left: 0.2em;
-                            font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
-                        }
-                    }
-                }
-            }
-        }
+    @media (max-width: 989px) {
+        border: none;
+        border-radius: 0;
     }
-    
-    .cookie-notice {
-    
-        background: $bg-dark;
-    
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-    
-        @media(min-width: 990px){
-            box-shadow: $box-shadow;
-            border-radius: $border-radius;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            max-width: 300px;
-        }
-    
-        @media(max-width: 989px){
-            border: none;
-            border-radius: 0;
-        }
-    
-        .cn-body {
-            margin-bottom:0;
-            margin-right: 0;    
-            bottom: 0;
-    
-            padding: 1em;
-            padding-top: 0;
-    
-            p {
-                margin-bottom: 0.5em;
-            }
-    
-            p.cn-changes {
-                text-decoration: underline;
-            }
-    
-            .cn-learn-more {
-                display: inline-block;
+}
 
-            }
-    
-            p.cn-ok {
-                padding-top: 0.5em;
-                margin: 0;
-            }
+.klaro-Notice-body {
+    padding: 1em;
+}
 
-            a.cn-decline {
-            }
-        }
-    
+.klaro-Notice-description {
+    color: $theme-color;
+    margin-bottom: 0.5em;
+}
+
+.klaro-Notice-purposes {
+    color: $theme-color;
+}
+
+.klaro-Notice-changes {
+    font-weight: bold;
+}
+
+.klaro-Notice-learnMoreButton {
+    display: inline-block;
+}
+
+.klaro-ModalOverlay {
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.klaro-Modal {
+    z-index: 1001;
+    box-shadow: $box-shadow;
+
+    @media (min-width: 1024px){
+        border-radius: $border-radius;
+        position: relative;
+        margin: 0 auto;
+        max-width: 640px;
+        height: auto;
+        width: auto;
     }
+
+    width: 100%;
+    max-height: 98%;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    position: fixed;
+    overflow: auto;
+    background: $theme-bg;
+    color: $theme-color;
+}
+
+.klaro-Modal-header {
+    padding: 1em;
+    border-bottom: $theme-border;
+}
+
+.klaro-Modal-title {
+    margin: 0;
+    font-size: 2em;
+    display: block;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.klaro-Modal-closeButton {
+    border: none;
+    background: none;
+    color: inherit;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+
+    svg {
+        stroke: currentColor;
+    }
+}
+
+.klaro-Modal-privacyPolicyLink {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.klaro-Modal-body {
+    padding: 1em;
+}
+
+.klaro-Modal-footer {
+    padding: 1em;
+    border-top: $theme-border;
+}
+
+.klaro-Modal-poweredByLink {
+    position: absolute;
+    right: 1em;
+    color: $theme-color-light;
+    font-size: 0.8em;
+    padding-top: 4px;
+}
+
+.klaro-AppList {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.klaro-AppList-item {
+    display: block;
+    position: relative;
+    line-height: 20px;
+    vertical-align: middle;
+    padding-left: 60px;
+    min-height: 40px;
+    margin-top: 0.7em;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.klaro-AppList-item--disableAll {
+    border-top: $theme-border;
+    padding-top: 1em;
+}
+
+.klaro-AppItem-title {
+    font-weight: 600;
+}
+
+.klaro-AppItem-purposes {
+    font-size: 0.8em;
+    color: $theme-color-light;
+}
+
+.klaro-AppItem-optOut,
+.klaro-AppItem-required {
+    padding-left: 0.2em;
+    font-size: 0.8em;
+    color: $theme-color-light;
+}
+
+.klaro-AppItem-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 50px;
+    height: 30px;
+}
+
+.klaro-AppItem-switch {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+
+.klaro-AppItem-slider {
+    box-shadow: $box-shadow;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 50px;
+    display: inline-block;
+    border-radius: 30px;
+    border: 2px solid transparent;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%;
+    }
+}
+
+.klaro-AppItem-switch--disabled .klaro-AppItem-slider {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.klaro-AppItem-input:focus + .klaro-AppItem-label .klaro-AppItem-slider {
+    border-color: #ddd;
+}
+
+.klaro-AppItem-input:focus:not(:checked) + .klaro-AppItem-label .klaro-AppItem-slider {
+    border-color: black;
+    box-shadow: 0 0 0 2px white;
+}
+
+.klaro-AppItem-input:checked + .klaro-AppItem-label .klaro-AppItem-slider {
+    background-color: $blue;
+}
+
+.klaro-AppItem-input:checked + .klaro-AppItem-label .klaro-AppItem-slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
 }
