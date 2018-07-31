@@ -30,7 +30,7 @@ export default class Apps extends React.Component {
     }
 
     render(){
-        const {config, t, manager} = this.props
+        const {config, t, ns, manager} = this.props
         const {consents} = this.state
         const {apps} = config
 
@@ -51,11 +51,12 @@ export default class Apps extends React.Component {
                 toggle([app], value)
             }
             const checked = consents[app.name]
-            return <li className="cm-app">
+            return <li className={ns(`AppList-item AppList-item--${app.name}`)}>
                 <AppItem
                     checked={checked || app.required}
                     onToggle={toggleApp}
                     t={t}
+                    ns={ns}
                     {...app}
                 />
             </li>
@@ -67,7 +68,7 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length == 0 ? true : false
 
-        const disableAllItem = <li className="cm-app cm-toggle-all">
+        const disableAllItem = <li className={ns('AppList-item AppList-item--disableAll')}>
             <AppItem
                 name="disableAll"
                 title={t(['app','disableAll','title'])}
@@ -75,9 +76,10 @@ export default class Apps extends React.Component {
                 checked={!allDisabled}
                 onToggle={toggleAll}
                 t={t}
+                ns={ns}
             />
         </li>
-        return <ul className="cm-apps">
+        return <ul className={ns('AppList')}>
             {appItems}
             {disableAllItem}
         </ul>

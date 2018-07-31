@@ -5,6 +5,7 @@ import {render} from 'react-dom'
 import translations from 'translations'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
+import {createCssNamespace} from 'utils/css'
 
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
@@ -53,7 +54,7 @@ export function renderKlaro(config, show){
     const lang = config.lang || language()
     const tt = (...args) => {return t(trans, lang, ...args)}
     const app = render(<App t={tt}
-                            stylePrefix={stylePrefix}
+                            ns={createCssNamespace(stylePrefix)}
                             manager={manager}
                             config={config}
                             show={show || false} />, element)
