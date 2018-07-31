@@ -56,7 +56,7 @@ export default class ConsentNotice extends React.Component {
                         {t(['consentNotice', 'description'], {purposes: <strong className={ns('Notice-purposes')}>{purposesText}</strong>})}
                         <button
                             type="button"
-                            className={ns('Notice-learnMoreButton')}
+                            className={ns('Button Button--info Notice-learnMoreButton')}
                             onClick={showModal}
                         >
                             {t(['consentNotice', 'learnMore'])}
@@ -69,14 +69,14 @@ export default class ConsentNotice extends React.Component {
 
                     <p className={ns('Notice-actions')}>
                         <button
-                            className={ns('Button Notice-button Notice-saveButton')}
+                            className={ns('Button Button--save Notice-button Notice-saveButton')}
                             type="button"
                             onClick={saveAndHide}
                         >
                             {t(['ok'])}
                         </button>
                         <button
-                            className={ns('Button Notice-button Notice-declineButton')}
+                            className={ns('Button Button--decline Notice-button Notice-declineButton')}
                             type="button"
                             onClick={declineAndHide}
                         >

@@ -30,9 +30,9 @@ export default class ConsentModal extends React.Component {
             aria={{'labelledby': 'klaro-modal-title'}}
             portalClassName={ns('ModalPortal')}
             overlayClassName={ns('ModalOverlay')}
-            className={ns('Modal')}
+            className={ns('Modal Container')}
             onRequestClose={hide}
-            bodyOpenClassName={ns('WithConstentModalOpen')}
+            bodyOpenClassName={ns('WithModalOpen')}
             role="dialog"
         >
             <div className={ns('Modal-header')}>
@@ -56,7 +56,7 @@ export default class ConsentModal extends React.Component {
             </div>
             <div className={ns('Modal-footer')}>
                 <button
-                    className={ns('Button Modal-saveButton')}
+                    className={ns('Button Button--save Modal-saveButton')}
                     type="button"
                     onClick={saveAndHide}
                 >
