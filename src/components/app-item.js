@@ -29,6 +29,12 @@ export default class AppItem extends React.Component {
             </span>
             : ''
 
+        const purposesEl = purposes.length > 0
+            ? <p className={ns('AppItem-purposes')}>
+                {t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}
+            </p>
+            : null
+
         return <div className={ns('AppItem')}>
             <input
                 id={id}
@@ -51,7 +57,7 @@ export default class AppItem extends React.Component {
             </label>
             <div id={`${id}-description`} className={ns('AppItem-fullDescription')}>
                 <p className={ns('AppItem-description')}>{description || t([name, 'description'])}</p>
-                <p className={ns('AppItem-purposes')}>{t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
+                {purposesEl}
             </div>
         </div>
     }
