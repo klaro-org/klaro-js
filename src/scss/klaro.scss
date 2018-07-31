@@ -1,10 +1,6 @@
 $box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 $border-radius: 4px;
-$font-color-dark: #eee;
-$theme-color-light: #999;
-$bg-dark: #333;
-$red2: #B24E14;
-$red1: #BA1E04;
+
 $blue-dark: #005091;
 $blue: #0885BA;
 $green: #00AA3E;
@@ -16,23 +12,6 @@ $theme-color-light: #999;
 
 .klaro-Container {
     font-size: 1em;
-    // a {
-    //     color: $green;
-    //     text-decoration: none;
-    // }
-
-    // p, strong, h1, h2, ul, li {
-    //     font-family: inherit;
-    //     color: $font-color-dark;
-    // }
-
-    // p, h1, h2, ul, li {
-    //     display: block;
-    //     text-align: left;
-    //     margin: 0;
-    //     padding: 0;
-    //     margin-top: 0.7em;
-    // }
 }
 
 .klaro-Button {
@@ -57,7 +36,7 @@ $theme-color-light: #999;
 }
 
 .klaro-Notice {
-    background: $bg-dark;
+    background: $theme-bg;
     position: fixed;
     z-index: 1000;
     width: 100%;
