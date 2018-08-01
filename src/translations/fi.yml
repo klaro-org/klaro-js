@@ -1,0 +1,30 @@
+consentModal:
+  title: Keräämämme tiedot
+  description: >
+    Voit tarkastella ja muokata sinusta keräämiämme tietoja.
+  privacyPolicy:
+    name: tietosuojasivultamme
+    text: >
+      Voit lukea lisätietoja {privacyPolicy}.
+consentNotice:
+  changeDescription: Olemme tehneet muutoksia ehtoihin viime vierailusi jälkeen, tarkista ehdot.
+  description: >
+    Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin: {purposes}.
+  learnMore: Lue lisää
+ok: Hyväksy
+save: Tallenna
+decline: Hylkää
+app:
+  disableAll:
+    title: Valitse kaikki
+    description: Aktivoi kaikki päälle/pois.
+  optOut:
+    title: (ladataan oletuksena)
+    description: Ladataan oletuksena (mutta voit ottaa sen pois päältä)
+  required:
+    title: (vaaditaan)
+    description: Sivusto vaatii tämän aina
+  purposes: Käyttötarkoitukset
+  purpose: Käyttötarkoitus
+poweredBy: Palvelun tarjoaa Klaro!
+
