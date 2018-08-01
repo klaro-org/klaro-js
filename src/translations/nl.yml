@@ -1,0 +1,29 @@
+consentModal:
+  title: Informatie die we verzamelen
+  description: >
+    Hier kunt u de informatie bekijken en aanpassen die we over u verzamelen.
+  privacyPolicy:
+    name: privacybeleid
+    text: >
+      Lees ons privacybeleid voor meer informatie {privacyPolicy}.
+consentNotice:
+  changeDescription: Er waren wijzigingen sinds uw laatste bezoek, werk uw voorkeuren bij.
+  description: >
+    Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
+  learnMore: Lees meer
+ok: OK
+save: Opslaan
+decline: Afwijzen
+app:
+  disableAll:
+    title: Alle opties in/uit schakelen
+    description: Gebruik deze schakeloptie om alle apps in/uit te schakelen.
+  optOut:
+    title: (afmelden)
+    description: Deze app is standaard geladen (maar je kunt je afmelden)
+  required:
+    title: (altijd verplicht)
+    description: Deze applicatie is altijd vereist
+  purposes: Doeleinden
+  purpose: Doeleinde
+poweredBy: Aangedreven door Klaro!

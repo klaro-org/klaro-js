@@ -1,10 +1,10 @@
 {
   "name": "klaro",
   "version": "0.2.1",
-  "description": "A simple consent manager.",
+  "description": "A simple but powerful consent manager.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dpkit/cookie-compliance.git"
+    "url": "git+https://github.com/KIProtect/klaro.git"
   },
   "keywords": [
     "cookie",
@@ -21,12 +21,12 @@
     "make": "npm run prod-full && npm run prod-no-css",
     "prepublishOnly": "npm run make"
   },
-  "author": "DP-Kit",
+  "author": "kj7s GbR",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/dpkit/cookie-compliance/issues"
+    "url": "https://github.com/KIProtect/klaro/issues"
   },
-  "homepage": "https://github.com/dpkit/cookie-compliance#readme",
+  "homepage": "https://github.com/KIProtect/klaro#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",

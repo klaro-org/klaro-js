@@ -1,0 +1,29 @@
+consentModal:
+  title: Információk, amiket gyűjtünk
+  description: >
+    Itt láthatod és testreszabhatod az rólad gyűjtött információkat.
+  privacyPolicy:
+    name: adatvédelmi irányelveinket
+    text: >
+      További információért kérjük, olvassd el az {privacyPolicy}.
+consentNotice:
+  changeDescription: Az utolsó látogatás óta változások történtek, kérjük, frissítsd a hozzájárulásodat.
+  description: >
+    Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
+  learnMore: Tudj meg többet
+ok: Elfogad
+save: Mentés
+decline: Elvet
+app:
+  disableAll:
+    title: Összes app átkapcsolása
+    description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
+  optOut:
+    title: (leiratkozás)
+    description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
+  required:
+    title: (mindig kötelező)
+    description: Ez az applikáció mindig kötelező
+  purposes: Célok
+  purpose: Cél
+poweredBy: Powered by Klaro!
