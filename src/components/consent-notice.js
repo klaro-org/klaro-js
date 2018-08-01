@@ -66,7 +66,7 @@ export default class ConsentNotice extends React.Component {
                             type="button"
                             onClick={saveAndHide}
                         >
-                            {t(['ok'])}
+                            {t(['accept'])}
                         </button>
                         <button
                             className={ns('Button Button--decline Notice-button Notice-declineButton')}

@@ -11,6 +11,7 @@ consentNotice:
   description: >
     We collect and process your personal information for the following purposes: {purposes}.
   learnMore: Learn more
+accept: Accept
 ok: OK
 save: Save
 decline: Decline
