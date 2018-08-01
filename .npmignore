@@ -1,3 +1,4 @@
 *
 !dist/klaro.js
 !dist/klaro-no-css.js
+!src/scss/klaro.scss
