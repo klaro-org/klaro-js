@@ -4,6 +4,8 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
+var APP_ENV = process.env.APP_ENV || 'dev';
+var APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 
 var config = {
@@ -21,54 +23,62 @@ var config = {
       "react-dom": "preact-compat"
     }
   },
-  devtool: 'inline-source-maps',
-  module : {
-    loaders : [
-        { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-        {
-          test: /\.scss|sass$/,
-          loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
-        },
-        {
-          test: /\.css$/,
-          loaders: ['style-loader', 'css-loader?sourceMap']
-        },
-        {
-          test: /\.yaml|yml$/,
-          loaders: ['json-loader', 'yaml-loader'],
-        },
-        {
-        test: /\.less$/,
-        use: [{
-            loader: "style-loader" // creates style nodes from JS strings
-        }, {
-            loader: "css-loader" // translates CSS into CommonJS
-        }, {
-            loader: "less-loader" // compiles Less to CSS
-        }]
-        },
-        {
-        test : /\.jsx?/,
-        include : [path.resolve('node_modules'), SRC_DIR],
-        loader : 'babel-loader',
-        query : {
+  module: {
+    loaders: [
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.scss|sass$/,
+        loaders: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', withEnvSourcemap('css-loader')]
+      },
+      {
+        test: /\.yaml|yml$/,
+        loaders: ['json-loader', 'yaml-loader'],
+      },
+      {
+        test: /\.jsx?/,
+        include: [path.resolve('node_modules'), SRC_DIR],
+        loader: 'babel-loader',
+        query: {
           presets: [["env", { "modules": false }], 'react', 'stage-2'],
-          }
+        }
       }
     ]
   },
   entry: [
-    'webpack/hot/only-dev-server',
-    SRC_DIR + '/klaro.js' 
+    SRC_DIR + '/klaro.js'
   ],
   output: {
-    path: PUBLIC_DIR,
+    path: BUILD_DIR,
     filename: 'klaro.js',
     library: 'klaro',
     libraryTarget: 'umd',
     publicPath: ''
   },
-  devServer: {
+  plugins: []
+};
+
+if (APP_ENV === 'dev') {
+  config.devtool = 'inline-source-maps';
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      VERSION : JSON.stringify('development'),
+    })
+  );
+}
+
+if (APP_DEV_MODE === 'server') {
+  config.entry = [
+    'webpack/hot/only-dev-server',
+    config.entry[0]
+  ];
+  config.devServer = {
     hot: true,
     // enable HMR on the server
 
@@ -86,14 +96,38 @@ var config = {
         secure: false
       }
     }
-  },
-  plugins: [
+  };
+  config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.DefinePlugin({
-      VERSION : JSON.stringify('development'),
+    new webpack.NamedModulesPlugin()
+  );
+}
+
+if (APP_ENV === 'production') {
+  config.plugins.push(
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
     }),
-  ]
-};
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+      VERSION : JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      comments: false,
+      minimize: true,
+      sourceMaps: false,
+    }),
+    new webpack.optimize.AggressiveMergingPlugin()
+  );
+}
 
 module.exports = config;
+
+function withEnvSourcemap(loader) {
+  return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
+}
