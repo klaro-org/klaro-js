@@ -12,6 +12,7 @@
     "gdpr",
     "compliance"
   ],
+  "main": "dist/klaro.js",
   "scripts": {
     "make-dev": "APP_ENV=dev APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
     "make-watch": "APP_ENV=dev APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
