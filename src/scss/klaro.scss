@@ -1,34 +1,34 @@
 $box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 $border-radius: 4px;
 
-$blue-dark: #005091;
-$blue: #0885BA;
+$blue: #057EB6;
 $green: #00AA3E;
 
 $theme-bg: #333;
 $theme-border: 1px solid #555;
 $theme-color: #eee;
-$theme-color-light: #999;
+$theme-color-light: #aaa;
 
 .klaro-Container {
     font-size: 1em;
+    line-height: 1.5;
 }
 
 .klaro-Button {
-    box-shadow: $box-shadow;
-    color: $theme-color;
-    border-radius: 6px;
-    padding: 0.5em;
-    margin-right: 0.5em;
     border: 0;
+    color: #fff;
+    border-radius: $border-radius;
+    padding: 6px 10px;
+    margin-right: 0.5em;
 }
 
 .klaro-Button--save {
-    background: $green;
+    background: #008A28;
+    color: #fff;
 }
 
 .klaro-Button--decline {
-    background: $blue-dark;
+    background: #666;
 }
 
 .klaro-Button--info {
@@ -169,7 +169,19 @@ $theme-color-light: #999;
     right: 1em;
     color: $theme-color-light;
     font-size: 0.8em;
-    padding-top: 4px;
+    padding: 6px 0;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-color-light;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
 }
 
 .klaro-AppList {
@@ -181,7 +193,7 @@ $theme-color-light: #999;
 .klaro-AppList-item {
     display: block;
     position: relative;
-    line-height: 20px;
+    line-height: 1.25;
     vertical-align: middle;
     padding-left: 60px;
     min-height: 40px;
