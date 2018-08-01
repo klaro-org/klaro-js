@@ -68,17 +68,20 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length == 0 ? true : false
 
-        const disableAllItem = <li className={ns('AppList-item AppList-item--disableAll')}>
-            <AppItem
-                name="disableAll"
-                title={t(['app','disableAll','title'])}
-                description={t(['app', 'disableAll', 'description'])}
-                checked={!allDisabled}
-                onToggle={toggleAll}
-                t={t}
-                ns={ns}
-            />
-        </li>
+        const disableAllItem = apps.length > 1
+            ? <li className={ns('AppList-item AppList-item--disableAll')}>
+                <AppItem
+                    name="disableAll"
+                    title={t(['app','disableAll','title'])}
+                    description={t(['app', 'disableAll', 'description'])}
+                    checked={!allDisabled}
+                    onToggle={toggleAll}
+                    t={t}
+                    ns={ns}
+                />
+            </li>
+            : null
+
         return <ul className={ns('AppList')}>
             {appItems}
             {disableAllItem}
