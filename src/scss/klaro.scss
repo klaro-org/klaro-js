@@ -21,18 +21,18 @@ $green3: #01440C;
     .cookie-modal, .cookie-notice {
 
         @import 'switch.scss';
-    
+
         font-size: 14px;
-    
+
         .slider {
             box-shadow: $box-shadow;
         }
-    
+
         a {
             color: $green1;
             text-decoration: none;
         }
-    
+
         p, h1, h2, ul, li {
             display: block;
             font-family: inherit;
@@ -42,24 +42,24 @@ $green3: #01440C;
             padding: 0;
             margin-top: 0.7em;
         }
-    
+
         a.cm-btn {
             box-shadow: $box-shadow;
             color: $font-color-dark;
             border-radius: 6px;
             padding: 0.5em;
             margin-right: 0.5em;
-    
+
             &.cm-btn-sm {
                 padding: 0.4em;
                 font-size: 1em;
             }
-    
+
             &.cm-btn-close {
                 background: #eee;
                 color: #000;
             }
-    
+
             &.cm-btn-success {
                 background: $green1;
             }
@@ -67,16 +67,16 @@ $green3: #01440C;
             &.cm-btn-danger {
                 background: $blue3;
             }
-    
+
             &.cm-btn-info {
                 background: $blue1;
             }
         }
-    
+
     }
-    
+
     .cookie-modal {
-        
+
         width: 100%;
         height: 100%;
         position: fixed;
@@ -84,7 +84,7 @@ $green3: #01440C;
         left: 0;
         top: 0;
         z-index: 1000;
-    
+
         .cm-bg {
             background: rgba(0,0,0,0.5);
             height: 100%;
@@ -93,11 +93,11 @@ $green3: #01440C;
             top: 0;
             left: 0;
         }
-    
+
         .cm-modal {
             z-index: 1001;
             box-shadow: $box-shadow;
-    
+
             @media(min-width: 1024px){
                 border-radius: $border-radius;
                 position: relative;
@@ -106,18 +106,18 @@ $green3: #01440C;
                 height: auto;
                 width: auto;
             }
-    
+
             width: 100%;
-            max-height: 98%;        
-    
+            max-height: 98%;
+
             top: 50%;
             transform: translateY(-50%);
-    
+
             position: fixed;
             overflow: auto;
             background: $bg-dark;
             color: $font-color-dark;
-    
+
             a.hide   {
                 svg {
                     stroke: $font-color-dark;
@@ -126,11 +126,11 @@ $green3: #01440C;
                 top: 20px;
                 right: 20px;
             }
-    
+
             .cm-footer {
                 padding: 1em;
                 border-top: $border-dark;
-    
+
                 a.cm-powered-by {
                     position: absolute;
                     right: 1em;
@@ -139,7 +139,7 @@ $green3: #01440C;
                     padding-top: 4px;
                 }
             }
-    
+
             .cm-header {
                 padding: 1em;
                 padding-right: 24px;
@@ -153,7 +153,7 @@ $green3: #01440C;
                     }
                 }
             }
-    
+
             .cm-body {
                 padding: 1em;
                 ul {
@@ -207,15 +207,16 @@ $green3: #01440C;
             }
         }
     }
-    
+
     .cookie-notice {
-    
+
         background: $bg-dark;
-    
+
         position: fixed;
         width: 100%;
         bottom: 0;
-    
+        right: 0;
+
         @media(min-width: 990px){
             box-shadow: $box-shadow;
             border-radius: $border-radius;
@@ -224,32 +225,32 @@ $green3: #01440C;
             right: 20px;
             max-width: 300px;
         }
-    
+
         @media(max-width: 989px){
             border: none;
             border-radius: 0;
         }
-    
+
         .cn-body {
             margin-bottom:0;
-            margin-right: 0;    
+            margin-right: 0;
             bottom: 0;
-    
+
             padding: 1em;
             padding-top: 0;
-    
+
             p {
                 margin-bottom: 0.5em;
             }
-    
+
             p.cn-changes {
                 text-decoration: underline;
             }
-    
+
             a.cn-learn-more {
                 display: inline-block;
             }
-    
+
             p.cn-ok {
                 padding-top: 0.5em;
                 margin: 0;
@@ -258,6 +259,6 @@ $green3: #01440C;
             a.cn-decline {
             }
         }
-    
+
     }
 }
