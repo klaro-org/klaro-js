@@ -66,6 +66,7 @@ export default class ConsentModal extends React.Component {
                     target="_blank"
                     className={ns('Modal-poweredByLink')}
                     href={config.poweredBy || 'https://klaro.kiprotect.com'}
+                    title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
                 >
                     {t(['poweredBy'])}
                 </a>
