@@ -9,6 +9,18 @@ $theme-border: 1px solid #555;
 $theme-color: #eee;
 $theme-color-light: #aaa;
 
+// micro css reset for everything klaro related
+[class^="klaro-"] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    vertical-align: baseline;
+    cursor: default;
+}
+
 .klaro-Container {
     font-size: 1em;
     line-height: 1.5;
@@ -139,9 +151,20 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Modal-privacyPolicyLink {
-    color: inherit;
+.klaro-Modal-body {
+    padding: 1em;
+}
+
+.klaro-Modal-footer {
+    padding: 1em;
+    border-top: $theme-border;
+}
+
+.klaro-Modal-privacyPolicyLink,
+.klaro-Modal-poweredByLink {
+    cursor: pointer;
     text-decoration: underline;
+    color: inherit;
 
     &:hover,
     &:focus,
@@ -155,32 +178,17 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Modal-body {
-    padding: 1em;
-}
-
-.klaro-Modal-footer {
-    padding: 1em;
-    border-top: $theme-border;
-}
-
 .klaro-Modal-poweredByLink {
     position: absolute;
     right: 1em;
     color: $theme-color-light;
     font-size: 0.8em;
     padding: 6px 0;
-    text-decoration: underline;
 
     &:hover,
     &:focus,
     &:active {
         color: $theme-color-light;
-    }
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
     }
 }
 
@@ -211,6 +219,7 @@ $theme-color-light: #aaa;
 
 .klaro-AppItem-title {
     font-weight: 600;
+    cursor: pointer;
 }
 
 .klaro-AppItem-purposes {
