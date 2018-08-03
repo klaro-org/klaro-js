@@ -1,6 +1,6 @@
 # About this fork
 
-This fork was first about making the lib more accessible. It's now starting to notably change also in how components are authored and how the lib can be consumed, so that it can be more easily reused accross projects in our company (and maybe yours).
+This fork was first about making the lib more accessible. It's now starting to notably change also in how components are authored and how the lib can be consumed, so that it can be more easily reused accross projects in our company (and maybe yours). See the changelog for more info.
 
 Original README below.
 

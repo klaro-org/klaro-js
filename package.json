@@ -1,10 +1,10 @@
 {
-  "name": "klaro",
-  "version": "0.2.1",
-  "description": "A simple but powerful consent manager.",
+  "name": "klaro-empreinte",
+  "version": "0.3.0+upstream.fce14a2",
+  "description": "A simple but powerful consent manager. Empreinte digitale's fork.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KIProtect/klaro.git"
+    "url": "git+https://github.com/empreinte-digitale/klaro.git"
   },
   "keywords": [
     "cookie",
@@ -24,9 +24,9 @@
   "author": "kj7s GbR",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/KIProtect/klaro/issues"
+    "url": "https://github.com/empreinte-digitale/klaro/issues"
   },
-  "homepage": "https://github.com/KIProtect/klaro#readme",
+  "homepage": "https://github.com/empreinte-digitale/klaro#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
