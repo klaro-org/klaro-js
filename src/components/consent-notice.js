@@ -60,7 +60,7 @@ export default class ConsentNotice extends React.Component {
                         ? <p className={ns('Notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
                         : ''}
 
-                    <p className={ns('Notice-actions')}>
+                    <div className={ns('Notice-actions')}>
                         <button
                             className={ns('Button Button--save Notice-button Notice-saveButton')}
                             type="button"
@@ -82,7 +82,7 @@ export default class ConsentNotice extends React.Component {
                         >
                             {t(['consentNotice', 'learnMore'])}
                         </button>
-                    </p>
+                    </div>
                 </div>
                 <ConsentModal {...modalProps} isOpen={false} />
             </div>
