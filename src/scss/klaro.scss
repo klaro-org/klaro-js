@@ -69,6 +69,10 @@ $theme-color-light: #aaa;
     }
 }
 
+.klaro-Notice--hidden {
+    display: none !important;
+}
+
 .klaro-Notice-body {
     padding: 1em;
 }
