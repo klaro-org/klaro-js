@@ -5,6 +5,12 @@ On each version, there a build metadata indicating the last commit from original
 
 For example, version `0.3.0+upstream.fce14a2` means the version 0.3.0 of our fork includes all commits of the original repo until the commit fce14a2 (included).
 
+## 0.3.1
+
+- "powered by" link: add "new window" title to warn user about the _blank target attribute
+- a11y: when opening the consent modal via the "learn more" consent notice button, and exiting the consent modal via ESC or close button, the focus now correctly goes back to the "learn more" button
+- fix: the small CSS reset was wrongly applied on the body when `mustContent = true`
+
 ## 0.3.0
 
 This version includes everything from the original repo until commit [fce14a2](https://github.com/KIProtect/klaro/commits/fce14a280926da9ae474f7fee7333253ffc6430d).

@@ -1,6 +1,6 @@
 {
   "name": "klaro-empreinte",
-  "version": "0.3.0+upstream.fce14a2",
+  "version": "0.3.1+upstream.fce14a2",
   "description": "A simple but powerful consent manager. Empreinte digitale's fork.",
   "repository": {
     "type": "git",
