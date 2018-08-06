@@ -32,7 +32,7 @@ export default class ConsentModal extends React.Component {
             overlayClassName={ns('ModalOverlay')}
             className={ns('Modal Container')}
             onRequestClose={hide}
-            bodyOpenClassName={ns('WithModalOpen')}
+            bodyOpenClassName="klaroBody-WithModalOpen"
             role="dialog"
         >
             <div className={ns('Modal-header')}>
