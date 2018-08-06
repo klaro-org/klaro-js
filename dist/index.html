@@ -42,6 +42,10 @@
         <link rel="stylesheet" href="assets/styles.css" />
     </head>
     <body onload="replaceVersion()">
+        <!-- by default, klaro will be appended in the klaro div, or will create one at the end of the body if none exists.
+        it's recommended to have klaro at the top of your content so that screen reader users can be notified early -->
+        <div id="klaro"></div>
+        <div id="app">
         <img data-hide=true data-title="We're watching you (for your own safety)" class="camera" data-src="assets/Surveillance-camera-small.png" data-name="camera" />
         <section class="hero is-info is-medium is-bold">
             <div class="hero-head">
@@ -500,7 +504,7 @@
                 </div>
             </div>
         </section>
-
+        </div>
         <!-- our (real) Matomo tracking code -->
         <script type="opt-in" data-type="application/javascript" data-name="matomo">
             var _paq = _paq || [];

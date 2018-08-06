@@ -11,6 +11,10 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // For accessibility's sake, the modal must know what is the element
+    // containing your app or website
+    appElement: '#app',
+
     // You can customize the name of the cookie that Klaro uses for storing
     // user consent decisions. If undefined, Klaro will use 'klaro'.
     cookieName: 'klaro',
