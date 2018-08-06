@@ -1,6 +1,6 @@
 {
   "name": "klaro",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A simple but powerful consent manager.",
   "repository": {
     "type": "git",
