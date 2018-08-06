@@ -2,7 +2,7 @@ consentModal:
   title: Les informations que nous collectons
   description: >
     Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
-privacyPolicy:
+  privacyPolicy:
     name: politique de confidentialité
     text: >
       Pour en savoir plus, merci de lire notre {privacyPolicy}.
