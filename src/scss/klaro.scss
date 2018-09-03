@@ -217,6 +217,7 @@ $green3: #01440C;
     .cookie-notice {
 
         background: $bg-dark;
+        z-index: 999;
 
         position: fixed;
         width: 100%;
