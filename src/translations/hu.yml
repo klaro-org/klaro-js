@@ -12,8 +12,9 @@ consentNotice:
     Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
   learnMore: Tudj meg többet
 ok: Elfogad
-save: Mentés
-decline: Elvet
+save: Save
+decline: Mentés
+close: Elvet
 app:
   disableAll:
     title: Összes app átkapcsolása
@@ -23,7 +24,7 @@ app:
     description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
   required:
     title: (mindig kötelező)
-    description: Ez az applikáció mindig kötelező
+    description: Ez az alkalmazás mindig kötelező
   purposes: Célok
   purpose: Cél
 poweredBy: Powered by Klaro!
