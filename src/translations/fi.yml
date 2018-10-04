@@ -15,9 +15,6 @@ ok: Hyväksy
 save: Tallenna
 decline: Hylkää
 app:
-  disableAll:
-    title: Valitse kaikki
-    description: Aktivoi kaikki päälle/pois.
   optOut:
     title: (ladataan oletuksena)
     description: Ladataan oletuksena (mutta voit ottaa sen pois päältä)

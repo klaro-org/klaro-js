@@ -12,15 +12,14 @@ consentNotice:
     We collect and process your personal information for the following purposes: {purposes}.
   learnMore: Learn more
 accept: Accept
+acceptAll: Accept all apps
 ok: OK
 save: Save
 saveData: Save my configuration on collected information
 decline: Decline
+declineAll: Decline all apps
 close: Close
 app:
-  disableAll:
-    title: Toggle all apps
-    description: Use this switch to enable/disable all apps.
   optOut:
     title: (opt-out)
     description: This app is loaded by default (but you can opt out)

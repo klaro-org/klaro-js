@@ -15,9 +15,6 @@ ok: OK
 save: Salvează
 decline: Renunță
 app:
-  disableAll:
-    title: Comutați între toate aplicațiile
-    description: Utilizați acest switch pentru a activa/dezactiva toate aplicațiile.
   optOut:
     title: (opt-out)
     description: Această aplicație este încărcată în mod implicit (dar puteți renunța)

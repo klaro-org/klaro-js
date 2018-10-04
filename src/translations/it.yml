@@ -15,9 +15,6 @@ ok: OK
 save: Salva
 decline: Rifiuta
 app:
-  disableAll:
-    title: Cambia per tutte le app
-    description: Usa questo interruttore per abilitare/disabilitare tutte le app.
   optOut:
     title: (opt-out)
     description: Quest'applicazione è caricata di default (ma puoi disattivarla)

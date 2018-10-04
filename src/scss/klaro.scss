@@ -2,7 +2,7 @@ $box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 $border-radius: 4px;
 
 $blue: #057EB6;
-$green: #00AA3E;
+$green: #008A28;
 
 $theme-bg: #333;
 $theme-border: 1px solid #555;
@@ -32,10 +32,16 @@ $theme-color-light: #aaa;
     border-radius: $border-radius;
     padding: 6px 10px;
     margin-right: 0.5em;
+    border: 1px solid transparent;
+
+    &[disabled] {
+        opacity: 0.6;
+    }
 }
 
-.klaro-Button--save {
-    background: #008A28;
+.klaro-Button--save,
+.klaro-Button--accept {
+    background: $green;
     color: #fff;
 }
 
@@ -224,11 +230,6 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-AppList-item--disableAll {
-    border-top: $theme-border;
-    padding-top: 1em;
-}
-
 .klaro-AppItem-title {
     font-weight: 600;
     cursor: pointer;
@@ -271,7 +272,7 @@ $theme-color-light: #aaa;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #aaa;
     -webkit-transition: .4s;
     transition: .4s;
     width: 50px;
@@ -290,6 +291,7 @@ $theme-color-light: #aaa;
         -webkit-transition: .4s;
         transition: .4s;
         border-radius: 50%;
+        border: 1px solid #555;
     }
 }
 
@@ -299,12 +301,8 @@ $theme-color-light: #aaa;
 }
 
 .klaro-AppItem-input:focus + .klaro-AppItem-label .klaro-AppItem-slider {
-    border-color: #ddd;
-}
-
-.klaro-AppItem-input:focus:not(:checked) + .klaro-AppItem-label .klaro-AppItem-slider {
-    border-color: black;
-    box-shadow: 0 0 0 2px white;
+    border-color: #fff;
+    outline-offset: 2px;
 }
 
 .klaro-AppItem-input:checked + .klaro-AppItem-label .klaro-AppItem-slider {
@@ -315,4 +313,13 @@ $theme-color-light: #aaa;
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+}
+
+.klaro-AppToggles {
+    margin-bottom: 1em;
+    display: block;
+}
+
+.klaro-AppToggles-item {
+    display: inline;
 }

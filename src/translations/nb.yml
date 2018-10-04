@@ -15,9 +15,6 @@ ok: OK
 save: Opslaan
 decline: Avslå
 app:
-  disableAll:
-    title: Bytt alle apper
-    description: Bruk denne for å skru av/på alle apper.
   optOut:
     title: (opt-out)
     description: Denne appen er lastet som standard (men du kan skru det av)

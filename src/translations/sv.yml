@@ -15,9 +15,6 @@ ok: OK
 save: Spara
 decline: Avböj
 app:
-  disableAll:
-    title: Ändra för alla appar
-    description: Använd detta reglage för att aktivera/avaktivera samtliga appar.
   optOut:
     title: (Avaktivera)
     description: Den här appen laddas som standardinställning (men du kan avaktivera den)

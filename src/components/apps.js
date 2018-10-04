@@ -45,6 +45,8 @@ export default class Apps extends React.Component {
         const toggleAll = (value) => {
             toggle(apps, value)
         }
+        const enableAll = () => toggleAll(true)
+        const disableAll = () => toggleAll(false)
 
         const appItems = apps.map((app, key) => {
             const toggleApp = (value) => {
@@ -68,24 +70,32 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length == 0 ? true : false
 
-        const disableAllItem = apps.length > 1
-            ? <li className={ns('AppList-item AppList-item--disableAll')}>
-                <AppItem
-                    name="disableAll"
-                    title={t(['app','disableAll','title'])}
-                    description={t(['app', 'disableAll', 'description'])}
-                    checked={!allDisabled}
-                    onToggle={toggleAll}
-                    t={t}
-                    ns={ns}
-                />
-            </li>
-            : null
-
-        return <ul className={ns('AppList')}>
-            {appItems}
-            {disableAllItem}
-        </ul>
-
+        return <div>
+            <ul className={ns('AppToggles')}>
+                <li className={ns('AppToggles-item')}>
+                    <button
+                        type="button"
+                        className={ns('Button Button--info AppToggles-button AppToggles-disableAll')}
+                        disabled={allDisabled}
+                        onClick={disableAll}
+                    >
+                        {t(['declineAll'])}
+                    </button>
+                </li>
+                <li className={ns('AppToggles-item')}>
+                    <button
+                        type="button"
+                        className={ns('Button Button--info AppToggles-button AppToggles-enableAll')}
+                        disabled={!allDisabled}
+                        onClick={enableAll}
+                    >
+                        {t(['acceptAll'])}
+                    </button>
+                </li>
+            </ul>
+            <ul className={ns('AppList')}>
+                {appItems}
+            </ul>
+        </div>
     }
 }

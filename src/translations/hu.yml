@@ -15,9 +15,6 @@ ok: Elfogad
 save: Mentés
 decline: Elvet
 app:
-  disableAll:
-    title: Összes app átkapcsolása
-    description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
   optOut:
     title: (leiratkozás)
     description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)

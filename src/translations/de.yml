@@ -15,9 +15,6 @@ ok: OK
 save: Speichern
 decline: Ablehnen
 app:
-  disableAll:
-    title: Alle Anwendungen aktivieren/deaktivieren
-    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
   optOut:
     title: (Opt-Out)
     description: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
