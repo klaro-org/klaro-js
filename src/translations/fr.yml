@@ -14,6 +14,7 @@ consentNotice:
 accept: Accepter
 ok: OK
 save: Sauvegarder
+saveData: Sauvegarder ma configuration sur les informations collectées
 decline: Refuser
 close: Fermer
 app:

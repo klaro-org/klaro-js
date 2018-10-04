@@ -59,6 +59,7 @@ export default class ConsentModal extends React.Component {
                     className={ns('Button Button--save Modal-saveButton')}
                     type="button"
                     onClick={saveAndHide}
+                    title={t(['saveData'])}
                 >
                     {t(['save'])}
                 </button>
