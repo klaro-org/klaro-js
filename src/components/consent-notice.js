@@ -61,29 +61,35 @@ export default class ConsentNotice extends React.Component {
                     ? <p className={ns('Notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>
                     : ''}
 
-                <div className={ns('Notice-actions')}>
-                    <button
-                        className={ns('Button Button--save Notice-button Notice-saveButton')}
-                        type="button"
-                        onClick={saveAndHide}
-                    >
-                        {t(['accept'])}
-                    </button>
-                    <button
-                        className={ns('Button Button--decline Notice-button Notice-declineButton')}
-                        type="button"
-                        onClick={declineAndHide}
-                    >
-                        {t(['decline'])}
-                    </button>
-                    <button
-                        type="button"
-                        className={ns('Button Button--info Notice-learnMoreButton')}
-                        onClick={showModal}
-                    >
-                        {t(['consentNotice', 'learnMore'])}
-                    </button>
-                </div>
+                <ul className={ns('Notice-actions')}>
+                    <li className={ns('Notice-actionItem')}>
+                         <button
+                            className={ns('Button Button--save Notice-button Notice-saveButton')}
+                            type="button"
+                            onClick={saveAndHide}
+                        >
+                            {t(['accept'])}
+                        </button>
+                    </li>
+                    <li className={ns('Notice-actionItem')}>
+                         <button
+                            className={ns('Button Button--decline Notice-button Notice-declineButton')}
+                            type="button"
+                            onClick={declineAndHide}
+                        >
+                            {t(['decline'])}
+                        </button>
+                    </li>
+                    <li className={ns('Notice-actionItem')}>
+                         <button
+                            type="button"
+                            className={ns('Button Button--info Notice-learnMoreButton')}
+                            onClick={showModal}
+                        >
+                            {t(['consentNotice', 'learnMore'])}
+                        </button>
+                    </li>
+                </ul>
             </div>
             <ConsentModal
                 isOpen={modalIsOpen}
