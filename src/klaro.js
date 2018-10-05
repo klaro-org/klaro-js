@@ -87,3 +87,5 @@ export function show(conf){
 export function version(){
     return VERSION
 }
+
+export {language}
