@@ -52,10 +52,10 @@ export default class ConsentModal extends React.Component {
                     })}
                 </p>
             </div>
-            <div className={ns('Modal-body')}>
-                <Apps t={t} ns={ns} config={config} manager={manager} />
-            </div>
             <form className={ns('Modal-form')}>
+                <div className={ns('Modal-body')}>
+                    <Apps t={t} ns={ns} config={config} manager={manager} />
+                </div>
                 <div className={ns('Modal-footer')}>
                     <button
                         className={ns('Button Button--save Modal-saveButton')}
