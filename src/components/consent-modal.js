@@ -54,24 +54,25 @@ export default class ConsentModal extends React.Component {
             <div className={ns('Modal-body')}>
                 <Apps t={t} ns={ns} config={config} manager={manager} />
             </div>
-            <div className={ns('Modal-footer')}>
-                <button
-                    className={ns('Button Button--save Modal-saveButton')}
-                    type="button"
-                    onClick={saveAndHide}
-                    title={t(['saveData'])}
-                >
-                    {t(['save'])}
-                </button>
-                <a
-                    target="_blank"
-                    className={ns('Modal-poweredByLink')}
-                    href={config.poweredBy || 'https://klaro.kiprotect.com'}
-                    title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
-                >
-                    {t(['poweredBy'])}
-                </a>
-            </div>
+            <form className={ns('Modal-form')}>
+                <div className={ns('Modal-footer')}>
+                    <button
+                        className={ns('Button Button--save Modal-saveButton')}
+                        onClick={saveAndHide}
+                        title={t(['saveData'])}
+                    >
+                        {t(['save'])}
+                    </button>
+                    <a
+                        target="_blank"
+                        className={ns('Modal-poweredByLink')}
+                        href={config.poweredBy || 'https://klaro.kiprotect.com'}
+                        title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
+                    >
+                        {t(['poweredBy'])}
+                    </a>
+                </div>
+            </form>
         </ReactModal>
     }
 }
