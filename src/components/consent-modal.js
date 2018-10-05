@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactModal from 'react-modal'
 import {Close} from './icons'
 import Apps from './apps'
 
