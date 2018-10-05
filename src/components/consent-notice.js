@@ -56,6 +56,8 @@ export default class ConsentNotice extends React.Component {
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 
+        if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
+            return <ConsentModal t={t} config={config} hide={hide} declineAndHide={declineAndHide} saveAndHide={saveAndHide} manager={manager} />
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
             <div className="cn-body">
                 <p>
@@ -68,15 +70,6 @@ export default class ConsentNotice extends React.Component {
                     <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
                 </p>
             </div>
-            <ConsentModal
-                isOpen={modalIsOpen}
-                t={t}
-                config={config}
-                hide={hide}
-                declineAndHide={declineAndHide}
-                saveAndHide={saveAndHide}
-                manager={manager}
-            />
         </div>
     }
 }
