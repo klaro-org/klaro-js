@@ -51,7 +51,7 @@ export default class ConsentNotice extends React.Component {
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 
-        return <div className={ns(`Notice ${!noticeIsVisible ? 'Notice--hidden' : ''}`)}>
+        return <div aria-hidden={modalIsOpen} className={ns(`Notice ${!noticeIsVisible ? 'Notice--hidden' : ''}`)}>
             <div className={ns('Notice-body')}>
                 <p className={ns('Notice-description')}>
                     {t(['consentNotice', 'description'], {purposes: <strong className={ns('Notice-purposes')}>{purposesText}</strong>})}

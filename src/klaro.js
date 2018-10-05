@@ -35,7 +35,13 @@ function getElement(config){
         element.id = id
         document.body.appendChild(element)
     }
-    return element
+    var child = document.querySelector('.' + stylePrefix + '-AppContainer')
+    if (child === null) {
+        child = document.createElement('div')
+        child.className = stylePrefix + '-AppContainer'
+        element.appendChild(child)
+    }
+    return document.querySelector('.' + stylePrefix + '-AppContainer')
 }
 
 function getTranslations(config){
