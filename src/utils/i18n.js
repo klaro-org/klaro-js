@@ -36,7 +36,13 @@ String.prototype.format = function () {
 }
 
 export function language(){
-    return window.language || document.documentElement.lang || 'en'
+    let lang = (window.language || document.documentElement.lang || 'en').toLowerCase()
+    let regex = new RegExp('^([\\w]+)-([\\w]+)$')
+    let result = regex.exec(lang)
+    if (result == null){
+        return lang
+    }
+    return result[1]
 }
 
 function hget(d, key, defaultValue){
