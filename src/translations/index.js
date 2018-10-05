@@ -3,18 +3,24 @@
 
 import de from './de.yml'
 import en from './en.yml'
+import fi from './fi.yml'
 import fr from './fr.yml'
 import hu from './hu.yml'
 import it from './it.yml'
+import nl from './nl.yml'
+import no from './no.yml'
+import sv from './sv.yml'
 import ro from './ro.yml'
-import nb from './nb.yml'
 
 export default {
   de,
   en,
+  fi,
   fr,
   hu,
   it,
+  nl,
+  no,
+  sv,
   ro,
-  nb,
 }
