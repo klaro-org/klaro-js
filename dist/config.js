@@ -37,6 +37,12 @@ var klaroConfig = {
     // consented or declines the use of third-party apps.
     mustConsent: false,
 
+    // if "implicitConsent" is set to true, Klaro will automatically accept
+    // cookies if the user continues his navigation on the website after the
+    // first page. If you enable this, it's recommended to warn the user
+    // of this behavior in the notice window.
+    implicitConsent: false,
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your

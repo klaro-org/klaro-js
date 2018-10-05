@@ -11,7 +11,11 @@ export default class ConsentManager {
         this.executedOnce = {} //keep track of which apps have been executed at least once
         this.watchers = new Set([])
         this.loadConsents()
-        this.applyConsents()
+        if (this.hasImplicitConsent()) {
+            this.saveAndApplyConsents()
+        } else {
+            this.applyConsents()
+        }
     }
 
     get cookieName(){
@@ -100,6 +104,28 @@ export default class ConsentManager {
         this.confirmed = complete
         if (!complete)
             this.changed = true
+    }
+
+    hasImplicitConsent(){
+        if (this.confirmed) {
+           return false
+        }
+
+        const enableImplicitConsent = typeof this.config.implicitConsent !== 'undefined'
+            ? this.config.implicitConsent
+            : false
+        if (!enableImplicitConsent) {
+            return false
+        }
+
+        const currentHost = document.location.hostname
+        const referrerHost = document.referrer.split('/')[2]
+        const isFirstVisit = currentHost !== referrerHost
+        if (isFirstVisit) {
+            return false
+        }
+
+        return true
     }
 
     loadConsents(){
