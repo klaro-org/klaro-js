@@ -15,7 +15,7 @@ export default class AppItem extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const optOutText = optOut
             ? <span
-                class={ns('AppItem-optOut')}
+                className={ns('AppItem-optOut')}
                 title={t(['app', 'optOut', 'description'])}
             >
                 {t(['app', 'optOut', 'title'])}
@@ -23,7 +23,7 @@ export default class AppItem extends React.Component {
             : ''
         const requiredText = required
             ? <span
-                class={ns('AppItem-required')}
+                className={ns('AppItem-required')}
                 title={t(['app', 'required', 'description'])}
             >
                 {t(['app', 'required', 'title'])}
@@ -39,7 +39,7 @@ export default class AppItem extends React.Component {
         return <div className={ns('AppItem')}>
             <input
                 id={id}
-                class={ns('AppItem-input')}
+                className={ns('AppItem-input')}
                 aria-describedby={`${id}-description`}
                 disabled={required}
                 checked={isChecked}
@@ -47,8 +47,8 @@ export default class AppItem extends React.Component {
                 onChange={onChange}
             />
             <label
-                for={id}
-                class={ns('AppItem-label')}
+                htmlFor={id}
+                className={ns('AppItem-label')}
                 {...(required ? {tabIndex: "0"} : {})}
             >
                 <span className={ns('AppItem-title')}>{title}</span>{requiredText}{optOutText}

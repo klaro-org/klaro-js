@@ -43,6 +43,7 @@ export default class ConsentModal extends React.Component {
                     {t(['consentModal','description'])} &nbsp;
                     {t(['consentModal','privacyPolicy','text'], {
                         privacyPolicy : <a
+                            key="privacyPolicyLink"
                             className={ns('Modal-privacyPolicyLink')}
                             onClick={(e) => {hide()}}
                             href={config.privacyPolicy}

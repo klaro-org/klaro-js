@@ -51,7 +51,7 @@ export default class Apps extends React.Component {
                 toggle([app], value)
             }
             const checked = consents[app.name]
-            return <li className={ns(`AppList-item AppList-item--${app.name}`)}>
+            return <li key={`app-${app.name}`} className={ns(`AppList-item AppList-item--${app.name}`)}>
                 <AppItem
                     checked={checked || app.required}
                     onToggle={toggleApp}
