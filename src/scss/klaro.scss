@@ -295,6 +295,16 @@ $theme-color-light: #aaa;
     }
 }
 
+.klaro-AppItem-switchLabel {
+    position: absolute;
+    width: 50px;
+    top: 34px;
+    overflow: ellipsis;
+    font-size: 0.8em;
+    text-align: center;
+    color: #ccc;
+}
+
 .klaro-AppItem-switch--disabled .klaro-AppItem-slider {
     cursor: default;
     opacity: 0.5;

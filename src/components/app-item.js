@@ -11,6 +11,7 @@ export default class AppItem extends React.Component {
             onToggle(e.target.checked)
         }
         const id = `klaro-app-item-${name}`
+        const isChecked = checked || required
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const optOutText = optOut
             ? <span
@@ -34,14 +35,14 @@ export default class AppItem extends React.Component {
                 {t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}
             </p>
             : null
-
+        const switchLabel = isChecked ? 'enabled' : 'disabled'
         return <div className={ns('AppItem')}>
             <input
                 id={id}
                 class={ns('AppItem-input')}
                 aria-describedby={`${id}-description`}
                 disabled={required}
-                checked={checked || required}
+                checked={isChecked}
                 type="checkbox"
                 onChange={onChange}
             />
@@ -53,6 +54,7 @@ export default class AppItem extends React.Component {
                 <span className={ns('AppItem-title')}>{title}</span>{requiredText}{optOutText}
                 <span className={ns(`AppItem-switch ${required ? 'AppItem-switch--disabled' : ''}`)}>
                     <div className={ns('AppItem-slider')}></div>
+                    <div aria-hidden="true" className={ns('AppItem-switchLabel')}>{t(switchLabel)}</div>
                 </span>
             </label>
             <div id={`${id}-description`} className={ns('AppItem-fullDescription')}>

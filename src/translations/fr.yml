@@ -19,6 +19,8 @@ saveData: Sauvegarder ma configuration sur les informations collectées
 decline: Refuser
 declineAll: Tout refuser
 close: Fermer
+enabled: Activé
+disabled: Désactivé
 app:
   optOut:
     title: (opt-out)

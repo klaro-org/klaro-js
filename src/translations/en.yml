@@ -19,6 +19,8 @@ saveData: Save my configuration on collected information
 decline: Decline
 declineAll: Decline all apps
 close: Close
+enabled: Enabled
+disabled: Disabled
 app:
   optOut:
     title: (opt-out)
