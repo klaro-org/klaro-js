@@ -16,9 +16,10 @@
   "scripts": {
     "make-dev": "APP_CSS=1 APP_ENV=dev APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
     "make-watch": "APP_CSS=1 APP_ENV=dev APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
+    "apps": "babel --plugins transform-es2015-modules-commonjs  --out-dir dist/apps src/apps",
     "prod-no-css": "APP_ENV=production APP_VERSION=`git tag --points-at HEAD` APP_COMMIT=`git rev-parse HEAD` webpack --config webpack.config.js",
     "prod-full": "APP_CSS=1 APP_ENV=production APP_VERSION=`git tag --points-at HEAD` APP_COMMIT=`git rev-parse HEAD` webpack --config webpack.config.js",
-    "make": "npm run prod-full && npm run prod-no-css",
+    "make": "npm run apps && npm run prod-full && npm run prod-no-css",
     "prepublishOnly": "npm run make"
   },
   "author": "kj7s GbR",
