@@ -74,19 +74,19 @@ export default class Apps extends React.Component {
             <div className={ns('AppToggles')}>
                 <button
                     type="button"
-                    className={ns('Button Button--info AppToggles-button AppToggles-disableAll')}
-                    disabled={allDisabled}
-                    onClick={disableAll}
-                >
-                    {t(['declineAll'])}
-                </button>
-                <button
-                    type="button"
                     className={ns('Button Button--info AppToggles-button AppToggles-enableAll')}
                     disabled={!allDisabled}
                     onClick={enableAll}
                 >
                     {t(['acceptAll'])}
+                </button>
+                <button
+                    type="button"
+                    className={ns('Button Button--info AppToggles-button AppToggles-disableAll')}
+                    disabled={allDisabled}
+                    onClick={disableAll}
+                >
+                    {t(['declineAll'])}
                 </button>
             </div>
             <ul className={ns('AppList')}>
