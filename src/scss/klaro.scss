@@ -35,7 +35,7 @@ $theme-color-light: #aaa;
     border: 1px solid transparent;
 
     &[disabled] {
-        opacity: 0.6;
+        opacity: 0.75;
     }
 }
 
@@ -233,6 +233,10 @@ $theme-color-light: #aaa;
 .klaro-AppItem-title {
     font-weight: 600;
     cursor: pointer;
+}
+
+.klaro-AppItem-description {
+    font-size: 0.8em;
 }
 
 .klaro-AppItem-purposes {
