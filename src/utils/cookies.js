@@ -38,10 +38,17 @@ export function setCookie(name, value, days) {
 }
 
 export function deleteCookie(name, path, domain) {
-    let str = name+'=; Max-Age=-99999999;'
-    if (path !== undefined)
-        str += ' path='+path+';'
-    if (domain !== undefined)
-        str += ' domain='+domain+';'
-    document.cookie = str
+    let cookieString = `${name}=; Max-Age=-99999999;${path !== undefined
+        ? ` path=${path};`
+        : ` path=/;`
+    }`
+    if (domain !== undefined) {
+        document.cookie = `${cookieString} domain=${domain};`
+        return;
+    }
+    // if domain is not defined, try to delete cookie on multiple default domains
+    document.cookie = cookieString
+    document.cookie = `${cookieString} domain=.${location.hostname};`
+    // handle subdomains
+    document.cookie = `${cookieString} domain=.${location.hostname.split('.').slice(-2).join('.')};`
 }
