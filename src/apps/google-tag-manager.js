@@ -1,4 +1,4 @@
-import {cookies} from './helpers/google';
+import {cookies} from './helpers/google'
 
 
 
@@ -8,5 +8,5 @@ export default function(params) {
 		title : 'Google Tag Manager',
 		purposes : ['analytics'],
 		cookies: cookies(params)
-	};
-};
+	}
+}

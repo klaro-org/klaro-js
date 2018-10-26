@@ -5,9 +5,9 @@ import Apps from './apps'
 
 export default class ConsentModal extends React.Component {
     constructor(props) {
-        super();
+        super()
         if (props.config.appElement) {
-            ReactModal.setAppElement(props.config.appElement);
+            ReactModal.setAppElement(props.config.appElement)
         }
     }
 

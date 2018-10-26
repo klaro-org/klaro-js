@@ -5,5 +5,5 @@ export function createCssNamespace(namespace) {
 			.filter(className => className.length > 0)
 			.map(className => `${namespace}-${className}`)
 			.join(' ')
-	};
+	}
 }

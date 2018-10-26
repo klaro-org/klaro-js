@@ -8,9 +8,9 @@ export function cookies(params) {
 		'__utmc',
 		'__utmt',
 		'__utmz'
-	];
+	]
 	if (params && params.ua) {
-		cookies.push(`_gat_gtag_${params.ua}`, `_gat_${params.ua}`);
+		cookies.push(`_gat_gtag_${params.ua}`, `_gat_${params.ua}`)
 	}
-	return cookies;
+	return cookies
 }
