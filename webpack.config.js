@@ -44,7 +44,7 @@ var config = {
       },
       {
         test: /\.jsx?/,
-        include: [path.resolve('node_modules'), SRC_DIR],
+        include: [SRC_DIR],
         loader: 'babel-loader',
         query: {
           presets: [["env", { "modules": false }], 'react', 'stage-2'],
