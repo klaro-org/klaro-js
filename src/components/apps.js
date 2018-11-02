@@ -2,14 +2,7 @@ import React from 'react'
 import AppItem from './app-item'
 import {getPurposes} from 'utils/config'
 
-class AppGroup extends React.Component {
-    render(){
-
-    }
-}
-
 export default class Apps extends React.Component {
-
     constructor(props, context){
         super(props, context)
         props.manager.watch(this)
