@@ -59,11 +59,14 @@ export function renderKlaro(config, show){
     const manager = getManager(config)
     const lang = config.lang || language()
     const tt = (...args) => {return t(trans, lang, ...args)}
-    const app = render(<App t={tt}
-                            ns={createCssNamespace(stylePrefix)}
-                            manager={manager}
-                            config={config}
-                            show={show || false} />, element)
+    const app = render(
+        <App t={tt}
+            ns={createCssNamespace(stylePrefix)}
+            manager={manager}
+            config={config}
+        />,
+        element
+    )
     return app
 }
 
@@ -85,7 +88,8 @@ export function getManager(conf){
 
 export function show(conf){
     conf = conf || config
-    renderKlaro(conf, true)
+    const app = renderKlaro(conf)
+    app.showModal()
     return false
 }
 

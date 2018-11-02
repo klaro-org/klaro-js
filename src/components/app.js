@@ -1,13 +1,89 @@
 import React from 'react'
 import ConsentNotice from './consent-notice'
+import ConsentModal from './consent-modal'
 
 export default class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isModalVisible: this.isModalVisible()
+        }
+        this.showModal = this.showModal.bind(this)
+        this.hideModal = this.hideModal.bind(this)
+        this.saveAndHideAll = this.saveAndHideAll.bind(this)
+        this.declineAndHideAll = this.declineAndHideAll.bind(this)
+    }
+
+    isModalVisible(userRequest) {
+        const {config, manager} = this.props
+        if (userRequest) {
+            return true
+        }
+        if (config.mustConsent && !manager.confirmed) {
+            return true
+        }
+        return false
+    }
+
+    isNoticeVisible() {
+        const {config, manager} = this.props
+        return !config.mustConsent && !manager.confirmed && !config.noNotice
+    }
+
+    showModal(e) {
+        if (e !== undefined) {
+            e.preventDefault()
+        }
+        this.setState({isModalVisible: this.isModalVisible(true)})
+    }
+
+    hideModal(e) {
+        if (e !== undefined) {
+            e.preventDefault()
+        }
+        this.setState({isModalVisible: this.isModalVisible(false)})
+    }
+
+    saveAndHideAll(e) {
+        if (e !== undefined) {
+            e.preventDefault()
+        }
+        this.props.manager.saveAndApplyConsents()
+        this.setState({isModalVisible: this.isModalVisible(false)})
+    }
+
+    declineAndHideAll(e) {
+        this.props.manager.declineAll()
+        this.props.manager.saveAndApplyConsents()
+        this.setState({isModalVisible: this.isModalVisible(false)})
+    }
 
     render() {
-        const {config, show, t, manager, ns} = this.props
+        const {config, t, manager, ns} = this.props
+        const isNoticeVisible = this.isNoticeVisible()
         return (
             <div className={ns('Container')}>
-                <ConsentNotice t={t} ns={ns} show={show} config={config} manager={manager} />
+                {isNoticeVisible &&
+                    <ConsentNotice
+                        t={t}
+                        ns={ns}
+                        isModalVisible={this.state.isModalVisible}
+                        config={config}
+                        manager={manager}
+                        onSaveRequest={this.saveAndHideAll}
+                        onDeclineRequest={this.declineAndHideAll}
+                        onConfigRequest={this.showModal}
+                    />
+                }
+                <ConsentModal
+                    isOpen={this.state.isModalVisible}
+                    t={t}
+                    ns={ns}
+                    config={config}
+                    onHideRequest={this.hideModal}
+                    onSaveRequest={this.saveAndHideAll}
+                    manager={manager}
+                />
             </div>
         )
     }

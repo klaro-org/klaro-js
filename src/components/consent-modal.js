@@ -12,7 +12,7 @@ export default class ConsentModal extends React.Component {
     }
 
     render() {
-        const {hide, isOpen, saveAndHide, declineAndHide, config, manager, t, ns} = this.props
+        const {isOpen, onHideRequest, onSaveRequest, config, manager, t, ns} = this.props
 
         let closeLink
         if (!config.mustConsent)
@@ -20,7 +20,7 @@ export default class ConsentModal extends React.Component {
                 title={t(['close'])}
                 className={ns('Modal-closeButton')}
                 type="button"
-                onClick={hide}
+                onClick={onHideRequest}
             >
                 <Close t={t} ns={ns} />
             </button>
@@ -32,7 +32,7 @@ export default class ConsentModal extends React.Component {
             overlayClassName={ns('ModalOverlay')}
             className={ns('Modal Container')}
             parentSelector={() => document.getElementById(config.elementID || 'klaro')}
-            onRequestClose={hide}
+            onRequestClose={onHideRequest}
             bodyOpenClassName="klaroBody-WithModalOpen"
             role="dialog"
         >
@@ -45,7 +45,7 @@ export default class ConsentModal extends React.Component {
                         privacyPolicy : <a
                             key="privacyPolicyLink"
                             className={ns('Modal-privacyPolicyLink')}
-                            onClick={(e) => {hide()}}
+                            onClick={(e) => {onHideRequest()}}
                             href={config.privacyPolicy}
                         >
                             {t(['consentModal','privacyPolicy','name'])}
@@ -60,7 +60,7 @@ export default class ConsentModal extends React.Component {
                 <div className={ns('Modal-footer')}>
                     <button
                         className={ns('Button Button--save Modal-saveButton')}
-                        onClick={saveAndHide}
+                        onClick={onSaveRequest}
                         title={t(['saveData'])}
                     >
                         {t(['save'])}
