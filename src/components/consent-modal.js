@@ -15,7 +15,7 @@ export default class ConsentModal extends React.Component {
         const {isOpen, onHideRequest, onSaveRequest, config, manager, t, ns} = this.props
 
         let closeLink
-        if (!config.mustConsent)
+        if (!config.mustConsent || (manager.confirmed && !manager.changed))
             closeLink = <button
                 title={t(['close'])}
                 className={ns('Modal-closeButton')}
@@ -40,6 +40,11 @@ export default class ConsentModal extends React.Component {
                 {closeLink}
                 <h1 className={ns('Modal-title')} id="klaro-modal-title">{t(['consentModal', 'title'])}</h1>
                 <p className={ns('Modal-description')}>
+                    {manager.changed && (config.mustConsent || config.noNotice) &&
+                        <p className={ns('Modal-description')}>
+                            <strong className={ns('Modal-changes')}>{t(['consentNotice', 'changeDescription'])}</strong>
+                        </p>
+                    }
                     {t(['consentModal','description'])} &nbsp;
                     {t(['consentModal','privacyPolicy','text'], {
                         privacyPolicy : <a

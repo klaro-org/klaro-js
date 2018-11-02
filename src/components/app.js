@@ -19,7 +19,7 @@ export default class App extends React.Component {
         if (userRequest) {
             return true
         }
-        if (config.mustConsent && !manager.confirmed) {
+        if (config.mustConsent && (!manager.confirmed || manager.changed)) {
             return true
         }
         return false
@@ -27,7 +27,13 @@ export default class App extends React.Component {
 
     isNoticeVisible() {
         const {config, manager} = this.props
-        return !config.mustConsent && !manager.confirmed && !config.noNotice
+        if (config.mustConsent || config.noNotice) {
+            return false
+        }
+        if (manager.confirmed && !manager.changed) {
+            return false
+        }
+        return true
     }
 
     showModal(e) {
