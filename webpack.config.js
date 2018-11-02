@@ -80,6 +80,8 @@ if (APP_DEV_MODE === 'server') {
     hot: true,
     // enable HMR on the server
 
+    host: '0.0.0.0',
+
     contentBase: ['dist'],
     // match the output path
 
