@@ -30,8 +30,8 @@ export default class ConsentModal extends React.Component {
             aria={{'labelledby': 'klaro-modal-title'}}
             portalClassName={ns('ModalPortal')}
             overlayClassName={ns('ModalOverlay')}
-            className={ns('Modal Container')}
             parentSelector={() => document.getElementById(config.elementID || 'klaro')}
+            className={ns('Modal')}
             onRequestClose={onHideRequest}
             bodyOpenClassName="klaroBody-WithModalOpen"
             role="dialog"

@@ -1,5 +1,5 @@
 import React from 'react'
-import App from 'components/app.js'
+import App from 'components/main.js'
 import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations'

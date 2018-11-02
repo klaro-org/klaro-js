@@ -2,7 +2,7 @@ import React from 'react'
 import ConsentNotice from './consent-notice'
 import ConsentModal from './consent-modal'
 
-export default class App extends React.Component {
+export default class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -68,7 +68,7 @@ export default class App extends React.Component {
         const {config, t, manager, ns} = this.props
         const isNoticeVisible = this.isNoticeVisible()
         return (
-            <div className={ns('Container')}>
+            <div className={ns('Main')}>
                 {isNoticeVisible &&
                     <ConsentNotice
                         t={t}
