@@ -17,11 +17,6 @@ const managers = {}
 
 window.onload = initialize
 
-if (module.hot) {
-    if (!noAutoLoad)
-        renderKlaro(config)
-    module.hot.accept()
-}
 
 function getElementID(config){
     return config.elementID || 'klaro'
@@ -91,8 +86,4 @@ export function show(conf){
     const app = renderKlaro(conf)
     app.showModal()
     return false
-}
-
-export function version(){
-    return VERSION
 }

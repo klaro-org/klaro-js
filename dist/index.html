@@ -32,15 +32,9 @@
             setCookie("inline-tracker", "foo", 120)
 
         </script>
-        <script>
-            function replaceVersion(){
-                var element = document.getElementById("klaro-version")
-                element.innerHTML = klaro.version()
-            }
-        </script>
         <link rel="stylesheet" href="assets/styles.css" />
     </head>
-    <body onload="replaceVersion()">
+    <body>
         <!-- by default, klaro will be appended in the klaro div, or will create one at the end of the body if none exists.
         it's recommended to have klaro at the top of your content so that screen reader users can be notified early -->
         <div id="klaro"></div>
@@ -358,7 +352,7 @@
                             </p>
                             <p>
                                 <a href="klaro.js" download class="button is-warning">
-                                    Download klaro.js (<b id="klaro-version"></b>)
+                                    Download klaro.js
                                 </a>
                             </p>
                         </div>

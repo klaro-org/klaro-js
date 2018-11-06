@@ -1,8 +1,5 @@
-build
-dist/klaro.js
-package-lock.json
-.tmp
 node_modules
-dist/klaro.js
-dist/klaro-no-css.js
-dist/apps
+/dist/klaro.js
+/dist/klaro-no-css.js
+/es
+/lib

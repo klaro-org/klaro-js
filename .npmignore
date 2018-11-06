@@ -1,5 +1,6 @@
 *
 !dist/klaro.js
 !dist/klaro-no-css.js
-!dist/apps/*
 !src/scss/klaro.scss
+!es
+!lib
