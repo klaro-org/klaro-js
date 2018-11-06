@@ -15,10 +15,6 @@ var config = {
   resolve: {
     symlinks: false,
     extensions: ['.js', '.jsx'],
-    modules: [
-      SRC_DIR,
-      "node_modules"
-    ],
     alias: {
       "react": "preact-compat",
       "react-dom": "preact-compat"

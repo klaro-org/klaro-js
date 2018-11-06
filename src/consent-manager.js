@@ -1,4 +1,4 @@
-import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
+import {getCookie, getCookies, setCookie, deleteCookie} from './utils/cookies'
 
 export default class ConsentManager {
 

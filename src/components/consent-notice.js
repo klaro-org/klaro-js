@@ -1,6 +1,6 @@
 import React from 'react'
+import {getPurposes} from '../utils/config'
 import ConsentModal from './consent-modal'
-import {getPurposes} from 'utils/config'
 
 export default class ConsentNotice extends React.Component {
     render() {

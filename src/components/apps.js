@@ -1,6 +1,6 @@
 import React from 'react'
+import {getPurposes} from '../utils/config'
 import AppItem from './app-item'
-import {getPurposes} from 'utils/config'
 
 export default class Apps extends React.Component {
     constructor(props, context){
