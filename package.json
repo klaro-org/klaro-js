@@ -15,7 +15,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "start": "cross-env APP_CSS=1 NODE_ENV=development webpack --watch",
+    "start": "cross-env NODE_ENV=development npm run umd -- --watch",
     "cjs": "cross-env BABEL_ENV=cjs babel --out-dir lib src",
     "es": "cross-env BABEL_ENV=es babel --out-dir es src",
     "umd": "cross-env APP_CSS=1 BABEL_ENV=umd webpack",
