@@ -56,7 +56,7 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'klaro-no-css.js',
-    library: 'klaro',
+    library: 'Klaro',
     libraryTarget: 'umd',
     publicPath: ''
   },

@@ -2,88 +2,105 @@ import React from 'react'
 import {render} from 'react-dom'
 import ConsentManager from './consent-manager'
 import translations from './translations'
-import App from './components/main.js'
+import Main from './components/main.js'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
 import {createCssNamespace} from './utils/css'
 
-const originalOnLoad = window.onload
-const convertedTranslations = convertToMap(translations)
-const configName = document.currentScript.dataset.config || "klaroConfig"
-const noAutoLoad = document.currentScript.dataset.noAutoLoad == "true"
-const stylePrefix = document.currentScript.dataset.stylePrefix || "klaro"
-const config = window[configName]
-const managers = {}
-
-window.onload = initialize
-
-
-function getElementID(config){
-    return config.elementID || 'klaro'
-}
-
-function getElement(config){
-    const id = getElementID(config)
+function getElement(config) {
+    const {elementID: id, stylePrefix} = config
     var element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
         element.id = id
         document.body.appendChild(element)
     }
-    var child = document.querySelector('.' + stylePrefix + '-AppContainer')
+    var child = document.querySelector(`.${stylePrefix}-AppContainer`)
     if (child === null) {
         child = document.createElement('div')
-        child.className = stylePrefix + '-AppContainer'
+        child.className = `${stylePrefix}-AppContainer`
         element.appendChild(child)
     }
-    return document.querySelector('.' + stylePrefix + '-AppContainer')
+    return document.querySelector(`.${stylePrefix}-AppContainer`)
 }
 
-function getTranslations(config){
+function getTranslations(config) {
     const trans = new Map([])
-    update(trans, convertedTranslations)
-    update(trans, convertToMap(config.translations || {}))
+    update(trans, convertToMap(translations))
+    update(trans, convertToMap(config.translations))
     return trans
 }
 
-export function renderKlaro(config, show){
-    if (config === undefined)
+const managers = {}
+function getManager(config) {
+    const name = config.elementID
+    if (managers[name] === undefined)
+        managers[name] = new ConsentManager(config)
+    return managers[name]
+}
+
+export const defaultConfig = {
+    elementID: 'klaro',
+    appElement: '#app',
+    stylePrefix: 'klaro',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '',
+    default: true,
+    mustConsent: false,
+    implicitConsent: false,
+    lang: language(),
+    translations: {},
+    apps: {},
+}
+
+export function init(conf) {
+    const config = Object.assign({}, defaultConfig, conf)
+    const errors = []
+    if (!Object.keys(config.apps).length) {
+        errors.push('  - you must define `apps` to manage')
+    }
+    if (!config.privacyPolicy.length) {
+        errors.push('  - you must define a `privacyPolicy` url')
+    }
+    if (errors.length) {
+        errors.unshift('Klaro config error:')
+        console.error(errors.join('\n'))
         return
+    }
     const element = getElement(config)
     const trans = getTranslations(config)
     const manager = getManager(config)
-    const lang = config.lang || language()
-    const tt = (...args) => {return t(trans, lang, ...args)}
+    const tt = (...args) => {return t(trans, config.lang, ...args)}
     const app = render(
-        <App t={tt}
-            ns={createCssNamespace(stylePrefix)}
+        <Main t={tt}
+            ns={createCssNamespace(config.stylePrefix)}
             manager={manager}
             config={config}
         />,
         element
     )
-    return app
-}
-
-export function initialize(e){
-    if (!noAutoLoad)
-        renderKlaro(config)
-    if (originalOnLoad !== null){
-        originalOnLoad(e)
+    return {
+        show: app.showModal.bind(app),
+        internals: {
+            react: app,
+            manager: manager,
+            config: config
+        }
     }
 }
 
-export function getManager(conf){
-    conf = conf || config
-    const name = getElementID(conf)
-    if (managers[name] === undefined)
-        managers[name] = new ConsentManager(conf)
-    return managers[name]
+function initDefaultInstance() {
+    if (window.klaroConfig !== undefined
+        // `window.klaro instanceof Element` means there is a #klaro div in the dom
+        && (window.klaro === undefined || window.klaro instanceof Element)
+    ) {
+        window.klaro = init(window.klaroConfig)
+    }
 }
 
-export function show(conf){
-    conf = conf || config
-    const app = renderKlaro(conf)
-    app.showModal()
-    return false
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDefaultInstance)
+} else {
+    initDefaultInstance();
 }
