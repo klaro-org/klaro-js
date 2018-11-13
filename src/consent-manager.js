@@ -200,7 +200,7 @@ export default class ConsentManager {
                 newElement.innerText = element.innerText
                 newElement.text = element.text
                 newElement.class = element.class
-                newElement.style = element.style
+                newElement.style.cssText = element.style
                 newElement.id = element.id
                 newElement.name = element.name
                 newElement.defer = element.defer
