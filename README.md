@@ -4,6 +4,8 @@ This fork was first about making the lib more accessible. It's now starting to n
 
 Original README below.
 
+:disclaimer: the README is currently out of date. The fork has now changed quite a lot and some stuff described below are plain wrong. Updated README coming soon™.
+
 _____________
 
 
