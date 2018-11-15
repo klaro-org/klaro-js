@@ -1,12 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
-var PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 var SRC_DIR = path.resolve(__dirname,'src');
 var IS_DEV = process.env.NODE_ENV === 'development';
-var WITH_CSS = process.env.APP_CSS || false;
 
 var config = {
   mode: IS_DEV ? 'development' : 'production',
@@ -32,12 +30,12 @@ var config = {
         }]
       },
       {
-        test: /\.scss|sass$/,
-        use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', withEnvSourcemap('css-loader')]
+        test: /\.s?[ac]ss$/,
+        use: [
+            MiniCssExtractPlugin.loader,
+            withEnvSourcemap('css-loader'),
+            withEnvSourcemap('sass-loader')
+        ],
       },
       {
         test: /\.yaml|yml$/,
@@ -51,25 +49,25 @@ var config = {
     ]
   },
   entry: [
-    SRC_DIR + '/klaro.js'
+    SRC_DIR + '/klaro.js',
+    SRC_DIR + '/scss/klaro.scss'
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'klaro-no-css.js',
+    filename: 'klaro.js',
     library: 'Klaro',
     libraryTarget: 'umd',
     publicPath: ''
   },
-  plugins: []
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'klaro.css'
+    })
+  ]
 };
 
 if (IS_DEV) {
   config.devtool = 'inline-source-maps';
-}
-
-if (WITH_CSS) {
-  config.entry = [SRC_DIR + '/scss/klaro.scss'].concat(config.entry);
-  config.output.filename = 'klaro.js';
 }
 
 module.exports = config;
