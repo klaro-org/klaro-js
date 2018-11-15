@@ -1,5 +1,5 @@
 node_modules
 /dist/klaro.js
-/dist/klaro-no-css.js
+/dist/klaro.css
 /es
 /lib
