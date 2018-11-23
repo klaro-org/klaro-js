@@ -9,8 +9,8 @@ $theme-border: 1px solid #555;
 $theme-color: #eee;
 $theme-color-light: #aaa;
 
-// micro css reset for everything klaro related
-[class^="klaro-"] {
+// micro css reset for everything orejime related
+[class^="orejime-"] {
     margin: 0;
     padding: 0;
     border: 0;
@@ -21,13 +21,13 @@ $theme-color-light: #aaa;
     cursor: default;
 }
 
-.klaro-Main,
-.klaro-Modal {
+.orejime-Main,
+.orejime-Modal {
     font-size: 1em;
     line-height: 1.5;
 }
 
-.klaro-Button {
+.orejime-Button {
     border: 0;
     color: #fff;
     border-radius: $border-radius;
@@ -40,21 +40,21 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Button--save,
-.klaro-Button--accept {
+.orejime-Button--save,
+.orejime-Button--accept {
     background: $green;
     color: #fff;
 }
 
-.klaro-Button--decline {
+.orejime-Button--decline {
     background: #666;
 }
 
-.klaro-Button--info {
+.orejime-Button--info {
     background: $blue;
 }
 
-.klaro-Notice {
+.orejime-Notice {
     background: $theme-bg;
     position: fixed;
     z-index: 1000;
@@ -76,53 +76,53 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Notice--hidden {
+.orejime-Notice--hidden {
     display: none !important;
 }
 
-.klaro-Notice-body {
+.orejime-Notice-body {
     padding: 1em;
 }
 
-.klaro-Notice-description {
+.orejime-Notice-description {
     color: $theme-color;
     margin-bottom: 0.5em;
 }
 
-.klaro-Notice-purposes {
+.orejime-Notice-purposes {
     color: $theme-color;
 }
 
-.klaro-Notice-changes {
+.orejime-Notice-changes {
     color: $theme-color;
     margin-bottom: 0.5em;
     font-weight: bold;
 }
 
-.klaro-Notice-actions {
+.orejime-Notice-actions {
     display: block;
 }
 
-.klaro-Notice-actionItem {
+.orejime-Notice-actionItem {
     display: inline;
 }
 
-.klaro-Notice-learnMoreButton {
+.orejime-Notice-learnMoreButton {
     display: inline-block;
 }
 
-.klaroHtml-WithModalOpen {
+.orejimeHtml-WithModalOpen {
     height: 100%;
 }
 
-.klaroHtml-WithModalOpen body {
+.orejimeHtml-WithModalOpen body {
     position: fixed;
     overflow: hidden;
     height: 100%;
     width: 100%;
 }
 
-.klaro-ModalOverlay {
+.orejime-ModalOverlay {
     z-index: 1000;
     background: rgba(0,0,0,0.5);
     position: fixed;
@@ -132,7 +132,7 @@ $theme-color-light: #aaa;
     bottom: 0;
 }
 
-.klaro-ModalWrapper {
+.orejime-ModalWrapper {
     z-index: 1001;
     position: fixed;
     top: 50%;
@@ -145,19 +145,19 @@ $theme-color-light: #aaa;
     overflow: auto;
 }
 
- .klaro-Modal {
+ .orejime-Modal {
     background: $theme-bg;
     color: $theme-color;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
 }
 
-.klaro-Modal-header {
+.orejime-Modal-header {
     padding: 1em;
     border-bottom: $theme-border;
 }
 
-.klaro-Modal-title {
+.orejime-Modal-title {
     margin: 0;
     font-size: 2em;
     display: block;
@@ -165,7 +165,7 @@ $theme-color-light: #aaa;
     padding-right: 20px;
 }
 
-.klaro-Modal-closeButton {
+.orejime-Modal-closeButton {
     border: none;
     background: none;
     color: inherit;
@@ -178,17 +178,17 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Modal-body {
+.orejime-Modal-body {
     padding: 1em;
 }
 
-.klaro-Modal-footer {
+.orejime-Modal-footer {
     padding: 1em;
     border-top: $theme-border;
 }
 
-.klaro-Modal-privacyPolicyLink,
-.klaro-Modal-poweredByLink {
+.orejime-Modal-privacyPolicyLink,
+.orejime-Modal-poweredByLink {
     cursor: pointer;
     text-decoration: underline;
     color: inherit;
@@ -205,7 +205,7 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-Modal-poweredByLink {
+.orejime-Modal-poweredByLink {
     position: absolute;
     right: 1em;
     color: $theme-color-light;
@@ -219,13 +219,13 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-AppList {
+.orejime-AppList {
     display: block;
     padding: 0;
     margin: 0;
 }
 
-.klaro-AppList-item {
+.orejime-AppList-item {
     display: block;
     position: relative;
     line-height: 1.25;
@@ -239,28 +239,28 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-AppItem-title {
+.orejime-AppItem-title {
     font-weight: 600;
     cursor: pointer;
 }
 
-.klaro-AppItem-description {
+.orejime-AppItem-description {
     font-size: 0.8em;
 }
 
-.klaro-AppItem-purposes {
+.orejime-AppItem-purposes {
     font-size: 0.8em;
     color: $theme-color-light;
 }
 
-.klaro-AppItem-optOut,
-.klaro-AppItem-required {
+.orejime-AppItem-optOut,
+.orejime-AppItem-required {
     padding-left: 0.2em;
     font-size: 0.8em;
     color: $theme-color-light;
 }
 
-.klaro-AppItem-input {
+.orejime-AppItem-input {
     position: absolute;
     top: 0;
     left: 0;
@@ -269,7 +269,7 @@ $theme-color-light: #aaa;
     height: 30px;
 }
 
-.klaro-AppItem-switch {
+.orejime-AppItem-switch {
     position: absolute;
     left: 0;
     display: inline-block;
@@ -277,7 +277,7 @@ $theme-color-light: #aaa;
     height: 30px;
 }
 
-.klaro-AppItem-slider {
+.orejime-AppItem-slider {
     box-shadow: $box-shadow;
     position: absolute;
     cursor: pointer;
@@ -308,7 +308,7 @@ $theme-color-light: #aaa;
     }
 }
 
-.klaro-AppItem-switchLabel {
+.orejime-AppItem-switchLabel {
     position: absolute;
     width: 50px;
     top: 34px;
@@ -317,35 +317,35 @@ $theme-color-light: #aaa;
     text-align: center;
 }
 
-.klaro-AppItem-switch--disabled .klaro-AppItem-slider {
+.orejime-AppItem-switch--disabled .orejime-AppItem-slider {
     cursor: default;
     opacity: 0.5;
 }
 
-.klaro-AppItem-switch--disabled .klaro-AppItem-switchLabel {
+.orejime-AppItem-switch--disabled .orejime-AppItem-switchLabel {
     color: #aaa;
 }
 
-.klaro-AppItem-input:focus + .klaro-AppItem-label .klaro-AppItem-slider {
+.orejime-AppItem-input:focus + .orejime-AppItem-label .orejime-AppItem-slider {
     border-color: #fff;
     outline-offset: 2px;
 }
 
-.klaro-AppItem-input:checked + .klaro-AppItem-label .klaro-AppItem-slider {
+.orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider {
     background-color: $blue;
 }
 
-.klaro-AppItem-input:checked + .klaro-AppItem-label .klaro-AppItem-slider:before {
+.orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
 }
 
-.klaro-AppToggles {
+.orejime-AppToggles {
     margin-bottom: 1em;
     display: block;
 }
 
-.klaro-AppToggles-item {
+.orejime-AppToggles-item {
     display: inline;
 }

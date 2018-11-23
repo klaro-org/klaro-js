@@ -1,15 +1,15 @@
-var klaroI18nConfig = {
-    cookieName: 'klaro-i18n',
+var orejimeI18nConfig = {
+    cookieName: 'orejime-i18n',
     elementID : 'i18n',
     lang: 'en',
     noNotice: true,
     privacyPolicy: '/#privacy',
-    poweredBy : 'https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js',
+    poweredBy : 'https://github.com/DPKit/orejime/blob/master/dist/configs/i18n.js',
     default: true,
     translations : {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `translations.yml` file in the `src` directory of this repo:
-        // https://github.com/DPKit/klaro/blob/master/src/translations.yml
+        // https://github.com/DPKit/orejime/blob/master/src/translations.yml
         de: {
             consentModal: {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',

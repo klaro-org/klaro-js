@@ -19,7 +19,7 @@ export default class ConsentManager {
     }
 
     get cookieName(){
-        return this.config.cookieName || 'klaro'
+        return this.config.cookieName || 'orejime'
     }
 
     watch(watcher){

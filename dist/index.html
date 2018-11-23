@@ -4,17 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Klaro! Consent Manager Utility</title>
+        <title>Orejime Consent Manager Utility</title>
         <link rel="stylesheet" href="assets/bulma.min.css" />
         <link rel="stylesheet" href="assets/prism.css" />
-        <link rel="stylesheet" href="klaro.css" />
+        <link rel="stylesheet" href="orejime.css" />
         <link data-name="googleFonts" data-href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
         <script defer type="application/javascript" src="assets/bulma.js"></script>
         <script defer type="application/javascript" src="assets/prism.js"></script>
         <script defer type="application/javascript" src="config.js"></script>
         <script defer type="application/javascript" src="configs/i18n.js"></script>
-        <script defer type="application/javascript" src="klaro.js"></script>
+        <script defer type="application/javascript" src="orejime.js"></script>
         <script type="opt-in" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker"></script>
         <script type="opt-in" data-type="application/javascript" data-name="inlineTracker">
 
@@ -37,9 +37,9 @@
         <link rel="stylesheet" href="assets/styles.css" />
     </head>
     <body>
-        <!-- by default, klaro will be appended in the klaro div, or will create one at the end of the body if none exists.
-        it's recommended to have klaro at the top of your content so that screen reader users can be notified early -->
-        <div id="klaro"></div>
+        <!-- by default, orejime will be appended in the orejime div, or will create one at the end of the body if none exists.
+        it's recommended to have orejime at the top of your content so that screen reader users can be notified early -->
+        <div id="orejime"></div>
         <div id="app">
         <img data-hide=true data-title="We're watching you (for your own safety)" class="camera" data-src="assets/Surveillance-camera-small.png" data-name="camera" />
         <section class="hero is-info is-medium is-bold">
@@ -48,7 +48,7 @@
                     <div class="container">
                         <div class="navbar-brand">
                             <a class="navbar-item" href="../">
-                                Klaro!
+                                Orejime
                             </a>
                             <span class="navbar-burger burger" data-target="navbarMenu">
                                 <span></span>
@@ -65,7 +65,7 @@
                                         <li><a href="#help">Help</a></li>
                                     </ul>
                                     <span class="navbar-item">
-                                        <a class="button is-white is-outlined" href="https://github.com/KIProtect/klaro">
+                                        <a class="button is-white is-outlined" href="https://github.com/KIProtect/orejime">
                                             <span>View on Github</span>
                                         </a>
                                     </span>
@@ -78,20 +78,20 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                    <u>Klaro!</u> Simple and user-friendly consent manager.
+                    <u>Orejime</u> Simple and user-friendly consent manager.
                     </h1>
                     <h2 class="subtitle">
-                        Klaro is a free &amp; open-source tool that provides
+                        Orejime is a free &amp; open-source tool that provides
                         an intuitive, user-friendly and compliant way to manage
-                        consent on your website. Klaro is easy to use and configure, 
+                        consent on your website. Orejime is easy to use and configure, 
                         lightweight and compatible with all modern browsers.
                     </h2>
                     <p>
-                        <button class="button is-success" onClick="return klaro.show();">Show manager</button>
-                        <button class="button is-warning" onClick="klaro.internals.manager.resetConsent();location.reload()">Reset consent</button>
+                        <button class="button is-success" onClick="return orejime.show();">Show manager</button>
+                        <button class="button is-warning" onClick="orejime.internals.manager.resetConsent();location.reload()">Reset consent</button>
                     </p>
                     <p>
-                        <img class="screenshot" src="assets/klaro-screenshot-cut.png"/>
+                        <img class="screenshot" src="assets/orejime-screenshot-cut.png"/>
                     </p>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                                 </p>
                                 <div class="content">
                                     <p>
-                                        Klaro is simple, unobtrusive and
+                                        Orejime is simple, unobtrusive and
                                         optimized for mobile as well as
                                         desktop browsers. It tries to stay
                                         out of the way while helping you to
@@ -129,7 +129,7 @@
                                 </p>
                                 <div class="content">
                                     <p>
-                                        Klaro is licensed under a permissive
+                                        Orejime is licensed under a permissive
                                         <strong>BSD-3</strong> license, which
                                         means that you can use it freely for
                                         commercial and non-commercial purposes.
@@ -149,7 +149,7 @@
                                 </p>
                                 <div class="content">
                                     <p>
-                                        Klaro can manage both inline and
+                                        Orejime can manage both inline and
                                         external scripts as well as static
                                         tracking elements like images or
                                         stylesheet links. New apps can be added
@@ -175,24 +175,24 @@
                         <div class="content">
                             <ul>
                                 <li>
-                                    <strong>Privacy by design &amp; default</strong>: Klaro
+                                    <strong>Privacy by design &amp; default</strong>: Orejime
                                     supports implicit and explicit (our favorite!) modes of consent and can
                                     make sure that no third-party apps are loaded without the
                                     consent of the user.
                                 </li>
                                 <li>
-                                    <strong>Smart change detection</strong>: Klaro automatically detects
+                                    <strong>Smart change detection</strong>: Orejime automatically detects
                                     config changes and will renew consent whenever you add a new app
                                     for which the user didn't give consent yet.
                                 </li>
                                 <li>
-                                    <strong>Multilingual</strong>: Klaro has full support for
+                                    <strong>Multilingual</strong>: Orejime has full support for
                                     internationalization and makes it easy to add or modify translations
                                     with just a few lines of code:
                                     <span style="display: inline-block;">
-                                            <a onClick="klaro.show(klaroI18nConfig);return false;">Example in </a>
+                                            <a onClick="orejime.show(orejimeI18nConfig);return false;">Example in </a>
                                             <div class="select is-small">
-                                                <select class="select" name="lang" onChange="klaroI18nConfig.lang = this.value;">
+                                                <select class="select" name="lang" onChange="orejimeI18nConfig.lang = this.value;">
                                                     <option value="de">Deutsch</option>
                                                     <option value="en" selected>English</option>
                                                 </select>
@@ -207,17 +207,17 @@
                         <div class="content">
                             <ul>
                                 <li>
-                                    <strong>Mobile-friendly and compatible with all modern browsers</strong>: Klaro
+                                    <strong>Mobile-friendly and compatible with all modern browsers</strong>: Orejime
                                     works with all major browsers and is optimized for both desktop
                                     and mobile clients.
                                 </li>
                                 <li>
-                                    <strong>Lightweight &amp; fast</strong>: Klaro.js is less than 20 kB
+                                    <strong>Lightweight &amp; fast</strong>: Orejime.js is less than 20 kB
                                     of Javascript (minified + gzipped) and is lightning-fast so that your
                                     users won't notice any difference when using it.
                                 </li>
                                 <li>
-                                    <strong>Easy to customize</strong>: Klaro lets you change
+                                    <strong>Easy to customize</strong>: Orejime lets you change
                                     the stylesheet to better match your own design and lets you
                                     access its functionality via Javascript as well.
                                 </li>
@@ -236,11 +236,11 @@
                 <h1 class="title"><a name="getting-started">Getting Started</a></h1>
                 <div class="content">
                     <p>
-                        Setting up Klaro on your website is easy and usually takes
+                        Setting up Orejime on your website is easy and usually takes
                         less than 10 minutes. All you need to do is write a small
-                        config file, load the <code>klaro.js</code> script and make
+                        config file, load the <code>orejime.js</code> script and make
                         a few small changes to your third-party/tracking scripts on your page
-                        so that Klaro can manage them.
+                        so that Orejime can manage them.
                         <strong>Let's get started!</strong>
                     </p>
                 </div>
@@ -267,13 +267,13 @@
                     <div class="column is-6 column-eq">
                         <div class="content">
                             <p class="lead">
-                                First, you need to tell Klaro about the third-party
+                                First, you need to tell Orejime about the third-party
                                 apps and trackers on your site. To do this you write
                                 a simple Javascript config. The easiest way to get started is
                                 by looking at the annotated config file used for this site
                                 and simply modify it according to your needs.
                                 No rocket science involved, promised. There are some
-                                <a href="https://github.com/KIProtect/klaro/blob/master/dist/configs/">more examples</a> on Github as well.
+                                <a href="https://github.com/KIProtect/orejime/blob/master/dist/configs/">more examples</a> on Github as well.
                             </p>
                             <p>
                                 <a href="config.js" class="button is-warning">
@@ -328,7 +328,7 @@
                                 without the consent of the user). This also works for other tags such
                                 as images/tracking pixels. Just remember to always add a <code>data-name</code>
                                 attribute that matches the name of the app in your config
-                                so that Klaro knows which element belongs to which app.
+                                so that Orejime knows which element belongs to which app.
                             </p>
                         </div>
                     </div>
@@ -341,20 +341,20 @@
                         <pre><code class="language-javascript">&lt;script defer type="application/javascript"
         src="config.js"&gt;&lt;/script&gt;
 &lt;script defer type="application/javascript"
-        src="klaro.js"&gt;&lt;/script&gt;</code></pre>
+        src="orejime.js"&gt;&lt;/script&gt;</code></pre>
                     </div>
                     <div class="column is-6 column-eq">
                         <div class="content">
                             <p>
-                                Finally, include both the config script as well as the Klaro
+                                Finally, include both the config script as well as the Orejime
                                 code on your page. You can defer the loading of the scripts
-                                if you like, just make sure the config is initialized when Klaro loads.
+                                if you like, just make sure the config is initialized when Orejime loads.
                                 You can have a look at our <a href="examples/simple.html">simple example page</a>
                                 to get an idea of how to do this.
                             </p>
                             <p>
-                                <a href="klaro.js" download class="button is-warning">
-                                    Download klaro.js
+                                <a href="orejime.js" download class="button is-warning">
+                                    Download orejime.js
                                 </a>
                             </p>
                         </div>
@@ -379,21 +379,21 @@
                                 <li>
                                     <strong>Customizing texts and translations</strong>: You can
                                     overwrite default translations and add your own if you like.
-                                    As an example, check out <a href="https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js">this config file</a>.
+                                    As an example, check out <a href="https://github.com/KIProtect/orejime/blob/master/dist/configs/i18n.js">this config file</a>.
                                 </li>
                                 <li>
-                                    <strong>Opening Klaro via a link</strong>: To allow you users
+                                    <strong>Opening Orejime via a link</strong>: To allow you users
                                     to review and customize their consent decisions, you will need
-                                    to let them open the Klaro manager on demand. You can do this
-                                    by calling the <code>show</code> function of the Klaro library, e.g.
-                                    like this: <code>&lt;a onClick="klaro.show();return false;"&gt;manage your consents&lt;/a&gt;</code>.
+                                    to let them open the Orejime manager on demand. You can do this
+                                    by calling the <code>show</code> function of the Orejime library, e.g.
+                                    like this: <code>&lt;a onClick="orejime.show();return false;"&gt;manage your consents&lt;/a&gt;</code>.
                                 </li>
                                 <li>
                                     <strong>Accessing the consent manager</strong>: You can access
-                                    the consent manager via Javascript by using the <code>klaro.getManager(config)</code>
+                                    the consent manager via Javascript by using the <code>orejime.getManager(config)</code>
                                     function. Please not that currently the manager class does not
                                     notify the user interface of changes (yet), so make sure to call
-                                    <code>klaro.show(config)</code> to update the UI after making
+                                    <code>orejime.show(config)</code> to update the UI after making
                                     changes to the consent configuration.
                                 </li>
                             </ul>
@@ -404,7 +404,7 @@
                         <div class="content">
                             <ul>
                                 <li>
-                                    <strong>Managing cookies</strong>: Klaro can automatically delete
+                                    <strong>Managing cookies</strong>: Orejime can automatically delete
                                     third-party cookies for you when the user withdraws consent. To
                                     make use of this, simply define a <code>cookies</code> entry in the app config, e.g.
                                     like this: <code>'cookies' : ['_ga', '_gid', '_gat', /^_gac_.*$/i]</code>. You can
@@ -414,17 +414,17 @@
                                     <strong>Custom callbacks</strong>: You can define custom callbacks
                                     for your applications that will be called with the given consent
                                     state (<code>true</code> if consent was given, <code>false</code> if not).
-                                    They will be called when Klaro is loaded as well as each time the user updates
+                                    They will be called when Orejime is loaded as well as each time the user updates
                                     the consent choices. This allows you to perform more advanced management
                                     tasks such as calling API endpoints to remove data.
                                 </li>
                                 <li>
                                     <strong>Custom styling</strong>: If you want to build your own
-                                    stylesheet for Klaro, you can set the <code>style-prefix</code>
+                                    stylesheet for Orejime, you can set the <code>style-prefix</code>
                                     data attribute of the script tag loading the library
-                                    to customize the class of the main DIV element of Klaro's UI,
-                                    e.g. like this: <code>&lt;script src="klaro.js" data-style-prefix="my-styles"&gt;&lt;/script&gt;</code>
-                                    This will assign the class <code>my-styles</code> class to Klaro's main DIV element and disable
+                                    to customize the class of the main DIV element of Orejime's UI,
+                                    e.g. like this: <code>&lt;script src="orejime.js" data-style-prefix="my-styles"&gt;&lt;/script&gt;</code>
+                                    This will assign the class <code>my-styles</code> class to Orejime's main DIV element and disable
                                     all default styles.
                                 </li>
                             </ul>
@@ -434,9 +434,9 @@
                 </div>
                 <article class="message is-warning">
                     <div class="message-body">
-                        Legal disclaimer: By using Klaro you agree that we (the Klaro authors) cannot be held
+                        Legal disclaimer: By using Orejime you agree that we (the Orejime authors) cannot be held
                         responsible or liable for any damages resulting from
-                        the use of the software. Please note that we cannot guarantee that Klaro is
+                        the use of the software. Please note that we cannot guarantee that Orejime is
                         bug-free (although we try our best) and suitable for your use case, so please
                         be careful when using it. Finally, we cannot cannot provide any warranty or support
                         beyond our voluntary help.
@@ -454,17 +454,17 @@
                     <div class="content">
                         <p>
                             Do you have questions or problems? Then just head
-                            over to our <a href="https://github.com/KIProtect/klaro">Github page</a>
-                            and feel free to open an <a href="https://github.com/KIProtect/klaro/issues">issue</a>.
-                            If you want to contribute to Klaro, feel free to
-                            open a <a href="https://github.com/KIProtect/klaro/pulls">pull request</a>
+                            over to our <a href="https://github.com/KIProtect/orejime">Github page</a>
+                            and feel free to open an <a href="https://github.com/KIProtect/orejime/issues">issue</a>.
+                            If you want to contribute to Orejime, feel free to
+                            open a <a href="https://github.com/KIProtect/orejime/pulls">pull request</a>
                             (but better ask us for advice before you make large changes). You can
-                            also reach us by e-mail at <a href="mailto:klaro@kiprotect.com">klaro@kiprotect.com</a>.
+                            also reach us by e-mail at <a href="mailto:orejime@kiprotect.com">orejime@kiprotect.com</a>.
                             We're looking forward to hear from you!
                         </p>
                         <article class="message is-success">
                             <div class="message-body">
-                            By the way, Klaro is pronounced [klɛro] and is a colloquial German word that means
+                            By the way, Orejime is pronounced [klɛro] and is a colloquial German word that means
                             "alright" or "got it".
                             </div>
                         </article>
@@ -485,7 +485,7 @@
                         We use third-party applications and cookies on this site
                         for analytics, demonstration purposes and security.
                         You can review your consents
-                        for these <a href="#" onClick="klaro.show();return false;">here</a>.
+                        for these <a href="#" onClick="orejime.show();return false;">here</a>.
                         You have the following rights regarding your personal
                         data: Erasure, rectification, access / download,
                         portability, restriction of processing and filing a

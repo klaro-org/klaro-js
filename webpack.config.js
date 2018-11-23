@@ -49,19 +49,19 @@ var config = {
     ]
   },
   entry: [
-    SRC_DIR + '/klaro.js',
-    SRC_DIR + '/scss/klaro.scss'
+    SRC_DIR + '/orejime.js',
+    SRC_DIR + '/scss/orejime.scss'
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'klaro.js',
-    library: 'Klaro',
+    filename: 'orejime.js',
+    library: 'Orejime',
     libraryTarget: 'umd',
     publicPath: ''
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'klaro.css'
+      filename: 'orejime.css'
     })
   ]
 };

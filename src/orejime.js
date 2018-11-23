@@ -40,10 +40,10 @@ function getManager(config) {
 }
 
 export const defaultConfig = {
-    elementID: 'klaro',
+    elementID: 'orejime',
     appElement: '#app',
-    stylePrefix: 'klaro',
-    cookieName: 'klaro',
+    stylePrefix: 'orejime',
+    cookieName: 'orejime',
     cookieExpiresAfterDays: 365,
     privacyPolicy: '',
     default: true,
@@ -64,7 +64,7 @@ export function init(conf) {
         errors.push('  - you must define a `privacyPolicy` url')
     }
     if (errors.length) {
-        errors.unshift('Klaro config error:')
+        errors.unshift('Orejime config error:')
         console.error(errors.join('\n'))
         return
     }
@@ -91,11 +91,11 @@ export function init(conf) {
 }
 
 function initDefaultInstance() {
-    if (window.klaroConfig !== undefined
-        // `window.klaro instanceof Element` means there is a #klaro div in the dom
-        && (window.klaro === undefined || window.klaro instanceof Element)
+    if (window.orejimeConfig !== undefined
+        // `window.orejime instanceof Element` means there is a #orejime div in the dom
+        && (window.orejime === undefined || window.orejime instanceof Element)
     ) {
-        window.klaro = init(window.klaroConfig)
+        window.orejime = init(window.orejimeConfig)
     }
 }
 

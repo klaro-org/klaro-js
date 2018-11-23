@@ -9,13 +9,13 @@ Original README below.
 _____________
 
 
-# Klaro! A Simple Consent Manager
+# orejime :cookie: A Simple Consent Manager
 
-Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
+orejime [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
 
 <p align="center"><img src="dist/assets/demo.gif" /></p>
 
-This GIF shows how Klaro deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [Youtube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
+This GIF shows how Orejime deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [Youtube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
 
 ## Advantages
 
@@ -37,20 +37,20 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
     - [x] Swedish
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
   everything that is required, including stylesheets and images.
-* **Intuitive and responsive**: Klaro is designed to blend in with
+* **Intuitive and responsive**: Orejime is designed to blend in with
   your existing design and optimized for modern desktop and mobile browsers.
-* **Secure and reliable**: Klaro ensures that no third-party apps or
+* **Secure and reliable**: Orejime ensures that no third-party apps or
   trackers are executed without the consent of the user, even when
-  Javascript is disabled or Klaro itself gets blocked.
+  Javascript is disabled or Orejime itself gets blocked.
 
 ## Getting Started
 
-To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
+To use the widget on your website, simply download [orejime.js](https://orejime.kiprotect.com/orejime.js) as well as the example config [config.js](https://orejime.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```
     <script defer type="text/javascript" src="config.js"></script>
-    <script defer type="text/javascript" src="klaro.js"></script>
+    <script defer type="text/javascript" src="orejime.js"></script>
 ```
-Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them.
+Do not forget to change your existing apps/trackers as outlined in the next section as well so that Orejime can manage them.
 
 ## Managing Third-Party Apps/Trackers
 
@@ -62,7 +62,7 @@ To manage third-party scripts and ensure they only run if the user consents with
             data-src="https://cdn.optimizely.com/js/10196010078.js">
     </script>
 ```
-Klaro will then take care of executing the scripts if consent was given (you can chose to execute them before getting explicit consent as well).
+Orejime will then take care of executing the scripts if consent was given (you can chose to execute them before getting explicit consent as well).
 
 The same method also works for images, stylesheets and other elements with a `src` or `type` attribute.
 
@@ -70,9 +70,9 @@ The same method also works for images, stylesheets and other elements with a `sr
 
 The consent manager is configured using a config dictionary, which you typically define in a separate JS file. To learn more, simply read the [annotated example config](dist/config.js), which contains descriptions of all valid config options and parameters.
 
-## Building Klaro from Scratch
+## Building Orejime from Scratch
 
-If you want to customize Klaro or extend it, you can build it from scratch using the following commands:
+If you want to customize Orejime or extend it, you can build it from scratch using the following commands:
 ```
     npm install
     npm run-script make-dev #will run a development server
@@ -82,9 +82,9 @@ If you want to customize Klaro or extend it, you can build it from scratch using
 
 Want to contribute? We'd love that!
 
-If you have a feature request or bug to report, please fill out [a GitHub Issue](https://github.com/KIProtect/klaro/issues) to begin the conversation.
+If you have a feature request or bug to report, please fill out [a GitHub Issue](https://github.com/KIProtect/orejime/issues) to begin the conversation.
 
-If you want to help out, but don't know where to begin, check out [the open issues tagged "help wanted"](https://github.com/KIProtect/klaro/labels/help%20wanted).
+If you want to help out, but don't know where to begin, check out [the open issues tagged "help wanted"](https://github.com/KIProtect/orejime/labels/help%20wanted).
 
 If you are multilingual, consider contributing a translation we don't have yet.
 
@@ -96,8 +96,8 @@ The accompanying website uses [Bulma](https://bulma.io), [Bootstrap](https://get
 
 ## Troubleshooting
 
-Do you have problems using Klaro? If so, we want to know it! Just open an issue here and if possible provide the following information to us:
+Do you have problems using Orejime? If so, we want to know it! Just open an issue here and if possible provide the following information to us:
 
-* The website on which Klaro is installed (if possible)
+* The website on which Orejime is installed (if possible)
 * The config file you're using (a link is sufficient)
-* The version of Klaro that you're using (you can get this by opening the developer tools of your browser, going to the "Console" tab and typing `klaro.version()` in the JS console.)
+* The version of Orejime that you're using (you can get this by opening the developer tools of your browser, going to the "Console" tab and typing `orejime.version()` in the JS console.)

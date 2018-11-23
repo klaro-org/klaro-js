@@ -10,7 +10,7 @@ export default class AppItem extends React.Component {
         const onChange = (e) => {
             onToggle(e.target.checked)
         }
-        const id = `klaro-app-item-${name}`
+        const id = `orejime-app-item-${name}`
         const isChecked = checked || required
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const optOutText = optOut

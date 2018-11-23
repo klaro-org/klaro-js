@@ -11,15 +11,15 @@ export default class ConsentModal extends React.Component {
 
         return <Dialog
             isOpen={isOpen}
-            aria={{'labelledby': 'klaro-modal-title'}}
+            aria={{'labelledby': 'orejime-modal-title'}}
             portalClassName={ns('ModalPortal')}
             overlayClassName={ns('ModalOverlay')}
             appElement={config.appElement}
-            parentSelector={() => document.getElementById(config.elementID || 'klaro')}
+            parentSelector={() => document.getElementById(config.elementID || 'orejime')}
             className={ns('ModalWrapper')}
             onRequestClose={onHideRequest}
-            htmlOpenClassName="klaroHtml-WithModalOpen"
-            bodyOpenClassName="klaroBody-WithModalOpen"
+            htmlOpenClassName="orejimeHtml-WithModalOpen"
+            bodyOpenClassName="orejimeBody-WithModalOpen"
             role={isAlert ? 'alertdialog' : 'dialog'}
         >
             <div className={ns('Modal')}>
@@ -35,7 +35,7 @@ export default class ConsentModal extends React.Component {
                         </button>
                     }
 
-                    <h1 className={ns('Modal-title')} id="klaro-modal-title">{t(['consentModal', 'title'])}</h1>
+                    <h1 className={ns('Modal-title')} id="orejime-modal-title">{t(['consentModal', 'title'])}</h1>
                     <p className={ns('Modal-description')}>
                         {manager.changed && (config.mustConsent || config.noNotice) &&
                             <p className={ns('Modal-description')}>
@@ -71,7 +71,7 @@ export default class ConsentModal extends React.Component {
                         <a
                             target="_blank"
                             className={ns('Modal-poweredByLink')}
-                            href={config.poweredBy || 'https://klaro.kiprotect.com'}
+                            href={config.poweredBy || 'https://orejime.kiprotect.com'}
                             title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
                         >
                             {t(['poweredBy'])}

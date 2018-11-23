@@ -1,30 +1,30 @@
 
-// By default, Klaro will load the config from  a global "klaroConfig" variable.
+// By default, Orejime will load the config from  a global "orejimeConfig" variable.
 // You can change this by specifying the "data-config" attribute on your
 // script take, e.g. like this:
-// <script src="klaro.js" data-config="myConfigVariableName" />
+// <script src="orejime.js" data-config="myConfigVariableName" />
 // You can also disable auto-loading of the consent notice by adding
 // data-no-auto-load=true to the script tag.
-var klaroConfig = {
+var orejimeConfig = {
 
-    // You can customize the ID of the DIV element that Klaro will create
-    // when starting up. If undefined, Klaro will use 'klaro'.
-    elementID: 'klaro',
+    // You can customize the ID of the DIV element that Orejime will create
+    // when starting up. If undefined, Orejime will use 'orejime'.
+    elementID: 'orejime',
 
     // For accessibility's sake, the modal must know what is the element
     // containing your app or website
     appElement: '#app',
 
-    // You can customize the name of the cookie that Klaro uses for storing
-    // user consent decisions. If undefined, Klaro will use 'klaro'.
-    cookieName: 'klaro',
+    // You can customize the name of the cookie that Orejime uses for storing
+    // user consent decisions. If undefined, Orejime will use 'orejime'.
+    cookieName: 'orejime',
 
-    // You can also set a custom expiration time for the Klaro cookie.
+    // You can also set a custom expiration time for the Orejime cookie.
     // By default, it will expire after 120 days.
     cookieExpiresAfterDays: 365,
 
-    // You can customize the name of the cookie that Klaro will use to
-    // store user consent. If undefined, Klaro will use 'klaro'.
+    // You can customize the name of the cookie that Orejime will use to
+    // store user consent. If undefined, Orejime will use 'orejime'.
  
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: '/#privacy',
@@ -32,18 +32,18 @@ var klaroConfig = {
     // Defines the default state for applications (true=enabled by default).
     default: true,
 
-    // If "mustConsent" is set to true, Klaro will directly display the consent
+    // If "mustConsent" is set to true, Orejime will directly display the consent
     // manager modal and not allow the user to close it before having actively
     // consented or declines the use of third-party apps.
     mustConsent: false,
 
-    // if "implicitConsent" is set to true, Klaro will automatically accept
+    // if "implicitConsent" is set to true, Orejime will automatically accept
     // cookies if the user continues his navigation on the website after the
     // first page. If you enable this, it's recommended to warn the user
     // of this behavior in the notice window.
     implicitConsent: false,
 
-    // You can define the UI language directly here. If undefined, Klaro will
+    // You can define the UI language directly here. If undefined, Orejime will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your
     // HTML tag. If that also doesn't exist, it will use 'en'.
@@ -52,12 +52,12 @@ var klaroConfig = {
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
     // list of translations that can be overwritten:
-    // https://github.com/DPKit/klaro/blob/master/src/translations.yml
+    // https://github.com/DPKit/orejime/blob/master/src/translations.yml
 
     // Example config that shows how to overwrite translations:
-    // https://github.com/DPKit/klaro/blob/master/src/configs/i18n.js
+    // https://github.com/DPKit/orejime/blob/master/src/configs/i18n.js
     translations: {
-        // If you erase the "consentModal" translations, Klaro will use the
+        // If you erase the "consentModal" translations, Orejime will use the
         // defaults as defined in translations.yml
         de: {
             consentModal: {
@@ -139,7 +139,7 @@ var klaroConfig = {
         },
     },
 
-    // This is a list of third-party apps that Klaro will manage for you.
+    // This is a list of third-party apps that Orejime will manage for you.
     apps : [
         {
             // Each app should have a unique (and short) name.
@@ -160,16 +160,16 @@ var klaroConfig = {
             
             // A list of regex expressions or strings giving the names of
             // cookies set by this app. If the user withdraws consent for a
-            // given app, Klaro will then automatically delete all matching
+            // given app, Orejime will then automatically delete all matching
             // cookies.
             cookies : [
                 // you can also explicitly provide a path and a domain for
                 // a given cookie. This is necessary if you have apps that
                 // set cookies for a path that is not "/" or a domain that
                 // is not the current domain. If you do not set these values
-                // properly, the cookie can't be deleted by Klaro
+                // properly, the cookie can't be deleted by Orejime
                 // (there is no way to access the path or domain of a cookie in JS)
-                [/^_pk_.*$/, '/', 'klaro.kiprotect.com'], //for the production version
+                [/^_pk_.*$/, '/', 'orejime.kiprotect.com'], //for the production version
                 [/^_pk_.*$/, '/', 'localhost'], //for the local version
                 'piwik_ignore'],
             
@@ -181,11 +181,11 @@ var klaroConfig = {
                 console.log("User consent for app "+app.name+": consent="+consent)
             },
 
-            // If "required" is set to true, Klaro will not allow this app to
+            // If "required" is set to true, Orejime will not allow this app to
             // be disabled by the user.
             required : false,
 
-            // If "optOut" is set to true, Klaro will load this app even before
+            // If "optOut" is set to true, Orejime will load this app even before
             // the user gave explicit consent.
             // We recommend always leaving this "false".
             optOut : false,
