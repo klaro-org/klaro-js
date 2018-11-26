@@ -1,0 +1,18 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.w-80ch {
+    width: 80ch;
+}
+#app a:hover,
+#app a:focus {
+    text-decoration: none;
+}
+#app a,
+#app a:active {
+    text-decoration: underline;
+}
+.btn-orejime {
+    color: white;
+    background: #057EB6;
+}

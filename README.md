@@ -1,103 +1,303 @@
-# About this fork
+# Orejime 🍪
 
-This fork was first about making the lib more accessible. It's now starting to notably change also in how components are authored and how the lib can be consumed, so that it can be more easily reused accross projects in our company (and maybe yours). See the changelog for more info.
+> Let your users choose the cookies they eat on your website.
+> Orejime 🍪 is an easy to use consent manager that focuses on accessibility.
 
-Original README below.
+## Introduction
 
-:disclaimer: the README is currently out of date. The fork has now changed quite a lot and some stuff described below are plain wrong. Updated README coming soon™.
+Orejime 🍪 is an open-source JavaScript library you can use on your website to let users choose what third-party cookies they allow. It's specifically made to comply with the GDPR.
 
-_____________
+Orejime 🍪 is a fork of [Klaro!](https://github.com/KIProtect/klaro) that focuses on **accessibility**. It follows Web Content Accessibility Guidelines (WCAG) via the french <abbr lang="fr" title="Référentiel général d'accessibilité pour les administrations">RGAA</abbr>.
 
+## Getting started
 
-# orejime :cookie: A Simple Consent Manager
+Using Orejime 🍪 requires a few steps:
 
-orejime [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
+1.  [Third-party script tags change](#third-party-script-tags-change)
+2.  [Installation](#installation)
+3.  [Configuration](#configuration)
+4.  [Initiation](#initiation)
 
-<p align="center"><img src="dist/assets/demo.gif" /></p>
+### Third-party script tags change
 
-This GIF shows how Orejime deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [Youtube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
+For each third-party script you want Orejime to manage, you must modify its `<script>` tag so that the browser doesn't load it directly anymore. Orejime will take care of loading it if the user accepts.
 
-## Advantages
+For inline scripts, set the `type` attribute to `opt-in` to keep the browser from executing the script. Also add a `data-name` attribute with a short, unique, spaceless name for this script:
 
-* **Free and Open Source**: No hidden fees, subscriptions or restrictions.
-* **Easy to use**: Simply add a small JS snippet and config to your site and
-  you're ready to go!
-* **Flexible and customizable**: Manage consent for all possible types of
-  third-party apps and easily customize the tool according to your needs.
-* **Multilingual**: Full internationalization support, with languages included out of the box. New translations can be added in just a few lines of code. Contributions welcome! Current languages:
-    - [ ] Dutch (coming soon)
-    - [x] English
-    - [x] Finnish
-    - [x] French
-    - [x] German
-    - [ ] Hungarian (coming soon)
-    - [ ] Italian (in progress)
-    - [x] Norwegian
-    - [ ] Romanian (in progress)
-    - [x] Swedish
-* **Small footprint**: The minified+gzipped JS is only 18 kB and contains
-  everything that is required, including stylesheets and images.
-* **Intuitive and responsive**: Orejime is designed to blend in with
-  your existing design and optimized for modern desktop and mobile browsers.
-* **Secure and reliable**: Orejime ensures that no third-party apps or
-  trackers are executed without the consent of the user, even when
-  Javascript is disabled or Orejime itself gets blocked.
-
-## Getting Started
-
-To use the widget on your website, simply download [orejime.js](https://orejime.kiprotect.com/orejime.js) as well as the example config [config.js](https://orejime.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
-```
-    <script defer type="text/javascript" src="config.js"></script>
-    <script defer type="text/javascript" src="orejime.js"></script>
-```
-Do not forget to change your existing apps/trackers as outlined in the next section as well so that Orejime can manage them.
-
-## Managing Third-Party Apps/Trackers
-
-To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `opt-in` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
-```
-    <script type="opt-in"
-            data-type="text/javascript"
-            data-name="optimizely"
-            data-src="https://cdn.optimizely.com/js/10196010078.js">
+```diff
+- <script>
++ <script
++   type="opt-in"
++   data-name="google-tag-manager">
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push [...]
     </script>
 ```
-Orejime will then take care of executing the scripts if consent was given (you can chose to execute them before getting explicit consent as well).
 
-The same method also works for images, stylesheets and other elements with a `src` or `type` attribute.
+For external scripts or img tags (for tracking pixels), do the same, and rename the `src` attribute to `data-src`:
 
-### Configuration File
-
-The consent manager is configured using a config dictionary, which you typically define in a separate JS file. To learn more, simply read the [annotated example config](dist/config.js), which contains descriptions of all valid config options and parameters.
-
-## Building Orejime from Scratch
-
-If you want to customize Orejime or extend it, you can build it from scratch using the following commands:
+```diff
+- <script
+-   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
++ <script
++   type="opt-in"
++   data-name="google-maps"
++   data-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 ```
-    npm install
-    npm run-script make-dev #will run a development server
-    npm run-script make #will build the production version
+
+### Installation
+
+#### Via CDN
+
+The easiest way to use the lib is to include the built files directly in the browser.
+
+```html
+<link rel="stylesheet" href="style.css" />
+<script src="orejime.js"></script>
 ```
-## Contributing
 
-Want to contribute? We'd love that!
+#### Via npm
 
-If you have a feature request or bug to report, please fill out [a GitHub Issue](https://github.com/KIProtect/orejime/issues) to begin the conversation.
+Orejime 🍪 is a React lib. Make sure you already installed react and react-dom, then:
 
-If you want to help out, but don't know where to begin, check out [the open issues tagged "help wanted"](https://github.com/KIProtect/orejime/labels/help%20wanted).
+```
+npm install orejime
+```
 
-If you are multilingual, consider contributing a translation we don't have yet.
+The CSS is located in `node_modules/orejime/dist`. Import it directly in your JS thanks to webpack, or install it any way you are used to in your project.  
+You can also directly consume the Sass file if you prefer, located in the same folder.
 
-## License & Third-Party Libraries
+#### Old browser support
 
-This project is licensed under a BSD-3 license. A list of third-party libraries can be found in the [package.js](package.js) file.
+For IE11, you'll need to have ES6 polyfills loaded on your page. One easy and efficient way to add such polyfills is to use [polyfill.io](https://polyfill.io/v2/docs/).
 
-The accompanying website uses [Bulma](https://bulma.io), [Bootstrap](https://getbootstrap.com) and [Prism](http://prismjs.com/) and a [surveillance camera image](https://upload.wikimedia.org/wikipedia/commons/5/56/Surveillance-camera.png) from Wikipedia.
+### Configuration
 
-## Troubleshooting
+You need to pass Orejime 🍪 a configuration object with, at the very least, `apps` and `privacyPolicy` properties. Each app listed in `apps` must itself have at least `name`, `title` and `cookies`.
 
-Do you have problems using Orejime? If so, we want to know it! Just open an issue here and if possible provide the following information to us:
+<details open>
+    <summary>Here is a fully-detailed annotated example of a configuration object:</summary>
+&nbsp;
 
-* The website on which Orejime is installed (if possible)
-* The config file you're using (a link is sufficient)
-* The version of Orejime that you're using (you can get this by opening the developer tools of your browser, going to the "Console" tab and typing `orejime.version()` in the JS console.)
+```js
+var myOrejimeConfig = {
+    // Optional. You can customize the ID of the <div> that Orejime will create
+    // when starting up.
+    // defaults to "orejime".
+    elementID: "orejime",
+
+    // Optional. For accessibility's sake, the Orejime modal must know what is the element
+    // containing your app or website. Orejime should *not* be in this element.
+    // The idea is your DOM could look like this after Orejime is initialized:
+    // <body>
+    //      <div id="orejime">...</div>
+    //      <div id="app">your actual website</div>
+    // </body>
+    //
+    // It is highly recommended to set this option, even though it's not required.
+    // defaults to undefined.
+    appElement: "#app",
+
+    // Optional. You can customize the name of the cookie that Orejime uses for storing
+    // user consent decisions.
+    // defaults to "orejime".
+    cookieName: "orejime",
+
+    // Optional. You can set a custom expiration time for the Orejime cookie, in days.
+    // defaults to 365.
+    cookieExpiresAfterDays: 365,
+
+    // You must provide a link to your privacy policy page
+    privacyPolicy: "",
+
+    // Optional. Applications configured below will be ON by default if default=true.
+    // defaults to true
+    default: true,
+
+    // Optional. If "mustConsent" is set to true, Orejime will directly display the consent
+    // manager modal and not allow the user to close it before having actively
+    // consented or declined the use of third-party apps.
+    // defaults to false
+    mustConsent: false,
+
+    // Optional. If "implicitConsent" is set to true, Orejime will automatically accept
+    // cookies if the user continues his navigation on the website after the
+    // first page. If you enable this, you must warn the user
+    // of this behavior in the notice window. You can do that easily by overriding
+    // translation strings (see below).
+    // defaults to false
+    implicitConsent: false,
+
+    // Optional. You can define the UI language directly here. If undefined, Orejime will
+    // use the value given in the global "lang" variable, or fallback to the value
+    // in the <html> lang attribute, or fallback to "en".
+    lang: "en",
+
+    // You can overwrite existing translations and add translations for your
+    // app descriptions and purposes. See `src/translations.yml` for a full
+    // list of translations that can be overwritten
+    translations: {
+        en: {
+            consentModal: {
+                description: "",
+            },
+            inlineTracker: {
+                description: "Example of an inline tracking script",
+            },
+            externalTracker: {
+                description: "Example of an external tracking script",
+            },
+            purposes: {
+                analytics: "Analytics",
+                security: "Security"
+            }
+        },
+    },
+
+    // The list of third-party apps that Orejime will manage for you.
+    // The apps will appear in the modal in the same order as defined here.
+    apps: [
+        {
+            // The name of the app, used internally by Orejime.
+            // Each name should match a name of a <script> tag defined in the
+            // "Changing your existing third-party scripts" documentation step.
+            name: "google-tag-manager",
+
+            // The title of you app as listed in the consent modal.
+            title: "Google Tag Manager",
+
+            // A list of regex expressions, strings, or arrays, giving the names of
+            // cookies set by this app. If the user withdraws consent for a
+            // given app, Orejime will then automatically delete all matching
+            // cookies.
+            //
+            // See a different example below with the inline-tracker app
+            // to see how to define cookies set on different path or domains.
+            cookies: [
+                "_ga",
+                "_gat",
+                "_gid",
+                "__utma",
+                "__utmb",
+                "__utmc",
+                "__utmt",
+                "__utmz",
+                "_gat_gtag_" + GTM_UA,
+                "_gat_" + GTM_UA
+            ],
+
+            // Optional. The purpose(s) of this app. Will be listed on the consent notice.
+            // Do not forget to add translations for all purposes you list here.
+            purposes: ["analytics"],
+
+            // Optional. A callback function that will be called each time
+            // the consent state for the app changes. Passes
+            // the `app` config as the second parameter as well.
+            callback: function(consent, app){
+                // This is an example callback function.
+                console.log("User consent for app " + app.name + ": consent=" + consent)
+            },
+
+            // Optional. If "required" is set to true, Orejime will not allow this app to
+            // be disabled by the user.
+            // default to false
+            required: false,
+
+            // Optional. If "optOut" is set to true, Orejime will load this app even before
+            // the user gave explicit consent.We recommend always leaving this "false".
+            // defaults to false
+            optOut: false,
+
+            // Optional. If "default" is set to true, the app will be enabled by default
+            // Overwrites the global "default" setting.
+            // defaults to the value of the gobal "default" setting
+            default: true,
+
+            // Optional. If "onlyOnce" is set to true, the app will only be executed
+            // once regardless how often the user toggles it on and off.
+            // defaults to false
+            onlyOnce: true,
+        },
+        {
+            name: "inline-tracker",
+            title: "Inline Tracker",
+            purposes: ["analytics"],
+            cookies: [
+                "inline-tracker"
+                // When deleting a cookie, Orejime will try to delete a cookie with the given name,
+                // the "/" path, and multiple domains (the current domain and `"." + current domain`).
+                // If an app sets a cookie on a different path or domain than that, Orejime won't be
+                // able to delete it by itself without more info.
+                // In this case, you can explicitely define a cookie, a path and domain:
+                ["cookieName", "/blog", "." + location.hostname],
+                ["cookieName", "/", "test.mydomain.com"],
+            ]
+        },
+        {
+            name: "external-tracker",
+            title: "External Tracker",
+            purposes: ["analytics", "security"],
+            cookies: ["external-tracker"],
+            required: true
+        }
+    ],
+}
+```
+
+</details>
+
+#### Configuration help
+
+If you consume the lib via npm, you can see a list of built-in app configurations in `src/apps`. 
+
+### Instantiation
+
+Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initiate an instance.
+
+#### Manually
+
+```js
+var Orejime = require('orejime'); // not necessary if you installed Orejime via the CDN
+
+Orejime.init(myOrejimeConfig);
+```
+
+#### Automatically
+
+An Orejime 🍪 instance can be loaded without the need to initiate it explicitely. When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, an instance is created in `window.orejime`.
+
+## API
+
+* `Orejime.init(config)`: creates a new Orejime instance with the given config object
+* `Orejime.defaultConfig`: object containing all the default properties of an instance
+
+### Orejime instance
+
+* `show()`: show the consent modal
+* `internals.react`: the React app used internally. See `src/components/main.js`
+* `internals.manager`: the ConsentManager instance used. See `src/consent-manager.js`
+* `internals.config`: the complete config object used
+
+## Development
+
+If you want to contribute to Orejime, or make a special build for yourself, clone the project then:
+
+```
+npm install
+npm start
+```
+
+This will rebuild the project anytime a file is changed.
+
+You can then start a local web server in the `dist` folder via your favorite method and see a demo page.
+
+## License & credits
+
+This project is licensed under a BSD-3 license.
+
+Orejime started as a fork of [Klaro!](https://github.com/KIProtect/klaro). A lot of stuff changed since. A few were integrated in the original project, but eventually some big bricks changed and it became difficult (or sometimes not even necessary) to push those changes in.
+
+Orejime is maintained by [<span lang="fr">Empreinte Digitale (french)</span>](http://empreintedigitale.fr).
+
+### What does "Orejime" mean?
+
+"Orejime" is a play-on-word. You can pronounce it like "Au régime" in french, which means "on a diet". 🍪

@@ -1,5 +1,3 @@
-console.log("This is an example of an external tracking script.")
-
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -9,6 +7,3 @@ function setCookie(name, value, days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
-
-//we set a tracking cookie as an example
-setCookie("external-tracker", "foo", 120)

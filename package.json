@@ -23,7 +23,7 @@
     "clean-build": "rm -Rf ./dist/orejime.{js,css} && rm -Rf ./lib && rm -Rf ./es",
     "prepublishOnly": "npm run build"
   },
-  "author": "kj7s GbR",
+  "author": "Emmanuel Pelletier <e.pelletier@empreintedigitale.fr>",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/empreinte-digitale/orejime/issues"
