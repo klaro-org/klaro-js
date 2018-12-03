@@ -1,7 +1,5 @@
 module.exports = {
-  "plugins": (process.env.BABEL_ENV === 'umd')
-    ? ["@babel/plugin-transform-runtime"]
-    : [],
+  "plugins": ["@babel/plugin-transform-runtime"],
   "presets": [
     ["@babel/preset-env", {
       "modules": process.env.BABEL_ENV === 'cjs' ? 'cjs' : false,
