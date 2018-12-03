@@ -12,8 +12,8 @@
     "gdpr",
     "compliance"
   ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/orejime.js",
+  "module": "es/orejime.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development npm run umd -- --watch & npm run serve",
     "serve": "browser-sync start -s --serveStatic dist -w -f dist/orejime.{css,js} --no-open",
