@@ -1,7 +1,7 @@
 {
   "name": "orejime",
-  "version": "0.3.1+upstream.fce14a2",
-  "description": "A simple but powerful consent manager. Empreinte digitale's fork.",
+  "version": "1.0.0",
+  "description": "An easy to use consent manager that focuses on accessibility. A fork of Klaro!.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/empreinte-digitale/orejime.git"
