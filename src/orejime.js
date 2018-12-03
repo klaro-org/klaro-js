@@ -41,7 +41,7 @@ function getManager(config) {
 
 export const defaultConfig = {
     elementID: 'orejime',
-    appElement: '#app',
+    appElement: undefined,
     stylePrefix: 'orejime',
     cookieName: 'orejime',
     cookieExpiresAfterDays: 365,
