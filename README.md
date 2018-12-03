@@ -13,36 +13,10 @@ Orejime 🍪 is a fork of [Klaro!](https://github.com/KIProtect/klaro) that focu
 
 Using Orejime 🍪 requires a few steps:
 
+1.  [Installation](#installation)
 1.  [Third-party script tags change](#third-party-script-tags-change)
-2.  [Installation](#installation)
-3.  [Configuration](#configuration)
-4.  [Initiation](#initiation)
-
-### Third-party script tags change
-
-For each third-party script you want Orejime to manage, you must modify its `<script>` tag so that the browser doesn't load it directly anymore. Orejime will take care of loading it if the user accepts.
-
-For inline scripts, set the `type` attribute to `opt-in` to keep the browser from executing the script. Also add a `data-name` attribute with a short, unique, spaceless name for this script:
-
-```diff
-- <script>
-+ <script
-+   type="opt-in"
-+   data-name="google-tag-manager">
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push [...]
-    </script>
-```
-
-For external scripts or img tags (for tracking pixels), do the same, and rename the `src` attribute to `data-src`:
-
-```diff
-- <script
--   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-+ <script
-+   type="opt-in"
-+   data-name="google-maps"
-+   data-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-```
+1.  [Configuration](#configuration)
+1.  [Initialization](#initialization)
 
 ### Installation
 
@@ -69,6 +43,32 @@ You can also directly consume the Sass file if you prefer, located in the same f
 #### Old browser support
 
 For IE11, you'll need to have ES6 polyfills loaded on your page. One easy and efficient way to add such polyfills is to use [polyfill.io](https://polyfill.io/v2/docs/).
+
+### Third-party script tags change
+
+For each third-party script you want Orejime to manage, you must modify its `<script>` tag so that the browser doesn't load it directly anymore. Orejime will take care of loading it if the user accepts.
+
+For inline scripts, set the `type` attribute to `opt-in` to keep the browser from executing the script. Also add a `data-name` attribute with a short, unique, spaceless name for this script:
+
+```diff
+- <script>
++ <script
++   type="opt-in"
++   data-name="google-tag-manager">
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push [...]
+</script>
+```
+
+For external scripts or img tags (for tracking pixels), do the same, and rename the `src` attribute to `data-src`:
+
+```diff
+- <script
+-   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
++ <script
++   type="opt-in"
++   data-name="google-maps"
++   data-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+```
 
 ### Configuration
 
@@ -246,9 +246,9 @@ var myOrejimeConfig = {
 
 </details>
 
-### Instantiation
+### Initialization
 
-Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initiate an instance.
+Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initialize an instance.
 
 #### Manually
 
@@ -260,7 +260,7 @@ Orejime.init(myOrejimeConfig);
 
 #### Automatically
 
-An Orejime 🍪 instance can be loaded without the need to initiate it explicitely. When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, an instance is created in `window.orejime`.
+An Orejime 🍪 instance can be loaded without the need to initialize it explicitely. When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, an instance is created in `window.orejime`.
 
 ## API
 
