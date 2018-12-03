@@ -80,8 +80,9 @@ You need to pass Orejime 🍪 a configuration object with, at the very least, `a
 
 ```js
 var myOrejimeConfig = {
-    // Optional. You can customize the ID of the <div> that Orejime will create
-    // when starting up.
+    // Optional. You can customize the ID of the <div> that Orejime will create when starting up.
+    // The generated <div> will be inserted at the beginning of the <body>.
+    // If there is already a DOM element with this id, Orejime will use it instead of creating a new element.
     // defaults to "orejime".
     elementID: "orejime",
 
@@ -138,7 +139,7 @@ var myOrejimeConfig = {
     translations: {
         en: {
             consentModal: {
-                description: "",
+                description: "This is an example of how to override an existing translation already used by Orejime",
             },
             inlineTracker: {
                 description: "Example of an inline tracking script",
@@ -245,10 +246,6 @@ var myOrejimeConfig = {
 
 </details>
 
-#### Configuration help
-
-If you consume the lib via npm, you can see a list of built-in app configurations in `src/apps`. 
-
 ### Instantiation
 
 Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initiate an instance.
@@ -286,13 +283,13 @@ npm install
 npm start
 ```
 
-This will start a demo page via browser-sync (on `http://localhost:3000` by default) and rebuild the project anytime a file is changed.
+You can then open the demo page on `http://localhost:3000` - it will be reloaded automatically when the JS or CSS changes.
 
 ## License & credits
 
 This project is licensed under a BSD-3 license.
 
-Orejime started as a fork of [Klaro!](https://github.com/KIProtect/klaro). A lot of stuff changed since. A few were integrated in the original project, but eventually some big bricks changed and it became difficult (or sometimes not even necessary) to push those changes in.
+Orejime started as a fork of [Klaro!](https://github.com/KIProtect/klaro). A lot of stuff changed since. A few were integrated in the original project, but eventually some big bricks changed and it became difficult, or sometimes not even necessary, to push those changes in.
 
 Orejime is maintained by [<span lang="fr">Empreinte Digitale (french)</span>](http://empreintedigitale.fr).
 
