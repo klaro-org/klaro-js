@@ -1,6 +1,6 @@
 *
-!dist/klaro.js
-!dist/klaro-no-css.js
-!src/scss/klaro.scss
+!dist/orejime.js
+!dist/orejime.css
+!dist/orejime.scss
 !es
 !lib
