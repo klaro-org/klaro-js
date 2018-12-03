@@ -286,9 +286,7 @@ npm install
 npm start
 ```
 
-This will rebuild the project anytime a file is changed.
-
-You can then start a local web server in the `dist` folder via your favorite method and see a demo page.
+This will start a demo page via browser-sync (on `http://localhost:3000` by default) and rebuild the project anytime a file is changed.
 
 ## License & credits
 

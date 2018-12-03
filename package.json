@@ -15,7 +15,8 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development npm run umd -- --watch",
+    "start": "cross-env NODE_ENV=development npm run umd -- --watch & npm run serve",
+    "serve": "browser-sync start -s --serveStatic dist -w -f dist/orejime.{css,js} --no-open",
     "cjs": "cross-env BABEL_ENV=cjs babel --out-dir lib src",
     "es": "cross-env BABEL_ENV=es babel --out-dir es src",
     "umd": "cross-env BABEL_ENV=umd webpack",
@@ -41,6 +42,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "browser-sync": "^2.26.3",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "file-loader": "^0.11.2",
