@@ -16,3 +16,7 @@ body {
     color: white;
     background: #057EB6;
 }
+
+#privacyPolicy:target {
+	background: #ffffc7;
+}
