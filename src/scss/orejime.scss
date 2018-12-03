@@ -1,13 +1,13 @@
-$box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
-$border-radius: 4px;
+$orejime-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19) !default;
+$orejime-border-radius: 4px !default;
 
-$blue: #057EB6;
-$green: #008A28;
+$orejime-blue: #057EB6 !default;
+$orejime-green: #008A28 !default;
 
-$theme-bg: #333;
-$theme-border: 1px solid #555;
-$theme-color: #eee;
-$theme-color-light: #aaa;
+$orejime-theme-bg: #333 !default;
+$orejime-theme-border: 1px solid #555 !default;
+$orejime-theme-color: #eee !default;
+$orejime-theme-color-light: #aaa !default;
 
 // micro css reset for everything orejime related
 [class^="orejime-"] {
@@ -30,7 +30,7 @@ $theme-color-light: #aaa;
 .orejime-Button {
     border: 0;
     color: #fff;
-    border-radius: $border-radius;
+    border-radius: $orejime-border-radius;
     padding: 6px 10px;
     margin-right: 0.5em;
     border: 1px solid transparent;
@@ -42,7 +42,7 @@ $theme-color-light: #aaa;
 
 .orejime-Button--save,
 .orejime-Button--accept {
-    background: $green;
+    background: $orejime-green;
     color: #fff;
 }
 
@@ -51,11 +51,11 @@ $theme-color-light: #aaa;
 }
 
 .orejime-Button--info {
-    background: $blue;
+    background: $orejime-blue;
 }
 
 .orejime-Notice {
-    background: $theme-bg;
+    background: $orejime-theme-bg;
     position: fixed;
     z-index: 1000;
     width: 100%;
@@ -63,8 +63,8 @@ $theme-color-light: #aaa;
     font-size: 0.8em;
 
     @media (min-width: 990px) {
-        box-shadow: $box-shadow;
-        border-radius: $border-radius;
+        box-shadow: $orejime-box-shadow;
+        border-radius: $orejime-border-radius;
         bottom: 20px;
         right: 20px;
         max-width: 300px;
@@ -85,16 +85,16 @@ $theme-color-light: #aaa;
 }
 
 .orejime-Notice-description {
-    color: $theme-color;
+    color: $orejime-theme-color;
     margin-bottom: 0.5em;
 }
 
 .orejime-Notice-purposes {
-    color: $theme-color;
+    color: $orejime-theme-color;
 }
 
 .orejime-Notice-changes {
-    color: $theme-color;
+    color: $orejime-theme-color;
     margin-bottom: 0.5em;
     font-weight: bold;
 }
@@ -146,15 +146,15 @@ $theme-color-light: #aaa;
 }
 
  .orejime-Modal {
-    background: $theme-bg;
-    color: $theme-color;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    background: $orejime-theme-bg;
+    color: $orejime-theme-color;
+    border-radius: $orejime-border-radius;
+    box-shadow: $orejime-box-shadow;
 }
 
 .orejime-Modal-header {
     padding: 1em;
-    border-bottom: $theme-border;
+    border-bottom: $orejime-theme-border;
 }
 
 .orejime-Modal-title {
@@ -184,7 +184,7 @@ $theme-color-light: #aaa;
 
 .orejime-Modal-footer {
     padding: 1em;
-    border-top: $theme-border;
+    border-top: $orejime-theme-border;
 }
 
 .orejime-Modal-privacyPolicyLink,
@@ -208,14 +208,14 @@ $theme-color-light: #aaa;
 .orejime-Modal-poweredByLink {
     position: absolute;
     right: 1em;
-    color: $theme-color-light;
+    color: $orejime-theme-color-light;
     font-size: 0.8em;
     padding: 6px 0;
 
     &:hover,
     &:focus,
     &:active {
-        color: $theme-color-light;
+        color: $orejime-theme-color-light;
     }
 }
 
@@ -250,14 +250,14 @@ $theme-color-light: #aaa;
 
 .orejime-AppItem-purposes {
     font-size: 0.8em;
-    color: $theme-color-light;
+    color: $orejime-theme-color-light;
 }
 
 .orejime-AppItem-optOut,
 .orejime-AppItem-required {
     padding-left: 0.2em;
     font-size: 0.8em;
-    color: $theme-color-light;
+    color: $orejime-theme-color-light;
 }
 
 .orejime-AppItem-input {
@@ -278,7 +278,7 @@ $theme-color-light: #aaa;
 }
 
 .orejime-AppItem-slider {
-    box-shadow: $box-shadow;
+    box-shadow: $orejime-box-shadow;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -332,7 +332,7 @@ $theme-color-light: #aaa;
 }
 
 .orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider {
-    background-color: $blue;
+    background-color: $orejime-blue;
 }
 
 .orejime-AppItem-input:checked + .orejime-AppItem-label .orejime-AppItem-slider:before {
