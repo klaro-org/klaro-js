@@ -11,9 +11,7 @@
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     </head>
     <body>
-        <!-- by default, orejime will be appended in the orejime div, or will create one at the end of the body if none exists.
-        it's recommended to have orejime at the top of your content so that screen reader users can be notified early -->
-        <div id="orejime"></div>
+        <!-- since no #orejime div exists, Orejime will create one and put it at the beginning of the body -->
 
         <div id="app">
             <div class="container-fluid mw-100 w-80ch py-md-5">
@@ -42,6 +40,7 @@
         </div>
 
         <script>
+            // see the annotated config in the README for details on how everything works
             window.orejimeConfig = {
                 appElement: "#app",
                 privacyPolicy: "#privacyPolicy",

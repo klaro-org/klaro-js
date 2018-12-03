@@ -10,10 +10,10 @@ import {createCssNamespace} from './utils/css'
 function getElement(config) {
     const {elementID: id, stylePrefix} = config
     var element = document.getElementById(id)
-    if (element === null){
+    if (element === null) {
         element = document.createElement('div')
         element.id = id
-        document.body.appendChild(element)
+        document.body.insertBefore(element, document.body.firstChild)
     }
     var child = document.querySelector(`.${stylePrefix}-AppContainer`)
     if (child === null) {
