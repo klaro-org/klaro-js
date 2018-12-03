@@ -1,6 +1,6 @@
 # Orejime 🍪
 
-> Let your users choose the cookies they eat on your website.
+> Let your users choose the cookies they eat on your website.  
 > Orejime 🍪 is an easy to use consent manager that focuses on accessibility.
 
 ## Introduction
