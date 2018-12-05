@@ -1,7 +1,7 @@
 consentModal:
-  title: Δεδομένα που συλλέγουμε
+  title: Πληροφορίες που συλλέγουμε
   description: >
-    Here you can see and customize the information that we collect about you.
+    Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε σχετικά με εσένα
   privacyPolicy:
     name: privacy policy
     text: >
