@@ -1,0 +1,30 @@
+consentModal:
+  title: Δεδομένα που συλλέγουμε
+  description: >
+    Here you can see and customize the information that we collect about you.
+  privacyPolicy:
+    name: privacy policy
+    text: >
+      To learn more, please read our {privacyPolicy}.
+consentNotice:
+  changeDescription: There were changes since your last visit, please update your consent.
+  description: >
+    We collect and process your personal information for the following purposes: {purposes}.
+  learnMore: Learn more
+ok: OK
+save: Save
+decline: Decline
+close: Close
+app:
+  disableAll:
+    title: Toggle all apps
+    description: Use this switch to enable/disable all apps.
+  optOut:
+    title: (opt-out)
+    description: This app is loaded by default (but you can opt out)
+  required:
+    title: (always required)
+    description: This application is always required
+  purposes: Purposes
+  purpose: Purpose
+poweredBy: Powered by Klaro!
