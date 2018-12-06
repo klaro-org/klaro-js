@@ -3,28 +3,28 @@ consentModal:
   description: >
     Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε σχετικά με εσένα
   privacyPolicy:
-    name: privacy policy
+    name: Πολιτική Απορρήτου
     text: >
-      To learn more, please read our {privacyPolicy}.
+      Για περισσότερες πληροφορίες, παρακαλώ διαβάστε την {privacyPolicy}.
 consentNotice:
-  changeDescription: There were changes since your last visit, please update your consent.
+  changeDescription: Πραγματοποιήθηκαν αλλαγές μετά την τελευταία σας επίσκεψη παρακαλούμε ανανεώστε την συγκατάθεση σας
   description: >
-    We collect and process your personal information for the following purposes: {purposes}.
-  learnMore: Learn more
+    Συγκεντρώνουμε και επεξεργαζόμαστε τα προσωπικά δεδομένα σας για τους παρακάτω λόγους: {purposes}.
+  learnMore: Περισσότερα
 ok: OK
-save: Save
-decline: Decline
-close: Close
+save: Αποθήκευση
+decline: Απόρριπτω
+close: Κλείσιμο
 app:
   disableAll:
-    title: Toggle all apps
-    description: Use this switch to enable/disable all apps.
+    title: Για όλες τις εφαρμογές
+    description: Χρησιμοποίησε αυτό τον διακόπτη για να ενεργοποιήσεις/απενεργοποιήσεις όλες τις εφαρμογές
   optOut:
-    title: (opt-out)
-    description: This app is loaded by default (but you can opt out)
+    title: (μη απαιτούμενο)
+    description: Είναι προκαθορισμένο να φορτώνεται, άλλα μπορεί να παραληφθεί
   required:
-    title: (always required)
-    description: This application is always required
-  purposes: Purposes
-  purpose: Purpose
-poweredBy: Powered by Klaro!
+    title: (απαιτούμενο)
+    description: Δεν γίνεται να λειτουργήσει σωστά η εφαρμογή χωρίς αυτό
+  purposes: Σκοποί
+  purpose: Σκοπός
+poweredBy: Υποστηρίζεται από το Klaro!
