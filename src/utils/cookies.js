@@ -39,9 +39,14 @@ export function setCookie(name, value, days) {
 
 export function deleteCookie(name, path, domain) {
     let str = name+'=; Max-Age=-99999999;'
+    // try to delete the cookie without any path and domain
+    document.cookie = str
     if (path !== undefined)
         str += ' path='+path+';'
+    // try to delete the cookie with path
+    document.cookie = str
     if (domain !== undefined)
         str += ' domain='+domain+';'
+    // try to delete the cookie with domain and path
     document.cookie = str
 }
