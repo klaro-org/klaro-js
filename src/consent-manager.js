@@ -249,6 +249,10 @@ export default class ConsentManager {
                     const cookie = cookies[j]
                     const match = cookiePattern.exec(cookie.name)
                     if (match !== null){
+                        console.debug("Deleting cookie:", cookie.name,
+                                      "Matched pattern:", cookiePattern,
+                                      "Path:", cookiePath,
+                                      "Domain:", cookieDomain)
                         deleteCookie(cookie.name, cookiePath, cookieDomain)
                     }
                 }
