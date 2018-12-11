@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.1
+
+- add the version number in the built files
+- tiny fix in modal text, remove a superfluous whitespace between description and privacy policy text
+
 ## Orejime 1.0.0
 
 The project now has moved a lot from the original one. The way the lib can be consumed and the way the lib is authored are noticeably different from [Klaro!](https://github.com/KIProtect/klaro). **For these reasons, we decided to give our fork its own name: Orejime :cookie:.**
