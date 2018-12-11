@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var WebpackAutoInject = require('webpack-auto-inject-version');
+var packageInfo = require('./package.json');
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var SRC_DIR = path.resolve(__dirname,'src');
@@ -62,6 +64,12 @@ var config = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'orejime.css'
+    }),
+    new webpack.BannerPlugin({
+      banner: packageInfo.name + ' v' + packageInfo.version + ' - ' + packageInfo.license + ' license, '
+        + 'original work Copyright (c) 2018 DPKit, '
+        + 'modified work Copyright (c) 2018 Empreinte Digitale, '
+        + 'all rights reserved.'
     })
   ]
 };
