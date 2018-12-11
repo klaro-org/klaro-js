@@ -42,7 +42,7 @@ export default class ConsentModal extends React.Component {
                                 <strong className={ns('Modal-changes')}>{t(['consentNotice', 'changeDescription'])}</strong>
                             </p>
                         }
-                        {t(['consentModal','description'])} &nbsp;
+                        {t(['consentModal','description'])}&nbsp;
                         {t(['consentModal','privacyPolicy','text'], {
                             privacyPolicy : <a
                                 key="privacyPolicyLink"
