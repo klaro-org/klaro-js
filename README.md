@@ -39,7 +39,12 @@ To use the widget on your website, simply download [klaro.js](https://klaro.kipr
     <script defer type="text/javascript" src="config.js"></script>
     <script defer type="text/javascript" src="klaro.js"></script>
 ```
-Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them.
+Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
+
+If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can use the ```klaro.show()``` global. Example:
+```html
+<a class="button is-success" onclick="return klaro.show();">Change consent settings</a>
+```
 
 ## Managing Third-Party Apps/Trackers
 
