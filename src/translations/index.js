@@ -11,7 +11,7 @@ import nl from './nl.yml'
 import no from './no.yml'
 import sv from './sv.yml'
 import ro from './ro.yml'
-import pl from './ro.yml'
+import pl from './pl.yml'
 
 export default {
   de,
