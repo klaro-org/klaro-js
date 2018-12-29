@@ -1,0 +1,30 @@
+consentModal:
+  title: Informacje, które zbieramy
+  description: >
+    Tutaj możesz zobaczyć i dostosować informacje, które zbieramy o Tobie.
+  privacyPolicy:
+    name: polityka prywatności
+    text: >
+      Aby dowiedzieć się więcej, przeczytaj naszą {privacyPolicy}.
+consentNotice:
+  changeDescription: Nastąpiły zmiany od Twojej ostatniej wizyty, zaktualizuj swoją zgodę.
+  description: >
+    Zbieramy i przetwarzamy dane osobowe w następujących celach: {purposes}.
+  learnMore: Dowiedz się więcej
+ok: OK
+save: Zapisz
+decline: Rezygnacja
+close: Zamknij
+app:
+  disableAll:
+    title: Przełącz dla wszystkich aplikacji
+    description: Użyj przełącznika, aby włączyć/wyłączyć wszystkie aplikacje.
+  optOut:
+    title: (rezygnacja)
+    description: Ta aplikacja jest domyślnie ładowana (ale możesz zrezygnować)
+  required:
+    title: (zawsze wymagane)
+    description: Ta alikacja jest zawsze wymagana
+  purposes: Cele
+  purpose: Cel
+poweredBy: Napędzany przez Klaro!
