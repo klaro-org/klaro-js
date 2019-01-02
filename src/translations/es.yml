@@ -5,7 +5,7 @@ consentModal:
   privacyPolicy:
     name: política de privacidad
     text: >
-      Para saber más consulte nuestra {privacyPolicy}.
+      Para más información consulte nuestra {privacyPolicy}.
 consentNotice:
   changeDescription: Ha habido cambios desde su última visita, por favor, actualice su consentimiento.
   description: >
