@@ -71,6 +71,7 @@ export default class Main extends React.Component {
             <div className={ns('Main')}>
                 {isNoticeVisible &&
                     <ConsentNotice
+                        key="notice"
                         t={t}
                         ns={ns}
                         isModalVisible={this.state.isModalVisible}
@@ -82,6 +83,7 @@ export default class Main extends React.Component {
                     />
                 }
                 <ConsentModal
+                    key="modal"
                     isOpen={this.state.isModalVisible}
                     t={t}
                     ns={ns}
