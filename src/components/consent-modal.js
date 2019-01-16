@@ -71,7 +71,7 @@ export default class ConsentModal extends React.Component {
                         <a
                             target="_blank"
                             className={ns('Modal-poweredByLink')}
-                            href={config.poweredBy || 'https://orejime.kiprotect.com'}
+                            href={config.poweredBy || 'https://github.com/empreinte-digitale/orejime'}
                             title={`${t(['poweredBy'])} (${t(['newWindow'])})`}
                         >
                             {t(['poweredBy'])}
