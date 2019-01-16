@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.2
+
+- fix accessibility issue with Orejime not removing the app `aria-hidden="true"` at times
+- replace default "powered by" url by the Orejime homepage
+
 ## 1.0.1
 
 - add the version number in the built files
