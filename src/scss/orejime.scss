@@ -19,6 +19,10 @@ $orejime-theme-color-light: #aaa !default;
     color: inherit;
     vertical-align: baseline;
     cursor: default;
+    float: none;
+    width: auto;
+    text-align: left;
+    font-weight: normal;
 }
 
 .orejime-Main,
