@@ -24,6 +24,7 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
     - [x] Norwegian
     - [ ] Romanian (in progress)
     - [x] Swedish
+    - [x] Turkish
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
   everything that is required, including stylesheets and images.
 * **Intuitive and responsive**: Klaro is designed to blend in with

@@ -11,6 +11,7 @@ import nl from './nl.yml'
 import no from './no.yml'
 import sv from './sv.yml'
 import ro from './ro.yml'
+import tr from './tr.yml'
 
 export default {
   de,
@@ -23,4 +24,5 @@ export default {
   no,
   sv,
   ro,
+  tr,
 }

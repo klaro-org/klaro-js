@@ -1,0 +1,30 @@
+consentModal:
+  title: Sakladığımız bilgiler
+  description: >
+    Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz.
+  privacyPolicy:
+    name: Gizlilik Politikası
+    text: >
+      Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
+consentNotice:
+  changeDescription: Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi güncelleyin.
+  description: >
+    Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.
+  learnMore: Daha fazla bilgi
+ok: Tamam
+save: Kaydet
+decline: Reddet
+close: Kapat
+app:
+  disableAll:
+    title: Tüm uygulamaları aç/kapat
+    description: Toplu açma/kapama için bu düğmeyi kullanabilirsin.
+  optOut:
+    title: (isteğe bağlı)
+    description: Bu uygulama varsayılanda yüklendi (ancak iptal edebilirsin)
+  required:
+    title: (her zaman gerekli)
+    description: Bu uygulama her zaman gerekli
+  purposes: Amaçlar
+  purpose: Amaç
+poweredBy: Klaro tarafından geliştirildi!
