@@ -88,19 +88,18 @@ export default class ConsentManager {
 
     _checkConsents(){
         let complete = true
-        const apps = new Set(this.config.apps.map((app)=>{return app.name}))
-        const consents = new Set(Object.keys(this.consents))
-        for(var key of Object.keys(this.consents)){
-            if (!apps.has(key)){
+        const appNames = this.config.apps.map(app => app.name)
+        Object.keys(this.consents).forEach(function(key) {
+            if (appNames.indexOf(key) === -1) {
                 delete this.consents[key]
             }
-        }
-        for(var app of this.config.apps){
-            if (!consents.has(app.name)){
+        }.bind(this));
+        this.config.apps.forEach(function(app) {
+            if (typeof this.consents[app.name] === 'undefined'){
                 this.consents[app.name] = this.getDefaultConsent(app)
                 complete = false
             }
-        }
+        }.bind(this));
         this.confirmed = complete
         if (!complete)
             this.changed = true
