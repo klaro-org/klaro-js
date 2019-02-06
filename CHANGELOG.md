@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.3
+
+- add a few CSS rules to prevent collapsing with the website styles
+- fix a couple JS errors on IE11 that occured after saving one time
+
 ## 1.0.2
 
 - fix accessibility issue with Orejime not removing the app `aria-hidden="true"` at times
