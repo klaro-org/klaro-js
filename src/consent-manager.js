@@ -129,7 +129,7 @@ export default class ConsentManager {
 
     loadConsents(){
         const consentCookie = getCookie(this.cookieName)
-        if (consentCookie !== null){
+        if (consentCookie !== null && consentCookie.value !== ''){
             this.consents = JSON.parse(consentCookie.value)
             this._checkConsents()
             this.notify('consents', this.consents)
