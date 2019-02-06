@@ -19,6 +19,10 @@ $orejime-theme-color-light: #aaa !default;
     color: inherit;
     vertical-align: baseline;
     cursor: default;
+    float: none;
+    width: auto;
+    text-align: left;
+    font-weight: normal;
 }
 
 .orejime-Main,
@@ -172,10 +176,11 @@ $orejime-theme-color-light: #aaa !default;
     position: absolute;
     top: 1em;
     right: 1em;
+}
 
-    svg {
-        stroke: currentColor;
-    }
+.orejime-CloseIcon {
+    stroke: currentColor;
+    width: 12px;
 }
 
 .orejime-Modal-body {
