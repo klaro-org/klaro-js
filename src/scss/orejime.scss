@@ -176,10 +176,11 @@ $orejime-theme-color-light: #aaa !default;
     position: absolute;
     top: 1em;
     right: 1em;
+}
 
-    svg {
-        stroke: currentColor;
-    }
+.orejime-CloseIcon {
+    stroke: currentColor;
+    width: 12px;
 }
 
 .orejime-Modal-body {
