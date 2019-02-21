@@ -19,7 +19,7 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
     - [x] Finnish
     - [x] French
     - [x] German
-    - [ ] Hungarian (coming soon)
+    - [x] Hungarian
     - [ ] Italian (in progress)
     - [x] Norwegian
     - [ ] Romanian (in progress)
