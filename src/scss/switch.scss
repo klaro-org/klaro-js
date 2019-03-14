@@ -74,13 +74,13 @@
 	}
 }
 
-.cm-app-input:focus + .cm-app-label .slider {
-	box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2),
-		5px 5px 10px 0 rgba(125, 125, 125, 0.19);
+.cm-app-input:checked + .cm-app-label .slider {
+	background-color: $socs-green;
 }
 
-.cm-app-input:checked + .cm-app-label .slider {
-	background-color: $blue1;
+.cm-app-input:checked + .cm-app-label .switch.disabled .slider {
+	background-color: desaturate($socs-green, 20);
+	opacity: 0.8;
 }
 
 .cm-app-input:checked + .cm-app-label .slider:before {
