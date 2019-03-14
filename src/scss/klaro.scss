@@ -1,9 +1,13 @@
-$box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+$box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 $border-radius: 4px;
 $border-dark: 1px solid #555;
-$font-color-dark: #eee;
-$font-color-dark-deemphasized: #999;
+$border-light: 1px solid #f1f1f1;
+$font-color-dark: #676767;
+$font-weight: 500;
+$heading-color: #141414;
+$font-color-dark-deemphasized: #444;
 $bg-dark: #333;
+$bg-light: #ffffff;
 $red2: #b24e14;
 $red1: #ba1e04;
 $yellow1: #f8c200;
@@ -15,6 +19,7 @@ $blue4: #9ac3d4;
 $green1: #00aa3e;
 $green2: #006a4e;
 $green3: #01440c;
+$socs-green: #27b646;
 
 .klaro {
 	.cookie-modal,
