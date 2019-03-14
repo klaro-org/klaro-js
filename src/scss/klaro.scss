@@ -28,10 +28,6 @@ $socs-green: #27b646;
 
 		font-size: 14px;
 
-		.slider {
-			box-shadow: $box-shadow;
-		}
-
 		a {
 			color: $green1;
 			text-decoration: none;
@@ -39,12 +35,16 @@ $socs-green: #27b646;
 
 		p,
 		strong,
-		h1,
-		h2,
 		ul,
 		li {
 			font-family: inherit;
 			color: $font-color-dark;
+		}
+
+		h1,
+		h2 {
+			font-family: inherit;
+			color: $heading-color;
 		}
 
 		p,
@@ -60,8 +60,7 @@ $socs-green: #27b646;
 		}
 
 		.cm-btn {
-			box-shadow: $box-shadow;
-			color: $font-color-dark;
+			color: #ffffff;
 			border-radius: 6px;
 			padding: 0.5em;
 			margin-right: 0.5em;
@@ -98,7 +97,7 @@ $socs-green: #27b646;
 		overflow: hidden;
 		left: 0;
 		top: 0;
-		z-index: 1000;
+		z-index: 2000;
 
 		.cm-bg {
 			background: rgba(0, 0, 0, 0.5);
@@ -130,10 +129,10 @@ $socs-green: #27b646;
 
 			position: fixed;
 			overflow: auto;
-			background: $bg-dark;
+			background: $bg-light;
 			color: $font-color-dark;
 
-			.hide {
+			.btn-close {
 				border: none;
 				background: none;
 				svg {
@@ -146,21 +145,19 @@ $socs-green: #27b646;
 
 			.cm-footer {
 				padding: 1em;
-				border-top: $border-dark;
+				border-top: $border-light;
+				display: flex;
 
-				a.cm-powered-by {
-					position: absolute;
-					right: 1em;
-					color: $font-color-dark-deemphasized;
-					font-size: 0.8em;
-					padding-top: 4px;
+				.btn {
+					margin-left: auto;
+					margin-top: 0;
 				}
 			}
 
 			.cm-header {
 				padding: 1em;
 				padding-right: 24px;
-				border-bottom: $border-dark;
+				border-bottom: $border-light;
 				h1 {
 					margin: 0;
 					font-size: 2em;
@@ -206,12 +203,12 @@ $socs-green: #27b646;
 						}
 
 						&.cm-toggle-all {
-							border-top: $border-dark;
+							border-top: $border-light;
 							padding-top: 1em;
 						}
 
 						span.cm-app-title {
-							font-weight: 600;
+							font-weight: $font-weight;
 						}
 
 						span.cm-opt-out,
@@ -227,19 +224,20 @@ $socs-green: #27b646;
 	}
 
 	.cookie-notice {
-		background: $bg-dark;
+		background: rgb(240, 240, 240);
+		border: 1px solid #d1d1d1;
 		z-index: 999;
-
 		position: fixed;
 		width: 100%;
-		bottom: 0;
+		top: 0;
 		right: 0;
+		z-index: 2000;
 
 		@media (min-width: 990px) {
 			box-shadow: $box-shadow;
 			border-radius: $border-radius;
 			position: fixed;
-			bottom: 20px;
+			top: 20px;
 			right: 20px;
 			max-width: 300px;
 		}
@@ -253,9 +251,14 @@ $socs-green: #27b646;
 			margin-bottom: 0;
 			margin-right: 0;
 			bottom: 0;
-
 			padding: 1em;
-			padding-top: 0;
+
+			.cn-title {
+				font-size: 1rem;
+				margin-bottom: 0;
+				font-weight: $font-weight;
+				color: $font-color-dark-deemphasized;
+			}
 
 			p {
 				margin-bottom: 0.5em;
@@ -269,9 +272,23 @@ $socs-green: #27b646;
 				display: inline-block;
 			}
 
-			p.cn-ok {
+			.cn-ok {
 				padding-top: 0.5em;
 				margin: 0;
+				display: flex;
+				justify-content: flex-end;
+
+				.btn {
+					margin-bottom: 0;
+					margin-top: 0;
+
+					&:first-child {
+						margin-right: 10px;
+						background-color: transparent;
+						border-color: rgba(0, 0, 0, 0.1);
+						color: $font-color-dark;
+					}
+				}
 			}
 
 			a.cn-decline {
