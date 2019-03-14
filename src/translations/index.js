@@ -28,7 +28,7 @@ export default {
   nl,
   no,
   ro,
-  sv
+  sv,
   tr,
   pl,
 }
