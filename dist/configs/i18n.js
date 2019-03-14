@@ -1,26 +1,29 @@
 var klaroI18nConfig = {
     cookieName: 'klaro-i18n',
-    elementID : 'i18n',
+    elementID: 'i18n',
     lang: 'en',
     noNotice: true,
     privacyPolicy: '/#privacy',
-    poweredBy : 'https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js',
+    poweredBy:
+        'https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js',
     default: true,
-    translations : {
+    translations: {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `translations.yml` file in the `src` directory of this repo:
         // https://github.com/DPKit/klaro/blob/master/src/translations.yml
         de: {
             consentModal: {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',
-                description: 'Dies ist die Beschreibung des Zustimmungs-Dialogs.',
+                description:
+                    'Dies ist die Beschreibung des Zustimmungs-Dialogs.',
             },
             privacyPolicy: {
-                text: 'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',
+                text:
+                    'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',
                 name: 'Datenschutzerklärung (Name)',
             },
             poweredBy: 'Konfiguration ansehen',
-            ok: 'Los geht\'s!',
+            ok: "Los geht's!",
             purposes: {
                 analytics: 'Besucher-Statistiken',
                 security: 'Sicherheit',
@@ -30,8 +33,8 @@ var klaroI18nConfig = {
             googleAnalytics: {
                 description: 'Sammeln von Besucherstatistiken',
             },
-            mouseflow : {
-                description: 'Echtzeit-Benutzeranalyse'
+            mouseflow: {
+                description: 'Echtzeit-Benutzeranalyse',
             },
         },
         en: {
@@ -55,19 +58,42 @@ var klaroI18nConfig = {
             },
             mouseflow: {
                 description: 'Real-time user analytics',
-            }
+            },
+        },
+        en: {
+            consentModal: {
+                title: 'Bu, izin penceresinin başlığı',
+                description: 'Bu, izin penceresi için açıklama.',
+            },
+            privacyPolicy: {
+                text: 'Bu {privacyPolicy} için bir bağlantı.',
+                name: 'Gizlilik Politikası (isim)',
+            },
+            poweredBy: 'Yapılandırmayı Görüntüle',
+            ok: 'Wohoo!',
+            purposes: {
+                analytics: 'Analitik',
+                security: 'Güvenlik',
+                livechat: 'Canlı Sohbet',
+            },
+            googleAnalytics: {
+                description: 'Ziyaretçi istatistiklerini toplama',
+            },
+            mouseflow: {
+                description: 'Gerçek zamanlı kullanıcı istatistiği',
+            },
         },
     },
-    apps : [
+    apps: [
         {
-            name : 'googleAnalytics',
-            title : 'Google Analytics',
-            purposes : ['analytics'],            
+            name: 'googleAnalytics',
+            title: 'Google Analytics',
+            purposes: ['analytics'],
         },
         {
-            name : 'mouseflow',
-            title : 'Mouseflow',
-            purposes : ['analytics']
+            name: 'mouseflow',
+            title: 'Mouseflow',
+            purposes: ['analytics'],
         },
     ],
-}
+};
