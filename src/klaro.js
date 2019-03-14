@@ -7,12 +7,14 @@ import {render} from 'react-dom'
 import translations from 'translations'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
+import currentExecutingScript from 'current-executing-script';
 
+const script = document.currentScript || currentExecutingScript();
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
-const configName = document.currentScript.dataset.config || "klaroConfig"
-const noAutoLoad = document.currentScript.dataset.noAutoLoad == "true"
-const stylePrefix = document.currentScript.dataset.stylePrefix || "klaro"
+const configName = script.dataset.config || "klaroConfig"
+const noAutoLoad = script.dataset.noAutoLoad == "true"
+const stylePrefix = script.dataset.stylePrefix || "klaro"
 const config = window[configName]
 const managers = {}
 

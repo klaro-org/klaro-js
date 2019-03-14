@@ -43,9 +43,10 @@ var config = {
       },
       {
         test: /\.jsx?/,
-        include: [path.resolve('node_modules'), SRC_DIR],
+        include: [SRC_DIR],
         loader: 'babel-loader',
         query: {
+          plugins: ["transform-runtime"],
           presets: [["env", { "modules": false }], 'react', 'stage-2'],
         }
       }
