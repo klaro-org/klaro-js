@@ -18,7 +18,9 @@ const stylePrefix = script.dataset.stylePrefix || 'klaro';
 const config = window[configName];
 const managers = {};
 
-window.onload = initialize;
+window.addEventListener('load', function(event) {
+	initialize(event);
+});
 
 if (module.hot) {
 	if (!noAutoLoad) renderKlaro(config);
