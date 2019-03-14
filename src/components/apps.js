@@ -38,6 +38,8 @@ export default class Apps extends React.Component {
             apps.map((app)=>{
                 manager.updateConsent(app.name, value)
             })
+            if (manager.confirmed)
+                manager.saveAndApplyConsents()
         }
 
         const toggleAll = (value) => {
