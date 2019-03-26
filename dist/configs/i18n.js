@@ -60,7 +60,7 @@ var klaroI18nConfig = {
                 description: 'Real-time user analytics',
             },
         },
-        en: {
+        tr: {
             consentModal: {
                 title: 'Bu, izin penceresinin başlığı',
                 description: 'Bu, izin penceresi için açıklama.',
