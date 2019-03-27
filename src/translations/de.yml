@@ -20,7 +20,7 @@ app:
     description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
   optOut:
     title: (Opt-Out)
-    description: Diese Anwendung wird standarmäßig gelanden (aber Sie können sie deaktivieren)
+    description: Diese Anwendung wird standardmäßig gelanden (aber Sie können sie deaktivieren)
   required:
     title: (immer notwendig)
     description: Diese Anwendung wird immer benötigt
