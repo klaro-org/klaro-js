@@ -43,6 +43,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-convert-to-json": "^0.1.0",
     "browser-sync": "^2.26.3",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",

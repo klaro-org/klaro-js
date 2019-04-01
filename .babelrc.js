@@ -1,5 +1,8 @@
 module.exports = {
-  "plugins": ["@babel/plugin-transform-runtime"],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "convert-to-json"
+  ],
   "presets": [
     ["@babel/preset-env", {
       "modules": process.env.BABEL_ENV === 'cjs' ? 'cjs' : false,

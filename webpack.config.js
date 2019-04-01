@@ -30,10 +30,6 @@ var config = {
         ],
       },
       {
-        test: /\.yaml|yml$/,
-        use: ['json-loader', 'yaml-loader']
-      },
-      {
         test: /\.jsx?/,
         include: [SRC_DIR],
         use: ['babel-loader']
