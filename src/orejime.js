@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import ConsentManager from './consent-manager'
 import translations from './translations'
-import Main from './components/main.js'
+import Main from './components/main'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
 import {createCssNamespace} from './utils/css'
@@ -98,6 +98,11 @@ function initDefaultInstance() {
         window.orejime = init(window.orejimeConfig)
     }
 }
+
+export default {
+    init,
+    defaultConfig
+};
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDefaultInstance)
