@@ -1,7 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var WebpackAutoInject = require('webpack-auto-inject-version');
 var packageInfo = require('./package.json');
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
@@ -22,15 +21,6 @@ var config = {
   },
   module: {
     rules: [
-      {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 100000
-          }
-        }]
-      },
       {
         test: /\.s?[ac]ss$/,
         use: [
