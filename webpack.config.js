@@ -37,8 +37,7 @@ var config = {
     ]
   },
   entry: [
-    SRC_DIR + '/orejime.js',
-    SRC_DIR + '/scss/orejime.scss'
+    SRC_DIR + '/orejime.umd.js',
   ],
   output: {
     path: BUILD_DIR,
