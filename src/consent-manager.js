@@ -65,12 +65,15 @@ export default class ConsentManager {
 
     declineAll(){
         this.config.apps.map((app) => {
-            this.updateConsent(app.name, false)
+            this.updateConsent(app, false)
         })
     }
 
-    updateConsent(name, value){
-        this.consents[name] = value
+    updateConsent(app, value){
+        if (app.required && !value) {
+            return;
+        }
+        this.consents[app.name] = value
         this.notify('consents', this.consents)
     }
 

@@ -29,7 +29,7 @@ export default class Apps extends React.Component {
 
         const toggle = (apps, value) => {
             apps.map((app)=>{
-                manager.updateConsent(app.name, value)
+                manager.updateConsent(app, value)
             })
         }
 
