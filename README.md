@@ -37,8 +37,10 @@ Orejime 🍪 is a React lib. Make sure you already installed react and react-dom
 npm install orejime
 ```
 
-The CSS is located in `node_modules/orejime/dist`. Import it directly in your JS thanks to webpack, or install it any way you are used to in your project.  
+The CSS is located in `node_modules/orejime/dist/orejime.css`. Import it directly in your JS thanks to webpack, or install it any way you are used to in your project.  
 You can also directly consume the Sass file if you prefer, located in the same folder.
+
+Note: if you don't have a React environment but still want to use npm in order to easily get the latest version of Orejime, the already-built JS file is located in `node_modules/orejime/dist/orejime.js`.
 
 #### Old browser support
 
@@ -79,7 +81,7 @@ You need to pass Orejime 🍪 a configuration object with, at the very least, `a
 &nbsp;
 
 ```js
-var myOrejimeConfig = {
+var orejimeConfig = {
     // Optional. You can customize the ID of the <div> that Orejime will create when starting up.
     // The generated <div> will be inserted at the beginning of the <body>.
     // If there is already a DOM element with this id, Orejime will use it instead of creating a new element.
@@ -248,19 +250,20 @@ var myOrejimeConfig = {
 
 ### Initialization
 
-Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initialize an instance.
+Now that you included the JS, the CSS, configured existing third-party scripts and defined your configuration, you can initialize an instance. This can be done automatically or manually.
+
+#### Automatically
+
+When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, a new Orejime instance is created in `window.orejime`.
 
 #### Manually
 
 ```js
-var Orejime = require('orejime'); // not necessary if you installed Orejime via the CDN
+// if using Orejime in a module context:
+// var Orejime = require('orejime');
 
-Orejime.init(myOrejimeConfig);
+Orejime.init(orejimeConfig);
 ```
-
-#### Automatically
-
-An Orejime 🍪 instance can be loaded without the need to initialize it explicitely. When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, an instance is created in `window.orejime`.
 
 ## API
 
@@ -291,7 +294,7 @@ This project is licensed under a BSD-3 license.
 
 Orejime started as a fork of [Klaro!](https://github.com/KIProtect/klaro). A lot of stuff changed since. A few were integrated in the original project, but eventually some big bricks changed and it became difficult, or sometimes not even necessary, to push those changes in.
 
-Orejime is maintained by [<span lang="fr">Empreinte Digitale (french)</span>](http://empreintedigitale.fr).
+Orejime is maintained by [<span lang="fr">Empreinte Digitale</span>  (french)](http://empreintedigitale.fr).
 
 ### What does "Orejime" mean?
 
