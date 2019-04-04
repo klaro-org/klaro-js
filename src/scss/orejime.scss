@@ -80,6 +80,15 @@ $orejime-theme-color-light: #aaa !default;
     }
 }
 
+.orejime-Notice--mandatory {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: none;
+}
+
 .orejime-Notice--hidden {
     display: none !important;
 }
@@ -152,7 +161,8 @@ $orejime-theme-color-light: #aaa !default;
     width: 100%;
 }
 
-.orejime-ModalOverlay {
+.orejime-ModalOverlay,
+.orejime-NoticeOverlay {
     z-index: 1000;
     background: rgba(0,0,0,0.5);
     position: fixed;

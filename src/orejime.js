@@ -48,6 +48,7 @@ export const defaultConfig = {
     privacyPolicy: '',
     default: true,
     mustConsent: false,
+    mustNotice: false,
     implicitConsent: false,
     logo: false,
     lang: language(),

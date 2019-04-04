@@ -1,6 +1,5 @@
 import React from 'react'
 import {getPurposes} from '../utils/config'
-import ConsentModal from './consent-modal'
 
 export default class ConsentNotice extends React.Component {
     render() {
@@ -8,6 +7,7 @@ export default class ConsentNotice extends React.Component {
             config,
             manager,
             isModalVisible,
+            isMandatory,
             t,
             ns,
             onSaveRequest,
@@ -19,7 +19,7 @@ export default class ConsentNotice extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const title = t(['consentNotice', 'title']);
 
-        return <div aria-hidden={isModalVisible} className={ns('Notice')}>
+        return <div aria-hidden={isModalVisible} className={ns(`Notice${isMandatory ? ' Notice--mandatory' : ''}`)}>
             <div className={ns('Notice-body')}>
                 {config.logo &&
                     <div className={ns('Notice-logoContainer')}>

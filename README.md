@@ -122,6 +122,13 @@ var orejimeConfig = {
     // defaults to false
     mustConsent: false,
 
+    // Optional. If "mustNotice" is set to true, Orejime will display the consent
+    // notice and not allow the user to close it before having actively
+    // consented or declined the use of third-party apps.
+    // Has no effect if mustConsent is set to true.
+    // defaults to false
+    mustNotice: false,
+
     // Optional. If "implicitConsent" is set to true, Orejime will automatically accept
     // cookies if the user continues his navigation on the website after the
     // first page. If you enable this, you must warn the user
@@ -265,7 +272,7 @@ Now that you included the JS, the CSS, configured existing third-party scripts a
 
 #### Automatically
 
-When including the script, the lib will check if the `window.orejimeConfig` variable exists. If it does, a new Orejime instance is created in `window.orejime`.
+When including the script, the lib checks if the `window.orejimeConfig` variable exists. If it does, a new Orejime instance is created in `window.orejime`.
 
 :warning: **Note : Orejime doesn't have this behavior when using it as a module.**
 
