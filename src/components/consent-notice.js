@@ -46,7 +46,7 @@ export default class ConsentNotice extends React.Component {
                 }
 
                 <ul className={ns('Notice-actions')}>
-                    <li className={ns('Notice-actionItem')}>
+                    <li className={ns('Notice-actionItem Notice-actionItem--save')}>
                          <button
                             className={ns('Button Button--save Notice-button Notice-saveButton')}
                             type="button"
@@ -55,7 +55,7 @@ export default class ConsentNotice extends React.Component {
                             {t(['accept'])}
                         </button>
                     </li>
-                    <li className={ns('Notice-actionItem')}>
+                    <li className={ns('Notice-actionItem Notice-actionItem--decline')}>
                          <button
                             className={ns('Button Button--decline Notice-button Notice-declineButton')}
                             type="button"
@@ -64,7 +64,7 @@ export default class ConsentNotice extends React.Component {
                             {t(['decline'])}
                         </button>
                     </li>
-                    <li className={ns('Notice-actionItem')}>
+                    <li className={ns('Notice-actionItem Notice-actionItem--info')}>
                          <button
                             type="button"
                             className={ns('Button Button--info Notice-learnMoreButton')}
