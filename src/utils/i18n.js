@@ -63,7 +63,8 @@ export function t(trans, lang, key){
         kl = [kl]
     const value = hget(trans, [lang, ...kl])
     if (value === undefined){
-        return '[missing translation: {lang}/{key}]'.format({key: kl.join("/"), lang: lang}).join("")
+        console.log('[missing translation: {lang}/{key}]'.format({key: kl.join("/"), lang: lang}).join(""));
+        return false;
     }
     const params = Array.prototype.slice.call(arguments, 3)
     if (params.length > 0)
