@@ -11,7 +11,6 @@ consentNotice:
   description: >
     Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
   learnMore: Scopri di più
-ok: OK
 save: Salva
 decline: Rifiuta
 app:

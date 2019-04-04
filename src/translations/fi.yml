@@ -11,7 +11,6 @@ consentNotice:
   description: >
     Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin: {purposes}.
   learnMore: Lue lisää
-ok: Hyväksy
 save: Tallenna
 decline: Hylkää
 app:

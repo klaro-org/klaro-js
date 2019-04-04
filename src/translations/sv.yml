@@ -11,7 +11,6 @@ consentNotice:
   description: >
     Vi samlar och bearbetar din personliga data i följande syften: {purposes}.
   learnMore: Läs mer
-ok: OK
 save: Spara
 decline: Avböj
 app:
