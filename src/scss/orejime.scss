@@ -88,6 +88,10 @@ $orejime-theme-color-light: #aaa !default;
     padding: 1em;
 }
 
+.orejime-Notice-logo {
+    max-width: 200px;
+}
+
 .orejime-Notice-title,
 .orejime-Notice-description {
     color: $orejime-theme-color;

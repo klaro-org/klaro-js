@@ -21,17 +21,25 @@ export default class ConsentNotice extends React.Component {
 
         return <div aria-hidden={isModalVisible} className={ns('Notice')}>
             <div className={ns('Notice-body')}>
-                {title &&
-                    <p className={ns('Notice-title')}>
-                        <strong>{title}</strong>
-                    </p>
+                {config.logo &&
+                    <div className={ns('Notice-logoContainer')}>
+                        <img src={config.logo} alt="" className={ns('Notice-logo')} />
+                    </div>
                 }
 
-                <p className={ns('Notice-description')}>
-                    {t(['consentNotice', 'description'], {
-                        purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>
-                    })}
-                </p>
+                <div className={ns('Notice-text')}>
+                    {title &&
+                        <p className={ns('Notice-title')}>
+                            <strong>{title}</strong>
+                        </p>
+                    }
+
+                    <p className={ns('Notice-description')}>
+                        {t(['consentNotice', 'description'], {
+                            purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>
+                        })}
+                    </p>
+                </div>
 
                 {manager.changed &&
                     <p className={ns('Notice-changes')}>{t(['consentNotice', 'changeDescription'])}</p>

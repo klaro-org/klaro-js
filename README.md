@@ -135,6 +135,10 @@ var orejimeConfig = {
     // in the <html> lang attribute, or fallback to "en".
     lang: "en",
 
+    // Optional. You can pass an image url to show it in the notice.
+    // defaults to false
+    logo: false,
+
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
     // list of translations that can be overwritten
