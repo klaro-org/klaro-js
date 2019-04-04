@@ -88,9 +88,16 @@ $orejime-theme-color-light: #aaa !default;
     padding: 1em;
 }
 
+.orejime-Notice-title,
 .orejime-Notice-description {
     color: $orejime-theme-color;
     margin-bottom: 0.5em;
+}
+
+.orejime-Notice-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.3;
 }
 
 .orejime-Notice-purposes {

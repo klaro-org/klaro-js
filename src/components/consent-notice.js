@@ -17,11 +17,20 @@ export default class ConsentNotice extends React.Component {
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
+        const title = t(['consentNotice', 'title']);
 
         return <div aria-hidden={isModalVisible} className={ns('Notice')}>
             <div className={ns('Notice-body')}>
+                {title &&
+                    <p className={ns('Notice-title')}>
+                        <strong>{title}</strong>
+                    </p>
+                }
+
                 <p className={ns('Notice-description')}>
-                    {t(['consentNotice', 'description'], {purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>})}
+                    {t(['consentNotice', 'description'], {
+                        purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>
+                    })}
                 </p>
 
                 {manager.changed &&
