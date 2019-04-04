@@ -38,6 +38,15 @@ export default class ConsentNotice extends React.Component {
                         {t(['consentNotice', 'description'], {
                             purposes: <strong key="purposes" className={ns('Notice-purposes')}>{purposesText}</strong>
                         })}
+                        {t(['consentNotice','privacyPolicy','text'], {
+                            privacyPolicy : <a
+                                key="privacyPolicyLink"
+                                className={ns('Notice-privacyPolicyLink')}
+                                href={config.privacyPolicy}
+                            >
+                                {t(['consentNotice','privacyPolicy','name'])}
+                            </a>
+                        })}
                     </p>
                 </div>
 

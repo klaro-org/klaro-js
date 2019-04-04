@@ -114,6 +114,21 @@ $orejime-theme-color-light: #aaa !default;
     font-weight: bold;
 }
 
+.orejime-Notice-privacyPolicyLink {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &,
+    &:hover {
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
 .orejime-Notice-actions {
     display: block;
 }
