@@ -55,18 +55,20 @@ export default class Apps extends React.Component {
             </li>
         })
         const allDisabled = apps.filter((app) => {
-            const required = app.required || false
-            if (required)
-                return false
+            return (app.required || false)
+                ? false
+                : consents[app.name]
+        }).length === 0
+        const allEnabled = apps.filter((app) => {
             return consents[app.name]
-        }).length == 0 ? true : false
+        }).length === apps.length
 
         return <div>
             <div className={ns('AppToggles')}>
                 <button
                     type="button"
                     className={ns('Button Button--info AppToggles-button AppToggles-enableAll')}
-                    disabled={!allDisabled}
+                    disabled={allEnabled}
                     onClick={enableAll}
                 >
                     {t(['acceptAll'])}
