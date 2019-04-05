@@ -92,22 +92,7 @@ export function init(conf) {
     }
 }
 
-function initDefaultInstance() {
-    if (window.orejimeConfig !== undefined
-        // `window.orejime instanceof Element` means there is a #orejime div in the dom
-        && (window.orejime === undefined || window.orejime instanceof Element)
-    ) {
-        window.orejime = init(window.orejimeConfig)
-    }
-}
-
 export default {
     init,
     defaultConfig
 };
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDefaultInstance)
-} else {
-    initDefaultInstance();
-}

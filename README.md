@@ -263,7 +263,9 @@ Now that you included the JS, the CSS, configured existing third-party scripts a
 
 #### Automatically
 
-When including the script or requiring the npm package, the lib will check if the `window.orejimeConfig` variable exists. If it does, a new Orejime instance is created in `window.orejime`.
+When including the script, the lib will check if the `window.orejimeConfig` variable exists. If it does, a new Orejime instance is created in `window.orejime`.
+
+:warning: **Note : Orejime doesn't have this behavior when using it as a module.**
 
 #### Manually
 
