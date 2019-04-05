@@ -9,10 +9,14 @@ export default class ConsentNoticeWrapper extends React.Component {
         if (!this.props.isMandatory && !isVisible) {
             return null;
         }
+        const title = this.props.t(['consentNotice', 'title']);
+        const ariaProp = title
+            ? {aria: {'labelledby': 'orejime-notice-title'}}
+            : {}
         if (this.props.isMandatory) {
             return <Dialog
                 isOpen={isVisible}
-                role={'alertdialog'}
+                {...ariaProp}
                 config={this.props.config}
                 portalClassName={this.props.ns('NoticePortal')}
                 overlayClassName={this.props.ns('NoticeOverlay')}
