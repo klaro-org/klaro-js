@@ -53,6 +53,7 @@ export const defaultConfig = {
     lang: language(),
     translations: {},
     apps: {},
+    debug: false
 }
 
 export function init(conf) {
@@ -72,7 +73,7 @@ export function init(conf) {
     const element = getElement(config)
     const trans = getTranslations(config)
     const manager = getManager(config)
-    const tt = (...args) => {return t(trans, config.lang, ...args)}
+    const tt = (...args) => {return t(trans, config.lang, config.debug, ...args)}
     const app = render(
         <Main t={tt}
             ns={createCssNamespace(config.stylePrefix)}

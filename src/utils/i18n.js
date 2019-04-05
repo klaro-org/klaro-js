@@ -57,16 +57,18 @@ function hget(d, key, defaultValue){
     return cv
 }
 
-export function t(trans, lang, key){
+export function t(trans, lang, debug, key){
     var kl = key
     if (!Array.isArray(kl))
         kl = [kl]
     const value = hget(trans, [lang, ...kl])
     if (value === undefined){
-        console.log('[missing translation: {lang}/{key}]'.format({key: kl.join("/"), lang: lang}).join(""));
+        if (debug) {
+            console.log('[missing translation: {lang}/{key}]'.format({key: kl.join("/"), lang: lang}).join(""));
+        }
         return false;
     }
-    const params = Array.prototype.slice.call(arguments, 3)
+    const params = Array.prototype.slice.call(arguments, 4)
     if (params.length > 0)
         return value.format(...params)
     return value

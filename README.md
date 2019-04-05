@@ -139,6 +139,11 @@ var orejimeConfig = {
     // defaults to false
     logo: false,
 
+    // Optional. Set Orejime in debug mode to have a few stuff
+    // logged in the console, like warning about missing translations.
+    // defaults to false
+    debug: false,
+
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
     // list of translations that can be overwritten
