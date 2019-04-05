@@ -135,7 +135,9 @@ var orejimeConfig = {
     // in the <html> lang attribute, or fallback to "en".
     lang: "en",
 
-    // Optional. You can pass an image url to show it in the notice.
+    // Optional. You can pass an image url to show in the notice.
+    // If the image is not exclusively decorative, you can pass an object
+    // with the image src and alt attributes: `logo: {src: '...', alt: '...'}`
     // defaults to false
     logo: false,
 

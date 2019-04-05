@@ -23,7 +23,10 @@ export default class ConsentNotice extends React.Component {
             <div className={ns('Notice-body')}>
                 {config.logo &&
                     <div className={ns('Notice-logoContainer')}>
-                        <img src={config.logo} alt="" className={ns('Notice-logo')} />
+                        <img
+                            src={typeof config.logo == 'object' ? config.logo.src : config.logo}
+                            alt={typeof config.logo == 'object' && config.logo.alt ? config.logo.alt : ''} className={ns('Notice-logo')}
+                        />
                     </div>
                 }
 
