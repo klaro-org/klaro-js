@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1
+
+nothing different from 1.1.0, this is just to make npm bypass a problem...
+
 ## 1.1.0
 
 - fix the UMD build, now the Orejime object is actually exported correctly and everything works according to the documentation (see https://github.com/empreinte-digitale/orejime/issues/7)
