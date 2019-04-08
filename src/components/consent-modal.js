@@ -14,12 +14,9 @@ export default class ConsentModal extends React.Component {
             aria={{'labelledby': 'orejime-modal-title'}}
             portalClassName={ns('ModalPortal')}
             overlayClassName={ns('ModalOverlay')}
-            appElement={config.appElement}
-            parentSelector={() => document.getElementById(config.elementID || 'orejime')}
             className={ns('ModalWrapper')}
+            config={config}
             onRequestClose={onHideRequest}
-            htmlOpenClassName="orejimeHtml-WithModalOpen"
-            bodyOpenClassName="orejimeBody-WithModalOpen"
             role={isAlert ? 'alertdialog' : 'dialog'}
         >
             <div className={ns('Modal')}>

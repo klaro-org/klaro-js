@@ -1,5 +1,5 @@
 import React from 'react'
-import ConsentNotice from './consent-notice'
+import ConsentNoticeWrapper from './consent-notice-wrapper'
 import ConsentModal from './consent-modal'
 
 export default class Main extends React.Component {
@@ -69,19 +69,19 @@ export default class Main extends React.Component {
         const isNoticeVisible = this.isNoticeVisible()
         return (
             <div className={ns('Main')}>
-                {isNoticeVisible &&
-                    <ConsentNotice
-                        key="notice"
-                        t={t}
-                        ns={ns}
-                        isModalVisible={this.state.isModalVisible}
-                        config={config}
-                        manager={manager}
-                        onSaveRequest={this.saveAndHideAll}
-                        onDeclineRequest={this.declineAndHideAll}
-                        onConfigRequest={this.showModal}
-                    />
-                }
+                <ConsentNoticeWrapper
+                    key="notice"
+                    t={t}
+                    ns={ns}
+                    isVisible={isNoticeVisible}
+                    isMandatory={config.mustNotice || false}
+                    isModalVisible={this.state.isModalVisible}
+                    config={config}
+                    manager={manager}
+                    onSaveRequest={this.saveAndHideAll}
+                    onDeclineRequest={this.declineAndHideAll}
+                    onConfigRequest={this.showModal}
+                />
                 <ConsentModal
                     key="modal"
                     isOpen={this.state.isModalVisible}

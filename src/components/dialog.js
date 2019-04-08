@@ -5,8 +5,8 @@ import useLegacyLifecycleMethods from '../utils/useLegacyLifecycleMethods';
 export default class Dialog extends React.Component {
     constructor(props) {
         super()
-        if (props.appElement) {
-            ReactModal.setAppElement(props.appElement)
+        if (props.config.appElement) {
+            ReactModal.setAppElement(props.config.appElement)
         }
         this.scrollPosition = null
 
@@ -60,9 +60,14 @@ export default class Dialog extends React.Component {
     }
 
     render() {
-        const {children, appElement, handleScrollPosition, ...reactModalProps} = this.props
+        const {children, appElement, handleScrollPosition, config, ...reactModalProps} = this.props
 
-        return <ReactModal {...reactModalProps}>
+        return <ReactModal
+            parentSelector={() => document.getElementById(config.elementID || 'orejime')}
+            htmlOpenClassName="orejimeHtml-WithModalOpen"
+            bodyOpenClassName="orejimeBody-WithModalOpen"
+            {...reactModalProps}
+        >
             {children}
         </ReactModal>
     }
