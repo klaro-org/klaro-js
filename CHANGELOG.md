@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 1.1.0
+
+- fix the UMD build, now the Orejime object is actually exported correctly and everything works according to the documentation (see https://github.com/empreinte-digitale/orejime/issues/7)
+- fix the Orejime ES6/CommonJS module, now you can consume it as described in the documentation (see https://github.com/empreinte-digitale/orejime/issues/8), thanks @ambroisemaupate
+- new feature: notice: add possibility to set the notice as mandatory via the "mustNotice" option, behaves like the "mustConsent" option
+- new feature: notice: add possibility to define a title via translations
+- new feature: notice: add possibility to show a logo via the "logo" config
+- new feature: notice: add possibility to show a text with the privacy policy link via translations, like in the modal
+- fix the possibility to deny required apps (see https://github.com/empreinte-digitale/orejime/issues/9), thanks @RomainTweaks
+- fix modal "enable all" button: let the user click the button as soon as one app is not enabled
+- behavior change: automatic loading of orejime by checking the presence of `window.orejimeConfig` now only works with the UMD build, not in a module context.
+- added a debug mode you can activate via the config, for now only used for logging missing translations
+- translations: don't show "missing translation" messages anymore, now show those messages in the console when debug mode is on
+
 ## 1.0.3
 
 - add a few CSS rules to prevent collapsing with the website styles
