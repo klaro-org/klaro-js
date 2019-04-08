@@ -1,5 +1,5 @@
-import './scss/orejime.scss';
-import Orejime from './orejime';
+require('./scss/orejime.scss');
+const Orejime = require('./orejime');
 
 function initDefaultInstance() {
     if (window.orejimeConfig !== undefined
@@ -16,4 +16,4 @@ if (document.readyState === 'loading') {
     initDefaultInstance();
 }
 
-export default Orejime;
+module.exports = Orejime;
