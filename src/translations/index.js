@@ -1,6 +1,7 @@
 // To create a new translation, add a YAML file with the required entries and
 // link it here using the appropriate language code.
 
+import ca from './ca.yml'
 import de from './de.yml'
 import el from './el.yml'
 import en from './en.yml'
@@ -17,6 +18,7 @@ import tr from './tr.yml'
 import pl from './pl.yml'
 
 export default {
+  ca,
   de,
   el,
   en,
