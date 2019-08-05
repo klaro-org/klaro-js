@@ -1,0 +1,30 @@
+consentModal:
+  title: Informació que recopilem
+  description: >
+    Aquí podeu veure i personalitzar la informació que recopilem sobre vós.
+  privacyPolicy:
+    name: política de privadesa
+    text: >
+      Per a més informació, consulteu la nostra {privacyPolicy}.
+consentNotice:
+  changeDescription: Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu el vostre consentiment.
+  description: >
+    Recopilem i processem la vostra informació personal amb les següents finalitats: {purposes}.
+  learnMore: Saber-ne més
+ok: Accepta
+save: Desa
+decline: Rebutja
+close: Tanca
+app:
+  disableAll:
+    title: Habilita/deshabilita totes les aplicacions
+    description: Useu aquest botó per a habilitar o deshabilitar totes les aplicacions.
+  optOut:
+    title: (opt-out)
+    description: Aquesta aplicació es carrega per defecte, però podeu desactivar-la
+  required:
+    title: (necessària)
+    description: Aquesta aplicació es necessita sempre
+  purposes: Finalitats
+  purpose: Finalitat
+poweredBy: Funciona amb Klaro!

@@ -16,6 +16,7 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
 * **Flexible and customizable**: Manage consent for all possible types of
   third-party apps and easily customize the tool according to your needs.
 * **Multilingual**: Full internationalization support, with languages included out of the box. New translations can be added in just a few lines of code. Contributions welcome! Current languages:
+    - [x] Catalan
     - [x] Dutch
     - [x] English
     - [x] Finnish
