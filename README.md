@@ -1,5 +1,3 @@
-**[🔥🔥 We're hiring a senior JS developer! Come work with us on Klaro and other amazing web software 🔥🔥](https://kiprotect.com/careers/senior-frontend-developer)**
-
 # Klaro! A Simple Consent Manager
 
 Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
