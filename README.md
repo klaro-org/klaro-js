@@ -88,7 +88,7 @@ If you are multilingual, consider contributing a translation we don't have yet.
 
 ## License & Third-Party Libraries
 
-This project is licensed under a BSD-3 license. A list of third-party libraries can be found in the [package.js](package.js) file.
+This project is licensed under a BSD-3 license. A list of third-party libraries can be found in the [package.json](package.json) file.
 
 The accompanying website uses [Bulma](https://bulma.io), [Bootstrap](https://getbootstrap.com) and [Prism](http://prismjs.com/) and a [surveillance camera image](https://upload.wikimedia.org/wikipedia/commons/5/56/Surveillance-camera.png) from Wikipedia.
 
