@@ -1,5 +1,17 @@
 import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
 
+// from https://git.io/fj5Or
+function browserSupportsLocalStorage() {
+    var mod = 'klaro-ls-test';
+    try {
+        localStorage.setItem(mod, mod);
+        localStorage.removeItem(mod);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 class KlaroCookies {
     constructor(cookieName, cookieExpiresAfterDays) {
         this.cookieName = cookieName;
@@ -44,7 +56,7 @@ export default class ConsentManager {
 
     constructor(config){
         this.config = config // the configuration
-        this.klaroStorage = config.klaroStorage === 'localStorage'
+        this.klaroStorage = config.klaroStorage === 'localStorage' && browserSupportsLocalStorage()
             ? new KlaroLocalStorage(this.config.cookieName || 'klaro')
             : new KlaroCookies(this.config.cookieName || 'klaro', this.config.cookieExpiresAfterDays || 120);
         this.consents = this.defaultConsents // the consent states of the configured apps
