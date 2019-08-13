@@ -14,9 +14,9 @@
   ],
   "main": "dist/klaro.js",
   "scripts": {
-    "make-dev": "APP_ENV=dev APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
-    "make-watch": "APP_ENV=dev APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
-    "make": "APP_ENV=production APP_VERSION=`git tag --points-at HEAD` APP_COMMIT=`git rev-parse HEAD` webpack --config webpack.config.js"
+    "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
+    "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
+    "make": "cross-env APP_ENV=production cross-env APP_VERSION=`git tag --points-at HEAD` cross-env APP_COMMIT=`git rev-parse HEAD` webpack --config webpack.config.js"
   },
   "author": "kj7s GbR",
   "license": "BSD-3-Clause",
@@ -33,6 +33,7 @@
     "babel-preset-minify": "^0.4.3",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.1",
     "json-loader": "^0.5.7",
