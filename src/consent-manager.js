@@ -59,9 +59,14 @@ export default class ConsentManager {
         return consents
     }
 
+    //don't decline required apps
     declineAll(){
         this.config.apps.map((app) => {
-            this.updateConsent(app.name, false)
+            if(app.required || this.config.required) {
+                this.updateConsent(app.name, true)
+            } else {
+                this.updateConsent(app.name, false)
+            }
         })
     }
 
@@ -130,7 +135,10 @@ export default class ConsentManager {
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
             const state = this.states[app.name]
-            const confirmed = this.confirmed || (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
+            const optOut = (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
+            const required = (app.required !== undefined ? app.required : (this.config.required || false))
+            //opt out and required apps are always treated as confirmed
+            const confirmed = this.confirmed || optOut || required
             const consent = this.getConsent(app.name) && confirmed
             if (state === consent)
                 continue
