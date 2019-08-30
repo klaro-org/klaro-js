@@ -1,6 +1,26 @@
 image: node:latest
+
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - npm ci
+
 stages:
+  - build
   - deploy
+
+build:
+  stage: deploy
+  script:
+    - npm run-script make
+  artifacts:
+    paths:
+    - dist
+
 deploy:
   only:
     - staging
@@ -8,7 +28,7 @@ deploy:
   stage: deploy
   before_script:
     - apt-get update -qy
-    - apt-get install -y rsync 
+    - apt-get install -y rsync
   script:
     # we deploy tagged commits to the production version and commits in the "staging" branch to the staging environment
     - if [ -n "$CI_COMMIT_TAG" ]; then export DIRECTORY=klaro-master; else if [ "$CI_COMMIT_REF_NAME" = "staging" ]; then export DIRECTORY=klaro-staging; else exit 0; fi; fi;
@@ -17,7 +37,6 @@ deploy:
     - chmod 700 ~/.ssh
     - echo "$SERVER_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
-    - npm install
     - CI_APP_VERSION=$CI_COMMIT_TAG APP_VERSION=$CI_COMMIT_SHA npm run-script make
     - echo "Deploying to $DIRECTORY..."
     - if [ -n "$DIRECTORY" ]; then rsync --progress -r -e "ssh -o StrictHostKeyChecking=no -o identityFile=~/.ssh/id_rsa" dist/* $SERVER_USERNAME@$SERVER_IP:/dpkit/$DIRECTORY; fi;
