@@ -46,7 +46,7 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
     "webpack-bundle-size-analyzer": "^2.7.0",
-    "webpack-dev-server": "^2.4.5",
+    "webpack-dev-server": "^3.1.11",
     "webpack-hot-middleware": "^2.20.0",
     "yaml-loader": "^0.5.0"
   },
