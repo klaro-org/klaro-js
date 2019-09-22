@@ -36,7 +36,7 @@ String.prototype.format = function () {
 }
 
 export function language(){
-    let lang = (window.language || document.documentElement.lang || 'en').toLowerCase()
+    let lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
     let regex = new RegExp('^([\\w]+)-([\\w]+)$')
     let result = regex.exec(lang)
     if (result == null){
