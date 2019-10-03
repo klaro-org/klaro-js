@@ -1,0 +1,30 @@
+consentModal:
+  title: Informacije koje prikupljamo
+  description: >
+    Ovde možete videti i podesiti informacije koje prikupljamo o Vama.
+  privacyPolicy:
+    name: politiku privatnosti
+    text: >
+      Za više informacije pročitajte našu {privacyPolicy}.
+consentNotice:
+  changeDescription: Došlo je do promena od Vaše poslednje posete, molimo Vas da ažurirate svoja odobrenja.
+  description: >
+    Mi prikupljamo i procesiramo Vaše lične podatke radi sledećeg: {purposes}.
+  learnMore: Saznajte više
+ok: U redu
+save: Sačuvaj
+decline: Odbij
+close: Zatvori
+app:
+  disableAll:
+    title: Izmeni sve
+    description: Koristite ovaj prekidač da omogućite/onesposobite sve aplikacije odjednom.
+  optOut:
+    title: (onesposobite)
+    description: Ova aplikacija je učitana automatski (ali je možete onesposobiti)
+  required:
+    title: (neophodna)
+    description: Ova aplikacija je uvek neophodna.
+  purposes: Svrhe
+  purpose: Svrha
+poweredBy: Pokreće Klaro!
