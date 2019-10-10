@@ -1,6 +1,6 @@
 {
   "name": "klaro",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "A simple but powerful consent manager.",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"
   },
-  "homepage": "https://github.com/KIProtect/klaro#readme",
+  "homepage": "https://klaro.kiprotect.com/",
   "devDependencies": {
     "@babel/cli": "7.6.3",
     "@babel/core": "7.6.3",
