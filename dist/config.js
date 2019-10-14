@@ -108,7 +108,7 @@ var klaroConfig = {
             },
             camera: {
                 description:
-                    'A surveillance camera (just a silly example for an IMG tag)',
+                    'A surveillance camera (just an example for an IMG tag)',
             },
             cloudflare: {
                 description: 'Protection against DDoS attacks',
