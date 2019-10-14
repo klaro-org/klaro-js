@@ -1,6 +1,6 @@
 # Klaro! A Simple Consent Manager
 
-Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
+Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
 
 <p align="center"><img src="dist/assets/demo.gif" /></p>
 
