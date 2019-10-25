@@ -50,14 +50,9 @@ $green3: #01440C;
             box-shadow: $box-shadow;
             color: $font-color-dark;
             border-radius: 6px;
-            padding: 0.5em;
+            padding: 0.5em 0.7em;
             margin-right: 0.5em;
-            border: 0;
-
-            &.cm-btn-sm {
-                padding: 0.4em;
-                font-size: 1em;
-            }
+            border: 1px solid transparent;
 
             &.cm-btn-close {
                 background: #eee;
@@ -121,7 +116,7 @@ $green3: #01440C;
             overflow: auto;
             background: $bg-dark;
             color: $font-color-dark;
-    
+
             .hide   {
                 border: none;
                 background: none;
@@ -253,7 +248,7 @@ $green3: #01440C;
             p.cn-changes {
                 text-decoration: underline;
             }
-    
+
             .cn-learn-more {
                 display: inline-block;
 
