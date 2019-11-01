@@ -1,5 +1,9 @@
 import 'scss/klaro.scss'
 
+// When webpack's hot loading is enabled, enable Preact's support for the
+// React Dev Tools browser extension.
+if(module.hot) require('preact/debug')
+
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
