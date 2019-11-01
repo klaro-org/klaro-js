@@ -7,6 +7,9 @@ const SRC_DIR = path.resolve(__dirname,'src');
 const APP_ENV = process.env.APP_ENV || 'dev';
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
+function withEnvSourcemap(loader) {
+  return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
+}
 
 let config = {
   mode: 'development',
@@ -69,7 +72,7 @@ if (APP_ENV === 'dev') {
     plugins: [
       ...config.plugins,
       new webpack.DefinePlugin({
-        VERSION : JSON.stringify('development'),
+        VERSION: JSON.stringify('development'),
       })
     ],
   };
@@ -78,21 +81,17 @@ if (APP_ENV === 'dev') {
 if (APP_DEV_MODE === 'server') {
   config = {
     ...config,
-    entry: [
-      'webpack/hot/only-dev-server',
-      config.entry[0]
-    ],
     devServer: {
+      // enable Hot Module Replacement on the server
       hot: true,
-      // enable HMR on the server
 
-      contentBase: ['dist'],
       // match the output path
+      contentBase: ['dist'],
 
-      publicPath: '',
       // match the output `publicPath`
+      publicPath: '',
+      // always render index.html if the document does not exist (we need this for correct routing)
       historyApiFallback: true,
-      //always render index.html if the document does not exist (we need this for correct routing)
 
       proxy: {
         '/api': {
@@ -133,7 +132,3 @@ if (APP_ENV === 'production') {
 }
 
 module.exports = config;
-
-function withEnvSourcemap(loader) {
-  return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
-}

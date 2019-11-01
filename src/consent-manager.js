@@ -27,7 +27,7 @@ export default class ConsentManager {
         if (this.watchers.has(watcher))
             this.watchers.delete(watcher)
     }
-    
+
     notify(name, data){
         this.watchers.forEach((watcher) => {
             watcher.update(this, name, data)
@@ -35,7 +35,7 @@ export default class ConsentManager {
     }
 
     getApp(name){
-        const matchingApps = this.config.apps.filter((app)=>{return app.name == name})
+        const matchingApps = this.config.apps.filter(app=>app.name === name)
         if (matchingApps.length > 0)
             return matchingApps[0]
         return undefined
@@ -121,7 +121,7 @@ export default class ConsentManager {
         this.saveConsents()
         this.applyConsents()
     }
-    
+
     saveConsents(){
         if (this.consents === null)
             deleteCookie(this.cookieName)
@@ -171,7 +171,7 @@ export default class ConsentManager {
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
 
-            if (element.tagName == 'SCRIPT'){
+            if (element.tagName === 'SCRIPT'){
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
@@ -230,7 +230,7 @@ export default class ConsentManager {
                 }
             }
          }
-        
+
     }
 
     updateAppCookies(app, consent){
@@ -268,5 +268,5 @@ export default class ConsentManager {
         }
 
     }
-    
+
 }

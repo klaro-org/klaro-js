@@ -19,13 +19,11 @@ export default class Apps extends React.Component {
     }
 
     componentWillUnmount(){
-        const {manager} = this.props
-        manager.unwatch(this)
+        this.props.manager.unwatch(this)
     }
 
     update(obj, type, data){
-        const {manager} = this.props
-        if (obj == manager && type == 'consents')
+        if (obj === this.props.manager && type === 'consents')
             this.setState({consents : data})
     }
 
@@ -63,7 +61,7 @@ export default class Apps extends React.Component {
 
         const allDisabled = togglableApps.filter(
             app => consents[app.name]
-        ).length == 0 ? true : false
+        ).length === 0 ? true : false
 
         return <ul className="cm-apps">
             {appItems}
