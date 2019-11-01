@@ -58,16 +58,16 @@ export default class Apps extends React.Component {
                 />
             </li>
         })
-        const allDisabled = apps.filter((app) => {
-            const required = app.required || false
-            if (required)
-                return false
-            return consents[app.name]
-        }).length == 0 ? true : false
+
+        const togglableApps = apps.filter(app => !app.required);
+
+        const allDisabled = togglableApps.filter(
+            app => consents[app.name]
+        ).length == 0 ? true : false
 
         return <ul className="cm-apps">
             {appItems}
-            {apps.length > 1 && (
+            {togglableApps.length > 1 && (
                 <li className="cm-app cm-toggle-all">
                     <AppItem
                         name="disableAll"
