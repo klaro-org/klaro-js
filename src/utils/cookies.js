@@ -19,7 +19,7 @@ export function getCookies(){
 export function getCookie(name) {
     const cookies = getCookies()
     for(var i=0;i<cookies.length;i++){
-        if (cookies[i].name == name)
+        if (cookies[i].name === name)
             return cookies[i]
     }
     return null
