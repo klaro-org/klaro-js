@@ -4,7 +4,7 @@ String.prototype.format = function () {
 
     var t = typeof arguments[0];
     var args
-    if (arguments.length == 0)
+    if (arguments.length === 0)
         args = {}
     else
         args = ("string" === t || "number" === t) ?
@@ -39,7 +39,7 @@ export function language(){
     let lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
     let regex = new RegExp('^([\\w]+)-([\\w]+)$')
     let result = regex.exec(lang)
-    if (result == null){
+    if (result === null){
         return lang
     }
     return result[1]

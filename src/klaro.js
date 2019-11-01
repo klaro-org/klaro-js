@@ -17,7 +17,7 @@ const script = document.currentScript || currentExecutingScript();
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
 const configName = script.dataset.config || "klaroConfig"
-const noAutoLoad = script.dataset.noAutoLoad == "true"
+const noAutoLoad = script.dataset.noAutoLoad === "true"
 const stylePrefix = script.dataset.stylePrefix || "klaro"
 const config = window[configName]
 const managers = {}
