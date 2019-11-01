@@ -65,19 +65,20 @@ export default class Apps extends React.Component {
             return consents[app.name]
         }).length == 0 ? true : false
 
-        const disableAllItem = <li className="cm-app cm-toggle-all">
-            <AppItem
-                name="disableAll"
-                title={t(['app','disableAll','title'])}
-                description={t(['app', 'disableAll', 'description'])}
-                checked={!allDisabled}
-                onToggle={toggleAll}
-                t={t}
-            />
-        </li>
         return <ul className="cm-apps">
             {appItems}
-            {disableAllItem}
+            {apps.length > 1 && (
+                <li className="cm-app cm-toggle-all">
+                    <AppItem
+                        name="disableAll"
+                        title={t(['app','disableAll','title'])}
+                        description={t(['app', 'disableAll', 'description'])}
+                        checked={!allDisabled}
+                        onToggle={toggleAll}
+                        t={t}
+                    />
+                </li>
+            )}
         </ul>
 
     }
