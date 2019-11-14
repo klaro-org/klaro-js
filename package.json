@@ -18,7 +18,7 @@
     "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
     "make": "cross-env APP_ENV=production cross-env APP_VERSION=\"git tag --points-at HEAD\" cross-env APP_COMMIT=\"git rev-parse HEAD\" webpack --config webpack.config.js"
   },
-  "author": "kj7s GbR",
+  "author": "KIProtect GmbH",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"

@@ -40,10 +40,10 @@ var klaroConfig = {
     // You can overwrite existing translations and add translations for your
     // app descriptions and purposes. See `src/translations.yml` for a full
     // list of translations that can be overwritten:
-    // https://github.com/DPKit/klaro/blob/master/src/translations.yml
+    // https://github.com/KIProtect/klaro/blob/master/src/translations.yml
 
     // Example config that shows how to overwrite translations:
-    // https://github.com/DPKit/klaro/blob/master/src/configs/i18n.js
+    // https://github.com/KIProtect/klaro/blob/master/src/configs/i18n.js
     translations: {
         // If you erase the "consentModal" translations, Klaro will use the
         // defaults as defined in translations.yml

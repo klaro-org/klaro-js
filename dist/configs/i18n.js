@@ -5,12 +5,12 @@ var klaroI18nConfig = {
     noNotice: true,
     privacyPolicy: '/#privacy',
     poweredBy:
-        'https://github.com/DPKit/klaro/blob/master/dist/configs/i18n.js',
+        'https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js',
     default: true,
     translations: {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `translations.yml` file in the `src` directory of this repo:
-        // https://github.com/DPKit/klaro/blob/master/src/translations.yml
+        // https://github.com/KIProtect/klaro/blob/master/src/translations.yml
         de: {
             consentModal: {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',
