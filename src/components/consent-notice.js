@@ -28,6 +28,14 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
+        const saveDefaultsAndHide = (e) => {
+            if (e !== undefined)
+                e.preventDefault()
+            manager.acceptDefaults()
+            manager.saveAndApplyConsents()
+            this.setState({modal: false})
+        }
+
         const saveAndHide = (e) => {
             if (e !== undefined)
                 e.preventDefault()
@@ -66,7 +74,7 @@ export default class ConsentNotice extends React.Component {
                 </p>
                 {changesText}
                 <p className="cn-ok">
-                    <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={saveAndHide}>{t(['ok'])}</button>
+                    <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={saveDefaultsAndHide}>{t(['ok'])}</button>
                     <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
                 </p>
             </div>

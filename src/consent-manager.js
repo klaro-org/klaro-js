@@ -4,7 +4,7 @@ export default class ConsentManager {
 
     constructor(config){
         this.config = config // the configuration
-        this.consents = this.defaultConsents // the consent states of the configured apps
+        this.consents = this.requiredConsents // the consent states of the configured apps
         this.confirmed = false // true if the user actively confirmed his/her consent
         this.changed = false // true if the app config changed compared to the cookie
         this.states = {} // keep track of the change (enabled, disabled) of individual apps
@@ -57,6 +57,21 @@ export default class ConsentManager {
             consents[app.name] = this.getDefaultConsent(app)
         }
         return consents
+    }
+
+    get requiredConsents(){
+        const consents = {}
+        for(var i=0;i<this.config.apps.length;i++){
+            const app = this.config.apps[i]
+            consents[app.name] = app.required || this.config.required || false
+        }
+        return consents
+    }
+
+    acceptDefaults(){
+        this.config.apps.map((app) => {
+            this.updateConsent(app.name, this.getDefaultConsent(app))
+        })
     }
 
     //don't decline required apps
