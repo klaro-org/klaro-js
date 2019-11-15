@@ -9,8 +9,8 @@ var klaroI18nConfig = {
     default: true,
     translations: {
         // these values will overwrite the defaults. For a full list, have a look
-        // at the `translations.yml` file in the `src` directory of this repo:
-        // https://github.com/KIProtect/klaro/blob/master/src/translations.yml
+        // at the `src/translations` directory of this repo:
+        // https://github.com/KIProtect/klaro/tree/master/src/translations
         de: {
             consentModal: {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',
