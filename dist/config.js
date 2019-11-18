@@ -31,6 +31,13 @@ var klaroConfig = {
     // consented or declines the use of third-party apps.
     mustConsent: false,
 
+    // Show "accept all" to accept all apps instead of "ok" that only accepts
+    // required and "default: true" apps
+    acceptAll: false,
+
+    // replace "decline" with cookie manager modal
+    hideDeclineAll: false,
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your

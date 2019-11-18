@@ -35,8 +35,14 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
+        const acceptAndHide = (e) => {
+            manager.changeAll(true)
+            manager.saveAndApplyConsents()
+            this.setState({modal: false})
+        }
+
         const declineAndHide = (e) => {
-            manager.declineAll()
+            manager.changeAll(false)
             manager.saveAndApplyConsents()
             this.setState({modal: false})
         }
@@ -49,12 +55,27 @@ export default class ConsentNotice extends React.Component {
         if (manager.confirmed && !show)
             return <div />
 
+        var managerLink
+        if (!config.hideDeclineAll)
+            managerLink = <p class="cn-modal"><a href="#" onclick={showModal}>{t(['consentNotice', 'learnMore'])}...</a></p>
+
+        const secondButton = config.hideDeclineAll ?
+            <button className="cm-btn cm-btn-sm cm-btn-danger cn-modal" type="button" onclick={showModal}>{t(['consentNotice','learnMore'])}</button>
+            :
+            <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onclick={declineAndHide}>{t(['decline'])}</button>
+
+        const acceptButton = config.acceptAll ?
+            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={acceptAndHide}>{t(['consentNotice', 'acceptAll'])}</button>
+            :
+            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={saveAndHide}>{t(['ok'])}</button>
+
         const modalIsOpen =
             modal
             || (show && modal === undefined)
             || (config.mustConsent && !manager.confirmed)
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
+        const ppLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
 
         if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
             return <ConsentModal t={t} config={config} hide={hide} declineAndHide={declineAndHide} saveAndHide={saveAndHide} manager={manager} />
@@ -62,12 +83,13 @@ export default class ConsentNotice extends React.Component {
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
-                    <a href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
+                    {ppLink}
                 </p>
+                {managerLink}
                 {changesText}
                 <p className="cn-ok">
-                    <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={saveAndHide}>{t(['ok'])}</button>
-                    <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+                    {secondButton}
+                    {acceptButton}
                 </p>
             </div>
         </div>

@@ -60,9 +60,9 @@ export default class ConsentManager {
     }
 
     //don't decline required apps
-    declineAll(){
+    changeAll($value){
         this.config.apps.map((app) => {
-            if(app.required || this.config.required) {
+            if(app.required || this.config.required || $value) {
                 this.updateConsent(app.name, true)
             } else {
                 this.updateConsent(app.name, false)

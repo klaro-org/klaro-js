@@ -11,6 +11,7 @@ consentNotice:
   description: >
     Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
   learnMore: Mehr erfahren
+  acceptAll: Allen zustimmen
 ok: OK
 save: Speichern
 decline: Ablehnen
