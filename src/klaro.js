@@ -4,6 +4,7 @@ import 'scss/klaro.scss'
 // React Dev Tools browser extension.
 if(module.hot) require('preact/debug')
 
+// This polyfills are needed for IE11 compatibility
 import "core-js/modules/es.array.iterator";
 import "core-js/modules/es.array.from";
 import "core-js/modules/es.map";
