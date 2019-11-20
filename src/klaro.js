@@ -4,15 +4,6 @@ import 'scss/klaro.scss'
 // React Dev Tools browser extension.
 if(module.hot) require('preact/debug')
 
-// This polyfills are needed for IE11 compatibility
-import "core-js/modules/es.array.iterator";
-import "core-js/modules/es.array.from";
-import "core-js/modules/es.map";
-import "core-js/modules/es.set";
-import "core-js/modules/es.symbol";
-import "core-js/modules/es.symbol.iterator";
-import "core-js/modules/es.promise";
-
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
