@@ -1,4 +1,5 @@
 import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
+import {getDataAttr, getDataAttrs} from "utils/data-attributes"
 
 export default class ConsentManager {
 
@@ -52,8 +53,9 @@ export default class ConsentManager {
 
     get defaultConsents(){
         const consents = {}
-        for(var i=0;i<this.config.apps.length;i++){
-            const app = this.config.apps[i]
+        const apps = this.config.apps
+        for(var i = 0, l = apps.length; i <l; i++) {
+            const app = apps[i]
             consents[app.name] = this.getDefaultConsent(app)
         }
         return consents
@@ -109,8 +111,11 @@ export default class ConsentManager {
 
     loadConsents(){
         const consentCookie = getCookie(this.cookieName)
-        if (consentCookie !== null){
-            this.consents = JSON.parse(consentCookie.value)
+        var cookieValue
+        if (consentCookie !== null) {
+            // avoid syntax error on older browsers
+            cookieValue = consentCookie.value || ""
+            this.consents = (cookieValue !== "") ? JSON.parse(cookieValue) : {};
             this._checkConsents()
             this.notify('consents', this.consents)
         }
@@ -123,9 +128,10 @@ export default class ConsentManager {
     }
 
     saveConsents(){
-        if (this.consents === null)
+        var v = this.consents
+        if (v === null)
             deleteCookie(this.cookieName)
-        const v = JSON.stringify(this.consents)
+        v = v !== null ? JSON.stringify(this.consents) : ""
         setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120)
         this.confirmed = true
         this.changed = false
@@ -144,7 +150,7 @@ export default class ConsentManager {
                 continue
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
-            if (app.callback !== undefined)
+            if (typeof app.callback === "function")
                 app.callback(consent, app)
             this.states[app.name] = consent
         }
@@ -160,76 +166,94 @@ export default class ConsentManager {
         }
 
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
-        for(var i=0;i<elements.length;i++){
+
+        var i, k, l, attrs, attr, val
+
+        for (i = 0, l = elements.length; i < l; i++) {
             const element = elements[i]
-
             const parent = element.parentElement
-            const {dataset} = element
-            const {type, name} = dataset
-            const attrs = ['href', 'src']
+            const dataset = getDataAttrs(element)
 
-            //if no consent was given we disable this tracker
-            //we remove and add it again to trigger a re-execution
+            // if no consent was given we disable this tracker
+            // we remove and add it again to trigger a re-execution
 
-            if (element.tagName === 'SCRIPT'){
+            if (element.tagName === 'SCRIPT') {
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
-                for(var key of Object.keys(dataset)){
-                    newElement.dataset[key] = dataset[key]
+
+                for (k in dataset) {
+                    if (dataset.hasOwnProperty(k)) {
+                        newElement.setAttribute(k, dataset[k])
+                    }
                 }
                 newElement.type = 'opt-in'
-                newElement.innerText = element.innerText
-                newElement.text = element.text
-                newElement.class = element.class
                 newElement.style.cssText = element.style
-                newElement.id = element.id
-                newElement.name = element.name
-                newElement.defer = element.defer
-                newElement.async = element.async
 
-                if (consent){
-                    newElement.type = type
-                    if (dataset.src !== undefined)
-                        newElement.src = dataset.src
+                attrs = 'innerText text class id name defer async charset'.split(' ');
+                for (k = 0; k < attrs.length; k++) {
+                    attr = attrs[k]
+                    newElement[attrs[k]] = element[attrs[k]]
                 }
-                //we remove the original element and insert a new one
+
+                if (consent) {
+                    if ((val = getDataAttr(element, 'type'))) {
+                        newElement.type = val
+                    }
+                    if ((val = getDataAttr(element, 'src'))) {
+                        newElement.src = val
+                    }
+                }
+
+                // we remove the original element and insert a new one
                 parent.insertBefore(newElement, element)
                 parent.removeChild(element)
-            } else {
+            }
+
+            else {
+                attrs = 'href src title display'.split(' ')
+
                 // all other elements (images etc.) are modified in place...
-                if (consent){
-                    for(var attr of attrs){
-                        const attrValue = dataset[attr]
-                        if (attrValue === undefined)
-                            continue
-                        if (dataset['original'+attr] === undefined)
-                            dataset['original'+attr] = element[attr]
-                        element[attr] = attrValue
+                if (consent) {
+                    for (k = 0; k < attrs.length; k++) {
+                        attr = attrs[k];
+                        if (attr === 'display') {
+                            element.style.display = getDataAttr(element, attr) || ""
+                        }
+                        else {
+                            if ((val = getDataAttr(element, attr))) {
+                                element.setAttribute(attr, val)
+                            }
+                        }
                     }
-                    if (dataset.title !== undefined)
-                        element.title = dataset.title
-                    if (dataset.originalDisplay !== undefined)
-                        element.style.display = dataset.originalDisplay
                 }
-                else{
-                    if (dataset.title !== undefined)
-                        element.removeAttribute('title')
-                    if (dataset.hide === "true"){
-                        if (dataset.originalDisplay === undefined)
-                            dataset.originalDisplay = element.style.display
-                        element.style.display = 'none'
-                    }
-                    for(var attr of attrs){
-                        const attrValue = dataset[attr]
-                        if (attrValue === undefined)
-                            continue
-                        if (dataset['original'+attr] !== undefined)
-                            element[attr] = dataset['original'+attr]
+
+                else {
+                    for (k = 0; k < attrs.length; k++) {
+                        attr = attrs[k];
+                        switch (attr) {
+                            case 'title':
+                                if (getDataAttr(element, attr)) {
+                                    element.removeAttribute(attr);
+                                }
+                                continue;
+                            case 'display':
+                                if (getDataAttr(element, 'hide') === 'true') {
+                                    if (!getDataAttr(element, attr)) {
+                                        element.setAttribute('data-'+attr, element.style[attr]);
+                                    }
+                                    element.style[attr] = 'none'
+                                }
+                                continue;
+                            default:
+                                if ((val = getDataAttr(element, attr))) {
+                                    element[attr] = val
+                                }
+                        }
                     }
                 }
             }
-         }
+        }
 
     }
 
@@ -239,7 +263,7 @@ export default class ConsentManager {
             return
 
         function escapeRegexStr(str) {
-            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+            return str.replace(/[\-\[\]\/{}()*+?.\\^$|]/g, "\\$&");
         }
 
         if (app.cookies !== undefined && app.cookies.length > 0){

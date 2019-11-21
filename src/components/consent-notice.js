@@ -41,7 +41,7 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
-        var changesText
+        let changesText
 
         if (manager.changed)
             changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>

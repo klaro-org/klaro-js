@@ -63,7 +63,7 @@ export default class Apps extends React.Component {
 
         const allDisabled = togglableApps.filter(
             app => consents[app.name]
-        ).length === 0 ? true : false
+        ).length === 0
 
         return <ul className="cm-apps">
             {appItems}

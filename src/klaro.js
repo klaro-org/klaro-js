@@ -1,8 +1,16 @@
-import 'scss/klaro.scss'
-
 // When webpack's hot loading is enabled, enable Preact's support for the
 // React Dev Tools browser extension.
 if(module.hot) require('preact/debug')
+
+import 'scss/klaro.scss'
+
+import "core-js/modules/es.array.iterator"
+import "core-js/modules/es.array.from"
+import "core-js/modules/es.map"
+import "core-js/modules/es.set"
+import "core-js/modules/es.symbol"
+import "core-js/modules/es.symbol.iterator"
+import "core-js/modules/es.promise"
 
 import React from 'react'
 import App from 'components/app.js'
@@ -11,14 +19,15 @@ import {render} from 'react-dom'
 import translations from 'translations'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
+import {getDataAttr, getDataAttrs} from 'utils/data-attributes'
 import currentExecutingScript from 'current-executing-script';
 
 const script = document.currentScript || currentExecutingScript();
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
-const configName = script.dataset.config || "klaroConfig"
-const noAutoLoad = script.dataset.noAutoLoad === "true"
-const stylePrefix = script.dataset.stylePrefix || "klaro"
+const configName = getDataAttr(script, 'config') || 'klaroConfig'
+const noAutoLoad = getDataAttr(script, 'no-auto-load') && getDataAttr('no-auto-load') === 'true'
+const stylePrefix = getDataAttr(script, 'style-prefix') || 'klaro'
 const config = window[configName]
 const managers = {}
 
@@ -60,12 +69,11 @@ export function renderKlaro(config, show){
     const manager = getManager(config)
     const lang = config.lang || language()
     const tt = (...args) => {return t(trans, lang, ...args)}
-    const app = render(<App t={tt}
+    return render(<App t={tt}
                             stylePrefix={stylePrefix}
                             manager={manager}
                             config={config}
                             show={show || false} />, element)
-    return app
 }
 
 export function initialize(e){

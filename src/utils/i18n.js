@@ -12,14 +12,14 @@ const format = (str, ...rest) => {
 
     var s = str.toString()
     while(s.length > 0){
-        var m = s.match(/\{(?!\{)([\w\d]+)\}(?!\})/)
+        var m = s.match(/{(?!{)([\w\d]+)}(?!})/)
         if (m !== null){
             var left = s.substr(0, m.index)
-            var sep = s.substr(m.index, m[0].length)
+            //var sep = s.substr(m.index, m[0].length)
             s = s.substr(m.index+m[0].length)
             var n = parseInt(m[1])
             splits.push(left)
-            if (n != n){ // not a number
+            if (n !== n){ // not a number
                 splits.push(args[m[1]])
             } else { // a numbered argument
                 splits.push(args[n])
@@ -62,10 +62,22 @@ function hget(d, key, defaultValue){
 
 export function t(trans, lang, key, ...params){
     var kl = key
+    var fb
     if (!Array.isArray(kl))
         kl = [kl]
-    const value = hget(trans, [lang, ...kl])
-    if (value === undefined){
+    var value = hget(trans, [lang, ...kl])
+
+    // try to get first language as fallback
+    if (value === undefined) {
+        for (fb of trans.keys()) {
+            value = hget(trans, [fb, ...kl]);
+            if (value !== undefined) {
+                break;
+            }
+        }
+    }
+
+    if (value === undefined) {
         return `[missing translation: ${lang}/${kl.join("/")}]`;
     }
     if (params.length > 0)
