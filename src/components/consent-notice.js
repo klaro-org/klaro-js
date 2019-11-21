@@ -75,7 +75,9 @@ export default class ConsentNotice extends React.Component {
             || (config.mustConsent && !manager.confirmed)
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
-        const privacyPolicyLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
+        var privacyPolicyLink
+        if (config.privacyPolicyLinkInNotice)
+            privacyPolicyLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
 
         if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
             return <ConsentModal t={t} config={config} hide={hide} declineAndHide={declineAndHide} saveAndHide={saveAndHide} manager={manager} />
