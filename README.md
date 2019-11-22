@@ -109,6 +109,12 @@ var orejimeConfig = {
     // defaults to 365.
     cookieExpiresAfterDays: 365,
 
+    // Optional. You can provide a custom function to serialize the cookie contents.
+    stringifyCookie: (contents) => JSON.stringify(contents),
+
+    // Optional. You can provide a custom function to unserialize the cookie contents.
+    parseCookie: (cookie) => JSON.parse(cookie),
+
     // You must provide a link to your privacy policy page
     privacyPolicy: "",
 
