@@ -93,12 +93,12 @@ export default class ConsentManager {
         let complete = true
         const apps = new Set(this.config.apps.map((app)=>{return app.name}))
         const consents = new Set(Object.keys(this.consents))
-        for(var key of Object.keys(this.consents)){
-            if (!apps.has(key)){
+        for (let key of Object.keys(this.consents)) {
+            if (!apps.has(key)) {
                 delete this.consents[key]
             }
         }
-        for(var app of this.config.apps){
+        for (let app of this.config.apps) {
             if (!consents.has(app.name)){
                 this.consents[app.name] = this.getDefaultConsent(app)
                 complete = false
@@ -111,7 +111,7 @@ export default class ConsentManager {
 
     loadConsents(){
         const consentCookie = getCookie(this.cookieName)
-        var cookieValue
+        let cookieValue
         if (consentCookie !== null) {
             // avoid syntax error on older browsers
             cookieValue = consentCookie.value || ""
@@ -128,11 +128,11 @@ export default class ConsentManager {
     }
 
     saveConsents(){
-        var v = this.consents
-        if (v === null)
+        let consents = this.consents
+        if (consents === null)
             deleteCookie(this.cookieName)
-        v = v !== null ? JSON.stringify(this.consents) : ""
-        setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120)
+        let cookieValue = consents !== null ? JSON.stringify(consents) : ""
+        setCookie(this.cookieName, cookieValue, this.config.cookieExpiresAfterDays || 120)
         this.confirmed = true
         this.changed = false
     }
@@ -167,7 +167,7 @@ export default class ConsentManager {
 
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
 
-        var i, k, l, attrs, attr, val
+        var i, k, l, m, attrs, attr, val
 
         for (i = 0, l = elements.length; i < l; i++) {
             const element = elements[i]
@@ -191,7 +191,7 @@ export default class ConsentManager {
                 newElement.style.cssText = element.style
 
                 attrs = 'innerText text class id name defer async charset'.split(' ');
-                for (k = 0; k < attrs.length; k++) {
+                for (k = 0, m = attrs.length; k < m; k++) {
                     attr = attrs[k]
                     newElement[attrs[k]] = element[attrs[k]]
                 }
@@ -215,7 +215,7 @@ export default class ConsentManager {
 
                 // all other elements (images etc.) are modified in place...
                 if (consent) {
-                    for (k = 0; k < attrs.length; k++) {
+                    for (k = 0, m = attrs.length; k < m; k++) {
                         attr = attrs[k];
                         if (attr === 'display') {
                             element.style.display = getDataAttr(element, attr) || ""
@@ -229,7 +229,7 @@ export default class ConsentManager {
                 }
 
                 else {
-                    for (k = 0; k < attrs.length; k++) {
+                    for (k = 0, m = attrs.length; k < m; k++) {
                         attr = attrs[k];
                         switch (attr) {
                             case 'title':
@@ -266,21 +266,21 @@ export default class ConsentManager {
             return str.replace(/[\-\[\]\/{}()*+?.\\^$|]/g, "\\$&");
         }
 
-        if (app.cookies !== undefined && app.cookies.length > 0){
+        if (app.cookies !== undefined && app.cookies.length > 0) {
             const cookies = getCookies()
-            for(var i=0;i<app.cookies.length;i++){
+            for (let i = 0, l = app.cookies.length; i < l; i++) {
                 let cookiePattern = app.cookies[i]
                 let cookiePath, cookieDomain
-                if (cookiePattern instanceof Array){
+                if (cookiePattern instanceof Array) {
                     [cookiePattern, cookiePath, cookieDomain] = cookiePattern
                 }
-                if (!(cookiePattern instanceof RegExp)){
+                if (!(cookiePattern instanceof RegExp)) {
                     cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')
                 }
-                for(var j=0;j<cookies.length;j++){
+                for (let j=0, m = cookies.length; j< m; j++) {
                     const cookie = cookies[j]
                     const match = cookiePattern.exec(cookie.name)
-                    if (match !== null){
+                    if (match !== null) {
                         console.debug("Deleting cookie:", cookie.name,
                                       "Matched pattern:", cookiePattern,
                                       "Path:", cookiePath,

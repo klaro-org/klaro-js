@@ -61,16 +61,18 @@ function hget(d, key, defaultValue){
 }
 
 export function t(trans, lang, key, ...params){
-    var kl = key
-    var fb
+    let kl = key
+    let fallback
     if (!Array.isArray(kl))
         kl = [kl]
-    var value = hget(trans, [lang, ...kl])
+    let value = hget(trans, [lang, ...kl])
 
-    // try to get first language as fallback
+    // value undefined?
     if (value === undefined) {
-        for (fb of trans.keys()) {
-            value = hget(trans, [fb, ...kl]);
+        // search all in translation
+        for (fallback of trans.keys()) {
+            value = hget(trans, [fallback, ...kl]);
+            // stop on first found entry in translation
             if (value !== undefined) {
                 break;
             }
@@ -80,7 +82,8 @@ export function t(trans, lang, key, ...params){
     if (value === undefined) {
         return `[missing translation: ${lang}/${kl.join("/")}]`;
     }
-    if (params.length > 0)
+    if (params.length > 0) {
         return format(value, ...params)
+    }
     return value
 }
