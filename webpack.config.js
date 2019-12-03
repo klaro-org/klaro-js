@@ -98,7 +98,9 @@ if (APP_DEV_MODE === 'server') {
           target: 'http://localhost:5000/',
           secure: false
         }
-      }
+      },
+
+      disableHostCheck: true
     },
     plugins: [
       ...config.plugins,
