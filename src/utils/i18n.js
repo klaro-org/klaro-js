@@ -1,29 +1,29 @@
 const format = (str, ...rest) => {
-    var t = typeof rest[0];
-    var args
+    const t = typeof rest[0];
+    let args
     if (rest.length === 0)
         args = {}
     else
-        args = ("string" === t || "number" === t) ?
-                Array.prototype.slice.call(rest)
-                : rest[0];
+        args = (t === "string" || t === "number") ?
+            Array.prototype.slice.call(rest)
+            : rest[0];
 
-    var splits = []
+    const splits = []
 
-    var s = str.toString()
+    let s = str.toString()
     while(s.length > 0){
-        var m = s.match(/\{(?!\{)([\w\d]+)\}(?!\})/)
+        const m = s.match(/\{(?!\{)([\w\d]+)\}(?!\})/)
         if (m !== null){
-            var left = s.substr(0, m.index)
-            var sep = s.substr(m.index, m[0].length)
+            const left = s.substr(0, m.index)
             s = s.substr(m.index+m[0].length)
-            var n = parseInt(m[1])
+            const n = parseInt(m[1])
             splits.push(left)
+            // eslint-disable-next-line eqeqeq
             if (n != n){ // not a number
                 splits.push(args[m[1]])
             } else { // a numbered argument
                 splits.push(args[n])
-           }
+            }
         } else {
             splits.push(s)
             s = ""
@@ -33,9 +33,9 @@ const format = (str, ...rest) => {
 }
 
 export function language(){
-    let lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
-    let regex = new RegExp('^([\\w]+)-([\\w]+)$')
-    let result = regex.exec(lang)
+    const lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
+    const regex = new RegExp('^([\\w]+)-([\\w]+)$')
+    const result = regex.exec(lang)
     if (result === null){
         return lang
     }
@@ -43,11 +43,11 @@ export function language(){
 }
 
 function hget(d, key, defaultValue){
-    var kl = key
+    let kl = key
     if (!Array.isArray(kl))
         kl = [kl]
-    var cv = d
-    for(var i=0;i<kl.length;i++){
+    let cv = d
+    for(let i=0;i<kl.length;i++){
         if (cv === undefined)
             return defaultValue
         if (cv instanceof Map)
@@ -61,7 +61,7 @@ function hget(d, key, defaultValue){
 }
 
 export function t(trans, lang, key, ...params){
-    var kl = key
+    let kl = key
     if (!Array.isArray(kl))
         kl = [kl]
     const value = hget(trans, [lang, ...kl])
