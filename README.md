@@ -1,10 +1,10 @@
 # Klaro! A Simple Consent Manager
 
-Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant will all relevant regulations (notably GDPR and ePrivacy).
+Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
 
 <p align="center"><img src="dist/assets/demo.gif" /></p>
 
-This GIF shows how Klaro deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [Youtube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
+This GIF shows how Klaro deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [YouTube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
 
 ## Advantages
 
@@ -25,23 +25,24 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
     - [x] Italian
     - [x] Norwegian
     - [x] Romanian
+    - [x] Serbian (Latin and Cyrillic)
     - [x] Spanish
     - [x] Swedish
     - [x] Turkish
 * **Small footprint**: The minified+gzipped JS is only 18 kB and contains
-  everything that is required, including stylesheets and images.
+  everything that is required, including style sheets and images.
 * **Intuitive and responsive**: Klaro is designed to blend in with
   your existing design and optimized for modern desktop and mobile browsers.
 * **Secure and reliable**: Klaro ensures that no third-party apps or
   trackers are executed without the consent of the user, even when
-  Javascript is disabled or Klaro itself gets blocked.
+  JavaScript is disabled or Klaro itself gets blocked.
 
 ## Getting Started
 
 To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
-```
-    <script defer type="text/javascript" src="config.js"></script>
-    <script defer type="text/javascript" src="klaro.js"></script>
+```html
+<script defer type="text/javascript" src="config.js"></script>
+<script defer type="text/javascript" src="klaro.js"></script>
 ```
 Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
 
@@ -53,12 +54,12 @@ If you wish to open the consent manager manually on user interaction (for exampl
 ## Managing Third-Party Apps/Trackers
 
 To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `opt-in` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
-```
-    <script type="opt-in"
-            data-type="text/javascript"
-            data-name="optimizely"
-            data-src="https://cdn.optimizely.com/js/10196010078.js">
-    </script>
+```html
+<script type="opt-in"
+    data-type="text/javascript"
+    data-name="optimizely"
+    data-src="https://cdn.optimizely.com/js/10196010078.js">
+</script>
 ```
 Klaro will then take care of executing the scripts if consent was given (you can chose to execute them before getting explicit consent as well).
 
@@ -71,10 +72,10 @@ The consent manager is configured using a config dictionary, which you typically
 ## Building Klaro from Scratch
 
 If you want to customize Klaro or extend it, you can build it from scratch using the following commands:
-```
-    npm install
-    npm run-script make-dev #will run a development server
-    npm run-script make #will build the production version
+```sh
+npm install
+npm run-script make-dev #will run a development server
+npm run-script make #will build the production version
 ```
 ## Contributing
 

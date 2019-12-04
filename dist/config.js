@@ -42,15 +42,15 @@ var klaroConfig = {
     //lang: 'en',
 
     // You can overwrite existing translations and add translations for your
-    // app descriptions and purposes. See `src/translations.yml` for a full
+    // app descriptions and purposes. See `src/translations/` for a full
     // list of translations that can be overwritten:
-    // https://github.com/DPKit/klaro/blob/master/src/translations.yml
+    // https://github.com/KIProtect/klaro/tree/master/src/translations
 
     // Example config that shows how to overwrite translations:
-    // https://github.com/DPKit/klaro/blob/master/src/configs/i18n.js
+    // https://github.com/KIProtect/klaro/blob/master/src/configs/i18n.js
     translations: {
         // If you erase the "consentModal" translations, Klaro will use the
-        // defaults as defined in translations.yml
+        // bundled translations.
         de: {
             consentModal: {
                 description:
@@ -112,7 +112,7 @@ var klaroConfig = {
             },
             camera: {
                 description:
-                    'A surveillance camera (just a silly example for an IMG tag)',
+                    'A surveillance camera (just an example for an IMG tag)',
             },
             cloudflare: {
                 description: 'Protection against DDoS attacks',

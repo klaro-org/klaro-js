@@ -82,7 +82,7 @@ export default class ConsentManager {
         if (this.watchers.has(watcher))
             this.watchers.delete(watcher)
     }
-    
+
     notify(name, data){
         this.watchers.forEach((watcher) => {
             watcher.update(this, name, data)
@@ -90,7 +90,7 @@ export default class ConsentManager {
     }
 
     getApp(name){
-        const matchingApps = this.config.apps.filter((app)=>{return app.name == name})
+        const matchingApps = this.config.apps.filter(app=>app.name === name)
         if (matchingApps.length > 0)
             return matchingApps[0]
         return undefined
@@ -114,9 +114,14 @@ export default class ConsentManager {
         return consents
     }
 
+    //don't decline required apps
     declineAll(){
         this.config.apps.map((app) => {
-            this.updateConsent(app.name, false)
+            if(app.required || this.config.required) {
+                this.updateConsent(app.name, true)
+            } else {
+                this.updateConsent(app.name, false)
+            }
         })
     }
 
@@ -171,7 +176,7 @@ export default class ConsentManager {
         this.saveConsents()
         this.applyConsents()
     }
-    
+
     saveConsents(){
         if (this.consents === null)
             this.klaroStorage.delete();
@@ -185,7 +190,10 @@ export default class ConsentManager {
         for(var i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
             const state = this.states[app.name]
-            const confirmed = this.confirmed || (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
+            const optOut = (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
+            const required = (app.required !== undefined ? app.required : (this.config.required || false))
+            //opt out and required apps are always treated as confirmed
+            const confirmed = this.confirmed || optOut || required
             const consent = this.getConsent(app.name) && confirmed
             if (state === consent)
                 continue
@@ -218,7 +226,7 @@ export default class ConsentManager {
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
 
-            if (element.tagName == 'SCRIPT'){
+            if (element.tagName === 'SCRIPT'){
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
@@ -277,7 +285,7 @@ export default class ConsentManager {
                 }
             }
          }
-        
+
     }
 
     updateAppCookies(app, consent){
@@ -315,5 +323,5 @@ export default class ConsentManager {
         }
 
     }
-    
+
 }

@@ -1,5 +1,9 @@
 import 'scss/klaro.scss'
 
+// When webpack's hot loading is enabled, enable Preact's support for the
+// React Dev Tools browser extension.
+if(module.hot) require('preact/debug')
+
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
@@ -13,7 +17,7 @@ const script = document.currentScript || currentExecutingScript();
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
 const configName = script.dataset.config || "klaroConfig"
-const noAutoLoad = script.dataset.noAutoLoad == "true"
+const noAutoLoad = script.dataset.noAutoLoad === "true"
 const stylePrefix = script.dataset.stylePrefix || "klaro"
 const config = window[configName]
 const managers = {}

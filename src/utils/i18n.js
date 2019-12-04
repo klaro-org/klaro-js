@@ -1,19 +1,16 @@
-String.prototype.format = function () {
-    "use strict";
-    var str = this.toString();
-
-    var t = typeof arguments[0];
+const format = (str, ...rest) => {
+    var t = typeof rest[0];
     var args
-    if (arguments.length == 0)
+    if (rest.length === 0)
         args = {}
     else
         args = ("string" === t || "number" === t) ?
-                Array.prototype.slice.call(arguments)
-                : arguments[0];
+                Array.prototype.slice.call(rest)
+                : rest[0];
 
     var splits = []
 
-    var s = str
+    var s = str.toString()
     while(s.length > 0){
         var m = s.match(/\{(?!\{)([\w\d]+)\}(?!\})/)
         if (m !== null){
@@ -36,10 +33,10 @@ String.prototype.format = function () {
 }
 
 export function language(){
-    let lang = (window.language || document.documentElement.lang || 'en').toLowerCase()
+    let lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
     let regex = new RegExp('^([\\w]+)-([\\w]+)$')
     let result = regex.exec(lang)
-    if (result == null){
+    if (result === null){
         return lang
     }
     return result[1]
@@ -63,16 +60,15 @@ function hget(d, key, defaultValue){
     return cv
 }
 
-export function t(trans, lang, key){
+export function t(trans, lang, key, ...params){
     var kl = key
     if (!Array.isArray(kl))
         kl = [kl]
     const value = hget(trans, [lang, ...kl])
     if (value === undefined){
-        return '[missing translation: {lang}/{key}]'.format({key: kl.join("/"), lang: lang}).join("")
+        return `[missing translation: ${lang}/${kl.join("/")}]`;
     }
-    const params = Array.prototype.slice.call(arguments, 3)
     if (params.length > 0)
-        return value.format(...params)
+        return format(value, ...params)
     return value
 }
