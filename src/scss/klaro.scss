@@ -121,7 +121,7 @@ $green3: #01440C;
             overflow: auto;
             background: $bg-dark;
             color: $font-color-dark;
-    
+
             .hide   {
                 border: none;
                 background: none;
@@ -131,6 +131,10 @@ $green3: #01440C;
                 position: absolute;
                 top: 20px;
                 right: 20px;
+                // Avoid getting overlapped by the heading, if external CSS sets:
+                // h1 { position: relative }
+                // See: https://github.com/KIProtect/klaro/issues/135
+                z-index: 1;
             }
 
             .cm-footer {
@@ -253,7 +257,7 @@ $green3: #01440C;
             p.cn-changes {
                 text-decoration: underline;
             }
-    
+
             .cn-learn-more {
                 display: inline-block;
 
