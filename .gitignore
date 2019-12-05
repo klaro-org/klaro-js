@@ -1,5 +1,6 @@
 .idea
 build
-node_modules
+dist/klaro.js
 .tmp
+node_modules
 yarn.lock
