@@ -17,9 +17,12 @@ import currentExecutingScript from 'current-executing-script';
 const script = document.currentScript || currentExecutingScript();
 const originalOnLoad = window.onload
 const convertedTranslations = convertToMap(translations)
-const configName = getDataAttr(script, 'config') || 'klaroConfig'
-const noAutoLoad = getDataAttr(script, 'no-auto-load') && getDataAttr('no-auto-load') === 'true'
+
+// get data-attributes from current script
+const configName  = getDataAttr(script, 'config') || 'klaroConfig'
+const noAutoLoad  = getDataAttr(script, 'no-auto-load') && getDataAttr(script, 'no-auto-load') === 'true'
 const stylePrefix = getDataAttr(script, 'style-prefix') || 'klaro'
+
 const config = window[configName]
 const managers = {}
 

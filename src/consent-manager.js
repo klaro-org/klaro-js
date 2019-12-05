@@ -1,5 +1,5 @@
 import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
-import {getDataAttr, getDataAttrs} from "utils/data-attributes"
+import {getDataAttr, getDataAttrs, setDataAttr} from "utils/data-attributes"
 
 export default class ConsentManager {
 
@@ -150,6 +150,7 @@ export default class ConsentManager {
                 continue
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
+            // callback must be a function
             if (typeof app.callback === "function")
                 app.callback(consent, app)
             this.states[app.name] = consent
@@ -167,41 +168,54 @@ export default class ConsentManager {
 
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
 
-        var i, k, l, m, attrs, attr, val
+        let i, k, l, m, attrs, val
 
         for (i = 0, l = elements.length; i < l; i++) {
             const element = elements[i]
-            const parent = element.parentElement
+
+            // get all data-attributes (IE <= 10 does not handle dataset)
             const dataset = getDataAttrs(element)
 
             // if no consent was given we disable this tracker
             // we remove and add it again to trigger a re-execution
 
             if (element.tagName === 'SCRIPT') {
+                // parent element is only needed on scripts
+                const parent = element.parentElement
+
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
 
-                for (k in dataset) {
-                    if (dataset.hasOwnProperty(k)) {
-                        newElement.setAttribute(k, dataset[k])
+                for (let key in dataset) {
+                    if (dataset.hasOwnProperty(key)) {
+                        // set data-attributes with Element.setAttribute
+                        // because on IE <= 10 Element.dataset results in errors
+                        setDataAttr(newElement, key, dataset[key]);
                     }
                 }
-                newElement.type = 'opt-in'
-                newElement.style.cssText = element.style
 
+                // use an array and loop:
+                // results in smaller file-size and makes it easier to maintain
                 attrs = 'innerText text class id name defer async charset'.split(' ');
                 for (k = 0, m = attrs.length; k < m; k++) {
-                    attr = attrs[k]
-                    newElement[attrs[k]] = element[attrs[k]]
+                    if ((val = element[attrs[k]]))
+                        newElement[attrs[k]] = val
                 }
 
+                // Element.style
+                newElement.style.cssText = element.style
+
+                // if no consent given
+                newElement.type = 'opt-in'
+
+                // if consent given
                 if (consent) {
-                    if ((val = getDataAttr(element, 'type'))) {
-                        newElement.type = val
+                    if (dataset.type !== undefined) {
+                        newElement.type = dataset.type
                     }
-                    if ((val = getDataAttr(element, 'src'))) {
-                        newElement.src = val
+                    if (dataset.src !== undefined) {
+                        newElement.src = dataset.src
                     }
                 }
 
@@ -210,46 +224,38 @@ export default class ConsentManager {
                 parent.removeChild(element)
             }
 
-            else {
-                attrs = 'href src title display'.split(' ')
 
+            else {
                 // all other elements (images etc.) are modified in place...
+                attrs = 'href src'.split(' ')
+
                 if (consent) {
                     for (k = 0, m = attrs.length; k < m; k++) {
-                        attr = attrs[k];
-                        if (attr === 'display') {
-                            element.style.display = getDataAttr(element, attr) || ""
-                        }
-                        else {
-                            if ((val = getDataAttr(element, attr))) {
-                                element.setAttribute(attr, val)
-                            }
-                        }
+                        if (dataset[attrs[k]] === undefined)
+                            continue
+                        if (dataset["original-" + attrs[k]] === undefined)
+                            dataset["original-" + attrs[k]] = element[attrs[k]]
+                        element[attrs[k]] = dataset[attrs[k]];
                     }
+                    if (dataset.title !== undefined)
+                        element.title = dataset.title
+                    if (dataset["original-display"] !== undefined)
+                        element.style.display = dataset["original-display"]
                 }
 
                 else {
+                    if (dataset.title !== undefined)
+                        element.removeAttribute('title')
+                    if (dataset.hide === "true"){
+                        if (dataset["original-display"] === undefined)
+                            dataset["original-display"] = element.style.display
+                        element.style.display = 'none'
+                    }
                     for (k = 0, m = attrs.length; k < m; k++) {
-                        attr = attrs[k];
-                        switch (attr) {
-                            case 'title':
-                                if (getDataAttr(element, attr)) {
-                                    element.removeAttribute(attr);
-                                }
-                                continue;
-                            case 'display':
-                                if (getDataAttr(element, 'hide') === 'true') {
-                                    if (!getDataAttr(element, attr)) {
-                                        element.setAttribute('data-'+attr, element.style[attr]);
-                                    }
-                                    element.style[attr] = 'none'
-                                }
-                                continue;
-                            default:
-                                if ((val = getDataAttr(element, attr))) {
-                                    element[attr] = val
-                                }
-                        }
+                        if (dataset[attrs[k]] === undefined)
+                            continue
+                        if (dataset['original-'+attrs[k]] !== undefined)
+                            element[attrs[k]] = dataset['original-'+attrs[k]]
                     }
                 }
             }
