@@ -19,7 +19,7 @@ export default class ConsentModal extends React.Component {
             </button>
         }
 
-        const ppLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
+        const ppLink = <a onClick={hide} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
@@ -36,7 +36,7 @@ export default class ConsentModal extends React.Component {
                 </div>
                 <div className="cm-footer">
                     <button className="cm-btn cm-btn-success" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-                    <a target="_blank" className="cm-powered-by" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a>
+                    <a target="_blank" rel="noopener noreferrer" className="cm-powered-by" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a>
                 </div>
             </div>
         </div>

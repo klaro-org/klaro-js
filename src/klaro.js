@@ -1,3 +1,5 @@
+/* globals module, require, VERSION */
+
 import 'scss/klaro.scss'
 
 // When webpack's hot loading is enabled, enable Preact's support for the
@@ -36,7 +38,7 @@ function getElementID(config){
 
 function getElement(config){
     const id = getElementID(config)
-    var element = document.getElementById(id)
+    let element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
         element.id = id
@@ -61,10 +63,10 @@ export function renderKlaro(config, show){
     const lang = config.lang || language()
     const tt = (...args) => {return t(trans, lang, ...args)}
     const app = render(<App t={tt}
-                            stylePrefix={stylePrefix}
-                            manager={manager}
-                            config={config}
-                            show={show || false} />, element)
+        stylePrefix={stylePrefix}
+        manager={manager}
+        config={config}
+        show={show || false} />, element)
     return app
 }
 
