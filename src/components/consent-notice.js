@@ -47,7 +47,7 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: false})
         }
 
-        var changesText
+        let changesText
 
         if (manager.changed)
             changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>
@@ -55,7 +55,7 @@ export default class ConsentNotice extends React.Component {
         if (manager.confirmed && !show)
             return <div />
 
-        var managerLink
+        let managerLink
         if (!config.hideDeclineAll)
             managerLink = <p class="cn-modal"><a href="#" onclick={showModal}>{t(['consentNotice', 'learnMore'])}...</a></p>
 
@@ -65,7 +65,7 @@ export default class ConsentNotice extends React.Component {
             <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onclick={declineAndHide}>{t(['decline'])}</button>
 
         const acceptButton = config.acceptAll ?
-            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={acceptAndHide}>{t(['consentNotice', 'acceptAll'])}</button>
+            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={acceptAndHide}>{t(['acceptAll'])}</button>
             :
             <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={saveAndHide}>{t(['ok'])}</button>
 
@@ -75,12 +75,13 @@ export default class ConsentNotice extends React.Component {
             || (config.mustConsent && !manager.confirmed)
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
-        var privacyPolicyLink
+
+        let privacyPolicyLink
         if (config.privacyPolicyLinkInNotice)
             privacyPolicyLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
 
         if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
-            return <ConsentModal t={t} config={config} hide={hide} declineAndHide={declineAndHide} saveAndHide={saveAndHide} manager={manager} />
+            return <ConsentModal t={t} config={config} hide={hide} declineAndHide={declineAndHide} saveAndHide={saveAndHide} acceptAndHide={acceptAndHide} manager={manager} />
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
             <div className="cn-body">
                 <p>

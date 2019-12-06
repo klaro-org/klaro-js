@@ -5,7 +5,7 @@ import Apps from './apps'
 export default class ConsentModal extends React.Component {
 
     render(){
-        const {hide, saveAndHide, config, manager, t} = this.props
+        const {hide, saveAndHide, acceptAndHide, config, manager, t} = this.props
 
         let closeLink
         if (!config.mustConsent) {
@@ -18,6 +18,15 @@ export default class ConsentModal extends React.Component {
                 <Close t={t} />
             </button>
         }
+
+        let buttonRight =
+            <button className="cm-btn cm-btn-success cm-btn-right" type="button" onclick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+        let buttonLeft
+        if (config.acceptAll) {
+            buttonLeft = <button className="cm-btn cm-btn-info" type="button" onclick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+            buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onclick={acceptAndHide}>{t(['acceptAll'])}</button>
+        }
+
 
         const ppLink = <a onClick={(e) => {hide()}} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
@@ -35,8 +44,11 @@ export default class ConsentModal extends React.Component {
                     <Apps t={t} config={config} manager={manager} />
                 </div>
                 <div className="cm-footer">
-                    <button className="cm-btn cm-btn-success" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-                    <a target="_blank" className="cm-powered-by" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a>
+                    <div className="cm-footer-buttons">
+                        {buttonLeft}
+                        {buttonRight}
+                    </div>
+                    <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a></p>
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ $green3: #01440C;
             box-shadow: $box-shadow;
             color: $font-color-dark;
             border-radius: 6px;
-            padding: 0.5em;
+            padding: 0.5em 1.5em;
             margin-right: 0.5em;
             border: 0;
 
@@ -75,8 +75,13 @@ $green3: #01440C;
             &.cm-btn-info {
                 background: $blue1;
             }
-        }
 
+            &.cm-btn-right {
+                float: right;
+                margin-left: 0.5em;
+                margin-right: 0;
+            }
+        }
     }
 
     .cookie-modal {
@@ -121,7 +126,7 @@ $green3: #01440C;
             overflow: auto;
             background: $bg-dark;
             color: $font-color-dark;
-    
+
             .hide   {
                 border: none;
                 background: none;
@@ -137,12 +142,26 @@ $green3: #01440C;
                 padding: 1em;
                 border-top: $border-dark;
 
-                a.cm-powered-by {
-                    position: absolute;
-                    right: 1em;
-                    color: $font-color-dark-deemphasized;
+                &-buttons {
+                    &::before,
+                    &::after {
+                        content: " ";
+                        display: table;
+                    }
+
+                    &::after {
+                        clear: both;
+                    }
+                }
+
+                .cm-powered-by {
                     font-size: 0.8em;
                     padding-top: 4px;
+                    text-align: center;
+
+                    a {
+                        color: $font-color-dark-deemphasized;
+                    }
                 }
             }
 
@@ -253,7 +272,7 @@ $green3: #01440C;
             p.cn-changes {
                 text-decoration: underline;
             }
-    
+
             .cn-learn-more {
                 display: inline-block;
 
