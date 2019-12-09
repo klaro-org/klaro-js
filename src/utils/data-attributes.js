@@ -18,7 +18,7 @@ export const getDataAttrs = (element) => {
 // set data-atribute if value not undefined, else remove data-attribute
 export const setDataAttr = (element, name, value) => {
     if (value === undefined) {
-        element.removeAttribute("data"- + name);
+        element.removeAttribute("data-" + name);
     }
     else {
         element.setAttribute("data-" + name, value);
