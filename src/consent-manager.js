@@ -131,6 +131,7 @@ export default class ConsentManager {
         let consents = this.consents
         if (consents === null)
             deleteCookie(this.cookieName)
+        // avoid syntax error on older browsers
         let cookieValue = consents !== null ? JSON.stringify(consents) : ""
         setCookie(this.cookieName, cookieValue, this.config.cookieExpiresAfterDays || 120)
         this.confirmed = true
