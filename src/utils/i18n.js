@@ -1,6 +1,6 @@
 const format = (str, ...rest) => {
-    var t = typeof rest[0];
-    var args
+    let t = typeof rest[0];
+    let args
     if (rest.length === 0)
         args = {}
     else
@@ -8,18 +8,18 @@ const format = (str, ...rest) => {
                 Array.prototype.slice.call(rest)
                 : rest[0];
 
-    var splits = []
+    let splits = []
 
-    var s = str.toString()
+    let s = str.toString()
     while(s.length > 0){
         var m = s.match(/{(?!{)([\w\d]+)}(?!})/)
         if (m !== null){
-            var left = s.substr(0, m.index)
+            let left = s.substr(0, m.index)
             //var sep = s.substr(m.index, m[0].length)
             s = s.substr(m.index+m[0].length)
-            var n = parseInt(m[1])
+            let n = parseInt(m[1])
             splits.push(left)
-            if (n !== n){ // not a number
+            if (n != n){ // not a number
                 splits.push(args[m[1]])
             } else { // a numbered argument
                 splits.push(args[n])
@@ -43,11 +43,11 @@ export function language(){
 }
 
 function hget(d, key, defaultValue){
-    var kl = key
+    let kl = key
     if (!Array.isArray(kl))
         kl = [kl]
-    var cv = d
-    for(var i=0;i<kl.length;i++){
+    let cv = d
+    for(let i=0;i<kl.length;i++){
         if (cv === undefined)
             return defaultValue
         if (cv instanceof Map)
