@@ -10,8 +10,14 @@ before_script:
   - npm ci
 
 stages:
+  - test
   - build
   - deploy
+
+lint:
+  stage: test
+  script:
+    - npm run-script lint
 
 build:
   stage: deploy
