@@ -7,7 +7,7 @@
 
 Orejime 🍪 is an open-source JavaScript library you can use on your website to let users choose what third-party cookies they allow. It's specifically made to comply with the GDPR.
 
-Orejime 🍪 is a fork of [Klaro!](https://github.com/KIProtect/klaro) that focuses on **accessibility**. It follows Web Content Accessibility Guidelines (WCAG) via the french <abbr lang="fr" title="Référentiel général d'accessibilité pour les administrations">RGAA</abbr>.
+Orejime 🍪 is a fork of [Klaro!](https://github.com/KIProtect/klaro) that focuses on **accessibility**. It follows Web Content Accessibility Guidelines (WCAG) via the French <abbr lang="fr" title="Référentiel général d'accessibilité pour les administrations">RGAA</abbr>.
 
 ## Getting started
 
@@ -320,8 +320,8 @@ This project is licensed under a BSD-3 license.
 
 Orejime started as a fork of [Klaro!](https://github.com/KIProtect/klaro). A lot of stuff changed since. A few were integrated in the original project, but eventually some big bricks changed and it became difficult, or sometimes not even necessary, to push those changes in.
 
-Orejime is maintained by [<span lang="fr">Empreinte Digitale</span>  (french)](http://empreintedigitale.fr).
+Orejime is maintained by [<span lang="fr">Empreinte Digitale</span>  (French)](http://empreintedigitale.fr).
 
 ### What does "Orejime" mean?
 
-"Orejime" is a play-on-word. You can pronounce it like "Au régime" in french, which means "on a diet". 🍪
+"Orejime" is a play-on-word. You can pronounce it like "Au régime" in French, which means "on a diet". 🍪
