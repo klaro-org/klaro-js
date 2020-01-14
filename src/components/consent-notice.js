@@ -37,12 +37,16 @@ export default class ConsentNotice extends React.Component {
     }
 
     acceptAndHide = (e) => {
+        if (e !== undefined)
+            e.preventDefault()
         this.manager.changeAll(true)
         this.manager.saveAndApplyConsents()
         this.setState({modal: false})
     }
 
     declineAndHide = (e) => {
+        if (e !== undefined)
+            e.preventDefault()
         this.manager.changeAll(false)
         this.manager.saveAndApplyConsents()
         this.setState({modal: false})
@@ -65,22 +69,18 @@ export default class ConsentNotice extends React.Component {
 
         let managerLink
         if (!config.hideDeclineAll)
-            managerLink = <p class="cn-modal"><a href="#" onclick={this.showModal}>{t(['consentNotice', 'learnMore'])}...</a></p>
+            managerLink = <p className="cn-modal"><a href="#" onClick={this.showModal}>{t(['consentNotice', 'learnMore'])}...</a></p>
 
         const secondButton = config.hideDeclineAll ?
-            <button className="cm-btn cm-btn-sm cm-btn-danger cn-modal" type="button" onclick={this.showModal}>{t(['consentNotice','learnMore'])}</button>
+            <button className="cm-btn cm-btn-sm cm-btn-danger cn-modal" type="button" onClick={this.showModal}>{t(['consentNotice','learnMore'])}</button>
             :
-            <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onclick={this.declineAndHide}>{t(['decline'])}</button>
+            <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
 
         const acceptButton = config.acceptAll ?
-            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={this.acceptAndHide}>{t(['acceptAll'])}</button>
+            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.acceptAndHide}>{t(['acceptAll'])}</button>
             :
-            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onclick={this.saveAndHide}>{t(['ok'])}</button>
+            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
-        const modalIsOpen =
-            modal
-            || (show && modal === undefined)
-            || (config.mustConsent && !manager.confirmed)
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 

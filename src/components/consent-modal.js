@@ -20,11 +20,11 @@ export default class ConsentModal extends React.Component {
         }
 
         let buttonRight =
-            <button className="cm-btn cm-btn-success cm-btn-right" type="button" onclick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+            <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
         let buttonLeft
         if (config.acceptAll) {
-            buttonLeft = <button className="cm-btn cm-btn-info" type="button" onclick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-            buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onclick={acceptAndHide}>{t(['acceptAll'])}</button>
+            buttonLeft = <button className="cm-btn cm-btn-info" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+            buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
 
@@ -48,7 +48,7 @@ export default class ConsentModal extends React.Component {
                         {buttonLeft}
                         {buttonRight}
                     </div>
-                    <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a></p>
+                    <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'} rel="noopener noreferrer">{t(['poweredBy'])}</a></p>
                 </div>
             </div>
         </div>
