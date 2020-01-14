@@ -1,12 +1,5 @@
 import React from 'react'
 import AppItem from './app-item'
-import {getPurposes} from 'utils/config'
-
-class AppGroup extends React.Component {
-    render(){
-
-    }
-}
 
 export default class Apps extends React.Component {
 
@@ -44,12 +37,12 @@ export default class Apps extends React.Component {
             toggle(apps, value)
         }
 
-        const appItems = apps.map((app, key) => {
+        const appItems = apps.map((app) => {
             const toggleApp = (value) => {
                 toggle([app], value)
             }
             const checked = consents[app.name]
-            return <li className="cm-app">
+            return <li key={app.name} className="cm-app">
                 <AppItem
                     checked={checked || app.required}
                     onToggle={toggleApp}
@@ -63,7 +56,7 @@ export default class Apps extends React.Component {
 
         const allDisabled = togglableApps.filter(
             app => consents[app.name]
-        ).length === 0 ? true : false
+        ).length === 0;
 
         return <ul className="cm-apps">
             {appItems}

@@ -37,7 +37,7 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
   trackers are executed without the consent of the user, even when
   JavaScript is disabled or Klaro itself gets blocked.
 
-## Getting Started
+## Getting started
 
 To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
@@ -51,7 +51,7 @@ If you wish to open the consent manager manually on user interaction (for exampl
 <a class="button is-success" onclick="return klaro.show();">Change consent settings</a>
 ```
 
-## Managing Third-Party Apps/Trackers
+## Managing third-party apps/trackers
 
 To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `opt-in` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
 ```html
@@ -65,11 +65,11 @@ Klaro will then take care of executing the scripts if consent was given (you can
 
 The same method also works for images, stylesheets and other elements with a `src` or `type` attribute.
 
-### Configuration File
+### Configuration file
 
 The consent manager is configured using a config dictionary, which you typically define in a separate JS file. To learn more, simply read the [annotated example config](dist/config.js), which contains descriptions of all valid config options and parameters.
 
-## Building Klaro from Scratch
+## Building Klaro from scratch
 
 If you want to customize Klaro or extend it, you can build it from scratch using the following commands:
 ```sh
@@ -87,7 +87,7 @@ If you want to help out, but don't know where to begin, check out [the open issu
 
 If you are multilingual, consider contributing a translation we don't have yet.
 
-## License & Third-Party Libraries
+## License & third-party libraries
 
 This project is licensed under a BSD-3 license. A list of third-party libraries can be found in the [package.json](package.json) file.
 
