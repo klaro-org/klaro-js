@@ -27,7 +27,7 @@ var klaroConfig = {
     privacyPolicyLinkInNotice: false,
 
     // Defines the default state for applications (true=enabled by default).
-    default: true,
+    default: false,
 
     // If "mustConsent" is set to true, Klaro will directly display the consent
     // manager modal and not allow the user to close it before having actively
@@ -36,10 +36,10 @@ var klaroConfig = {
 
     // Show "accept all" to accept all apps instead of "ok" that only accepts
     // required and "default: true" apps
-    acceptAll: false,
+    acceptAll: true,
 
     // replace "decline" with cookie manager modal
-    hideDeclineAll: false,
+    hideDeclineAll: true,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
