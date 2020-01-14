@@ -39,16 +39,16 @@ export default class ConsentNotice extends React.Component {
     acceptAndHide = (e) => {
         if (e !== undefined)
             e.preventDefault()
-        this.manager.changeAll(true)
-        this.manager.saveAndApplyConsents()
+        this.props.manager.changeAll(true)
+        this.props.manager.saveAndApplyConsents()
         this.setState({modal: false})
     }
 
     declineAndHide = (e) => {
         if (e !== undefined)
             e.preventDefault()
-        this.manager.changeAll(false)
-        this.manager.saveAndApplyConsents()
+        this.props.manager.changeAll(false)
+        this.props.manager.saveAndApplyConsents()
         this.setState({modal: false})
     }
 
