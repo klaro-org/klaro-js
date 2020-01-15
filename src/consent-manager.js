@@ -79,7 +79,7 @@ export default class ConsentManager {
         this.consents = this.defaultConsents
         this.confirmed = false
         this.applyConsents()
-        deleteCookie(this.cookieName, '/')
+        deleteCookie(this.cookieName)
         this.notify('consents', this.consents)
     }
 
