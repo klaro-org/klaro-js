@@ -1,6 +1,7 @@
 import React from 'react'
 import {Close} from './icons'
 import Apps from './apps'
+import {locationIsPrivacyPage} from 'utils/config'
 
 export default class ConsentModal extends React.Component {
 
@@ -8,7 +9,7 @@ export default class ConsentModal extends React.Component {
         const {hide, saveAndHide, config, manager, t} = this.props
 
         let closeLink
-        if (!config.mustConsent) {
+        if (!config.mustConsent || locationIsPrivacyPage(config)) {
             closeLink = <button
                 title={t(['close'])}
                 className="hide"
