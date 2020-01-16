@@ -20,15 +20,17 @@ var klaroConfig = {
     // You can customize the name of the cookie that Klaro will use to
     // store user consent. If undefined, Klaro will use 'klaro'.
 
-    // Put a link to your privacy policy here (relative or absolute).
+    // Put a link to your privacy policy here. Absolute paths need to include the protocol
+    // and relative paths have to start and end with a forward slash.
+    // (e.g. http://localhost:8080/privacy/ vs. /privacy/).
     privacyPolicy: '/#privacy',
 
     // Defines the default state for applications (true=enabled by default).
     default: true,
 
     // If "mustConsent" is set to true, Klaro will directly display the consent
-    // manager modal and not allow the user to close it before having actively
-    // consented or declines the use of third-party apps.
+    // manager modal and not allow the user to close it without confirmation.
+    // However, the modal will close when visitng the privacyPolicy page.
     mustConsent: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
