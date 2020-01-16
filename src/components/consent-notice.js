@@ -60,12 +60,12 @@ export default class ConsentNotice extends React.Component {
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
-                    <a href="#" onClick={this.showModal}>{t(['consentNotice', 'learnMore'])}...</a>
                 </p>
                 {changesText}
                 <p className="cn-ok">
-                    <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
-                    <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
+                    <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
+                    <button className="cm-btn" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
+                    <button className="cm-btn cm-btn-info" type="button" onClick={this.showModal}>{t(['consentNotice', 'learnMore'])}</button>
                 </p>
             </div>
         </div>
