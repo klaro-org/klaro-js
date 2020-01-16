@@ -17,21 +17,15 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal : undefined})
     }
 
-    showModal = (e) => {
-        if (e !== undefined)
-            e.preventDefault()
+    showModal = () => {
         this.setState({modal: true})
     }
 
-    hide = (e) => {
-        if (e !== undefined)
-            e.preventDefault()
+    hide = () => {
         this.setState({modal: false})
     }
 
-    saveAndHide = (e) => {
-        if (e !== undefined)
-            e.preventDefault()
+    saveAndHide = () => {
         this.props.manager.saveAndApplyConsents()
         this.setState({modal: false})
     }
