@@ -1,6 +1,6 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
-import {getPurposes} from 'utils/config'
+import {getPurposes, locationIsPrivacyPage} from 'utils/config'
 
 export default class ConsentNotice extends React.Component {
 
@@ -51,10 +51,12 @@ export default class ConsentNotice extends React.Component {
         if (manager.confirmed && !show)
             return <div />
 
-        const noticeIsVisible =
-            !config.mustConsent && !manager.confirmed && !config.noNotice
+        const ppAt = locationIsPrivacyPage(config)
 
-        if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
+        const noticeIsVisible =
+            (!config.mustConsent || ppAt) && !manager.confirmed && !config.noNotice
+
+        if (modal || (show && modal === undefined) || (config.mustConsent && (!manager.confirmed && !ppAt)))
             return <ConsentModal t={t} config={config} hide={this.hide} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} manager={manager} />
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
             <div className="cn-body">
