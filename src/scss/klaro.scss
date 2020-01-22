@@ -47,10 +47,10 @@ $green3: #01440C;
         }
 
         .cm-btn {
-            box-shadow: $box-shadow;
+            background: #555;
             color: $font-color-dark;
             border-radius: 6px;
-            padding: 0.5em 1.5em;
+            padding: 6px 10px;
             margin-right: 0.5em;
             border: 0;
 
@@ -66,10 +66,6 @@ $green3: #01440C;
 
             &.cm-btn-success {
                 background: $green1;
-            }
-
-            &.cm-btn-danger {
-                background: $blue3;
             }
 
             &.cm-btn-info {
@@ -285,9 +281,6 @@ $green3: #01440C;
             p.cn-ok {
                 padding-top: 0.5em;
                 margin: 0;
-            }
-
-            a.cn-decline {
             }
         }
 
