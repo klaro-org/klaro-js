@@ -25,25 +25,23 @@ export default class ConsentNotice extends React.Component {
         this.setState({modal: false})
     }
 
+    executeButtonClicked = (setChangedAll, changedAllValue) => {
+        if (setChangedAll)
+            this.props.manager.changeAll(changedAllValue)
+        this.props.manager.saveAndApplyConsents()
+        this.setState({modal: false})
+    }
+
     saveAndHide = () => {
-        this.props.manager.saveAndApplyConsents()
-        this.setState({modal: false})
+        this.executeButtonClicked(false, false)
     }
 
-    acceptAndHide = (e) => {
-        if (e !== undefined)
-            e.preventDefault()
-        this.props.manager.changeAll(true)
-        this.props.manager.saveAndApplyConsents()
-        this.setState({modal: false})
+    acceptAndHide = () => {
+        this.executeButtonClicked(true, true)
     }
 
-    declineAndHide = (e) => {
-        if (e !== undefined)
-            e.preventDefault()
-        this.props.manager.changeAll(false)
-        this.props.manager.saveAndApplyConsents()
-        this.setState({modal: false})
+    declineAndHide = () => {
+        this.executeButtonClicked(true, false)
     }
 
     render(){
@@ -61,12 +59,8 @@ export default class ConsentNotice extends React.Component {
         if (manager.confirmed && !show)
             return <div />
 
-        let managerLink
-        if (!config.hideDeclineAll)
-            managerLink = <p className="cn-modal"><a href="#" onClick={this.showModal}>{t(['consentNotice', 'learnMore'])}...</a></p>
-
-        const secondButton = config.hideDeclineAll ?
-            <button className="cm-btn cm-btn-sm cm-btn-danger cn-modal" type="button" onClick={this.showModal}>{t(['consentNotice','learnMore'])}</button>
+        const declineButton = config.hideDeclineAll ?
+            ''
             :
             <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
 
@@ -78,24 +72,18 @@ export default class ConsentNotice extends React.Component {
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 
-        let privacyPolicyLink
-        if (config.privacyPolicyLinkInNotice)
-            privacyPolicyLink = <a onClick={this.hide} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
-
         if (modal || (show && modal === undefined) || (config.mustConsent && !manager.confirmed))
             return <ConsentModal t={t} config={config} hide={this.hide} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
-                    {privacyPolicyLink}
                 </p>
-                {managerLink}
                 {changesText}
                 <p className="cn-ok">
-                    <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
-                    <button className="cm-btn" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
                     <button className="cm-btn cm-btn-info" type="button" onClick={this.showModal}>{t(['consentNotice', 'learnMore'])}</button>
+                    {declineButton}
+                    {acceptButton}
                 </p>
             </div>
         </div>

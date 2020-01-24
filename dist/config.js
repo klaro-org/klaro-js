@@ -23,9 +23,6 @@ var klaroConfig = {
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: '/#privacy',
 
-    // Show privacy policy link in notice
-    privacyPolicyLinkInNotice: false,
-
     // Defines the default state for applications (true=enabled by default).
     default: false,
 
@@ -39,7 +36,7 @@ var klaroConfig = {
     acceptAll: true,
 
     // replace "decline" with cookie manager modal
-    hideDeclineAll: true,
+    hideDeclineAll: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
