@@ -15,8 +15,8 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
   third-party apps and easily customize the tool according to your needs.
 * **Multilingual**: Full internationalization support, with languages included out of the box. New translations can be added in just a few lines of code. Contributions welcome!\
 Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Norwegian, Romanian, Serbian (Latin and Cyrillic), Spanish, Swedish, Turkish
-* **Small footprint**: The minified+gzipped JS is only 18 kB and contains
-  everything that is required, including style sheets and images.
+* **Small footprint**: The minified+gzipped JS is only 37 kB and contains
+  everything that is required, including style sheets and translations.
 * **Intuitive and responsive**: Klaro is designed to blend in with
   your existing design and optimized for modern desktop and mobile browsers.
 * **Secure and reliable**: Klaro ensures that no third-party apps or
