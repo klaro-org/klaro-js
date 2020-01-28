@@ -3,7 +3,10 @@ var klaroI18nConfig = {
     elementID: 'i18n',
     lang: 'en',
     noNotice: true,
-    privacyPolicy: '/#privacy',
+    privacyPolicy: {
+        default: '/#privacy',
+        de: '/#datenschutz',
+    },
     poweredBy:
         'https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js',
     default: true,
