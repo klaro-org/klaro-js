@@ -56,6 +56,7 @@ For inline scripts, set the `type` attribute to `opt-in` to keep the browser fro
 - <script>
 + <script
 +   type="opt-in"
++   data-type="application/javascript"
 +   data-name="google-tag-manager">
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push [...]
 </script>
@@ -68,6 +69,7 @@ For external scripts or img tags (for tracking pixels), do the same, and rename 
 -   src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 + <script
 +   type="opt-in"
++   data-type="application/javascript"
 +   data-name="google-maps"
 +   data-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 ```
