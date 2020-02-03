@@ -11,8 +11,15 @@ consentNotice:
   description: >
     Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
   learnMore: Lees meer
+accept: Aanvaarden
+acceptAll: Alles aanvaarden
 save: Opslaan
+saveData: Mijn configuratie voor de informatievergaring opslaan
 decline: Afwijzen
+declineAll: Alles weigeren
+close: Sluiten
+enabled: Geactiveerd
+disabled: Gedesactiveerd
 app:
   optOut:
     title: (afmelden)
@@ -23,3 +30,4 @@ app:
   purposes: Doeleinden
   purpose: Doeleinde
 poweredBy: Aangedreven door Orejime
+newWindow: nieuw venster
