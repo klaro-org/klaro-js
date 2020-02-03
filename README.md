@@ -25,10 +25,11 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, G
 
 ## Getting started
 
-To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
+To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js) and the stylesheet [klaro.css](https://klaro.kiprotect.com/klaro.css). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
 <script defer type="text/javascript" src="config.js"></script>
 <script defer type="text/javascript" src="klaro.js"></script>
+<link rel="stylesheet" href="klaro.css" />
 ```
 Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
 

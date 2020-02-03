@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
-const SRC_DIR = path.resolve(__dirname,'src');
+const SRC_DIR = path.resolve(__dirname, 'src');
 const APP_ENV = process.env.APP_ENV || 'dev';
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
@@ -34,12 +35,18 @@ let config = {
         use: 'url-loader?limit=100000'
       },
       {
-        test: /\.scss|sass$/,
-        use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', withEnvSourcemap('css-loader')]
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: APP_ENV === 'dev',
+              // reloadAll: true,
+            },
+          },
+          withEnvSourcemap('css-loader'),
+          withEnvSourcemap('sass-loader'),
+        ],
       },
       {
         test: /\.yaml|yml$/,
@@ -62,7 +69,11 @@ let config = {
     libraryTarget: 'umd',
     publicPath: ''
   },
-  plugins: []
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'klaro.css'
+    }),
+  ]
 };
 
 if (APP_ENV === 'dev') {
@@ -125,7 +136,7 @@ if (APP_ENV === 'production') {
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
-        VERSION : JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
+        VERSION: JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
       }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.AggressiveMergingPlugin()
