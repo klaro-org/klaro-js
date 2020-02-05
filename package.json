@@ -47,7 +47,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "mini-css-extract-plugin": "^0.4.4",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "preact": "^8.2.9",
     "preact-compat": "^3.18.2",
     "sass-loader": "^6.0.7",
