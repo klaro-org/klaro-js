@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
-const PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const APP_ENV = process.env.APP_ENV || 'dev';
+const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 function withEnvSourcemap(loader) {
@@ -35,20 +34,6 @@ let config = {
         use: 'url-loader?limit=100000'
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: APP_ENV === 'dev',
-              // reloadAll: true,
-            },
-          },
-          withEnvSourcemap('css-loader'),
-          withEnvSourcemap('sass-loader'),
-        ],
-      },
-      {
         test: /\.yaml|yml$/,
         use: ['json-loader', 'yaml-loader'],
       },
@@ -69,12 +54,40 @@ let config = {
     libraryTarget: 'umd',
     publicPath: ''
   },
-  plugins: [
+  plugins: []
+};
+
+if (SEPARATE_CSS){
+  const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+  config.output.filename = 'klaro-no-css.js'
+  config.module.rules.push(      {
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: APP_ENV === 'dev',
+            // reloadAll: true,
+          },
+        },
+        withEnvSourcemap('css-loader'),
+        withEnvSourcemap('sass-loader'),
+      ],
+    }
+  )
+  config.plugins.push(
     new MiniCssExtractPlugin({
       filename: 'klaro.css'
-    }),
-  ]
-};
+    })
+  )
+} else {
+  config.module.rules.push(
+    {
+      test: /\.scss|sass$/,
+      use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
+    }
+  )
+}
 
 if (APP_ENV === 'dev') {
   config = {

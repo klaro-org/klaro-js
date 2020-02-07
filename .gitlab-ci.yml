@@ -23,6 +23,7 @@ build:
   stage: deploy
   script:
     - npm run-script make
+    - SEPARATE_CSS=1 npm run-script make
   artifacts:
     paths:
     - dist
