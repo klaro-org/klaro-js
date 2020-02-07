@@ -23,9 +23,7 @@ build:
   stage: deploy
   script:
     - npm run-script make
-    - SEPARATE_CSS=1 npm run-script make
-    - SEPARATE_CSS=1 NO_MINIFY_CSS=1 npm run-script make
-  artifacts:
+ artifacts:
     paths:
     - dist
 
@@ -46,6 +44,9 @@ deploy:
     - echo "$SERVER_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - npm ci
-    - CI_APP_VERSION=$CI_COMMIT_TAG APP_VERSION=$CI_COMMIT_SHA npm run-script make
+    - export CI_APP_VERSION=$CI_COMMIT_TAG APP_VERSION=$CI_COMMIT_SHA
+    - npm run-script make
+    - SEPARATE_CSS=1 npm run-script make
+    - SEPARATE_CSS=1 NO_MINIFY_CSS=1 npm run-script make
     - echo "Deploying to $DIRECTORY..."
     - if [ -n "$DIRECTORY" ]; then rsync --progress -r -e "ssh -o StrictHostKeyChecking=no -o identityFile=~/.ssh/id_rsa" dist/* $SERVER_USERNAME@$SERVER_IP:/dpkit/$DIRECTORY; fi;
