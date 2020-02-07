@@ -3,7 +3,10 @@ var klaroI18nConfig = {
     elementID: 'i18n',
     lang: 'en',
     noNotice: true,
-    privacyPolicy: '/#privacy',
+    privacyPolicy: {
+        default: '/#privacy',
+        de: '/#datenschutz',
+    },
     poweredBy:
         'https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js',
     default: true,
@@ -16,11 +19,11 @@ var klaroI18nConfig = {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',
                 description:
                     'Dies ist die Beschreibung des Zustimmungs-Dialogs.',
-            },
-            privacyPolicy: {
-                text:
-                    'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',
-                name: 'Datenschutzerklärung (Name)',
+                privacyPolicy: {
+                    text:
+                        'Dies ist der Text mit einem Link zu Ihrer {privacyPolicy}.',
+                    name: 'Datenschutzerklärung (Name)',
+                },
             },
             poweredBy: 'Konfiguration ansehen',
             ok: "Los geht's!",
@@ -41,10 +44,10 @@ var klaroI18nConfig = {
             consentModal: {
                 title: 'This is the title of the consent modal',
                 description: 'This is the description of the consent modal.',
-            },
-            privacyPolicy: {
-                text: 'This is the text with a link to your {privacyPolicy}.',
-                name: 'privacy policy (the name)',
+                privacyPolicy: {
+                    text: 'This is the text with a link to your {privacyPolicy}.',
+                    name: 'privacy policy (the name)',
+                },
             },
             poweredBy: 'view config',
             ok: 'Wohoo!',
@@ -64,10 +67,10 @@ var klaroI18nConfig = {
             consentModal: {
                 title: 'Bu, izin penceresinin başlığı',
                 description: 'Bu, izin penceresi için açıklama.',
-            },
-            privacyPolicy: {
-                text: 'Bu {privacyPolicy} için bir bağlantı.',
-                name: 'Gizlilik Politikası (isim)',
+                privacyPolicy: {
+                    text: 'Bu {privacyPolicy} için bir bağlantı.',
+                    name: 'Gizlilik Politikası (isim)',
+                },
             },
             poweredBy: 'Yapılandırmayı Görüntüle',
             ok: 'Wohoo!',
