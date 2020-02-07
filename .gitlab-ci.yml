@@ -23,7 +23,7 @@ build:
   stage: deploy
   script:
     - npm run-script make
- artifacts:
+  artifacts:
     paths:
     - dist
 
