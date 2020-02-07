@@ -25,13 +25,24 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, G
 
 ## Getting started
 
-To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js) and the stylesheet [klaro.css](https://klaro.kiprotect.com/klaro.css). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
+To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
 <script defer type="text/javascript" src="config.js"></script>
 <script defer type="text/javascript" src="klaro.js"></script>
-<link rel="stylesheet" href="klaro.css" />
+
 ```
 Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
+
+We also provide a version of Klaro without stylesheets included (which is useful
+in case you want to provide your own stylesheet), [klaro-no-css.js](https://klaro.kiprotect.com/klaro-no-css.js). If you use this, make sure to either include
+your own styles or to include [klaro.min.css](https://klaro.kiprotect.com/klaro.min.css) like this:
+
+```html
+<link rel="stylesheet" href="klaro.min.css" />
+```
+
+We also provide a non-minified version of the stylesheet, which is great if you
+want to make edits: [klaro.css](https://klaro.kiprotect.com/klaro.css).
 
 If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can use the ```klaro.show()``` global. Example:
 ```html
