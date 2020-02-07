@@ -21,7 +21,7 @@ export default class ConsentModal extends React.Component {
             </button>
         }
 
-        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) || 
+        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
             config.privacyPolicy.default ||
             config.privacyPolicy
 
