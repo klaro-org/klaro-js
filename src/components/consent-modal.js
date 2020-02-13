@@ -1,11 +1,13 @@
 import React from 'react'
 import {Close} from './icons'
 import Apps from './apps'
+import {language} from 'utils/i18n'
 
 export default class ConsentModal extends React.Component {
 
     render(){
         const {hide, saveAndHide, acceptAndHide, config, manager, t} = this.props
+        const lang = config.lang || language()
 
         let closeLink
         if (!config.mustConsent) {
@@ -18,7 +20,6 @@ export default class ConsentModal extends React.Component {
                 <Close t={t} />
             </button>
         }
-
         let buttonRight =
             <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
         let buttonLeft
@@ -27,8 +28,11 @@ export default class ConsentModal extends React.Component {
             buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
+        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
+            config.privacyPolicy.default ||
+            config.privacyPolicy
 
-        const ppLink = <a onClick={hide} href={config.privacyPolicy}>{t(['consentModal','privacyPolicy','name'])}</a>
+        const ppLink = <a onClick={hide} href={ppUrl}>{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">

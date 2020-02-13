@@ -110,7 +110,7 @@ export default class ConsentManager {
     loadConsents(){
         const consentCookie = getCookie(this.cookieName)
         if (consentCookie !== null){
-            this.consents = JSON.parse(consentCookie.value)
+            this.consents = JSON.parse(decodeURIComponent(consentCookie.value))
             this._checkConsents()
             this.notify('consents', this.consents)
         }
@@ -123,7 +123,7 @@ export default class ConsentManager {
     }
 
     saveConsents(){
-        const v = JSON.stringify(this.consents)
+        const v = encodeURIComponent(JSON.stringify(this.consents))
         setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120)
         this.confirmed = true
         this.changed = false
