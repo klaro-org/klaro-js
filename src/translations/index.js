@@ -8,6 +8,7 @@ import hu from './hu.yml'
 import it from './it.yml'
 import ro from './ro.yml'
 import nb from './nb.yml'
+import nl from './nl.yml'
 
 export default {
   de,
@@ -17,4 +18,5 @@ export default {
   it,
   ro,
   nb,
+  nl,
 }
