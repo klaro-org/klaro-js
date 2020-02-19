@@ -51,9 +51,9 @@ If you wish to open the consent manager manually on user interaction (for exampl
 
 ## Managing third-party apps/trackers
 
-To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `opt-in` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
+To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `text/plain` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
 ```html
-<script type="opt-in"
+<script type="text/plain"
     data-type="text/javascript"
     data-name="optimizely"
     data-src="https://cdn.optimizely.com/js/10196010078.js">

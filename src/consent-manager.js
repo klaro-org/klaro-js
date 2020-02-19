@@ -176,7 +176,7 @@ export default class ConsentManager {
                 for(const key of Object.keys(dataset)){
                     newElement.dataset[key] = dataset[key]
                 }
-                newElement.type = 'opt-in'
+                newElement.type = 'text/plain'
                 newElement.innerText = element.innerText
                 newElement.text = element.text
                 newElement.class = element.class

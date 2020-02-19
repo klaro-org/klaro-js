@@ -16,9 +16,9 @@
     <script defer type="application/javascript" src="configs/i18n.js"></script>
     <script defer type="application/javascript" src="klaro.js" data-config="klaroConfig" data-style-prefix="klaro">
     </script>
-    <script type="opt-in" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker">
+    <script type="text/plain" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker">
     </script>
-    <script type="opt-in" data-type="application/javascript" data-name="inlineTracker">
+    <script type="text/plain" data-type="application/javascript" data-name="inlineTracker">
 
         console.log("This is an example of an inline tracking script.")
 
@@ -319,14 +319,14 @@
             <div class="columns">
                 <div class="column is-6 column-eq">
                     <pre><code class="language-javascript" data-name="google-analytics"># Inline scripts:
-&lt;script type="opt-in"
+&lt;script type="text/plain"
         data-type="application/javascript"
         data-name="google-analytics"&gt;
 //...
 &lt;/script&gt;
 
 # External scripts and resources (img, link, ...):
-&lt;script type="opt-in"
+&lt;script type="text/plain"
         data-src="https://analytics.7scientists.com/matomo.js"
         data-name="matomo"&gt;
 &lt;/script&gt;
@@ -338,7 +338,7 @@
                             To make sure that no tracking scripts and third-party apps are
                             loaded without consent, you need to modify your HTML code a tiny bit:
                             For inline scripts, replace the value of the <code>type</code> attribute with
-                            <code>opt-in</code> (this keeps the browser from executing the script)
+                            <code>text/plain</code> (this keeps the browser from executing the script)
                             and add a data attribute with the original type,
                             e.g. <code>data-type="application/javascript"</code>. Also add a <code>data-name</code>
                             attribute that matches the name of the given app in your config,
@@ -537,7 +537,7 @@
         </div>
     </section>
     <!-- our (real) Matomo tracking code -->
-    <script type="opt-in" data-type="application/javascript" data-name="matomo">
+    <script type="text/plain" data-type="application/javascript" data-name="matomo">
         var _paq = _paq || [];
             /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
             _paq.push(['trackPageView']);
