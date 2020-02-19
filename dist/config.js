@@ -17,8 +17,10 @@ var klaroConfig = {
     // By default, it will expire after 120 days.
     cookieExpiresAfterDays: 365,
 
-    // You can customize the name of the cookie that Klaro will use to
-    // store user consent. If undefined, Klaro will use 'klaro'.
+    // You can change to cookie domain for the consent manager itself.
+    // Use this if you want to get consent once for multiple matching domains.
+    // If undefined, Klaro will use the current domain.
+    //cookieDomain: '.github.com',
 
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: '/#privacy',
