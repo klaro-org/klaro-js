@@ -1,6 +1,10 @@
 ---
 name: "\U0001F914 Support question"
 about: I have a question or don’t know how to do something
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 If you have a support question, feel free to ask it here.
