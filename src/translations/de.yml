@@ -1,11 +1,11 @@
 consentModal:
-  title: Informationen die wir sammeln
+  title: Informationen, die wir speichern
   description: >
-    Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.
+    Hier können Sie einsehen und anpassen, welche Information wir über Sie speichern.
   privacyPolicy:
     name: Datenschutzerklärung
     text: >
-      Bitte lesen Sie unsere {privacyPolicy} um weitere Details zu erfahren.
+      Weitere Details finden Sie in unserer {privacyPolicy}.
 consentNotice:
   changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
   description: >
@@ -21,7 +21,7 @@ app:
     description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
   optOut:
     title: (Opt-Out)
-    description: Diese Anwendung wird standardmäßig gelanden (aber Sie können sie deaktivieren)
+    description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)
   required:
     title: (immer notwendig)
     description: Diese Anwendung wird immer benötigt
