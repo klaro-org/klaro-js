@@ -32,7 +32,7 @@
         <!-- here are some examples for trackers-->
 
         <!-- an inline JS tracking script -->
-        <script type="opt-in" data-type="application/javascript" data-name="inlineTracker">
+        <script type="text/plain" data-type="application/javascript" data-name="inlineTracker">
 
             console.log("This is an example of an inline tracking script.")
 
@@ -52,10 +52,10 @@
         </script>
 
         <!-- an externally loaded tracker -->
-        <script type="opt-in" data-src="../examples/tracker.js" data-type="application/javascript" data-name="externalTracker"></script>
+        <script type="text/plain" data-src="../examples/tracker.js" data-type="application/javascript" data-name="externalTracker"></script>
 
         <!-- our (real) Matomo tracking code -->
-        <script type="opt-in" data-type="application/javascript" data-name="matomo">
+        <script type="text/plain" data-type="application/javascript" data-name="matomo">
             var _paq = _paq || [];
             /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
             _paq.push(['trackPageView']);

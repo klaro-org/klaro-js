@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
-const PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
-const SRC_DIR = path.resolve(__dirname,'src');
+const SRC_DIR = path.resolve(__dirname, 'src');
 const APP_ENV = process.env.APP_ENV || 'dev';
+const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
+const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 
 function withEnvSourcemap(loader) {
@@ -34,14 +35,6 @@ let config = {
         use: 'url-loader?limit=100000'
       },
       {
-        test: /\.scss|sass$/,
-        use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', withEnvSourcemap('css-loader')]
-      },
-      {
         test: /\.yaml|yml$/,
         use: ['json-loader', 'yaml-loader'],
       },
@@ -64,6 +57,38 @@ let config = {
   },
   plugins: []
 };
+
+if (SEPARATE_CSS){
+  config.output.filename = 'klaro-no-css.js'
+  const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+  config.module.rules.push({
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: APP_ENV === 'dev',
+            // reloadAll: true,
+          },
+        },
+        withEnvSourcemap('css-loader'),
+        withEnvSourcemap({loader: 'sass-loader', options: {sassOptions: {outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed'}}}),
+      ],
+    }
+  )
+  config.plugins.push(
+    new MiniCssExtractPlugin({
+      filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css'
+    })
+  )  
+} else {
+  config.module.rules.push(
+    {
+      test: /\.scss|sass$/,
+      use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
+    }
+  )
+}
 
 if (APP_ENV === 'dev') {
   config = {
@@ -125,7 +150,7 @@ if (APP_ENV === 'production') {
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
-        VERSION : JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
+        VERSION: JSON.stringify(process.env.CI_APP_VERSION || process.env.APP_VERSION || process.env.APP_COMMIT || 'unknown'),
       }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.AggressiveMergingPlugin()

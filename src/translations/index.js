@@ -9,6 +9,7 @@ import es from './es.yml'
 import fi from './fi.yml'
 import fr from './fr.yml'
 import hu from './hu.yml'
+import hr from './hr.yml'
 import it from './it.yml'
 import nl from './nl.yml'
 import no from './no.yml'
@@ -28,6 +29,7 @@ export default {
     fi,
     fr,
     hu,
+    hr,
     it,
     nl,
     no,

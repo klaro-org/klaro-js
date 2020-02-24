@@ -13,24 +13,10 @@ This GIF shows how Klaro deletes Cookies as the user disables apps. A full-lengt
   you're ready to go!
 * **Flexible and customizable**: Manage consent for all possible types of
   third-party apps and easily customize the tool according to your needs.
-* **Multilingual**: Full internationalization support, with languages included out of the box. New translations can be added in just a few lines of code. Contributions welcome! Current languages:
-    - [x] Catalan
-    - [x] Dutch
-    - [x] English
-    - [x] Finnish
-    - [x] French
-    - [x] German
-    - [x] Greek
-    - [x] Hungarian
-    - [x] Italian
-    - [x] Norwegian
-    - [x] Romanian
-    - [x] Serbian (Latin and Cyrillic)
-    - [x] Spanish
-    - [x] Swedish
-    - [x] Turkish
-* **Small footprint**: The minified+gzipped JS is only 18 kB and contains
-  everything that is required, including style sheets and images.
+* **Multilingual**: Full internationalization support, with languages included out of the box. New translations can be added in just a few lines of code. Contributions welcome!\
+Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Norwegian, Romanian, Serbian (Latin and Cyrillic), Spanish, Swedish, Turkish
+* **Small footprint**: The minified+gzipped JS is only 37 kB and contains
+  everything that is required, including style sheets and translations.
 * **Intuitive and responsive**: Klaro is designed to blend in with
   your existing design and optimized for modern desktop and mobile browsers.
 * **Secure and reliable**: Klaro ensures that no third-party apps or
@@ -43,8 +29,20 @@ To use the widget on your website, simply download [klaro.js](https://klaro.kipr
 ```html
 <script defer type="text/javascript" src="config.js"></script>
 <script defer type="text/javascript" src="klaro.js"></script>
+
 ```
 Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
+
+We also provide a version of Klaro without stylesheets included (which is useful
+in case you want to provide your own stylesheet), [klaro-no-css.js](https://klaro.kiprotect.com/klaro-no-css.js). If you use this, make sure to either include
+your own styles or to include [klaro.min.css](https://klaro.kiprotect.com/klaro.min.css) like this:
+
+```html
+<link rel="stylesheet" href="klaro.min.css" />
+```
+
+We also provide a non-minified version of the stylesheet, which is great if you
+want to make edits: [klaro.css](https://klaro.kiprotect.com/klaro.css).
 
 If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can use the ```klaro.show()``` global. Example:
 ```html
@@ -53,9 +51,9 @@ If you wish to open the consent manager manually on user interaction (for exampl
 
 ## Managing third-party apps/trackers
 
-To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `opt-in` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
+To manage third-party scripts and ensure they only run if the user consents with their use, you simply replace the `src` attribute with `data-src`, change the `type` attribute to `text/plain` and add a `data-type` attribute with the original type, and add a `data-name` field that matches the name of the app as given in your config file. Example:
 ```html
-<script type="opt-in"
+<script type="text/plain"
     data-type="text/javascript"
     data-name="optimizely"
     data-src="https://cdn.optimizely.com/js/10196010078.js">

@@ -3,8 +3,8 @@ import AppItem from './app-item'
 
 export default class Apps extends React.Component {
 
-    constructor(props, context){
-        super(props, context)
+    constructor(props){
+        super(props)
         props.manager.watch(this)
         this.state = {
             consents : props.manager.consents

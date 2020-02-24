@@ -73,6 +73,10 @@ export default class ConsentManager {
         return this.config.cookieName || 'klaro'
     }
 
+    get cookieDomain(){
+        return this.config.cookieDomain || undefined
+    }
+
     watch(watcher){
         if (!this.watchers.has(watcher))
             this.watchers.add(watcher)
@@ -134,7 +138,7 @@ export default class ConsentManager {
         this.consents = this.defaultConsents
         this.confirmed = false
         this.applyConsents()
-        this.klaroStorage.delete();
+        this.klaroStorage.delete()
         this.notify('consents', this.consents)
     }
 
@@ -165,7 +169,7 @@ export default class ConsentManager {
     loadConsents(){
         const consentCookie = this.klaroStorage.get();
         if (consentCookie !== null){
-            this.consents = JSON.parse(consentCookie)
+            this.consents = JSON.parse(decodeURIComponent(consentCookie))
             this._checkConsents()
             this.notify('consents', this.consents)
         }
@@ -178,9 +182,7 @@ export default class ConsentManager {
     }
 
     saveConsents(){
-        if (this.consents === null)
-            this.klaroStorage.delete();
-        const v = JSON.stringify(this.consents)
+        const v = encodeURIComponent(JSON.stringify(this.consents))
         this.klaroStorage.set(v);
         this.confirmed = true
         this.changed = false
@@ -233,7 +235,7 @@ export default class ConsentManager {
                 for(const key of Object.keys(dataset)){
                     newElement.dataset[key] = dataset[key]
                 }
-                newElement.type = 'opt-in'
+                newElement.type = 'text/plain'
                 newElement.innerText = element.innerText
                 newElement.text = element.text
                 newElement.class = element.class

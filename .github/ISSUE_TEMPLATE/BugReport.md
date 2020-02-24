@@ -1,7 +1,23 @@
 ---
 name: "\U0001F41B Bug report"
 about: Something isn't working as expected
+title: ''
+labels: ''
+assignees: ''
+
 ---
+
+**Klaro Config**
+
+<!--
+Your Klaro config that causes problems (if this is a config-related problem).
+-->
+
+**HTML Code of Page**
+
+<!--
+The HTML page (simplified / stripped down or as a link) that you use Klaro on.
+-->
 
 **Steps to reproduce**
 

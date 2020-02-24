@@ -27,12 +27,15 @@ export function getCookie(name) {
 
 
 //https://stackoverflow.com/questions/14573223/set-cookie-and-get-cookie-with-javascript
-export function setCookie(name, value, days) {
-    let expires = "";
+export function setCookie(name, value, days, domain) {
+    let expires = ""
     if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
+        const date = new Date()
+        date.setTime(date.getTime() + (days*24*60*60*1000))
+        expires = "; expires=" + date.toUTCString()
+    }
+    if (domain !== undefined) {
+        expires += '; domain=' + domain
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
@@ -41,12 +44,12 @@ export function deleteCookie(name, path, domain) {
     let str = name+'=; Max-Age=-99999999;'
     // try to delete the cookie without any path and domain
     document.cookie = str
-    if (path !== undefined)
-        str += ' path='+path+';'
+    str += ' path='+(path || '/')+';'
     // try to delete the cookie with path
     document.cookie = str
-    if (domain !== undefined)
+    if (domain !== undefined) {
         str += ' domain='+domain+';'
-    // try to delete the cookie with domain and path
-    document.cookie = str
+        // try to delete the cookie with domain and path
+        document.cookie = str
+    }
 }
