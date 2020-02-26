@@ -41,7 +41,7 @@ export default class ConsentModal extends React.Component {
                     <Apps t={t} config={config} manager={manager} />
                 </div>
                 <div className="cm-footer">
-                    <button className="cm-btn cm-btn-success" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+                    <button className="cm-btn cm-btn-success consent-modal-success" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
                     <a target="_blank" rel="noopener noreferrer" className="cm-powered-by" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a>
                 </div>
             </div>
