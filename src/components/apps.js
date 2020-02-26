@@ -60,7 +60,7 @@ export default class Apps extends React.Component {
 
         return <ul className="cm-apps">
             {appItems}
-            {togglableApps.length > 1 && !config.acceptAll && (
+            {togglableApps.length > 1 && (
                 <li className="cm-app cm-toggle-all">
                     <AppItem
                         name="disableAll"

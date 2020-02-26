@@ -5,8 +5,14 @@ import {language} from 'utils/i18n'
 
 export default class ConsentModal extends React.Component {
 
+    constructor(props){
+        super(props)
+        const {manager} = props
+        manager.restoreSavedConsents()
+    }
+
     render(){
-        const {hide, saveAndHide, acceptAndHide, config, manager, t} = this.props
+        const {hide, confirming, saveAndHide, acceptAndHide, declineAndHide, config, manager, t} = this.props
         const lang = config.lang || language()
 
         let closeLink
@@ -20,12 +26,15 @@ export default class ConsentModal extends React.Component {
                 <Close t={t} />
             </button>
         }
-        let buttonRight =
-            <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-        let buttonLeft
-        if (config.acceptAll) {
-            buttonLeft = <button className="cm-btn cm-btn-info" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-            buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
+        let declineButton
+        
+        if (!config.hideDeclineAll && ! manager.confirmed)
+            declineButton = <button disabled={confirming} className="cm-btn cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+        let acceptAllButton
+        let acceptButton =
+            <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-info" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
+        if (config.acceptAll && !manager.confirmed) {
+            acceptAllButton = <button disabled={confirming} className="cm-btn cm-btn-success" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
@@ -49,8 +58,9 @@ export default class ConsentModal extends React.Component {
                 </div>
                 <div className="cm-footer">
                     <div className="cm-footer-buttons">
-                        {buttonLeft}
-                        {buttonRight}
+                        {acceptAllButton}
+                        {acceptButton}
+                        {declineButton}
                     </div>
                     <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'} rel="noopener noreferrer">{t(['poweredBy'])}</a></p>
                 </div>

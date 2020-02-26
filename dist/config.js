@@ -35,7 +35,7 @@ var klaroConfig = {
 
     // Show "accept all" to accept all apps instead of "ok" that only accepts
     // required and "default: true" apps
-    acceptAll: true,
+    acceptAll: false,
 
     // replace "decline" with cookie manager modal
     hideDeclineAll: false,
@@ -262,6 +262,7 @@ var klaroConfig = {
         {
             name: 'intercom',
             title: 'Intercom',
+            default: true,
             purposes: ['livechat'],
         },
         {

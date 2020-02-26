@@ -12,6 +12,7 @@ export default class ConsentManager {
         this.watchers = new Set([])
         this.loadConsents()
         this.applyConsents()
+        this.savedConsents = {...this.consents}
     }
 
     get cookieName(){
@@ -64,9 +65,9 @@ export default class ConsentManager {
     }
 
     //don't decline required apps
-    changeAll($value){
+    changeAll(value){
         this.config.apps.map((app) => {
-            if(app.required || this.config.required || $value) {
+            if(app.required || this.config.required || value) {
                 this.updateConsent(app.name, true)
             } else {
                 this.updateConsent(app.name, false)
@@ -76,6 +77,11 @@ export default class ConsentManager {
 
     updateConsent(name, value){
         this.consents[name] = value
+        this.notify('consents', this.consents)
+    }
+
+    restoreSavedConsents(){
+        this.consents = {...this.savedConsents}
         this.notify('consents', this.consents)
     }
 
@@ -131,6 +137,7 @@ export default class ConsentManager {
         setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120, this.cookieDomain)
         this.confirmed = true
         this.changed = false
+        this.savedConsents = {...this.consents}
     }
 
     applyConsents(){

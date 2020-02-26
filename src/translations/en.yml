@@ -10,12 +10,13 @@ consentNotice:
   changeDescription: There were changes since your last visit, please update your consent.
   description: >
     We collect and process your personal information for the following purposes: {purposes}.
-  learnMore: Learn more
+  learnMore: Customize
 ok: Accept
 save: Save
 decline: Decline
 close: Close
 acceptAll: Accept all
+acceptSelected: Accept selected
 app:
   disableAll:
     title: Toggle all apps

@@ -4,15 +4,16 @@
     display: inline-block;
     width: 50px;
     height: 30px;
+}
 
-    &.disabled {
+.cm-app-input:checked + .cm-app-label .slider {
+    background-color: $blue1;
+}
 
-        input:checked + .slider {
-            opacity: 0.5;
-            background-color: $blue3;
-        }
-
-    }
+.cm-app-input.required:checked + .cm-app-label .slider {
+    opacity: 0.8;
+    background-color: $green2;
+    cursor: not-allowed;
 }
 
 .slider {
@@ -78,10 +79,6 @@
 
 .cm-app-input:focus + .cm-app-label .slider {
     box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
-}
-
-.cm-app-input:checked + .cm-app-label .slider {
-    background-color: $blue1;
 }
 
 .cm-app-input:checked + .cm-app-label .slider:before {

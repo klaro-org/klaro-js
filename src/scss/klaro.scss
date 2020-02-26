@@ -46,6 +46,11 @@ $green3: #01440C;
             margin-top: 0.7em;
         }
 
+        .cm-link {
+            padding-left: 4px;
+            vertical-align: middle;
+        }
+
         .cm-btn {
             background: #555;
             color: $font-color-dark;
@@ -53,6 +58,10 @@ $green3: #01440C;
             padding: 6px 10px;
             margin-right: 0.5em;
             border: 0;
+
+            &:disabled {
+                opacity: 0.5;
+            }
 
             &.cm-btn-sm {
                 padding: 0.4em;

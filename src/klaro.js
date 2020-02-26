@@ -54,9 +54,15 @@ function getTranslations(config){
     return trans
 }
 
+let cnt = 1
+
 export function renderKlaro(config, show){
     if (config === undefined)
         return
+    // we are using a count here so that we're able to repeatedly open the modal...
+    let showCnt = 0
+    if (show)
+        showCnt = cnt++
     const element = getElement(config)
     const trans = getTranslations(config)
     const manager = getManager(config)
@@ -66,7 +72,7 @@ export function renderKlaro(config, show){
         stylePrefix={stylePrefix}
         manager={manager}
         config={config}
-        show={show || false} />, element)
+        show={showCnt} />, element)
     return app
 }
 

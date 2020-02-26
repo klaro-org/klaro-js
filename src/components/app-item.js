@@ -20,10 +20,10 @@ export default class AppItem extends React.Component {
             purposesContent = <p className="purposes">{t(['app', purposes.length > 1 ? 'purposes' : 'purpose'])}: {purposesText}</p>
 
         return <div>
-            <input id={id} className="cm-app-input" aria-describedby={`${id}-description`} disabled={required} checked={checked || required} type="checkbox" onChange={onChange} />
+            <input id={id} className={"cm-app-input"+(required ? " required" : "")} aria-describedby={`${id}-description`} disabled={required} checked={checked || required} type="checkbox" onChange={onChange} />
             <label htmlFor={id} className="cm-app-label" {...(required ? {tabIndex: "0"} : {})}>
                 <span className="cm-app-title">{title}</span>{requiredText}{optOutText}
-                <span className={"switch"+(required ? " disabled" : "")}>
+                <span className="switch">
                     <div className="slider round active"></div>
                 </span>
             </label>
