@@ -29,12 +29,12 @@ export default class ConsentModal extends React.Component {
         let declineButton
         
         if (!config.hideDeclineAll && ! manager.confirmed)
-            declineButton = <button disabled={confirming} className="cm-btn cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+            declineButton = <button disabled={confirming} className="cm-btn cm-btn-decline cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
         let acceptAllButton
         let acceptButton =
-            <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-info" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
+            <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-info cm-btn-accept" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
         if (config.acceptAll && !manager.confirmed) {
-            acceptAllButton = <button disabled={confirming} className="cm-btn cm-btn-success" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
+            acceptAllButton = <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-accept-all" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
