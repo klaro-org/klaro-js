@@ -6,7 +6,7 @@ import {language} from 'utils/i18n'
 export default class ConsentModal extends React.Component {
 
     render(){
-        const {hide, saveAndHide, config, manager, t} = this.props
+        const {hide, saveAndHide, acceptAndHide, config, manager, t} = this.props
         const lang = config.lang || language()
 
         let closeLink
@@ -19,6 +19,13 @@ export default class ConsentModal extends React.Component {
             >
                 <Close t={t} />
             </button>
+        }
+        let buttonRight =
+            <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+        let buttonLeft
+        if (config.acceptAll) {
+            buttonLeft = <button className="cm-btn cm-btn-info" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
+            buttonRight = <button className="cm-btn cm-btn-success cm-btn-right" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
@@ -41,8 +48,11 @@ export default class ConsentModal extends React.Component {
                     <Apps t={t} config={config} manager={manager} />
                 </div>
                 <div className="cm-footer">
-                    <button className="cm-btn cm-btn-success" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'close' : 'save'])}</button>
-                    <a target="_blank" rel="noopener noreferrer" className="cm-powered-by" href={config.poweredBy || 'https://klaro.kiprotect.com'}>{t(['poweredBy'])}</a>
+                    <div className="cm-footer-buttons">
+                        {buttonLeft}
+                        {buttonRight}
+                    </div>
+                    <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'} rel="noopener noreferrer">{t(['poweredBy'])}</a></p>
                 </div>
             </div>
         </div>

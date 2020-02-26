@@ -15,6 +15,7 @@ ok: Accept
 save: Save
 decline: Decline
 close: Close
+acceptAll: Accept all
 app:
   disableAll:
     title: Toggle all apps

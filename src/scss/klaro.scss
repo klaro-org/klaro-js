@@ -71,8 +71,13 @@ $green3: #01440C;
             &.cm-btn-info {
                 background: $blue1;
             }
-        }
 
+            &.cm-btn-right {
+                float: right;
+                margin-left: 0.5em;
+                margin-right: 0;
+            }
+        }
     }
 
     .cookie-modal {
@@ -137,12 +142,26 @@ $green3: #01440C;
                 padding: 1em;
                 border-top: $border-dark;
 
-                a.cm-powered-by {
-                    position: absolute;
-                    right: 1em;
-                    color: $font-color-dark-deemphasized;
+                &-buttons {
+                    &::before,
+                    &::after {
+                        content: " ";
+                        display: table;
+                    }
+
+                    &::after {
+                        clear: both;
+                    }
+                }
+
+                .cm-powered-by {
                     font-size: 0.8em;
                     padding-top: 4px;
+                    text-align: center;
+
+                    a {
+                        color: $font-color-dark-deemphasized;
+                    }
                 }
             }
 
