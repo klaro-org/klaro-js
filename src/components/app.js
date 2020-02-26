@@ -13,10 +13,10 @@ export default class App extends React.Component {
     componentDidUpdate(prevProps){
         // props.show is a number that is incremented (so that we can detect
         // repeated calls to the "show" function)
-        if (prevProps.show == this.props.show)
+        if (prevProps.show === this.props.show)
             return
         const showState = this.props.show > 0 || !this.props.manager.confirmed
-        if (showState != this.state.show)
+        if (showState !== this.state.show)
             this.setState({show: showState})
     }
 
