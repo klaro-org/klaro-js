@@ -1,9 +1,64 @@
 import {getCookie, getCookies, setCookie, deleteCookie} from 'utils/cookies'
 
+// from https://git.io/fj5Or
+function browserSupportsLocalStorage() {
+    var mod = 'klaro-ls-test';
+    try {
+        localStorage.setItem(mod, mod);
+        localStorage.removeItem(mod);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+class KlaroCookies {
+    constructor(cookieName, cookieExpiresAfterDays) {
+        this.cookieName = cookieName;
+        this.cookieExpiresAfterDays = cookieExpiresAfterDays;
+    }
+
+    get() {
+        const cookie = getCookie(this.cookieName);
+        return cookie
+            ? cookie.value
+            : null;
+    }
+
+    set(value) {
+        return setCookie(this.cookieName, value, this.cookieExpiresAfterDays)
+    }
+
+    delete() {
+        return deleteCookie(this.cookieName);
+    }
+}
+
+class KlaroLocalStorage {
+    constructor(localStorageKey) {
+        this.localStorageKey = localStorageKey;
+    }
+
+    get() {
+        return localStorage.getItem(this.localStorageKey);
+    }
+
+    set(value) {
+        return localStorage.setItem(this.localStorageKey, value)
+    }
+
+    delete() {
+        return localStorage.removeItem(this.localStorageKey);
+    }
+}
+
 export default class ConsentManager {
 
     constructor(config){
         this.config = config // the configuration
+        this.klaroStorage = config.klaroStorage === 'localStorage' && browserSupportsLocalStorage()
+            ? new KlaroLocalStorage(this.config.cookieName || 'klaro')
+            : new KlaroCookies(this.config.cookieName || 'klaro', this.config.cookieExpiresAfterDays || 120);
         this.consents = this.defaultConsents // the consent states of the configured apps
         this.confirmed = false // true if the user actively confirmed his/her consent
         this.changed = false // true if the app config changed compared to the cookie
@@ -89,7 +144,7 @@ export default class ConsentManager {
         this.consents = this.defaultConsents
         this.confirmed = false
         this.applyConsents()
-        deleteCookie(this.cookieName, null, this.cookieDomain)
+        this.klaroStorage.delete()
         this.notify('consents', this.consents)
     }
 
@@ -118,9 +173,9 @@ export default class ConsentManager {
     }
 
     loadConsents(){
-        const consentCookie = getCookie(this.cookieName)
+        const consentCookie = this.klaroStorage.get();
         if (consentCookie !== null){
-            this.consents = JSON.parse(decodeURIComponent(consentCookie.value))
+            this.consents = JSON.parse(decodeURIComponent(consentCookie))
             this._checkConsents()
             this.notify('consents', this.consents)
         }
@@ -134,7 +189,7 @@ export default class ConsentManager {
 
     saveConsents(){
         const v = encodeURIComponent(JSON.stringify(this.consents))
-        setCookie(this.cookieName, v, this.config.cookieExpiresAfterDays || 120, this.cookieDomain)
+        this.klaroStorage.set(v);
         this.confirmed = true
         this.changed = false
         this.savedConsents = {...this.consents}
