@@ -14,6 +14,7 @@ consentNotice:
 ok: OK
 save: Spara
 decline: Avböj
+close: Stäng
 app:
   disableAll:
     title: Ändra för alla appar
