@@ -14,6 +14,7 @@ consentNotice:
 ok: Hyväksy
 save: Tallenna
 decline: Hylkää
+close: Sulje
 app:
   disableAll:
     title: Valitse kaikki
