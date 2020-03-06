@@ -29,7 +29,7 @@ export default class ConsentModal extends React.Component {
         let declineButton
 
         if (!config.hideDeclineAll && ! manager.confirmed)
-            declineButton = <button disabled={confirming} className="cm-btn cm-btn-decline cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+            declineButton = <button disabled={confirming} className="cm-btn cm-btn-decline cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
         let acceptAllButton
         const acceptButton =
             <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-info cm-btn-accept" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
@@ -58,9 +58,9 @@ export default class ConsentModal extends React.Component {
                 </div>
                 <div className="cm-footer">
                     <div className="cm-footer-buttons">
-                        {acceptAllButton}
-                        {acceptButton}
                         {declineButton}
+                        {acceptButton}
+                        {acceptAllButton}
                     </div>
                     <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'} rel="noopener noreferrer">{t(['poweredBy'])}</a></p>
                 </div>
