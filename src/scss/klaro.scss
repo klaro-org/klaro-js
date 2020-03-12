@@ -68,6 +68,11 @@ $green3: #01440C;
                 font-size: 1em;
             }
 
+            &.cm-btn-lg {
+                padding: 0.8em 1.4em;
+                font-size: 1em;
+            }
+
             &.cm-btn-close {
                 background: #eee;
                 color: #000;
@@ -89,7 +94,7 @@ $green3: #01440C;
         }
     }
 
-    .cookie-modal {
+    .cookie-modal{
 
         width: 100%;
         height: 100%;
@@ -108,7 +113,8 @@ $green3: #01440C;
             left: 0;
         }
 
-        .cm-modal {
+        .cm-modal,
+        .cookie-modal-notice  {
             z-index: 1001;
             box-shadow: $box-shadow;
 
@@ -242,7 +248,7 @@ $green3: #01440C;
         }
     }
 
-    .cookie-notice {
+    .cookie-notice:not(.cookie-modal-notice) {
 
         background: $bg-dark;
         z-index: 999;
@@ -292,7 +298,10 @@ $green3: #01440C;
                 margin: 0;
             }
         }
+    }
 
+    .cookie-modal-notice {
+        padding: 1em;
     }
 
     .cookie-notice-hidden {
