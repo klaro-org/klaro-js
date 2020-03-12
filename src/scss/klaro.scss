@@ -47,7 +47,7 @@ $green3: #01440C;
         }
 
         .cm-link {
-            padding-left: 4px;
+            margin-right: 0.5em;
             vertical-align: middle;
         }
 
@@ -158,15 +158,9 @@ $green3: #01440C;
                 border-top: $border-dark;
 
                 &-buttons {
-                    &::before,
-                    &::after {
-                        content: " ";
-                        display: table;
-                    }
-
-                    &::after {
-                        clear: both;
-                    }
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
                 }
 
                 .cm-powered-by {
@@ -266,6 +260,9 @@ $green3: #01440C;
             right: 20px;
             max-width: 300px;
         }
+        @media(min-width: 1400px){
+            max-width: 350px;
+        }
 
         @media(max-width: 989px){
             border: none;
@@ -293,9 +290,13 @@ $green3: #01440C;
 
             }
 
-            p.cn-ok {
-                padding-top: 0.5em;
-                margin: 0;
+            .cn-ok {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+
+                margin-top: 1em;
             }
         }
     }
