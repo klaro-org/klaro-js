@@ -185,6 +185,7 @@ export default class ConsentManager {
         }
 
         const elements = document.querySelectorAll("[data-name='"+app.name+"']")
+        const scriptAttrs = ['innerText', 'text', 'class', 'id', 'name', 'defer', 'async'];
         for(let i=0;i<elements.length;i++){
             const element = elements[i]
 
@@ -204,14 +205,15 @@ export default class ConsentManager {
                     newElement.dataset[key] = dataset[key]
                 }
                 newElement.type = 'text/plain'
-                newElement.innerText = element.innerText
-                newElement.text = element.text
-                newElement.class = element.class
-                newElement.style.cssText = element.style
-                newElement.id = element.id
-                newElement.name = element.name
-                newElement.defer = element.defer
-                newElement.async = element.async
+                if (element.hasAttribute('style')) {
+                    newElement.style.cssText = element.style
+                }
+
+                for(let scriptAttr in scriptAttrs) {
+                    if (element.hasAttribute(scriptAttr)) {
+                        newElement.setAttribute(scriptAttr, element.getAttribute(scriptAttr));
+                    }
+                }
 
                 if (consent){
                     newElement.type = type
