@@ -41,8 +41,11 @@ var klaroConfig = {
     // required and "default: true" apps
     acceptAll: false,
 
-    // replace "decline" with cookie manager modal
+    // hide the "decline" button in notice and modal
     hideDeclineAll: false,
+
+    // show button buttons instead of small ones
+    bigButtons: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
