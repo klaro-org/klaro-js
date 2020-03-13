@@ -2,15 +2,15 @@ consentModal:
   title: Keräämämme tiedot
   description: >
     Voit tarkastella ja muokata sinusta keräämiämme tietoja.
-  privacyPolicy:
-    name: tietosuojasivultamme
-    text: >
-      Voit lukea lisätietoja {privacyPolicy}.
 consentNotice:
   changeDescription: Olemme tehneet muutoksia ehtoihin viime vierailusi jälkeen, tarkista ehdot.
   description: >
     Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin: {purposes}.
   learnMore: Lue lisää
+privacyPolicy:
+  name: tietosuojasivultamme
+  text: >
+    Voit lukea lisätietoja {privacyPolicy}.
 ok: Hyväksy
 save: Tallenna
 decline: Hylkää

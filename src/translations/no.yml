@@ -2,15 +2,15 @@ consentModal:
   title: Informasjon vi samler inn
   description: >
     Her kan du se og velge hvilken informasjon vi samler inn om deg.
-  privacyPolicy:
-    name: personvernerklæring
-    text: >
-      For å lære mer, vennligst les vår {privacyPolicy}.
 consentNotice:
   changeDescription: Det har skjedd endringer siden ditt siste besøk, vennligst oppdater ditt samtykke.
   description: >
     Vi samler inn og prosesserer din personlige informasjon av følgende årsaker: {purposes}.
   learnMore: Lær mer
+privacyPolicy:
+  name: personvernerklæring
+  text: >
+    For å lære mer, vennligst les vår {privacyPolicy}.
 ok: OK
 save: Opslaan
 decline: Avslå

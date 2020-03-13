@@ -2,15 +2,15 @@ consentModal:
   title: Sakladığımız bilgiler
   description: >
     Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz.
-  privacyPolicy:
-    name: Gizlilik Politikası
-    text: >
-      Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
 consentNotice:
   changeDescription: Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi güncelleyin.
   description: >
     Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.
   learnMore: Daha fazla bilgi
+privacyPolicy:
+  name: Gizlilik Politikası
+  text: >
+    Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
 ok: Tamam
 save: Kaydet
 decline: Reddet

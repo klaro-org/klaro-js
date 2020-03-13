@@ -2,15 +2,15 @@ consentModal:
   title: Informazioni che raccogliamo
   description: >
     Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
-  privacyPolicy:
-    name: policy privacy
-    text: >
-      Per saperne di più, leggi la nostra {privacyPolicy}.
 consentNotice:
   changeDescription: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
   description: >
     Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
   learnMore: Scopri di più
+privacyPolicy:
+  name: policy privacy
+  text: >
+    Per saperne di più, leggi la nostra {privacyPolicy}.
 ok: OK
 save: Salva
 decline: Rifiuta

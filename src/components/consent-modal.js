@@ -41,7 +41,7 @@ export default class ConsentModal extends React.Component {
             config.privacyPolicy.default ||
             config.privacyPolicy
 
-        const ppLink = <a onClick={hide} href={ppUrl}>{t(['consentModal','privacyPolicy','name'])}</a>
+        const ppLink = <a onClick={hide} href={ppUrl}>{t(['privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
@@ -50,7 +50,7 @@ export default class ConsentModal extends React.Component {
                     <h1 className="title">{t(['consentModal', 'title'])}</h1>
                     <p>
                         {t(['consentModal','description'])} &nbsp;
-                        {t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})}
+                        {t(['privacyPolicy','text'], {privacyPolicy : ppLink})}
                     </p>
                 </div>
                 <div className="cm-body">

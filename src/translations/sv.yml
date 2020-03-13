@@ -2,15 +2,15 @@ consentModal:
   title: Information som vi samlar
   description: >
     Här kan du se och anpassa vilken information vi samlar om dig.
-  privacyPolicy:
-    name: Integritetspolicy
-    text: >
-      För att veta mer, läs vår {privacyPolicy}.
 consentNotice:
   changeDescription: Det har skett förändringar sedan ditt senaste besök, var god uppdatera ditt medgivande.
   description: >
     Vi samlar och bearbetar din personliga data i följande syften: {purposes}.
   learnMore: Läs mer
+privacyPolicy:
+  name: Integritetspolicy
+  text: >
+    För att veta mer, läs vår {privacyPolicy}.
 ok: OK
 save: Spara
 decline: Avböj

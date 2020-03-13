@@ -2,15 +2,15 @@ consentModal:
   title: Information that we collect
   description: >
     Here you can see and customize the information that we collect about you.
-  privacyPolicy:
-    name: privacy policy
-    text: >
-      To learn more, please read our {privacyPolicy}.
 consentNotice:
   changeDescription: There were changes since your last visit, please update your consent.
   description: >
     We collect and process your personal information for the following purposes: {purposes}.
   learnMore: Customize
+privacyPolicy:
+  name: privacy policy
+  text: >
+    To learn more, please read our {privacyPolicy}.
 ok: Accept
 save: Save
 decline: Decline

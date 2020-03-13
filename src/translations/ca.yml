@@ -2,15 +2,15 @@ consentModal:
   title: Informació que recopilem
   description: >
     Aquí podeu veure i personalitzar la informació que recopilem sobre vós.
-  privacyPolicy:
-    name: política de privadesa
-    text: >
-      Per a més informació, consulteu la nostra {privacyPolicy}.
 consentNotice:
   changeDescription: Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu el vostre consentiment.
   description: >
     Recopilem i processem la vostra informació personal amb les següents finalitats: {purposes}.
   learnMore: Saber-ne més
+privacyPolicy:
+  name: política de privadesa
+  text: >
+    Per a més informació, consulteu la nostra {privacyPolicy}.
 ok: Accepta
 save: Desa
 decline: Rebutja

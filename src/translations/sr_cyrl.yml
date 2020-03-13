@@ -2,15 +2,15 @@ consentModal:
   title: Информације које прикупљамо
   description: >
     Овде можете видет и подесити информације које прикупљамо о Вама.
-  privacyPolicy:
-    name: политику приватности
-    text: >
-      За више информација прочитајте нашу {privacyPolicy}.
 consentNotice:
   changeDescription: Дошло је до промена од Ваше последнје посете, молимо Вас да ажурирате своја одобрења.
   description: >
     Ми прикупљамо и процесирамо Ваше личне податке ради следећег: {purposes}.
   learnMore: Сазнајте више
+privacyPolicy:
+  name: политику приватности
+  text: >
+    За више информација прочитајте нашу {privacyPolicy}.
 ok: У реду
 save: Сачувај
 decline: Одбиј

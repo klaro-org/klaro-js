@@ -1,6 +1,7 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
 import {getPurposes} from 'utils/config'
+import { language } from '../utils/i18n';
 
 export default class ConsentNotice extends React.Component {
 
@@ -45,6 +46,7 @@ export default class ConsentNotice extends React.Component {
     render(){
         const {config, show, manager, t} = this.props
         const { modal, confirming } = this.state
+        const lang = config.lang || language()
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
@@ -82,6 +84,15 @@ export default class ConsentNotice extends React.Component {
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 
+        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
+            config.privacyPolicy.default ||
+            config.privacyPolicy
+        const ppLink = <a href={ppUrl}>{t(['privacyPolicy','name'])}</a>
+        const ppParagraph = config.privacyPolicyInNotice ?
+            <p>{t(['privacyPolicy','text'], {privacyPolicy : ppLink})}</p>
+            :
+            ''
+
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
@@ -89,6 +100,7 @@ export default class ConsentNotice extends React.Component {
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
                 </p>
+                {ppParagraph}
                 {changesText}
                 <p className="cn-ok">
                     {declineButton}

@@ -2,15 +2,15 @@ consentModal:
   title: Informatie die we verzamelen
   description: >
     Hier kunt u de informatie bekijken en aanpassen die we over u verzamelen.
-  privacyPolicy:
-    name: privacybeleid
-    text: >
-      Lees ons privacybeleid voor meer informatie {privacyPolicy}.
 consentNotice:
   changeDescription: Er waren wijzigingen sinds uw laatste bezoek, werk uw voorkeuren bij.
   description: >
     Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
   learnMore: Lees meer
+privacyPolicy:
+  name: privacybeleid
+  text: >
+    Lees ons privacybeleid voor meer informatie {privacyPolicy}.
 ok: OK
 save: Opslaan
 decline: Afwijzen

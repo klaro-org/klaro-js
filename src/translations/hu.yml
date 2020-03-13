@@ -2,15 +2,15 @@ consentModal:
   title: Információk, amiket gyűjtünk
   description: >
     Itt láthatod és testreszabhatod az rólad gyűjtött információkat.
-  privacyPolicy:
-    name: adatvédelmi irányelveinket
-    text: >
-      További információért kérjük, olvassd el az {privacyPolicy}.
 consentNotice:
   changeDescription: Az utolsó látogatás óta változások történtek, kérjük, frissítsd a hozzájárulásodat.
   description: >
     Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
   learnMore: Tudj meg többet
+privacyPolicy:
+  name: adatvédelmi irányelveinket
+  text: >
+    További információért kérjük, olvassd el az {privacyPolicy}.
 ok: Elfogad
 save: Save
 decline: Mentés
