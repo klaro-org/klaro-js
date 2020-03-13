@@ -7,6 +7,7 @@ const APP_ENV = process.env.APP_ENV || 'dev';
 const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
+const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
 function withEnvSourcemap(loader) {
   return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
@@ -62,7 +63,7 @@ if (SEPARATE_CSS){
   config.output.filename = 'klaro-no-css.js'
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
   config.module.rules.push({
-      test: /\.(sa|sc|c)ss$/,
+      test: STYLE_FILES,
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
@@ -72,6 +73,7 @@ if (SEPARATE_CSS){
           },
         },
         withEnvSourcemap('css-loader'),
+        withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
         withEnvSourcemap({loader: 'sass-loader', options: {sassOptions: {outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed'}}}),
       ],
     }
@@ -80,12 +82,25 @@ if (SEPARATE_CSS){
     new MiniCssExtractPlugin({
       filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css'
     })
-  )  
+  )
 } else {
   config.module.rules.push(
     {
-      test: /\.scss|sass$/,
-      use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
+      test: STYLE_FILES,
+      use: [
+        'style-loader',
+        withEnvSourcemap('css-loader'),
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            config: {
+              path: 'postcss.config.js'
+            }
+          }
+        },
+        // withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
+        withEnvSourcemap('sass-loader')]
     }
   )
 }

@@ -1,0 +1,27 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "indentation": 4,
+    "max-nesting-depth": 3,
+    "order/order": [
+      [
+        "less-mixins",
+        "custom-properties",
+        "dollar-variables",
+        "at-variables",
+        "at-rules",
+        "declarations",
+        {
+          "type": "at-rule",
+          "name": "media",
+          "hasBlock": true
+        },
+        "rules"
+      ],
+      {
+        "disableFix": true
+      }
+    ],
+    "order/properties-alphabetical-order": null
+  }
+}

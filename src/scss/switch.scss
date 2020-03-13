@@ -1,24 +1,4 @@
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-}
 
-.cm-app-input:checked + .cm-app-label .slider {
-    background-color: $blue1;
-}
-
-.cm-app-input.required:checked + .cm-app-label .slider {
-    opacity: 0.8;
-    background-color: $green2;
-    cursor: not-allowed;
-}
-
-.slider {
-    box-shadow: $box-shadow;
-}
 
 .cm-app-input {
     position: absolute;
@@ -29,9 +9,21 @@
     height: 30px;
 }
 
+
+
 .cm-app-label {
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+    }
+
     /* The slider */
     .slider {
+        $this: '.cm-app-label .slider';
+
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -39,22 +31,41 @@
         right: 0;
         bottom: 0;
         background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
+        box-shadow: $box-shadow;
+        transition: 0.4s;
         width: 50px;
         display: inline-block;
+
+        .cm-app-input:focus + #{$this} {
+            box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
+        }
+
+        .cm-app-input:checked + #{$this} {
+            background-color: $blue1;
+        }
+
+        .cm-app-input.required:checked + #{$this} {
+            opacity: 0.8;
+            background-color: $green2;
+            cursor: not-allowed;
+        }
     }
 
-    .slider:before {
+    .slider::before {
+        $this: '.cm-app-label .slider::before';
+
         position: absolute;
-        content: "";
+        content: '';
         height: 20px;
         width: 20px;
         left: 5px;
         bottom: 5px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        background-color: #fff;
+        transition: 0.4s;
+
+        .cm-app-input:checked + #{$this} {
+            transform: translateX(20px);
+        }
     }
 
     /* Rounded sliders */
@@ -62,27 +73,7 @@
         border-radius: 30px;
     }
 
-    .slider.round:before {
+    .slider.round::before {
         border-radius: 50%;
     }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px $blue1;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(20px);
-        -ms-transform: translateX(20px);
-        transform: translateX(20px);
-    }
-}
-
-.cm-app-input:focus + .cm-app-label .slider {
-    box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
-}
-
-.cm-app-input:checked + .cm-app-label .slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
 }

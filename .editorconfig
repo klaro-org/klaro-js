@@ -14,5 +14,5 @@ indent_size = 4
 [.gitmodules]
 indent_style = tab
 
-[{.prettierrc,package.json,webpack.config.js,*.yml}]
+[{.prettierrc,*.json,*.config.js,*.yml}]
 indent_size = 2
