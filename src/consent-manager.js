@@ -209,7 +209,7 @@ export default class ConsentManager {
                     newElement.style.cssText = element.style
                 }
 
-                for(let scriptAttr in scriptAttrs) {
+                for(const scriptAttr in scriptAttrs) {
                     if (element.hasAttribute(scriptAttr)) {
                         newElement.setAttribute(scriptAttr, element.getAttribute(scriptAttr));
                     }
