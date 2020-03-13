@@ -71,7 +71,7 @@ export default class ConsentNotice extends React.Component {
         if (!show)
             return <div />
 
-        const noticeIsModal = config.mustConsent && config.acceptAll
+        const noticeIsModal = config.noticeIsModal
         const noticeIsVisible =
             (!config.mustConsent || noticeIsModal) && !manager.confirmed && !config.noNotice
 
@@ -88,9 +88,9 @@ export default class ConsentNotice extends React.Component {
             <button className={"cm-btn cm-btn-success" + btnClass} type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
         const lernMoreLink = noticeIsModal ?
-            <button className={"cm-btn cm-btn-lern-more cm-btn-info" + btnClass} type="button" onclick={showModal}>{t(['consentNotice', 'learnMore'])}</button>
+            <button className={"cm-btn cm-btn-lern-more cm-btn-info" + btnClass} type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
             :
-            <a className="cm-link cm-learn-more" href="#" onclick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
+            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent && !noticeIsModal))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />

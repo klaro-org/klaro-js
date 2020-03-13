@@ -47,6 +47,9 @@ var klaroConfig = {
     // show button buttons instead of small ones
     bigButtons: false,
 
+    // show cookie notice as modal
+    noticeIsModal: false,
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your
