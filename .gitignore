@@ -2,5 +2,6 @@ build
 dist/klaro*.js
 dist/klaro*.css
 .tmp
+.idea
 node_modules
 yarn.lock
