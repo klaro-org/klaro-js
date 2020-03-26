@@ -154,6 +154,9 @@ export default class ConsentManager {
         this.confirmed = true
         this.changed = false
         this.savedConsents = {...this.consents}
+        if(typeof this.config.saveCallback === 'function'){
+            this.config.saveCallback(this.consents);
+        }
     }
 
     applyConsents(){
