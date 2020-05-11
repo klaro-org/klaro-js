@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
   learnMore: Tudj meg többet
+  privacyPolicy:
+    name: adatvédelmi irányelveinket
 ok: Elfogad
 save: Save
 decline: Mentés

@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
   learnMore: Află mai multe
+  privacyPolicy:
+    name: politica privacy
 ok: OK
 save: Salvează
 decline: Renunță

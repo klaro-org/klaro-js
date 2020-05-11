@@ -44,6 +44,9 @@ var klaroConfig = {
     // replace "decline" with cookie manager modal
     hideDeclineAll: false,
 
+    // hide "learnMore" link
+    hideLearnMode: false,
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your

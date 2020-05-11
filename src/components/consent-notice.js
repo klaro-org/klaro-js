@@ -1,6 +1,7 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
 import {getPurposes} from 'utils/config'
+import {language} from 'utils/i18n'
 
 export default class ConsentNotice extends React.Component {
 
@@ -48,6 +49,10 @@ export default class ConsentNotice extends React.Component {
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
+        const lang = config.lang || language()
+        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
+            config.privacyPolicy.default ||
+            config.privacyPolicy
 
         let changesText
 
@@ -79,6 +84,13 @@ export default class ConsentNotice extends React.Component {
             :
             <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
+        const learnMoreLink = config.hideLearnMore ?
+            ''
+            :
+            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
+
+        const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
+
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice
 
@@ -87,13 +99,13 @@ export default class ConsentNotice extends React.Component {
         return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
             <div className="cn-body">
                 <p>
-                    {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>})}
+                    {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })}
                 </p>
                 {changesText}
                 <p className="cn-ok">
                     {declineButton}
                     {acceptButton}
-                    <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
+                    {learnMoreLink}
                 </p>
             </div>
         </div>

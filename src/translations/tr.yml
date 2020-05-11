@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.
   learnMore: Daha fazla bilgi
+  privacyPolicy:
+    name: Gizlilik Politikası
 ok: Tamam
 save: Kaydet
 decline: Reddet

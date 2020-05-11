@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Συγκεντρώνουμε και επεξεργαζόμαστε τα προσωπικά δεδομένα σας για τους παρακάτω λόγους: {purposes}.
   learnMore: Περισσότερα
+  privacyPolicy:
+    name: Πολιτική Απορρήτου
 ok: OK
 save: Αποθήκευση
 decline: Απόρριπτω

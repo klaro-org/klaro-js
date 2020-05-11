@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
   learnMore: Lees meer
+  privacyPolicy:
+    name: privacybeleid
 ok: OK
 save: Opslaan
 decline: Afwijzen
