@@ -43,7 +43,7 @@ var klaroConfig = {
             close: 'Schließen',
             acceptSelected: 'Empfohlene Cookies verwenden',
             acceptAll: 'Allen zustimmen',
-            cookieSettings: 'Cookies bearbeiten',
+            floatingButtonTitle: 'Cookies bearbeiten',
             matomo: {
                 description: 'Sammeln von Besucherstatistiken',
             },

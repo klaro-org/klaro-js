@@ -29,7 +29,7 @@ export default class FloatingButton extends React.Component {
                 }`}
                 onClick={showModal}
             >
-                {t(['cookieSettings'])}
+                {t(['floatingButtonTitle'])}
             </button>
         );
     }

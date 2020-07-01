@@ -17,7 +17,7 @@ decline: Ablehnen
 close: Schließen
 acceptSelected: Auswahl speichern
 acceptAll: Allen zustimmen
-cookieSettings: Cookie-Einstellungen
+floatingButtonTitle: Cookie-Einstellungen
 app:
     disableAll:
         title: Alle Anwendungen aktivieren/deaktivieren

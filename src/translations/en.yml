@@ -17,7 +17,7 @@ decline: Decline
 close: Close
 acceptAll: Accept all
 acceptSelected: Accept selected
-cookieSettings: Cookie-Settings
+floatingButtonTitle: Cookie-Settings
 app:
     disableAll:
         title: Toggle all apps
