@@ -1,5 +1,7 @@
 # curryKlaro! A Powerful Consent Manager
 
+**This is a fork of the great [Klaro](https://klaro.kiprotect.com/) consent manager.**
+
 curryKlaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
 
 <p align="center"><img src="dist/assets/demo.gif" /></p>
@@ -29,7 +31,7 @@ To use the widget on your website, simply download [klaro.js](https://klaro.kipr
 
 ```html
 <script defer type="text/javascript" src="config.js"></script>
-<script defer type="text/javascript" src="klaro.js"></script>
+<script defer type="text/javascript" src="curryKlaro.js"></script>
 ```
 
 Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.

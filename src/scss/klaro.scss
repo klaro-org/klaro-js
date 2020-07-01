@@ -11,9 +11,10 @@ $font-color-transparent: rgba(79, 69, 69, 0.55);
 $font-color-semitransparent: rgba(79, 69, 69, 0.7);
 
 $font-color-deemphasized: #999;
-$font-color-link: #00aa3e;
+$font-color-link: #00439a;
 
-$bg-dark: white;
+$bg: white;
+$bg-transparent: rgba(0, 0, 0, 0.5);
 
 $button-background: rgba(255, 255, 255, 0.5);
 $button-background-hover: $font-color-transparent;
@@ -22,16 +23,7 @@ $button-primary-background: $primary;
 $button-primary-background-hover: $primary-transparent;
 $button-primary-background-active: $primary-semitransparent;
 
-$red2: #b24e14;
-$red1: #ba1e04;
-$yellow1: #f8c200;
-$yellow2: #d4d026;
-$blue3: #005091;
-$blue2: #003f8a;
-$blue1: #0885ba;
-$blue4: #9ac3d4;
-$green2: #006a4e;
-$green3: #01440c;
+$green: #01440c;
 
 .klaro {
     .cookie-modal,
@@ -77,13 +69,33 @@ $green3: #01440c;
         }
 
         .btn {
-            background: #555;
+            background: $button-background;
             color: $font-color;
-            border-radius: 6px;
-            padding: 6px 10px;
+            border-radius: $border-radius;
+            padding: 0.5em 4em;
             margin-right: 0.5em;
-            border: 0;
+            text-decoration: none;
+            transition: all 0.2s;
+
+            border: 1px solid $font-color;
+            color: $font-color;
+
             cursor: pointer;
+
+            &.is-active,
+            &:hover,
+            &:active {
+                background-color: $button-background-active;
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+            }
+            &:hover,
+            &:focus {
+                background-color: $button-background-hover;
+            }
+            &:active {
+                background-color: $button-background-active;
+            }
 
             &:disabled {
                 opacity: 0.5;
@@ -95,16 +107,14 @@ $green3: #01440c;
             }
 
             &.btn-close {
-                background: #eee;
-                color: #000;
+                background: $button-background;
+                color: $font-color;
             }
 
-            &.btn-success {
-                background: $font-color-link;
-            }
-
+            &.btn-success,
             &.btn-info {
-                background: $blue1;
+                background: $button-primary-background;
+                color: $bg;
             }
 
             &.btn-right {
@@ -125,7 +135,7 @@ $green3: #01440c;
         z-index: 1000;
 
         .cm-bg {
-            background: rgba(0, 0, 0, 0.5);
+            background: $bg-transparent;
             height: 100%;
             width: 100%;
             position: fixed;
@@ -154,7 +164,7 @@ $green3: #01440c;
 
             position: fixed;
             overflow: auto;
-            background: $bg-dark;
+            background: $bg;
             color: $font-color;
 
             .hide {
@@ -270,7 +280,7 @@ $green3: #01440c;
     }
 
     .cookie-notice {
-        background: $bg-dark;
+        background: $bg;
         z-index: 999;
 
         position: fixed;
@@ -342,7 +352,7 @@ $green3: #01440c;
         border-bottom-style: solid;
         border-bottom-width: 3px;
         border-bottom: none;
-        background: $bg-dark;
+        background: $bg;
         font-size: 14px;
         font-weight: 700;
         padding: 7px 14px;
