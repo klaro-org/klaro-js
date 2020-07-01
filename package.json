@@ -18,7 +18,8 @@
         "lint-fix": "eslint ./src --fix",
         "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
         "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
-        "make": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js"
+        "make": "cross-env APP_ENV=production cross-env APP_VERSION='0.3.4' webpack --config webpack.config.js",
+        "make-old": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js"
     },
     "author": "KIProtect GmbH",
     "license": "BSD-3-Clause",
