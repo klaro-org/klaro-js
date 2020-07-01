@@ -1,25 +1,41 @@
+$primary: #183c6b;
+$primary-transparent: rgba(24, 60, 107, 0.6);
+$primary-semitransparent: rgba(24, 60, 107, 0.8);
+
 $box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 $border-radius: 4px;
-$border-dark: 1px solid #555;
-$font-color-dark: #eee;
-$font-color-dark-deemphasized: #999;
-$bg-dark: #333;
-$red2: #B24E14;
-$red1: #BA1E04;
-$yellow1: #F8C200;
-$yellow2: #D4D026;
+$border: 1px solid #555;
+
+$font-color: #4f4f4f;
+$font-color-transparent: rgba(79, 69, 69, 0.55);
+$font-color-semitransparent: rgba(79, 69, 69, 0.7);
+
+$font-color-deemphasized: #999;
+$font-color-link: #00aa3e;
+
+$bg-dark: white;
+
+$button-background: rgba(255, 255, 255, 0.5);
+$button-background-hover: $font-color-transparent;
+$button-background-active: $font-color-semitransparent;
+$button-primary-background: $primary;
+$button-primary-background-hover: $primary-transparent;
+$button-primary-background-active: $primary-semitransparent;
+
+$red2: #b24e14;
+$red1: #ba1e04;
+$yellow1: #f8c200;
+$yellow2: #d4d026;
 $blue3: #005091;
-$blue2: #003F8A;
-$blue1: #0885BA;
-$blue4: #9AC3D4;
-$green1: #00AA3E;
-$green2: #006A4E;
-$green3: #01440C;
+$blue2: #003f8a;
+$blue1: #0885ba;
+$blue4: #9ac3d4;
+$green2: #006a4e;
+$green3: #01440c;
 
 .klaro {
-
-    .cookie-modal, .cookie-notice {
-
+    .cookie-modal,
+    .cookie-notice {
         @import 'switch.scss';
 
         font-size: 14px;
@@ -29,16 +45,25 @@ $green3: #01440C;
         }
 
         a {
-            color: $green1;
+            color: $font-color-link;
             text-decoration: none;
         }
 
-        p, strong, h1, h2, ul, li {
+        p,
+        strong,
+        h1,
+        h2,
+        ul,
+        li {
             font-family: inherit;
-            color: $font-color-dark;
+            color: $font-color;
         }
 
-        p, h1, h2, ul, li {
+        p,
+        h1,
+        h2,
+        ul,
+        li {
             display: block;
             text-align: left;
             margin: 0;
@@ -51,37 +76,38 @@ $green3: #01440C;
             vertical-align: middle;
         }
 
-        .cm-btn {
+        .btn {
             background: #555;
-            color: $font-color-dark;
+            color: $font-color;
             border-radius: 6px;
             padding: 6px 10px;
             margin-right: 0.5em;
             border: 0;
+            cursor: pointer;
 
             &:disabled {
                 opacity: 0.5;
             }
 
-            &.cm-btn-sm {
+            &.btn-sm {
                 padding: 0.4em;
                 font-size: 1em;
             }
 
-            &.cm-btn-close {
+            &.btn-close {
                 background: #eee;
                 color: #000;
             }
 
-            &.cm-btn-success {
-                background: $green1;
+            &.btn-success {
+                background: $font-color-link;
             }
 
-            &.cm-btn-info {
+            &.btn-info {
                 background: $blue1;
             }
 
-            &.cm-btn-right {
+            &.btn-right {
                 float: right;
                 margin-left: 0.5em;
                 margin-right: 0;
@@ -90,7 +116,6 @@ $green3: #01440C;
     }
 
     .cookie-modal {
-
         width: 100%;
         height: 100%;
         position: fixed;
@@ -100,7 +125,7 @@ $green3: #01440C;
         z-index: 1000;
 
         .cm-bg {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             height: 100%;
             width: 100%;
             position: fixed;
@@ -112,7 +137,7 @@ $green3: #01440C;
             z-index: 1001;
             box-shadow: $box-shadow;
 
-            @media(min-width: 1024px){
+            @media (min-width: 1024px) {
                 border-radius: $border-radius;
                 position: relative;
                 margin: 0 auto;
@@ -130,17 +155,18 @@ $green3: #01440C;
             position: fixed;
             overflow: auto;
             background: $bg-dark;
-            color: $font-color-dark;
+            color: $font-color;
 
-            .hide   {
+            .hide {
                 border: none;
                 background: none;
                 svg {
-                    stroke: $font-color-dark;
+                    stroke: $font-color;
                 }
                 position: absolute;
                 top: 20px;
                 right: 20px;
+                cursor: pointer;
                 // Avoid getting overlapped by the heading, if external CSS sets:
                 // h1 { position: relative }
                 // See: https://github.com/KIProtect/klaro/issues/135
@@ -149,12 +175,12 @@ $green3: #01440C;
 
             .cm-footer {
                 padding: 1em;
-                border-top: $border-dark;
+                border-top: $border;
 
                 &-buttons {
                     &::before,
                     &::after {
-                        content: " ";
+                        content: ' ';
                         display: table;
                     }
 
@@ -169,7 +195,7 @@ $green3: #01440C;
                     text-align: center;
 
                     a {
-                        color: $font-color-dark-deemphasized;
+                        color: $font-color-deemphasized;
                     }
                 }
             }
@@ -177,7 +203,7 @@ $green3: #01440C;
             .cm-header {
                 padding: 1em;
                 padding-right: 24px;
-                border-bottom: $border-dark;
+                border-bottom: $border;
                 h1 {
                     margin: 0;
                     font-size: 2em;
@@ -198,10 +224,10 @@ $green3: #01440C;
                     width: auto;
                 }
                 ul.cm-apps {
-                    padding :0;
+                    padding: 0;
                     margin: 0;
                     li.cm-app {
-                        &:first-child{
+                        &:first-child {
                             margin-top: 0;
                         }
                         position: relative;
@@ -219,11 +245,11 @@ $green3: #01440C;
 
                         p.purposes {
                             font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
+                            color: $font-color-deemphasized;
                         }
 
                         &.cm-toggle-all {
-                            border-top: $border-dark;
+                            border-top: $border;
                             padding-top: 1em;
                         }
 
@@ -231,10 +257,11 @@ $green3: #01440C;
                             font-weight: 600;
                         }
 
-                        span.cm-opt-out, span.cm-required {
+                        span.cm-opt-out,
+                        span.cm-required {
                             padding-left: 0.2em;
                             font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
+                            color: $font-color-deemphasized;
                         }
                     }
                 }
@@ -243,7 +270,6 @@ $green3: #01440C;
     }
 
     .cookie-notice {
-
         background: $bg-dark;
         z-index: 999;
 
@@ -252,7 +278,7 @@ $green3: #01440C;
         bottom: 0;
         right: 0;
 
-        @media(min-width: 990px){
+        @media (min-width: 990px) {
             box-shadow: $box-shadow;
             border-radius: $border-radius;
             position: fixed;
@@ -261,13 +287,13 @@ $green3: #01440C;
             max-width: 300px;
         }
 
-        @media(max-width: 989px){
+        @media (max-width: 989px) {
             border: none;
             border-radius: 0;
         }
 
         .cn-body {
-            margin-bottom:0;
+            margin-bottom: 0;
             margin-right: 0;
             bottom: 0;
 
@@ -284,7 +310,6 @@ $green3: #01440C;
 
             .cn-learn-more {
                 display: inline-block;
-
             }
 
             p.cn-ok {
@@ -292,10 +317,53 @@ $green3: #01440C;
                 margin: 0;
             }
         }
-
     }
 
     .cookie-notice-hidden {
+        display: none !important;
+    }
+
+    .floating-button {
+        display: block;
+        z-index: 999;
+
+        position: fixed;
+        transition: all 0.2s;
+        cursor: pointer;
+        bottom: 0;
+        right: 20px;
+        box-shadow: $box-shadow;
+        border-radius: 2px;
+        text-decoration: none;
+        max-width: 300px;
+        border: $border;
+        color: gray;
+        border-bottom-color: rgb(187, 187, 187);
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+        border-bottom: none;
+        background: $bg-dark;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 7px 14px;
+
+        &.is-active,
+        &:hover,
+        &:active {
+            background-color: $button-background;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+        &:hover,
+        &:focus {
+            background-color: $button-background-hover;
+        }
+        &:active {
+            background-color: $button-background-active;
+        }
+    }
+
+    .floating-button-hidden {
         display: none !important;
     }
 }

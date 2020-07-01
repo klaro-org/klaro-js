@@ -1,32 +1,33 @@
 consentModal:
-  title: Informationen, die wir speichern
-  description: >
-    Hier können Sie einsehen und anpassen, welche Information wir über Sie speichern.
-  privacyPolicy:
-    name: Datenschutzerklärung
-    text: >
-      Weitere Details finden Sie in unserer {privacyPolicy}.
+    title: Informationen, die wir speichern
+    description: >
+        Hier können Sie einsehen und anpassen, welche Information wir über Sie speichern.
+    privacyPolicy:
+        name: Datenschutzerklärung
+        text: >
+            Weitere Details finden Sie in unserer {privacyPolicy}.
 consentNotice:
-  changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
-  description: >
-    Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
-  learnMore: Mehr erfahren
+    changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
+    description: >
+        Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
+    learnMore: Mehr erfahren
 ok: OK
 save: Speichern
 decline: Ablehnen
 close: Schließen
 acceptSelected: Auswahl speichern
 acceptAll: Allen zustimmen
+cookieSettings: Cookie-Einstellungen
 app:
-  disableAll:
-    title: Alle Anwendungen aktivieren/deaktivieren
-    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
-  optOut:
-    title: (Opt-Out)
-    description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)
-  required:
-    title: (immer notwendig)
-    description: Diese Anwendung wird immer benötigt
-  purposes: Zwecke
-  purpose: Zweck
+    disableAll:
+        title: Alle Anwendungen aktivieren/deaktivieren
+        description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
+    optOut:
+        title: (Opt-Out)
+        description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)
+    required:
+        title: (immer notwendig)
+        description: Diese Anwendung wird immer benötigt
+    purposes: Zwecke
+    purpose: Zweck
 poweredBy: Realisiert mit Klaro!
