@@ -1,10 +1,10 @@
 {
     "name": "curryKlaro",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "description": "A simple but powerful consent manager.",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/KIProtect/klaro.git"
+        "url": "git+https://github.com/DMOEdetc/curryKlaro.git"
     },
     "keywords": [
         "cookie",
@@ -18,15 +18,15 @@
         "lint-fix": "eslint ./src --fix",
         "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
         "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
-        "make": "cross-env APP_ENV=production cross-env APP_VERSION='0.3.4' webpack --config webpack.config.js",
+        "make": "cross-env APP_ENV=production cross-env APP_VERSION='v0.3.5' webpack --config webpack.config.js",
         "make-old": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js"
     },
     "author": "KIProtect GmbH",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/KIProtect/klaro/issues"
+        "url": "https://github.com/DMOEdetc/curryKlaro/issues"
     },
-    "homepage": "https://klaro.kiprotect.com/",
+    "homepage": "https://github.com/DMOEdetc/curryKlaro",
     "devDependencies": {
         "@babel/cli": "7.8.3",
         "@babel/core": "7.8.3",

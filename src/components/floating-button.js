@@ -1,6 +1,4 @@
 import React from 'react';
-import ConsentModal from './consent-modal';
-import { getPurposes } from 'utils/config';
 
 export default class FloatingButton extends React.Component {
     constructor(props) {

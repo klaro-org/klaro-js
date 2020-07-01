@@ -45,7 +45,8 @@ var klaroI18nConfig = {
                 title: 'This is the title of the consent modal',
                 description: 'This is the description of the consent modal.',
                 privacyPolicy: {
-                    text: 'This is the text with a link to your {privacyPolicy}.',
+                    text:
+                        'This is the text with a link to your {privacyPolicy}.',
                     name: 'privacy policy (the name)',
                 },
             },
