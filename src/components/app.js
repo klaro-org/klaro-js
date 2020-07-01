@@ -25,7 +25,7 @@ export default class App extends React.Component {
         const hide = () => {
             this.setState({ show: false });
             document.body.classList.add('consent-confirmed');
-            document.body.classList.remove('curryKlaroManager');
+            document.body.classList.remove('consent-approval');
         };
         return (
             <div className={stylePrefix}>

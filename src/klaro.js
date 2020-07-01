@@ -96,7 +96,7 @@ export function getManager(conf) {
 
 export function show(conf) {
     document.body.classList.remove('consent-confirmed');
-    document.body.classList.add('curryKlaroManager');
+    document.body.classList.add('consent-approval');
     conf = conf || config;
     renderKlaro(conf, true);
     return false;
