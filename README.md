@@ -83,7 +83,8 @@ If you want to customize Klaro or extend it, you can build it from scratch using
 ```sh
 npm install
 npm run-script make-dev #will run a development server
-npm run-script make #will build the production version
+npm run-script make #will build the production version with included styling
+npm run-script make-css #will build the production version with seperated css
 ```
 
 ## Contributing
