@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+var PACKAGE = require('./package.json');
+var APP_VERSION_PACKAGE = 'v' + PACKAGE.version;
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -155,6 +157,7 @@ if (APP_ENV === 'production') {
                 'process.env.NODE_ENV': '"production"',
                 VERSION: JSON.stringify(
                     process.env.CI_APP_VERSION ||
+                        APP_VERSION_PACKAGE ||
                         process.env.APP_VERSION ||
                         process.env.APP_COMMIT ||
                         'unknown'

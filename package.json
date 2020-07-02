@@ -14,14 +14,16 @@
     ],
     "main": "dist/curryKlaro.js",
     "scripts": {
+        "clean-nodes": "rmdir /s /q node_modules",
         "lint": "eslint ./src --quiet",
         "lint-fix": "eslint ./src --fix",
         "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
         "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
-        "make": "cross-env APP_ENV=production cross-env APP_VERSION='v0.3.5' webpack --config webpack.config.js",
+        "make": "cross-env APP_ENV=production cross-env webpack --config webpack.config.js",
+        "make-css": "cross-env SEPARATE_CSS=true cross-env APP_ENV=production cross-env webpack --config webpack.config.js",
         "make-old": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js"
     },
-    "author": "KIProtect GmbH",
+    "author": "KIProtect GmbH, Forked by Dersim Özdag",
     "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/DMOEdetc/curryKlaro/issues"
