@@ -82,25 +82,6 @@ $green: #01440c;
 
             cursor: pointer;
 
-            &.is-active,
-            &:hover,
-            &:active {
-                background-color: $button-background-active;
-                color: rgba(255, 255, 255, 0.9);
-                text-decoration: none;
-            }
-            &:hover,
-            &:focus {
-                background-color: $button-background-hover;
-            }
-            &:active {
-                background-color: $button-background-active;
-            }
-
-            &:disabled {
-                opacity: 0.5;
-            }
-
             &.btn-sm {
                 padding: 0.4em;
                 font-size: 1em;
@@ -121,6 +102,25 @@ $green: #01440c;
                 float: right;
                 margin-left: 0.5em;
                 margin-right: 0;
+            }
+
+            &.is-active,
+            &:hover,
+            &:active {
+                background-color: $button-background-active;
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+            }
+            &:hover,
+            &:focus {
+                background-color: $button-background-hover;
+            }
+            &:active {
+                background-color: $button-background-active;
+            }
+
+            &:disabled {
+                opacity: 0.5;
             }
         }
     }
