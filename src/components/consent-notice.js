@@ -1,6 +1,7 @@
 import React from 'react';
 import ConsentModal from './consent-modal';
 import { getPurposes } from 'utils/config';
+import { language } from 'utils/i18n';
 
 export default class ConsentNotice extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ export default class ConsentNotice extends React.Component {
     render() {
         const { config, show, manager, t } = this.props;
         const { modal, confirming } = this.state;
+        const lang = config.lang || language();
 
         const purposes = getPurposes(config);
         const purposesText = purposes
@@ -132,6 +134,7 @@ export default class ConsentNotice extends React.Component {
                     <p>
                         {t(['consentNotice', 'description'], {
                             purposes: <strong>{purposesText}</strong>,
+                            privacyPolicy: ppLink,
                         })}
                     </p>
                     {changesText}

@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.7] - 2020-07-04
+
+### Fixed
+
+-   {privacyPolicy} now works in Cookie-Notice.
+
+### Added
+
+-   new example config json with more settings explained.
+
 ## [0.3.6] - 2020-07-02
 
 ### Fixed

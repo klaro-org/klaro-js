@@ -83,6 +83,7 @@ export default class ConsentModal extends React.Component {
                 {t(['consentModal', 'privacyPolicy', 'name'])}
             </a>
         );
+
         return (
             <div className="cookie-modal">
                 <div className="cm-bg" onClick={hide} />
