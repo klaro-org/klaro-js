@@ -107,15 +107,6 @@ export default class ConsentNotice extends React.Component {
         const noticeIsVisible =
             !config.mustConsent && !manager.confirmed && !config.noNotice;
 
-        const ppUrl =
-            (config.privacyPolicy && config.privacyPolicy[lang]) ||
-            config.privacyPolicy.default ||
-            config.privacyPolicy;
-
-        const ppLink = (
-            <a href={ppUrl}>{t(['consentModal', 'privacyPolicy', 'name'])}</a>
-        );
-
         if (
             modal ||
             manager.confirmed ||

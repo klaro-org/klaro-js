@@ -4,7 +4,11 @@
 
 ### Fixed
 
--   {privacyPolicy} now works also in Cookie-Notice
+-   {privacyPolicy} now works in Cookie-Notice.
+
+### Added
+
+-   new example config json with more settings explained.
 
 ## [0.3.6] - 2020-07-02
 

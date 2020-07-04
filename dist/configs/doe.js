@@ -69,7 +69,8 @@ var klaroConfig = {
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
                 privacyPolicy: {
-                    text: 'text',
+                    text:
+                        'Hier können Sie Ihren eigenen Datenschutztext hinterlegen.',
                     name: 'Datenschutzseite',
                 },
             },
@@ -123,8 +124,8 @@ var klaroConfig = {
                 description:
                     'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
                 privacyPolicy: {
-                    text: 'text',
-                    name: 'test',
+                    text: 'Here you can write your own data protection Text.',
+                    name: 'data protection',
                 },
             },
             inlineTracker: {
@@ -166,7 +167,7 @@ var klaroConfig = {
             consentNotice: {
                 changeDescription: 'Something has changed',
                 description:
-                    'Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}. Ihre Einwilligung können Sie jederzeit auf unserer {privacyPolicy} widerrufen.',
+                    'We collect and process your personal information for the following purposes: {purposes}. You can withdraw your consent at any time on our {privacyPolicy} website.',
                 learnMore: 'learn more',
             },
         },
