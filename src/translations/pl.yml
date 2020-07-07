@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Zbieramy i przetwarzamy dane osobowe w następujących celach: {purposes}.
   learnMore: Dowiedz się więcej
+  privacyPolicy:
+    name: polityka prywatności
 ok: OK
 save: Zapisz
 decline: Rezygnacja

@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
   learnMore: En savoir plus
+  privacyPolicy:
+    name: politique de confidentialité
 ok: OK
 save: Sauvegarder
 decline: Refuser

@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Recopilem i processem la vostra informació personal amb les següents finalitats: {purposes}.
   learnMore: Saber-ne més
+  privacyPolicy:
+    name: política de privadesa
 ok: Accepta
 save: Desa
 decline: Rebutja

@@ -11,6 +11,8 @@ consentNotice:
   description: >
     Mi prikupljamo i procesiramo Vaše lične podatke radi sledećeg: {purposes}.
   learnMore: Saznajte više
+  privacyPolicy:
+    name: politiku privatnosti
 ok: U redu
 save: Sačuvaj
 decline: Odbij
