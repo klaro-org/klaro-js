@@ -87,6 +87,13 @@ npm run-script make #will build the production version with included styling
 npm run-script make-css #will build the production version with seperated css
 ```
 
+If the npm installation failed or make does not work try
+
+```sh
+npm run-script clean-nodes #will remove the node_modules folder
+npm install
+```
+
 # Klaro functions
 
 Reset consent:
