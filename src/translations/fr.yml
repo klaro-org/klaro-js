@@ -15,6 +15,8 @@ ok: OK
 save: Sauvegarder
 decline: Refuser
 close: Fermer
+acceptAll: Tout accepter
+acceptSelected: Accepter la sélection
 app:
   disableAll:
     title: Changer toutes les options
