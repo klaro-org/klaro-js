@@ -114,7 +114,7 @@ export default class ConsentModal extends React.Component {
                                 target="_blank"
                                 href={
                                     config.poweredBy ||
-                                    'https://klaro.kiprotect.com'
+                                    'https://github.com/DMOEdetc/curryKlaro/'
                                 }
                                 rel="noopener noreferrer"
                             >

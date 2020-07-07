@@ -65,6 +65,15 @@ export default class ConsentNotice extends React.Component {
             else this.setState({ modal: false });
         };
 
+        const ppUrl =
+            (config.privacyPolicy && config.privacyPolicy[lang]) ||
+            config.privacyPolicy.default ||
+            config.privacyPolicy;
+
+        const ppLink = (
+            <a href={ppUrl}>{t(['consentModal', 'privacyPolicy', 'name'])}</a>
+        );
+
         if (manager.changed)
             changesText = (
                 <p className="cn-changes">

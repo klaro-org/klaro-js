@@ -1,30 +1,30 @@
 consentModal:
-  title: Les informations que nous collectons
-  description: >
-    Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
-  privacyPolicy:
-    name: politique de confidentialité
-    text: >
-      Pour en savoir plus, merci de lire notre {privacyPolicy}.
+    title: Les informations que nous collectons
+    description: >
+        Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
+    privacyPolicy:
+        name: politique de confidentialité
+        text: >
+            Pour en savoir plus, merci de lire notre {privacyPolicy}.
 consentNotice:
-  changeDescription: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
-  description: >
-    Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
-  learnMore: En savoir plus
+    changeDescription: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
+    description: >
+        Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
+    learnMore: En savoir plus
 ok: OK
 save: Sauvegarder
 decline: Refuser
 close: Fermer
 app:
-  disableAll:
-    title: Changer toutes les options
-    description: Utiliser ce bouton pour activer/désactiver toutes les options
-  optOut:
-    title: (opt-out)
-    description: Cette application est chargée par défaut (mais vous pouvez la désactiver)
-  required:
-    title: (toujours requis)
-    description: Cette application est toujours requise
-  purposes: Utilisations
-  purpose: Utilisation
-poweredBy: Propulsé par Klaro!
+    disableAll:
+        title: Changer toutes les options
+        description: Utiliser ce bouton pour activer/désactiver toutes les options
+    optOut:
+        title: (opt-out)
+        description: Cette application est chargée par défaut (mais vous pouvez la désactiver)
+    required:
+        title: (toujours requis)
+        description: Cette application est toujours requise
+    purposes: Utilisations
+    purpose: Utilisation
+poweredBy: Propulsé par curryKlaro!
