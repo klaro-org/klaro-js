@@ -5,6 +5,7 @@
 ### Fixed
 
 -   Added shadow to Notice.
+-   Changed Branding to curryKlaro.
 
 ## [0.3.7] - 2020-07-04
 
