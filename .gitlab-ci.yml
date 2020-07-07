@@ -1,4 +1,4 @@
-image: node:12.16
+image: node:latest
 
 # Cache modules in between jobs
 cache:
