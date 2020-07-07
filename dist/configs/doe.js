@@ -39,7 +39,7 @@ var klaroConfig = {
 
     // Show "accept all" to accept all apps instead of "ok" that only accepts
     // required and "default: true" apps
-    acceptAll: false,
+    acceptAll: true,
 
     // replace "decline" with cookie manager modal
     hideDeclineAll: false,
