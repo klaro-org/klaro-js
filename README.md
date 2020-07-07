@@ -87,6 +87,14 @@ npm run-script make #will build the production version with included styling
 npm run-script make-css #will build the production version with seperated css
 ```
 
+# Klaro functions
+
+Reset consent:
+
+```js
+klaro.getManager().resetConsent();
+```
+
 ## Contributing
 
 Want to contribute? We'd love that!

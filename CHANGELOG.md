@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.8] - 2020-07-07
+
+### Fixed
+
+-   Added shadow to Notice.
+
 ## [0.3.7] - 2020-07-04
 
 ### Fixed

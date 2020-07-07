@@ -31,6 +31,7 @@ $green: #01440c;
         @import 'switch.scss';
 
         font-size: 14px;
+        box-shadow: $box-shadow;
 
         .slider {
             box-shadow: $box-shadow;

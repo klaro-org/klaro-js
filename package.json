@@ -1,6 +1,6 @@
 {
     "name": "curryKlaro",
-    "version": "0.3.7",
+    "version": "0.3.8",
     "description": "A simple but powerful consent manager.",
     "repository": {
         "type": "git",
