@@ -65,7 +65,7 @@ var klaroConfig = {
         // bundled translations.
         de: {
             consentModal: {
-                title: 'titel',
+                title: 'Titel',
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
                 privacyPolicy: {
@@ -120,7 +120,7 @@ var klaroConfig = {
         },
         en: {
             consentModal: {
-                title: 'titel',
+                title: 'Titel',
                 description:
                     'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
                 privacyPolicy: {
