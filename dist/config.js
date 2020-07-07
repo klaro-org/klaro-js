@@ -45,7 +45,7 @@ var klaroConfig = {
     hideDeclineAll: false,
 
     // hide "learnMore" link
-    hideLearnMode: false,
+    hideLearnMore: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
