@@ -8,11 +8,15 @@ consentModal:
       Aby dowiedzieć się więcej, przeczytaj naszą {privacyPolicy}.
 consentNotice:
   changeDescription: Nastąpiły zmiany od Twojej ostatniej wizyty, zaktualizuj swoją zgodę.
+  configure: skonfigurować
   description: >
     Zbieramy i przetwarzamy dane osobowe w następujących celach: {purposes}.
-  learnMore: Dowiedz się więcej
   privacyPolicy:
     name: polityka prywatności
+    text: >
+      Aby dowiedzieć się więcej, przeczytaj naszą {privacyPolicy}.
+  learnMore: Dowiedz się więcej
+  title: Informacje, które zbieramy
 ok: OK
 save: Zapisz
 decline: Rezygnacja

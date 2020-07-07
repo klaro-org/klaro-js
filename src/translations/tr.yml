@@ -8,11 +8,15 @@ consentModal:
       Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
 consentNotice:
   changeDescription: Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi güncelleyin.
+  configure: yapılandır
   description: >
     Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.
-  learnMore: Daha fazla bilgi
   privacyPolicy:
     name: Gizlilik Politikası
+    text: >
+      Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
+  learnMore: Daha fazla bilgi
+  title: Sakladığımız bilgiler
 ok: Tamam
 save: Kaydet
 decline: Reddet

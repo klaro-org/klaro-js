@@ -8,11 +8,15 @@ consentModal:
       For å lære mer, vennligst les vår {privacyPolicy}.
 consentNotice:
   changeDescription: Det har skjedd endringer siden ditt siste besøk, vennligst oppdater ditt samtykke.
+  configure: konfigurere
   description: >
     Vi samler inn og prosesserer din personlige informasjon av følgende årsaker: {purposes}.
-  learnMore: Lær mer
   privacyPolicy:
     name: personvernerklæring
+    text: >
+      For å lære mer, vennligst les vår {privacyPolicy}.
+  learnMore: Lær mer
+  title: Informasjon vi samler inn
 ok: OK
 save: Opslaan
 decline: Avslå

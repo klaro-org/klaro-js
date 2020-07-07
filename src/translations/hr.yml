@@ -8,11 +8,15 @@ consentModal:
       Za više informacije pročitajte naša {privacyPolicy}.
 consentNotice:
   changeDescription: Došlo je do promjena od Vaše posljednjeg posjećivanja web stranice, molimo Vas da ažurirate svoja odobrenja.
+  configure: konfigurovat
   description: >
     Mi prikupljamo i procesiramo Vaše osobne podatke radi slijedećeg: {purposes}.
-  learnMore: Saznajte više
   privacyPolicy:
     name: pravila privatnosti
+    text: >
+      Za više informacije pročitajte naša {privacyPolicy}.
+  learnMore: Saznajte više
+  title: Informacije koje prikupljamo
 ok: U redu
 save: Spremi
 decline: Odbij

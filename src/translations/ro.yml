@@ -8,11 +8,15 @@ consentModal:
       Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
 consentNotice:
   changeDescription: Au existat modificări de la ultima vizită, vă rugăm să actualizați consimțământul.
+  configure: Configureaza
   description: >
     Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
-  learnMore: Află mai multe
   privacyPolicy:
     name: politica privacy
+    text: >
+      Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+  learnMore: Află mai multe
+  title: Informațiile pe care le colectăm
 ok: OK
 save: Salvează
 decline: Renunță

@@ -8,11 +8,15 @@ consentModal:
       Per saperne di più, leggi la nostra {privacyPolicy}.
 consentNotice:
   changeDescription: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
+  configure: configure
   description: >
     Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
-  learnMore: Scopri di più
   privacyPolicy:
     name: policy privacy
+    text: >
+      Per saperne di più, leggi la nostra {privacyPolicy}.
+  learnMore: Scopri di più
+  title: Informazioni che raccogliamo
 ok: OK
 save: Salva
 decline: Rifiuta

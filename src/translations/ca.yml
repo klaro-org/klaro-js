@@ -8,11 +8,15 @@ consentModal:
       Per a més informació, consulteu la nostra {privacyPolicy}.
 consentNotice:
   changeDescription: Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu el vostre consentiment.
+  configure: configurar
   description: >
     Recopilem i processem la vostra informació personal amb les següents finalitats: {purposes}.
-  learnMore: Saber-ne més
   privacyPolicy:
     name: política de privadesa
+    text: >
+      Per a més informació, consulteu la nostra {privacyPolicy}.
+  learnMore: Saber-ne més
+  title: Informació que recopilem
 ok: Accepta
 save: Desa
 decline: Rebutja

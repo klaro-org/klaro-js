@@ -8,11 +8,15 @@ consentModal:
       To learn more, please read our {privacyPolicy}.
 consentNotice:
   changeDescription: There were changes since your last visit, please update your consent.
+  configure: configuration
   description: >
     We collect and process your personal information for the following purposes: {purposes}.
-  learnMore: Customize
   privacyPolicy:
     name: privacy policy
+    text: >
+      To learn more, please read our {privacyPolicy}.
+  learnMore: Customize
+  title: Information that we collect
 ok: Accept
 save: Save
 decline: Decline

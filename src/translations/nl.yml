@@ -8,11 +8,15 @@ consentModal:
       Lees ons privacybeleid voor meer informatie {privacyPolicy}.
 consentNotice:
   changeDescription: Er waren wijzigingen sinds uw laatste bezoek, werk uw voorkeuren bij.
+  configure: configureren
   description: >
     Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
-  learnMore: Lees meer
   privacyPolicy:
     name: privacybeleid
+    text: >
+      Lees ons privacybeleid voor meer informatie {privacyPolicy}.
+  learnMore: Lees meer
+  title: Informatie die we verzamelen
 ok: OK
 save: Opslaan
 decline: Afwijzen

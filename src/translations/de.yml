@@ -8,11 +8,15 @@ consentModal:
       Weitere Details finden Sie in unserer {privacyPolicy}.
 consentNotice:
   changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
+  configure: konfigurieren
   description: >
     Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
-  learnMore: Mehr erfahren
   privacyPolicy:
     name: Datenschutzerklärung
+    text: >
+      Weitere Details finden Sie in unserer {privacyPolicy}.    
+  learnMore: Mehr erfahren
+  title: Informationen, die wir speichern
 ok: OK
 save: Speichern
 decline: Ablehnen

@@ -8,11 +8,15 @@ consentModal:
       További információért kérjük, olvassd el az {privacyPolicy}.
 consentNotice:
   changeDescription: Az utolsó látogatás óta változások történtek, kérjük, frissítsd a hozzájárulásodat.
+  configure: Beállítás
   description: >
     Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
-  learnMore: Tudj meg többet
   privacyPolicy:
     name: adatvédelmi irányelveinket
+    text: >
+      További információért kérjük, olvassd el az {privacyPolicy}.
+  learnMore: Tudj meg többet
+  title: Információk, amiket gyűjtünk
 ok: Elfogad
 save: Save
 decline: Mentés
