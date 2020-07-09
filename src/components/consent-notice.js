@@ -53,6 +53,9 @@ export default class ConsentNotice extends React.Component {
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
             config.privacyPolicy.default ||
             config.privacyPolicy
+        const imprintUrl = (config.imprint && config.imprint[lang]) ||
+            config.imprint.default ||
+            config.imprint
 
         let changesText
 
@@ -89,6 +92,8 @@ export default class ConsentNotice extends React.Component {
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
+        const imprintLink = <a className="cm-link cm-learn-more" onClick={hideModal} href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
+
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
         const noticeIsVisible =
@@ -106,6 +111,7 @@ export default class ConsentNotice extends React.Component {
                     {declineButton}
                     {acceptButton}
                     {learnMoreLink}
+                    {imprintLink}
                 </p>
             </div>
         </div>
