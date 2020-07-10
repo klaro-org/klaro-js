@@ -92,7 +92,7 @@ export default class ConsentNotice extends React.Component {
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
-        const imprintLink = <a className="cm-link cm-learn-more" onClick={hideModal} href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
+        const imprintLink = <a className="cm-link cm-learn-more" href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
 
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
