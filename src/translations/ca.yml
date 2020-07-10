@@ -13,6 +13,8 @@ consentNotice:
   learnMore: Saber-ne més
   privacyPolicy:
     name: política de privadesa
+  imprint:
+    name: Empremta
 ok: Accepta
 save: Desa
 decline: Rebutja

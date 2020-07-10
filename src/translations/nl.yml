@@ -13,6 +13,8 @@ consentNotice:
   learnMore: Lees meer
   privacyPolicy:
     name: privacybeleid
+  imprint:
+    name: Afdruk
 ok: OK
 save: Opslaan
 decline: Afwijzen
