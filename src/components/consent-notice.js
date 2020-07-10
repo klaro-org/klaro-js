@@ -54,7 +54,6 @@ export default class ConsentNotice extends React.Component {
             config.privacyPolicy.default ||
             config.privacyPolicy
         const imprintUrl = (config.imprint && config.imprint[lang]) ||
-            config.imprint.default ||
             config.imprint
 
         let changesText
