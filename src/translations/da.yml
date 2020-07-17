@@ -1,0 +1,34 @@
+consentModal:
+  title: Informationer, som vi gemmer
+  description: >
+    Her kan du se og ændre, hvilke informationer vi gemmer om dig.
+  privacyPolicy:
+    name: Flere informationer finde du under {privacyPolicy}.
+    text: >
+      databeskyttelseserklæring
+consentNotice:
+  changeDescription: Der har været ændringer siden dit sidste besøg. Opdater dit valg.
+  description: >
+    Vi gemmer og behandler dine personlige oplysninger til følgende formål: {purposes}.
+  learnMore: Læs mere
+  privacyPolicy:
+    name: Datenschutzerklärung
+ok: Ok
+save: Gem
+decline: Afvis
+close: Luk
+acceptSelected: Tillad udvalgte
+acceptAll: Tillad alle
+app:
+  disableAll:
+    title: Aktiver/deaktiver alle applikatione
+    description: Brug denne kontakt til at aktivere/deaktivere alle apps.
+  optOut:
+    title: Opt-Out
+    description: Denne applikation indlæses som standard (men du kan deaktivere den).
+  required:
+    title: (Altid nødvendig)
+    description: Denne applikation er altid nødvendig.
+  purposes: Formål
+  purpose: Formål
+poweredBy: Realiseret med Klaro!

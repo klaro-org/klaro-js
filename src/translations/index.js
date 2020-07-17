@@ -2,6 +2,7 @@
 // link it here using the appropriate language code.
 
 import ca from './ca.yml'
+import da from './da.yml'
 import de from './de.yml'
 import el from './el.yml'
 import en from './en.yml'
@@ -22,6 +23,7 @@ import pl from './pl.yml'
 
 export default {
     ca,
+    da,
     de,
     el,
     en,
