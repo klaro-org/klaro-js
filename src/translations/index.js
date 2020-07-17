@@ -19,6 +19,7 @@ import sr_cyrl from './sr_cyrl.yml'
 import sv from './sv.yml'
 import tr from './tr.yml'
 import pl from './pl.yml'
+import ru from './ru.yml'
 
 export default {
     ca,
@@ -39,4 +40,5 @@ export default {
     sv,
     tr,
     pl,
+    ru,
 }
