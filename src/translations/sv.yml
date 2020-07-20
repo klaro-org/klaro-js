@@ -16,6 +16,8 @@ consentNotice:
 ok: OK
 save: Spara
 decline: Avböj
+acceptAll: Acceptera alla
+acceptSelected: Acceptera markerat
 close: Stäng
 app:
   disableAll:
