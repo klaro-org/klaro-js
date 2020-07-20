@@ -22,7 +22,7 @@ acceptAll: Allen zustimmen
 app:
   disableAll:
     title: Alle Anwendungen aktivieren/deaktivieren
-    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
+    description: Nutzen Sie diesen Schalter, um alle Apps zu aktivieren/deaktivieren.
   optOut:
     title: (Opt-Out)
     description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)
