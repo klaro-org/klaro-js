@@ -29,6 +29,9 @@ var klaroConfig = {
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: '/#privacy',
 
+    // Put a link to your imprint here (relative or absolute).
+    imprint: '/#imprint',
+
     // Defines the default state for applications (true=enabled by default).
     default: false,
 

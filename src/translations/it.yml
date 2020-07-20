@@ -13,6 +13,8 @@ consentNotice:
   learnMore: Scopri di più
   privacyPolicy:
     name: policy privacy
+  imprint:
+    name: Impronta
 ok: OK
 save: Salva
 decline: Rifiuta
