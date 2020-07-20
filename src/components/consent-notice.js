@@ -53,9 +53,16 @@ export default class ConsentNotice extends React.Component {
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
             config.privacyPolicy.default ||
             config.privacyPolicy
-        const imprintUrl = (config.imprint && config.imprint[lang]) ||
-            config.imprint.default ||
-            config.imprint
+        let imprintUrl
+
+        if (config.imprint !== undefined) {
+            if (config.imprint[lang] !== undefined)
+                imprintUrl = config.imprint[lang]
+            else if (config.imprint.default !== undefined)
+                imprintUrl = config.imprint.default
+            else
+                imprintUrl = config.imprint
+        }
 
         let changesText
 
@@ -92,7 +99,9 @@ export default class ConsentNotice extends React.Component {
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
-        const imprintLink = <a className="cm-link cm-imprint" href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
+        let imprintLink
+        if (imprintUrl !== undefined)
+            imprintLink = <a className="cm-link cm-imprint" href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
 
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
@@ -105,13 +114,13 @@ export default class ConsentNotice extends React.Component {
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })}
+                    {imprintLink}
                 </p>
                 {changesText}
                 <p className="cn-ok">
                     {declineButton}
                     {acceptButton}
                     {learnMoreLink}
-                    {imprintLink}
                 </p>
             </div>
         </div>
