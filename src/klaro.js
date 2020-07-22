@@ -47,16 +47,17 @@ function getElement(config){
     return element
 }
 
-function getTranslations(config){
+export function getTranslations(conf){
+    conf = conf || config
     const trans = new Map([])
     update(trans, convertedTranslations)
-    update(trans, convertToMap(config.translations || {}))
+    update(trans, convertToMap(conf.translations || {}))
     return trans
 }
 
 let cnt = 1
 
-export function renderKlaro(config, show){
+export function renderKlaro(config, show, wiggle){
     if (config === undefined)
         return
     // we are using a count here so that we're able to repeatedly open the modal...
@@ -67,9 +68,10 @@ export function renderKlaro(config, show){
     const trans = getTranslations(config)
     const manager = getManager(config)
     const lang = config.lang || language()
-    const tt = (...args) => {return t(trans, lang, ...args)}
+    const tt = (...args) => {const v = t(trans, lang, ...args); console.log(v); return v;}
     const app = render(<App t={tt}
         stylePrefix={stylePrefix}
+        wiggle={wiggle}
         manager={manager}
         config={config}
         show={showCnt} />, element)
@@ -86,15 +88,15 @@ export function initialize(e){
 
 export function getManager(conf){
     conf = conf || config
-    const name = getElementID(conf)
+    const name = conf.cookieName || 'default'
     if (managers[name] === undefined)
         managers[name] = new ConsentManager(conf)
     return managers[name]
 }
 
-export function show(conf){
+export function show(conf, wiggle){
     conf = conf || config
-    renderKlaro(conf, true)
+    renderKlaro(conf, true, wiggle)
     return false
 }
 

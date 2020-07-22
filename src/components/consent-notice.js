@@ -8,9 +8,14 @@ export default class ConsentNotice extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            modal: false,
+            modal: props.modal,
             confirming: false
         }
+    }
+
+    componentDidUpdate(prevProps){
+        if (prevProps.modal !== this.props.modal)
+            this.setState({modal: this.props.modal})
     }
 
     executeButtonClicked = (setChangedAll, changedAllValue) => {
@@ -105,12 +110,9 @@ export default class ConsentNotice extends React.Component {
 
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
-        const noticeIsVisible =
-            !config.mustConsent && !manager.confirmed && !config.noNotice
-
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
-        return <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''}`}>
+        return <div className="cookie-notice">
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })}

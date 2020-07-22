@@ -17,6 +17,24 @@
     </script>
     <script type="text/plain" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker">
     </script>
+    <script type="text/javascript">
+        function showKlaro(config){
+            const element = document.getElementById("klaro").children[0];
+            if (element !== undefined){
+                element.classList.add("wiggle")
+                setTimeout(function(){element.classList.remove("wiggle")}, 1000)
+            }
+            return klaro.show(config);
+        }
+        window.addEventListener("load", function(e){
+            let translations=klaro.getTranslations();
+            for(let [lang, keys] of translations){
+                const option = document.createElement('option', {value: lang})
+                option.innerHTML = lang
+                languageSelect.appendChild(option)
+            }
+        })
+    </script>
     <script type="text/plain" data-type="application/javascript" data-name="inlineTracker">
 
         console.log("This is an example of an inline tracking script.")
@@ -96,8 +114,8 @@
                     lightweight and compatible with all modern browsers.
                 </h2>
                 <p>
-                    <a class="button is-success" onClick="return klaro.show();">Show manager</a>
-                    <a class="button is-warning" onClick="klaro.getManager().resetConsent();location.reload()">Reset
+                    <a class="button is-success" onClick="return showKlaro();">Show manager</a>
+                    <a class="button is-warning" onClick="klaro.getManager().resetConsent();showKlaro()">Reset
                         consent</a>
                 </p>
                 <p>
@@ -199,24 +217,14 @@
                                 <strong>Multilingual</strong>: Klaro has full support for
                                 internationalization and makes it easy to add or modify translations
                                 with just a few lines of code:
-                                <span style="display: inline-block;">
-                                    <a onClick="klaro.show(klaroI18nConfig);return false;">Example in </a>
-                                    <div class="select is-small">
-                                        <select class="select" name="lang"
-                                            onChange="klaroI18nConfig.lang = this.value;">
-                                            <option value="de">Deutsch</option>
-                                            <option value="en" selected>English</option>
-                                            <option value="fi">Finnish</option>
-                                            <option value="fr">French</option>
-                                            <option value="hu">Hungarian</option>
-                                            <option value="it">Italian</option>
-                                            <option value="no">Norwgian</option>
-                                            <option value="nl">Dutch</option>
-                                            <option value="ro">Romanian</option>
-                                            <option value="sv">Swedish</option>
-                                            <option value="tr">Turkish</option>
+                                <span style="display: block; background: #eee; padding: 14px; border: 1px solid #ccc; margin-top: 10px;">
+                                    Show consent manager in
+                                    <div class="select is-small" onChange="klaroI18nConfig.lang = languageSelect.value;showKlaro(klaroI18nConfig, true);return false;">
+                                        <select id="languageSelect" class="select" name="lang">
+                                            <option value="">please select</option>
                                         </select>
                                     </div>
+                                    <a style="float: right" onClick="klaroI18nConfig.lang = languageSelect.value;klaro.getManager(klaroI18nConfig).resetConsent();showKlaro(klaroI18nConfig, true)">(reset consent)</a>
                                 </span>
                             </li>
                         </ul>

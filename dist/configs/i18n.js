@@ -1,6 +1,6 @@
 var klaroI18nConfig = {
     cookieName: 'klaro-i18n',
-    elementID: 'i18n',
+    elementID: 'klaro',
     lang: 'en',
     noNotice: true,
     privacyPolicy: {
