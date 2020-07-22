@@ -30,7 +30,7 @@ var klaroConfig = {
     privacyPolicy: '/#privacy',
 
     // Uncomment and update this to link to your imprint here.
-    imprint: '/#imprint',
+    // imprint: '/#imprint',
 
     // Defines the default state for applications (true=enabled by default).
     default: false,
