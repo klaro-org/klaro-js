@@ -86,6 +86,11 @@ export function initialize(e){
     }
 }
 
+export function resetManagers(){
+    for(const key in Object.keys(managers))
+        managers.delete(key)
+}
+
 export function getManager(conf){
     conf = conf || config
     const name = conf.cookieName || 'default'

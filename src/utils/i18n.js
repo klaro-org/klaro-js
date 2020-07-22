@@ -62,10 +62,17 @@ function hget(d, key, defaultValue){
 
 export function t(trans, lang, key, ...params){
     let kl = key
+    let returnUndefined = false
+    if (kl[0] === '!'){
+        kl = kl.slice(1)
+        returnUndefined = true
+    }
     if (!Array.isArray(kl))
         kl = [kl]
     const value = hget(trans, [lang, ...kl])
     if (value === undefined){
+        if (returnUndefined)
+            return undefined
         return `[missing translation: ${lang}/${kl.join("/")}]`;
     }
     if (params.length > 0)

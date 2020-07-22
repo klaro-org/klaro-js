@@ -54,21 +54,11 @@ export default class ConsentNotice extends React.Component {
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
+        const extraHTML = t(['!', 'consentNotice', 'extraHTML'])
         const lang = config.lang || language()
         const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
             config.privacyPolicy.default ||
             config.privacyPolicy
-        let imprintUrl
-
-        if (config.imprint !== undefined) {
-            if (config.imprint[lang] !== undefined)
-                imprintUrl = config.imprint[lang]
-            else if (config.imprint.default !== undefined)
-                imprintUrl = config.imprint.default
-            else
-                imprintUrl = config.imprint
-        }
-
         let changesText
 
         const showModal = (e) => {
@@ -104,11 +94,12 @@ export default class ConsentNotice extends React.Component {
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
-        let imprintLink
-        if (imprintUrl !== undefined)
-            imprintLink = <a className="cm-link cm-imprint" href={imprintUrl} rel="noreferrer" target="_blank">{t(['consentNotice','imprint','name'])}</a>
-
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
+
+        let extraHTMLElement
+
+        if (extraHTML !== undefined)
+            extraHTMLElement = <div dangerouslySetInnerHTML={{__html: extraHTML}} />
 
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
@@ -116,9 +107,9 @@ export default class ConsentNotice extends React.Component {
             <div className="cn-body">
                 <p>
                     {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })}
-                    {imprintLink}
                 </p>
                 {changesText}
+                {extraHTMLElement}
                 <p className="cn-ok">
                     {declineButton}
                     {acceptButton}

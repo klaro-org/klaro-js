@@ -29,9 +29,6 @@ var klaroConfig = {
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: '/#privacy',
 
-    // Uncomment and update this to link to your imprint here.
-    // imprint: '/#imprint',
-
     // Defines the default state for applications (true=enabled by default).
     default: false,
 
@@ -42,7 +39,7 @@ var klaroConfig = {
 
     // Show "accept all" to accept all apps instead of "ok" that only accepts
     // required and "default: true" apps
-    acceptAll: false,
+    acceptAll: true,
 
     // replace "decline" with cookie manager modal
     hideDeclineAll: false,
@@ -67,6 +64,9 @@ var klaroConfig = {
         // If you erase the "consentModal" translations, Klaro will use the
         // bundled translations.
         de: {
+            consentNotice: {
+                extraHTML: "<p>test</p>",
+            },
             consentModal: {
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
@@ -79,6 +79,7 @@ var klaroConfig = {
             },
             adsense: {
                 description: 'Anzeigen von Werbeanzeigen (Beispiel)',
+                title: 'Google AdSense Werbezeugs',
             },
             matomo: {
                 description: 'Sammeln von Besucherstatistiken',
@@ -109,7 +110,13 @@ var klaroConfig = {
             },
         },
         en: {
+            consentNotice: {
+                // uncomment and edit this to add extra HTML to the consent notice below the main text
+                // extraHTML: "<p>Please look at our <a href=\"#imprint\">imprint</a> for further information.</p>",
+            },
             consentModal: {
+                // uncomment and edit this to add extra HTML to the consent modal below the main text
+                // extraHTML: "<p>This is additional HTML that can be freely defined.</p>",
                 description:
                     'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
             },
@@ -121,6 +128,7 @@ var klaroConfig = {
             },
             adsense: {
                 description: 'Displaying of advertisements (just an example)',
+                title: 'Google Adsense Advertisement',
             },
             matomo: {
                 description: 'Collecting of visitor statistics',
@@ -285,7 +293,9 @@ var klaroConfig = {
         },
         {
             name: 'adsense',
-            title: 'Google AdSense',
+            // if you omit the title here Klaro will try to look it up in the
+            // translations
+            //title: 'Google AdSense',
             purposes: ['advertising'],
         },
         {

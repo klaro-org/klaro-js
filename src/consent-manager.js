@@ -103,8 +103,10 @@ export default class ConsentManager {
 
     resetConsent(){
         this.consents = this.defaultConsents
+        this.states = {}
         this.confirmed = false
         this.applyConsents()
+        this.savedConsents = {...this.consents}
         this.store.delete()
         this.notify('consents', this.consents)
     }
