@@ -63,7 +63,7 @@ export default class ConsentManager {
     }
 
     getDefaultConsent(app){
-        let consent = app.default
+        let consent = app.default || app.required
         if (consent === undefined)
             consent = this.config.default
         if (consent === undefined)
@@ -163,8 +163,8 @@ export default class ConsentManager {
             const optOut = (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
             const required = (app.required !== undefined ? app.required : (this.config.required || false))
             //opt out and required apps are always treated as confirmed
-            const confirmed = this.confirmed || optOut || required
-            const consent = this.getConsent(app.name) && confirmed
+            const confirmed = this.confirmed || optOut
+            const consent = (this.getConsent(app.name) && confirmed) || required
             if (state === consent)
                 continue
             this.updateAppElements(app, consent)

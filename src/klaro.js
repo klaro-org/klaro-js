@@ -68,7 +68,7 @@ export function renderKlaro(config, show, wiggle){
     const trans = getTranslations(config)
     const manager = getManager(config)
     const lang = config.lang || language()
-    const tt = (...args) => {const v = t(trans, lang, ...args); console.log(v); return v;}
+    const tt = (...args) => t(trans, lang, ...args)
     const app = render(<App t={tt}
         stylePrefix={stylePrefix}
         wiggle={wiggle}
