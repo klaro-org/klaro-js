@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from  'prop-types';
 
 export const Close = ({t}) => {
     return <svg role="img" aria-label={t(['close'])} width="12" height="12" viewPort="0 0 12 12" version="1.1"
@@ -11,4 +12,8 @@ export const Close = ({t}) => {
             x2="11" y2="11"
             strokeWidth="1"/>
     </svg>
+}
+
+Close.propTypes = {
+    t: PropTypes.func,
 }

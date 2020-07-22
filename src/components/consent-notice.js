@@ -101,7 +101,7 @@ export default class ConsentNotice extends React.Component {
 
         let imprintLink
         if (imprintUrl !== undefined)
-            imprintLink = <a className="cm-link cm-imprint" href={imprintUrl} target="_blank">{t(['consentNotice','imprint','name'])}</a>
+            imprintLink = <a className="cm-link cm-imprint" href={imprintUrl} rel="noreferrer" target="_blank">{t(['consentNotice','imprint','name'])}</a>
 
         const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
