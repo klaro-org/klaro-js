@@ -25,7 +25,7 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, G
 
 ## Getting started
 
-To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). You can also download compiled JS files from the `dist` folder of this repository. **Do not use the `klaro.js` file from the `src` folder, it will not work in the browser as it's an  ES6 module and need to be transpiled first (for most browsers at least).** Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
+To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). You can also download compiled JS files from the `dist` folder of this repository. **Do not use the `klaro.js` file from the `src` folder, it will not work in the browser as it's an  ES6 module and needs to be transpiled first (for most browsers at least).** Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
 <script defer type="text/javascript" src="config.js"></script>
 <script defer type="text/javascript" src="klaro.js"></script>
