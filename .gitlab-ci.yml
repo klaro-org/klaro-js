@@ -44,7 +44,7 @@ deploy:
     - export CI_APP_VERSION=$CI_COMMIT_TAG APP_VERSION=$CI_COMMIT_SHA
     - export APP_COMMIT=$(git rev-parse HEAD)
     - export APP_VERSION=$(git tag --points-at HEAD)
-    - if [ -n "$CI_COMMIT_TAG" -a "$CI_COMMIT_TAG" -ne "$APP_VERSION" ]; then echo "versions do not match"; exit 1; fi;
+    - if [ -n "$CI_COMMIT_TAG" -a "$CI_COMMIT_TAG" != "$APP_VERSION" ]; then echo "versions do not match"; exit 1; fi;
     - make build
     # if this is a tagged commit we publish the package to NPM
     - if [ -n "$CI_COMMIT_TAG" ]; then make publish; fi
