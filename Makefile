@@ -6,7 +6,7 @@ release:
 	@echo "Making a '${RT}' release (change by setting RELEASE=patch|minor|major)"
 	@git  diff --quiet || (echo "working directory not clean" && exit 1)
 	make build
-	python3 .scripts/update_version.py
+	python3 .scripts/update_version.py ${RT}
 
 klaro:
 	npm run-script make
