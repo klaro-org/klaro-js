@@ -48,13 +48,14 @@ let config = {
       }
     ]
   },
-  entry: [
-    SRC_DIR + '/klaro.js'
-  ],
+  entry: {
+    klaro: SRC_DIR + '/klaro.js',
+    'consent-manager': SRC_DIR + '/consent-manager.js'
+  },
   output: {
     path: BUILD_DIR,
-    filename: 'klaro.js',
-    library: 'klaro',
+    filename: '[name].js',
+    library: '[name]',
     libraryTarget: 'umd',
     publicPath: ''
   },
