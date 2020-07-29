@@ -11,7 +11,6 @@ before_script:
 
 stages:
   - test
-  - build
   - deploy
 
 lint:
@@ -19,15 +18,10 @@ lint:
   script:
     - npm run-script lint
 
-build:
-  stage: deploy
-  script:
-    - npm run-script make
+deploy:
   artifacts:
     paths:
     - dist
-
-deploy:
   only:
     - staging
     - tags
@@ -38,7 +32,7 @@ deploy:
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
   script:
     # if the commit tag does not match a semantic version number we bail out
-    - if [ -n "$CI_COMMIT_TAG" -a ! "$CI_COMMIT_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then exti 0; fi;
+    - if [ -n "$CI_COMMIT_TAG" -a ! "$CI_COMMIT_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]; then exti 0; fi;
     # we deploy tagged commits to the production version and commits in the "staging" branch to the staging environment
     - if [ -n "$CI_COMMIT_TAG" ]; then export DIRECTORY=klaro-master; else if [ "$CI_COMMIT_REF_NAME" = "staging" ]; then export DIRECTORY=klaro-staging; else exit 0; fi; fi;
     - if [ ! -n "$SERVER_SSH_KEY" ]; then exit 0; fi
