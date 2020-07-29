@@ -3,6 +3,7 @@
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"
   },
+  "browserslist": ["> 0.25%", "IE 11"],
   "description": "A simple but powerful consent manager.",
   "devDependencies": {
     "@babel/cli": "7.10.4",
