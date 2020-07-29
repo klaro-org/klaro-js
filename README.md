@@ -75,6 +75,23 @@ npm install
 npm run-script make-dev #will run a development server
 npm run-script make #will build the production version
 ```
+
+If you have an environment where `make` is available, you can also run
+
+    make build 
+
+## Maintainers
+
+To publish a new version of Klaro to NPM, simply run
+
+    make publish
+
+To generate a new tagged release, simply run
+
+    make release version=x.x.x
+
+where `x.x.x` is the version that you want to publish.
+
 ## Contributing
 
 Want to contribute? We'd love that!
