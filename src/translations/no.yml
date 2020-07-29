@@ -16,6 +16,8 @@ consentNotice:
 ok: OK
 save: Opslaan
 decline: Avslå
+acceptAll: Godtar alle
+acceptSelected: Godtar valgt
 app:
   disableAll:
     title: Bytt alle apper
