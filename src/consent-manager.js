@@ -1,4 +1,5 @@
 import {getCookies, deleteCookie} from 'utils/cookies'
+import {dataset} from 'utils/compat'
 import stores from 'stores'
 
 export default class ConsentManager {
@@ -191,8 +192,8 @@ export default class ConsentManager {
             const element = elements[i]
 
             const parent = element.parentElement
-            const {dataset} = element
-            const {type} = dataset
+            const ds = dataset(element)
+            const {type} = ds
             const attrs = ['href', 'src']
 
             //if no consent was given we disable this tracker
@@ -202,8 +203,8 @@ export default class ConsentManager {
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
-                for(const key of Object.keys(dataset)){
-                    newElement.setAttribute('data-'+key, dataset[key])
+                for(const key of Object.keys(ds)){
+                    newElement.setAttribute('data-'+key, ds[key])
                 }
                 newElement.type = 'text/plain'
                 newElement.innerText = element.innerText
@@ -217,8 +218,8 @@ export default class ConsentManager {
 
                 if (consent){
                     newElement.type = type
-                    if (dataset.src !== undefined)
-                        newElement.src = dataset.src
+                    if (ds.src !== undefined)
+                        newElement.src = ds.src
                 }
                 //we remove the original element and insert a new one
                 parent.insertBefore(newElement, element)
@@ -230,29 +231,29 @@ export default class ConsentManager {
                         const attrValue = dataset[attr]
                         if (attrValue === undefined)
                             continue
-                        if (dataset['original'+attr] === undefined)
-                            dataset['original'+attr] = element[attr]
+                        if (ds['original'+attr] === undefined)
+                            ds['original'+attr] = element[attr]
                         element[attr] = attrValue
                     }
-                    if (dataset.title !== undefined)
-                        element.title = dataset.title
-                    if (dataset.originalDisplay !== undefined)
-                        element.style.display = dataset.originalDisplay
+                    if (ds.title !== undefined)
+                        element.title = ds.title
+                    if (ds.originalDisplay !== undefined)
+                        element.style.display = ds.originalDisplay
                 }
                 else{
-                    if (dataset.title !== undefined)
+                    if (ds.title !== undefined)
                         element.removeAttribute('title')
-                    if (dataset.hide === "true"){
-                        if (dataset.originalDisplay === undefined)
-                            dataset.originalDisplay = element.style.display
+                    if (ds.hide === "true"){
+                        if (ds.originalDisplay === undefined)
+                            ds.originalDisplay = element.style.display
                         element.style.display = 'none'
                     }
                     for(const attr of attrs){
-                        const attrValue = dataset[attr]
+                        const attrValue = ds[attr]
                         if (attrValue === undefined)
                             continue
-                        if (dataset['original'+attr] !== undefined)
-                            element[attr] = dataset['original'+attr]
+                        if (ds['original'+attr] !== undefined)
+                            element[attr] = ds['original'+attr]
                     }
                 }
             }

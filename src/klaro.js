@@ -1,6 +1,7 @@
 /* globals module, require, VERSION */
 
-
+if (window.btoa === undefined)
+    window.btoa = false
 
 import 'scss/klaro.scss'
 
@@ -13,7 +14,7 @@ import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations'
-import {currentScript} from 'utils/current-script'
+import {currentScript} from 'utils/compat'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
 
