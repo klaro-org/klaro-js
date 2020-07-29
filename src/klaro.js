@@ -63,7 +63,6 @@ export function renderKlaro(config, show){
     if (show)
         showCnt = cnt++
     const element = getElement(config)
-    console.log(element)
     const trans = getTranslations(config)
     const manager = getManager(config)
     const lang = config.lang || language()
@@ -76,7 +75,7 @@ export function renderKlaro(config, show){
     return app
 }
 
-export function initialize(e){
+export function initialize(){
     if (!noAutoLoad)
         renderKlaro(config)
 }
