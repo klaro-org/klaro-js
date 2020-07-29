@@ -4,7 +4,8 @@ import sys
 import json
 import subprocess
 
-package_path = os.path.join(os.path.abspath(os.path.dirname(os.path.dirname(__file__))), "package.json")
+wd = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+package_path = os.path.join(wd, "package.json")
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
@@ -31,6 +32,7 @@ if __name__ == '__main__':
     config['version'] = v
     with open(package_path, 'w') as output_file:
         json.dump(config, output_file, indent=2, sort_keys=True)
-    subprocess.check_output(["git", "add", "."])
-    subprocess.check_output(["git", "commit", "-m", f"v{v}"])
-    subprocess.check_output(["git", "tag", "-a", f"v{v}", "-m", f"v{v}"])
+    subprocess.check_output(["make build"], cwd=wd, env={'APP_VERSION': v})
+    subprocess.check_output(["git", "add", "."], cwd=wd)
+    subprocess.check_output(["git", "commit", "-m", f"v{v}"], cwd=wd)
+    subprocess.check_output(["git", "tag", "-a", f"v{v}", "-m", f"v{v}"], cwd=wd)
