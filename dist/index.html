@@ -42,10 +42,11 @@
             return klaro.show(config);
         }
         window.addEventListener("load", function(e){
-            var translations=klaro.getTranslations();
-            for(var i=0;i<Object.keys(translations).length;i++){
-                var lang = Object.keys(translations)[i];
-                var key = translations[lang]; 
+            var translations = klaro.getTranslations();
+            var langs = Array.from(translations.keys());
+            console.log(langs);
+            for(var i=0;i<langs.length;i++){
+                var lang = langs[i];
                 var option = document.createElement('option', {value: lang});
                 option.innerHTML = lang;
                 languageSelect.appendChild(option);
@@ -236,12 +237,11 @@
                                 with just a few lines of code:
                                 <span style="display: block; background: #eee; padding: 14px; border: 1px solid #ccc; margin-top: 10px;">
                                     Show consent manager in
-                                    <div class="select is-small" onChange="klaroI18nConfig.lang = languageSelect.value;showKlaro(klaroI18nConfig, true);return false;">
+                                    <div class="select is-small" onChange="klaroI18nConfig.lang = languageSelect.value;klaro.getManager(klaroI18nConfig).resetConsent();showKlaro(klaroI18nConfig, true);return false;">
                                         <select id="languageSelect" class="select" name="lang">
                                             <option value="">please select</option>
                                         </select>
                                     </div>
-                                    <a style="float: right" onClick="klaroI18nConfig.lang = languageSelect.value;klaro.getManager(klaroI18nConfig).resetConsent();showKlaro(klaroI18nConfig, true)">(reset consent)</a>
                                 </span>
                             </li>
                         </ul>
