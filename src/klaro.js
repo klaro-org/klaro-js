@@ -13,10 +13,8 @@ import {render} from 'react-dom'
 import translations from 'translations'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
-import currentExecutingScript from 'current-executing-script';
 
-const script = document.currentScript || currentExecutingScript();
-const originalOnLoad = window.onload
+const script = document.currentScript;
 const convertedTranslations = convertToMap(translations)
 const configName = script.dataset.config || "klaroConfig"
 const noAutoLoad = script.dataset.noAutoLoad === "true"
@@ -57,7 +55,7 @@ export function getTranslations(conf){
 
 let cnt = 1
 
-export function renderKlaro(config, show, wiggle){
+export function renderKlaro(config, show){
     if (config === undefined)
         return
     // we are using a count here so that we're able to repeatedly open the modal...
@@ -65,13 +63,13 @@ export function renderKlaro(config, show, wiggle){
     if (show)
         showCnt = cnt++
     const element = getElement(config)
+    console.log(element)
     const trans = getTranslations(config)
     const manager = getManager(config)
     const lang = config.lang || language()
     const tt = (...args) => t(trans, lang, ...args)
     const app = render(<App t={tt}
         stylePrefix={stylePrefix}
-        wiggle={wiggle}
         manager={manager}
         config={config}
         show={showCnt} />, element)
@@ -81,9 +79,6 @@ export function renderKlaro(config, show, wiggle){
 export function initialize(e){
     if (!noAutoLoad)
         renderKlaro(config)
-    if (originalOnLoad !== null){
-        originalOnLoad(e)
-    }
 }
 
 export function resetManagers(){
@@ -99,9 +94,9 @@ export function getManager(conf){
     return managers[name]
 }
 
-export function show(conf, wiggle){
+export function show(conf){
     conf = conf || config
-    renderKlaro(conf, true, wiggle)
+    renderKlaro(conf, true)
     return false
 }
 

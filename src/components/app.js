@@ -21,7 +21,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        const {config, t, manager, wiggle, stylePrefix} = this.props
+        const {config, t, manager, stylePrefix} = this.props
         const {show} = this.state
 
         const hide = () => {
@@ -29,7 +29,7 @@ export default class App extends React.Component {
         }
         return (
             <div className={stylePrefix}>
-                <ConsentNotice wiggle={wiggle} key={"app-"+this.props.show} t={t} show={show} hide={hide} config={config} manager={manager} />
+                <ConsentNotice key={"app-"+this.props.show} t={t} show={show} hide={hide} config={config} manager={manager} />
             </div>
         )
     }

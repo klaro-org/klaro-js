@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+    <meta charset="utf-8"/>
+    <title>Klaro as a script</title>
+    <script src="main.js"></script>
+  </head>
+  <body onload="klaro.show(config);">
+    <h1>Klaro Example</h1>
+    <p>
+      This is a simple example that shows how to embed Klaro in your own JS
+      app. Normally only your script has access to Klaro, here we explicitly
+      assign it to the "window" object inside "index.js" so that we can show
+      the manager, which would usually be done by your app.
+    </p>
+    <button onClick="return klaro.show(config);">show manager</button>
+    <button onClick="klaro.getManager(config).resetConsent();klaro.show(config);">reset consent</button>
+  </body>
+</html>
