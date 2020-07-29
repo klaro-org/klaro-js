@@ -1,7 +1,10 @@
 
-// you can also import Klaro without styles
+// we can either import Klaro without styles...
 import * as Klaro from "klaro/dist/klaro-no-css";
+// and the manually load the styles (e.g. to bundle them manually)
 import "klaro/dist/klaro.css"
+// or we can import Klaro with styles:
+// import * as Klaro from "klaro"
 
 // we define a minimal configuration
 const config = {
