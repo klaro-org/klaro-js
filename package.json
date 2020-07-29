@@ -1,32 +1,9 @@
 {
-  "name": "klaro",
-  "version": "0.4.14",
-  "description": "A simple but powerful consent manager.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KIProtect/klaro.git"
-  },
-  "keywords": [
-    "cookie",
-    "consent",
-    "gdpr",
-    "compliance"
-  ],
-  "files": ["klaro-no-css.js", "klaro.css", "klaro.min.css"],
-  "main": "dist/klaro.js",
-  "scripts": {
-    "lint": "eslint ./src --quiet",
-    "lint-fix": "eslint ./src --fix",
-    "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
-    "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js",
-    "make": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js"
-  },
   "author": "KIProtect GmbH",
-  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"
   },
-  "homepage": "https://klaro.kiprotect.com/",
+  "description": "A simple but powerful consent manager.",
   "devDependencies": {
     "@babel/cli": "7.10.4",
     "@babel/core": "7.10.4",
@@ -56,5 +33,32 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
     "yaml-loader": "^0.6.0"
-  }
+  },
+  "files": [
+    "klaro-no-css.js",
+    "klaro.css",
+    "klaro.min.css"
+  ],
+  "homepage": "https://klaro.kiprotect.com/",
+  "keywords": [
+    "cookie",
+    "consent",
+    "gdpr",
+    "compliance"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "dist/klaro.js",
+  "name": "klaro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KIProtect/klaro.git"
+  },
+  "scripts": {
+    "lint": "eslint ./src --quiet",
+    "lint-fix": "eslint ./src --fix",
+    "make": "cross-env APP_ENV=production cross-env APP_VERSION=$(git tag --points-at HEAD) cross-env APP_COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.js",
+    "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
+    "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
+  },
+  "version": "0.4.15"
 }
