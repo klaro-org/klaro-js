@@ -22,3 +22,15 @@ export function dataset(element){
     }
     return dataset
 }
+
+export function applyDataset(ds, element){
+    const keys = Object.keys(ds)
+    for(let i=0;i<keys.length;i++){
+        const key = keys[i]
+        const value = ds[key]
+        if (element[key] === value)
+            continue
+        else
+            element.setAttribute('data-'+key, value)
+    }
+}

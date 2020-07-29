@@ -1,5 +1,5 @@
 import {getCookies, deleteCookie} from 'utils/cookies'
-import {dataset} from 'utils/compat'
+import {dataset, applyDataset} from 'utils/compat'
 import stores from 'stores'
 
 export default class ConsentManager {
@@ -231,31 +231,33 @@ export default class ConsentManager {
                         const attrValue = ds[attr]
                         if (attrValue === undefined)
                             continue
-                        if (ds['original'+attr] === undefined)
-                            ds['original'+attr] = element[attr]
+                        if (ds['original-'+attr] === undefined)
+                            ds['original-'+attr] = element[attr]
                         element[attr] = attrValue
                     }
                     if (ds.title !== undefined)
                         element.title = ds.title
-                    if (ds.originalDisplay !== undefined)
-                        element.style.display = ds.originalDisplay
+                    if (ds['original-display'] !== undefined){
+                        element.style.display = ds['original-display']
+                    }
                 }
                 else{
                     if (ds.title !== undefined)
                         element.removeAttribute('title')
                     if (ds.hide === "true"){
-                        if (ds.originalDisplay === undefined)
-                            ds.originalDisplay = element.style.display
+                        if (ds['original-display'] === undefined)
+                            ds['original-display'] = element.style.display
                         element.style.display = 'none'
                     }
                     for(const attr of attrs){
                         const attrValue = ds[attr]
                         if (attrValue === undefined)
                             continue
-                        if (ds['original'+attr] !== undefined)
-                            element[attr] = ds['original'+attr]
+                        if (ds['original-'+attr] !== undefined)
+                            element[attr] = ds['original-'+attr]
                     }
                 }
+                applyDataset(ds, element)
             }
         }
 
