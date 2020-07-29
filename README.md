@@ -88,7 +88,7 @@ To publish a new version of Klaro to NPM, simply run
 
 To generate a new tagged release, simply run
 
-    make release [patch|minor|major]
+    make release [RT=patch|minor|major]
 
 If no argument is given, a 'patch' release will be created. The release mechanism will not run if
 the working directory isn't clean. If it is, a Python script will increase the version number in
