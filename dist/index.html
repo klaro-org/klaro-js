@@ -21,8 +21,23 @@
         function showKlaro(config){
             var element = document.getElementById("klaro").children[0];
             if (element !== undefined){
-                element.classList.add("wiggle")
-                setTimeout(function(){element.classList.remove("wiggle")}, 1000)
+                if (element.classList !== undefined)
+                    element.classList.add("wiggle")
+                else // IE9!
+                    element.className += " wiggle"
+                setTimeout(function(){
+                    if (element.classList !== undefined)
+                        element.classList.remove("wiggle")
+                    else { //IE9!
+                        var classes = element.className.split(" ")
+                        var newClasses = []
+                        for(var i=0;i<classes.length;i++){
+                            if (classes[i] == "wiggle")
+                                continue
+                            newClasses.push(classes[i])
+                        }
+                        element.className = newClasses.join(" ")
+                    }}, 1000)
             }
             return klaro.show(config);
         }
