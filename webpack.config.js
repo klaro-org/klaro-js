@@ -70,6 +70,8 @@ if (ANALYZE_BUNDLE){
 if (SEPARATE_CSS){
   config.output.filename = 'klaro-no-css.js'
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+  // no CSS does not apply to the consent manager
+  delete config.entry['consent-manager']
   config.module.rules.push({
       test: /\.(sa|sc|c)ss$/,
       use: [
