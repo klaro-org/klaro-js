@@ -7,7 +7,6 @@ release:
 	git add .
 	git commit -m "v${VERSION}"
 	git tag -a v${VERSION} -m v${VERSION}
-	git push origin master --tags
 
 klaro:
 	npm run-script make
