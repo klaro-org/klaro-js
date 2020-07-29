@@ -228,7 +228,7 @@ export default class ConsentManager {
                 // all other elements (images etc.) are modified in place...
                 if (consent){
                     for(const attr of attrs){
-                        const attrValue = dataset[attr]
+                        const attrValue = ds[attr]
                         if (attrValue === undefined)
                             continue
                         if (ds['original'+attr] === undefined)
