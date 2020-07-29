@@ -203,7 +203,7 @@ export default class ConsentManager {
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
                 for(const key of Object.keys(dataset)){
-                    newElement.dataset[key] = dataset[key]
+                    newElement.setAttribute('data-'+key, dataset[key])
                 }
                 newElement.type = 'text/plain'
                 newElement.innerText = element.innerText

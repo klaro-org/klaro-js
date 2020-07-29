@@ -28,10 +28,12 @@
         }
         window.addEventListener("load", function(e){
             let translations=klaro.getTranslations();
-            for(let [lang, keys] of translations){
-                const option = document.createElement('option', {value: lang})
-                option.innerHTML = lang
-                languageSelect.appendChild(option)
+            for(let i=0;i<Object.keys(translations).length;i++){
+                let lang = Object.keys(translations)[i];
+                let key = translations[lang]; 
+                const option = document.createElement('option', {value: lang});
+                option.innerHTML = lang;
+                languageSelect.appendChild(option);
             }
         })
     </script>

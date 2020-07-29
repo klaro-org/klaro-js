@@ -1,5 +1,7 @@
 /* globals module, require, VERSION */
 
+
+
 import 'scss/klaro.scss'
 
 // When webpack's hot loading is enabled, enable Preact's support for the
@@ -11,14 +13,15 @@ import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations'
+import {currentScript} from 'utils/current-script'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
 
-const script = document.currentScript;
+const script = currentScript("klaro");
 const convertedTranslations = convertToMap(translations)
-const configName = script.dataset.config || "klaroConfig"
-const noAutoLoad = script.dataset.noAutoLoad === "true"
-const stylePrefix = script.dataset.stylePrefix || "klaro"
+const configName = script.getAttribute('dataset-config') || "klaroConfig"
+const noAutoLoad = script.getAttribute('dataset-noAutoLoad') === "true"
+const stylePrefix = script.getAttribute('dataset-stylePrefix') || "klaro"
 const config = window[configName]
 const managers = {}
 
