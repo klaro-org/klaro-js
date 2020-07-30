@@ -67,6 +67,34 @@ The same method also works for images, stylesheets and other elements with a `sr
 
 The consent manager is configured using a config dictionary, which you typically define in a separate JS file. To learn more, simply read the [annotated example config](dist/config.js), which contains descriptions of all valid config options and parameters.
 
+## Using Klaro via NPM
+
+Klaro is also available as a Node.js module via npm:
+
+    npm install klaro
+
+The npm distribution includes fully-fledged Klaro with CSS as well as the version without CSS (the CSS
+bundle is also included). In addition, it contains the consent management framework without the UI classes,
+which is handy in case you want to use your own UI classes:
+
+```js
+// import Klaro with CSS
+import * as klaro from 'klaro'
+
+// import Klaro without CSS
+import * as klaro from 'klaro/dist/klaro-no-css'
+
+// import the accompanying CSS (requires style-loader)
+import 'klaro/dist/klaro.css'
+
+// import only the consent manager (no UI)
+import 'klaro/dist/consent-manager'
+```
+
+This enables you to seamlessly integrate Klaro with your own JS projects, regardless if you use React, Vue,
+Angular, Mithril, Svelte or any other JS framework. Have a look at [our webpack example](tree/master/examples/klaro-and-webpack)
+to see a complete example.
+
 ## Building Klaro from scratch
 
 If you want to customize Klaro or extend it, you can build it from scratch using the following commands:
