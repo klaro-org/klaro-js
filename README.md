@@ -92,7 +92,7 @@ import 'klaro/dist/consent-manager'
 ```
 
 This enables you to seamlessly integrate Klaro with your own JS projects, regardless if you use React, Vue,
-Angular, Mithril, Svelte or any other JS framework. Have a look at [our webpack example](tree/master/examples/klaro-and-webpack)
+Angular, Mithril, Svelte or any other JS framework. Have a look at [our webpack example](examples/klaro-and-webpack)
 to see a complete example.
 
 ## Building Klaro from scratch
