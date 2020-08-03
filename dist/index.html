@@ -41,10 +41,46 @@
             }
             return klaro.show(config);
         }
-        window.addEventListener("load", function(e){
+        window.addEventListener("DOMContentLoaded", function(e){
+
+            // we download the version list from the CDN
+            var request = new XMLHttpRequest();
+            request.addEventListener("load", function(e){
+                var versions = JSON.parse(e.target.response).sort(function(a,b){
+                    if (a.name == "latest")return -1;
+                    var regex = /^v(\d+)\.(\d+)\.(\d+)$/
+                    var matchA = regex.exec(a.name);
+                    var matchB = regex.exec(b.name);
+                    if (matchA === null || matchB === null)
+                        return 0;
+                    var dMajor = parseInt(matchA[1]) - parseInt(matchB[1])
+                    if (dMajor != 0)
+                        return -dMajor;
+                    var dMinor = parseInt(matchA[2]) - parseInt(matchB[2])
+                    if (dMinor != 0)
+                        return -dMinor;
+                    var dPatch = parseInt(matchA[3]) - parseInt(matchB[3])
+                    if (dPatch != 0)
+                        return -dPatch;
+                    return 0;
+                });
+                for(var i=0;i<versions.length;i++){
+                    var option = document.createElement('option', {value: versions[i].name});
+                    option.innerHTML = versions[i].name;
+                    versionSelect.appendChild(option);
+                }
+            });
+            request.open("GET", "https://cdn.kiprotect.com/klaro");
+            request.send();
+
+
+            var elements = document.getElementsByClassName("klaro-version");
+            for(var i=0;i<elements.length;i++){
+                elements[i].innerHTML = klaro.version();
+            }
+
             var translations = klaro.getTranslations();
             var langs = Array.from(translations.keys());
-            console.log(langs);
             for(var i=0;i<langs.length;i++){
                 var lang = langs[i];
                 var option = document.createElement('option', {value: lang});
@@ -71,17 +107,10 @@
             setCookie("inline-tracker", "foo", 120)
 
         </script>
-    <script>
-        function replaceVersion() {
-            var element = document.getElementById("klaro-version")
-            element.innerHTML = klaro.version()
-        }
-
-    </script>
     <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
-<body onload="replaceVersion()">
+<body>
     <!-- by default, klaro will be appended in the klaro div, or will create one at the end of the body if none exists.
         it's recommended to have klaro at the top of your content so that screen reader users can be notified early -->
     <div id="klaro"></div>
@@ -387,7 +416,7 @@
                     <pre><code class="language-javascript">&lt;script defer type="application/javascript"
         src="config.js"&gt;&lt;/script&gt;
 &lt;script defer data-config="klaroConfig" type="application/javascript"
-        src="klaro.js"&gt;&lt;/script&gt;</code></pre>
+        src="https://cdn.kiprotect.com/klaro/latest/klaro.js"&gt;&lt;/script&gt;</code></pre>
                 </div>
                 <div class="column is-6 column-eq">
                     <div class="content">
@@ -408,9 +437,16 @@
                             the <a href="https://github.com/KIProtect/klaro/blob/master/src/scss/klaro.scss">SCSS file</a>.
                         </p>
                         <p>
-                            <a href="klaro.js" download class="button is-warning">
-                                Download klaro.js (<b id="klaro-version"></b>)
-                            </a>
+                            If you want to host Klaro yourself, you can download it here.
+                            <div style="display:inline-block">
+                                <a id="versionLink" href="https://cdn.kiprotect.com/klaro/latest/klaro.js" download class="button is-warning">
+                                    Download klaro.js
+                                </a>
+                                <div class="select">
+                                    <select onChange="versionLink.href='https://cdn.kiprotect.com/klaro/'+versionSelect.value+'/klaro.js'" id="versionSelect" class="select" name="klaro-version">
+                                    </select>
+                                </div>
+                            </div>
                         </p>
                     </div>
                 </div>
