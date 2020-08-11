@@ -56,10 +56,15 @@ export default class ConsentNotice extends React.Component {
         const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
         const extraHTML = t(['!', 'consentNotice', 'extraHTML'])
         const lang = config.lang || language()
-        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
-            config.privacyPolicy.default ||
-            config.privacyPolicy
-        let changesText
+
+        let ppUrl
+        if (config.privacyPolicy !== undefined){
+            if (typeof config.privacyPolicy === "string")
+                ppUrl = config.privacyPolicy
+            else if (typeof config.privacyPolicy === "object") {
+                ppUrl = config.privacyPolicy[lang] || config.privacyPolicy.default
+            }
+        }
 
         const showModal = (e) => {
             e.preventDefault()
@@ -73,6 +78,7 @@ export default class ConsentNotice extends React.Component {
                 this.setState({modal: false})
         }
 
+        let changesText
         if (manager.changed)
             changesText = <p className="cn-changes">{t(['consentNotice', 'changeDescription'])}</p>
 
@@ -94,7 +100,10 @@ export default class ConsentNotice extends React.Component {
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
-        const ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
+        let ppLink
+
+        if (ppUrl !== undefined)
+            ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
         let extraHTMLElement
 

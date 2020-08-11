@@ -25,7 +25,6 @@ const config = {
             purposes: ["analytics"],
         },
     ],
-    privacyPolicy: "",
 };
 
 // we assign the Klaro module to the window, so that we can access it in JS

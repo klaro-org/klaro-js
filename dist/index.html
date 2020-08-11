@@ -18,7 +18,7 @@
     <script type="text/plain" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker">
     </script>
     <script type="text/javascript">
-        function showKlaro(config){
+        function showKlaro(config, modal){
             var element = document.getElementById("klaro").children[0];
             if (element !== undefined){
                 if (element.classList !== undefined)
@@ -39,7 +39,7 @@
                         element.className = newClasses.join(" ")
                     }}, 1000)
             }
-            return klaro.show(config);
+            return klaro.show(config, modal);
         }
         window.addEventListener("DOMContentLoaded", function(e){
 
@@ -161,8 +161,8 @@
                     lightweight and compatible with all modern browsers.
                 </h2>
                 <p>
-                    <a class="button is-success" onClick="return showKlaro();">Show manager</a>
-                    <a class="button is-warning" onClick="klaro.getManager().resetConsent();showKlaro()">Reset
+                    <a class="button is-success" onClick="return showKlaro(undefined, true);">Show manager</a>
+                    <a class="button is-warning" onClick="klaro.getManager().resetConsent();showKlaro(undefined, false)">Reset
                         consent</a>
                 </p>
                 <p>

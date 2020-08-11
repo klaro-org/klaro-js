@@ -40,15 +40,21 @@ export default class ConsentModal extends React.Component {
             acceptAllButton = <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-accept-all" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
-        const ppUrl = (config.privacyPolicy && config.privacyPolicy[lang]) ||
-            config.privacyPolicy.default ||
-            config.privacyPolicy
-
+        let ppUrl
+        if (config.privacyPolicy !== undefined){
+            if (typeof config.privacyPolicy === "string")
+                ppUrl = config.privacyPolicy
+            else if (typeof config.privacyPolicy === "object") {
+                ppUrl = config.privacyPolicy[lang] || config.privacyPolicy.default
+            }
+        }
         let extraHTMLElement
         if (extraHTML !== undefined)
             extraHTMLElement = <div dangerouslySetInnerHTML={{__html: extraHTML}} />
 
-        const ppLink = <a onClick={hide} href={ppUrl} target="_blank" rel="noopener noreferrer">{t(['consentModal','privacyPolicy','name'])}</a>
+        let ppLink
+        if (ppUrl !== undefined)
+            ppLink = <a onClick={hide} href={ppUrl} target="_blank" rel="noopener noreferrer">{t(['consentModal','privacyPolicy','name'])}</a>
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
@@ -57,7 +63,10 @@ export default class ConsentModal extends React.Component {
                     <h1 className="title">{t(['consentModal', 'title'])}</h1>
                     <p>
                         {t(['consentModal','description'])} &nbsp;
-                        {t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})}
+                        {
+                            ppLink &&
+                            t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})
+                        }
                     </p>
                     {extraHTMLElement}
                 </div>

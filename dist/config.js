@@ -27,6 +27,7 @@ var klaroConfig = {
     //cookieDomain: '.github.com',
 
     // Put a link to your privacy policy here (relative or absolute).
+    // You can put a map with language-specific privacy policies here.
     privacyPolicy: '/#privacy',
 
     // Defines the default state for applications (true=enabled by default).
@@ -156,50 +157,6 @@ var klaroConfig = {
                 livechat: 'Livechat',
                 advertising: 'Advertising',
                 styling: 'Styling',
-            },
-        },
-        tr: {
-            consentModal: {
-                description:
-                    'Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz. "Örnek" olarak belirtilenler sadece gösterim amaçlıdır ve gerçekte bu site için kullanılmazlar.',
-            },
-            inlineTracker: {
-                description: 'Satıriçi takip kodu için bir örnek',
-            },
-            externalTracker: {
-                description: 'Dışarıdan çağırılan bir takip kodu için örnek',
-            },
-            adsense: {
-                description: 'Reklam görüntüleme (sadece örnek)',
-            },
-            matomo: {
-                description: 'Ziyaretçi istatistiklerini toplama',
-            },
-            camera: {
-                description:
-                    'İzleme kamerası (IMG tag icin saçma bir örnek daha)',
-            },
-            cloudflare: {
-                description: 'DDoS saldırılarına karşı koruma',
-            },
-            intercom: {
-                description:
-                    'Sohbet aracı ve ziyaretçi istatistiklerini toplama (sadece bir örnek)',
-            },
-            mouseflow: {
-                description:
-                    'Gerçek zamanlı kullanıcı istatistiği (sadece bir örnek)',
-            },
-            googleFonts: {
-                description:
-                    'Google tarafından barındırılan Web Yazıtipi bilgileri',
-            },
-            purposes: {
-                analytics: 'Analitik',
-                security: 'Güvenlik',
-                livechat: 'Canlı Sohbet',
-                advertising: 'Reklam',
-                styling: 'Biçimlendirme',
             },
         },
     },
