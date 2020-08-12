@@ -6,11 +6,32 @@
     height: 30px;
 }
 
-.cm-app-input:checked + .cm-app-label .slider {
-    background-color: $blue1;
+.cm-list-input:checked + .cm-list-label .slider {
+    background-color: $green1;
 }
 
-.cm-app-input.required:checked + .cm-app-label .slider {
+.cm-list-input.half-checked:checked + .cm-list-label .slider {
+    opacity: 0.6;
+    background-color: $green1;
+    &:before {
+        -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        transform: translateX(10px);    
+    }
+}
+
+.cm-list-input.only-required + .cm-list-label .slider {
+    opacity: 0.8;
+    background-color: $green2;
+    &:before {
+        -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        transform: translateX(10px);    
+    }
+
+}
+
+.cm-list-input.required:checked + .cm-list-label .slider {
     opacity: 0.8;
     background-color: $green2;
     cursor: not-allowed;
@@ -20,7 +41,7 @@
     box-shadow: $box-shadow;
 }
 
-.cm-app-input {
+.cm-list-input {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,7 +50,7 @@
     height: 30px;
 }
 
-.cm-app-label {
+.cm-list-label {
     /* The slider */
     .slider {
         position: absolute;
@@ -67,7 +88,7 @@
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px $blue1;
+        box-shadow: 0 0 1px $green3;
     }
 
     input:checked + .slider:before {
@@ -77,11 +98,11 @@
     }
 }
 
-.cm-app-input:focus + .cm-app-label .slider {
+.cm-list-input:focus + .cm-list-label .slider {
     box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
 }
 
-.cm-app-input:checked + .cm-app-label .slider:before {
+.cm-list-input:checked + .cm-list-label .slider:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);

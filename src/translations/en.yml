@@ -21,6 +21,9 @@ decline: Decline
 close: Close
 acceptAll: Accept all
 acceptSelected: Accept selected
+purposeItem:
+  app: app
+  apps: apps
 app:
   disableAll:
     title: Toggle all apps

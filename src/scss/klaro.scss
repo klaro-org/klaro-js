@@ -198,10 +198,25 @@ $green3: #01440C !default;
                     display: inline-block;
                     width: auto;
                 }
-                ul.cm-apps {
+                ul.cm-apps, ul.cm-purposes {
                     padding :0;
                     margin: 0;
-                    li.cm-app {
+                    li.cm-purpose {
+                        .cm-apps {
+                            .cm-caret {
+                                color: #888;
+                            }
+                            .cm-content {
+                                margin-left: -40px;
+                                display:none;
+                                &.expanded {
+                                    margin-top: 10px;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                    li.cm-app, li.cm-purpose {
                         &:first-child{
                             margin-top: 0;
                         }
@@ -228,7 +243,7 @@ $green3: #01440C !default;
                             padding-top: 1em;
                         }
 
-                        span.cm-app-title {
+                        span.cm-list-title {
                             font-weight: 600;
                         }
 

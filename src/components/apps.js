@@ -1,6 +1,25 @@
 import React from 'react'
 import AppItem from './app-item'
 
+export const AppItems = ({apps, consents, toggle, t}) => {
+
+    return apps.map((app) => {
+        const toggleApp = (value) => {
+            toggle([app], value)
+        }
+        const checked = consents[app.name]
+        return <li key={app.name} className="cm-app">
+            <AppItem
+                checked={checked || app.required}
+                onToggle={toggleApp}
+                t={t}
+                {...app}
+            />
+        </li>
+    })
+
+}
+
 export default class Apps extends React.Component {
 
     constructor(props){
@@ -37,26 +56,15 @@ export default class Apps extends React.Component {
             toggle(apps, value)
         }
 
-        const appItems = apps.map((app) => {
-            const toggleApp = (value) => {
-                toggle([app], value)
-            }
-            const checked = consents[app.name]
-            return <li key={app.name} className="cm-app">
-                <AppItem
-                    checked={checked || app.required}
-                    onToggle={toggleApp}
-                    t={t}
-                    {...app}
-                />
-            </li>
-        })
+        const appItems = <AppItems apps={apps} t={t} consents={consents} toggle={toggle} />
 
         const togglableApps = apps.filter(app => !app.required);
 
         const allDisabled = togglableApps.filter(
             app => consents[app.name]
         ).length === 0;
+
+        const onlyRequiredEnabled = apps.filter(app => app.required).length > 0 && allDisabled
 
         return <ul className="cm-apps">
             {appItems}
@@ -67,6 +75,7 @@ export default class Apps extends React.Component {
                         title={t(['app','disableAll','title'])}
                         description={t(['app', 'disableAll', 'description'])}
                         checked={!allDisabled}
+                        onlyRequiredEnabled={onlyRequiredEnabled}
                         onToggle={toggleAll}
                         t={t}
                     />

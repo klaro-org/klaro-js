@@ -50,7 +50,7 @@ function hget(d, key, defaultValue){
     for(let i=0;i<kl.length;i++){
         if (cv === undefined)
             return defaultValue
-        if (kl[i].endsWith('?')){
+        if (kl[i] !== undefined && kl[i].endsWith('?')){
             const kle = kl[i].slice(0, kl[i].length-1)
             let cvn
             if (cv instanceof Map)
@@ -59,12 +59,12 @@ function hget(d, key, defaultValue){
                 cvn = cv[kle]
             if (cvn !== undefined) // we only assign it if the value exists
                 cv = cvn
-         } else {
+        } else {
             if (cv instanceof Map)
                 cv = cv.get(kl[i])
             else
                 cv = cv[kl[i]]
-         }
+        }
     }
     if (cv === undefined)
         return defaultValue
@@ -84,7 +84,7 @@ export function t(trans, lang, key, ...params){
     if (value === undefined){
         if (returnUndefined)
             return undefined
-        return `[missing translation: ${lang}/${kl.join("/")}]`;
+        return [`[missing translation: ${lang}/${kl.join("/")}]`];
     }
     if (params.length > 0)
         return format(value, ...params)

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Close} from './icons'
 import Apps from './apps'
+import Purposes from './purposes'
 import {language} from 'utils/i18n'
 
 export default class ConsentModal extends React.Component {
@@ -14,6 +15,7 @@ export default class ConsentModal extends React.Component {
     render(){
         const {hide, confirming, saveAndHide, acceptAndHide, declineAndHide, config, manager, t} = this.props
         const lang = config.lang || language()
+        const groupByPurpose = config.groupByPurpose !== undefined ? config.groupByPurpose : true
 
         let closeLink
         if (!config.mustConsent) {
@@ -51,10 +53,17 @@ export default class ConsentModal extends React.Component {
         let extraHTMLElement
         if (extraHTML !== undefined)
             extraHTMLElement = <div dangerouslySetInnerHTML={{__html: extraHTML}} />
-
         let ppLink
         if (ppUrl !== undefined)
             ppLink = <a onClick={hide} href={ppUrl} target="_blank" rel="noopener noreferrer">{t(['consentModal','privacyPolicy','name'])}</a>
+
+        let appsOrPurposes
+
+        if (groupByPurpose)
+            appsOrPurposes = <Purposes t={t} config={config} manager={manager} />
+        else
+            appsOrPurposes = <Apps t={t} config={config} manager={manager} />
+
         return <div className="cookie-modal">
             <div className="cm-bg" onClick={hide}/>
             <div className="cm-modal">
@@ -71,7 +80,7 @@ export default class ConsentModal extends React.Component {
                     {extraHTMLElement}
                 </div>
                 <div className="cm-body">
-                    <Apps t={t} config={config} manager={manager} />
+                    {appsOrPurposes}
                 </div>
                 <div className="cm-footer">
                     <div className="cm-footer-buttons">

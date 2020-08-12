@@ -9,6 +9,11 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // You can group apps by their purpose in the modal. This is advisable
+    // if you have a large number of apps. Users can then enable or disable
+    // entire groups of apps instead of having to enable or disable every app.
+    groupByPurpose: true,
+
     // How Klaro should store the user's preferences. It can be either 'cookie'
     // (the default) or 'localStorage'.
     storageMethod: 'cookie',
@@ -260,11 +265,11 @@ var klaroConfig = {
             title: 'Surveillance Camera',
             purposes: ['security'],
         },
-        {
+/*        {
             name: 'googleFonts',
             title: 'Google Fonts',
             purposes: ['styling'],
-        },
+        },*/
         {
             name: 'cloudflare',
             title: 'Cloudflare',
