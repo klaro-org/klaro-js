@@ -50,10 +50,21 @@ function hget(d, key, defaultValue){
     for(let i=0;i<kl.length;i++){
         if (cv === undefined)
             return defaultValue
-        if (cv instanceof Map)
-            cv = cv.get(kl[i])
-        else
-            cv = cv[kl[i]]
+        if (kl[i].endsWith('?')){
+            const kle = kl[i].slice(0, kl[i].length-1)
+            let cvn
+            if (cv instanceof Map)
+                cvn = cv.get(kle)
+            else
+                cvn = cv[kle]
+            if (cvn !== undefined) // we only assign it if the value exists
+                cv = cvn
+         } else {
+            if (cv instanceof Map)
+                cv = cv.get(kl[i])
+            else
+                cv = cv[kl[i]]
+         }
     }
     if (cv === undefined)
         return defaultValue

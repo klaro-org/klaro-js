@@ -1,5 +1,6 @@
 /* globals module, require, VERSION */
 
+// IE compatibility
 if (window.btoa === undefined)
     window.btoa = false
 
@@ -26,7 +27,7 @@ const stylePrefix = script.getAttribute('data-style-prefix') || "klaro"
 const config = window[configName]
 const managers = {}
 
-window.addEventListener('load', initialize)
+window.addEventListener('DOMContentLoaded', initialize)
 
 if (module.hot) {
     if (!noAutoLoad)
@@ -92,7 +93,7 @@ export function resetManagers(){
 
 export function getManager(conf){
     conf = conf || config
-    const name = conf.cookieName || 'default'
+    const name = conf.storageName || conf.cookieName || 'default' // deprecated: cookieName
     if (managers[name] === undefined)
         managers[name] = new ConsentManager(conf)
     return managers[name]

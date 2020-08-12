@@ -11,7 +11,7 @@ export default class AppItem extends React.Component {
             onToggle(e.target.checked)
         }
         const id = `app-item-${name}`
-        const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
+        const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
         const optOutText = optOut ? <span className="cm-opt-out" title={t(['app', 'optOut', 'description'])}>{t(['app', 'optOut', 'title'])}</span> : ''
         const requiredText = required ? <span className="cm-required" title={t(['app', 'required', 'description'])}>{t(['app', 'required', 'title'])}</span> : ''
 

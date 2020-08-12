@@ -28,8 +28,8 @@ export default class ConsentManager {
         return this.config.storageMethod || 'cookie'
     }
 
-    get cookieName(){
-        return this.config.cookieName || 'klaro'
+    get storageName(){
+        return this.config.storageName || this.config.cookieName || 'klaro' // deprecated: cookieName
     }
 
     get cookieDomain(){
@@ -38,6 +38,15 @@ export default class ConsentManager {
 
     get cookieExpiresAfterDays(){
         return this.config.cookieExpiresAfterDays || 120
+    }
+
+    get defaultConsents(){
+        const consents = {}
+        for(let i=0;i<this.config.apps.length;i++){
+            const app = this.config.apps[i]
+            consents[app.name] = this.getDefaultConsent(app)
+        }
+        return consents
     }
 
     watch(watcher){
@@ -72,16 +81,6 @@ export default class ConsentManager {
         return consent
     }
 
-    get defaultConsents(){
-        const consents = {}
-        for(let i=0;i<this.config.apps.length;i++){
-            const app = this.config.apps[i]
-            consents[app.name] = this.getDefaultConsent(app)
-        }
-        return consents
-    }
-
-    //don't decline required apps
     changeAll(value){
         this.config.apps.map((app) => {
             if(app.required || this.config.required || value) {
@@ -102,7 +101,7 @@ export default class ConsentManager {
         this.notify('consents', this.consents)
     }
 
-    resetConsent(){
+    resetConsents(){
         this.consents = this.defaultConsents
         this.states = {}
         this.confirmed = false
@@ -114,26 +113,6 @@ export default class ConsentManager {
 
     getConsent(name){
         return this.consents[name] || false
-    }
-
-    _checkConsents(){
-        let complete = true
-        const apps = new Set(this.config.apps.map((app)=>{return app.name}))
-        const consents = new Set(Object.keys(this.consents))
-        for(const key of Object.keys(this.consents)){
-            if (!apps.has(key)){
-                delete this.consents[key]
-            }
-        }
-        for(const app of this.config.apps){
-            if (!consents.has(app.name)){
-                this.consents[app.name] = this.getDefaultConsent(app)
-                complete = false
-            }
-        }
-        this.confirmed = complete
-        if (!complete)
-            this.changed = true
     }
 
     loadConsents(){
@@ -174,6 +153,8 @@ export default class ConsentManager {
             this.updateAppCookies(app, consent)
             if (app.callback !== undefined)
                 app.callback(consent, app)
+            if (this.config.callback !== undefined)
+                this.config.callback(consent, app)
             this.states[app.name] = consent
         }
     }
@@ -297,7 +278,26 @@ export default class ConsentManager {
                 }
             }
         }
+    }
 
+    _checkConsents(){
+        let complete = true
+        const apps = new Set(this.config.apps.map((app)=>{return app.name}))
+        const consents = new Set(Object.keys(this.consents))
+        for(const key of Object.keys(this.consents)){
+            if (!apps.has(key)){
+                delete this.consents[key]
+            }
+        }
+        for(const app of this.config.apps){
+            if (!consents.has(app.name)){
+                this.consents[app.name] = this.getDefaultConsent(app)
+                complete = false
+            }
+        }
+        this.confirmed = complete
+        if (!complete)
+            this.changed = true
     }
 
 }

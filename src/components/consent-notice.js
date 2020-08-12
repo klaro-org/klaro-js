@@ -53,7 +53,7 @@ export default class ConsentNotice extends React.Component {
         const { modal, confirming } = this.state
 
         const purposes = getPurposes(config)
-        const purposesText = purposes.map((purpose) => t(['purposes', purpose])).join(", ")
+        const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
         const extraHTML = t(['!', 'consentNotice', 'extraHTML'])
         const lang = config.lang || language()
 

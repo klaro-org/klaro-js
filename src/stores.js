@@ -2,7 +2,7 @@ import {getCookie, setCookie, deleteCookie} from 'utils/cookies'
 
 export class CookieStore {
     constructor(manager) {
-        this.cookieName = manager.cookieName
+        this.cookieName = manager.storageName
         this.cookieDomain = manager.cookieDomain
         this.cookieExpiresAfterDays = manager.cookieExpiresAfterDays
     }
@@ -25,7 +25,7 @@ export class CookieStore {
 
 export class LocalStorageStore {
     constructor(manager) {
-        this.key = manager.cookieName;
+        this.key = manager.storageName;
     }
 
     get() {
