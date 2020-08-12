@@ -162,7 +162,7 @@
                 </h2>
                 <p>
                     <a class="button is-success" onClick="return showKlaro(undefined, true);">Show manager</a>
-                    <a class="button is-warning" onClick="klaro.getManager().resetConsent();showKlaro(undefined, false)">Reset
+                    <a class="button is-warning" onClick="klaro.getManager().resetConsents();showKlaro(undefined, false)">Reset
                         consent</a>
                 </p>
                 <p>
@@ -266,7 +266,7 @@
                                 with just a few lines of code:
                                 <span style="display: block; background: #eee; padding: 14px; border: 1px solid #ccc; margin-top: 10px;">
                                     Show consent manager in
-                                    <div class="select is-small" onChange="klaroI18nConfig.lang = languageSelect.value;klaro.getManager(klaroI18nConfig).resetConsent();showKlaro(klaroI18nConfig, true);return false;">
+                                    <div class="select is-small" onChange="klaroI18nConfig.lang = languageSelect.value;klaro.getManager(klaroI18nConfig).resetConsents();showKlaro(klaroI18nConfig, true);return false;">
                                         <select id="languageSelect" class="select" name="lang">
                                             <option value="">please select</option>
                                         </select>
