@@ -71,7 +71,7 @@ export default class ConsentModal extends React.Component {
                     {closeLink}
                     <h1 className="title">{t(['consentModal', 'title'])}</h1>
                     <p>
-                        {t(['consentModal','description'])} &nbsp;
+                        {t(['consentModal','description'])}
                         {
                             ppLink &&
                             t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})
