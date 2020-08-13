@@ -1,0 +1,12 @@
+# This file contains machine-parseable information about Klaro releases.
+# It is used to generate the releases.json file, so do not modify that.
+# In order to make a new release you need to create an entry in this file.
+- version: 0.5.30
+  date: 2020-08-12
+  tags: []
+  changelog: |
+    - Added the `groupByPurpose` config option, which groups apps into
+      categories based on their purpose, allowing the user to enable or disable
+      entire groups of apps at once. This also reduces the space taken up by
+      the modal, which is important especially for websites that use many
+      third-party applications.
