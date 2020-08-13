@@ -26,8 +26,11 @@ if __name__ == '__main__':
         patch_version += 1
     elif rt == 'minor':
         minor_version += 1
+        patch_version = 0
     elif rt == 'major':
         major_version += 1
+        minor_version = 0
+        patch_version = 0
     v = f"{major_version}.{minor_version}.{patch_version}"
     config['version'] = v
     with open(package_path, 'w') as output_file:

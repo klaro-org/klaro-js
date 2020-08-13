@@ -1,13 +1,14 @@
 # Klaro! A Simple Consent Manager
 
-Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
+Klaro [klɛro] is a simple consent management platform (CMP) and privacy tool that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
 
 <p align="center">
     <img src="dist/assets/screenshot.png" width=300/>
     <img src="dist/assets/screenshot-details.png" width=300/>
 </p>
 
-This GIF shows how Klaro deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [YouTube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
+Klaro supports multiple modes of asking for consent and can display third-party apps individually or grouped
+by purpose.
 
 ## Advantages
 
@@ -28,29 +29,34 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, G
 
 ## Getting started
 
-To use the widget on your website, simply download [klaro.js](https://klaro.kiprotect.com/klaro.js) as well as the example config [config.js](https://klaro.kiprotect.com/config.js). You can also download compiled JS files from the `dist` folder of this repository. **Do not use the `klaro.js` file from the `src` folder, it will not work in the browser as it's an  ES6 module and needs to be transpiled first (for most browsers at least).** Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
+**You can now find more extensive documentation on [our website](https://kiprotect.com/docs/klaro).**
+
+To use the widget on your website, simply embed Klaro as well as a valid config. You can have a look at the [annotated config.js](dist/config.js) to see how it works. If you want to self-host Klaro you can download compiled JS files from the `dist` folder of this repository, or go to [our website](https://kiprotect.com/docs/klaro/releases), where you can find a full list of past Klaro releases. **Do not use the `klaro.js` file from the `src` folder, it will not work in the browser as it's an  ES6 module and needs to be transpiled first (for most browsers at least).** Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
+<!-- make sure the config gets loaded before Klaro -->
 <script defer type="text/javascript" src="config.js"></script>
-<script defer type="text/javascript" src="klaro.js"></script>
+<script defer type="text/javascript" src="https://cdn.kiprotect.com/klaro/latest/klaro.js"></script>
 
 ```
-Do not forget to change your existing apps/trackers as outlined in the next section as well so that Klaro can manage them. Klaro will automatically open on page load.
 
-We also provide a version of Klaro without stylesheets included (which is useful
-in case you want to provide your own stylesheet), [klaro-no-css.js](https://klaro.kiprotect.com/klaro-no-css.js). If you use this, make sure to either include
-your own styles or to include [klaro.min.css](https://klaro.kiprotect.com/klaro.min.css) like this:
+You can replace `latest` with a version number (e.g. `v0.5.30`) to download a specific version of Klaro. Do not forget to change your existing apps/trackers as outlined in the next section as well, so that Klaro can manage them. By default, Klaro will automatically open once the page is fully loaded.
+
+We also provide a version of Klaro without stylesheets included, which is useful
+in case you want to provide your own styles: [klaro-no-css.js](https://cdn.kiprotect.com/klaro/latest/klaro-no-css.js). If you use this, make sure to either include your own styles or to include [klaro.min.css](https://cdn.kiprotect.com/klaro/latest/klaro.min.css) separetely, like this:
 
 ```html
-<link rel="stylesheet" href="klaro.min.css" />
+<link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/latest/klaro.min.css" />
 ```
 
 We also provide a non-minified version of the stylesheet, which is great if you
-want to make edits: [klaro.css](https://klaro.kiprotect.com/klaro.css).
+want to make your own version: [klaro.css](https://cdn.kiprotect.com/klaro/latest/klaro.css).
 
-If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can use the ```klaro.show()``` global. Example:
+If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can simply call ```klaro.show()``` via Javascript. Example:
 ```html
 <a class="button is-success" onclick="return klaro.show();">Change consent settings</a>
 ```
+
+Calling ```klaro.show(undefined, true)``` will force the modal to open, even if the user hasn't made a consent choice yet (by default, the consent notice would open first).
 
 ## Managing third-party apps/trackers
 
@@ -90,7 +96,7 @@ import * as klaro from 'klaro/dist/klaro-no-css'
 // import the accompanying CSS (requires style-loader)
 import 'klaro/dist/klaro.css'
 
-// import only the consent manager (no UI)
+// import only the consent manager (no UI components)
 import 'klaro/dist/consent-manager'
 ```
 
