@@ -21,7 +21,7 @@ if __name__ == '__main__':
     with open(package_path) as input_file:
         config = json.load(input_file)
     with open(releases_yml_path) as input_file:
-        releases = yaml.load(input_file.read(), Loader=yaml.Loader)
+        releases = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
     match = re.match(r"^(\d+)\.(\d+)\.(\d+)$", config['version'])
     if not match:
         sys.stderr.write("version {} does not match!".format(config['version']))
