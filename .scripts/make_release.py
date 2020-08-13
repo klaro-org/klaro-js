@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     env = os.environ.copy()
     env['APP_VERSION'] = v
-    #subprocess.check_output(["make", "build"], cwd=wd, env=env)
+    subprocess.check_output(["make", "build"], cwd=wd, env=env)
 
     # we add the SHA sums of the files to the release (can be used for
     # subresource integrity)
