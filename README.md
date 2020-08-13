@@ -2,7 +2,7 @@
 
 Klaro [klɛro] is a simple consent manager that helps you to be transparent about the third-party applications on your website. It is designed to be extremely simple, intuitive and easy to use while allowing you to be compliant with all relevant regulations (notably GDPR and ePrivacy).
 
-<p align="center"><img src="dist/assets/demo.gif" /></p>
+<p align="center"><img src="dist/assets/screenshot.png" /></p>
 
 This GIF shows how Klaro deletes Cookies as the user disables apps. A full-length version of the video with subtitles and explanations is available on [YouTube](https://youtu.be/Bve7bh0gZig) as well as in [this repository](dist/assets/demo.mp4).
 
