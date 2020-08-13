@@ -1,12 +1,37 @@
-# This file contains machine-parseable information about Klaro releases.
-# It is used to generate the releases.json file, so do not modify that.
-# In order to make a new release you need to create an entry in this file.
-- version: 0.5.30
-  date: 2020-08-12
+- changelog: |
+    Added checksums to all build files generated locally, for use e.g. as
+    subresource integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+    for more details about this.
+  date: '2020-08-12'
+  files:
+  - md5: 4694b51c0d73ed75be758e93c637e4b0
+    name: klaro.js
+    sha1: abedea66365f013079507d2541f642aefea36c99
+    sha256: 6f2e871440e4eff1a8441c666a872e83b73f3a8721a4de4c47380e1fa9a37129
+    sha384: 87d5433c57bd578185e7c288e3d545b89088db3f349bfae4ac7f836f3862558ec59d94d812dbfd4c583fc35a79a73e72
+  - md5: 204c50df41658d07ae17ab5c389e1b56
+    name: klaro-no-css.js
+    sha1: 8cc9af92767a34a1d72b1657dd8066848316e134
+    sha256: ecdbd930b7d1ee4317060a20739c4f1f1ebd64bd6ad9462b7dd4d885486d7f53
+    sha384: 7f6e9e5e3786675c12b8b489e3326e87ac5258569714694157507ae487a622a836d6f2a8b74224f08ac47d568e99d3a3
+  - md5: 9a1d78716e914a9262f5590c7d59daf2
+    name: klaro.css
+    sha1: d24b5d282305e8d5d4649de9695707e8d83648d9
+    sha256: 3df93b9e64099bcaff151b2600fffaf99abe563d6944564edd2496b7aff58b1d
+    sha384: b5b7f634808bee7c79ce1eba1f83ab6064dccf05dcebfd70e75663c522da00897611168bde640d94f2164229df99506d
+  - md5: 0e4bd2815c001a52ae2817b0b46af6b9
+    name: klaro.min.css
+    sha1: f405a2a45700975d84209bc89f82283946fee820
+    sha256: 1fbd0a6e46f6f20e444acea11fba8bf6ce5404e19332b8eeb8dadc0994a32659
+    sha384: b23b5115c9b78c68bdff80df59a14a3407abcf984fca596d27346014f88da64e695cdd4533cc8c1937cd7c557d28f207
   tags: []
-  changelog: |
+  version: 0.5.31
+- changelog: |
     - Added the `groupByPurpose` config option, which groups apps into
       categories based on their purpose, allowing the user to enable or disable
       entire groups of apps at once. This also reduces the space taken up by
       the modal, which is important especially for websites that use many
       third-party applications.
+  date: '2020-08-12'
+  tags: []
+  version: 0.5.30
