@@ -21,6 +21,9 @@ decline: Ablehnen
 close: Schließen
 acceptSelected: Auswahl speichern
 acceptAll: Allen zustimmen
+purposeItem:
+  app: App
+  apps: Apps
 app:
   disableAll:
     title: Alle Anwendungen aktivieren/deaktivieren
