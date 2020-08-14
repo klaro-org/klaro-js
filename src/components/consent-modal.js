@@ -3,6 +3,7 @@ import {Close} from './icons'
 import Apps from './apps'
 import Purposes from './purposes'
 import {language} from 'utils/i18n'
+import Text from './text'
 
 export default class ConsentModal extends React.Component {
 
@@ -30,9 +31,6 @@ export default class ConsentModal extends React.Component {
         }
         let declineButton
 
-
-        const extraHTML = t(['!', 'consentModal', 'extraHTML'])
-
         if (!config.hideDeclineAll && ! manager.confirmed)
             declineButton = <button disabled={confirming} className="cm-btn cm-btn-decline cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
         let acceptAllButton
@@ -50,9 +48,6 @@ export default class ConsentModal extends React.Component {
                 ppUrl = config.privacyPolicy[lang] || config.privacyPolicy.default
             }
         }
-        let extraHTMLElement
-        if (extraHTML !== undefined)
-            extraHTMLElement = <div dangerouslySetInnerHTML={{__html: extraHTML}} />
         let ppLink
         if (ppUrl !== undefined)
             ppLink = <a onClick={hide} href={ppUrl} target="_blank" rel="noopener noreferrer">{t(['consentModal','privacyPolicy','name'])}</a>
@@ -70,14 +65,7 @@ export default class ConsentModal extends React.Component {
                 <div className="cm-header">
                     {closeLink}
                     <h1 className="title">{t(['consentModal', 'title'])}</h1>
-                    <p>
-                        {t(['consentModal','description'])} &nbsp;
-                        {
-                            ppLink &&
-                            t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})
-                        }
-                    </p>
-                    {extraHTMLElement}
+                    <Text config={config} text={[t(['consentModal','description'])].concat(ppLink && [' '].concat(t(['consentModal','privacyPolicy','text'], {privacyPolicy : ppLink})) || [])} />
                 </div>
                 <div className="cm-body">
                     {appsOrPurposes}

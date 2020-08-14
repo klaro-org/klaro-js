@@ -1,6 +1,7 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
 import {getPurposes} from 'utils/config'
+import Text from './text'
 import {language} from 'utils/i18n'
 
 export default class ConsentNotice extends React.Component {
@@ -54,7 +55,6 @@ export default class ConsentNotice extends React.Component {
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
-        const extraHTML = t(['!', 'consentNotice', 'extraHTML'])
         const lang = config.lang || language()
 
         let ppUrl
@@ -105,20 +105,12 @@ export default class ConsentNotice extends React.Component {
         if (ppUrl !== undefined)
             ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
-        let extraHTMLElement
-
-        if (extraHTML !== undefined)
-            extraHTMLElement = <div dangerouslySetInnerHTML={{__html: extraHTML}} />
-
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         return <div className="cookie-notice">
             <div className="cn-body">
-                <p>
-                    {t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })}
-                </p>
+                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })} />
                 {changesText}
-                {extraHTMLElement}
                 <p className="cn-ok">
                     {declineButton}
                     {acceptButton}
