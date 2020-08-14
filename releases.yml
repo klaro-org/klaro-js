@@ -3,8 +3,8 @@
       in favor of allowing HTML in descriptions in general. You can now set
       `htmlTexts: true` in the config, which will tell Klaro to render the
       translation strings you provide as HTML content. If a given string does
-      not start with an opening bracket (<), Klaro will still put the resulting
-      HTML/text inside a paragraph (<p>...</p>), otherwise it will render it
+      not start with an opening bracket (&lt;), Klaro will still put the resulting
+      HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it
       "as is".
 
     We hope this change will make it easier to customize the appearance of the
