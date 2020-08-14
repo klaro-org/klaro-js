@@ -1,7 +1,51 @@
 - changelog: |
-    Added checksums to all build files generated locally, for use e.g. as
-    subresource integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
-    for more details about this.
+    - Removed the `extraHTML` fields from the consent modal and consent notice
+      in favor of allowing HTML in descriptions in general. You can now set
+      `htmlTexts: true` in the config, which will tell Klaro to render the
+      translation strings you provide as HTML content. If a given string does
+      not start with an opening bracket (<), Klaro will still put the resulting
+      HTML/text inside a paragraph (<p>...</p>), otherwise it will render it
+      "as is".
+
+    We hope this change will make it easier to customize the appearance of the
+    consent notice and modal without resorting to extra config parameters. If
+    we decide to support HTML in more places we can do that without breaking
+    the config format again.
+
+    We apologize for introducing a breaking config change, since the `extraHTML`
+    option was quite new to begin with the change should not affect many users
+    and we think it will be beneficial in the long run.
+  date: '2020-08-14'
+  files:
+  - md5: 3e8acb5e7913d20d35f628758e44eb57
+    name: klaro.js
+    sha1: 9dc5e41e81ad64212973a0f724457416fb578989
+    sha256: 88e87fe9b85b43705823bdee3a3ee5e965ddefd5a87ebf6c6a54755e9628185c
+    sha384: f3cf6bf1f0dc883a3fce45f444a8d4f29d7bc7873f6ab90c534f961f9dcaaab5c2320b7162fba3d069e37d7302bb384b
+  - md5: 7b1dd9ef85621f9c8504591244c39970
+    name: klaro-no-css.js
+    sha1: 320a710a85923cf5391a45dae7092c309016c4ef
+    sha256: 8eeed18d963ce946d135a232bb78cc0ec0f9a8d49155b41ce12e891acc076a96
+    sha384: 4ea6858b0f0287aba5c569a256268768346ff491107dbf43e76d42ab8f8648e072792e3284ca44516de843ddaa39213f
+  - md5: 9a1d78716e914a9262f5590c7d59daf2
+    name: klaro.css
+    sha1: d24b5d282305e8d5d4649de9695707e8d83648d9
+    sha256: 3df93b9e64099bcaff151b2600fffaf99abe563d6944564edd2496b7aff58b1d
+    sha384: b5b7f634808bee7c79ce1eba1f83ab6064dccf05dcebfd70e75663c522da00897611168bde640d94f2164229df99506d
+  - md5: 0e4bd2815c001a52ae2817b0b46af6b9
+    name: klaro.min.css
+    sha1: f405a2a45700975d84209bc89f82283946fee820
+    sha256: 1fbd0a6e46f6f20e444acea11fba8bf6ce5404e19332b8eeb8dadc0994a32659
+    sha384: b23b5115c9b78c68bdff80df59a14a3407abcf984fca596d27346014f88da64e695cdd4533cc8c1937cd7c557d28f207
+  tags:
+  - breaking-changes
+  - feature-update
+  version: 0.5.32
+- changelog: |
+    - Added checksums to all build files generated locally, for use e.g. as
+      subresource integrity tags. See
+      [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+      for more details about this.
   date: '2020-08-12'
   files:
   - md5: 4694b51c0d73ed75be758e93c637e4b0

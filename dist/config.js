@@ -9,6 +9,10 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // Setting this to true will render the descriptions of the consent
+    // modal and consent notice are HTML. Use with care.
+    htmlTexts: false,
+
     // You can group apps by their purpose in the modal. This is advisable
     // if you have a large number of apps. Users can then enable or disable
     // entire groups of apps instead of having to enable or disable every app.
@@ -70,9 +74,6 @@ var klaroConfig = {
         // If you erase the "consentModal" translations, Klaro will use the
         // bundled translations.
         de: {
-            consentNotice: {
-                extraHTML: "<p>test</p>",
-            },
             consentModal: {
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
@@ -116,13 +117,7 @@ var klaroConfig = {
             },
         },
         en: {
-            consentNotice: {
-                // uncomment and edit this to add extra HTML to the consent notice below the main text
-                // extraHTML: "<p>Please look at our <a href=\"#imprint\">imprint</a> for further information.</p>",
-            },
             consentModal: {
-                // uncomment and edit this to add extra HTML to the consent modal below the main text
-                // extraHTML: "<p>This is additional HTML that can be freely defined.</p>",
                 description:
                     'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
             },
