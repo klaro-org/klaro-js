@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default Text = ({text, config}) => {
+const Text = ({text, config}) => {
     if (config.htmlTexts === true){
         let wrapped = false
         // if the first character is an opening bracket, we assume that the
@@ -26,3 +26,5 @@ export default Text = ({text, config}) => {
     else
         return <p>{text}</p>
 }
+
+export default Text
