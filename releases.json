@@ -1,6 +1,50 @@
 [
   {
-    "changelog": "- Removed the `extraHTML` fields from the consent modal and consent notice\n  in favor of allowing HTML in descriptions in general. You can now set\n  `htmlTexts: true` in the config, which will tell Klaro to render the\n  translation strings you provide as HTML content. If a given string does\n  not start with an opening bracket (<), Klaro will still put the resulting\n  HTML/text inside a paragraph (<p>...</p>), otherwise it will render it\n  \"as is\".\n\nWe hope this change will make it easier to customize the appearance of the\nconsent notice and modal without resorting to extra config parameters. If\nwe decide to support HTML in more places we can do that without breaking\nthe config format again.\n\nWe apologize for introducing a breaking config change, since the `extraHTML`\noption was quite new to begin with the change should not affect many users\nand we think it will be beneficial in the long run.\n",
+    "changelog": {
+      "de": "- Maximale Gr\u00f6\u00dfe der Einwilligungs-Notiz auf `360px` erh\u00f6ht, damit Text in den Buttons nicht gebrochen wird.\n",
+      "en": "- Increased the maximum width of the consent notice to `360px` to allow languages with longer translations to display the buttons without wrapping text.\n"
+    },
+    "date": "2020-08-17",
+    "files": [
+      {
+        "md5": "acb11803f95f46f128d3ba2c9c15c3a3",
+        "name": "klaro.js",
+        "sha1": "884ea83a1067c9bbd2592b231b1faf7f2f1f61fd",
+        "sha256": "37622181445451aae17104bcbd794eec50791c9c638fb9da3a3f1e075ee76acc",
+        "sha384": "d6da095fdc5e855fd49fc5691750cf9c7b5545c8a3738c2323c73f8c5a73448bb347d33f17620ee43eba63c2709149f2"
+      },
+      {
+        "md5": "f7559473fec90ea178f50b9760cd1c7c",
+        "name": "klaro-no-css.js",
+        "sha1": "4898339d730d2e54ff0383b1e2972f963e639d79",
+        "sha256": "abc843dcd408b8299240cd934412f3d321ac65de09cf3a77a7e9080d7e4e99b7",
+        "sha384": "c635c8536de25e8e8ad3f862d1771890bf242e2c6ad9f3c1f9c197b29dde7b9037dce31b1d1b2bed05452c0707c02a7b"
+      },
+      {
+        "md5": "2c8c6c87f969eff0d178076ea8fa3e2d",
+        "name": "klaro.css",
+        "sha1": "b95b71b1b66dc86e2af67c8413875802470b4463",
+        "sha256": "69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c",
+        "sha384": "c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a"
+      },
+      {
+        "md5": "8a2f5f3ab0f7f420fbd224c48fc1380e",
+        "name": "klaro.min.css",
+        "sha1": "f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2",
+        "sha256": "df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763",
+        "sha384": "0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.5.33"
+  },
+  {
+    "changelog": {
+      "de": "- Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie k\u00f6nnen jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten \u00dcbersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer \u00f6ffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einf\u00fcgen, andernfalls wird er \"so wie er ist\" dargestellt.\n\nWir hoffen, dass diese \u00c4nderung es einfacher macht, das Erscheinungsbild der Einverst\u00e4ndniserkl\u00e4rung und des Modals anzupassen, ohne auf zus\u00e4tzliche Konfigurationsparameter zur\u00fcckgreifen zu m\u00fcssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterst\u00fctzen, k\u00f6nnen wir das tun, ohne das Konfigurationsformat erneut zu brechen.\n\nWir entschuldigen uns f\u00fcr die Einf\u00fchrung einer brechenden Konfigurations\u00e4nderung, da die Option `extraHTML` zu Beginn recht neu war, die \u00c4nderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.\n",
+      "en": "- Removed the `extraHTML` fields from the consent modal and consent notice in favor of allowing HTML in descriptions in general. You can now set `htmlTexts: true` in the config, which will tell Klaro to render the translation strings you provide as HTML content. If a given string does not start with an opening bracket (&lt;), Klaro will still put the resulting HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it \"as is\".\n\nWe hope this change will make it easier to customize the appearance of the consent notice and modal without resorting to extra config parameters. If we decide to support HTML in more places we can do that without breaking the config format again.\n\nWe apologize for introducing a breaking config change, since the `extraHTML` option was quite new to begin with the change should not affect many users and we think it will be beneficial in the long run.\n"
+    },
     "date": "2020-08-14",
     "files": [
       {
@@ -39,7 +83,10 @@
     "version": "0.5.32"
   },
   {
-    "changelog": "- Added checksums to all build files generated locally, for use e.g. as\n  subresource integrity tags. See\n  [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)\n  for more details about this.\n",
+    "changelog": {
+      "de": "- Pr\u00fcfsummen zu allen lokal erzeugten Builddateien hinzugef\u00fcgt, z.B. zur Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) f\u00fcr weitere Einzelheiten hierzu.\n",
+      "en": "- Added checksums to all build files generated locally, for use e.g. as subresource integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) for more details about this.\n"
+    },
     "date": "2020-08-12",
     "files": [
       {
@@ -75,7 +122,10 @@
     "version": "0.5.31"
   },
   {
-    "changelog": "- Added the `groupByPurpose` config option, which groups apps into\n  categories based on their purpose, allowing the user to enable or disable\n  entire groups of apps at once. This also reduces the space taken up by\n  the modal, which is important especially for websites that use many\n  third-party applications.\n",
+    "changelog": {
+      "de": "- Es wurde die Konfigurationsoption `groupByPurpose` hinzugef\u00fcgt, die Anwendungen nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt, ganze Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren. Dies reduziert auch den Platzbedarf des Modals, was besonders f\u00fcr Websites wichtig ist, die viele Anwendungen von Drittanbietern verwenden.\n",
+      "en": "- Added the `groupByPurpose` config option, which groups apps into categories based on their purpose, allowing the user to enable or disable entire groups of apps at once. This also reduces the space taken up by the modal, which is important especially for websites that use many third-party applications.\n"
+    },
     "date": "2020-08-12",
     "tags": [],
     "version": "0.5.30"

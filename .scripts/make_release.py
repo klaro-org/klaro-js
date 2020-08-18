@@ -60,6 +60,8 @@ if __name__ == '__main__':
         patch_version = 0
     v = f"{major_version}.{minor_version}.{patch_version}"
     for release in releases:
+        if not "version" in release:
+            continue
         if release["version"] == v:
             if (release.get("changelog") and release.get("date") and
                 re.match(r'^\d{4}\-\d{2}\-\d{2}$', release["date"]) and
