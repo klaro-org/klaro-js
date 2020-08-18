@@ -1,20 +1,24 @@
-- changelog: |
-    - Removed the `extraHTML` fields from the consent modal and consent notice
-      in favor of allowing HTML in descriptions in general. You can now set
-      `htmlTexts: true` in the config, which will tell Klaro to render the
-      translation strings you provide as HTML content. If a given string does
-      not start with an opening bracket (&lt;), Klaro will still put the resulting
-      HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it
-      "as is".
+- changelog:
+    en: |
+     - Increased the maximum width of the consent notice to `360px` to allow languages with longer translations to display the buttons without wrapping text.
+    de: |
+     - Maximale Größe der Einwilligungs-Notiz auf `360px` erhöht, damit Text in den Buttons nicht gebrochen wird.
+    date: '2020-08-17'
+    tags: [improvements]
+    version: 0.5.33
+- changelog:
+    en: |
+      - Removed the `extraHTML` fields from the consent modal and consent notice in favor of allowing HTML in descriptions in general. You can now set `htmlTexts: true` in the config, which will tell Klaro to render the translation strings you provide as HTML content. If a given string does not start with an opening bracket (&lt;), Klaro will still put the resulting HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it "as is".
 
-    We hope this change will make it easier to customize the appearance of the
-    consent notice and modal without resorting to extra config parameters. If
-    we decide to support HTML in more places we can do that without breaking
-    the config format again.
+      We hope this change will make it easier to customize the appearance of the consent notice and modal without resorting to extra config parameters. If we decide to support HTML in more places we can do that without breaking the config format again.
 
-    We apologize for introducing a breaking config change, since the `extraHTML`
-    option was quite new to begin with the change should not affect many users
-    and we think it will be beneficial in the long run.
+      We apologize for introducing a breaking config change, since the `extraHTML` option was quite new to begin with the change should not affect many users and we think it will be beneficial in the long run.
+    de: |
+      - Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie können jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten Übersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer öffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einfügen, andernfalls wird er "so wie er ist" dargestellt.
+
+      Wir hoffen, dass diese Änderung es einfacher macht, das Erscheinungsbild der Einverständniserklärung und des Modals anzupassen, ohne auf zusätzliche Konfigurationsparameter zurückgreifen zu müssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterstützen, können wir das tun, ohne das Konfigurationsformat erneut zu brechen.
+
+      Wir entschuldigen uns für die Einführung einer brechenden Konfigurationsänderung, da die Option `extraHTML` zu Beginn recht neu war, die Änderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.
   date: '2020-08-14'
   files:
   - md5: 3e8acb5e7913d20d35f628758e44eb57
@@ -41,11 +45,11 @@
   - breaking-changes
   - feature-update
   version: 0.5.32
-- changelog: |
-    - Added checksums to all build files generated locally, for use e.g. as
-      subresource integrity tags. See
-      [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
-      for more details about this.
+- changelog: 
+    en: |
+      - Added checksums to all build files generated locally, for use e.g. as subresource integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) for more details about this.
+    de: |
+      - Prüfsummen zu allen lokal erzeugten Builddateien hinzugefügt, z.B. zur Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) für weitere Einzelheiten hierzu.
   date: '2020-08-12'
   files:
   - md5: 4694b51c0d73ed75be758e93c637e4b0
@@ -70,12 +74,11 @@
     sha384: b23b5115c9b78c68bdff80df59a14a3407abcf984fca596d27346014f88da64e695cdd4533cc8c1937cd7c557d28f207
   tags: []
   version: 0.5.31
-- changelog: |
-    - Added the `groupByPurpose` config option, which groups apps into
-      categories based on their purpose, allowing the user to enable or disable
-      entire groups of apps at once. This also reduces the space taken up by
-      the modal, which is important especially for websites that use many
-      third-party applications.
+- changelog:
+    en: |
+      - Added the `groupByPurpose` config option, which groups apps into categories based on their purpose, allowing the user to enable or disable entire groups of apps at once. This also reduces the space taken up by the modal, which is important especially for websites that use many third-party applications.
+    de: |
+      - Es wurde die Konfigurationsoption `groupByPurpose` hinzugefügt, die Anwendungen nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt, ganze Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren. Dies reduziert auch den Platzbedarf des Modals, was besonders für Websites wichtig ist, die viele Anwendungen von Drittanbietern verwenden.
   date: '2020-08-12'
   tags: []
   version: 0.5.30
