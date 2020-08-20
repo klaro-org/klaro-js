@@ -8,6 +8,7 @@ const ANALYZE_BUNDLE = process.env.ANALYZE_BUNDLE !== undefined;
 const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
+const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -73,7 +74,7 @@ if (SEPARATE_CSS){
   // no CSS does not apply to the consent manager
   delete config.entry['consent-manager']
   config.module.rules.push({
-      test: /\.(sa|sc|c)ss$/,
+      test: STYLE_FILES,
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
@@ -83,6 +84,7 @@ if (SEPARATE_CSS){
           },
         },
         withEnvSourcemap('css-loader'),
+        withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
         withEnvSourcemap({loader: 'sass-loader', options: {sassOptions: {outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed'}}}),
       ],
     }
@@ -91,12 +93,25 @@ if (SEPARATE_CSS){
     new MiniCssExtractPlugin({
       filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css'
     })
-  )  
+  )
 } else {
   config.module.rules.push(
     {
-      test: /\.scss|sass$/,
-      use: ['style-loader', withEnvSourcemap('css-loader'), withEnvSourcemap('sass-loader')]
+      test: STYLE_FILES,
+      use: [
+        'style-loader',
+        withEnvSourcemap('css-loader'),
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            config: {
+              path: 'postcss.config.js'
+            }
+          }
+        },
+        // withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
+        withEnvSourcemap('sass-loader')]
     }
   )
 }
