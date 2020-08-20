@@ -17,6 +17,7 @@ lint:
   stage: test
   script:
     - npm run-script lint
+    - npm run-script lint-scss
 
 deploy:
   artifacts:

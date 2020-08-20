@@ -1,8 +1,11 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "rules": {
+    "property-no-vendor-prefix": null,
     "indentation": 4,
-    "max-nesting-depth": 3,
+    "max-nesting-depth": 8,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": 8,
     "order/order": [
       [
         "less-mixins",

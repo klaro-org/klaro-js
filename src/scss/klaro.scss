@@ -4,32 +4,23 @@ $border-dark: 1px solid #555;
 $font-color-dark: #eee;
 $font-color-dark-deemphasized: #999;
 $bg-dark: #333;
-$red2: #B24E14;
-$red1: #BA1E04;
-$yellow1: #F8C200;
-$yellow2: #D4D026;
+$red2: #b24e14;
+$red1: #ba1e04;
+$yellow1: #f8c200;
+$yellow2: #d4d026;
 $blue3: #005091;
-$blue2: #003F8A;
-$blue1: #0885BA;
-$blue4: #9AC3D4;
-$green1: #00AA3E;
-$green2: #006A4E;
-$green3: #01440C;
+$blue2: #003f8a;
+$blue1: #0885ba;
+$blue4: #9ac3d4;
+$green1: #00aa3e;
+$green2: #006a4e;
+$green3: #01440c;
 
-$fullWidth: 1024px;
+$full-width: 1024px;
 
 @mixin make-modal($centerWidth, $windowWidth) {
     z-index: 1001;
     box-shadow: $box-shadow;
-
-    @media(min-width: $centerWidth){
-        border-radius: $border-radius;
-        position: relative;
-        margin: 0 auto;
-        max-width: $windowWidth;
-        height: auto;
-        width: auto;
-    }
 
     width: 100%;
     max-height: 98%;
@@ -41,13 +32,23 @@ $fullWidth: 1024px;
     overflow: auto;
     background: $bg-dark;
     color: $font-color-dark;
+
+    @media(min-width: $centerWidth) {
+        border-radius: $border-radius;
+        position: relative;
+        margin: 0 auto;
+        max-width: $windowWidth;
+        height: auto;
+        width: auto;
+    }
+
 }
 
 .klaro {
+    .cookie-modal,
+    .cookie-notice {
 
-    .cookie-modal, .cookie-notice {
-
-        @import 'switch.scss';
+        @import 'switch';
 
         font-size: 14px;
 
@@ -60,12 +61,21 @@ $fullWidth: 1024px;
             text-decoration: none;
         }
 
-        p, strong, h1, h2, ul, li {
+        p,
+        strong,
+        h1,
+        h2,
+        ul,
+        li {
             font-family: inherit;
             color: $font-color-dark;
         }
 
-        p, h1, h2, ul, li {
+        p,
+        h1,
+        h2,
+        ul,
+        li {
             display: block;
             text-align: left;
             margin: 0;
@@ -108,7 +118,7 @@ $fullWidth: 1024px;
         }
     }
 
-    .cookie-modal{
+    .cookie-modal {
 
         width: 100%;
         height: 100%;
@@ -119,7 +129,7 @@ $fullWidth: 1024px;
         z-index: 1000;
 
         .cm-bg {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             height: 100%;
             width: 100%;
             position: fixed;
@@ -131,19 +141,18 @@ $fullWidth: 1024px;
 
             @include make-modal(800px, 640px);
 
-            .hide   {
-                border: none;
+            .hide {
+                border-style: none;
                 background: none;
-                svg {
-                    stroke: $font-color-dark;
-                }
                 position: absolute;
                 top: 20px;
                 right: 20px;
-                // Avoid getting overlapped by the heading, if external CSS sets:
-                // h1 { position: relative }
-                // See: https://github.com/KIProtect/klaro/issues/135
                 z-index: 1;
+
+                svg {
+                    stroke: $font-color-dark;
+                }
+
             }
 
             .cm-footer {
@@ -171,10 +180,12 @@ $fullWidth: 1024px;
                 padding: 1em;
                 padding-right: 24px;
                 border-bottom: $border-dark;
+
                 h1 {
                     margin: 0;
                     font-size: 2em;
                     display: block;
+
                     &.title {
                         padding-right: 20px;
                     }
@@ -183,15 +194,19 @@ $fullWidth: 1024px;
 
             .cm-body {
                 padding: 1em;
+
                 ul {
                     display: block;
                 }
+
                 span {
                     display: inline-block;
                     width: auto;
                 }
-                ul.cm-apps, ul.cm-purposes {
-                    padding :0;
+
+                ul.cm-apps,
+                ul.cm-purposes {
+                    padding: 0;
                     margin: 0;
 
                     li.cm-purpose {
@@ -199,9 +214,11 @@ $fullWidth: 1024px;
                             .cm-caret {
                                 color: #888;
                             }
+
                             .cm-content {
                                 margin-left: -40px;
-                                display:none;
+                                display: none;
+
                                 &.expanded {
                                     margin-top: 10px;
                                     display: block;
@@ -210,19 +227,23 @@ $fullWidth: 1024px;
                         }
                     }
 
-                    li.cm-app, li.cm-purpose {
-                        &:first-child{
-                            margin-top: 0;
-                        }
+                    li.cm-app,
+                    li.cm-purpose {
                         position: relative;
                         line-height: 20px;
                         vertical-align: middle;
                         padding-left: 60px;
                         min-height: 40px;
+
+                        &:first-child {
+                            margin-top: 0;
+                        }
+
                         .switch {
                             position: absolute;
                             left: 0;
                         }
+
                         p {
                             margin-top: 0;
                         }
@@ -241,7 +262,8 @@ $fullWidth: 1024px;
                             font-weight: 600;
                         }
 
-                        span.cm-opt-out, span.cm-required {
+                        span.cm-opt-out,
+                        span.cm-required {
                             padding-left: 0.2em;
                             font-size: 0.8em;
                             color: $font-color-dark-deemphasized;
@@ -262,7 +284,7 @@ $fullWidth: 1024px;
         bottom: 0;
         right: 0;
 
-        @media(min-width: $fullWidth){
+        @media(min-width: $full-width) {
             box-shadow: $box-shadow;
             border-radius: $border-radius;
             position: fixed;
@@ -271,13 +293,13 @@ $fullWidth: 1024px;
             max-width: 360px;
         }
 
-        @media(max-width: ($fullWidth - 1)){
-            border: none;
+        @media(max-width: ($full-width - 1)) {
+            border-style: none;
             border-radius: 0;
         }
 
         .cn-body {
-            margin-bottom:0;
+            margin-bottom: 0;
             margin-right: 0;
             bottom: 0;
 
@@ -309,10 +331,11 @@ $fullWidth: 1024px;
 
 
     .cookie-modal-notice {
-        padding: 1.0em;
-        padding-top: 0.2em;
 
         @include make-modal(400px, 400px);
+
+        padding: 1em;
+        padding-top: 0.2em;
 
         .cn-ok {
             display: flex;
