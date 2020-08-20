@@ -29,15 +29,17 @@ export default class ConsentModal extends React.Component {
                 <Close t={t} />
             </button>
         }
+        const btnClass = config.bigButtons ? ' cm-btn-lg' : ' cm-btn-sm'
+
         let declineButton
 
         if (!config.hideDeclineAll && ! manager.confirmed)
-            declineButton = <button disabled={confirming} className="cm-btn cm-btn-decline cm-btn-right cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={declineAndHide}>{t(['decline'])}</button>
+            declineButton = <button disabled={confirming} className={"cm-btn cm-btn-decline cm-btn-danger cn-decline" + btnClass} type="button" onClick={declineAndHide}>{t(['decline'])}</button>
         let acceptAllButton
         const acceptButton =
-            <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-info cm-btn-accept" type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
+            <button disabled={confirming} className={"cm-btn cm-btn-success cm-btn-info cm-btn-accept" + btnClass} type="button" onClick={saveAndHide}>{t([manager.confirmed ? 'save' : 'acceptSelected'])}</button>
         if (config.acceptAll && !manager.confirmed) {
-            acceptAllButton = <button disabled={confirming} className="cm-btn cm-btn-success cm-btn-accept-all" type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
+            acceptAllButton = <button disabled={confirming} className={"cm-btn cm-btn-success cm-btn-accept-all" + btnClass} type="button" onClick={acceptAndHide}>{t(['acceptAll'])}</button>
         }
 
         let ppUrl
@@ -72,9 +74,9 @@ export default class ConsentModal extends React.Component {
                 </div>
                 <div className="cm-footer">
                     <div className="cm-footer-buttons">
-                        {acceptAllButton}
-                        {acceptButton}
                         {declineButton}
+                        {acceptButton}
+                        {acceptAllButton}
                     </div>
                     <p className="cm-powered-by"><a target="_blank" href={config.poweredBy || 'https://klaro.kiprotect.com'} rel="noopener noreferrer">{t(['poweredBy'])}</a></p>
                 </div>

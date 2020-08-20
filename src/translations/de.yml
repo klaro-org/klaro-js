@@ -15,19 +15,20 @@ consentNotice:
     name: Datenschutzerklärung
   imprint:
     name: Impressum
+  configure: Konfigurieren
+purposeItem:
+  app: App
+  apps: Apps
 ok: OK
 save: Speichern
 decline: Ablehnen
 close: Schließen
 acceptSelected: Auswahl speichern
 acceptAll: Allen zustimmen
-purposeItem:
-  app: App
-  apps: Apps
 app:
   disableAll:
     title: Alle Anwendungen aktivieren/deaktivieren
-    description: Nutzen Sie diesen Schalter, um alle Apps zu aktivieren/deaktivieren.
+    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
   optOut:
     title: (Opt-Out)
     description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)

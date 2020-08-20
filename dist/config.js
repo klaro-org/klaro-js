@@ -57,6 +57,9 @@ var klaroConfig = {
     // hide "learnMore" link
     hideLearnMore: false,
 
+    // show cookie notice as modal
+    noticeIsModal: true,
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your
@@ -163,12 +166,6 @@ var klaroConfig = {
 
     // This is a list of third-party apps that Klaro will manage for you.
     apps: [
-        {
-            name: 'amazonPartner',
-            title: 'Amazon PartnerNet',
-            default: true,
-            purposes: ['advertising'],
-        },
         {
             // Each app should have a unique (and short) name.
             name: 'matomo',

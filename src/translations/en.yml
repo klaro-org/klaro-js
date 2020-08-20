@@ -11,19 +11,20 @@ consentNotice:
   description: >
     We collect and process your personal information for the following purposes: {purposes}.
   learnMore: Customize
+  configure: Configure
   privacyPolicy:
     name: privacy policy
   imprint:
     name: Imprint
+purposeItem:
+  app: app
+  apps: apps
 ok: Accept
 save: Save
 decline: Decline
 close: Close
 acceptAll: Accept all
 acceptSelected: Accept selected
-purposeItem:
-  app: app
-  apps: apps
 app:
   disableAll:
     title: Toggle all apps

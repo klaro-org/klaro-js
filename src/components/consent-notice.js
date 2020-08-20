@@ -72,6 +72,8 @@ export default class ConsentNotice extends React.Component {
         }
 
         const hideModal = () => {
+            if (config.mustConsent && !config.acceptAll)
+                return
             if (manager.confirmed)
                 this.props.hide()
             else
@@ -85,18 +87,22 @@ export default class ConsentNotice extends React.Component {
         if (!show)
             return <div />
 
+        const noticeIsModal = config.noticeIsModal
+        const noticeIsVisible =
+            (!config.mustConsent || noticeIsModal) && !manager.confirmed && !config.noNotice
+
         const declineButton = config.hideDeclineAll ?
             ''
             :
-            <button className="cm-btn cm-btn-sm cm-btn-danger cn-decline" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
+            <button className="cm-btn cm-btn-danger cn-decline" type="button" onClick={this.declineAndHide}>{t(['decline'])}</button>
 
         const acceptButton = config.acceptAll ?
-            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.acceptAndHide}>{t(['acceptAll'])}</button>
+            <button className="cm-btn cm-btn-success" type="button" onClick={this.acceptAndHide}>{t(['acceptAll'])}</button>
             :
-            <button className="cm-btn cm-btn-sm cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
+            <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
-        const learnMoreLink = config.hideLearnMore ?
-            ''
+        const learnMoreLink = noticeIsModal ?
+            <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
 
@@ -107,16 +113,27 @@ export default class ConsentNotice extends React.Component {
 
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
-        return <div className="cookie-notice">
+        const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeIsModal ? 'cookie-modal-notice' : ''}`}>
             <div className="cn-body">
                 <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })} />
                 {changesText}
-                <p className="cn-ok">
-                    {declineButton}
-                    {acceptButton}
+                <div className="cn-ok">
                     {learnMoreLink}
-                </p>
+       	   	        <div className="cn-buttons">
+                        	{declineButton}
+                        	{acceptButton}
+        		    </div>
+                </div>
             </div>
         </div>
+
+        if (!noticeIsModal)
+            return notice
+
+        return <div className="cookie-modal">
+            <div className="cm-bg" />
+            {notice}
+        </div>
+
     }
 }
