@@ -164,6 +164,12 @@ var klaroConfig = {
     // This is a list of third-party apps that Klaro will manage for you.
     apps: [
         {
+            name: 'amazonPartner',
+            title: 'Amazon PartnerNet',
+            default: true,
+            purposes: ['advertising'],
+        },
+        {
             // Each app should have a unique (and short) name.
             name: 'matomo',
 

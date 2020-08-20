@@ -1,4 +1,38 @@
 - changelog:
+    de: "- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien\
+      \ zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)\
+      \ f\xFCr eine technische Erl\xE4uterung.\n"
+    en: '- Added `SameSite=Lax` to the Klaro cookie in order to conform to upcoming
+      changes in cookie handling by browsers. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+      for details.
+
+      '
+  date: '2020-08-20'
+  files:
+  - md5: 8130bc7983d89b879da5f928948acd82
+    name: klaro.js
+    sha1: 0546e72aad4606218a25280b2573db029a7f5ef0
+    sha256: ebefbfb89efaa99f5b65d68c9fc2cdfc0a7f7ed0ec1c65c3651809a42d9b17ea
+    sha384: 361cb1bb8b18d0849637de9e94e7e0188c3d542e3ed8b4e068db7e061216c59c34de824fee5d10b7afa9192f2133d47f
+  - md5: cf941679f193409b664430612dbd183d
+    name: klaro-no-css.js
+    sha1: 1bf295d9de00a60b63b51981dce3cc7ebde35ad5
+    sha256: 303088b2a78cfafd4ecb9e01898bebc2b2f24f159db2e2f8c1b48ffde1f5f7a9
+    sha384: 7e99e6cb0a64c9eb5188a3732258e0b519bf19a08051039b9718b020882f6f554c5d95bc4fc6fc4a4379636249c6eba4
+  - md5: 2c8c6c87f969eff0d178076ea8fa3e2d
+    name: klaro.css
+    sha1: b95b71b1b66dc86e2af67c8413875802470b4463
+    sha256: 69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c
+    sha384: c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a
+  - md5: 8a2f5f3ab0f7f420fbd224c48fc1380e
+    name: klaro.min.css
+    sha1: f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2
+    sha256: df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763
+    sha384: 0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd
+  tags:
+  - improvements
+  version: 0.5.35
+- changelog:
     de: "- Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.\n- Beim\
       \ Kopieren eines `script` Elements werden nun alle Attribute \xFCbernommen.\n"
     en: |
