@@ -15,9 +15,12 @@
     <script defer type="application/javascript" src="configs/i18n.js"></script>
     <script defer type="application/javascript" src="klaro.js" data-config="klaroConfig" data-style-prefix="klaro">
     </script>
-    <script type="text/plain" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker">
+    <script type="text/plain" data-src="examples/tracker.js" data-type="application/javascript" data-name="externalTracker" onload="onLoadExternalTracker()">
     </script>
     <script type="text/javascript">
+        function onLoadExternalTracker(){
+            console.debug("External tracker loaded!")
+        }
         function showKlaro(config, modal){
             var element = document.getElementById("klaro").children[0];
             if (element !== undefined){
@@ -91,7 +94,7 @@
     </script>
     <script type="text/plain" data-type="application/javascript" data-name="inlineTracker">
 
-        console.log("This is an example of an inline tracking script.")
+        console.debug("This is an example of an inline tracking script.")
 
             function setCookie(name, value, days) {
                 var expires = "";
