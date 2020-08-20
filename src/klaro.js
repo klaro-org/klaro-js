@@ -88,7 +88,7 @@ export function initialize(){
 
 export function resetManagers(){
     for(const key in Object.keys(managers))
-        managers.delete(key)
+        delete managers[key]
 }
 
 export function getManager(conf){

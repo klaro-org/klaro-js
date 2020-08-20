@@ -184,23 +184,19 @@ export default class ConsentManager {
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
-                for(const key of Object.keys(ds)){
-                    newElement.setAttribute('data-'+key, ds[key])
+                for(let attribute of element.attributes){
+                    newElement.setAttribute(attribute.name, attribute.value)
                 }
-                newElement.type = 'text/plain'
+
                 newElement.innerText = element.innerText
                 newElement.text = element.text
-                newElement.class = element.class
-                newElement.style.cssText = element.style
-                newElement.id = element.id
-                newElement.name = element.name
-                newElement.defer = element.defer
-                newElement.async = element.async
 
                 if (consent){
                     newElement.type = type
                     if (ds.src !== undefined)
                         newElement.src = ds.src
+                } else {
+                    newElement.type = 'text/plain'
                 }
                 //we remove the original element and insert a new one
                 parent.insertBefore(newElement, element)
