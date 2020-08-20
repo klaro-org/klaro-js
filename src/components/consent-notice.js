@@ -87,9 +87,9 @@ export default class ConsentNotice extends React.Component {
         if (!show)
             return <div />
 
-        const noticeIsModal = config.noticeIsModal
+        const noticeAsModal = config.noticeAsModal
         const noticeIsVisible =
-            (!config.mustConsent || noticeIsModal) && !manager.confirmed && !config.noNotice
+            (!config.mustConsent || noticeAsModal) && !manager.confirmed && !config.noNotice
 
         const declineButton = config.hideDeclineAll ?
             ''
@@ -101,7 +101,7 @@ export default class ConsentNotice extends React.Component {
             :
             <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
-        const learnMoreLink = noticeIsModal ?
+        const learnMoreLink = noticeAsModal ?
             <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
             :
             <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
@@ -113,7 +113,7 @@ export default class ConsentNotice extends React.Component {
 
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
-        const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeIsModal ? 'cookie-modal-notice' : ''}`}>
+        const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''}`}>
             <div className="cn-body">
                 <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })} />
                 {changesText}
@@ -127,7 +127,7 @@ export default class ConsentNotice extends React.Component {
             </div>
         </div>
 
-        if (!noticeIsModal)
+        if (!noticeAsModal)
             return notice
 
         return <div className="cookie-modal">
