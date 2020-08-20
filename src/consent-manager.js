@@ -184,7 +184,7 @@ export default class ConsentManager {
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
-                for(let attribute of element.attributes){
+                for(const attribute of element.attributes){
                     newElement.setAttribute(attribute.name, attribute.value)
                 }
 
