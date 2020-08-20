@@ -58,7 +58,7 @@ var klaroConfig = {
     hideLearnMore: false,
 
     // show cookie notice as modal
-    noticeAsModal: true,
+    noticeAsModal: false,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does

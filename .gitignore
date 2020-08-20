@@ -1,4 +1,5 @@
 build
+dist/consent-manager.js
 dist/klaro*.js
 dist/klaro*.css
 .tmp

@@ -1,6 +1,47 @@
 [
   {
     "changelog": {
+      "de": "- `noticeAsModal` Parameter hinzugef\u00fcgt, der das Einwilligungs-Hinweisfenster als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung zu treffen bevor die Seite genutzt werden kann.\n",
+      "en": "- Added `noticeAsModal` option, which will display the consent notice as a modal window, forcing the user to make a consent choice before proceeding to the page.\n"
+    },
+    "date": "2020-08-20",
+    "files": [
+      {
+        "md5": "b8b9db2f603eb9a30b1aeab337fc6e04",
+        "name": "klaro.js",
+        "sha1": "7bf79cff6fe4d15a8f6b7dd8dcc704f980363eee",
+        "sha256": "0aebf669e390a65755b08ccde477bb6018995648b9aedd71eecc52511c936d67",
+        "sha384": "1955f9e1309e4ea1b5f63af9558faf30074447c064633740da252705c2ba7145ebdfdd8bffb2e96665893142bb09e2b2"
+      },
+      {
+        "md5": "bd5a9402f844e03e6f8233e4802d703f",
+        "name": "klaro-no-css.js",
+        "sha1": "2bb597d4d235395d3448045bd119da0e17969019",
+        "sha256": "be12f429788448a2fe62ca045a1020ca37872263948d73529e26a1724ee48ad5",
+        "sha384": "f0d9e31454f80b048630884884cbff3298613250f54d0594808ebb0a318d7523598738a3ec1592a89a387ceabd7ee246"
+      },
+      {
+        "md5": "7ff89e442059987b5ff0998239efd6fd",
+        "name": "klaro.css",
+        "sha1": "fa1159e04093ea65dc4cf1ef1cc52198429b7142",
+        "sha256": "ae3425fd64f1554a236ed3b080789d23c9bfc97659ab4eddea78005c0d8ed03d",
+        "sha384": "b1574cd45972fb69d19449113316434d6dec2f6b0ae5fd25644955c01a56a0faef72024e89c845c89a0f39d7664cc5a9"
+      },
+      {
+        "md5": "9a520068e16baa87b6c254c4d0ace3a6",
+        "name": "klaro.min.css",
+        "sha1": "507d14342f27256653a794a72dc0ed381f2fda6a",
+        "sha256": "7d103963e059042ca4855d781ab199ea273015757c80f74d188be8e6a4f8b88d",
+        "sha384": "2f2d62762c6715b40294db22b1a80167ed39a7e587efadc122a726f4fe691f6856d67976fa258bfa3df6668b72238fc7"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.0"
+  },
+  {
+    "changelog": {
       "de": "- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) f\u00fcr eine technische Erl\u00e4uterung.\n",
       "en": "- Added `SameSite=Lax` to the Klaro cookie in order to conform to upcoming changes in cookie handling by browsers. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) for details.\n"
     },
