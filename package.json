@@ -47,7 +47,10 @@
   "files": [
     "klaro-no-css.js",
     "klaro.css",
-    "klaro.min.css"
+    "klaro.min.css",
+    "src/scss/*.scss",
+    "src/**/*.js",
+    "src/**/*.yml"
   ],
   "homepage": "https://klaro.kiprotect.com/",
   "keywords": [
