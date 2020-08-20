@@ -1,6 +1,47 @@
 [
   {
     "changelog": {
+      "de": "- Quelldateien wie JS und SCSS werden nun im NPM-Package bereitgestellt, was es einfacher macht mit diesen zu arbeiten um z.B. SCSS-Dateien direkt zu importieren.\n",
+      "en": "- Included relevant source files in the NPM release (e.g. SCSS files) to make it easier to build on them.\n"
+    },
+    "date": "2020-08-20",
+    "files": [
+      {
+        "md5": "d9567e93b349ffe59ef278e7e5c295e1",
+        "name": "klaro.js",
+        "sha1": "f04df9e64d8e97adace8028c681dba9d7d713ede",
+        "sha256": "f0c7c91b971b42aecdba8d425cf8e7d8c52a30e8a4c451269d84d5a42d8ba7c7",
+        "sha384": "51259783dd8957a6ccc82bfa3ba84f104eb693c1a1f41c2a67a2227207a4e816dbc7297ba2a61e78baab1118f8e51d7e"
+      },
+      {
+        "md5": "89525b57bb50acb93c554445a2824570",
+        "name": "klaro-no-css.js",
+        "sha1": "5744bfa7e835289379a32ec99b97add9fb1f1f8d",
+        "sha256": "fcc4c54d5b02f983a8fa1eb59969290e730c2863b55b70ce0aefdbb0e3227d95",
+        "sha384": "eb3efe1ac036f594855849c50d0b81ef2b87b8894181f6f63870dfcd91b175b72debfefc9dfd7e9bb96f130cb0760e51"
+      },
+      {
+        "md5": "6fa289d07ccd861d6eebb088eb5883fa",
+        "name": "klaro.css",
+        "sha1": "f01842f54103541f2ff5eabddc0edba2df2de5e4",
+        "sha256": "1fffd15ff348f1272f4eb90d7ee39e0e55056f5b04d4df014dbcec875ccc57f8",
+        "sha384": "54a3e1baaf0b6bae74247a0e8825d3bb7965c59a270027f498ba2ea09851675a7b2efc27c35c5ee2128d2b034421bd9f"
+      },
+      {
+        "md5": "217793159f57a3e5f00e88313316313d",
+        "name": "klaro.min.css",
+        "sha1": "bcee0f98a9e01b8d1541935834f7e87b21844879",
+        "sha256": "c20f5fbcbcdbfd54a70df4e1e989d425110ae30a43ab1c63cf365c3398fe4f2a",
+        "sha384": "fa31a26f22979aa32f75b0f595fde87265d287b94f754ce8e906ece2830e1dffd528c08addd071bc77ffad45a50c8a90"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.2"
+  },
+  {
+    "changelog": {
       "de": "- Das `lang` Attribut des Klaro div-Elements enth\u00e4lt nun die aktuell eingestellte Sprach Sprache f\u00fcr Klaro, was z.B. die Anpassung von Stylesheets basierend auf der gew\u00e4hlten Sprache einfacher macht.\n- Der `additionalClass` Parameter wurde hinzugef\u00fcgt, \u00fcber welchem dem Klaro-Element zus\u00e4tzliche CSS-Klassen zugewiesen werden k\u00f6nnen.\n",
       "en": "- Added the language as a `lang` attribute to the Klaro div, to make it easier to e.g. change Klaro's style depending on the language via CSS selectors.\n- Added the `additionalClass` option, which allows adding additional class names to the Klaro div via the config.\n"
     },
