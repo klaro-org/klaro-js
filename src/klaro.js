@@ -74,6 +74,7 @@ export function renderKlaro(config, show, modal){
     const tt = (...args) => t(trans, lang, ...args)
     const app = render(<App t={tt}
         stylePrefix={stylePrefix}
+        lang={lang}
         manager={manager}
         config={config}
         modal={modal}

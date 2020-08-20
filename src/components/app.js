@@ -21,14 +21,15 @@ export default class App extends React.Component {
     }
 
     render() {
-        const {config, t, manager, stylePrefix, modal} = this.props
+        const {config, t, lang, manager, stylePrefix, modal} = this.props
         const {show} = this.state
+        const {additionalClass} = config
 
         const hide = () => {
             this.setState({show: false})
         }
         return (
-            <div className={stylePrefix}>
+            <div lang={lang} className={stylePrefix + (additionalClass !== undefined ? (' ' + additionalClass) : '')}>
                 <ConsentNotice key={"app-"+this.props.show} t={t} show={show} modal={modal} hide={hide} config={config} manager={manager} />
             </div>
         )
