@@ -37,7 +37,7 @@ export function setCookie(name, value, days, domain) {
     if (domain !== undefined) {
         expires += '; domain=' + domain
     }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
 }
 
 export function deleteCookie(name, path, domain) {
