@@ -1,6 +1,47 @@
 [
   {
     "changelog": {
+      "de": "- Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.\n- Beim Kopieren eines `script` Elements werden nun alle Attribute \u00fcbernommen.\n",
+      "en": "- Fixed a problem with the `klaro.resetManagers()` function.\n- Ensured that all attributes of a `script` element are copied over.\n"
+    },
+    "date": "2020-08-20",
+    "files": [
+      {
+        "md5": "24d9a455ab6a4b01930230e5ac2cabcf",
+        "name": "klaro.js",
+        "sha1": "822679239e767600d2110625e23ccab905d2a9a9",
+        "sha256": "ce5fe496eb001c72cb5eacc01c4065cfb9a24cb11286dc4d184f671d4366a441",
+        "sha384": "2220d80b77c8e896e5cc3f551907bb46c5877c769498c771ad09d4a536e85ceea2166e28241bbaa1270cad4745703e5a"
+      },
+      {
+        "md5": "6492f57626fd09b628c6c9cbae627d4d",
+        "name": "klaro-no-css.js",
+        "sha1": "d58aa5dd4447b4141ddb619ee46335f54fdd41f0",
+        "sha256": "9b2ca90239a27a5a1822a62c794c1842fff38a36c61a2a19f23733cf301a4134",
+        "sha384": "d175414ff41b6880c6f93f84d158d64b51bcba048934586c641ed05eae10e63a2d3ed309983d19660c6f2e36c2e35b90"
+      },
+      {
+        "md5": "2c8c6c87f969eff0d178076ea8fa3e2d",
+        "name": "klaro.css",
+        "sha1": "b95b71b1b66dc86e2af67c8413875802470b4463",
+        "sha256": "69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c",
+        "sha384": "c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a"
+      },
+      {
+        "md5": "8a2f5f3ab0f7f420fbd224c48fc1380e",
+        "name": "klaro.min.css",
+        "sha1": "f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2",
+        "sha256": "df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763",
+        "sha384": "0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd"
+      }
+    ],
+    "tags": [
+      "bugfixes"
+    ],
+    "version": "0.5.34"
+  },
+  {
+    "changelog": {
       "de": "- Maximale Gr\u00f6\u00dfe der Einwilligungs-Notiz auf `360px` erh\u00f6ht, damit Text in den Buttons nicht gebrochen wird.\n",
       "en": "- Increased the maximum width of the consent notice to `360px` to allow languages with longer translations to display the buttons without wrapping text.\n"
     },
