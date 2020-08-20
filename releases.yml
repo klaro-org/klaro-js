@@ -1,4 +1,38 @@
 - changelog:
+    de: "- Das `lang` Attribut des Klaro div-Elements enth\xE4lt nun die aktuell eingestellte\
+      \ Sprach Sprache f\xFCr Klaro, was z.B. die Anpassung von Stylesheets basierend\
+      \ auf der gew\xE4hlten Sprache einfacher macht.\n- Der `additionalClass` Parameter\
+      \ wurde hinzugef\xFCgt, \xFCber welchem dem Klaro-Element zus\xE4tzliche CSS-Klassen\
+      \ zugewiesen werden k\xF6nnen.\n"
+    en: |
+      - Added the language as a `lang` attribute to the Klaro div, to make it easier to e.g. change Klaro's style depending on the language via CSS selectors.
+      - Added the `additionalClass` option, which allows adding additional class names to the Klaro div via the config.
+  date: '2020-08-20'
+  files:
+  - md5: c1e3f36f0892909bc37db8b9490d24db
+    name: klaro.js
+    sha1: 51572b208f2c350f9968834e7e9426c50fc1c440
+    sha256: 2f85ef2568e0b541724053470337bba8327317f50e22e6080fa76fb8028ed591
+    sha384: e487d4355a93427c8802eafe330e2c4e18b26dcf0bcb89d70092ab339359318f419cb0f87804f6e22e285eef08f55ece
+  - md5: 83e7c9f2e07fb8dd48958f77404c89b1
+    name: klaro-no-css.js
+    sha1: 014f63fdb4758c3af5bf3f2229d6f2fa24b79c33
+    sha256: 29a7392f25612158c463beabe3ac2b70dede2c5d8018b4cd064ad20c87a51c77
+    sha384: 3f3d1349eef84a6f65ef7de9375a174a726ef83f77177e5278ba610f3ee8b6245c370c773b2ebb89a67afedc20628266
+  - md5: 6fa289d07ccd861d6eebb088eb5883fa
+    name: klaro.css
+    sha1: f01842f54103541f2ff5eabddc0edba2df2de5e4
+    sha256: 1fffd15ff348f1272f4eb90d7ee39e0e55056f5b04d4df014dbcec875ccc57f8
+    sha384: 54a3e1baaf0b6bae74247a0e8825d3bb7965c59a270027f498ba2ea09851675a7b2efc27c35c5ee2128d2b034421bd9f
+  - md5: 217793159f57a3e5f00e88313316313d
+    name: klaro.min.css
+    sha1: bcee0f98a9e01b8d1541935834f7e87b21844879
+    sha256: c20f5fbcbcdbfd54a70df4e1e989d425110ae30a43ab1c63cf365c3398fe4f2a
+    sha384: fa31a26f22979aa32f75b0f595fde87265d287b94f754ce8e906ece2830e1dffd528c08addd071bc77ffad45a50c8a90
+  tags:
+  - improvements
+  version: 0.6.1
+- changelog:
     de: "- `noticeAsModal` Parameter hinzugef\xFCgt, der das Einwilligungs-Hinweisfenster\
       \ als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung\
       \ zu treffen bevor die Seite genutzt werden kann.\n"

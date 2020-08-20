@@ -60,6 +60,9 @@ var klaroConfig = {
     // show cookie notice as modal
     noticeAsModal: false,
 
+    // you can specify an additional class (or classes) that will be added to the Klaro `div`
+    //additionalClass: 'my-klaro',
+
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
     // not exist, it will use the value given in the "lang" attribute of your
