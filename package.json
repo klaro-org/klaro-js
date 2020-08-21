@@ -8,9 +8,6 @@
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"
   },
-  "dependencies": {
-    "postcss-loader": "^3.0.0"
-  },
   "description": "A simple but powerful consent manager.",
   "devDependencies": {
     "@babel/cli": "7.10.4",
@@ -34,6 +31,7 @@
     "sass-loader": "^9.0.3",
     "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
+    "postcss-loader": "^3.0.0",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
