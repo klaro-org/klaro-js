@@ -7,7 +7,7 @@ This example shows how to import and use Klaro as a node module via webpack.
 * Run the `npm install` step as usual.
 * Delete the `klaro` folder in `node_modules`: `rm -rf node_modules/klaro`
 * Link in your local `klaro` folder instead: `ln -s ../../.. node_modules/klaro`
-* Make sure you run `make build` to generate the required files in the `dist` directory.
+* Make sure you run `make build` (**in the main Klaro directory**) to generate the required distribution files in the `dist` directory that this example will try to import.
 
 To install the dependencies, run
 
