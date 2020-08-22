@@ -52,6 +52,7 @@ export default class ConsentNotice extends React.Component {
     render(){
         const {config, show, manager, t} = this.props
         const { modal, confirming } = this.state
+        const {embedded, noticeAsModal} = config
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
@@ -87,7 +88,6 @@ export default class ConsentNotice extends React.Component {
         if (!show)
             return <div />
 
-        const noticeAsModal = config.noticeAsModal
         const noticeIsVisible =
             (!config.mustConsent || noticeAsModal) && !manager.confirmed && !config.noNotice
 
@@ -109,11 +109,11 @@ export default class ConsentNotice extends React.Component {
         let ppLink
 
         if (ppUrl !== undefined)
-            ppLink = <a onClick={hideModal} href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
+            ppLink = <a href={ppUrl}>{t(['consentNotice','privacyPolicy','name'])}</a>
 
         if (modal || manager.confirmed || (!manager.confirmed && config.mustConsent))
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
-        const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''}`}>
+        const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''} ${embedded ? 'cn-embedded' : ''}`}>
             <div className="cn-body">
                 <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })} />
                 {changesText}

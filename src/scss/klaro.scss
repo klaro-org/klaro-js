@@ -128,6 +128,20 @@ $full-width: 1024px;
         top: 0;
         z-index: 1000;
 
+        &.cm-embedded {
+            position: relative;
+            height: inherit;
+            width: inherit;
+            left: inherit;
+            right: inherit;
+            z-index: 0;
+
+            .cm-modal {
+                position: relative;
+                transform: none;
+            }
+        }
+
         .cm-bg {
             background: rgba(0, 0, 0, 0.5);
             height: 100%;
@@ -283,6 +297,20 @@ $full-width: 1024px;
         width: 100%;
         bottom: 0;
         right: 0;
+
+        &.cn-embedded {
+            position: relative;
+            height: inherit;
+            width: inherit;
+            left: inherit;
+            right: inherit;
+            bottom: inherit;
+            z-index: 0;
+
+            .cn-body {
+                padding-top: 0.5em;
+            }
+        }
 
         @media(min-width: $full-width) {
             box-shadow: $box-shadow;

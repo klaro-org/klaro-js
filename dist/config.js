@@ -13,6 +13,11 @@ var klaroConfig = {
     // modal and consent notice are HTML. Use with care.
     htmlTexts: false,
 
+    // Setting 'embedded' to true will render the Klaro modal and notice without
+    // the modal background, allowing you to e.g. embed them into a specific element
+    // of your website, such as your privacy notice.
+    embedded: false,
+
     // You can group apps by their purpose in the modal. This is advisable
     // if you have a large number of apps. Users can then enable or disable
     // entire groups of apps instead of having to enable or disable every app.
