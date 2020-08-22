@@ -82,18 +82,24 @@ export default class ConsentManager {
     }
 
     changeAll(value){
+        let changedApps = 0
         this.config.apps.map((app) => {
             if(app.required || this.config.required || value) {
-                this.updateConsent(app.name, true)
+                if (this.updateConsent(app.name, true))
+                    changedApps++
             } else {
-                this.updateConsent(app.name, false)
+                if (this.updateConsent(app.name, false))
+                    changedApps++
             }
         })
+        return changedApps
     }
 
     updateConsent(name, value){
+        const changed = (this.consents[name] || false) !== value
         this.consents[name] = value
         this.notify('consents', this.consents)
+        return changed
     }
 
     restoreSavedConsents(){
@@ -136,18 +142,23 @@ export default class ConsentManager {
         this.confirmed = true
         this.changed = false
         this.savedConsents = {...this.consents}
+        this.notify('saveConsents', this.consents)
     }
 
-    applyConsents(){
+    applyConsents(dryRun){
+        let changedApps = 0
         for(let i=0;i<this.config.apps.length;i++){
             const app = this.config.apps[i]
             const state = this.states[app.name]
             const optOut = (app.optOut !== undefined ? app.optOut : (this.config.optOut || false))
             const required = (app.required !== undefined ? app.required : (this.config.required || false))
             //opt out and required apps are always treated as confirmed
-            const confirmed = this.confirmed || optOut
+            const confirmed = this.confirmed || optOut || dryRun
             const consent = (this.getConsent(app.name) && confirmed) || required
             if (state === consent)
+                continue
+            changedApps++
+            if (dryRun)
                 continue
             this.updateAppElements(app, consent)
             this.updateAppCookies(app, consent)
@@ -157,6 +168,8 @@ export default class ConsentManager {
                 this.config.callback(consent, app)
             this.states[app.name] = consent
         }
+        this.notify('applyConsents', changedApps)
+        return changedApps
     }
 
     updateAppElements(app, consent){

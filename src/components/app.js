@@ -5,8 +5,22 @@ export default class App extends React.Component {
 
     constructor(props){
         super(props)
+        props.manager.watch(this)
         this.state = {
             show: props.show > 0 || !props.manager.confirmed
+        }
+    }
+
+    componentWillUnmount(){
+        this.props.manager.unwatch(this)
+    }
+
+    update(obj, type, data){
+        if (obj === this.props.manager && type === 'applyConsents'){
+            if ((!this.props.config.embedded) && this.props.manager.confirmed)
+                this.setState({show: false})
+            else
+                this.forceUpdate()
         }
     }
 
