@@ -181,6 +181,11 @@ export default class ConsentManager {
             //we remove and add it again to trigger a re-execution
 
             if (element.tagName === 'SCRIPT'){
+                // this element is already active, we do not touch it...
+                if (element.type === type){
+                    console.debug(`Skipping script for app ${app.name}, as it already has the correct type...`)
+                    continue
+                }
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement('script')
