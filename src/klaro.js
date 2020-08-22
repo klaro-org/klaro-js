@@ -71,7 +71,7 @@ export function renderKlaro(config, show, modal){
     const trans = getTranslations(config)
     const manager = getManager(config)
     const lang = config.lang || language()
-    const tt = (...args) => t(trans, lang, ...args)
+    const tt = (...args) => t(trans, lang, config.fallbackLang || 'en', ...args)
     const app = render(<App t={tt}
         stylePrefix={stylePrefix}
         lang={lang}

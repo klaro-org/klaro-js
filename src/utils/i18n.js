@@ -71,7 +71,7 @@ function hget(d, key, defaultValue){
     return cv
 }
 
-export function t(trans, lang, key, ...params){
+export function t(trans, lang, fallbackLang, key, ...params){
     let kl = key
     let returnUndefined = false
     if (kl[0] === '!'){
@@ -80,7 +80,11 @@ export function t(trans, lang, key, ...params){
     }
     if (!Array.isArray(kl))
         kl = [kl]
-    const value = hget(trans, [lang, ...kl])
+    let value = hget(trans, [lang, ...kl])
+    // if a fallback language is defined, we try to look up the translation for
+    // that language instead...
+    if (value === undefined && fallbackLang !== undefined)
+        value = hget(trans, [fallbackLang, ...kl])
     if (value === undefined){
         if (returnUndefined)
             return undefined
