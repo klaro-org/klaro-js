@@ -196,6 +196,7 @@ export default class ConsentManager {
             if (element.tagName === 'SCRIPT'){
                 // this element is already active, we do not touch it...
                 if (element.type === type){
+                    // eslint-disable-next-line no-console
                     console.debug(`Skipping script for app ${app.name}, as it already has the correct type...`)
                     continue
                 }

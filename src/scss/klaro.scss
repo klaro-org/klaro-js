@@ -298,20 +298,6 @@ $full-width: 1024px;
         bottom: 0;
         right: 0;
 
-        &.cn-embedded {
-            position: relative;
-            height: inherit;
-            width: inherit;
-            left: inherit;
-            right: inherit;
-            bottom: inherit;
-            z-index: 0;
-
-            .cn-body {
-                padding-top: 0.5em;
-            }
-        }
-
         @media(min-width: $full-width) {
             box-shadow: $box-shadow;
             border-radius: $border-radius;
@@ -324,6 +310,20 @@ $full-width: 1024px;
         @media(max-width: ($full-width - 1)) {
             border-style: none;
             border-radius: 0;
+        }
+
+        &.cn-embedded {
+            position: relative;
+            height: inherit;
+            width: inherit;
+            left: inherit;
+            right: inherit;
+            bottom: inherit;
+            z-index: 0;
+
+            .cn-body {
+                padding-top: 0.5em;
+            }
         }
 
         .cn-body {

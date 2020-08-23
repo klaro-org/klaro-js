@@ -15,7 +15,7 @@ export default class App extends React.Component {
         this.props.manager.unwatch(this)
     }
 
-    update(obj, type, data){
+    update(obj, type){
         if (obj === this.props.manager && type === 'applyConsents'){
             if ((!this.props.config.embedded) && this.props.manager.confirmed)
                 this.setState({show: false})
