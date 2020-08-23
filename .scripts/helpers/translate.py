@@ -1,3 +1,4 @@
+import requests
 import hashlib
 import logging
 import base64

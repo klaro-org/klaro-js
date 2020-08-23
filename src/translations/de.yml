@@ -1,40 +1,43 @@
-consentModal:
-  title: Informationen, die wir speichern
-  description: >
-    Hier können Sie einsehen und anpassen, welche Information wir über Sie speichern.
-  privacyPolicy:
-    name: Datenschutzerklärung
-    text: >
-      Weitere Details finden Sie in unserer {privacyPolicy}.
-consentNotice:
-  changeDescription: Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.
-  description: >
-    Wir speichern und verarbeiten Ihre personenbezogenen Informationen für folgende Zwecke: {purposes}.
-  learnMore: Mehr erfahren
-  privacyPolicy:
-    name: Datenschutzerklärung
-  imprint:
-    name: Impressum
-  configure: Konfigurieren
-purposeItem:
-  app: App
-  apps: Apps
-ok: OK
-save: Speichern
-decline: Ablehnen
-close: Schließen
-acceptSelected: Auswahl speichern
-acceptAll: Allen zustimmen
+# Warning, this file is partially automatically generated!
+acceptAll: Alle akzeptieren
+acceptSelected: "Ausgew\xE4hlte akzeptieren"
 app:
   disableAll:
-    title: Alle Anwendungen aktivieren/deaktivieren
-    description: Nutzen Sie diesen Schalter um alle Apps zu aktivieren/deaktivieren.
+    description: "Mit diesem Schalter k\xF6nnen Sie alle Anwendungen aktivieren oder\
+      \ deaktivieren."
+    title: Alle anwendungen aktivieren oder deaktivieren
   optOut:
-    title: (Opt-Out)
-    description: Diese Anwendung wird standardmäßig geladen (Sie können diese aber deaktivieren)
-  required:
-    title: (immer notwendig)
-    description: Diese Anwendung wird immer benötigt
-  purposes: Zwecke
+    description: "Diese Anwendung wird standardm\xE4\xDFig geladen (Sie k\xF6nnen\
+      \ sich jedoch abmelden)"
+    title: (Opt-out)
   purpose: Zweck
+  purposes: Zwecke
+  required:
+    description: Dieser Antrag ist immer erforderlich
+    title: (immer erforderlich)
+close: "Schlie\xDFen"
+consentModal:
+  description: "Hier k\xF6nnen Sie die Informationen, die wir \xFCber Sie sammeln,\
+    \ einsehen und anpassen."
+  privacyPolicy:
+    name: "Datenschutzerkl\xE4rung"
+    text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
+  title: Informationen, die wir sammeln
+consentNotice:
+  changeDescription: "Seit Ihrem letzten Besuch gab es \xC4nderungen, bitte aktualisieren\
+    \ Sie Ihre Zustimmung."
+  configure: konfigurieren
+  description: "Wir sammeln und verarbeiten Ihre pers\xF6nlichen Daten f\xFCr die\
+    \ folgenden Zwecke: {purposes}."
+  imprint:
+    name: Impressum
+  learnMore: anpassen
+  privacyPolicy:
+    name: "Datenschutzerkl\xE4rung"
+decline: Ablehnen
+ok: Akzeptieren
 poweredBy: Realisiert mit Klaro!
+purposeItem:
+  app: Anwendung
+  apps: Anwendungen
+save: Speichern

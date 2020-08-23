@@ -1,40 +1,37 @@
 consentModal:
   title: Information that we collect
-  description: >
-    Here you can see and customize the information that we collect about you.
+  description: Here you can see and customize the information that we collect about you.
   privacyPolicy:
     name: privacy policy
-    text: >
-      To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
+    text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentNotice:
   changeDescription: There were changes since your last visit, please update your consent.
-  description: >
-    We collect and process your personal information for the following purposes: {purposes}.
-  learnMore: Customize
-  configure: Configure
+  description: "We collect and process your personal information for the following purposes: {purposes}."
+  learnMore: Here you can <tr-snip>customize</tr-snip> your choices.
+  configure: Here you can <tr-snip>configure</tr-snip> your choices.
   privacyPolicy:
     name: privacy policy
   imprint:
-    name: Imprint
+    name: imprint
 purposeItem:
-  app: app
-  apps: apps
-ok: Accept
-save: Save
-decline: Decline
-close: Close
-acceptAll: Accept all
-acceptSelected: Accept selected
+  app: application
+  apps: applications
+ok|capitalize: accept
+save|capitalize: save
+decline|capitalize: decline
+close|capitalize: close
+acceptAll|capitalize: accept all
+acceptSelected|capitalize: accept selected
 app:
   disableAll:
-    title: Toggle all apps
-    description: Use this switch to enable/disable all apps.
+    title|capitalize: enable or disable all apps
+    description: Use this switch to enable or disable all apps.
   optOut:
     title: (opt-out)
     description: This app is loaded by default (but you can opt out)
   required:
     title: (always required)
     description: This application is always required
-  purposes: Purposes
-  purpose: Purpose
-poweredBy: Powered by Klaro!
+  purposes: Processing <tr-snip>purposes</tr-snip>
+  purpose: Processing <tr-snip>purpose</tr-snip>
+poweredBy: Realized with Klaro!

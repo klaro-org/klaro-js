@@ -2,17 +2,18 @@ from helpers import serialize_text, deserialize_text, translate, hash
 import yaml
 import sys
 import os
+import re
 
 class DB:
 
-    def __init__(path):
+    def __init__(self, path):
         self.path = path
         self.db = {}
 
     def load(self):
         if os.path.exists(self.path):
             with open(self.path) as input_file:
-                self.db = yaml.load(input_file.read())
+                self.db = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
 
     def get(self, language, key):
         return self.db.get(language, {}).get(key)
@@ -28,23 +29,66 @@ class DB:
         with open(self.path, "w") as output_file:
             output_file.write(yaml.dump(self.db, indent=2, sort_keys=True))
 
+def deserialize_struct(struct, translated=False):
+    for k, v in struct.items():
+        if isinstance(v, str):
+            if not translated:
+                # we make a roundtrip to remove translation markup...
+                struct[k] = deserialize_text(serialize_text(v))
+            #  if there are <tr-snip> tags, we only return the text within them.
+            if re.match(r".*<tr-snip>", v):
+                snippets = []
+                for m in re.finditer(r"<tr-snip>([^<]+?)</tr-snip>", v):
+                    snippets.append(m.group(1).strip())
+                struct[k] = " ".join(snippets)
+        else:
+            deserialize_struct(v, translated=translated)
+    return process_filters(struct)
+
+filtermap = {
+    'capitalize' : lambda v : v.capitalize(),
+}
+
+def process_filters(struct):
+    filtered_struct = {}
+    for k, v in struct.items():
+        kp = k.split("|")
+        kr = kp[0]
+        filters = kp[1:]
+        if isinstance(v, str):
+            for filter in filters:
+                if not filter in filtermap:
+                    sys.stderr.write(f"Unknown filter: {filter}\n")
+                    continue
+                v = filtermap[filter](v)
+            filtered_struct[kr] = v
+        else:
+            filtered_struct[k] = process_filters(v)
+    return filtered_struct
+
 def translate_struct(ref_lang, target_lang, ref_struct, target_struct, db, token, parent_key=None):
     for k, v in ref_struct.items():
-        full_key = k if parent_key is None else f'{parent_key}.{k}'
+        kp = k.split("|")
+        kr = kp[0]
+        full_key = kr if parent_key is None else f'{parent_key}.{kr}'
         if isinstance(v, str):
             kh = hash(v)
             rh = db.get(target_lang, full_key)
             if rh == kh:
                 continue # translation is still up-to-date
             print(f"Translating {full_key} from {ref_lang} to {target_lang}...")
-            # translation = translate(v, ref_lang, target_lang, token)
-            translation = "..."
+            try:
+                translation = deserialize_text(translate(serialize_text(v), ref_lang, target_lang, token))
+            except:
+                print("Cannot translate, skipping...")
+                continue
             target_struct[k] = translation
             db.set(target_lang, full_key, kh)
         else:
             if not isinstance(target_struct.get(k), dict):
                 target_struct[k] = {}
             translate_struct(ref_lang, target_lang, v, target_struct[k], db, token, parent_key=full_key)
+    return target_struct
 
 def update_translations(src_path, ref_lang, token):
     """
@@ -52,23 +96,32 @@ def update_translations(src_path, ref_lang, token):
     - We load the translation cache from src/translations/_t.yml
     """
     ref_translations_path = os.path.join(src_path, f"translations/{ref_lang}.ref.yml")
+    ref_translations_generated_path = os.path.join(src_path, f"translations/{ref_lang}.yml")
     db_path = os.path.join(src_path, f"translations/{ref_lang}.trans")
     db = DB(db_path)
     db.load()
     with open(ref_translations_path) as input_file:
-        ref_translations = yaml.load(input_file.read())
-
+        ref_translations = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
     for target_lang in TARGET_LANGS:
         target_lang_translations_path = os.path.join(src_path, f"translations/{target_lang}.yml")
-        with open(target_lang_translations_path) as input_file:
-            target_translations = yaml.load(input_file.read())
+        if os.path.exists(target_lang_translations_path):
+            with open(target_lang_translations_path) as input_file:
+                target_translations = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
+        else:
+            target_translations = {}
         translate_struct(ref_lang, target_lang, ref_translations, target_translations, db, token)
+        with open(target_lang_translations_path, "w") as output_file:
+            output_file.write(f"# Warning, this file is partially automatically generated!\n")
+            output_file.write(yaml.dump(deserialize_struct(target_translations, True), indent=2, sort_keys=True))
+    with open(ref_translations_generated_path, "w") as output_file:
+        output_file.write(f"# Warning, this file is automatically generated from '{ref_lang}.ref.yml', edit that file instead!\n")
+        output_file.write(yaml.dump(deserialize_struct(ref_translations), indent=2, sort_keys=True))
 
 SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
 TOKEN = os.environ.get('TOKEN')
 REF_LANG = "en"
-TARGET_LANGS = ["es", "de", "fr", "pt", "it", "nl", "pl", "zh"]
-
+#TARGET_LANGS = ["es", "de", "fr", "pt", "it", "nl", "pl", "zh"]
+TARGET_LANGS = ["de"]
 if __name__ == '__main__':
     if not TOKEN:
         sys.stderr.write(f"Please provide a DeepL token in the 'TOKEN' environment variable.\n")
