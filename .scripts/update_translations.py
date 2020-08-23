@@ -92,8 +92,12 @@ def translate_struct(ref_lang, target_lang, ref_struct, target_struct, db, token
 
 def update_translations(src_path, ref_lang, token):
     """
-    - We load the reference English translations from en.yml
-    - We load the translation cache from src/translations/_t.yml
+    - We load the reference English translations from {ref_lang}.ref.yml
+    - We load the translation cache from src/translations/{ref_lang}.trans
+    - We generate translations for all target languages based on the keys in
+      the reference language translations file.
+    - We post-process and store the translations.
+    - We also post-process the reference translations and store them.
     """
     ref_translations_path = os.path.join(src_path, f"translations/{ref_lang}.ref.yml")
     ref_translations_generated_path = os.path.join(src_path, f"translations/{ref_lang}.yml")
