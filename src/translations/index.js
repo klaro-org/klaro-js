@@ -1,6 +1,8 @@
 // To create a new translation, add a YAML file with the required entries and
 // link it here using the appropriate language code.
 
+import zh from './zh.yml'
+import pt from './pt.yml'
 import ca from './ca.yml'
 import da from './da.yml'
 import de from './de.yml'
@@ -28,6 +30,8 @@ export default {
     de,
     el,
     en,
+    zh,
+    pt,
     es,
     fi,
     fr,
