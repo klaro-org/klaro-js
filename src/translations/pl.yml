@@ -1,34 +1,44 @@
-consentModal:
-  title: Informacje, które zbieramy
-  description: >
-    Tutaj możesz zobaczyć i dostosować informacje, które zbieramy o Tobie.
-  privacyPolicy:
-    name: polityka prywatności
-    text: >
-      Aby dowiedzieć się więcej, przeczytaj naszą {privacyPolicy}.
-consentNotice:
-  changeDescription: Nastąpiły zmiany od Twojej ostatniej wizyty, zaktualizuj swoją zgodę.
-  description: >
-    Zbieramy i przetwarzamy dane osobowe w następujących celach: {purposes}.
-  learnMore: Dowiedz się więcej
-  privacyPolicy:
-    name: polityka prywatności
-  imprint:
-    name: Odcisk
-ok: OK
-save: Zapisz
-decline: Rezygnacja
-close: Zamknij
+# Warning, this file is partially automatically generated!
+acceptAll: "Zaakceptowa\u0107 wszystkie"
+acceptSelected: "Zaakceptowa\u0107 wybrany"
 app:
   disableAll:
-    title: Przełącz dla wszystkich aplikacji
-    description: Użyj przełącznika, aby włączyć/wyłączyć wszystkie aplikacje.
+    description: "Za pomoc\u0105 tego prze\u0142\u0105cznika mo\u017Cna w\u0142\u0105\
+      cza\u0107 i wy\u0142\u0105cza\u0107 wszystkie aplikacje."
+    title: "W\u0142\u0105cza\u0107 lub wy\u0142\u0105cza\u0107 wszystkie aplikacje"
   optOut:
-    title: (rezygnacja)
-    description: Ta aplikacja jest domyślnie ładowana (ale możesz zrezygnować)
-  required:
-    title: (zawsze wymagane)
-    description: Ta alikacja jest zawsze wymagana
-  purposes: Cele
+    description: "Ta aplikacja jest domy\u015Blnie za\u0142adowana (ale mog\u0105\
+      \ Pa\u0144stwo z niej zrezygnowa\u0107)"
+    title: (opt-out)
   purpose: Cel
-poweredBy: Napędzany przez Klaro!
+  purposes: Cele
+  required:
+    description: Ta aplikacja jest zawsze wymagana
+    title: (zawsze wymagane)
+close: Blisko
+consentModal:
+  description: "Tutaj mog\u0105 Pa\u0144stwo zobaczy\u0107 i dostosowa\u0107 informacje,\
+    \ kt\xF3re gromadzimy na Pa\u0144stwa temat."
+  privacyPolicy:
+    name: "polityka prywatno\u015Bci"
+    text: "Aby dowiedzie\u0107 si\u0119 wi\u0119cej, prosimy o zapoznanie si\u0119\
+      \ z nasz\u0105 {privacyPolicy}."
+  title: "Informacje, kt\xF3re zbieramy"
+consentNotice:
+  changeDescription: "Od czasu ostatniej wizyty nast\u0105pi\u0142y zmiany, prosz\u0119\
+    \ zaktualizowa\u0107 swoj\u0105 zgod\u0119."
+  configure: "skonfigurowa\u0107"
+  description: "Zbieramy i przetwarzamy Pa\u0144stwa dane osobowe w nast\u0119puj\u0105\
+    cych celach: {purposes}."
+  imprint:
+    name: odcisk
+  learnMore: "dostosowa\u0107"
+  privacyPolicy:
+    name: "polityka prywatno\u015Bci"
+decline: Spadek
+ok: "Zaakceptowa\u0107"
+poweredBy: Zrealizowane z Klaro!
+purposeItem:
+  app: zastosowanie
+  apps: Aplikacje
+save: "Z wyj\u0105tkiem"

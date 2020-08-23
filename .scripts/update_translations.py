@@ -120,8 +120,8 @@ def update_translations(src_path, ref_lang, token):
 SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
 TOKEN = os.environ.get('TOKEN')
 REF_LANG = "en"
-#TARGET_LANGS = ["es", "de", "fr", "pt", "it", "nl", "pl", "zh"]
-TARGET_LANGS = ["de"]
+TARGET_LANGS = ["es", "de", "fr", "pt", "it", "nl", "pl", "zh"]
+#TARGET_LANGS = ["de", "fr"]
 if __name__ == '__main__':
     if not TOKEN:
         sys.stderr.write(f"Please provide a DeepL token in the 'TOKEN' environment variable.\n")

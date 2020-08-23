@@ -1,34 +1,43 @@
-consentModal:
-  title: Informazioni che raccogliamo
-  description: >
-    Qui puoi vedere e scegliere le informazioni che raccogliamo su di te.
-  privacyPolicy:
-    name: policy privacy
-    text: >
-      Per saperne di più, leggi la nostra {privacyPolicy}.
-consentNotice:
-  changeDescription: Ci sono stati cambiamenti dalla tua ultima visita, aggiorna il tuo consenso.
-  description: >
-    Raccogliamo ed elaboriamo le vostre informazioni personali per i seguenti scopi: {purposes}.
-  learnMore: Scopri di più
-  privacyPolicy:
-    name: policy privacy
-  imprint:
-    name: Impronta
-ok: OK
-save: Salva
-decline: Rifiuta
-close: Chiudi
+# Warning, this file is partially automatically generated!
+acceptAll: Accettare tutti
+acceptSelected: Accettare selezionato
 app:
   disableAll:
-    title: Cambia per tutte le app
-    description: Usa questo interruttore per abilitare/disabilitare tutte le app.
+    description: Utilizzi questo interruttore per attivare o disattivare tutte le
+      app.
+    title: Attivare o disattivare tutte le app
   optOut:
+    description: "Questa app \xE8 caricata per impostazione predefinita (ma \xE8 possibile\
+      \ scegliere di non utilizzare l'app)"
     title: (opt-out)
-    description: Quest'applicazione è caricata di default (ma puoi disattivarla)
+  purpose: Scopo dell
+  purposes: "Finalit\xE0"
   required:
+    description: "Questa richiesta \xE8 sempre necessaria"
     title: (sempre richiesto)
-    description: Quest'applicazione è sempre richiesta
-  purposes: Scopi
-  purpose: Scopo
-poweredBy: Realizzato da Klaro!
+close: Chiudi
+consentModal:
+  description: "Qui pu\xF2 vedere e personalizzare le informazioni che raccogliamo\
+    \ su di lei."
+  privacyPolicy:
+    name: informativa sulla privacy
+    text: "Per saperne di pi\xF9, legga la nostra {privacyPolicy}."
+  title: Informazioni che raccogliamo
+consentNotice:
+  changeDescription: Ci sono stati dei cambiamenti rispetto alla sua ultima visita,
+    la preghiamo di aggiornare il suo consenso.
+  configure: configurare
+  description: "Raccogliamo ed elaboriamo i suoi dati personali per le seguenti finalit\xE0\
+    : {purposes}."
+  imprint:
+    name: impronta
+  learnMore: personalizzare
+  privacyPolicy:
+    name: informativa sulla privacy
+decline: Declino
+ok: Accettare
+poweredBy: Realizzato con Klaro!
+purposeItem:
+  app: domanda
+  apps: applicazioni
+save: Salva

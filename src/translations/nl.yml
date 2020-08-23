@@ -1,34 +1,40 @@
-consentModal:
-  title: Informatie die we verzamelen
-  description: >
-    Hier kunt u de informatie bekijken en aanpassen die we over u verzamelen.
-  privacyPolicy:
-    name: privacybeleid
-    text: >
-      Lees ons privacybeleid voor meer informatie {privacyPolicy}.
-consentNotice:
-  changeDescription: Er waren wijzigingen sinds uw laatste bezoek, werk uw voorkeuren bij.
-  description: >
-    Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende doeleinden: {purposes}.
-  learnMore: Lees meer
-  privacyPolicy:
-    name: privacybeleid
-  imprint:
-    name: Afdruk
-ok: OK
-save: Opslaan
-decline: Afwijzen
-close: Sluiten
+# Warning, this file is partially automatically generated!
+acceptAll: Accepteer alle
+acceptSelected: Geselecteerde
 app:
   disableAll:
-    title: Alle opties in/uit schakelen
-    description: Gebruik deze schakeloptie om alle apps in/uit te schakelen.
+    description: Gebruik deze schakelaar om alle apps in of uit te schakelen.
+    title: Alle apps in- of uitschakelen
   optOut:
-    title: (afmelden)
-    description: Deze app is standaard geladen (maar je kunt je afmelden)
+    description: Deze app wordt standaard geladen (maar u kunt zich afmelden)
+    title: (opt-out)
+  purpose: Verwerkingsdoel
+  purposes: Verwerkingsdoeleinden
   required:
-    title: (altijd verplicht)
-    description: Deze applicatie is altijd vereist
-  purposes: Doeleinden
-  purpose: Doeleinde
-poweredBy: Aangedreven door Klaro!
+    description: Deze toepassing is altijd vereist
+    title: (altijd nodig)
+close: Sluit
+consentModal:
+  description: Hier kunt u de informatie die wij over u verzamelen zien en aanpassen.
+  privacyPolicy:
+    name: privacybeleid
+    text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
+  title: Informatie die we verzamelen
+consentNotice:
+  changeDescription: Er waren veranderingen sinds uw laatste bezoek, gelieve uw toestemming
+    bij te werken.
+  configure: configureren
+  description: 'Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende
+    doeleinden: {purposes}.'
+  imprint:
+    name: impressum
+  learnMore: aanpassen
+  privacyPolicy:
+    name: privacybeleid
+decline: Daling
+ok: Accepteer
+poweredBy: Gerealiseerd met Klaro!
+purposeItem:
+  app: toepassing
+  apps: toepassingen
+save: Opslaan

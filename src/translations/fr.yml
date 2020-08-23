@@ -1,36 +1,42 @@
-consentModal:
-  title: Les informations que nous collectons
-  description: >
-    Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.
-  privacyPolicy:
-    name: politique de confidentialité
-    text: >
-      Pour en savoir plus, merci de lire notre {privacyPolicy}.
-consentNotice:
-  changeDescription: Des modifications ont eu lieu depuis votre dernière visite, merci de mettre à jour votre consentement.
-  description: >
-    Nous collectons et traitons vos informations personnelles dans le but suivant : {purposes}.
-  learnMore: En savoir plus
-  privacyPolicy:
-    name: politique de confidentialité
-  imprint:
-    name: Imprimer
-ok: OK
-save: Sauvegarder
-decline: Refuser
-close: Fermer
-acceptAll: Tout accepter
-acceptSelected: Accepter la sélection
+# Warning, this file is partially automatically generated!
+acceptAll: Accepter tout
+acceptSelected: "Accepter s\xE9lectionn\xE9"
 app:
   disableAll:
-    title: Changer toutes les options
-    description: Utiliser ce bouton pour activer/désactiver toutes les options
+    description: "Utilisez ce bouton pour activer ou d\xE9sactiver toutes les applications."
+    title: "Activer ou d\xE9sactiver toutes les applications"
   optOut:
+    description: "Cette application est charg\xE9e par d\xE9faut (mais vous pouvez\
+      \ la d\xE9sactiver)"
     title: (opt-out)
-    description: Cette application est chargée par défaut (mais vous pouvez la désactiver)
+  purpose: Fin
+  purposes: Fins
   required:
+    description: "Cette demande est toujours n\xE9cessaire"
     title: (toujours requis)
-    description: Cette application est toujours requise
-  purposes: Utilisations
-  purpose: Utilisation
-poweredBy: Propulsé par Klaro!
+close: Fermer
+consentModal:
+  description: "Ici, vous pouvez voir et personnaliser les informations que nous recueillons\
+    \ \xE0 votre sujet."
+  privacyPolicy:
+    name: "politique de confidentialit\xE9"
+    text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
+  title: Informations que nous recueillons
+consentNotice:
+  changeDescription: "Il y a eu des changements depuis votre derni\xE8re visite, veuillez\
+    \ mettre \xE0 jour votre consentement."
+  configure: configurer
+  description: 'Nous recueillons et traitons vos informations personnelles aux fins
+    suivantes : {purposes}.'
+  imprint:
+    name: "mentions l\xE9gales"
+  learnMore: personnaliser
+  privacyPolicy:
+    name: "politique de confidentialit\xE9"
+decline: "D\xE9cliner"
+ok: Accepter
+poweredBy: "R\xE9alis\xE9 avec Klaro !"
+purposeItem:
+  app: candidature
+  apps: applications
+save: Enregistrer
