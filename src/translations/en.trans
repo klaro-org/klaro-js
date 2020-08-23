@@ -18,7 +18,7 @@ de:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -46,7 +46,7 @@ es:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -74,7 +74,7 @@ fr:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -102,7 +102,7 @@ it:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -130,7 +130,7 @@ nl:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -158,7 +158,7 @@ pl:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -186,7 +186,7 @@ pt:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
@@ -214,7 +214,7 @@ zh:
   consentNotice.configure: ce3c9e9ba70674d9
   consentNotice.description: cbba9bddbe5c85bb
   consentNotice.imprint.name: e7444343ba0a70a2
-  consentNotice.learnMore: 75d1bae8157da4cf
+  consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657

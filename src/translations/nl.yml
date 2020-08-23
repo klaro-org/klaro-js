@@ -28,7 +28,7 @@ consentNotice:
     doeleinden: {purposes}.'
   imprint:
     name: impressum
-  learnMore: aanpassen
+  learnMore: Aanpassen
   privacyPolicy:
     name: privacybeleid
 decline: Daling

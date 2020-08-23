@@ -32,7 +32,7 @@ consentNotice:
     cych celach: {purposes}."
   imprint:
     name: odcisk
-  learnMore: "dostosowa\u0107"
+  learnMore: "Dostosowa\u0107"
   privacyPolicy:
     name: "polityka prywatno\u015Bci"
 decline: Spadek

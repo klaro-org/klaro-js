@@ -30,7 +30,7 @@ consentNotice:
     suivantes : {purposes}.'
   imprint:
     name: "mentions l\xE9gales"
-  learnMore: personnaliser
+  learnMore: Personnaliser
   privacyPolicy:
     name: "politique de confidentialit\xE9"
 decline: "D\xE9cliner"

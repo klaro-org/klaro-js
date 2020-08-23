@@ -29,7 +29,7 @@ consentNotice:
     purposes: {purposes}.'
   imprint:
     name: imprint
-  learnMore: customize
+  learnMore: Customize
   privacyPolicy:
     name: privacy policy
 decline: Decline

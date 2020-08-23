@@ -30,7 +30,7 @@ consentNotice:
     \ prop\xF3sitos: {purposes}."
   imprint:
     name: Imprimir
-  learnMore: personalizar
+  learnMore: Personalizar
   privacyPolicy:
     name: "pol\xEDtica de privacidad"
 decline: Declive

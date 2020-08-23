@@ -31,7 +31,7 @@ consentNotice:
     \ folgenden Zwecke: {purposes}."
   imprint:
     name: Impressum
-  learnMore: anpassen
+  learnMore: Anpassen
   privacyPolicy:
     name: "Datenschutzerkl\xE4rung"
 decline: Ablehnen

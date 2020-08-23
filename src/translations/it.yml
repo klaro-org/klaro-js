@@ -31,7 +31,7 @@ consentNotice:
     : {purposes}."
   imprint:
     name: impronta
-  learnMore: personalizzare
+  learnMore: Personalizzare
   privacyPolicy:
     name: informativa sulla privacy
 decline: Declino

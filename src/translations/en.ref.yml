@@ -7,7 +7,7 @@ consentModal:
 consentNotice:
   changeDescription: There were changes since your last visit, please update your consent.
   description: "We collect and process your personal information for the following purposes: {purposes}."
-  learnMore: Here you can <tr-snip>customize</tr-snip> your choices.
+  learnMore|capitalize: Here you can <tr-snip>customize</tr-snip> your choices, if you like.
   configure: Here you can <tr-snip>configure</tr-snip> your choices.
   privacyPolicy:
     name: privacy policy
