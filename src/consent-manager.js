@@ -22,6 +22,9 @@ export default class ConsentManager {
         this.loadConsents()
         this.applyConsents()
         this.savedConsents = {...this.consents}
+        if(typeof this.config.saveCallback === 'function'){
+            this.config.saveCallback(this);
+        }
     }
 
     get storageMethod(){
