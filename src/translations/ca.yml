@@ -15,10 +15,15 @@ consentNotice:
     name: política de privadesa
   imprint:
     name: Empremta
-ok: Accepta
-save: Desa
-decline: Rebutja
-close: Tanca
+purposeItem:
+  app: aplicació
+  apps: aplicacions
+ok|capitalize: accepta
+save|capitalize: desa
+decline|capitalize: rebutja
+close|capitalize: tanca
+acceptAll|capitalize: accepta-les totes
+acceptSelected|capitalize: accepta les escollides
 app:
   disableAll:
     title: Habilita/deshabilita totes les aplicacions
