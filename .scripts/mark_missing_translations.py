@@ -56,7 +56,6 @@ def mark_missing_translations(src_path, ref_lang):
                 lang_translations = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
             mark_missing(ref_translations, lang_translations, ref_lang)
             new_data = yaml.dump(lang_translations, indent=2, allow_unicode=True, sort_keys=True, encoding='utf-8')
-            print(new_data.decode("utf-8"))
             with open(full_path, "wb") as output_file:
                 output_file.write(new_data)
 
