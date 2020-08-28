@@ -1,5 +1,4 @@
 build
-dist/consent-manager.js
 .tmp
 __pycache__
 node_modules
