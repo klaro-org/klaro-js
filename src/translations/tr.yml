@@ -1,32 +1,44 @@
+acceptAll: ''
+acceptAll_en: Accept all
+acceptSelected: ''
+acceptSelected_en: Accept selected
+app:
+  disableAll:
+    description: Toplu açma/kapama için bu düğmeyi kullanabilirsin.
+    title: Tüm uygulamaları aç/kapat
+  optOut:
+    description: Bu uygulama varsayılanda yüklendi (ancak iptal edebilirsin)
+    title: (isteğe bağlı)
+  purpose: Amaç
+  purposes: Amaçlar
+  required:
+    description: Bu uygulama her zaman gerekli
+    title: (her zaman gerekli)
+close: Kapat
 consentModal:
-  title: Sakladığımız bilgiler
-  description: >
-    Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz.
+  description: Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz.
   privacyPolicy:
     name: Gizlilik Politikası
-    text: >
-      Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
+    text: Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
+  title: Sakladığımız bilgiler
 consentNotice:
-  changeDescription: Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi güncelleyin.
-  description: >
-    Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.
+  changeDescription: Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi
+    güncelleyin.
+  configure: ''
+  configure_en: configure
+  description: 'Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.'
+  imprint:
+    name: ''
+    name_en: imprint
   learnMore: Daha fazla bilgi
   privacyPolicy:
     name: Gizlilik Politikası
-ok: Tamam
-save: Kaydet
 decline: Reddet
-close: Kapat
-app:
-  disableAll:
-    title: Tüm uygulamaları aç/kapat
-    description: Toplu açma/kapama için bu düğmeyi kullanabilirsin.
-  optOut:
-    title: (isteğe bağlı)
-    description: Bu uygulama varsayılanda yüklendi (ancak iptal edebilirsin)
-  required:
-    title: (her zaman gerekli)
-    description: Bu uygulama her zaman gerekli
-  purposes: Amaçlar
-  purpose: Amaç
+ok: Tamam
 poweredBy: Klaro tarafından geliştirildi!
+purposeItem:
+  app: ''
+  app_en: application
+  apps: ''
+  apps_en: applications
+save: Kaydet

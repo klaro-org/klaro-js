@@ -4,10 +4,9 @@ export function convertToMap(d){
         const value = d[key]
         if (!(typeof(key) === 'string'))
             continue
-        if (typeof(value) === 'string'){
+        if (typeof(value) === 'string' || value === null) {
             dm.set(key, value)
-        }
-        else{
+        } else {
             dm.set(key, convertToMap(value))
         }
     }

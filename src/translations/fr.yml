@@ -1,41 +1,39 @@
-# Warning, this file is partially automatically generated!
 acceptAll: Accepter tout
-acceptSelected: "Accepter s\xE9lectionn\xE9"
+acceptSelected: Accepter sélectionné
 app:
   disableAll:
-    description: "Utilisez ce bouton pour activer ou d\xE9sactiver toutes les applications."
-    title: "Activer ou d\xE9sactiver toutes les applications"
+    description: Utilisez ce bouton pour activer ou désactiver toutes les applications.
+    title: Activer ou désactiver toutes les applications
   optOut:
-    description: "Cette application est charg\xE9e par d\xE9faut (mais vous pouvez\
-      \ la d\xE9sactiver)"
+    description: Cette application est chargée par défaut (mais vous pouvez la désactiver)
     title: (opt-out)
   purpose: Fin
   purposes: Fins
   required:
-    description: "Cette demande est toujours n\xE9cessaire"
+    description: Cette demande est toujours nécessaire
     title: (toujours requis)
 close: Fermer
 consentModal:
-  description: "Ici, vous pouvez voir et personnaliser les informations que nous recueillons\
-    \ \xE0 votre sujet."
+  description: Ici, vous pouvez voir et personnaliser les informations que nous recueillons
+    à votre sujet.
   privacyPolicy:
-    name: "politique de confidentialit\xE9"
+    name: politique de confidentialité
     text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
   title: Informations que nous recueillons
 consentNotice:
-  changeDescription: "Il y a eu des changements depuis votre derni\xE8re visite, veuillez\
-    \ mettre \xE0 jour votre consentement."
+  changeDescription: Il y a eu des changements depuis votre dernière visite, veuillez
+    mettre à jour votre consentement.
   configure: configurer
   description: 'Nous recueillons et traitons vos informations personnelles aux fins
     suivantes : {purposes}.'
   imprint:
-    name: "mentions l\xE9gales"
+    name: mentions légales
   learnMore: Personnaliser
   privacyPolicy:
-    name: "politique de confidentialit\xE9"
-decline: "D\xE9cliner"
+    name: politique de confidentialité
+decline: Décliner
 ok: Accepter
-poweredBy: "R\xE9alis\xE9 avec Klaro !"
+poweredBy: Réalisé avec Klaro !
 purposeItem:
   app: candidature
   apps: applications

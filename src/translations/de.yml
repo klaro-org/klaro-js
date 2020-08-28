@@ -1,39 +1,37 @@
-# Warning, this file is partially automatically generated!
 acceptAll: Alle akzeptieren
-acceptSelected: "Ausgew\xE4hlte akzeptieren"
+acceptSelected: Ausgewählte akzeptieren
 app:
   disableAll:
-    description: "Mit diesem Schalter k\xF6nnen Sie alle Anwendungen aktivieren oder\
-      \ deaktivieren."
+    description: Mit diesem Schalter können Sie alle Anwendungen aktivieren oder deaktivieren.
     title: Alle anwendungen aktivieren oder deaktivieren
   optOut:
-    description: "Diese Anwendung wird standardm\xE4\xDFig geladen (Sie k\xF6nnen\
-      \ sich jedoch abmelden)"
+    description: Diese Anwendung wird standardmäßig geladen (Sie können sich jedoch
+      abmelden)
     title: (Opt-out)
   purpose: Zweck
   purposes: Zwecke
   required:
     description: Dieser Antrag ist immer erforderlich
     title: (immer erforderlich)
-close: "Schlie\xDFen"
+close: Schließen
 consentModal:
-  description: "Hier k\xF6nnen Sie die Informationen, die wir \xFCber Sie sammeln,\
-    \ einsehen und anpassen."
+  description: Hier können Sie die Informationen, die wir über Sie sammeln, einsehen
+    und anpassen.
   privacyPolicy:
-    name: "Datenschutzerkl\xE4rung"
+    name: Datenschutzerklärung
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
   title: Informationen, die wir sammeln
 consentNotice:
-  changeDescription: "Seit Ihrem letzten Besuch gab es \xC4nderungen, bitte aktualisieren\
-    \ Sie Ihre Zustimmung."
+  changeDescription: Seit Ihrem letzten Besuch gab es Änderungen, bitte aktualisieren
+    Sie Ihre Zustimmung.
   configure: konfigurieren
-  description: "Wir sammeln und verarbeiten Ihre pers\xF6nlichen Daten f\xFCr die\
-    \ folgenden Zwecke: {purposes}."
+  description: 'Wir sammeln und verarbeiten Ihre persönlichen Daten für die folgenden
+    Zwecke: {purposes}.'
   imprint:
     name: Impressum
   learnMore: Anpassen
   privacyPolicy:
-    name: "Datenschutzerkl\xE4rung"
+    name: Datenschutzerklärung
 decline: Ablehnen
 ok: Akzeptieren
 poweredBy: Realisiert mit Klaro!

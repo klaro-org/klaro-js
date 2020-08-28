@@ -1,4 +1,3 @@
-# Warning, this file is partially automatically generated!
 acceptAll: Aceptar todo
 acceptSelected: Aceptar seleccionados
 app:
@@ -6,8 +5,8 @@ app:
     description: Utilice este interruptor para activar o desactivar todas las aplicaciones.
     title: Activar o desactivar todas las aplicaciones
   optOut:
-    description: "Esta aplicaci\xF3n est\xE1 cargada por defecto (pero puedes optar\
-      \ por no hacerlo)"
+    description: Esta aplicación está cargada por defecto (pero puedes optar por no
+      hacerlo)
     title: (opt-out)
   purpose: de
   purposes: Fines
@@ -16,27 +15,26 @@ app:
     title: (siempre requerido)
 close: Cerrar
 consentModal:
-  description: "Aqu\xED puede ver y personalizar la informaci\xF3n que recogemos sobre\
-    \ usted."
+  description: Aquí puede ver y personalizar la información que recogemos sobre usted.
   privacyPolicy:
-    name: "pol\xEDtica de privacidad"
-    text: "Para saber m\xE1s, por favor lea nuestra {privacyPolicy} de privacidad."
-  title: "La informaci\xF3n que recogemos"
+    name: política de privacidad
+    text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
+  title: La información que recogemos
 consentNotice:
-  changeDescription: "Hubo cambios desde su \xFAltima visita, por favor, actualice\
-    \ su consentimiento."
+  changeDescription: Hubo cambios desde su última visita, por favor, actualice su
+    consentimiento.
   configure: configurar
-  description: "Recopilamos y procesamos su informaci\xF3n personal para los siguientes\
-    \ prop\xF3sitos: {purposes}."
+  description: 'Recopilamos y procesamos su información personal para los siguientes
+    propósitos: {purposes}.'
   imprint:
     name: Imprimir
   learnMore: Personalizar
   privacyPolicy:
-    name: "pol\xEDtica de privacidad"
+    name: política de privacidad
 decline: Declive
 ok: Aceptar
 poweredBy: Realizado con Klaro!
 purposeItem:
-  app: "aplicaci\xF3n"
+  app: aplicación
   apps: aplicaciones
 save: Guardar

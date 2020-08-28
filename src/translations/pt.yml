@@ -1,43 +1,41 @@
-# Warning, this file is partially automatically generated!
 acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
 app:
   disableAll:
-    description: "Use essa chave para habilitar ou desabilitar todas as aplica\xE7\
-      \xF5es."
-    title: "Habilitar ou desabilitar todas as aplica\xE7\xF5es"
+    description: Use essa chave para habilitar ou desabilitar todas as aplicações.
+    title: Habilitar ou desabilitar todas as aplicações
   optOut:
-    description: "Este aplicativo \xE9 carregado por padr\xE3o (mas o senhor pode\
-      \ optar por n\xE3o participar)."
+    description: Este aplicativo é carregado por padrão (mas o senhor pode optar por
+      não participar)
     title: (opt-out)
   purpose: Objetivo
   purposes: Fins
   required:
-    description: "Este pedido \xE9 sempre necess\xE1rio"
-    title: "(sempre necess\xE1rio)"
+    description: Este pedido é sempre necessário
+    title: (sempre necessário)
 close: Fechar
 consentModal:
-  description: "Aqui o senhor pode ver e personalizar as informa\xE7\xF5es que coletamos\
-    \ a seu respeito."
+  description: Aqui o senhor pode ver e personalizar as informações que coletamos
+    a seu respeito.
   privacyPolicy:
-    name: "pol\xEDtica de privacidade"
+    name: política de privacidade
     text: Para saber mais, por favor, leia nossa {privacyPolicy}.
-  title: "Informa\xE7\xF5es que coletamos"
+  title: Informações que coletamos
 consentNotice:
-  changeDescription: "Houve mudan\xE7as desde sua \xFAltima visita, queira atualizar\
-    \ seu consentimento."
+  changeDescription: Houve mudanças desde sua última visita, queira atualizar seu
+    consentimento.
   configure: configurar
-  description: "Coletamos e processamos suas informa\xE7\xF5es pessoais para os seguintes\
-    \ prop\xF3sitos: {purposes}."
+  description: 'Coletamos e processamos suas informações pessoais para os seguintes
+    propósitos: {purposes}.'
   imprint:
     name: imprimir
   learnMore: Personalizar
   privacyPolicy:
-    name: "pol\xEDtica de privacidade"
-decline: "Decl\xEDnio"
+    name: política de privacidade
+decline: Declínio
 ok: Aceitar
 poweredBy: Realizado com Klaro!
 purposeItem:
-  app: "aplica\xE7\xE3o"
-  apps: "aplica\xE7\xF5es"
+  app: aplicação
+  apps: aplicações
 save: Exceto

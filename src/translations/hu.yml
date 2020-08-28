@@ -1,32 +1,45 @@
+acceptAll: ''
+acceptAll_en: Accept all
+acceptSelected: ''
+acceptSelected_en: Accept selected
+app:
+  disableAll:
+    description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
+    title: Összes app átkapcsolása
+  optOut:
+    description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
+    title: (leiratkozás)
+  purpose: Cél
+  purposes: Célok
+  required:
+    description: Ez az alkalmazás mindig kötelező
+    title: (mindig kötelező)
+close: Elvet
 consentModal:
-  title: Információk, amiket gyűjtünk
-  description: >
-    Itt láthatod és testreszabhatod az rólad gyűjtött információkat.
+  description: Itt láthatod és testreszabhatod az rólad gyűjtött információkat.
   privacyPolicy:
     name: adatvédelmi irányelveinket
-    text: >
-      További információért kérjük, olvassd el az {privacyPolicy}.
+    text: További információért kérjük, olvassd el az {privacyPolicy}.
+  title: Információk, amiket gyűjtünk
 consentNotice:
-  changeDescription: Az utolsó látogatás óta változások történtek, kérjük, frissítsd a hozzájárulásodat.
-  description: >
-    Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra: {purposes}.
+  changeDescription: Az utolsó látogatás óta változások történtek, kérjük, frissítsd
+    a hozzájárulásodat.
+  configure: ''
+  configure_en: configure
+  description: 'Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra:
+    {purposes}.'
+  imprint:
+    name: ''
+    name_en: imprint
   learnMore: Tudj meg többet
   privacyPolicy:
     name: adatvédelmi irányelveinket
-ok: Elfogad
-save: Save
 decline: Mentés
-close: Elvet
-app:
-  disableAll:
-    title: Összes app átkapcsolása
-    description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
-  optOut:
-    title: (leiratkozás)
-    description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
-  required:
-    title: (mindig kötelező)
-    description: Ez az alkalmazás mindig kötelező
-  purposes: Célok
-  purpose: Cél
+ok: Elfogad
 poweredBy: Powered by Klaro!
+purposeItem:
+  app: ''
+  app_en: application
+  apps: ''
+  apps_en: applications
+save: Save

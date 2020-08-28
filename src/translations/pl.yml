@@ -1,14 +1,11 @@
-# Warning, this file is partially automatically generated!
-acceptAll: "Zaakceptowa\u0107 wszystkie"
-acceptSelected: "Zaakceptowa\u0107 wybrany"
+acceptAll: Zaakceptować wszystkie
+acceptSelected: Zaakceptować wybrany
 app:
   disableAll:
-    description: "Za pomoc\u0105 tego prze\u0142\u0105cznika mo\u017Cna w\u0142\u0105\
-      cza\u0107 i wy\u0142\u0105cza\u0107 wszystkie aplikacje."
-    title: "W\u0142\u0105cza\u0107 lub wy\u0142\u0105cza\u0107 wszystkie aplikacje"
+    description: Za pomocą tego przełącznika można włączać i wyłączać wszystkie aplikacje.
+    title: Włączać lub wyłączać wszystkie aplikacje
   optOut:
-    description: "Ta aplikacja jest domy\u015Blnie za\u0142adowana (ale mog\u0105\
-      \ Pa\u0144stwo z niej zrezygnowa\u0107)"
+    description: Ta aplikacja jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
     title: (opt-out)
   purpose: Cel
   purposes: Cele
@@ -17,28 +14,27 @@ app:
     title: (zawsze wymagane)
 close: Blisko
 consentModal:
-  description: "Tutaj mog\u0105 Pa\u0144stwo zobaczy\u0107 i dostosowa\u0107 informacje,\
-    \ kt\xF3re gromadzimy na Pa\u0144stwa temat."
+  description: Tutaj mogą Państwo zobaczyć i dostosować informacje, które gromadzimy
+    na Państwa temat.
   privacyPolicy:
-    name: "polityka prywatno\u015Bci"
-    text: "Aby dowiedzie\u0107 si\u0119 wi\u0119cej, prosimy o zapoznanie si\u0119\
-      \ z nasz\u0105 {privacyPolicy}."
-  title: "Informacje, kt\xF3re zbieramy"
+    name: polityka prywatności
+    text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
+  title: Informacje, które zbieramy
 consentNotice:
-  changeDescription: "Od czasu ostatniej wizyty nast\u0105pi\u0142y zmiany, prosz\u0119\
-    \ zaktualizowa\u0107 swoj\u0105 zgod\u0119."
-  configure: "skonfigurowa\u0107"
-  description: "Zbieramy i przetwarzamy Pa\u0144stwa dane osobowe w nast\u0119puj\u0105\
-    cych celach: {purposes}."
+  changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, proszę zaktualizować
+    swoją zgodę.
+  configure: skonfigurować
+  description: 'Zbieramy i przetwarzamy Państwa dane osobowe w następujących celach:
+    {purposes}.'
   imprint:
     name: odcisk
-  learnMore: "Dostosowa\u0107"
+  learnMore: Dostosować
   privacyPolicy:
-    name: "polityka prywatno\u015Bci"
+    name: polityka prywatności
 decline: Spadek
-ok: "Zaakceptowa\u0107"
+ok: Zaakceptować
 poweredBy: Zrealizowane z Klaro!
 purposeItem:
   app: zastosowanie
   apps: Aplikacje
-save: "Z wyj\u0105tkiem"
+save: Z wyjątkiem

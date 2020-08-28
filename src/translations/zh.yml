@@ -1,44 +1,37 @@
-# Warning, this file is partially automatically generated!
-acceptAll: "\u7167\u5355\u5168\u6536"
-acceptSelected: "\u63A5\u53D7\u9009\u62E9"
+acceptAll: 照单全收
+acceptSelected: 接受选择
 app:
   disableAll:
-    description: "\u4F7F\u7528\u6B64\u5F00\u5173\u53EF\u542F\u7528\u6216\u7981\u7528\
-      \u6240\u6709\u5E94\u7528\u7A0B\u5E8F\u3002"
-    title: "\u542F\u7528\u6216\u5173\u95ED\u6240\u6709\u5E94\u7528\u7A0B\u5E8F"
+    description: 使用此开关可启用或禁用所有应用程序。
+    title: 启用或关闭所有应用程序
   optOut:
-    description: "\u8BE5\u5E94\u7528\u7A0B\u5E8F\u9ED8\u8BA4\u52A0\u8F7D\uFF08\u4F46\
-      \u60A8\u53EF\u4EE5\u9009\u62E9\u9000\u51FA\uFF09\u3002"
-    title: "(\u9009\u62E9\u9000\u51FA)"
-  purpose: "\u76EE\u7684"
-  purposes: "\u76EE\u7684"
+    description: 该应用程序默认加载（但您可以选择退出）。
+    title: (选择退出)
+  purpose: 目的
+  purposes: 目的
   required:
-    description: "\u6B64\u9879\u7533\u8BF7\u662F\u5FC5\u987B\u7684"
-    title: "(\u603B\u662F\u9700\u8981)"
-close: "\u5BC6\u5207"
+    description: 此项申请是必须的
+    title: (总是需要)
+close: 密切
 consentModal:
-  description: "\u5728\u8FD9\u91CC\uFF0C\u60A8\u53EF\u4EE5\u770B\u5230\u5E76\u5B9A\
-    \u5236\u6211\u4EEC\u6536\u96C6\u7684\u6709\u5173\u60A8\u7684\u4FE1\u606F\u3002"
+  description: 在这里，您可以看到并定制我们收集的有关您的信息。
   privacyPolicy:
-    name: "\u9690\u79C1\u653F\u7B56"
-    text: "\u8981\u4E86\u89E3\u66F4\u591A\uFF0C\u8BF7\u9605\u8BFB\u6211\u4EEC\u7684\
-      {privacyPolicy} \u3002"
-  title: "\u6211\u4EEC\u6536\u96C6\u7684\u4FE1\u606F"
+    name: 隐私政策
+    text: 要了解更多，请阅读我们的{privacyPolicy} 。
+  title: 我们收集的信息
 consentNotice:
-  changeDescription: "\u81EA\u4E0A\u6B21\u8BBF\u95EE\u540E\u6709\u53D8\u5316\uFF0C\
-    \u8BF7\u66F4\u65B0\u60A8\u7684\u540C\u610F\u4E66\u3002"
-  configure: "\u914D\u7F6E"
-  description: "\u6211\u4EEC\u6536\u96C6\u548C\u5904\u7406\u60A8\u7684\u4E2A\u4EBA\
-    \u4FE1\u606F\u7528\u4E8E\u4EE5\u4E0B\u76EE\u7684\uFF1A {purposes}\u3002"
+  changeDescription: 自上次访问后有变化，请更新您的同意书。
+  configure: 配置
+  description: 我们收集和处理您的个人信息用于以下目的： {purposes}。
   imprint:
-    name: "\u5370\u8BB0"
-  learnMore: "\u81EA\u5B9A\u4E49"
+    name: 印记
+  learnMore: 自定义
   privacyPolicy:
-    name: "\u9690\u79C1\u653F\u7B56"
-decline: "\u8870\u843D"
-ok: "\u63A5\u53D7"
-poweredBy: "\u4E0EKlaro\u4E00\u8D77\u5B9E\u73B0!"
+    name: 隐私政策
+decline: 衰落
+ok: 接受
+poweredBy: 与Klaro一起实现!
 purposeItem:
-  app: "\u7533\u8BF7"
-  apps: "\u5E94\u7528"
-save: "\u633D\u6551"
+  app: 申请
+  apps: 应用
+save: 挽救

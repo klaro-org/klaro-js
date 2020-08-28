@@ -1,31 +1,47 @@
+acceptAll: ''
+acceptAll_en: Accept all
+acceptSelected: ''
+acceptSelected_en: Accept selected
+app:
+  disableAll:
+    description: Utilizați acest switch pentru a activa/dezactiva toate aplicațiile.
+    title: Comutați între toate aplicațiile
+  optOut:
+    description: Această aplicație este încărcată în mod implicit (dar puteți renunța)
+    title: (opt-out)
+  purpose: Scop
+  purposes: Scopuri
+  required:
+    description: Această aplicație este întotdeauna necesară
+    title: (întotdeauna necesar)
+close: ''
+close_en: Close
 consentModal:
-  title: Informațiile pe care le colectăm
-  description: >
-    Aici puteți vedea și personaliza informațiile pe care le colectăm despre dvs.
+  description: Aici puteți vedea și personaliza informațiile pe care le colectăm despre
+    dvs.
   privacyPolicy:
     name: politica privacy
-    text: >
-      Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+    text: Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+  title: Informațiile pe care le colectăm
 consentNotice:
-  changeDescription: Au existat modificări de la ultima vizită, vă rugăm să actualizați consimțământul.
-  description: >
-    Colectăm și procesăm informațiile dvs. personale în următoarele scopuri: {purposes}.
+  changeDescription: Au existat modificări de la ultima vizită, vă rugăm să actualizați
+    consimțământul.
+  configure: ''
+  configure_en: configure
+  description: 'Colectăm și procesăm informațiile dvs. personale în următoarele scopuri:
+    {purposes}.'
+  imprint:
+    name: ''
+    name_en: imprint
   learnMore: Află mai multe
   privacyPolicy:
     name: politica privacy
-ok: OK
-save: Salvează
 decline: Renunță
-app:
-  disableAll:
-    title: Comutați între toate aplicațiile
-    description: Utilizați acest switch pentru a activa/dezactiva toate aplicațiile.
-  optOut:
-    title: (opt-out)
-    description: Această aplicație este încărcată în mod implicit (dar puteți renunța)
-  required:
-    title: (întotdeauna necesar)
-    description: Această aplicație este întotdeauna necesară
-  purposes: Scopuri
-  purpose: Scop
+ok: OK
 poweredBy: Realizat de Klaro!
+purposeItem:
+  app: ''
+  app_en: application
+  apps: ''
+  apps_en: applications
+save: Salvează

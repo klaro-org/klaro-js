@@ -68,6 +68,9 @@ function hget(d, key, defaultValue){
     }
     if (cv === undefined)
         return defaultValue
+    // we convert empty strings to 'undefined'
+    if (cv === '')
+        return undefined
     return cv
 }
 

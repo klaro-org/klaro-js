@@ -1,4 +1,3 @@
-# Warning, this file is partially automatically generated!
 acceptAll: Accettare tutti
 acceptSelected: Accettare selezionato
 app:
@@ -7,28 +6,28 @@ app:
       app.
     title: Attivare o disattivare tutte le app
   optOut:
-    description: "Questa app \xE8 caricata per impostazione predefinita (ma \xE8 possibile\
-      \ scegliere di non utilizzare l'app)"
+    description: Questa app è caricata per impostazione predefinita (ma è possibile
+      scegliere di non utilizzare l'app)
     title: (opt-out)
   purpose: Scopo dell
-  purposes: "Finalit\xE0"
+  purposes: Finalità
   required:
-    description: "Questa richiesta \xE8 sempre necessaria"
+    description: Questa richiesta è sempre necessaria
     title: (sempre richiesto)
 close: Chiudi
 consentModal:
-  description: "Qui pu\xF2 vedere e personalizzare le informazioni che raccogliamo\
-    \ su di lei."
+  description: Qui può vedere e personalizzare le informazioni che raccogliamo su
+    di lei.
   privacyPolicy:
     name: informativa sulla privacy
-    text: "Per saperne di pi\xF9, legga la nostra {privacyPolicy}."
+    text: Per saperne di più, legga la nostra {privacyPolicy}.
   title: Informazioni che raccogliamo
 consentNotice:
   changeDescription: Ci sono stati dei cambiamenti rispetto alla sua ultima visita,
     la preghiamo di aggiornare il suo consenso.
   configure: configurare
-  description: "Raccogliamo ed elaboriamo i suoi dati personali per le seguenti finalit\xE0\
-    : {purposes}."
+  description: 'Raccogliamo ed elaboriamo i suoi dati personali per le seguenti finalità:
+    {purposes}.'
   imprint:
     name: impronta
   learnMore: Personalizzare
