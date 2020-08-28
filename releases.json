@@ -1,38 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Formatierung der \u00dcbersetzungen verbessert und Informationen zu fehlenden \u00dcbersetzungs-Strings hinzugef\u00fcgt.\n- Klaro-Bin\u00e4rdateien / Distribution-Dateien werden wieder eingeschlossen.\n",
+      "en": "- Improve formatting of translation files and add information about missing translation strings.\n- Include distribution files again.\n"
+    },
+    "date": "2020-08-28",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "xO4FTg5iKTFd5aN5sCZfk/ZqhwvCZkPeRzC9W8oVgq83e5Xaxk6ftH8oGc9lRjpn"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "3sz5xrIq1v5WFmxg+L2lrYsOTVImGvMeAhQfkeGg8r4b6VrXr+tgBMhpeVavcKR6"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "vFphXTWzAFN+S6Z7xYV5tDfQ4ci+9KocpYqhEE0kRA0nR8C6GXXjE8M9PiGU3Buu"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "k7h7bPk2c1XRn6nogkUaJQJzbNuWn/KXmrCNrhTSou55v5CGiv7qZjI21a7mA2Af"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.3"
+  },
+  {
+    "changelog": {
       "de": "- Quelldateien wie JS und SCSS werden nun im NPM-Package bereitgestellt, was es einfacher macht mit diesen zu arbeiten um z.B. SCSS-Dateien direkt zu importieren.\n",
       "en": "- Included relevant source files in the NPM release (e.g. SCSS files) to make it easier to build on them.\n"
     },
     "date": "2020-08-20",
     "files": [
       {
-        "md5": "d9567e93b349ffe59ef278e7e5c295e1",
         "name": "klaro.js",
-        "sha1": "f04df9e64d8e97adace8028c681dba9d7d713ede",
-        "sha256": "f0c7c91b971b42aecdba8d425cf8e7d8c52a30e8a4c451269d84d5a42d8ba7c7",
-        "sha384": "51259783dd8957a6ccc82bfa3ba84f104eb693c1a1f41c2a67a2227207a4e816dbc7297ba2a61e78baab1118f8e51d7e"
+        "sha384": "USWXg92JV6bMyCv6O6hPEE62k8Gh9BwqZ6Iicgek6Bbbxyl7oqYeeLqrERj45R1+"
       },
       {
-        "md5": "89525b57bb50acb93c554445a2824570",
         "name": "klaro-no-css.js",
-        "sha1": "5744bfa7e835289379a32ec99b97add9fb1f1f8d",
-        "sha256": "fcc4c54d5b02f983a8fa1eb59969290e730c2863b55b70ce0aefdbb0e3227d95",
-        "sha384": "eb3efe1ac036f594855849c50d0b81ef2b87b8894181f6f63870dfcd91b175b72debfefc9dfd7e9bb96f130cb0760e51"
+        "sha384": "6z7+GsA29ZSFWEnFDQuB7yuHuIlBgfb2OHDfzZGxdbct6/78nf1+m7lvEwywdg5R"
       },
       {
-        "md5": "6fa289d07ccd861d6eebb088eb5883fa",
         "name": "klaro.css",
-        "sha1": "f01842f54103541f2ff5eabddc0edba2df2de5e4",
-        "sha256": "1fffd15ff348f1272f4eb90d7ee39e0e55056f5b04d4df014dbcec875ccc57f8",
-        "sha384": "54a3e1baaf0b6bae74247a0e8825d3bb7965c59a270027f498ba2ea09851675a7b2efc27c35c5ee2128d2b034421bd9f"
+        "sha384": "VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f"
       },
       {
-        "md5": "217793159f57a3e5f00e88313316313d",
         "name": "klaro.min.css",
-        "sha1": "bcee0f98a9e01b8d1541935834f7e87b21844879",
-        "sha256": "c20f5fbcbcdbfd54a70df4e1e989d425110ae30a43ab1c63cf365c3398fe4f2a",
-        "sha384": "fa31a26f22979aa32f75b0f595fde87265d287b94f754ce8e906ece2830e1dffd528c08addd071bc77ffad45a50c8a90"
+        "sha384": "+jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ"
       }
     ],
     "tags": [
@@ -48,32 +65,20 @@
     "date": "2020-08-20",
     "files": [
       {
-        "md5": "c1e3f36f0892909bc37db8b9490d24db",
         "name": "klaro.js",
-        "sha1": "51572b208f2c350f9968834e7e9426c50fc1c440",
-        "sha256": "2f85ef2568e0b541724053470337bba8327317f50e22e6080fa76fb8028ed591",
-        "sha384": "e487d4355a93427c8802eafe330e2c4e18b26dcf0bcb89d70092ab339359318f419cb0f87804f6e22e285eef08f55ece"
+        "sha384": "5IfUNVqTQnyIAur+Mw4sThiybc8Ly4nXAJKrM5NZMY9BnLD4eAT24i4oXu8I9V7O"
       },
       {
-        "md5": "83e7c9f2e07fb8dd48958f77404c89b1",
         "name": "klaro-no-css.js",
-        "sha1": "014f63fdb4758c3af5bf3f2229d6f2fa24b79c33",
-        "sha256": "29a7392f25612158c463beabe3ac2b70dede2c5d8018b4cd064ad20c87a51c77",
-        "sha384": "3f3d1349eef84a6f65ef7de9375a174a726ef83f77177e5278ba610f3ee8b6245c370c773b2ebb89a67afedc20628266"
+        "sha384": "Pz0TSe74Sm9l733pN1oXSnJu+D93F35SeLphDz7otiRcNwx3Oy67iaZ6/twgYoJm"
       },
       {
-        "md5": "6fa289d07ccd861d6eebb088eb5883fa",
         "name": "klaro.css",
-        "sha1": "f01842f54103541f2ff5eabddc0edba2df2de5e4",
-        "sha256": "1fffd15ff348f1272f4eb90d7ee39e0e55056f5b04d4df014dbcec875ccc57f8",
-        "sha384": "54a3e1baaf0b6bae74247a0e8825d3bb7965c59a270027f498ba2ea09851675a7b2efc27c35c5ee2128d2b034421bd9f"
+        "sha384": "VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f"
       },
       {
-        "md5": "217793159f57a3e5f00e88313316313d",
         "name": "klaro.min.css",
-        "sha1": "bcee0f98a9e01b8d1541935834f7e87b21844879",
-        "sha256": "c20f5fbcbcdbfd54a70df4e1e989d425110ae30a43ab1c63cf365c3398fe4f2a",
-        "sha384": "fa31a26f22979aa32f75b0f595fde87265d287b94f754ce8e906ece2830e1dffd528c08addd071bc77ffad45a50c8a90"
+        "sha384": "+jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ"
       }
     ],
     "tags": [
@@ -89,32 +94,20 @@
     "date": "2020-08-20",
     "files": [
       {
-        "md5": "b8b9db2f603eb9a30b1aeab337fc6e04",
         "name": "klaro.js",
-        "sha1": "7bf79cff6fe4d15a8f6b7dd8dcc704f980363eee",
-        "sha256": "0aebf669e390a65755b08ccde477bb6018995648b9aedd71eecc52511c936d67",
-        "sha384": "1955f9e1309e4ea1b5f63af9558faf30074447c064633740da252705c2ba7145ebdfdd8bffb2e96665893142bb09e2b2"
+        "sha384": "GVX54TCeTqG19jr5VY+vMAdER8BkYzdA2iUnBcK6cUXr392L/7LpZmWJMUK7CeKy"
       },
       {
-        "md5": "bd5a9402f844e03e6f8233e4802d703f",
         "name": "klaro-no-css.js",
-        "sha1": "2bb597d4d235395d3448045bd119da0e17969019",
-        "sha256": "be12f429788448a2fe62ca045a1020ca37872263948d73529e26a1724ee48ad5",
-        "sha384": "f0d9e31454f80b048630884884cbff3298613250f54d0594808ebb0a318d7523598738a3ec1592a89a387ceabd7ee246"
+        "sha384": "8NnjFFT4CwSGMIhIhMv/MphhMlD1TQWUgI67CjGNdSNZhzij7BWSqJo4fOq9fuJG"
       },
       {
-        "md5": "7ff89e442059987b5ff0998239efd6fd",
         "name": "klaro.css",
-        "sha1": "fa1159e04093ea65dc4cf1ef1cc52198429b7142",
-        "sha256": "ae3425fd64f1554a236ed3b080789d23c9bfc97659ab4eddea78005c0d8ed03d",
-        "sha384": "b1574cd45972fb69d19449113316434d6dec2f6b0ae5fd25644955c01a56a0faef72024e89c845c89a0f39d7664cc5a9"
+        "sha384": "sVdM1Fly+2nRlEkRMxZDTW3sL2sK5f0lZElVwBpWoPrvcgJOichFyJoPOddmTMWp"
       },
       {
-        "md5": "9a520068e16baa87b6c254c4d0ace3a6",
         "name": "klaro.min.css",
-        "sha1": "507d14342f27256653a794a72dc0ed381f2fda6a",
-        "sha256": "7d103963e059042ca4855d781ab199ea273015757c80f74d188be8e6a4f8b88d",
-        "sha384": "2f2d62762c6715b40294db22b1a80167ed39a7e587efadc122a726f4fe691f6856d67976fa258bfa3df6668b72238fc7"
+        "sha384": "Ly1idixnFbQClNsisagBZ+05p+WH763BIqcm9P5pH2hW1nl2+iWL+j32ZotyI4/H"
       }
     ],
     "tags": [
@@ -130,32 +123,20 @@
     "date": "2020-08-20",
     "files": [
       {
-        "md5": "8130bc7983d89b879da5f928948acd82",
         "name": "klaro.js",
-        "sha1": "0546e72aad4606218a25280b2573db029a7f5ef0",
-        "sha256": "ebefbfb89efaa99f5b65d68c9fc2cdfc0a7f7ed0ec1c65c3651809a42d9b17ea",
-        "sha384": "361cb1bb8b18d0849637de9e94e7e0188c3d542e3ed8b4e068db7e061216c59c34de824fee5d10b7afa9192f2133d47f"
+        "sha384": "Nhyxu4sY0ISWN96elOfgGIw9VC4+2LTgaNt+BhIWxZw03oJP7l0Qt6+pGS8hM9R/"
       },
       {
-        "md5": "cf941679f193409b664430612dbd183d",
         "name": "klaro-no-css.js",
-        "sha1": "1bf295d9de00a60b63b51981dce3cc7ebde35ad5",
-        "sha256": "303088b2a78cfafd4ecb9e01898bebc2b2f24f159db2e2f8c1b48ffde1f5f7a9",
-        "sha384": "7e99e6cb0a64c9eb5188a3732258e0b519bf19a08051039b9718b020882f6f554c5d95bc4fc6fc4a4379636249c6eba4"
+        "sha384": "fpnmywpkyetRiKNzIljgtRm/GaCAUQOblxiwIIgvb1VMXZW8T8b8SkN5Y2JJxuuk"
       },
       {
-        "md5": "2c8c6c87f969eff0d178076ea8fa3e2d",
         "name": "klaro.css",
-        "sha1": "b95b71b1b66dc86e2af67c8413875802470b4463",
-        "sha256": "69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c",
-        "sha384": "c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a"
+        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
       },
       {
-        "md5": "8a2f5f3ab0f7f420fbd224c48fc1380e",
         "name": "klaro.min.css",
-        "sha1": "f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2",
-        "sha256": "df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763",
-        "sha384": "0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd"
+        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
       }
     ],
     "tags": [
@@ -171,32 +152,20 @@
     "date": "2020-08-20",
     "files": [
       {
-        "md5": "24d9a455ab6a4b01930230e5ac2cabcf",
         "name": "klaro.js",
-        "sha1": "822679239e767600d2110625e23ccab905d2a9a9",
-        "sha256": "ce5fe496eb001c72cb5eacc01c4065cfb9a24cb11286dc4d184f671d4366a441",
-        "sha384": "2220d80b77c8e896e5cc3f551907bb46c5877c769498c771ad09d4a536e85ceea2166e28241bbaa1270cad4745703e5a"
+        "sha384": "IiDYC3fI6JblzD9VGQe7RsWHfHaUmMdxrQnUpTboXO6iFm4oJBu6oScMrUdFcD5a"
       },
       {
-        "md5": "6492f57626fd09b628c6c9cbae627d4d",
         "name": "klaro-no-css.js",
-        "sha1": "d58aa5dd4447b4141ddb619ee46335f54fdd41f0",
-        "sha256": "9b2ca90239a27a5a1822a62c794c1842fff38a36c61a2a19f23733cf301a4134",
-        "sha384": "d175414ff41b6880c6f93f84d158d64b51bcba048934586c641ed05eae10e63a2d3ed309983d19660c6f2e36c2e35b90"
+        "sha384": "0XVBT/QbaIDG+T+E0VjWS1G8ugSJNFhsZB7QXq4Q5jotPtMJmD0ZZgxvLjbC41uQ"
       },
       {
-        "md5": "2c8c6c87f969eff0d178076ea8fa3e2d",
         "name": "klaro.css",
-        "sha1": "b95b71b1b66dc86e2af67c8413875802470b4463",
-        "sha256": "69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c",
-        "sha384": "c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a"
+        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
       },
       {
-        "md5": "8a2f5f3ab0f7f420fbd224c48fc1380e",
         "name": "klaro.min.css",
-        "sha1": "f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2",
-        "sha256": "df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763",
-        "sha384": "0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd"
+        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
       }
     ],
     "tags": [
@@ -212,32 +181,20 @@
     "date": "2020-08-17",
     "files": [
       {
-        "md5": "acb11803f95f46f128d3ba2c9c15c3a3",
         "name": "klaro.js",
-        "sha1": "884ea83a1067c9bbd2592b231b1faf7f2f1f61fd",
-        "sha256": "37622181445451aae17104bcbd794eec50791c9c638fb9da3a3f1e075ee76acc",
-        "sha384": "d6da095fdc5e855fd49fc5691750cf9c7b5545c8a3738c2323c73f8c5a73448bb347d33f17620ee43eba63c2709149f2"
+        "sha384": "1toJX9xehV/Un8VpF1DPnHtVRcijc4wjI8c/jFpzRIuzR9M/F2IO5D66Y8JwkUny"
       },
       {
-        "md5": "f7559473fec90ea178f50b9760cd1c7c",
         "name": "klaro-no-css.js",
-        "sha1": "4898339d730d2e54ff0383b1e2972f963e639d79",
-        "sha256": "abc843dcd408b8299240cd934412f3d321ac65de09cf3a77a7e9080d7e4e99b7",
-        "sha384": "c635c8536de25e8e8ad3f862d1771890bf242e2c6ad9f3c1f9c197b29dde7b9037dce31b1d1b2bed05452c0707c02a7b"
+        "sha384": "xjXIU23iXo6K0/hi0XcYkL8kLixq2fPB+cGXsp3ee5A33OMbHRsr7QVFLAcHwCp7"
       },
       {
-        "md5": "2c8c6c87f969eff0d178076ea8fa3e2d",
         "name": "klaro.css",
-        "sha1": "b95b71b1b66dc86e2af67c8413875802470b4463",
-        "sha256": "69ab8e4c7b2230717128cd74f5975404788e01e1456e8287e286ccd8434fc13c",
-        "sha384": "c60f0632829b8282291accf9ce54f6b9a137d82dee4977fd2c1ab89f2bae3b451757a4dd56a1ee8a084167acdb1d6f5a"
+        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
       },
       {
-        "md5": "8a2f5f3ab0f7f420fbd224c48fc1380e",
         "name": "klaro.min.css",
-        "sha1": "f8c59a43a2ae83fd23b5f7ef1709c77d30a07fb2",
-        "sha256": "df8ee9334d3105bcf7cd89849eafc789b22186acfacf1e0c2fb6232d7ae04763",
-        "sha384": "0eb3b0e202ff54d5fbc42caf96ad6930060c09ddfce3a158ec7cbb5a5c7cf9cb797160a3f758592deb2357e83ac243cd"
+        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
       }
     ],
     "tags": [
@@ -253,32 +210,20 @@
     "date": "2020-08-14",
     "files": [
       {
-        "md5": "3e8acb5e7913d20d35f628758e44eb57",
         "name": "klaro.js",
-        "sha1": "9dc5e41e81ad64212973a0f724457416fb578989",
-        "sha256": "88e87fe9b85b43705823bdee3a3ee5e965ddefd5a87ebf6c6a54755e9628185c",
-        "sha384": "f3cf6bf1f0dc883a3fce45f444a8d4f29d7bc7873f6ab90c534f961f9dcaaab5c2320b7162fba3d069e37d7302bb384b"
+        "sha384": "889r8fDciDo/zkX0RKjU8p17x4c/arkMU0+WH53KqrXCMgtxYvuj0GnjfXMCuzhL"
       },
       {
-        "md5": "7b1dd9ef85621f9c8504591244c39970",
         "name": "klaro-no-css.js",
-        "sha1": "320a710a85923cf5391a45dae7092c309016c4ef",
-        "sha256": "8eeed18d963ce946d135a232bb78cc0ec0f9a8d49155b41ce12e891acc076a96",
-        "sha384": "4ea6858b0f0287aba5c569a256268768346ff491107dbf43e76d42ab8f8648e072792e3284ca44516de843ddaa39213f"
+        "sha384": "TqaFiw8Ch6ulxWmiViaHaDRv9JEQfb9D521Cq4+GSOByeS4yhMpEUW3oQ92qOSE/"
       },
       {
-        "md5": "9a1d78716e914a9262f5590c7d59daf2",
         "name": "klaro.css",
-        "sha1": "d24b5d282305e8d5d4649de9695707e8d83648d9",
-        "sha256": "3df93b9e64099bcaff151b2600fffaf99abe563d6944564edd2496b7aff58b1d",
-        "sha384": "b5b7f634808bee7c79ce1eba1f83ab6064dccf05dcebfd70e75663c522da00897611168bde640d94f2164229df99506d"
+        "sha384": "tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt"
       },
       {
-        "md5": "0e4bd2815c001a52ae2817b0b46af6b9",
         "name": "klaro.min.css",
-        "sha1": "f405a2a45700975d84209bc89f82283946fee820",
-        "sha256": "1fbd0a6e46f6f20e444acea11fba8bf6ce5404e19332b8eeb8dadc0994a32659",
-        "sha384": "b23b5115c9b78c68bdff80df59a14a3407abcf984fca596d27346014f88da64e695cdd4533cc8c1937cd7c557d28f207"
+        "sha384": "sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH"
       }
     ],
     "tags": [
@@ -295,32 +240,20 @@
     "date": "2020-08-12",
     "files": [
       {
-        "md5": "4694b51c0d73ed75be758e93c637e4b0",
         "name": "klaro.js",
-        "sha1": "abedea66365f013079507d2541f642aefea36c99",
-        "sha256": "6f2e871440e4eff1a8441c666a872e83b73f3a8721a4de4c47380e1fa9a37129",
-        "sha384": "87d5433c57bd578185e7c288e3d545b89088db3f349bfae4ac7f836f3862558ec59d94d812dbfd4c583fc35a79a73e72"
+        "sha384": "h9VDPFe9V4GF58KI49VFuJCI2z80m/rkrH+DbzhiVY7FnZTYEtv9TFg/w1p5pz5y"
       },
       {
-        "md5": "204c50df41658d07ae17ab5c389e1b56",
         "name": "klaro-no-css.js",
-        "sha1": "8cc9af92767a34a1d72b1657dd8066848316e134",
-        "sha256": "ecdbd930b7d1ee4317060a20739c4f1f1ebd64bd6ad9462b7dd4d885486d7f53",
-        "sha384": "7f6e9e5e3786675c12b8b489e3326e87ac5258569714694157507ae487a622a836d6f2a8b74224f08ac47d568e99d3a3"
+        "sha384": "f26eXjeGZ1wSuLSJ4zJuh6xSWFaXFGlBV1B65IemIqg21vKot0Ik8IrEfVaOmdOj"
       },
       {
-        "md5": "9a1d78716e914a9262f5590c7d59daf2",
         "name": "klaro.css",
-        "sha1": "d24b5d282305e8d5d4649de9695707e8d83648d9",
-        "sha256": "3df93b9e64099bcaff151b2600fffaf99abe563d6944564edd2496b7aff58b1d",
-        "sha384": "b5b7f634808bee7c79ce1eba1f83ab6064dccf05dcebfd70e75663c522da00897611168bde640d94f2164229df99506d"
+        "sha384": "tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt"
       },
       {
-        "md5": "0e4bd2815c001a52ae2817b0b46af6b9",
         "name": "klaro.min.css",
-        "sha1": "f405a2a45700975d84209bc89f82283946fee820",
-        "sha256": "1fbd0a6e46f6f20e444acea11fba8bf6ce5404e19332b8eeb8dadc0994a32659",
-        "sha384": "b23b5115c9b78c68bdff80df59a14a3407abcf984fca596d27346014f88da64e695cdd4533cc8c1937cd7c557d28f207"
+        "sha384": "sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH"
       }
     ],
     "tags": [],

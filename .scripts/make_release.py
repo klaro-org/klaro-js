@@ -3,6 +3,7 @@ import os
 import sys
 import json
 import yaml
+import base64
 import hashlib
 import subprocess
 
@@ -29,7 +30,7 @@ def hash_file(filename, methods=[hashlib.sha256]):
         c = file.read()
         for method in methods:
             # a bit hacky but it works...
-            d[method.__name__.split("_")[1]] = method(c).hexdigest()
+            d[method.__name__.split("_")[1]] = base64.b64encode(method(c).digest()).decode("ascii")
     return d
 
 if __name__ == '__main__':
@@ -85,10 +86,9 @@ if __name__ == '__main__':
             "name" : filename,
         }
         d.update(hash_file(os.path.join(build_path, filename),
-            methods=[hashlib.sha256, hashlib.sha1, hashlib.md5, hashlib.sha384]))
+            methods=[hashlib.sha384]))
         files.append(d)
     release["files"] = files
-
     with open(releases_yml_path, 'w') as output_file:
         output_file.write(yaml.dump(releases, indent=2, sort_keys=True, default_flow_style=False))
 
@@ -100,7 +100,6 @@ if __name__ == '__main__':
     config['version'] = v
     with open(package_path, 'w') as output_file:
         json.dump(config, output_file, indent=2, sort_keys=True)
-
 
     subprocess.check_output(["git", "add", "."], cwd=wd)
     subprocess.check_output(["git", "commit", "-m", f"v{v}"], cwd=wd)
