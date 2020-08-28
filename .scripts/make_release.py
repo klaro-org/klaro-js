@@ -89,8 +89,8 @@ if __name__ == '__main__':
             methods=[hashlib.sha384]))
         files.append(d)
     release["files"] = files
-    with open(releases_yml_path, 'w') as output_file:
-        output_file.write(yaml.dump(releases, indent=2, sort_keys=True, default_flow_style=False))
+    with open(releases_yml_path, 'wb') as output_file:
+        output_file.write(yaml.dump(releases, allow_unicode=True, encoding='utf-8', indent=2, sort_keys=True, default_flow_style=False))
 
     # we update the JSON releases file to reflect the YAML one
     with open(releases_json_path, 'w') as output_file:
