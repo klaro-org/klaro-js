@@ -36,6 +36,6 @@ decline: Decline
 ok: Accept
 poweredBy: Realized with Klaro!
 purposeItem:
-  app: application
-  apps: applications
+  app: app
+  apps: apps
 save: Save

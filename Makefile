@@ -11,6 +11,9 @@ release:
 klaro:
 	npm run-script make
 
+translate:
+	python3 .scripts/update_translations.py
+
 klaro-no-css:
 	SEPARATE_CSS=1 npm run-script make
 	SEPARATE_CSS=1 NO_MINIFY_CSS=1 npm run-script make

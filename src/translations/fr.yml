@@ -1,3 +1,4 @@
+# Warning, this file is partially automatically generated!
 acceptAll: Accepter tout
 acceptSelected: Accepter sélectionné
 app:
@@ -35,6 +36,6 @@ decline: Décliner
 ok: Accepter
 poweredBy: Réalisé avec Klaro !
 purposeItem:
-  app: candidature
+  app: application
   apps: applications
 save: Enregistrer

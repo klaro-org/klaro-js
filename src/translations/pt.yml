@@ -1,3 +1,4 @@
+# Warning, this file is partially automatically generated!
 acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
 app:
@@ -36,6 +37,6 @@ decline: Declínio
 ok: Aceitar
 poweredBy: Realizado com Klaro!
 purposeItem:
-  app: aplicação
+  app: aplicativo
   apps: aplicações
 save: Exceto

@@ -1,3 +1,4 @@
+# Warning, this file is partially automatically generated!
 acceptAll: Accepteer alle
 acceptSelected: Geselecteerde
 app:
@@ -34,6 +35,6 @@ decline: Daling
 ok: Accepteer
 poweredBy: Gerealiseerd met Klaro!
 purposeItem:
-  app: toepassing
-  apps: toepassingen
+  app: app
+  apps: apps
 save: Opslaan
