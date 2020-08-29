@@ -7,8 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Simple Test</title>
         <!-- here we include the Klaro config and script -->
-        <script defer type="text/javascript" src="../config.js"></script>
-        <script defer type="text/javascript" src="../klaro.js"></script>
+        <script type="text/javascript" src="../config.js"></script>
+        <!-- we load the translations separately -->
+        <script type="text/javascript" src="../translations.js"></script>
+        <script>
+            // we fill in the config translations with the default translations
+            translations.updateConfig(klaroConfig.translations, translations.default, false)
+        </script>
+        <script type="text/javascript" src="../klaro-no-translations.js"></script>
     </head>
     <body style="margin: 0; font-family: Arial, Helvetica, sans serif;">
         <div style="padding: 10px;">
@@ -18,10 +24,10 @@
                 Just have a look at the source to see how it's done.
             </p>
             <p>
-                You can review and update your consents by clicking <a href="" onClick="return klaro.show(klaroConfig, true)">here</a>.
+                You can review and update your consents by clicking <a href="#" onclick="klaro.show(klaroConfig, true);return false;">here</a>.
             </p>
             <p>
-                You can reset your consents by clicking <a href="" onClick="klaro.getManager().resetConsents();location.reload()">here</a>.
+                You can reset your consents by clicking <a href="#" onclick="klaro.getManager(klaroConfig).resetConsents();location.reload();return false;">here</a>.
             </p>
             <p>
                 <!-- this is an example of an img tag managed by Klaro -->

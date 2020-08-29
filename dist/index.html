@@ -82,7 +82,7 @@
                 elements[i].innerHTML = klaro.version();
             }
 
-            var translations = klaro.getTranslations();
+            var translations = klaro.defaultTranslations;
             var langs = Array.from(translations.keys());
             for(var i=0;i<langs.length;i++){
                 var lang = langs[i];

@@ -7,3 +7,26 @@ export function getPurposes(config){
     }
     return Array.from(purposes)
 }
+
+export function update(ed, d, overwrite){
+  if (overwrite === undefined)
+      overwrite = true
+  let keys = Object.keys(d);
+  for(var i=0;i<keys.length;i++){
+    let key = keys[i]
+    let vd = d[key]
+    let ved = ed[key]
+    if (typeof vd === "string"){
+      if (overwrite || ved === undefined)
+        ed[key] = vd
+    }
+    else if (typeof vd === "object") {
+      if (typeof ved === "object"){
+        update(ved, vd, overwrite)
+      } else if (overwrite || ved === undefined) {
+        ed[key] = vd
+      }
+    }
+  }
+  return ed
+}

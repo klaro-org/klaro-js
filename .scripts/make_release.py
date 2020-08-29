@@ -13,7 +13,6 @@ releases_yml_path = os.path.join(wd, "releases.yml")
 releases_json_path = os.path.join(wd, "releases.json")
 
 build_path = os.path.join(wd, "dist")
-release_files = ["klaro.js", "klaro-no-css.js", "klaro.css", "klaro.min.css"]
 
 # this forces pyyaml to produce cleaner looking strings
 # https://stackoverflow.com/questions/8640959/how-can-i-control-what-scalar-form-pyyaml-uses-for-my-data
@@ -81,7 +80,9 @@ if __name__ == '__main__':
     # we add the SHA sums of the files to the release (can be used for
     # subresource integrity)
     files = []
-    for filename in release_files:
+    for filename in os.listdir(build_path):
+        if not filename.endswith('.css') and not filename.endswith('.js'):
+            continue
         d = {
             "name" : filename,
         }
