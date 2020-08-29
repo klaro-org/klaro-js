@@ -97,3 +97,12 @@ export function t(trans, lang, fallbackLang, key, ...params){
         return format(value, ...params)
     return value
 }
+
+export function getTranslations(conf){
+    conf = conf || config
+    const trans = new Map([])
+    update(trans, convertedTranslations)
+    update(trans, convertToMap(conf.translations || {}))
+    return trans
+}
+

@@ -1,0 +1,13 @@
+// to do: replace this with @use as soon as it's supported by node-sass
+@import '_modal';
+@import '_vars';
+
+.klaro {
+    .cookie-modal {
+        .cm-modal {
+            &.cm-ide {
+                @include modal(95%, 90%);
+            }        
+        }
+    }
+}

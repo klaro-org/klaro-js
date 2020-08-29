@@ -51,7 +51,8 @@ let config = {
   },
   entry: {
     klaro: SRC_DIR + '/klaro.js',
-    'consent-manager': SRC_DIR + '/consent-manager.js'
+    'consent-manager': SRC_DIR + '/consent-manager.js',
+    ide: SRC_DIR +'/ide.js',
   },
   output: {
     path: BUILD_DIR,

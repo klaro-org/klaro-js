@@ -1,54 +1,11 @@
-$box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
-$border-radius: 4px;
-$border-dark: 1px solid #555;
-$font-color-dark: #eee;
-$font-color-dark-deemphasized: #999;
-$bg-dark: #333;
-$red2: #b24e14;
-$red1: #ba1e04;
-$yellow1: #f8c200;
-$yellow2: #d4d026;
-$blue3: #005091;
-$blue2: #003f8a;
-$blue1: #0885ba;
-$blue4: #9ac3d4;
-$green1: #00aa3e;
-$green2: #006a4e;
-$green3: #01440c;
-
-$full-width: 1024px;
-
-@mixin make-modal($centerWidth, $windowWidth) {
-    z-index: 1001;
-    box-shadow: $box-shadow;
-
-    width: 100%;
-    max-height: 98%;
-
-    top: 50%;
-    transform: translateY(-50%);
-
-    position: fixed;
-    overflow: auto;
-    background: $bg-dark;
-    color: $font-color-dark;
-
-    @media(min-width: $centerWidth) {
-        border-radius: $border-radius;
-        position: relative;
-        margin: 0 auto;
-        max-width: $windowWidth;
-        height: auto;
-        width: auto;
-    }
-
-}
+@import '_modal';
+@import '_vars';
 
 .klaro {
     .cookie-modal,
     .cookie-notice {
 
-        @import 'switch';
+        @import '_switch';
 
         font-size: 14px;
 
@@ -153,13 +110,7 @@ $full-width: 1024px;
 
         .cm-modal {
 
-            @include make-modal(800px, 640px);
-
-
-            &.cm-ide {
-                @include make-modal(95%, 90%);                
-            }
-
+            @include modal(800px, 640px);
 
             .hide {
                 border-style: none;
@@ -366,7 +317,7 @@ $full-width: 1024px;
 
     .cookie-modal-notice {
 
-        @include make-modal(400px, 400px);
+        @include modal(400px, 400px);
 
         padding: 1em;
         padding-top: 0.2em;

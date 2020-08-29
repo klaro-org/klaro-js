@@ -1,0 +1,25 @@
+@mixin modal($centerWidth, $windowWidth) {
+    z-index: 1001;
+    box-shadow: $box-shadow;
+
+    width: 100%;
+    max-height: 98%;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    position: fixed;
+    overflow: auto;
+    background: $bg-dark;
+    color: $font-color-dark;
+
+    @media(min-width: $centerWidth) {
+        border-radius: $border-radius;
+        position: relative;
+        margin: 0 auto;
+        max-width: $windowWidth;
+        height: auto;
+        width: auto;
+    }
+
+}
