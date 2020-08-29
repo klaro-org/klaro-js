@@ -97,7 +97,7 @@ import * as klaro from 'klaro/dist/klaro-no-css'
 import 'klaro/dist/klaro.css'
 
 // import only the consent manager (no UI components)
-import 'klaro/dist/consent-manager'
+import 'klaro/dist/cm'
 ```
 
 This enables you to seamlessly integrate Klaro with your own JS projects, regardless if you use React, Vue,
