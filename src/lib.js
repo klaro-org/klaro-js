@@ -6,6 +6,7 @@ import {render} from 'react-dom'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
 import {currentScript} from 'utils/compat'
+export {update as updateConfig} from 'utils/config'
 
 let defaultConfig
 let defaultTranslations = new Map([])

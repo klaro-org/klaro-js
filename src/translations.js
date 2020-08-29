@@ -1,4 +1,4 @@
 import translations from 'translations/index'
-export {merge} from 'utils/config'
+export {update as updateConfig} from 'utils/config'
 
 export default translations

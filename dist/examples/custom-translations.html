@@ -11,8 +11,8 @@
         <!-- we load the translations separately -->
         <script type="text/javascript" src="../translations.js"></script>
         <script>
-            // we merge the loaded translations with the config translations
-            klaroConfig.translations = translations.merge(klaroConfig.translations, translations.default)
+            // we fill in the config translations with the default translations
+            translations.updateConfig(klaroConfig.translations, translations.default, false)
         </script>
         <script type="text/javascript" src="../klaro-no-translations.js"></script>
     </head>
