@@ -50,8 +50,10 @@ let config = {
     ]
   },
   entry: {
-    klaro: SRC_DIR + '/klaro.js',
-    'consent-manager': SRC_DIR + '/consent-manager.js'
+    // here we only define the consent manager and the translations, the
+    // main Klaro files are defined below as they require special naming rules
+    'cm': SRC_DIR + '/consent-manager.js',
+    'translations' : SRC_DIR+'/translations.js',
   },
   output: {
     path: BUILD_DIR,
@@ -69,10 +71,8 @@ if (ANALYZE_BUNDLE){
 }
 
 if (SEPARATE_CSS){
-  config.output.filename = 'klaro-no-css.js'
   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-  // no CSS does not apply to the consent manager
-  delete config.entry['consent-manager']
+  // no CSS does not apply to the consent manager and translations
   config.module.rules.push({
       test: STYLE_FILES,
       use: [
@@ -184,4 +184,42 @@ if (APP_ENV === 'production') {
   };
 }
 
-module.exports = config;
+// we create separate configs for Klaro with and without translations as
+// Webpack isn't able to generate two modules with different filenames but
+// the same module name...
+
+const klaroWithTranslationsConfig = {...config, 
+  ...{
+    output: {
+      path: BUILD_DIR,
+      filename: SEPARATE_CSS ? 'klaro-no-css.js' : 'klaro.js',
+      library: 'klaro',
+      libraryTarget: 'umd',
+      publicPath: ''
+    },
+    entry: {
+      'klaro': SRC_DIR + '/klaro.js',
+    }
+  }
+}
+
+const klaroWithoutTranslationsConfig = {...config, 
+  ...{
+    output: {
+      path: BUILD_DIR,
+      filename: SEPARATE_CSS ? 'klaro-no-translations-no-css.js' : 'klaro-no-translations.js',
+      library: 'klaro',
+      libraryTarget: 'umd',
+      publicPath: ''
+    },
+    entry: {
+      'klaro': SRC_DIR + '/klaro-no-translations.js',
+    }
+  }
+}
+
+module.exports = [
+  config,
+  klaroWithoutTranslationsConfig,
+  klaroWithTranslationsConfig,
+];

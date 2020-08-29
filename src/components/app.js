@@ -1,5 +1,7 @@
 import React from 'react'
 import ConsentNotice from './consent-notice'
+// we import the main Klaro styles
+import 'scss/klaro.scss'
 
 export default class App extends React.Component {
 
@@ -35,16 +37,16 @@ export default class App extends React.Component {
     }
 
     render() {
-        const {config, t, lang, manager, stylePrefix, modal} = this.props
+        const {config, t, lang, manager, modal} = this.props
         const {show} = this.state
-        const {additionalClass, embedded} = config
+        const {additionalClass, embedded, stylePrefix} = config
 
         const hide = () => {
             if (!embedded)
                 this.setState({show: false})
         }
         return (
-            <div lang={lang} className={stylePrefix + (additionalClass !== undefined ? (' ' + additionalClass) : '')}>
+            <div lang={lang} className={(stylePrefix || 'klaro') + (additionalClass !== undefined ? (' ' + additionalClass) : '')}>
                 <ConsentNotice key={"app-"+this.props.show} t={t} show={show} modal={modal} hide={hide} config={config} manager={manager} />
             </div>
         )
