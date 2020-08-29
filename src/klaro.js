@@ -11,7 +11,8 @@ import 'scss/klaro.scss'
 if(module.hot) require('preact/debug')
 
 import React from 'react'
-import App from 'components/app.js'
+import App from 'components/app'
+import IDE from 'components/ide/ide'
 import ConsentManager from 'consent-manager'
 import {render} from 'react-dom'
 import translations from 'translations'
@@ -35,12 +36,12 @@ if (module.hot) {
     module.hot.accept()
 }
 
-function getElementID(config){
-    return config.elementID || 'klaro'
+function getElementID(config, ide){
+    return (config.elementID || 'klaro')+(ide ? '-ide' : '')
 }
 
-function getElement(config){
-    const id = getElementID(config)
+function getElement(config, ide){
+    const id = getElementID(config, ide)
     let element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
@@ -59,6 +60,15 @@ export function getTranslations(conf){
 }
 
 let cnt = 1
+
+export function renderIDE(config){
+    const lang = config.lang || language()
+    const trans = getTranslations(config)
+    const element = getElement(config, true)
+    const tt = (...args) => t(trans, lang, config.fallbackLang || 'en', ...args)
+    const ide = render(<IDE t={tt} lang={lang} config={config} stylePrefix={stylePrefix} />, element)
+    return ide
+}
 
 export function renderKlaro(config, show, modal){
     if (config === undefined)
@@ -98,6 +108,11 @@ export function getManager(conf){
     if (managers[name] === undefined)
         managers[name] = new ConsentManager(conf)
     return managers[name]
+}
+
+export function showIDE(conf){
+    conf = conf || config
+    renderIDE(conf)
 }
 
 export function show(conf, modal){

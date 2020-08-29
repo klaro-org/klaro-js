@@ -155,6 +155,12 @@ $full-width: 1024px;
 
             @include make-modal(800px, 640px);
 
+
+            &.cm-ide {
+                @include make-modal(95%, 90%);                
+            }
+
+
             .hide {
                 border-style: none;
                 background: none;
