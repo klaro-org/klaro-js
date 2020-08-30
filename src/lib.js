@@ -1,4 +1,5 @@
 /* globals module, require, VERSION */
+
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
@@ -20,12 +21,12 @@ if (window.btoa === undefined)
 if(module.hot)
     require('preact/debug')
 
-function getElementID(config){
-    return config.elementID || 'klaro'
+export function getElementID(config, ide){
+    return (config.elementID || 'klaro') + (ide ? '-ide' : '')
 }
 
-function getElement(config){
-    const id = getElementID(config)
+export function getElement(config, ide){
+    const id = getElementID(config, ide)
     let element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
@@ -65,6 +66,17 @@ export function renderKlaro(config, show, modal){
     return app
 }
 
+export function showKlaroIDE(script) {
+    const baseName = /^(.*)(\/[^\/]+)$/.exec(script.src)[1] || ''
+    const element = document.createElement('script')
+    element.src = baseName !== '' ? baseName + '/ide.js' : 'ide.js'
+    element.type = "application/javascript"
+    for(let attribute of element.attributes){
+        element.setAttribute(attribute.name, attribute.value)
+    }
+    document.head.appendChild(element)
+}
+
 export function setup(){
     const script = currentScript("klaro");
     if (script !== undefined){
@@ -86,7 +98,15 @@ export function setup(){
                     renderKlaro(defaultConfig)
             }
 
-            window.addEventListener('DOMContentLoaded', initialize)
+            if (/complete|interactive|loaded/.test(document.readyState))
+                initialize()
+            else
+                window.addEventListener('DOMContentLoaded', initialize)
+        }
+        const showIDE = location.hash === '#klaro-ide'
+        // we show the Klaro IDE
+        if (showIDE){
+            showKlaroIDE(script)
         }
     }
 }
@@ -108,7 +128,8 @@ export function resetManagers(){
 
 export function getManager(config){
     config = config || defaultConfig
-    const name = config.storageName || config.cookieName || 'default' // deprecated: cookieName
+    // deprecated: cookieName
+    const name = config.storageName || config.cookieName || 'default'
     if (managers[name] === undefined)
         managers[name] = new ConsentManager(config)
     return managers[name]

@@ -12,7 +12,8 @@ export default class IDE extends React.Component {
 
     render() {
 
-        const {config, t, lang, stylePrefix} = this.props
+        const {config, t, lang} = this.props
+        const {stylePrefix} = config
         const {hidden} = this.state
 
         const hide = (e) => {
@@ -28,7 +29,7 @@ export default class IDE extends React.Component {
         if (hidden)
             return <div><a href="#" onClick={show}>open me</a></div>
 
-        return <div className={stylePrefix}>
+        return <div className={stylePrefix || 'klaro'}>
                 <div className="cookie-modal">
                 <div className="cm-bg" onClick={hide}/>
                 <div className="cm-modal">

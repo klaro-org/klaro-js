@@ -1,66 +1,28 @@
 /* globals module, require, VERSION */
-
-// IE compatibility
-if (window.btoa === undefined)
-    window.btoa = false
-
-import 'scss/ide.scss'
-
-// When webpack's hot loading is enabled, enable Preact's support for the
-// React Dev Tools browser extension.
-if(module.hot) require('preact/debug')
-
 import React from 'react'
+
+import {getElement} from './lib'
+
 import IDE from 'components/ide/ide'
-import ConsentManager from 'consent-manager'
+import translations from 'translations/ide/index'
 import {render} from 'react-dom'
-import translations from 'translations'
 import {currentScript} from 'utils/compat'
-import {convertToMap, update} from 'utils/maps'
-import {t, language, getTranslations} from 'utils/i18n'
+import {t, language} from 'utils/i18n'
+import {convertToMap} from 'utils/maps'
 
-const script = currentScript("klaro");
-const convertedTranslations = convertToMap(translations)
-const configName = script.getAttribute('data-config') || "klaroConfig"
-const noAutoLoad = script.getAttribute('data-no-auto-load') === "true"
-const stylePrefix = script.getAttribute('data-style-prefix') || "klaro"
-const config = window[configName]
-
-window.addEventListener('DOMContentLoaded', initialize)
-
-if (module.hot) {
-    if (!noAutoLoad)
-        renderKlaro(config)
-    module.hot.accept()
-}
-
-function getElementID(config){
-    return (config.elementID || 'klaro')+'-ide'
-}
-
-function getElement(config){
-    const id = getElementID(config)
-    let element = document.getElementById(id)
-    if (element === null){
-        element = document.createElement('div')
-        element.id = id
-        document.body.appendChild(element)
-    }
-    return element
-}
-let cnt = 1
+const trans = convertToMap(translations)
+let defaultConfig
 
 export function renderIDE(config){
     const lang = config.lang || language()
-    const trans = getTranslations(config)
-    const element = getElement(config)
+    const element = getElement(config, true)
     const tt = (...args) => t(trans, lang, config.fallbackLang || 'en', ...args)
-    const ide = render(<IDE t={tt} lang={lang} config={config} stylePrefix={stylePrefix} />, element)
+    const ide = render(<IDE t={tt} lang={lang} config={config} />, element)
     return ide
 }
 
 export function show(conf){
-    conf = conf || config
+    conf = conf || defaultConfig
     renderIDE(conf)
 }
 
@@ -71,4 +33,26 @@ export function version(){
     return VERSION
 }
 
-export {language}
+function initialize(){
+    show()
+}
+
+function setup(){
+    const script = currentScript("klaro");
+    if (script !== undefined){
+        const configName = script.getAttribute('data-config') || "klaroConfig"
+        defaultConfig = window[configName]
+        // deprecated: config settings should only be loaded via the config
+        const scriptStylePrefix = script.getAttribute('data-style-prefix')
+        if (scriptStylePrefix === undefined)
+            defaultConfig.stylePrefix = scriptStylePrefix
+        if (defaultConfig !== undefined){
+            if (/complete|interactive|loaded/.test(document.readyState))
+                initialize()
+            else
+                window.addEventListener('DOMContentLoaded', initialize)
+        }
+    }
+}
+
+setup()
