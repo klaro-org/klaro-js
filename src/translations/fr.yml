@@ -29,7 +29,7 @@ consentNotice:
     suivantes : {purposes}.'
   imprint:
     name: mentions légales
-  learnMore: Personnaliser
+  learnMore: Personnaliser...
   privacyPolicy:
     name: politique de confidentialité
 decline: Décliner

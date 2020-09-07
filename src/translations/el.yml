@@ -33,7 +33,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Περισσότερα
+  learnMore: Περισσότερα...
   privacyPolicy:
     name: Πολιτική Απορρήτου
 decline: Απόρριπτω

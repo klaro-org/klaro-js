@@ -31,7 +31,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Saznajte više
+  learnMore: Saznajte više...
   privacyPolicy:
     name: politiku privatnosti
 decline: Odbij

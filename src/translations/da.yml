@@ -28,7 +28,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Læs mere
+  learnMore: Læs mere...
   privacyPolicy:
     name: Datenschutzerklärung
 decline: Afvis
