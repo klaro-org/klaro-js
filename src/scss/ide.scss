@@ -6,7 +6,7 @@
     .cookie-modal {
         .cm-modal {
             &.cm-ide {
-                @include modal(95%, 90%);
+                @include modal(1020px, 1000px);
             }        
         }
     }

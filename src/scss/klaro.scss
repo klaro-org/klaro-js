@@ -110,7 +110,9 @@
 
         .cm-modal {
 
-            @include modal(800px, 640px);
+            &.cm-klaro {
+                @include modal(660px, 640px);            
+            }
 
             .hide {
                 border-style: none;

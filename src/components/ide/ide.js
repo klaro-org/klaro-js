@@ -1,5 +1,6 @@
 import React from 'react'
 import {Close} from '../icons'
+import 'scss/ide.scss'
 
 export default class IDE extends React.Component {
 
@@ -32,7 +33,7 @@ export default class IDE extends React.Component {
         return <div className={stylePrefix || 'klaro'}>
                 <div className="cookie-modal">
                 <div className="cm-bg" onClick={hide}/>
-                <div className="cm-modal">
+                <div className="cm-modal cm-ide">
                     <div className="cm-header">
                         <button
                             title={t(['close'])}
