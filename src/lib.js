@@ -9,7 +9,7 @@ import {currentScript} from 'utils/compat'
 export {update as updateConfig} from 'utils/config'
 
 let defaultConfig
-let defaultTranslations = new Map([])
+const defaultTranslations = new Map([])
 
 // IE compatibility
 if (window.btoa === undefined)

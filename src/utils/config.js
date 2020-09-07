@@ -9,24 +9,24 @@ export function getPurposes(config){
 }
 
 export function update(ed, d, overwrite){
-  if (overwrite === undefined)
-      overwrite = true
-  let keys = Object.keys(d);
-  for(var i=0;i<keys.length;i++){
-    let key = keys[i]
-    let vd = d[key]
-    let ved = ed[key]
-    if (typeof vd === "string"){
-      if (overwrite || ved === undefined)
-        ed[key] = vd
+    if (overwrite === undefined)
+        overwrite = true
+    const keys = Object.keys(d);
+    for(let i=0;i<keys.length;i++){
+        const key = keys[i]
+        const vd = d[key]
+        const ved = ed[key]
+        if (typeof vd === "string"){
+            if (overwrite || ved === undefined)
+                ed[key] = vd
+        }
+        else if (typeof vd === "object") {
+            if (typeof ved === "object"){
+                update(ved, vd, overwrite)
+            } else if (overwrite || ved === undefined) {
+                ed[key] = vd
+            }
+        }
     }
-    else if (typeof vd === "object") {
-      if (typeof ved === "object"){
-        update(ved, vd, overwrite)
-      } else if (overwrite || ved === undefined) {
-        ed[key] = vd
-      }
-    }
-  }
-  return ed
+    return ed
 }

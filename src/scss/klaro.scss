@@ -1,13 +1,14 @@
-@import '_modal';
-@import '_vars';
+@import 'scss/modal';
+@import 'scss/vars';
 
 .klaro {
 
     $btn-margin-right: 0.5em;
+
     .cookie-modal,
     .cookie-notice {
 
-        @import '_switch';
+        @import 'scss/switch';
 
         font-size: 14px;
 
@@ -309,16 +310,17 @@
             .cn-buttons {
                 display: inline-block;
                 margin-top: -0.5em;
+
+                @media(max-width: $tiny-mobile-width) {
+                    width: 100%;
+                }
+
                 button.cm-btn {
                     margin-top: 0.5em;
 
-                    @media(max-width: $tiny-mobile-width){
+                    @media(max-width: $tiny-mobile-width) {
                         width: calc(50% - #{$btn-margin-right});
                     }
-                }
-
-                @media(max-width: $tiny-mobile-width){
-                    width: 100%;
                 }
 
             }
@@ -328,15 +330,16 @@
                 // we add a margin that cancels out unless the items are wrapped
                 // in which case it will add some spacing between them
                 margin-top: -0.5em;
-                a, div {
-                    margin-top: 0.5em;
-                }
-
                 display: flex;
                 flex-flow: row;
                 flex-wrap: wrap;
                 justify-content: right;
                 align-items: center;
+
+                a,
+                div {
+                    margin-top: 0.5em;
+                }
 
             }
         }
