@@ -35,13 +35,22 @@ export default class KlaroApi {
 
                 const xhr = new XMLHttpRequest();
 
+
                 xhr.addEventListener("load", () => {
                     const data = JSON.parse(xhr.response)
-                    resolve(data)
+                    if (xhr.status < 200 || xhr.status >= 300){
+                        data.status = xhr.status
+                        // the request wasn't successful
+                        reject(data)
+                    } else {
+                        // the request was successful
+                        resolve(data)
+                    }
                 })
 
                 xhr.addEventListener("error", () => {
-                    reject(xhr.response)
+                    // something else went wrong (e.g. request got blocked)
+                    reject({status: 0, xhr: xhr})
                 })
 
                 let body

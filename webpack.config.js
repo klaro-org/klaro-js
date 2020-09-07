@@ -151,6 +151,13 @@ if (APP_DEV_MODE === 'server') {
         }
       },
 
+      // we enable CORS requests (useful for testing)
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      },
+
       disableHostCheck: true
     },
     plugins: [

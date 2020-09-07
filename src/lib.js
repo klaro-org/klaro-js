@@ -11,6 +11,8 @@ export {update as updateConfig} from 'utils/config'
 
 let defaultConfig
 const defaultTranslations = new Map([])
+const eventHandlers = {}
+const events = {}
 
 // IE compatibility
 if (window.btoa === undefined)
@@ -36,6 +38,29 @@ function getElement(config){
     return element
 }
 
+export function addEventListener(eventType, handler){
+    if (eventHandlers[eventType] === undefined)
+        eventHandlers[eventType] = [handler]
+    else
+        eventHandlers[eventType].push(handler)
+    // this event did already fire, we call the handler
+    if (events[eventType] !== undefined)
+        for(const event of events[eventType])
+            handler(...event)
+}
+
+function executeEventHandlers(eventType, ...args){
+    const handlers = eventHandlers[eventType]
+    if (events[eventType] === undefined)
+        events[eventType] = [args]
+    else
+        events[eventType].push(args)
+    if (handlers !== undefined)
+        for(const handler of handlers){
+            handler(...args)
+        }
+}
+
 export function getConfigTranslations(config){
     const trans = new Map([])
     update(trans, defaultTranslations)
@@ -47,6 +72,8 @@ let cnt = 1
 export function renderKlaro(config, show, modal){
     if (config === undefined)
         return
+
+    executeEventHandlers("renderKlaro", config, show, modal)
 
     // we are using a count here so that we're able to repeatedly open the modal...
     let showCnt = 0
@@ -83,8 +110,10 @@ export function setup(){
         const klaroApiUrl = script.getAttribute('data-klaro-api-url') || 'https://api.kiprotect.com'
         if (klaroId !== null){
             const api = new KlaroApi(klaroApiUrl, klaroId)
-            const p = api.loadConfigs()
-            p.then((configs) => {
+            api.loadConfigs().then((configs) => {
+
+                executeEventHandlers("configsLoaded", configs)
+
                 defaultConfig = configs.find(config => config.name === klaroConfigName)
                 if (defaultConfig === undefined){
                     console.error(`Config ${klaroConfigName} not found`)
@@ -98,8 +127,7 @@ export function setup(){
                 }
                 doOnceLoaded(initialize)
 
-            })
-            p.catch(() => console.error("cannot load Klaro config"))
+            }).catch(() => console.error("cannot load Klaro config"))
         } else {
             defaultConfig = window[configName]
             if (defaultConfig !== undefined){
