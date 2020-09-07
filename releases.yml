@@ -1,7 +1,40 @@
 - changelog:
-    de: "- Formatierung der \xDCbersetzungen verbessert und Informationen zu fehlenden\
-      \ \xDCbersetzungs-Strings hinzugef\xFCgt.\n- Klaro-Bin\xE4rdateien / Distribution-Dateien\
-      \ werden wieder eingeschlossen.\n"
+    de: |
+      - Der Parameter `hideLearnMore` wurde wieder aktiviert, er erlaubt es, den "Anpassen" Link im Hinweisdialog zu entfernen.
+      - In der Beschreibung des Hinweisdialogs kann nun der "Anpassen" Link direkt im Text angezeigt werden.
+      - Das Erscheinungsbild der Buttons im Hinweisdialog auf kleinen Bildschirmen wurde verbessert.
+    en: |
+      - Add back the functionality of the `hideLearnMore` setting, which allows us to hide the "Learn more" link in the consent notice.
+      - Make it possible to show the "Learn more" link directly in the text of the consent notice.
+      - Improve styling of buttons for small screen widths, e.g. small mobile phones.
+  date: '2020-09-07'
+  files:
+  - name: klaro-no-translations.js
+    sha384: 0dFuDDI+JDn2nuvcgN5pvw8lCn3hHmC/ioyH6IpEuxswPqPgXmecdiE5gbWSma4y
+  - name: klaro.js
+    sha384: 9Afw/aLEaRXiptGBsT93Zkp7pIu35+yyNUspYhNSOuw54TJ5Q/oBrVnAUrEcmAtp
+  - name: cm.js
+    sha384: LwDo/Wn2jSwi/ZhQYwgCBS05075wTlho47s26q6HYFI7Q5+kFM2XjIIVvGMcCMsu
+  - name: klaro-no-translations-no-css.js
+    sha384: fJF60PfspHmzoKSN1SuCFJ6tPZPzvt+2snS+L1iPu/2EPFtiuD/jCuMlLEoP9F0T
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: e/tabwKzHVQkKN51OilOwZl6hhKCcG9v3ZEPjh/rl3u8L6QDXlPhgoQ11WHkGym/
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - improvements
+  - bugfixes
+  version: 0.6.4
+- changelog:
+    de: |
+      - Formatierung der Übersetzungen verbessert und Informationen zu fehlenden Übersetzungs-Strings hinzugefügt.
+      - Klaro-Binärdateien / Distribution-Dateien werden wieder eingeschlossen.
     en: |
       - Improve formatting of translation files and add information about missing translation strings.
       - Include distribution files again.
@@ -42,11 +75,9 @@
   - improvements
   version: 0.6.2
 - changelog:
-    de: "- Das `lang` Attribut des Klaro div-Elements enth\xE4lt nun die aktuell eingestellte\
-      \ Sprach Sprache f\xFCr Klaro, was z.B. die Anpassung von Stylesheets basierend\
-      \ auf der gew\xE4hlten Sprache einfacher macht.\n- Der `additionalClass` Parameter\
-      \ wurde hinzugef\xFCgt, \xFCber welchem dem Klaro-Element zus\xE4tzliche CSS-Klassen\
-      \ zugewiesen werden k\xF6nnen.\n"
+    de: |
+      - Das `lang` Attribut des Klaro div-Elements enthält nun die aktuell eingestellte Sprach Sprache für Klaro, was z.B. die Anpassung von Stylesheets basierend auf der gewählten Sprache einfacher macht.
+      - Der `additionalClass` Parameter wurde hinzugefügt, über welchem dem Klaro-Element zusätzliche CSS-Klassen zugewiesen werden können.
     en: |
       - Added the language as a `lang` attribute to the Klaro div, to make it easier to e.g. change Klaro's style depending on the language via CSS selectors.
       - Added the `additionalClass` option, which allows adding additional class names to the Klaro div via the config.
@@ -64,9 +95,11 @@
   - improvements
   version: 0.6.1
 - changelog:
-    de: "- `noticeAsModal` Parameter hinzugef\xFCgt, der das Einwilligungs-Hinweisfenster\
-      \ als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung\
-      \ zu treffen bevor die Seite genutzt werden kann.\n"
+    de: '- `noticeAsModal` Parameter hinzugefügt, der das Einwilligungs-Hinweisfenster
+      als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung
+      zu treffen bevor die Seite genutzt werden kann.
+
+      '
     en: '- Added `noticeAsModal` option, which will display the consent notice as
       a modal window, forcing the user to make a consent choice before proceeding
       to the page.
@@ -86,9 +119,11 @@
   - improvements
   version: 0.6.0
 - changelog:
-    de: "- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien\
-      \ zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)\
-      \ f\xFCr eine technische Erl\xE4uterung.\n"
+    de: '- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien
+      zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+      für eine technische Erläuterung.
+
+      '
     en: '- Added `SameSite=Lax` to the Klaro cookie in order to conform to upcoming
       changes in cookie handling by browsers. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
       for details.
@@ -108,8 +143,9 @@
   - improvements
   version: 0.5.35
 - changelog:
-    de: "- Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.\n- Beim\
-      \ Kopieren eines `script` Elements werden nun alle Attribute \xFCbernommen.\n"
+    de: |
+      - Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.
+      - Beim Kopieren eines `script` Elements werden nun alle Attribute übernommen.
     en: |
       - Fixed a problem with the `klaro.resetManagers()` function.
       - Ensured that all attributes of a `script` element are copied over.
@@ -127,8 +163,10 @@
   - bugfixes
   version: 0.5.34
 - changelog:
-    de: "- Maximale Gr\xF6\xDFe der Einwilligungs-Notiz auf `360px` erh\xF6ht, damit\
-      \ Text in den Buttons nicht gebrochen wird.\n"
+    de: '- Maximale Größe der Einwilligungs-Notiz auf `360px` erhöht, damit Text in
+      den Buttons nicht gebrochen wird.
+
+      '
     en: '- Increased the maximum width of the consent notice to `360px` to allow languages
       with longer translations to display the buttons without wrapping text.
 
@@ -147,22 +185,12 @@
   - improvements
   version: 0.5.33
 - changelog:
-    de: "- Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus\
-      \ und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell\
-      \ zuzulassen. Sie k\xF6nnen jetzt `htmlTexts: true` in der Konfiguration einstellen,\
-      \ was Klaro anweist, die von Ihnen bereitgestellten \xDCbersetzungsstrings als\
-      \ HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer \xF6\
-      ffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem\
-      \ innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einf\xFCgen, andernfalls\
-      \ wird er \"so wie er ist\" dargestellt.\n\nWir hoffen, dass diese \xC4nderung\
-      \ es einfacher macht, das Erscheinungsbild der Einverst\xE4ndniserkl\xE4rung\
-      \ und des Modals anzupassen, ohne auf zus\xE4tzliche Konfigurationsparameter\
-      \ zur\xFCckgreifen zu m\xFCssen. Wenn wir uns entscheiden, HTML an mehr Stellen\
-      \ zu unterst\xFCtzen, k\xF6nnen wir das tun, ohne das Konfigurationsformat erneut\
-      \ zu brechen.\n\nWir entschuldigen uns f\xFCr die Einf\xFChrung einer brechenden\
-      \ Konfigurations\xE4nderung, da die Option `extraHTML` zu Beginn recht neu war,\
-      \ die \xC4nderung sollte nicht viele Benutzer betreffen und wir denken, dass\
-      \ sie auf lange Sicht von Vorteil sein wird.\n"
+    de: |
+      - Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie können jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten Übersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer öffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einfügen, andernfalls wird er "so wie er ist" dargestellt.
+
+      Wir hoffen, dass diese Änderung es einfacher macht, das Erscheinungsbild der Einverständniserklärung und des Modals anzupassen, ohne auf zusätzliche Konfigurationsparameter zurückgreifen zu müssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterstützen, können wir das tun, ohne das Konfigurationsformat erneut zu brechen.
+
+      Wir entschuldigen uns für die Einführung einer brechenden Konfigurationsänderung, da die Option `extraHTML` zu Beginn recht neu war, die Änderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.
     en: |
       - Removed the `extraHTML` fields from the consent modal and consent notice in favor of allowing HTML in descriptions in general. You can now set `htmlTexts: true` in the config, which will tell Klaro to render the translation strings you provide as HTML content. If a given string does not start with an opening bracket (&lt;), Klaro will still put the resulting HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it "as is".
 
@@ -184,9 +212,11 @@
   - feature-update
   version: 0.5.32
 - changelog:
-    de: "- Pr\xFCfsummen zu allen lokal erzeugten Builddateien hinzugef\xFCgt, z.B.\
-      \ zur Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)\
-      \ f\xFCr weitere Einzelheiten hierzu.\n"
+    de: '- Prüfsummen zu allen lokal erzeugten Builddateien hinzugefügt, z.B. zur
+      Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+      für weitere Einzelheiten hierzu.
+
+      '
     en: '- Added checksums to all build files generated locally, for use e.g. as subresource
       integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
       for more details about this.
@@ -205,11 +235,13 @@
   tags: []
   version: 0.5.31
 - changelog:
-    de: "- Es wurde die Konfigurationsoption `groupByPurpose` hinzugef\xFCgt, die\
-      \ Anwendungen nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt,\
-      \ ganze Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren.\
-      \ Dies reduziert auch den Platzbedarf des Modals, was besonders f\xFCr Websites\
-      \ wichtig ist, die viele Anwendungen von Drittanbietern verwenden.\n"
+    de: '- Es wurde die Konfigurationsoption `groupByPurpose` hinzugefügt, die Anwendungen
+      nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt, ganze
+      Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren. Dies
+      reduziert auch den Platzbedarf des Modals, was besonders für Websites wichtig
+      ist, die viele Anwendungen von Drittanbietern verwenden.
+
+      '
     en: '- Added the `groupByPurpose` config option, which groups apps into categories
       based on their purpose, allowing the user to enable or disable entire groups
       of apps at once. This also reduces the space taken up by the modal, which is

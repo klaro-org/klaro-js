@@ -487,10 +487,27 @@
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
   display: inline-block;
+  margin-top: -0.5em;
+}
+
+@media (max-width: 384px) {
+  .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
+    width: 100%;
+  }
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn {
+  margin-top: 0.5em;
+}
+
+@media (max-width: 384px) {
+  .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn {
+    width: calc(50% - 0.5em);
+  }
 }
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
-  margin-top: 0;
+  margin-top: -0.5em;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -498,8 +515,9 @@
   align-items: center;
 }
 
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a, .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
-  margin-top: 1.0em;
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
+  margin-top: 0.5em;
 }
 
 .klaro .cookie-modal-notice {
