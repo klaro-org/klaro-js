@@ -75,7 +75,7 @@ if __name__ == '__main__':
         exit(-1)
 
     env = os.environ.copy()
-    env['APP_VERSION'] = v
+    env['APP_VERSION'] = "v"+v
     subprocess.check_output(["make", "build"], cwd=wd, env=env)
 
     # everything below here should not fail anymore...
