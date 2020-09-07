@@ -482,14 +482,24 @@
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
   display: inline-block;
+  flex-grow: 1;
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
+  display: inline-block;
 }
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
+  margin-top: 0;
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: right;
   align-items: center;
-  margin-top: 1em;
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a, .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
+  margin-top: 1.0em;
 }
 
 .klaro .cookie-modal-notice {
