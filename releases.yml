@@ -41,13 +41,9 @@
   date: '2020-08-28'
   files:
   - name: klaro.js
-    sha384: xO4FTg5iKTFd5aN5sCZfk/ZqhwvCZkPeRzC9W8oVgq83e5Xaxk6ftH8oGc9lRjpn
   - name: klaro-no-css.js
-    sha384: 3sz5xrIq1v5WFmxg+L2lrYsOTVImGvMeAhQfkeGg8r4b6VrXr+tgBMhpeVavcKR6
   - name: klaro.css
-    sha384: vFphXTWzAFN+S6Z7xYV5tDfQ4ci+9KocpYqhEE0kRA0nR8C6GXXjE8M9PiGU3Buu
   - name: klaro.min.css
-    sha384: k7h7bPk2c1XRn6nogkUaJQJzbNuWn/KXmrCNrhTSou55v5CGiv7qZjI21a7mA2Af
   tags:
   - improvements
   version: 0.6.3
@@ -64,13 +60,9 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: USWXg92JV6bMyCv6O6hPEE62k8Gh9BwqZ6Iicgek6Bbbxyl7oqYeeLqrERj45R1+
   - name: klaro-no-css.js
-    sha384: 6z7+GsA29ZSFWEnFDQuB7yuHuIlBgfb2OHDfzZGxdbct6/78nf1+m7lvEwywdg5R
   - name: klaro.css
-    sha384: VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f
   - name: klaro.min.css
-    sha384: +jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ
   tags:
   - improvements
   version: 0.6.2
@@ -84,13 +76,9 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: 5IfUNVqTQnyIAur+Mw4sThiybc8Ly4nXAJKrM5NZMY9BnLD4eAT24i4oXu8I9V7O
   - name: klaro-no-css.js
-    sha384: Pz0TSe74Sm9l733pN1oXSnJu+D93F35SeLphDz7otiRcNwx3Oy67iaZ6/twgYoJm
   - name: klaro.css
-    sha384: VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f
   - name: klaro.min.css
-    sha384: +jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ
   tags:
   - improvements
   version: 0.6.1
@@ -108,13 +96,9 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: GVX54TCeTqG19jr5VY+vMAdER8BkYzdA2iUnBcK6cUXr392L/7LpZmWJMUK7CeKy
   - name: klaro-no-css.js
-    sha384: 8NnjFFT4CwSGMIhIhMv/MphhMlD1TQWUgI67CjGNdSNZhzij7BWSqJo4fOq9fuJG
   - name: klaro.css
-    sha384: sVdM1Fly+2nRlEkRMxZDTW3sL2sK5f0lZElVwBpWoPrvcgJOichFyJoPOddmTMWp
   - name: klaro.min.css
-    sha384: Ly1idixnFbQClNsisagBZ+05p+WH763BIqcm9P5pH2hW1nl2+iWL+j32ZotyI4/H
   tags:
   - improvements
   version: 0.6.0
@@ -132,13 +116,9 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: Nhyxu4sY0ISWN96elOfgGIw9VC4+2LTgaNt+BhIWxZw03oJP7l0Qt6+pGS8hM9R/
   - name: klaro-no-css.js
-    sha384: fpnmywpkyetRiKNzIljgtRm/GaCAUQOblxiwIIgvb1VMXZW8T8b8SkN5Y2JJxuuk
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - improvements
   version: 0.5.35
@@ -152,13 +132,9 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: IiDYC3fI6JblzD9VGQe7RsWHfHaUmMdxrQnUpTboXO6iFm4oJBu6oScMrUdFcD5a
   - name: klaro-no-css.js
-    sha384: 0XVBT/QbaIDG+T+E0VjWS1G8ugSJNFhsZB7QXq4Q5jotPtMJmD0ZZgxvLjbC41uQ
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - bugfixes
   version: 0.5.34
@@ -174,13 +150,9 @@
   date: '2020-08-17'
   files:
   - name: klaro.js
-    sha384: 1toJX9xehV/Un8VpF1DPnHtVRcijc4wjI8c/jFpzRIuzR9M/F2IO5D66Y8JwkUny
   - name: klaro-no-css.js
-    sha384: xjXIU23iXo6K0/hi0XcYkL8kLixq2fPB+cGXsp3ee5A33OMbHRsr7QVFLAcHwCp7
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - improvements
   version: 0.5.33
@@ -200,13 +172,9 @@
   date: '2020-08-14'
   files:
   - name: klaro.js
-    sha384: 889r8fDciDo/zkX0RKjU8p17x4c/arkMU0+WH53KqrXCMgtxYvuj0GnjfXMCuzhL
   - name: klaro-no-css.js
-    sha384: TqaFiw8Ch6ulxWmiViaHaDRv9JEQfb9D521Cq4+GSOByeS4yhMpEUW3oQ92qOSE/
   - name: klaro.css
-    sha384: tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt
   - name: klaro.min.css
-    sha384: sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH
   tags:
   - breaking-changes
   - feature-update
@@ -225,13 +193,9 @@
   date: '2020-08-12'
   files:
   - name: klaro.js
-    sha384: h9VDPFe9V4GF58KI49VFuJCI2z80m/rkrH+DbzhiVY7FnZTYEtv9TFg/w1p5pz5y
   - name: klaro-no-css.js
-    sha384: f26eXjeGZ1wSuLSJ4zJuh6xSWFaXFGlBV1B65IemIqg21vKot0Ik8IrEfVaOmdOj
   - name: klaro.css
-    sha384: tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt
   - name: klaro.min.css
-    sha384: sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH
   tags: []
   version: 0.5.31
 - changelog:
