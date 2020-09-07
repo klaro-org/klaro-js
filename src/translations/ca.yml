@@ -28,7 +28,7 @@ consentNotice:
     finalitats: {purposes}.'
   imprint:
     name: Empremta
-  learnMore: Saber-ne més...
+  learnMore: Saber-ne més
   privacyPolicy:
     name: política de privadesa
 decline: Rebutja

@@ -29,7 +29,7 @@ consentNotice:
     propósitos: {purposes}.'
   imprint:
     name: Imprimir
-  learnMore: Personalizar...
+  learnMore: Personalizar
   privacyPolicy:
     name: política de privacidad
 decline: Declive

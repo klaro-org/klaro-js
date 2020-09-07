@@ -14,7 +14,7 @@ consentNotice:
   imprint:
     name: imprint
 purposeItem:
-  # we give some additional context for the translation API so it can pick the right word...
+  # we give some additional context for the translation API so it can pick the right word
   app: A simple <tr-snip>app</tr-snip> that I install on my computer.
   apps: Several simple <tr-snip>apps</tr-snip> that I install on my computer.
 ok|capitalize: accept

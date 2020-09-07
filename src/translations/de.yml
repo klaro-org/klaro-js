@@ -30,7 +30,7 @@ consentNotice:
     Zwecke: {purposes}.'
   imprint:
     name: Impressum
-  learnMore: Anpassen...
+  learnMore: Anpassen
   privacyPolicy:
     name: Datenschutzerklärung
 decline: Ablehnen

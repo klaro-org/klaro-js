@@ -30,7 +30,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Настроить...
+  learnMore: Настроить
   privacyPolicy:
     name: политика конфиденциальности
 decline: Отклонить

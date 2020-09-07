@@ -30,7 +30,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Lær mer...
+  learnMore: Lær mer
   privacyPolicy:
     name: personvernerklæring
 decline: Avslå

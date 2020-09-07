@@ -29,7 +29,7 @@ consentNotice:
     {purposes}.'
   imprint:
     name: odcisk
-  learnMore: Dostosować...
+  learnMore: Dostosować
   privacyPolicy:
     name: polityka prywatności
 decline: Spadek

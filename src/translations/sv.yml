@@ -29,7 +29,7 @@ consentNotice:
   imprint:
     name: ''
     name_en: imprint
-  learnMore: Läs mer...
+  learnMore: Läs mer
   privacyPolicy:
     name: Integritetspolicy
 decline: Avböj
