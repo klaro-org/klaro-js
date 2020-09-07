@@ -301,15 +301,28 @@
 
             .cn-learn-more {
                 display: inline-block;
+                flex-grow: 1;
+            }
+
+            .cn-buttons {
+                display: inline-block;
             }
 
             .cn-ok {
+
+                // we add a margin that cancels out unless the items are wrapped
+                // in which case it will add some spacing between them
+                margin-top: 0;
+                a, div {
+                    margin-top: 1.0em;
+                }
+
                 display: flex;
                 flex-flow: row;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: right;
                 align-items: center;
 
-                margin-top: 1em;
             }
         }
     }

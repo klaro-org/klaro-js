@@ -55,7 +55,7 @@ export default class ConsentNotice extends React.Component {
     render(){
         const {config, show, manager, t} = this.props
         const { modal, confirming } = this.state
-        const {embedded, noticeAsModal} = config
+        const {embedded, noticeAsModal, hideLearnMore } = config
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
@@ -104,10 +104,10 @@ export default class ConsentNotice extends React.Component {
             :
             <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
-        const learnMoreLink = noticeAsModal ?
-            <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
+        const learnMoreLink = (extraText) => noticeAsModal ?
+            <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}{extraText}</button>
             :
-            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</a>
+            <a className="cm-link cn-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}{extraText}</a>
 
         let ppLink
 
@@ -118,10 +118,10 @@ export default class ConsentNotice extends React.Component {
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''} ${embedded ? 'cn-embedded' : ''}`}>
             <div className="cn-body">
-                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink, learnMoreLink: learnMoreLink })} />
+                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink, learnMoreLink: learnMoreLink() })} />
                 {changesText}
                 <div className="cn-ok">
-                    {learnMoreLink}
+                    {!hideLearnMore && learnMoreLink('...')}
        	   	        <div className="cn-buttons">
                         	{declineButton}
                         	{acceptButton}
