@@ -1,4 +1,36 @@
 - changelog:
+    de: '- Backend-Funktionalität hinzugefügt: Klaro kann optional Konfigurationen
+      von einer API laden und Einwilligungsinformationen (anonym) an eine API senden.
+
+      '
+    en: '- Added support for using an (optional) API backend to retrieve consent configs
+      from and send anonymous consent records to.
+
+      '
+  date: '2020-09-07'
+  files:
+  - name: klaro-no-translations.js
+    sha384: A6KjVbEorUfAIy0emlGy3gYscIhJnwRf5qYrYXLFW6CK5Q+aEHpePvkDJvHCfnjT
+  - name: klaro.js
+    sha384: mj6zgIuT1mEh5Y0w9re97Fgdvwx4U4Ib7LFL7ps0CzzkQ9FcAIf55VDfFeFEsLzq
+  - name: cm.js
+    sha384: 5ed36/SUSR4gnvDvbqy1/k96cbvDQObjXIJM0KBvULpuMbglk6bGkhjEJnxRlLsL
+  - name: klaro-no-translations-no-css.js
+    sha384: EzgRdSG+sHAlnXSmRam5vPlAnHGiL+zQi4BEkKEQw/3X2ZdZUixAUya/VH39leSc
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: 2EunewXl+GPUDsTNuJxcUawnjclJ46DSOfjDW0IdCpt6j3AqZ0ml+4cAl4eQmOsI
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - improvements
+  version: 0.6.5
+- changelog:
     de: |
       - Der Parameter `hideLearnMore` wurde wieder aktiviert, er erlaubt es, den "Anpassen" Link im Hinweisdialog zu entfernen.
       - In der Beschreibung des Hinweisdialogs kann nun der "Anpassen" Link direkt im Text angezeigt werden.

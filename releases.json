@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Backend-Funktionalit\u00e4t hinzugef\u00fcgt: Klaro kann optional Konfigurationen von einer API laden und Einwilligungsinformationen (anonym) an eine API senden.\n",
+      "en": "- Added support for using an (optional) API backend to retrieve consent configs from and send anonymous consent records to.\n"
+    },
+    "date": "2020-09-07",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "A6KjVbEorUfAIy0emlGy3gYscIhJnwRf5qYrYXLFW6CK5Q+aEHpePvkDJvHCfnjT"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "mj6zgIuT1mEh5Y0w9re97Fgdvwx4U4Ib7LFL7ps0CzzkQ9FcAIf55VDfFeFEsLzq"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "5ed36/SUSR4gnvDvbqy1/k96cbvDQObjXIJM0KBvULpuMbglk6bGkhjEJnxRlLsL"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "EzgRdSG+sHAlnXSmRam5vPlAnHGiL+zQi4BEkKEQw/3X2ZdZUixAUya/VH39leSc"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "/akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "2EunewXl+GPUDsTNuJxcUawnjclJ46DSOfjDW0IdCpt6j3AqZ0ml+4cAl4eQmOsI"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI"
+      },
+      {
+        "name": "config.js",
+        "sha384": "RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.5"
+  },
+  {
+    "changelog": {
       "de": "- Der Parameter `hideLearnMore` wurde wieder aktiviert, er erlaubt es, den \"Anpassen\" Link im Hinweisdialog zu entfernen.\n- In der Beschreibung des Hinweisdialogs kann nun der \"Anpassen\" Link direkt im Text angezeigt werden.\n- Das Erscheinungsbild der Buttons im Hinweisdialog auf kleinen Bildschirmen wurde verbessert.\n",
       "en": "- Add back the functionality of the `hideLearnMore` setting, which allows us to hide the \"Learn more\" link in the consent notice.\n- Make it possible to show the \"Learn more\" link directly in the text of the consent notice.\n- Improve styling of buttons for small screen widths, e.g. small mobile phones.\n"
     },
@@ -57,20 +106,16 @@
     "date": "2020-08-28",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "xO4FTg5iKTFd5aN5sCZfk/ZqhwvCZkPeRzC9W8oVgq83e5Xaxk6ftH8oGc9lRjpn"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "3sz5xrIq1v5WFmxg+L2lrYsOTVImGvMeAhQfkeGg8r4b6VrXr+tgBMhpeVavcKR6"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "vFphXTWzAFN+S6Z7xYV5tDfQ4ci+9KocpYqhEE0kRA0nR8C6GXXjE8M9PiGU3Buu"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "k7h7bPk2c1XRn6nogkUaJQJzbNuWn/KXmrCNrhTSou55v5CGiv7qZjI21a7mA2Af"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -86,20 +131,16 @@
     "date": "2020-08-20",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "USWXg92JV6bMyCv6O6hPEE62k8Gh9BwqZ6Iicgek6Bbbxyl7oqYeeLqrERj45R1+"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "6z7+GsA29ZSFWEnFDQuB7yuHuIlBgfb2OHDfzZGxdbct6/78nf1+m7lvEwywdg5R"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "+jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -115,20 +156,16 @@
     "date": "2020-08-20",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "5IfUNVqTQnyIAur+Mw4sThiybc8Ly4nXAJKrM5NZMY9BnLD4eAT24i4oXu8I9V7O"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "Pz0TSe74Sm9l733pN1oXSnJu+D93F35SeLphDz7otiRcNwx3Oy67iaZ6/twgYoJm"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "+jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -144,20 +181,16 @@
     "date": "2020-08-20",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "GVX54TCeTqG19jr5VY+vMAdER8BkYzdA2iUnBcK6cUXr392L/7LpZmWJMUK7CeKy"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "8NnjFFT4CwSGMIhIhMv/MphhMlD1TQWUgI67CjGNdSNZhzij7BWSqJo4fOq9fuJG"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "sVdM1Fly+2nRlEkRMxZDTW3sL2sK5f0lZElVwBpWoPrvcgJOichFyJoPOddmTMWp"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "Ly1idixnFbQClNsisagBZ+05p+WH763BIqcm9P5pH2hW1nl2+iWL+j32ZotyI4/H"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -173,20 +206,16 @@
     "date": "2020-08-20",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "Nhyxu4sY0ISWN96elOfgGIw9VC4+2LTgaNt+BhIWxZw03oJP7l0Qt6+pGS8hM9R/"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "fpnmywpkyetRiKNzIljgtRm/GaCAUQOblxiwIIgvb1VMXZW8T8b8SkN5Y2JJxuuk"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -202,20 +231,16 @@
     "date": "2020-08-20",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "IiDYC3fI6JblzD9VGQe7RsWHfHaUmMdxrQnUpTboXO6iFm4oJBu6oScMrUdFcD5a"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "0XVBT/QbaIDG+T+E0VjWS1G8ugSJNFhsZB7QXq4Q5jotPtMJmD0ZZgxvLjbC41uQ"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -231,20 +256,16 @@
     "date": "2020-08-17",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "1toJX9xehV/Un8VpF1DPnHtVRcijc4wjI8c/jFpzRIuzR9M/F2IO5D66Y8JwkUny"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "xjXIU23iXo6K0/hi0XcYkL8kLixq2fPB+cGXsp3ee5A33OMbHRsr7QVFLAcHwCp7"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -260,20 +281,16 @@
     "date": "2020-08-14",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "889r8fDciDo/zkX0RKjU8p17x4c/arkMU0+WH53KqrXCMgtxYvuj0GnjfXMCuzhL"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "TqaFiw8Ch6ulxWmiViaHaDRv9JEQfb9D521Cq4+GSOByeS4yhMpEUW3oQ92qOSE/"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [
@@ -290,20 +307,16 @@
     "date": "2020-08-12",
     "files": [
       {
-        "name": "klaro.js",
-        "sha384": "h9VDPFe9V4GF58KI49VFuJCI2z80m/rkrH+DbzhiVY7FnZTYEtv9TFg/w1p5pz5y"
+        "name": "klaro.js"
       },
       {
-        "name": "klaro-no-css.js",
-        "sha384": "f26eXjeGZ1wSuLSJ4zJuh6xSWFaXFGlBV1B65IemIqg21vKot0Ik8IrEfVaOmdOj"
+        "name": "klaro-no-css.js"
       },
       {
-        "name": "klaro.css",
-        "sha384": "tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt"
+        "name": "klaro.css"
       },
       {
-        "name": "klaro.min.css",
-        "sha384": "sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH"
+        "name": "klaro.min.css"
       }
     ],
     "tags": [],
