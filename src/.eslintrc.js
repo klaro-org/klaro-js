@@ -30,7 +30,7 @@ module.exports = {
         "linebreak-style": ["error", "unix"],
         "no-alert": "error",
         "no-confusing-arrow": "error",
-        "no-console": "error",
+        "no-console": ["error", {"allow": ["warn", "error"]}],
         "no-implied-eval": "error",
         "no-labels": "error",
         "no-lone-blocks": "error",

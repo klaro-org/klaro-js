@@ -131,18 +131,18 @@ export default class ConsentManager {
         return this.consents
     }
 
-    saveAndApplyConsents(){
-        this.saveConsents()
+    saveAndApplyConsents(eventType){
+        this.saveConsents(eventType)
         this.applyConsents()
     }
 
-    saveConsents(){
+    saveConsents(eventType){
         const v = encodeURIComponent(JSON.stringify(this.consents))
         this.store.set(v);
         this.confirmed = true
         this.changed = false
         this.savedConsents = {...this.consents}
-        this.notify('saveConsents', this.consents)
+        this.notify('saveConsents', {consents: this.consents, type: eventType})
     }
 
     applyConsents(dryRun){

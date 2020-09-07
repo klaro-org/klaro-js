@@ -32,7 +32,10 @@ const format = (str, ...rest) => {
     return splits
 }
 
-export function language(){
+export function language(configLang){
+    // if a langauge is given in the config we always return that
+    if (configLang !== undefined && configLang !== "zz")
+        return configLang
     const lang = ((typeof window.language === "string" ? window.language : null) || document.documentElement.lang || 'en').toLowerCase()
     const regex = new RegExp('^([\\w]+)-([\\w]+)$')
     const result = regex.exec(lang)

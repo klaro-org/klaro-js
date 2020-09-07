@@ -2,6 +2,7 @@
 import React from 'react'
 import App from 'components/app.js'
 import ConsentManager from 'consent-manager'
+import KlaroApi from 'utils/api';
 import {render} from 'react-dom'
 import {convertToMap, update} from 'utils/maps'
 import {t, language} from 'utils/i18n'
@@ -53,7 +54,7 @@ export function renderKlaro(config, show, modal){
         showCnt = cnt++
     const element = getElement(config)
     const manager = getManager(config)
-    const lang = config.lang || language()
+    const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
     const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'en', ...args)
     const app = render(<App t={tt}
@@ -65,28 +66,59 @@ export function renderKlaro(config, show, modal){
     return app
 }
 
+function doOnceLoaded(handler){
+    if (/complete|interactive|loaded/.test(document.readyState)){
+        handler()
+    } else {
+        window.addEventListener('DOMContentLoaded', handler)
+    }
+}
+
 export function setup(){
     const script = currentScript("klaro");
     if (script !== undefined){
         const configName = script.getAttribute('data-config') || "klaroConfig"
-        defaultConfig = window[configName]
-        if (defaultConfig !== undefined){
+        const klaroId = script.getAttribute('data-klaro-id')
+        const klaroConfigName = script.getAttribute('data-klaro-config-name') || "default"
+        const klaroApiUrl = script.getAttribute('data-klaro-api-url') || 'https://api.kiprotect.com'
+        if (klaroId !== null){
+            const api = new KlaroApi(klaroApiUrl, klaroId)
+            const p = api.loadConfigs()
+            p.then((configs) => {
+                defaultConfig = configs.find(config => config.name === klaroConfigName)
+                if (defaultConfig === undefined){
+                    console.error(`Config ${klaroConfigName} not found`)
+                    return
+                }
+                const initialize = () => {
+                    const consentManager = getManager(defaultConfig)
+                    consentManager.watch(api)
+                    if (!defaultConfig.noAutoLoad)
+                        renderKlaro(defaultConfig)
+                }
+                doOnceLoaded(initialize)
 
-            // deprecated: config settings should only be loaded via the config
-            const scriptStylePrefix = script.getAttribute('data-style-prefix')
-            const scriptNoAutoLoad = script.getAttribute('data-no-auto-load') === "true"
-            if (scriptStylePrefix === undefined)
-                defaultConfig.stylePrefix = scriptStylePrefix
+            })
+            p.catch(() => console.error("cannot load Klaro config"))
+        } else {
+            defaultConfig = window[configName]
+            if (defaultConfig !== undefined){
 
-            if (scriptNoAutoLoad)
-                defaultConfig.noAutoLoad = true
+                // deprecated: config settings should only be loaded via the config
+                const scriptStylePrefix = script.getAttribute('data-style-prefix')
+                const scriptNoAutoLoad = script.getAttribute('data-no-auto-load') === "true"
+                if (scriptStylePrefix === undefined)
+                    defaultConfig.stylePrefix = scriptStylePrefix
 
-            const initialize = () => {
-                if (!defaultConfig.noAutoLoad)
-                    renderKlaro(defaultConfig)
+                if (scriptNoAutoLoad)
+                    defaultConfig.noAutoLoad = true
+
+                const initialize = () => {
+                    if (!defaultConfig.noAutoLoad)
+                        renderKlaro(defaultConfig)
+                }
+                doOnceLoaded(initialize)
             }
-
-            window.addEventListener('DOMContentLoaded', initialize)
         }
     }
 }

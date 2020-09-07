@@ -19,7 +19,7 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: this.props.modal})
     }
 
-    executeButtonClicked = (setChangedAll, changedAllValue) => {
+    executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
         const {modal} = this.state
         let changedApps = 0
         if (setChangedAll)
@@ -27,7 +27,7 @@ export default class ConsentNotice extends React.Component {
         const confirmed = this.props.manager.confirmed
         const saveAndHide = () => {
             this.setState({confirming: false})
-            this.props.manager.saveAndApplyConsents()
+            this.props.manager.saveAndApplyConsents(eventType)
             this.props.hide()
         }
         if (setChangedAll && !confirmed && (modal || this.props.config.mustConsent)){
@@ -41,15 +41,15 @@ export default class ConsentNotice extends React.Component {
     }
 
     saveAndHide = () => {
-        this.executeButtonClicked(false, false)
+        this.executeButtonClicked(false, false, 'save')
     }
 
     acceptAndHide = () => {
-        this.executeButtonClicked(true, true)
+        this.executeButtonClicked(true, true, 'accept')
     }
 
     declineAndHide = () => {
-        this.executeButtonClicked(true, false)
+        this.executeButtonClicked(true, false, 'decline')
     }
 
     render(){
