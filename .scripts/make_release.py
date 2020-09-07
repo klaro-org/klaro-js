@@ -37,6 +37,9 @@ if __name__ == '__main__':
         rt = 'patch'
     else:
         rt = sys.argv[1]
+    push = False
+    if '--push' in sys.argv[2:]:
+        push = True
     if not rt in ('patch', 'minor', 'major'):
         sys.stderr.write("usage: {} patch|minor|major".format(sys.argv[0]))
         exit(1)
@@ -105,5 +108,6 @@ if __name__ == '__main__':
     subprocess.check_output(["git", "add", "."], cwd=wd)
     subprocess.check_output(["git", "commit", "-m", f"v{v}"], cwd=wd)
     subprocess.check_output(["git", "tag", "-a", f"v{v}", "-m", f"v{v}"], cwd=wd)
-    subprocess.check_output(["git", "push", "origin", "master", "--tags"], cwd=wd)
-    subprocess.check_output(["git", "push", "geordi", "master", "--tags"], cwd=wd)
+    if push:
+        subprocess.check_output(["git", "push", "origin", "master", "--tags"], cwd=wd)
+        subprocess.check_output(["git", "push", "geordi", "master", "--tags"], cwd=wd)
