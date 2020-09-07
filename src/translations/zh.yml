@@ -26,7 +26,7 @@ consentNotice:
   description: 我们收集和处理您的个人信息用于以下目的： {purposes}。
   imprint:
     name: 印记
-  learnMore: 自定义
+  learnMore: 自定义...
   privacyPolicy:
     name: 隐私政策
 decline: 衰落

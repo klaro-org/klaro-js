@@ -107,7 +107,7 @@ export default class ConsentNotice extends React.Component {
         const learnMoreLink = noticeAsModal ?
             <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
             :
-            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}...</a>
+            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</a>
 
         let ppLink
 
@@ -118,7 +118,7 @@ export default class ConsentNotice extends React.Component {
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''} ${embedded ? 'cn-embedded' : ''}`}>
             <div className="cn-body">
-                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink })} />
+                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink, learnMoreLink: learnMoreLink })} />
                 {changesText}
                 <div className="cn-ok">
                     {learnMoreLink}
