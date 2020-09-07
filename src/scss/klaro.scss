@@ -2,6 +2,8 @@
 @import '_vars';
 
 .klaro {
+
+    $btn-margin-right: 0.5em;
     .cookie-modal,
     .cookie-notice {
 
@@ -50,7 +52,7 @@
             color: $font-color-dark;
             border-radius: 6px;
             padding: 6px 10px;
-            margin-right: 0.5em;
+            margin-right: $btn-margin-right;
             border: 0;
             padding: 0.4em;
             font-size: 1em;
@@ -306,15 +308,28 @@
 
             .cn-buttons {
                 display: inline-block;
+                margin-top: -0.5em;
+                button.cm-btn {
+                    margin-top: 0.5em;
+
+                    @media(max-width: $tiny-mobile-width){
+                        width: calc(50% - #{$btn-margin-right});
+                    }
+                }
+
+                @media(max-width: $tiny-mobile-width){
+                    width: 100%;
+                }
+
             }
 
             .cn-ok {
 
                 // we add a margin that cancels out unless the items are wrapped
                 // in which case it will add some spacing between them
-                margin-top: 0;
+                margin-top: -0.5em;
                 a, div {
-                    margin-top: 1.0em;
+                    margin-top: 0.5em;
                 }
 
                 display: flex;
