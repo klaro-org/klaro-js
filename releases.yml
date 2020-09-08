@@ -1,4 +1,32 @@
 - changelog:
+    de:
+    - Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
+    en:
+    - Fixed a problem causing the cookie configuration to not work correctly.
+  date: '2020-09-08'
+  files:
+  - name: klaro-no-translations.js
+    sha384: khK0Y+UbH7nbKRsI74Hrq4AhbYdsB19Fnf0e/IAGr4rHa/X1jqwNJQetrIyoUZuT
+  - name: klaro.js
+    sha384: ctifvBrp90xpvMWZjEk+aXDUa22dg38qOzuF4Cf90NIGdRTmebrBVRe9ZJ29oCN4
+  - name: cm.js
+    sha384: dlfV2q4dMz6dkOPO+sum2m87mMja1QcuAzMzyEJUmvBzg8wYVfHOiM/WA8gUTJxU
+  - name: klaro-no-translations-no-css.js
+    sha384: jRnUkapiq7c9vFkhRq6kkztRuKdyilBn36NpM41YqHkzhQtS9AtU0eloifdSnnW7
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: GywWA2DAq46gTHMVvL6kIMvnJwvuVj8JcybfYqRCa/3WLFszHRO1PNY/tL8KOFm3
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - bugfixes
+  version: 0.6.6
+- changelog:
     de: '- Backend-Funktionalität hinzugefügt: Klaro kann optional Konfigurationen
       von einer API laden und Einwilligungsinformationen (anonym) an eine API senden.
 
