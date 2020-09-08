@@ -275,7 +275,7 @@ export default class ConsentManager {
                 let cookiePath, cookieDomain
                 if (cookiePattern instanceof Array){
                     [cookiePattern, cookiePath, cookieDomain] = cookiePattern
-                } else if (cookiePattern instanceof Object){
+                } else if (cookiePattern instanceof Object && !(cookiePattern instanceof RegExp)){
                     const cp = cookiePattern
                     cookiePattern = cp.pattern
                     cookiePath = cp.path
