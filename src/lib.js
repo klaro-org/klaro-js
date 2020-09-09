@@ -96,7 +96,7 @@ export function renderKlaro(config, opts){
     return app
 }
 
-export function showKlaroIDE(script) {
+function showKlaroIDE(script) {
     const baseName = /^(.*)(\/[^/]+)$/.exec(script.src)[1] || ''
     const element = document.createElement('script')
     element.src = baseName !== '' ? baseName + '/ide.js' : 'ide.js'
