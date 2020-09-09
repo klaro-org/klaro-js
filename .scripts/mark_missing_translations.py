@@ -43,8 +43,7 @@ def mark_missing(d, ed, ref_lang, parent_key=None):
             if not v.endswith(".") and ed[k].endswith("."):
                 ed[k] = ed[k][:-1]
 
-def mark_missing_translations(src_path, ref_lang):
-    translations_path = os.path.join(src_path, "translations")
+def mark_missing_translations(translations_path, ref_lang):
     ref_translations_path = os.path.join(translations_path, f"{ref_lang}.yml")
     with open(ref_translations_path) as input_file:
         ref_translations = yaml.load(input_file.read(), Loader=yaml.BaseLoader)
@@ -61,7 +60,7 @@ def mark_missing_translations(src_path, ref_lang):
 
 
 
-SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
+TRANSLATIONS_PATH = os.environ['TRANSLATIONS'] or os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src')), 'translations')
 REF_LANG = "en"
 if __name__ == '__main__':
-    mark_missing_translations(SRC_PATH, REF_LANG)
+    mark_missing_translations(TRANSLATIONS_PATH, REF_LANG)

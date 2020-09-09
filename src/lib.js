@@ -23,12 +23,12 @@ if (window.btoa === undefined)
 if(module.hot)
     require('preact/debug')
 
-function getElementID(config){
-    return config.elementID || 'klaro'
+export function getElementID(config, ide){
+    return (config.elementID || 'klaro') + (ide ? '-ide' : '')
 }
 
-function getElement(config){
-    const id = getElementID(config)
+export function getElement(config, ide){
+    const id = getElementID(config, ide)
     let element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
@@ -93,6 +93,18 @@ export function renderKlaro(config, show, modal){
     return app
 }
 
+export function showKlaroIDE(script) {
+    const baseName = /^(.*)(\/[^\/]+)$/.exec(script.src)[1] || ''
+    const element = document.createElement('script')
+    element.src = baseName !== '' ? baseName + '/ide.js' : 'ide.js'
+    element.type = "application/javascript"
+    for(let attribute of element.attributes){
+        element.setAttribute(attribute.name, attribute.value)
+    }
+    document.head.appendChild(element)
+}
+
+
 function doOnceLoaded(handler){
     if (/complete|interactive|loaded/.test(document.readyState)){
         handler()
@@ -148,6 +160,11 @@ export function setup(){
                 doOnceLoaded(initialize)
             }
         }
+        const showIDE = location.hash === '#klaro-ide'
+        // we show the Klaro IDE
+        if (showIDE){
+            showKlaroIDE(script)
+
     }
 }
 

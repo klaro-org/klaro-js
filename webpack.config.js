@@ -54,6 +54,7 @@ let config = {
     // main Klaro files are defined below as they require special naming rules
     'cm': SRC_DIR + '/consent-manager.js',
     'translations' : SRC_DIR+'/translations.js',
+    ide: SRC_DIR +'/ide.js',
   },
   output: {
     path: BUILD_DIR,

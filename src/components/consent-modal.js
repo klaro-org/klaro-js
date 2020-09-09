@@ -61,7 +61,7 @@ export default class ConsentModal extends React.Component {
         else
             appsOrPurposes = <Apps t={t} config={config} manager={manager} />
 
-        const innerModal = <div className="cm-modal">
+        const innerModal = <div className="cm-modal cm-klaro">
             <div className="cm-header">
                 {closeLink}
                 <h1 className="title">{t(['consentModal', 'title'])}</h1>
