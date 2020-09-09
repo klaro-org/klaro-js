@@ -4,6 +4,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
+    "root": true,
     "extends": [
         "eslint:recommended",
         // "plugin:prettier/recommended",
