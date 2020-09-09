@@ -1,8 +1,7 @@
 import React from 'react'
 import {Close} from '../icons'
-import 'scss/ide.scss'
 
-export default class IDE extends React.Component {
+export class IDEModal extends React.Component {
 
     constructor(props){
         super(props)
@@ -46,7 +45,7 @@ export default class IDE extends React.Component {
                         Test
                     </div>
                     <div className="cm-body">
-                        Body
+                        <IDE />
                     </div>
                     <div className="cm-footer">
                         <div className="cm-footer-buttons">
@@ -56,6 +55,14 @@ export default class IDE extends React.Component {
                     </div>
                 </div>
             </div>
+        </div>
+    }
+}
+
+export default class IDE extends React.Component {
+    render(){
+        return <div>
+            This is the Klaro IDE
         </div>
     }
 }

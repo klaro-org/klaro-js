@@ -1,7 +1,5 @@
 import React from 'react'
 import ConsentNotice from './consent-notice'
-// we import the main Klaro styles
-import 'scss/klaro.scss'
 
 export default class App extends React.Component {
 

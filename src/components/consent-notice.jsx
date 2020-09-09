@@ -1,8 +1,8 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
-import {getPurposes} from 'utils/config'
+import {getPurposes} from '../utils/config'
 import Text from './text'
-import {language} from 'utils/i18n'
+import {language} from '../utils/i18n'
 
 export default class ConsentNotice extends React.Component {
 

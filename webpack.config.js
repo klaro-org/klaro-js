@@ -22,7 +22,7 @@ let config = {
   context: SRC_DIR,
   resolve: {
     symlinks: false,
-    extensions: ['.js', '.jsx'],
+    extensions: ['.jsx', '.js'],
     modules: [
       SRC_DIR,
       "node_modules"

@@ -2,7 +2,7 @@ import React from 'react'
 import {Close} from './icons'
 import Apps from './apps'
 import Purposes from './purposes'
-import {language} from 'utils/i18n'
+import {language} from '../utils/i18n'
 import Text from './text'
 
 export default class ConsentModal extends React.Component {

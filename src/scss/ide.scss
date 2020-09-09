@@ -1,6 +1,6 @@
 // to do: replace this with @use as soon as it's supported by node-sass
-@import '_modal';
-@import '_vars';
+@import 'modal';
+@import 'vars';
 
 .klaro {
     .cookie-modal {

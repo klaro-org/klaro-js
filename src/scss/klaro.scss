@@ -1,5 +1,5 @@
-@import 'scss/modal';
-@import 'scss/vars';
+@import 'modal';
+@import 'vars';
 
 .klaro {
 
@@ -8,7 +8,7 @@
     .cookie-modal,
     .cookie-notice {
 
-        @import 'scss/switch';
+        @import 'switch';
 
         font-size: 14px;
 

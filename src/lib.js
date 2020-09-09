@@ -1,13 +1,14 @@
 /* globals module, require, VERSION */
 import React from 'react'
-import App from 'components/app.js'
-import ConsentManager from 'consent-manager'
-import KlaroApi from 'utils/api';
+import App from './components/app'
+import ConsentManager from './consent-manager'
+import KlaroApi from './utils/api';
 import {render} from 'react-dom'
-import {convertToMap, update} from 'utils/maps'
-import {t, language} from 'utils/i18n'
-import {currentScript} from 'utils/compat'
-export {update as updateConfig} from 'utils/config'
+import {convertToMap, update} from './utils/maps'
+import {t, language} from './utils/i18n'
+import {currentScript} from './utils/compat'
+export {update as updateConfig} from './utils/config'
+import './scss/klaro.scss'
 
 let defaultConfig
 const defaultTranslations = new Map([])
@@ -164,7 +165,7 @@ export function setup(){
         // we show the Klaro IDE
         if (showIDE){
             showKlaroIDE(script)
-
+        }
     }
 }
 

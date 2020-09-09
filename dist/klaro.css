@@ -243,7 +243,7 @@
   left: 0;
 }
 
-.klaro .cookie-modal .cm-modal {
+.klaro .cookie-modal .cm-modal.cm-klaro {
   z-index: 1001;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
@@ -257,8 +257,8 @@
   color: #eee;
 }
 
-@media (min-width: 800px) {
-  .klaro .cookie-modal .cm-modal {
+@media (min-width: 660px) {
+  .klaro .cookie-modal .cm-modal.cm-klaro {
     border-radius: 4px;
     position: relative;
     margin: 0 auto;

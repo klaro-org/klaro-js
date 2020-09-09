@@ -9,6 +9,8 @@ import {render} from 'react-dom'
 import {currentScript} from 'utils/compat'
 import {t, language} from 'utils/i18n'
 import {convertToMap} from 'utils/maps'
+// we import the IDE styles here
+import './scss/ide.scss'
 
 const trans = convertToMap(translations)
 let defaultConfig
