@@ -24,11 +24,26 @@ export default class App extends React.Component {
         }
     }
 
+    notifyApi(){
+        const { api, modal, show, config } = this.props
+        if (api !== undefined){
+            if (modal || (show > 0))
+                return
+            if (!this.props.manager.confirmed)
+                api.update(this, "showNotice", {config: config})
+        }
+    }
+
+    componentDidMount(){
+        this.notifyApi()
+    }
+
     componentDidUpdate(prevProps){
         // props.show is a number that is incremented (so that we can detect
         // repeated calls to the "show" function)
         if (prevProps.show === this.props.show)
             return
+        this.notifyApi()
         const showState = this.props.show > 0 || !this.props.manager.confirmed
         if (showState !== this.state.show)
             this.setState({show: showState})

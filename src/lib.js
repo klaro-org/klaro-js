@@ -70,15 +70,16 @@ export function getConfigTranslations(config){
 }
 
 let cnt = 1
-export function renderKlaro(config, show, modal){
+export function renderKlaro(config, opts){
     if (config === undefined)
         return
+    opts = opts || {}
 
-    executeEventHandlers("renderKlaro", config, show, modal)
+    executeEventHandlers("renderKlaro", config, opts)
 
     // we are using a count here so that we're able to repeatedly open the modal...
     let showCnt = 0
-    if (show)
+    if (opts.show)
         showCnt = cnt++
     const element = getElement(config)
     const manager = getManager(config)
@@ -89,17 +90,18 @@ export function renderKlaro(config, show, modal){
         lang={lang}
         manager={manager}
         config={config}
-        modal={modal}
+        modal={opts.modal}
+        api={opts.api}
         show={showCnt} />, element)
     return app
 }
 
 export function showKlaroIDE(script) {
-    const baseName = /^(.*)(\/[^\/]+)$/.exec(script.src)[1] || ''
+    const baseName = /^(.*)(\/[^/]+)$/.exec(script.src)[1] || ''
     const element = document.createElement('script')
     element.src = baseName !== '' ? baseName + '/ide.js' : 'ide.js'
     element.type = "application/javascript"
-    for(let attribute of element.attributes){
+    for(const attribute of element.attributes){
         element.setAttribute(attribute.name, attribute.value)
     }
     document.head.appendChild(element)
@@ -136,11 +138,11 @@ export function setup(){
                     const consentManager = getManager(defaultConfig)
                     consentManager.watch(api)
                     if (!defaultConfig.noAutoLoad)
-                        renderKlaro(defaultConfig)
+                        renderKlaro(defaultConfig, {api: api})
                 }
                 doOnceLoaded(initialize)
 
-            }).catch(() => console.error("cannot load Klaro config"))
+            }).catch((err) => console.error(err, "cannot load Klaro config"))
         } else {
             defaultConfig = window[configName]
             if (defaultConfig !== undefined){
@@ -171,7 +173,7 @@ export function setup(){
 
 export function show(config, modal){
     config = config || defaultConfig
-    renderKlaro(config, true, modal)
+    renderKlaro(config, {show: true, modal: modal})
     return false
 }
 

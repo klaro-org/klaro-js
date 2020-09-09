@@ -1,8 +1,6 @@
-/* globals module, require, VERSION */
+/* globals VERSION */
 import React from 'react'
-
 import {getElement} from './lib'
-
 import IDE from 'components/ide/ide'
 import translations from 'translations/ide/index'
 import {render} from 'react-dom'

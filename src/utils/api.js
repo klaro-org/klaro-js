@@ -14,16 +14,52 @@ export default class KlaroApi {
         this.token = token
     }
 
+    getLocationData(config){
+        const recordsConfig = config.records || {}
+        const savePathname = recordsConfig.savePathname !== undefined ? recordsConfig.savePathname : true
+        return {
+            pathname: savePathname ? location.pathname : undefined,
+            port: location.port !== "" ? parseInt(location.port) : 0,
+            hostname: location.hostname,
+            protocol: location.protocol.slice(0, location.protocol.length-1),
+        }
+    }
+
+    getUserData(){
+        return {}
+    }
+
+    getBaseConsentData(config){
+        return {
+            version: 1,
+            location_data: this.getLocationData(config),
+            user_data: this.getUserData(config),
+        }
+    }
+
     update(notifier, name, data){
         if (name === 'saveConsents'){
+            if (Object.keys(data.changes).length === 0)
+                return; // no changes
             const consentData = {
-                version: 1,
+                ...this.getBaseConsentData(notifier.config),
                 consent_data: {
                     consents: data.consents,
+                    changes: data.type === 'save' ? data.changes : undefined,
                     type: data.type,
                     config: notifier.config.name || 'default',
                 },
-                user_data: {},
+            }
+            this.submitConsentData(consentData)
+        } else if (name === 'showNotice'){
+            const consentData = {
+                ...this.getBaseConsentData(data.config),
+                consent_data: {
+                    consents: {},
+                    changes: {},
+                    type: 'show',
+                    config: data.config.name || 'default',
+                },
             }
             this.submitConsentData(consentData)
         }

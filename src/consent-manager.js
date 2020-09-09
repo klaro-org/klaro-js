@@ -136,13 +136,23 @@ export default class ConsentManager {
         this.applyConsents()
     }
 
+    changedConsents(){
+        const cc = {}
+        for(const [k, v] of Object.entries(this.consents)){
+            if (this.savedConsents[k] !== v)
+                cc[k] = v
+        }
+        return cc
+    }
+
     saveConsents(eventType){
         const v = encodeURIComponent(JSON.stringify(this.consents))
         this.store.set(v);
         this.confirmed = true
         this.changed = false
+        const changes = this.changedConsents()
         this.savedConsents = {...this.consents}
-        this.notify('saveConsents', {consents: this.consents, type: eventType})
+        this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType})
     }
 
     applyConsents(dryRun){
