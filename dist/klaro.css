@@ -228,7 +228,7 @@
   z-index: 0;
 }
 
-.klaro .cookie-modal.cm-embedded .cm-modal {
+.klaro .cookie-modal.cm-embedded .cm-modal.cm-klaro {
   position: relative;
   -ms-transform: none;
       transform: none;

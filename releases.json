@@ -2,6 +2,65 @@
   {
     "changelog": {
       "de": [
+        "Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens, des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungs\u00e4nderungen.",
+        "Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur einfachen und komfortablen Konfiguration"
+      ],
+      "en": [
+        "Improved consent records with optional saving of hostname, protocol, port and path as well as consent changes.",
+        "Prepared deployment of the Klaro IDE (integrated development environment) that will allow easy configuration of Klaro directly on the website."
+      ]
+    },
+    "date": "2020-09-09",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "vXBIWpL2krU4u4WTKWV7vLsrIaS6v7W+jTK6QVSdAvrg+LlSofKDtENiHK94ZpQg"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "Yc2gevEq2G83NawwqbLppCP+egRJaSVTCXx75mdGRfYbCAOjBv8c8t5pXk+eUsBG"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "rfEnS23uHcY43/4DZO8ulZyRsT3b9s4nQ6cR/pfm0c1fL6RkrfDBqx8fc4Yx0AM3"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "oo22W4kFMT1i5S43osmAWVvy+Nnw3g0999CaB87Tq+sVnlVhKz9G9aU+nlfGVpaV"
+      },
+      {
+        "name": "config.js",
+        "sha384": "RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "qLcRysCXqHsZfQQ5XDa9d+CmNN7g7YbnTRJU8Br6qWcjiD3jZoZ1RHNDx75FW8a5"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.7"
+  },
+  {
+    "changelog": {
+      "de": [
         "Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration."
       ],
       "en": [
