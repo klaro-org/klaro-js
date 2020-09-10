@@ -1,5 +1,33 @@
 - changelog:
     de:
+    - Kleine Verbesserung des Event-Handler-Codes.
+    en:
+    - Small improvements in the event handler code.
+  date: '2020-09-10'
+  files:
+  - name: klaro.js
+    sha384: 0IYGq4JONHotcuUgOMPzpCUlP3GqslFlP+p7s9RWWde9Ctwed5lF9QNa9TTyxYlO
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: azfZgEP816DlFAQXbS1YuILfRD2e3mkfqbDFo8EYYKKKgAIPrItke400H1Zwoq3F
+  - name: translations.js
+    sha384: ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb
+  - name: klaro-no-translations.js
+    sha384: 6wcF+zwLZMOivA18/CklJSRIn4jbBu9QS2hpbfagBBD9mcb0sifSoIzdqrvXRl2o
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je
+  - name: klaro-no-translations-no-css.js
+    sha384: dVsXeV7Gqm1g/rEljwc5HGGdgtaJCvHwlL3UqL1KgMIlL5Y5YIWQVsnkRMlc6Ywz
+  - name: klaro-no-css.js
+    sha384: IbJq7iBGvOpOZ6Qnt7USWIO/q3xehtbcOM13JkDZuzXtJBQ3i4Ppd0jmiJI1kCWj
+  tags:
+  - improvements
+  version: 0.6.9
+- changelog:
+    de:
     - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu führte,
       dass keine Metriken beim normalen Speichern erfasst wurden.
     en:
