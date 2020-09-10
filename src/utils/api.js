@@ -39,8 +39,8 @@ export default class KlaroApi {
 
     update(notifier, name, data){
         if (name === 'saveConsents'){
-            if (Object.keys(data.changes).length === 0)
-                return; // no changes
+            if (data.type === 'save' && Object.keys(data.changes).length === 0)
+                return; // save event with no changes
             const consentData = {
                 ...this.getBaseConsentData(notifier.config),
                 consent_data: {
