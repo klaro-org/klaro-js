@@ -1,5 +1,7 @@
 import React from 'react'
 import {Close} from '../icons'
+import Spec from './spec'
+import * as Controls from './controls'
 
 export class IDEModal extends React.Component {
 
@@ -60,9 +62,28 @@ export class IDEModal extends React.Component {
 }
 
 export default class IDE extends React.Component {
+    /*
+    Three sections:
+
+    - Globals
+    - Translations
+    - Apps
+      - Locals
+      - 
+    */
     render(){
-        return <div>
-            This is the Klaro IDE
+        const { className } = this.props
+        const controls = Spec.globals.map(globalField => {
+            const ClassName = Controls[globalField.control]
+            return <ClassName key={globalField.name} field={globalField} {...(globalField.controlProps || {})} />
+        })
+        console.log(Object.keys(Controls))
+        return <div className={className || "klaro-ide"}>
+            {controls}
         </div>
     }
+}
+
+export class GlobalSettings extends React.Component {
+
 }

@@ -2,7 +2,10 @@
 @import 'modal';
 @import 'vars';
 
-.klaro {
+.klaro-ide {
+
+    @import 'switch';
+
     .cookie-modal {
         .cm-modal {
             &.cm-ide {
