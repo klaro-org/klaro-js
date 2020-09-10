@@ -59,7 +59,8 @@ function executeEventHandlers(eventType, ...args){
         events[eventType].push(args)
     if (handlers !== undefined)
         for(const handler of handlers){
-            handler(...args)
+            if (handler(...args) === true)
+                return true
         }
 }
 
@@ -130,17 +131,13 @@ export function setup(){
         const klaroApiUrl = script.getAttribute('data-klaro-api-url') || 'https://api.kiprotect.com'
         if (klaroId !== null){
             const api = new KlaroApi(klaroApiUrl, klaroId)
-            api.loadConfigs().then((configs) => {
+            api.loadConfig(klaroConfigName).then((config) => {
 
-                if (!executeEventHandlers("apiConfigsLoaded", configs, api)){
+                if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
                     return
                 }
+                defaultConfig = config
 
-                defaultConfig = configs.find(config => config.name === klaroConfigName)
-                if (defaultConfig === undefined){
-                    console.error(`Config ${klaroConfigName} not found`)
-                    return
-                }
                 const initialize = () => {
                     if (!defaultConfig.noAutoLoad)
                         render(defaultConfig, {api: api})
