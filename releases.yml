@@ -1,8 +1,8 @@
 - changelog:
-    de:
-    - Kleine Verbesserung des Event-Handler-Codes.
-    en:
-    - Small improvements in the event handler code.
+    de: |
+      - Kleine Verbesserung des Event-Handler-Codes.
+    en: |
+      - Small improvements in the event handler code.
   date: '2020-09-10'
   files:
   - name: klaro.js
@@ -27,11 +27,11 @@
   - improvements
   version: 0.6.9
 - changelog:
-    de:
-    - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu führte,
+    de: |
+      - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu führte,
       dass keine Metriken beim normalen Speichern erfasst wurden.
-    en:
-    - Fixed a problem with the anonymous consent records that prevented records being
+    en: |
+      - Fixed a problem with the anonymous consent records that prevented records being
       sent for the normal "accept" event.
   date: '2020-09-10'
   files:
@@ -59,16 +59,16 @@
   - bugfixes
   version: 0.6.8
 - changelog:
-    de:
-    - Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens,
-      des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungsänderungen.
-    - Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur
-      einfachen und komfortablen Konfiguration
-    en:
-    - Improved consent records with optional saving of hostname, protocol, port and
-      path as well as consent changes.
-    - Prepared deployment of the Klaro IDE (integrated development environment) that
-      will allow easy configuration of Klaro directly on the website.
+    de: |
+      - Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens,
+        des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungsänderungen.
+      - Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur
+        einfachen und komfortablen Konfiguration
+    en: |
+      - Improved consent records with optional saving of hostname, protocol, port and
+        path as well as consent changes.
+      - Prepared deployment of the Klaro IDE (integrated development environment) that
+        will allow easy configuration of Klaro directly on the website.
   date: '2020-09-09'
   files:
   - name: klaro.js
@@ -95,10 +95,10 @@
   - improvements
   version: 0.6.7
 - changelog:
-    de:
-    - Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
-    en:
-    - Fixed a problem causing the cookie configuration to not work correctly.
+    de: |
+      - Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
+    en: |
+      - Fixed a problem causing the cookie configuration to not work correctly.
   date: '2020-09-08'
   files:
   - name: klaro-no-translations.js
