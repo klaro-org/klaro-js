@@ -1,8 +1,44 @@
 - changelog:
-    de: |
-      - Kleine Verbesserung des Event-Handler-Codes.
-    en: |
-      - Small improvements in the event handler code.
+    de: '- Beim Senden anonymer Einwilligungs-Statistiken wird die ID der Konfiguration
+      geschickt statt deren Namen. Dies macht die Einwilligungen direkt einer gegebenen
+      Konfiguration zurechenbar und vereinfach u.a. A/B-Testing.
+
+      '
+    en: '- When sending anonymous consent information, the ID of the consent config
+      is sent instead of the name. This makes the consents directly attributable to
+      a specific config version, making e.g. A/B testing easier.
+
+      '
+  date: '2020-09-10'
+  files:
+  - name: klaro.js
+    sha384: nbofHtYZvAR40gK2D3ejePwFSybsRsLhP7FhRi+qzPg/AKGB5V6yDw2HIfaLAF9u
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: sMD6vohzugVjz0U4FS4uZjMluZlBdhAVkZOTqCaLAmIFFevCZKfEcPWDynTjcZP0
+  - name: translations.js
+    sha384: 7T7kK/PjOvZ4s7XAckRcUDmfjOItaPhT2QS96RVYVlOEWX+X5dEtNM4KFLAhkCJA
+  - name: klaro-no-translations.js
+    sha384: ajYd6Co9HmOGDUgNFYl4JgluVLtZGEibXa+fnG3PbopJXu880J9P/PE+n3nIE5Au
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: D+rk+28rzV4LONuSIRWICZ4BMYDv1DMBXeBtA/U1gae5vOzN36ZSNushRS9lZ3QS
+  - name: klaro-no-translations-no-css.js
+    sha384: 31zKpD0opWQnfXpbwR8Q/F93JLkOlKqfVAppvyte+B9YsPMIc8SGmL1cdFOH1Q86
+  - name: klaro-no-css.js
+    sha384: CCRbRDaDNEBTR98SSFTcgTgEiAJ1x8H44Q6tsp6mlbNjhN8TbvWkP5YK0hhQJFy/
+  tags:
+  - improvements
+  version: 0.6.10
+- changelog:
+    de: '- Kleine Verbesserung des Event-Handler-Codes.
+
+      '
+    en: '- Small improvements in the event handler code.
+
+      '
   date: '2020-09-10'
   files:
   - name: klaro.js
@@ -95,10 +131,12 @@
   - improvements
   version: 0.6.7
 - changelog:
-    de: |
-      - Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
-    en: |
-      - Fixed a problem causing the cookie configuration to not work correctly.
+    de: '- Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
+
+      '
+    en: '- Fixed a problem causing the cookie configuration to not work correctly.
+
+      '
   date: '2020-09-08'
   files:
   - name: klaro-no-translations.js
