@@ -2,6 +2,63 @@
   {
     "changelog": {
       "de": [
+        "Behebung eines Problems in der anonymen Einwillungserfassung, das dazu f\u00fchrte, dass keine Metriken beim normalen Speichern erfasst wurden."
+      ],
+      "en": [
+        "Fixed a problem with the anonymous consent records that prevented records being sent for the normal \"accept\" event."
+      ]
+    },
+    "date": "2020-09-10",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "Jgrr1oJTt1NotoWpMptP0tQ8mEr13Oi3+rRes79hBgUxTP8RDpEFCtPwEJcLHlR2"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "HTOkUlHGpz1/+/2unYCRshzGviET3bOy6Oi6RcIWktKOqykEMu7m28JdLYSIgNWj"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "w86AgAUTTDt2bahSwLdTPgp3I6NcPOaXNai+/rXZmDXI6gykFhAMH6tb2KQxqTfb"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "iPLF3MdYEU4zoMemAUWHk6BZftvy9JBHozhBZjsXHC5BSzHeHMBrGt7QQupnEhUg"
+      },
+      {
+        "name": "config.js",
+        "sha384": "RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "JLluwgBC31vWPbU/rZh/8it3QuLbkmdmLu9elG/JfFCktfJowdrN//KzVpm+SPt9"
+      }
+    ],
+    "tags": [
+      "bugfixes"
+    ],
+    "version": "0.6.8"
+  },
+  {
+    "changelog": {
+      "de": [
         "Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens, des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungs\u00e4nderungen.",
         "Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur einfachen und komfortablen Konfiguration"
       ],
