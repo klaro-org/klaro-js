@@ -3,7 +3,7 @@ import React from 'react'
 import App from './components/app'
 import ConsentManager from './consent-manager'
 import KlaroApi from './utils/api';
-import {render} from 'react-dom'
+import {render as reactRender} from 'react-dom'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
 import {currentScript} from './utils/compat'
@@ -47,7 +47,8 @@ export function addEventListener(eventType, handler){
     // this event did already fire, we call the handler
     if (events[eventType] !== undefined)
         for(const event of events[eventType])
-            handler(...event)
+            if (handler(...event) === false)
+                break
 }
 
 function executeEventHandlers(eventType, ...args){
@@ -70,12 +71,12 @@ export function getConfigTranslations(config){
 }
 
 let cnt = 1
-export function renderKlaro(config, opts){
+export function render(config, opts){
     if (config === undefined)
         return
     opts = opts || {}
 
-    executeEventHandlers("renderKlaro", config, opts)
+    executeEventHandlers("render", config, opts)
 
     // we are using a count here so that we're able to repeatedly open the modal...
     let showCnt = 0
@@ -83,10 +84,14 @@ export function renderKlaro(config, opts){
         showCnt = cnt++
     const element = getElement(config)
     const manager = getManager(config)
+
+    if (opts.api !== undefined)
+        manager.watch(opts.api)
+
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
     const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'en', ...args)
-    const app = render(<App t={tt}
+    const app = reactRender(<App t={tt}
         lang={lang}
         manager={manager}
         config={config}
@@ -127,7 +132,9 @@ export function setup(){
             const api = new KlaroApi(klaroApiUrl, klaroId)
             api.loadConfigs().then((configs) => {
 
-                executeEventHandlers("configsLoaded", configs)
+                if (!executeEventHandlers("apiConfigsLoaded", configs, api)){
+                    return
+                }
 
                 defaultConfig = configs.find(config => config.name === klaroConfigName)
                 if (defaultConfig === undefined){
@@ -135,14 +142,15 @@ export function setup(){
                     return
                 }
                 const initialize = () => {
-                    const consentManager = getManager(defaultConfig)
-                    consentManager.watch(api)
                     if (!defaultConfig.noAutoLoad)
-                        renderKlaro(defaultConfig, {api: api})
+                        render(defaultConfig, {api: api})
                 }
                 doOnceLoaded(initialize)
 
-            }).catch((err) => console.error(err, "cannot load Klaro config"))
+            }).catch((err) => {
+                console.error(err, "cannot load Klaro configs")
+                executeEventHandlers("apiConfigsFailed", err)
+            })
         } else {
             defaultConfig = window[configName]
             if (defaultConfig !== undefined){
@@ -158,7 +166,7 @@ export function setup(){
 
                 const initialize = () => {
                     if (!defaultConfig.noAutoLoad)
-                        renderKlaro(defaultConfig)
+                        render(defaultConfig)
                 }
                 doOnceLoaded(initialize)
             }
@@ -171,9 +179,9 @@ export function setup(){
     }
 }
 
-export function show(config, modal){
+export function show(config, modal, api){
     config = config || defaultConfig
-    renderKlaro(config, {show: true, modal: modal})
+    render(config, {show: true, modal: modal, api: api})
     return false
 }
 
