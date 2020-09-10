@@ -1,3 +1,5 @@
+import { version } from "../lib"
+
 function formatParams( params ){
     return "?" + Object
         .keys(params)
@@ -26,12 +28,14 @@ export default class KlaroApi {
     }
 
     getUserData(){
-        return {}
+        return {
+            client_version: version(),
+            client_name: 'klaro:web',
+        }
     }
 
     getBaseConsentData(config){
         return {
-            version: 1,
             location_data: this.getLocationData(config),
             user_data: this.getUserData(config),
         }
@@ -47,7 +51,7 @@ export default class KlaroApi {
                     consents: data.consents,
                     changes: data.type === 'save' ? data.changes : undefined,
                     type: data.type,
-                    config: notifier.config.name || 'default',
+                    config: notifier.config.id,
                 },
             }
             this.submitConsentData(consentData)
@@ -58,7 +62,7 @@ export default class KlaroApi {
                     consents: {},
                     changes: {},
                     type: 'show',
-                    config: data.config.name || 'default',
+                    config: data.config.id,
                 },
             }
             this.submitConsentData(consentData)
@@ -114,6 +118,13 @@ export default class KlaroApi {
 
     submitConsentData(consentData){
         return this.apiRequest("POST", "/v1/consent-managers/"+this.id+"/submit", consentData, "text/plain;charset=UTF-8")
+    }
+
+    /*
+    Load a specific Klaro config from the API.
+    */
+    loadConfig(name){
+        return this.apiRequest("GET", "/v1/consent-managers/"+this.id+"/config.json?name="+name)
     }
 
     /*
