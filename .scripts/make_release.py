@@ -84,7 +84,11 @@ if __name__ == '__main__':
     # subresource integrity)
     files = []
     for filename in os.listdir(build_path):
+        # we only hash JS and CSS files
         if not filename.endswith('.css') and not filename.endswith('.js'):
+            continue
+        # these files we exclude since they are e.g. only for demonstration purpose
+        if filename in ('config.js'):
             continue
         d = {
             "name" : filename,
