@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Release-Files schlie\u00dfen nun alle JS-Dateien im `dist` Verzeichnis ein, sowie alle JS und (S)CSS Dateien aus dem `src` Verzeichnis ein.\n",
+      "en": "- Release files now include all JS and CSS files from the `dist` and `src` folder.\n"
+    },
+    "date": "2020-09-11",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "F9cytVT1Z7hA34B70P6zJdu6qB3nDXqrZz/1S58RRmOv7tQKHJcrC/8FNB10plfQ"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "sgDxIkAkuckA3hgY/Bi6awsrGGeqgPOk2bTmZBHpW0efB6TkdH2CnpofuOFvZzkP"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "7T7kK/PjOvZ4s7XAckRcUDmfjOItaPhT2QS96RVYVlOEWX+X5dEtNM4KFLAhkCJA"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "x93GjmhYclgI1t4gOsYfu0XxBWkNiYNZnwBEaU+mU41v6AkShK8M86t3Msh5j8yA"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "D+rk+28rzV4LONuSIRWICZ4BMYDv1DMBXeBtA/U1gae5vOzN36ZSNushRS9lZ3QS"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "P8catHVrgSf1V85wYFiTVJFzQDKk+VXpL8ck74kXoFgaC+/cusPM7PE/goykopG8"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "ccP3Lz4/N8HCllconPf5Y0OZgQDkNnfaE2YgnjAHVjLUBlI1BZgP69ga226Igngc"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.11"
+  },
+  {
+    "changelog": {
       "de": "- Beim Senden anonymer Einwilligungs-Statistiken wird die ID der Konfiguration geschickt statt deren Namen. Dies macht die Einwilligungen direkt einer gegebenen Konfiguration zurechenbar und vereinfach u.a. A/B-Testing.\n",
       "en": "- When sending anonymous consent information, the ID of the consent config is sent instead of the name. This makes the consents directly attributable to a specific config version, making e.g. A/B testing easier.\n"
     },
