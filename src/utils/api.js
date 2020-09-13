@@ -117,20 +117,20 @@ export default class KlaroApi {
     }
 
     submitConsentData(consentData){
-        return this.apiRequest("POST", "/v1/consent-managers/"+this.id+"/submit", consentData, "text/plain;charset=UTF-8")
+        return this.apiRequest("POST", "/v1/privacy-managers/"+this.id+"/submit", consentData, "text/plain;charset=UTF-8")
     }
 
     /*
     Load a specific Klaro config from the API.
     */
     loadConfig(name){
-        return this.apiRequest("GET", "/v1/consent-managers/"+this.id+"/config.json?name="+name)
+        return this.apiRequest("GET", "/v1/privacy-managers/"+this.id+"/config.json?name="+name)
     }
 
     /*
     Load Klaro configs from the API.
     */
     loadConfigs(){
-        return this.apiRequest("GET", "/v1/consent-managers/"+this.id+"/configs.json")
+        return this.apiRequest("GET", "/v1/privacy-managers/"+this.id+"/configs.json")
     }
 }
