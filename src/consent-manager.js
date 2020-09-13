@@ -1,6 +1,6 @@
 import {getCookies, deleteCookie} from 'utils/cookies'
 import {dataset, applyDataset} from 'utils/compat'
-import stores from 'stores'
+import stores, { SessionStorageStore } from 'stores'
 
 export default class ConsentManager {
 
@@ -12,6 +12,8 @@ export default class ConsentManager {
         // we fall back to the cookie-based store if the store is undefined
         if (this.store === undefined)
             this.store = stores['cookie']
+
+        this.auxiliaryStore = new SessionStorageStore(this)
 
         this.consents = this.defaultConsents // the consent states of the configured apps
         this.confirmed = false // true if the user actively confirmed his/her consent
