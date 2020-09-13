@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- \u00c4nderung der Art, wie das \"show\" Event erfasst wird.\n",
+      "en": "- Changed the way the \"show\" event is counted.\n"
+    },
+    "date": "2020-09-13",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "QOTDE9H5QhpXgRb1/2OvtY0R9aH1t5jCovG30Us2sjCdW6RVhiUs5iQtzWKDqMiv"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "W/GKOXlwNRfdHq6EBVemkSDgLNH/9h/BoS8EgLPWFI9tWdiYZbMDeaiJa1t8067N"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "kfS81PYZJj9e2jBmoyZQ9yv6RU8qEoVPsRRZ3GJ4ZnYSzUB3XdQmjq4M/SrnNb2M"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "pIKiEu1b9NfRDy+xzMuuvsIHIhBAo5THljl3q6XdQI+1Cbr49ZjvObYbbyndr85/"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "RarTnM8frjR2rlkX4I27CEbpG7xPkX23Hi9qN190+owiGdu1vj6v52m5a7frWJp2"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "yXxtR+zd+TBD66wbCVsys608numKbl5dTRUxUEbgTRNCGyhcIQ8zya6bxsJh0yWP"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "Esf5DqsTPDHEBTEHF18EP1exUXiOR80W7e277qKQ8W7DB+9f9aKoPAD+4Mz7kWb7"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.13"
+  },
+  {
+    "changelog": {
       "de": "- Anpassung der API-Endpunkt-URLs an das neue Format (`privacy-manager` statt `consent-manager`).\n",
       "en": "- Changing API endpoint URLs to the new format (`privacy-manager` instead of `consent-manager`)\n"
     },
