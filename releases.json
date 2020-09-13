@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Anpassung der API-Endpunkt-URLs an das neue Format (`privacy-manager` statt `consent-manager`).\n",
+      "en": "- Changing API endpoint URLs to the new format (`privacy-manager` instead of `consent-manager`)\n"
+    },
+    "date": "2020-09-13",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "SvV5xKvv+dSaohsjWJEJe/iKToGRlGDRDJUhH4VS5K3Wmx22At5WQBpCORbrxWII"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "IolQCVPfRll773yDTkoZFhDVfhfhnGiEy82r9jqvw6+DQO+GWDxb5/HupdsfaWcT"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "8bSN9v9aRL0g93KQNZVe5aRfzohK2hjutIUfb0o9QPnz15azs5cJusOaWQweopzu"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "tHas77roVQMkjXXhZeCxaMM+sNI77Hr5c+5rBVR6p56BacRQQMbEREZi5JtjpPXU"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "0nX01D4fXY7pKX9QHbFcS5zlSuvaaUXs4U/u/7HKeVKKG9uMp+Ush4iEOTUkq9Of"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "JohVmq+EsCcEnHCqoPJW5dSFBSFG6ttMb1O5Gk2f/7ZYvlJTAWXbtD8MsoYHEu93"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "wq12Ehq+2bU0c9/YQmRUlGmsb6YsSjKpDw2JUsZi23ZsaLmyw65NG4pUFnoXvnUT"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.12"
+  },
+  {
+    "changelog": {
       "de": "- Release-Files schlie\u00dfen nun alle JS-Dateien im `dist` Verzeichnis ein, sowie alle JS und (S)CSS Dateien aus dem `src` Verzeichnis ein.\n",
       "en": "- Release files now include all JS and CSS files from the `dist` and `src` folder.\n"
     },
