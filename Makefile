@@ -22,5 +22,5 @@ klaro-no-css:
 	SEPARATE_CSS=1 npm run-script make
 	SEPARATE_CSS=1 NO_MINIFY_CSS=1 npm run-script make
 
-publish: build
+publish:
 	npm publish
