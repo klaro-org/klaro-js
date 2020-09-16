@@ -1,19 +1,25 @@
-import {getCookies, deleteCookie} from 'utils/cookies'
-import {dataset, applyDataset} from 'utils/compat'
-import stores, { SessionStorageStore } from 'stores'
+import {getCookies, deleteCookie} from './utils/cookies'
+import {dataset, applyDataset} from './utils/compat'
+import stores, { SessionStorageStore } from './stores'
 
 export default class ConsentManager {
 
-    constructor(config){
+    constructor(config, store, auxiliaryStore){
         this.config = config // the configuration
 
-        this.store = new stores[this.storageMethod](this)
+        if (store !== undefined)
+            this.store = store
+        else
+            this.store = new stores[this.storageMethod](this)
 
         // we fall back to the cookie-based store if the store is undefined
         if (this.store === undefined)
             this.store = stores['cookie']
 
-        this.auxiliaryStore = new SessionStorageStore(this)
+        if (auxiliaryStore !== undefined)
+            this.auxiliaryStore = auxiliaryStore
+        else
+            this.auxiliaryStore = new SessionStorageStore(this)
 
         this.consents = this.defaultConsents // the consent states of the configured apps
         this.confirmed = false // true if the user actively confirmed his/her consent
@@ -293,6 +299,8 @@ export default class ConsentManager {
                     cookiePath = cp.path
                     cookieDomain = cp.domain
                 }
+                if (cookiePattern === undefined)
+                    continue
                 if (!(cookiePattern instanceof RegExp)){
                     cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')
                 }

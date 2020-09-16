@@ -1,16 +1,219 @@
 // to do: replace this with @use as soon as it's supported by node-sass
-@import 'modal';
-@import 'vars';
+@import './modal';
+@import './vars';
 
 .klaro-ide {
 
-    @import 'switch';
+    @import './switch';
+    @import './controls';
+    @import './tabs';
+    @import './list';
+    @import './dropdown';
+
+    .cm-global-fields,
+    .cm-config-controls,
+    .cm-translations-fields,
+
+    label {
+        display: inline-block;
+    }
+
+    .cm-app-fields {
+        max-width: 600px;
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        h1 {
+            text-transform: none;
+            border-bottom: 1px solid #aaa;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    p.cm-section-description {
+        text-align: justify;
+        margin-top: map-get($cm-space, sm);
+        margin-bottom: map-get($cm-space, lg);
+        color: #666;
+    }
+
+    .cm-translations-fields {
+        .cm-translations-for-key {
+            background: $cm-white;
+            box-shadow: $cm-box-shadow-light-sm;
+            padding: map-get($cm-space, md);
+            border-radius: $cm-border-radius;
+            margin-bottom: map-get($cm-space, lg);
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                span.cm-lang {
+                    font-family: Courier;
+                    display: block;
+                    padding: 20px;
+                    margin-top: 5px;
+                    flex-grow: 0;
+                }
+            }
+        }
+    }
+
+    .cm-app-list,
+    .cm-config-list {
+        .cm-status {
+            text-align: left;
+
+            span {
+                padding-left: 10px;
+            }
+
+            .cm-status-is-active {
+                color: $cm-green1;
+            }
+
+            .cm-status-is-inactive {
+                color: $cm-red1;
+            }
+        }
+
+        .cm-name {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+
+    p.cm-no-cookies,
+    p.cm-no-apps {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .cm-cookie-config {
+        .cm-cookie-forms {
+            .cm-cookie-form {
+                border-bottom: 1px solid $cm-gray-medium;
+            }
+        }
+    }
+
+    .cm-demo {
+        .cm-config-controls {
+            .cm-retracting-label-input {
+                width: auto;
+                flex-grow: 1;
+                margin-right: map-get($cm-space, md);
+            }
+
+            &:first-child {
+                border-bottom: 1px solid $cm-gray-medium;
+            }
+        }
+    }
+
+    .cm-config-controls {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        max-width: none;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+
+        h2 {
+            margin-right: map-get($cm-space, lg);
+            display: block;
+            flex-grow: 1;
+        }
+        
+        .cm-control {
+            flex-shrink: 1;
+            display: inline-block;
+            margin-bottom: 20px;
+
+            .cm-retracting-label-input {
+                max-width: 400px;
+                display: block;
+            }
+
+            input {
+                max-width: 400px;
+            }
+
+            select {
+                padding: map-get($cm-space, md);
+                display: block;
+                border: 1px solid $cm-green1;
+                border-radius: $cm-border-radius;
+                background: $cm-white;
+                margin-bottom: map-get($cm-space, md);
+            }
+        }
+
+        button.cm-control-button {
+            border: 0;
+            padding: 12px;
+            margin-top: 4px;
+            cursor: pointer;
+            box-shadow: $cm-box-shadow-dark-sm;
+            background: $cm-blue2;
+            color: #fff;
+            border-radius: $cm-border-radius;
+            margin-right: 6px;
+
+            &.cm-delete {
+                float: right;
+                background: #f50;
+            }
+
+            &.cm-secondary {
+                background: $cm-red2;
+            }
+
+            &.cm-success {
+                background: $cm-green1;
+            }
+
+            &:disabled {
+                background: #aaa;
+                cursor: not-allowed;
+            }
+        }
+    }
 
     .cookie-modal {
         .cm-modal {
             &.cm-ide {
                 @include modal(1020px, 1000px);
-            }        
+            }
         }
     }
 }

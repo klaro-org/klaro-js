@@ -1,1 +1,1 @@
-export { default as default } from "./ide";
+export { default } from './ide';

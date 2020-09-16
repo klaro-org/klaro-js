@@ -1,43 +1,45 @@
 acceptAll: Acceptera alla
 acceptSelected: Acceptera markerat
 app:
-  disableAll:
-    description: Använd detta reglage för att aktivera/avaktivera samtliga appar.
-    title: Ändra för alla appar
-  optOut:
-    description: Den här appen laddas som standardinställning (men du kan avaktivera
-      den)
-    title: (Avaktivera)
-  purpose: Syfte
-  purposes: Syften
-  required:
-    description: Den här applikationen krävs alltid
-    title: (Krävs alltid)
+    disableAll:
+        description: Använd detta reglage för att aktivera/avaktivera samtliga appar.
+        title: Ändra för alla appar
+    optOut:
+        description:
+            Den här appen laddas som standardinställning (men du kan avaktivera
+            den)
+        title: (Avaktivera)
+    purpose: Syfte
+    purposes: Syften
+    required:
+        description: Den här applikationen krävs alltid
+        title: (Krävs alltid)
 close: Stäng
 consentModal:
-  description: Här kan du se och anpassa vilken information vi samlar om dig.
-  privacyPolicy:
-    name: Integritetspolicy
-    text: För att veta mer, läs vår {privacyPolicy}.
-  title: Information som vi samlar
+    description: Här kan du se och anpassa vilken information vi samlar om dig.
+    privacyPolicy:
+        name: Integritetspolicy
+        text: För att veta mer, läs vår {privacyPolicy}.
+    title: Information som vi samlar
 consentNotice:
-  changeDescription: Det har skett förändringar sedan ditt senaste besök, var god
-    uppdatera ditt medgivande.
-  configure: ''
-  configure_en: configure
-  description: 'Vi samlar och bearbetar din personliga data i följande syften: {purposes}.'
-  imprint:
-    name: ''
-    name_en: imprint
-  learnMore: Läs mer
-  privacyPolicy:
-    name: Integritetspolicy
+    changeDescription:
+        Det har skett förändringar sedan ditt senaste besök, var god
+        uppdatera ditt medgivande.
+    configure: ''
+    configure_en: configure
+    description: 'Vi samlar och bearbetar din personliga data i följande syften: {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
+    learnMore: Läs mer
+    privacyPolicy:
+        name: Integritetspolicy
 decline: Avböj
 ok: OK
 poweredBy: Körs på Klaro!
 purposeItem:
-  app: ''
-  app_en: application
-  apps: ''
-  apps_en: applications
+    app: ''
+    app_en: application
+    apps: ''
+    apps_en: applications
 save: Spara

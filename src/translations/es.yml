@@ -32,6 +32,7 @@ consentNotice:
   learnMore: Personalizar
   privacyPolicy:
     name: política de privacidad
+  testing: ¡Modo de prueba!
 decline: Declive
 ok: Aceptar
 poweredBy: Realizado con Klaro!

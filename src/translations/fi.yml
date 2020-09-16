@@ -3,43 +3,45 @@ acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
 app:
-  disableAll:
-    description: Aktivoi kaikki päälle/pois.
-    title: Valitse kaikki
-  optOut:
-    description: Ladataan oletuksena (mutta voit ottaa sen pois päältä)
-    title: (ladataan oletuksena)
-  purpose: Käyttötarkoitus
-  purposes: Käyttötarkoitukset
-  required:
-    description: Sivusto vaatii tämän aina
-    title: (vaaditaan)
+    disableAll:
+        description: Aktivoi kaikki päälle/pois.
+        title: Valitse kaikki
+    optOut:
+        description: Ladataan oletuksena (mutta voit ottaa sen pois päältä)
+        title: (ladataan oletuksena)
+    purpose: Käyttötarkoitus
+    purposes: Käyttötarkoitukset
+    required:
+        description: Sivusto vaatii tämän aina
+        title: (vaaditaan)
 close: Sulje
 consentModal:
-  description: Voit tarkastella ja muokata sinusta keräämiämme tietoja.
-  privacyPolicy:
-    name: tietosuojasivultamme
-    text: Voit lukea lisätietoja {privacyPolicy}.
-  title: Keräämämme tiedot
+    description: Voit tarkastella ja muokata sinusta keräämiämme tietoja.
+    privacyPolicy:
+        name: tietosuojasivultamme
+        text: Voit lukea lisätietoja {privacyPolicy}.
+    title: Keräämämme tiedot
 consentNotice:
-  changeDescription: Olemme tehneet muutoksia ehtoihin viime vierailusi jälkeen, tarkista
-    ehdot.
-  configure: ''
-  configure_en: configure
-  description: 'Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin:
-    {purposes}.'
-  imprint:
-    name: ''
-    name_en: imprint
-  learnMore: Lue lisää
-  privacyPolicy:
-    name: tietosuojasivultamme
+    changeDescription:
+        Olemme tehneet muutoksia ehtoihin viime vierailusi jälkeen, tarkista
+        ehdot.
+    configure: ''
+    configure_en: configure
+    description:
+        'Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin:
+        {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
+    learnMore: Lue lisää
+    privacyPolicy:
+        name: tietosuojasivultamme
 decline: Hylkää
 ok: Hyväksy
 poweredBy: Palvelun tarjoaa Klaro!
 purposeItem:
-  app: ''
-  app_en: application
-  apps: ''
-  apps_en: applications
+    app: ''
+    app_en: application
+    apps: ''
+    apps_en: applications
 save: Tallenna

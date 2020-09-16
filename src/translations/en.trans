@@ -20,6 +20,7 @@ de:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -48,6 +49,7 @@ es:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -76,6 +78,7 @@ fr:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -104,6 +107,7 @@ it:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -132,6 +136,7 @@ nl:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -160,6 +165,7 @@ pl:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -188,6 +194,7 @@ pt:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5
@@ -216,6 +223,7 @@ zh:
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: 53514749c1afeba0
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
+  consentNotice.testing: a520bd8ff913a329
   decline: fd5f8cbed3d05d63
   ok: c125d0397b605657
   poweredBy: 174e3b49be391bc5

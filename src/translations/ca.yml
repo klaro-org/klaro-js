@@ -1,40 +1,43 @@
 acceptAll: Accepta-les totes
 acceptSelected: Accepta les escollides
 app:
-  disableAll:
-    description: Useu aquest botó per a habilitar o deshabilitar totes les aplicacions.
-    title: Habilita/deshabilita totes les aplicacions
-  optOut:
-    description: Aquesta aplicació es carrega per defecte, però podeu desactivar-la
-    title: (opt-out)
-  purpose: Finalitat
-  purposes: Finalitats
-  required:
-    description: Aquesta aplicació es necessita sempre
-    title: (necessària)
+    disableAll:
+        description: Useu aquest botó per a habilitar o deshabilitar totes les aplicacions.
+        title: Habilita/deshabilita totes les aplicacions
+    optOut:
+        description: Aquesta aplicació es carrega per defecte, però podeu desactivar-la
+        title: (opt-out)
+    purpose: Finalitat
+    purposes: Finalitats
+    required:
+        description: Aquesta aplicació es necessita sempre
+        title: (necessària)
 close: Tanca
 consentModal:
-  description: Aquí podeu veure i personalitzar la informació que recopilem sobre
-    vós.
-  privacyPolicy:
-    name: política de privadesa
-    text: Per a més informació, consulteu la nostra {privacyPolicy}.
-  title: Informació que recopilem
+    description:
+        Aquí podeu veure i personalitzar la informació que recopilem sobre
+        vós.
+    privacyPolicy:
+        name: política de privadesa
+        text: Per a més informació, consulteu la nostra {privacyPolicy}.
+    title: Informació que recopilem
 consentNotice:
-  changeDescription: Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu
-    el vostre consentiment.
-  configure: 'null'
-  description: 'Recopilem i processem la vostra informació personal amb les següents
-    finalitats: {purposes}.'
-  imprint:
-    name: Empremta
-  learnMore: Saber-ne més
-  privacyPolicy:
-    name: política de privadesa
+    changeDescription:
+        Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu
+        el vostre consentiment.
+    configure: 'null'
+    description:
+        'Recopilem i processem la vostra informació personal amb les següents
+        finalitats: {purposes}.'
+    imprint:
+        name: Empremta
+    learnMore: Saber-ne més
+    privacyPolicy:
+        name: política de privadesa
 decline: Rebutja
 ok: Accepta
 poweredBy: Funciona amb Klaro!
 purposeItem:
-  app: aplicació
-  apps: aplicacions
+    app: aplicació
+    apps: aplicacions
 save: Desa

@@ -3,43 +3,45 @@ acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
 app:
-  disableAll:
-    description: Koristite ovaj prekidač da omogućite/onemogućite sve aplikacije odjednom.
-    title: Izmeijeni sve
-  optOut:
-    description: Ova aplikacija je učitana automatski (ali je možete onemogućiti)
-    title: (onemogućite)
-  purpose: Svrha
-  purposes: Svrhe
-  required:
-    description: Ova aplikacija je uvijek obavezna
-    title: (obavezna)
+    disableAll:
+        description: Koristite ovaj prekidač da omogućite/onemogućite sve aplikacije odjednom.
+        title: Izmeijeni sve
+    optOut:
+        description: Ova aplikacija je učitana automatski (ali je možete onemogućiti)
+        title: (onemogućite)
+    purpose: Svrha
+    purposes: Svrhe
+    required:
+        description: Ova aplikacija je uvijek obavezna
+        title: (obavezna)
 close: Zatvori
 consentModal:
-  description: Ovdje možete vidjeti i podesiti informacije koje prikupljamo o Vama.
-  privacyPolicy:
-    name: pravila privatnosti
-    text: Za više informacije pročitajte naša {privacyPolicy}.
-  title: Informacije koje prikupljamo
+    description: Ovdje možete vidjeti i podesiti informacije koje prikupljamo o Vama.
+    privacyPolicy:
+        name: pravila privatnosti
+        text: Za više informacije pročitajte naša {privacyPolicy}.
+    title: Informacije koje prikupljamo
 consentNotice:
-  changeDescription: Došlo je do promjena od Vaše posljednjeg posjećivanja web stranice,
-    molimo Vas da ažurirate svoja odobrenja.
-  configure: ''
-  configure_en: configure
-  description: 'Mi prikupljamo i procesiramo Vaše osobne podatke radi slijedećeg:
-    {purposes}.'
-  imprint:
-    name: ''
-    name_en: imprint
-  learnMore: Saznajte više
-  privacyPolicy:
-    name: pravila privatnosti
+    changeDescription:
+        Došlo je do promjena od Vaše posljednjeg posjećivanja web stranice,
+        molimo Vas da ažurirate svoja odobrenja.
+    configure: ''
+    configure_en: configure
+    description:
+        'Mi prikupljamo i procesiramo Vaše osobne podatke radi slijedećeg:
+        {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
+    learnMore: Saznajte više
+    privacyPolicy:
+        name: pravila privatnosti
 decline: Odbij
 ok: U redu
 poweredBy: Pokreće Klaro!
 purposeItem:
-  app: ''
-  app_en: application
-  apps: ''
-  apps_en: applications
+    app: ''
+    app_en: application
+    apps: ''
+    apps_en: applications
 save: Spremi

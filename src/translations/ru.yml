@@ -1,44 +1,47 @@
 acceptAll: Принять всё
 acceptSelected: Принять выбранные
 app:
-  disableAll:
-    description: Используйте этот переключатель, чтобы включить/отключить все приложения.
-    title: Переключить все приложения
-  optOut:
-    description: Это приложение включено по умолчанию (но вы можете отказаться)
-    title: (отказаться)
-  purpose: Намерение
-  purposes: Намерения
-  required:
-    description: Это обязательное приложение
-    title: (всегда обязательный)
+    disableAll:
+        description: Используйте этот переключатель, чтобы включить/отключить все приложения.
+        title: Переключить все приложения
+    optOut:
+        description: Это приложение включено по умолчанию (но вы можете отказаться)
+        title: (отказаться)
+    purpose: Намерение
+    purposes: Намерения
+    required:
+        description: Это обязательное приложение
+        title: (всегда обязательный)
 close: Закрыть
 consentModal:
-  description: Здесь вы можете просмотреть и настроить, какую информацию о вас мы
-    храним.
-  privacyPolicy:
-    name: Соглашение
-    text: Чтобы узнать больше, пожалуйста, прочитайте наше {privacyPolicy}.
-  title: Информация, которую мы сохраняем
+    description:
+        Здесь вы можете просмотреть и настроить, какую информацию о вас мы
+        храним.
+    privacyPolicy:
+        name: Соглашение
+        text: Чтобы узнать больше, пожалуйста, прочитайте наше {privacyPolicy}.
+    title: Информация, которую мы сохраняем
 consentNotice:
-  changeDescription: Со времени вашего последнего визита произошли изменения, обновите
-    своё согласие.
-  configure: ''
-  configure_en: configure
-  description: 'Мы собираем и обрабатываем вашу личную информацию для следующих целей:
-    {purposes}.'
-  imprint:
-    name: ''
-    name_en: imprint
-  learnMore: Настроить
-  privacyPolicy:
-    name: политика конфиденциальности
+    changeDescription:
+        Со времени вашего последнего визита произошли изменения, обновите
+        своё согласие.
+    configure: ''
+    configure_en: configure
+    description:
+        'Мы собираем и обрабатываем вашу личную информацию для следующих целей:
+        {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
+    learnMore: Настроить
+    privacyPolicy:
+        name: политика конфиденциальности
 decline: Отклонить
 ok: Принять
 poweredBy: Работает на Кларо!
 purposeItem:
-  app: ''
-  app_en: application
-  apps: ''
-  apps_en: applications
+    app: ''
+    app_en: application
+    apps: ''
+    apps_en: applications
 save: Сохранить

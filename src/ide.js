@@ -2,11 +2,11 @@
 import React from 'react'
 import {getElement} from './lib'
 import IDE from 'components/ide/ide'
-import translations from 'translations/ide/index'
+import translations from './translations/ide/index'
 import {render} from 'react-dom'
-import {currentScript} from 'utils/compat'
-import {t, language} from 'utils/i18n'
-import {convertToMap} from 'utils/maps'
+import {currentScript} from './utils/compat'
+import {t, language} from './utils/i18n'
+import {convertToMap} from './utils/maps'
 // we import the IDE styles here
 import './scss/ide.scss'
 

@@ -31,6 +31,7 @@ consentNotice:
   learnMore: Aanpassen
   privacyPolicy:
     name: privacybeleid
+  testing: Testmodus!
 decline: Daling
 ok: Accepteer
 poweredBy: Gerealiseerd met Klaro!

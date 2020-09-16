@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export class I18nInput extends React.Component {
-    render(){
-        return <div />
+    render() {
+        return <div />;
     }
 }

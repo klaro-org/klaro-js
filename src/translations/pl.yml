@@ -32,6 +32,7 @@ consentNotice:
   learnMore: Dostosować
   privacyPolicy:
     name: polityka prywatności
+  testing: Tryb testowy!
 decline: Spadek
 ok: Zaakceptować
 poweredBy: Zrealizowane z Klaro!

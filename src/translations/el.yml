@@ -3,45 +3,49 @@ acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
 app:
-  disableAll:
-    description: Χρησιμοποίησε αυτό τον διακόπτη για να ενεργοποιήσεις/απενεργοποιήσεις
-      όλες τις εφαρμογές.
-    title: Για όλες τις εφαρμογές
-  optOut:
-    description: Είναι προκαθορισμένο να φορτώνεται, άλλα μπορεί να παραληφθεί
-    title: (μη απαιτούμενο)
-  purpose: Σκοπός
-  purposes: Σκοποί
-  required:
-    description: Δεν γίνεται να λειτουργήσει σωστά η εφαρμογή χωρίς αυτό
-    title: (απαιτούμενο)
+    disableAll:
+        description:
+            Χρησιμοποίησε αυτό τον διακόπτη για να ενεργοποιήσεις/απενεργοποιήσεις
+            όλες τις εφαρμογές.
+        title: Για όλες τις εφαρμογές
+    optOut:
+        description: Είναι προκαθορισμένο να φορτώνεται, άλλα μπορεί να παραληφθεί
+        title: (μη απαιτούμενο)
+    purpose: Σκοπός
+    purposes: Σκοποί
+    required:
+        description: Δεν γίνεται να λειτουργήσει σωστά η εφαρμογή χωρίς αυτό
+        title: (απαιτούμενο)
 close: Κλείσιμο
 consentModal:
-  description: Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε
-    σχετικά με εσένα.
-  privacyPolicy:
-    name: Πολιτική Απορρήτου
-    text: Για περισσότερες πληροφορίες, παρακαλώ διαβάστε την {privacyPolicy}.
-  title: Πληροφορίες που συλλέγουμε
+    description:
+        Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε
+        σχετικά με εσένα.
+    privacyPolicy:
+        name: Πολιτική Απορρήτου
+        text: Για περισσότερες πληροφορίες, παρακαλώ διαβάστε την {privacyPolicy}.
+    title: Πληροφορίες που συλλέγουμε
 consentNotice:
-  changeDescription: Πραγματοποιήθηκαν αλλαγές μετά την τελευταία σας επίσκεψη παρακαλούμε
-    ανανεώστε την συγκατάθεση σας.
-  configure: ''
-  configure_en: configure
-  description: 'Συγκεντρώνουμε και επεξεργαζόμαστε τα προσωπικά δεδομένα σας για τους
-    παρακάτω λόγους: {purposes}.'
-  imprint:
-    name: ''
-    name_en: imprint
-  learnMore: Περισσότερα
-  privacyPolicy:
-    name: Πολιτική Απορρήτου
+    changeDescription:
+        Πραγματοποιήθηκαν αλλαγές μετά την τελευταία σας επίσκεψη παρακαλούμε
+        ανανεώστε την συγκατάθεση σας.
+    configure: ''
+    configure_en: configure
+    description:
+        'Συγκεντρώνουμε και επεξεργαζόμαστε τα προσωπικά δεδομένα σας για τους
+        παρακάτω λόγους: {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
+    learnMore: Περισσότερα
+    privacyPolicy:
+        name: Πολιτική Απορρήτου
 decline: Απόρριπτω
 ok: OK
 poweredBy: Υποστηρίζεται από το Klaro!
 purposeItem:
-  app: ''
-  app_en: application
-  apps: ''
-  apps_en: applications
+    app: ''
+    app_en: application
+    apps: ''
+    apps_en: applications
 save: Αποθήκευση

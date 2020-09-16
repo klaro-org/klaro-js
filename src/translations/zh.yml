@@ -29,6 +29,7 @@ consentNotice:
   learnMore: 自定义
   privacyPolicy:
     name: 隐私政策
+  testing: 测试模式！
 decline: 衰落
 ok: 接受
 poweredBy: 与Klaro一起实现!

@@ -1,0 +1,120 @@
+@import './vars';
+
+.cm-list {
+    .cm-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        padding: map-get($cm-space, sm);
+
+        @media (max-width: $cm-tablet - 1px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media (min-width: $cm-tablet) {
+            span.cm-is-action {
+                display: none;
+            }
+
+            &:hover {
+                span.cm-is-action {
+                    display: inline-block;
+                }
+            }
+        }
+
+        @media (min-width: $cm-tablet) {
+            display: flex;
+            flex-direction: row;
+            align-items: top;
+            justify-items: flex-end;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:nth-child(2n) {
+            background: #fafafa;
+        }
+
+        &.cm-is-header {
+            font-weight: 600;
+            margin-bottom: map-get($cm-space, xs);
+            background: none;
+            @media (max-width: $cm-tablet - 1px) {
+                display: none;
+            }
+        }
+
+        &.cm-is-card {
+            background: #fff;
+            box-shadow: $cm-box-shadow-dark-sm;
+            border-radius: $cm-border-radius;
+            margin-bottom: map-get($cm-space, lg);
+        }
+
+        &.cm-is-clickable {
+            cursor: pointer;
+        }
+
+        &.cm-is-expandable {
+            cursor: pointer;
+        }
+
+        form {
+            margin: 0;
+
+            label.label {
+                font-weight: 300;
+            }
+        }
+
+        span.cm-is-action {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        .cm-col {
+            align-content: center;
+            flex-basis: 0;
+            margin: map-get($cm-space, sm);
+            flex-grow: 1;
+
+            &.cm-is-xs {
+                flex-grow: 1;
+            }
+
+            &.cm-is-sm {
+                flex-grow: 2;
+            }
+
+            &.cm-is-md {
+                flex-grow: 5;
+            }
+
+            &.cm-is-lg {
+                flex-grow: 10;
+            }
+
+            &.cm-is-xl {
+                flex-grow: 20;
+            }
+
+            &.cm-is-icon {
+                flex-basis: 20px;
+                text-align: right;
+                flex-grow: 0;
+            }
+        }
+
+        .cm-content {
+            @media (min-width: $cm-tablet) {
+                flex: 10;
+            }
+        }
+    }
+}

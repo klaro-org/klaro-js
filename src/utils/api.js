@@ -1,48 +1,53 @@
-import { version } from "../lib"
+import { version } from '../lib';
 
-function formatParams( params ){
-    return "?" + Object
-        .keys(params)
-        .map(function(key){
-            return key+"="+encodeURIComponent(params[key])
-        })
-        .join("&")
+function formatParams(params) {
+    return (
+        '?' +
+        Object.keys(params)
+            .map(function (key) {
+                return key + '=' + encodeURIComponent(params[key]);
+            })
+            .join('&')
+    );
 }
 
 export default class KlaroApi {
-    constructor(url, id, token){
-        this.url = url
-        this.id = id
-        this.token = token
+    constructor(url, id, opts) {
+        this.url = url;
+        this.id = id;
+        this.opts = Object.assign({}, opts);
     }
 
-    getLocationData(config){
-        const recordsConfig = config.records || {}
-        const savePathname = recordsConfig.savePathname !== undefined ? recordsConfig.savePathname : true
+    getLocationData(config) {
+        const recordsConfig = config.records || {};
+        const savePathname =
+            recordsConfig.savePathname !== undefined
+                ? recordsConfig.savePathname
+                : true;
         return {
             pathname: savePathname ? location.pathname : undefined,
-            port: location.port !== "" ? parseInt(location.port) : 0,
+            port: location.port !== '' ? parseInt(location.port) : 0,
             hostname: location.hostname,
-            protocol: location.protocol.slice(0, location.protocol.length-1),
-        }
+            protocol: location.protocol.slice(0, location.protocol.length - 1),
+        };
     }
 
-    getUserData(){
+    getUserData() {
         return {
             client_version: version(),
             client_name: 'klaro:web',
-        }
+        };
     }
 
-    getBaseConsentData(config){
+    getBaseConsentData(config) {
         return {
             location_data: this.getLocationData(config),
             user_data: this.getUserData(config),
-        }
+        };
     }
 
-    update(notifier, name, data){
-        if (name === 'saveConsents'){
+    update(notifier, name, data) {
+        if (name === 'saveConsents') {
             if (data.type === 'save' && Object.keys(data.changes).length === 0)
                 return; // save event with no changes
             const consentData = {
@@ -53,9 +58,9 @@ export default class KlaroApi {
                     type: data.type,
                     config: notifier.config.id,
                 },
-            }
-            this.submitConsentData(consentData)
-        } else if (name === 'showNotice'){
+            };
+            this.submitConsentData(consentData);
+        } else if (name === 'showNotice') {
             const consentData = {
                 ...this.getBaseConsentData(data.config),
                 consent_data: {
@@ -64,73 +69,82 @@ export default class KlaroApi {
                     type: 'show',
                     config: data.config.id,
                 },
-            }
-            this.submitConsentData(consentData)
+            };
+            this.submitConsentData(consentData);
         }
     }
 
-    apiRequest(type, path, data, contentType){
-        return new Promise(
-            (resolve, reject) => {
+    apiRequest(type, path, data, contentType) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
 
-                const xhr = new XMLHttpRequest();
-
-
-                xhr.addEventListener("load", () => {
-                    const data = JSON.parse(xhr.response)
-                    if (xhr.status < 200 || xhr.status >= 300){
-                        data.status = xhr.status
-                        // the request wasn't successful
-                        reject(data)
-                    } else {
-                        // the request was successful
-                        resolve(data)
-                    }
-                })
-
-                xhr.addEventListener("error", () => {
-                    // something else went wrong (e.g. request got blocked)
-                    reject({status: 0, xhr: xhr})
-                })
-
-                let body
-
-                if (data !== undefined){
-                    if (type === 'GET'){
-                        path += '?' + formatParams(data)
-                    } else {
-                        body = JSON.stringify(data)
-                    }
+            xhr.addEventListener('load', () => {
+                const data = JSON.parse(xhr.response);
+                if (xhr.status < 200 || xhr.status >= 300) {
+                    data.status = xhr.status;
+                    // the request wasn't successful
+                    reject(data);
+                } else {
+                    // the request was successful
+                    resolve(data);
                 }
+            });
 
-                xhr.open(type, this.url+path);
+            xhr.addEventListener('error', () => {
+                // something else went wrong (e.g. request got blocked)
+                reject({ status: 0, xhr: xhr });
+            });
 
-                if (body !== undefined){
-                    // we must call setRequestHeader after 'open'
-                    xhr.setRequestHeader("Content-Type", contentType || "application/json;charset=UTF-8")
+            let body;
 
+            if (data !== undefined) {
+                if (type === 'GET') {
+                    path += '?' + formatParams(data);
+                } else {
+                    body = JSON.stringify(data);
                 }
+            }
 
-                xhr.send(body);
-            })
+            xhr.open(type, this.url + path);
 
+            if (body !== undefined) {
+                // we must call setRequestHeader after 'open'
+                xhr.setRequestHeader(
+                    'Content-Type',
+                    contentType || 'application/json;charset=UTF-8'
+                );
+            }
+
+            xhr.send(body);
+        });
     }
 
-    submitConsentData(consentData){
-        return this.apiRequest("POST", "/v1/privacy-managers/"+this.id+"/submit", consentData, "text/plain;charset=UTF-8")
+    submitConsentData(consentData) {
+        return this.apiRequest(
+            'POST',
+            '/v1/privacy-managers/' + this.id + '/submit',
+            consentData,
+            'text/plain;charset=UTF-8'
+        );
     }
 
     /*
     Load a specific Klaro config from the API.
     */
-    loadConfig(name){
-        return this.apiRequest("GET", "/v1/privacy-managers/"+this.id+"/config.json?name="+name)
+    loadConfig(name) {
+        return this.apiRequest(
+            'GET',
+            '/v1/privacy-managers/' + this.id + '/config.json?name=' + name + (this.opts.testing ? '&testing=true' : '')
+        );
     }
 
     /*
     Load Klaro configs from the API.
     */
-    loadConfigs(){
-        return this.apiRequest("GET", "/v1/privacy-managers/"+this.id+"/configs.json")
+    loadConfigs() {
+        return this.apiRequest(
+            'GET',
+            '/v1/privacy-managers/' + this.id + '/configs.json' + (this.opts.testing ? '&testing=true' : '')
+        );
     }
 }

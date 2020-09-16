@@ -33,6 +33,7 @@ consentNotice:
   learnMore: Anpassen
   privacyPolicy:
     name: Datenschutzerklärung
+  testing: Testmodus!
 decline: Ablehnen
 ok: Akzeptieren
 poweredBy: Realisiert mit Klaro!

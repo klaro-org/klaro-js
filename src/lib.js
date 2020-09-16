@@ -91,11 +91,12 @@ export function render(config, opts){
 
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
-    const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'en', ...args)
+    const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'zz', ...args)
     const app = reactRender(<App t={tt}
         lang={lang}
         manager={manager}
         config={config}
+        testing={opts.testing}
         modal={opts.modal}
         api={opts.api}
         show={showCnt} />, element)
@@ -122,15 +123,53 @@ function doOnceLoaded(handler){
     }
 }
 
+function getKlaroId(script){
+    const klaroId = script.getAttribute('data-klaro-id')
+    if (klaroId !== null)
+        return klaroId
+    const regexMatch = /.*\/privacy-managers\/([a-f0-9]+)\/klaro.js/.exec(script.src)
+    if (regexMatch !== null)
+        return regexMatch[1]
+    return null
+}
+
+function getKlaroApiUrl(script){
+    const klaroApiUrl = script.getAttribute('data-klaro-api-url')
+    if (klaroApiUrl !== null)
+        return klaroApiUrl
+    const regexMatch = /(http(?:s)?:\/\/[^/]+)\/v1\/privacy-managers\/([a-f0-9]+)\/klaro.js/.exec(script.src)
+    if (regexMatch !== null)
+        return regexMatch[1]
+    return null
+}
+
+function getKlaroConfigName(hashParams, script){
+    // hash parameters always win
+    if (hashParams.has('klaro-config')){
+        return hashParams.get('klaro-config')
+    }
+    // afterwards we check the script tag
+    const klaroConfigName = script.getAttribute('data-klaro-config-name')
+    if (klaroConfigName !== null)
+        return klaroConfigName
+    // if nothing works we return the default value
+    return 'default'
+}
+
+function getHashParams(){
+    return new Map(decodeURI(location.hash.slice(1)).split("&").map(kv => kv.split("=")).map(kv => (kv.length === 1 ? [kv[0], true] : kv)))
+}
+
 export function setup(){
     const script = currentScript("klaro");
     if (script !== undefined){
         const configName = script.getAttribute('data-config') || "klaroConfig"
-        const klaroId = script.getAttribute('data-klaro-id')
-        const klaroConfigName = script.getAttribute('data-klaro-config-name') || "default"
-        const klaroApiUrl = script.getAttribute('data-klaro-api-url') || 'https://api.kiprotect.com'
+        const klaroId = getKlaroId(script)
+        const klaroApiUrl = getKlaroApiUrl(script)
+        const hashParams = getHashParams()
+        const klaroConfigName = getKlaroConfigName(hashParams, script)
         if (klaroId !== null){
-            const api = new KlaroApi(klaroApiUrl, klaroId)
+            const api = new KlaroApi(klaroApiUrl, klaroId, {testing: hashParams.get('klaro-testing')})
             api.loadConfig(klaroConfigName).then((config) => {
 
                 if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
@@ -140,7 +179,7 @@ export function setup(){
 
                 const initialize = () => {
                     if (!defaultConfig.noAutoLoad)
-                        render(defaultConfig, {api: api})
+                        render(defaultConfig, {api: api, testing: hashParams.get('klaro-testing')})
                 }
                 doOnceLoaded(initialize)
 

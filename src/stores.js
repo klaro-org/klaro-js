@@ -1,4 +1,4 @@
-import {getCookie, setCookie, deleteCookie} from 'utils/cookies'
+import {getCookie, setCookie, deleteCookie} from './utils/cookies'
 
 export class CookieStore {
     constructor(manager) {

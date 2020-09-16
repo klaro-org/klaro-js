@@ -1,23 +1,21 @@
-@import 'modal';
-@import 'vars';
+@import './modal';
+@import './vars';
 
 .klaro {
-
     $btn-margin-right: 0.5em;
 
     .cookie-modal,
     .cookie-notice {
-
         @import 'switch';
 
         font-size: 14px;
 
         .slider {
-            box-shadow: $box-shadow;
+            box-shadow: $cm-box-shadow-dark-md;
         }
 
         a {
-            color: $green1;
+            color: $cm-green1;
             text-decoration: none;
         }
 
@@ -28,7 +26,7 @@
         ul,
         li {
             // font-family: inherit;
-            color: $font-color-dark;
+            color: $cm-font-color-dark;
         }
 
         p,
@@ -50,7 +48,7 @@
 
         .cm-btn {
             background: #555;
-            color: $font-color-dark;
+            color: $cm-font-color-dark;
             border-radius: 6px;
             padding: 6px 10px;
             margin-right: $btn-margin-right;
@@ -63,23 +61,21 @@
             }
 
             &.cm-btn-close {
-                background: #eee;
+                background: $cm-gray-medium;
                 color: #000;
             }
 
             &.cm-btn-success {
-                background: $green1;
+                background: $cm-green1;
             }
 
             &.cm-btn-info {
-                background: $blue1;
+                background: $cm-blue1;
             }
-
         }
     }
 
     .cookie-modal {
-
         width: 100%;
         height: 100%;
         position: fixed;
@@ -113,7 +109,7 @@
 
         .cm-modal {
             &.cm-klaro {
-                @include modal(660px, 640px);            
+                @include modal(660px, 640px);
             }
 
             .hide {
@@ -125,14 +121,13 @@
                 z-index: 1;
 
                 svg {
-                    stroke: $font-color-dark;
+                    stroke: $cm-font-color-dark;
                 }
-
             }
 
             .cm-footer {
                 padding: 1em;
-                border-top: $border-dark;
+                border-top: $cm-border-dark;
 
                 &-buttons {
                     display: flex;
@@ -146,7 +141,7 @@
                     text-align: center;
 
                     a {
-                        color: $font-color-dark-deemphasized;
+                        color: $cm-font-color-dark-deemphasized;
                     }
                 }
             }
@@ -154,7 +149,7 @@
             .cm-header {
                 padding: 1em;
                 padding-right: 24px;
-                border-bottom: $border-dark;
+                border-bottom: $cm-border-dark;
 
                 h1 {
                     margin: 0;
@@ -214,22 +209,17 @@
                             margin-top: 0;
                         }
 
-                        .switch {
-                            position: absolute;
-                            left: 0;
-                        }
-
                         p {
                             margin-top: 0;
                         }
 
                         p.purposes {
                             font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
+                            color: $cm-font-color-dark-deemphasized;
                         }
 
                         &.cm-toggle-all {
-                            border-top: $border-dark;
+                            border-top: $cm-border-dark;
                             padding-top: 1em;
                         }
 
@@ -241,7 +231,7 @@
                         span.cm-required {
                             padding-left: 0.2em;
                             font-size: 0.8em;
-                            color: $font-color-dark-deemphasized;
+                            color: $cm-font-color-dark-deemphasized;
                         }
                     }
                 }
@@ -250,8 +240,7 @@
     }
 
     .cookie-notice:not(.cookie-modal-notice) {
-
-        background: $bg-dark;
+        background: $cm-bg-dark;
         z-index: 999;
 
         position: fixed;
@@ -259,16 +248,16 @@
         bottom: 0;
         right: 0;
 
-        @media(min-width: $full-width) {
-            box-shadow: $box-shadow;
-            border-radius: $border-radius;
+        @media (min-width: $cm-desktop) {
+            box-shadow: $cm-box-shadow-dark-md;
+            border-radius: $cm-border-radius;
             position: fixed;
             bottom: 20px;
             right: 20px;
             max-width: 360px;
         }
 
-        @media(max-width: ($full-width - 1)) {
+        @media (max-width: ($cm-desktop - 1)) {
             border-style: none;
             border-radius: 0;
         }
@@ -312,22 +301,20 @@
                 display: inline-block;
                 margin-top: -0.5em;
 
-                @media(max-width: $tiny-mobile-width) {
+                @media (max-width: $cm-mobile) {
                     width: 100%;
                 }
 
                 button.cm-btn {
                     margin-top: 0.5em;
 
-                    @media(max-width: $tiny-mobile-width) {
+                    @media (max-width: $cm-mobile) {
                         width: calc(50% - #{$btn-margin-right});
                     }
                 }
-
             }
 
             .cn-ok {
-
                 // we add a margin that cancels out unless the items are wrapped
                 // in which case it will add some spacing between them
                 margin-top: -0.5em;
@@ -341,14 +328,11 @@
                 div {
                     margin-top: 0.5em;
                 }
-
             }
         }
     }
 
-
     .cookie-modal-notice {
-
         @include modal(400px, 400px);
 
         padding: 1em;

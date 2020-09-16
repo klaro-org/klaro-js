@@ -1,10 +1,102 @@
 const KlaroConfigSpec = {
-    globals : [
+    cookieConfig: [
         {
-            name: 'elementID',
-            control: 'Input',
+            name: 'pattern',
+            control: 'RetractingLabelInput',
+            validators: [],
+        },
+        {
+            name: 'path',
+            control: 'RetractingLabelInput',
+            validators: [],
+        },
+        {
+            name: 'domain',
+            control: 'RetractingLabelInput',
+            validators: [],
+        },
+    ],
+    appConfig: [
+        {
+            name: 'name',
+            control: 'RetractingLabelInput',
             validators: [],
             default: 'klaro',
+        },
+        {
+            name: 'purposes',
+            control: 'PurposeSelect',
+            validators: [],
+            default: 'klaro',
+        },
+        {
+            name: 'default',
+            control: 'Switch',
+            validators: [],
+            default: true,
+        },
+        {
+            name: 'required',
+            control: 'Switch',
+            validators: [],
+            default: false,
+        },
+        {
+            name: 'optOut',
+            control: 'Switch',
+            validators: [],
+            default: false,
+        },
+        {
+            name: 'onlyOnce',
+            control: 'Switch',
+            default: false,
+            validators: [],
+        },
+        {
+            name: 'cookies',
+            control: 'Cookies',
+            validators: [],
+        },
+    ],
+    globals: [
+        {
+            name: 'languages',
+            control: 'LanguageSelect',
+            validators: [],
+            default: '',
+        },
+        {
+            name: 'elementID',
+            control: 'RetractingLabelInput',
+            validators: [],
+            default: 'klaro',
+        },
+        {
+            name: 'additionalClass',
+            control: 'RetractingLabelInput',
+            validators: [],
+            default: '',
+        },
+        {
+            name: 'storageMethod',
+            control: 'Select',
+            choices: ['cookie', 'localStorage'],
+            validators: [],
+            default: 'cookie',
+        },
+        {
+            name: 'storageName',
+            control: 'RetractingLabelInput',
+            validators: [],
+            default: 'klaro',
+        },
+        {
+            name: 'cookieDomain',
+            applicable: (config) => config.storageMethod === 'cookie',
+            control: 'RetractingLabelInput',
+            validators: [],
+            default: '',
         },
         {
             name: 'htmlTexts',
@@ -25,19 +117,6 @@ const KlaroConfigSpec = {
             default: true,
         },
         {
-            name: 'storageMethod',
-            control: 'Select',
-            choices: ['cookie', 'localStorage'],
-            validators: [],
-            default: 'cookie',
-        },
-        {
-            name: 'storageName',
-            control: 'Input',
-            validators: [],
-            default: 'klaro',
-        },
-        {
             name: 'cookieExpiresAfterDays',
             applicable: (config) => config.storageMethod === 'cookie',
             control: 'Range',
@@ -47,13 +126,6 @@ const KlaroConfigSpec = {
             },
             validators: [],
             default: 60,
-        },
-        {
-            name: 'cookieDomain',
-            applicable: (config) => config.storageMethod === 'cookie',
-            control: 'Input',
-            validators: [],
-            default: '',
         },
         {
             name: 'privacyPolicy',
@@ -99,22 +171,8 @@ const KlaroConfigSpec = {
             validators: [],
             default: false,
         },
-        {
-            name: 'additionalClass',
-            control: 'Input',
-            validators: [],
-            default: '',
-        },
-        {
-            name: 'lang',
-            control: 'LanguageSelect',
-            validators: [],
-            default: '',
-        },
     ],
-    groups: {
+    groups: {},
+};
 
-    }
-}
-
-export default KlaroConfigSpec
+export default KlaroConfigSpec;
