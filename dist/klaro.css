@@ -1,11 +1,42 @@
+/* Border, shadows, ... */
+/* Colors */
+/* Spacing */
+/* Breakpoints */
 .klaro .cookie-modal,
 .klaro .cookie-notice {
   /* The switch - the box around the slider */
   font-size: 14px;
 }
 
-.klaro .cookie-modal .switch,
-.klaro .cookie-notice .switch {
+.klaro .cookie-modal .cm-switch-container,
+.klaro .cookie-notice .cm-switch-container {
+  display: block;
+  position: relative;
+  padding: 10px;
+  padding-left: 66px;
+  line-height: 20px;
+  vertical-align: middle;
+  min-height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.klaro .cookie-modal .cm-switch-container:last-child,
+.klaro .cookie-notice .cm-switch-container:last-child {
+  border-bottom: 0;
+}
+
+.klaro .cookie-modal .cm-switch-container:first-child,
+.klaro .cookie-notice .cm-switch-container:first-child {
+  margin-top: 0;
+}
+
+.klaro .cookie-modal .cm-switch-container p,
+.klaro .cookie-notice .cm-switch-container p {
+  margin-top: 0;
+}
+
+.klaro .cookie-modal .cm-switch,
+.klaro .cookie-notice .cm-switch {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -14,13 +45,13 @@
 
 .klaro .cookie-modal .cm-list-input:checked + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input:checked + .cm-list-label .slider {
-  background-color: #00aa3e;
+  background-color: #1a936f;
 }
 
 .klaro .cookie-modal .cm-list-input.half-checked:checked + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input.half-checked:checked + .cm-list-label .slider {
   opacity: 0.6;
-  background-color: #00aa3e;
+  background-color: #1a936f;
 }
 
 .klaro .cookie-modal .cm-list-input.half-checked:checked + .cm-list-label .slider::before,
@@ -32,7 +63,7 @@
 .klaro .cookie-modal .cm-list-input.only-required + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input.only-required + .cm-list-label .slider {
   opacity: 0.8;
-  background-color: #006a4e;
+  background-color: #24cc9a;
 }
 
 .klaro .cookie-modal .cm-list-input.only-required + .cm-list-label .slider::before,
@@ -44,7 +75,7 @@
 .klaro .cookie-modal .cm-list-input.required:checked + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input.required:checked + .cm-list-label .slider {
   opacity: 0.8;
-  background-color: #006a4e;
+  background-color: #24cc9a;
   cursor: not-allowed;
 }
 
@@ -63,10 +94,29 @@
   height: 30px;
 }
 
+.klaro .cookie-modal .cm-list-title,
+.klaro .cookie-notice .cm-list-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.klaro .cookie-modal .cm-list-description,
+.klaro .cookie-notice .cm-list-description {
+  font-size: 14px;
+  padding-top: 4px;
+  color: #666;
+}
+
 .klaro .cookie-modal .cm-list-label,
 .klaro .cookie-notice .cm-list-label {
   /* The slider */
   /* Rounded sliders */
+}
+
+.klaro .cookie-modal .cm-list-label .cm-switch,
+.klaro .cookie-notice .cm-list-label .cm-switch {
+  position: absolute;
+  left: 0;
 }
 
 .klaro .cookie-modal .cm-list-label .slider,
@@ -107,7 +157,7 @@
 
 .klaro .cookie-modal .cm-list-label input:focus + .slider,
 .klaro .cookie-notice .cm-list-label input:focus + .slider {
-  box-shadow: 0 0 1px #01440c;
+  box-shadow: 0 0 1px #48dfb2;
 }
 
 .klaro .cookie-modal .cm-list-label input:checked + .slider::before,
@@ -134,7 +184,7 @@
 
 .klaro .cookie-modal a,
 .klaro .cookie-notice a {
-  color: #00aa3e;
+  color: #1a936f;
   text-decoration: none;
 }
 
@@ -195,18 +245,18 @@
 
 .klaro .cookie-modal .cm-btn.cm-btn-close,
 .klaro .cookie-notice .cm-btn.cm-btn-close {
-  background: #eee;
+  background: #aaa;
   color: #000;
 }
 
 .klaro .cookie-modal .cm-btn.cm-btn-success,
 .klaro .cookie-notice .cm-btn.cm-btn-success {
-  background: #00aa3e;
+  background: #1a936f;
 }
 
 .klaro .cookie-modal .cm-btn.cm-btn-info,
 .klaro .cookie-notice .cm-btn.cm-btn-info {
-  background: #0885ba;
+  background: #2581c4;
 }
 
 .klaro .cookie-modal {
@@ -370,14 +420,6 @@
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-app:first-child,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose:first-child {
   margin-top: 0;
-}
-
-.klaro .cookie-modal .cm-modal .cm-body ul.cm-apps li.cm-app .switch,
-.klaro .cookie-modal .cm-modal .cm-body ul.cm-apps li.cm-purpose .switch,
-.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-app .switch,
-.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .switch {
-  position: absolute;
-  left: 0;
 }
 
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-apps li.cm-app p,

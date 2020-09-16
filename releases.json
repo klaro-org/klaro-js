@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Vorbereitung der IDE-Integration f\u00fcr die Open-Source Version.\n- Verbesserte Funktionalit\u00e4t f\u00fcr das Testen von Konfiguration.\n",
+      "en": "- Prepare IDE integration into the open-source version.\n- Improved testing functionality.\n"
+    },
+    "date": "2020-09-16",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "Esr6nvnahKdY+PQ5pQQGnLO4F1VeUeYUU2kR5ZKgjQ4fzg6VR+FKLdIVOqmYNXq9"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "NbI1e/pimYrLwhqqYoJpMn71u2hNupcgQBOGus5K1n4wi8uJ+kpz9oiauTnPQqU9"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "7HZERqxW2AfyN+pCAw+IVZkzaLwmGQk4AdHo4+SNz3vQE+bRO12t70dbtEWLaDoP"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "HAaINFrQsZhrtcFuJkXynTCGNV6Lk9k2WfKUwtJnxh9iCvTvtrTmLHAh+evnh/jq"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "jKO7SBwBJk1s4t1i0FpmCRwHYoJFd00hWQ3Vn1Za5XhinCHNuq+eu6ZoY2sCzSUh"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "vIO3ZFhE/7CAeMZjws6bCTKLW+AzPtRiryUMMnt0Zh3/nFaHwHp7mixlBtagWP7D"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "frEJkLITwDqm4bB27nRBvpnVCR1pCZOcWOpyoGCjjzUWRWZxIIVZfTpO4Z56JV26"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "FxuUVoxK0l3QzC9e1oE3k+P0nKTTJMLYRWcvEfdUx0cSWGBBEuQO6wNcCxWdiX4h"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "s9GVy5zeMteVpuJiDD9fjdHgbe+2m5zqvWzG9HYOg1CGPREn75CJsb6mf3ujf4ZZ"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.14"
+  },
+  {
+    "changelog": {
       "de": "- \u00c4nderung der Art, wie das \"show\" Event erfasst wird.\n",
       "en": "- Changed the way the \"show\" event is counted.\n"
     },
