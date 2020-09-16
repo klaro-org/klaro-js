@@ -18,6 +18,7 @@
     "@babel/preset-react": "7.10.4",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
+    "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
@@ -77,5 +78,5 @@
     "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --host 0.0.0.0 --config webpack.config.js --history-api-fallback",
     "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
   },
-  "version": "0.6.13"
+  "version": "0.6.14"
 }
