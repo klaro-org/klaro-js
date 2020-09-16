@@ -15,7 +15,6 @@ const Text = ({ text, config }) => {
             // we assume this already is a React element
             return textElement;
         });
-        console.log(elements)
         if (wrapped) return <React.Fragment>{elements}</React.Fragment>;
         else return <p>{elements}</p>;
     } else return <p>{text}</p>;
