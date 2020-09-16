@@ -10,14 +10,13 @@
     @import './list';
     @import './dropdown';
 
-    .cm-global-fields,
-    .cm-config-controls,
-    .cm-translations-fields,
-
     label {
         display: inline-block;
     }
 
+    .cm-global-fields,
+    .cm-config-controls,
+    .cm-translations-fields,
     .cm-app-fields {
         max-width: 600px;
 
