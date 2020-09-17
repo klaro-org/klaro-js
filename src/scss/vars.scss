@@ -1,32 +1,36 @@
-/* Border, shadows, ... */
-$cm-box-shadow-dark-md: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
-$cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11);
-$cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33);
+/*
+We declare all variables here as default so that they are easy to override...
+*/
 
-$cm-border-radius: 4px;
-$cm-border-dark: 1px solid #555;
+/* Border, shadows, ... */
+$cm-box-shadow-dark-md: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19) !default;
+$cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11) !default;
+$cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33) !default;
+
+$cm-border-radius: 4px !default;
+$cm-border-dark: 1px solid #555 !default;
 
 /* Colors */
-$cm-font-color-dark: #eee;
+$cm-font-color-dark: #eee !default;
 $cm-tab-color: #2581c4 !default;
-$cm-font-color-dark-deemphasized: #999;
-$cm-bg-dark: #333;
-$cm-gray-medium: #aaa;
-$cm-gray-light: #eee;
-$cm-white: #fff;
-$cm-blue1: #2581c4;
-$cm-blue2: scale-color($cm-blue1, $lightness: 20%);
-$cm-blue3: scale-color($cm-blue2, $lightness: 20%);
-$cm-blue4: scale-color($cm-blue3, $lightness: 20%);
-$cm-green1: #1a936f;
-$cm-green2: scale-color($cm-green1, $lightness: 20%);
-$cm-green3: scale-color($cm-green2, $lightness: 20%);
-$cm-green4: scale-color($cm-green3, $lightness: 20%);
-$cm-red1: #da2c43;
-$cm-red2: scale-color($cm-red1, $lightness: 20%);
-$cm-red3: scale-color($cm-red2, $lightness: 20%);
-$cm-red4: scale-color($cm-red3, $lightness: 20%);
-$cm-yellow1: #f2d600;
+$cm-font-color-dark-deemphasized: #999 !default;
+$cm-bg-dark: #333 !default;
+$cm-gray-medium: #aaa !default;
+$cm-gray-light: #eee !default;
+$cm-white: #fff !default;
+$cm-blue1: #2581c4 !default;
+$cm-blue2: scale-color($cm-blue1, $lightness: 20%) !default;
+$cm-blue3: scale-color($cm-blue2, $lightness: 20%) !default;
+$cm-blue4: scale-color($cm-blue3, $lightness: 20%) !default;
+$cm-green1: #1a936f !default;
+$cm-green2: scale-color($cm-green1, $lightness: 20%) !default;
+$cm-green3: scale-color($cm-green2, $lightness: 20%) !default;
+$cm-green4: scale-color($cm-green3, $lightness: 20%) !default;
+$cm-red1: #da2c43 !default;
+$cm-red2: scale-color($cm-red1, $lightness: 20%) !default;
+$cm-red3: scale-color($cm-red2, $lightness: 20%) !default;
+$cm-red4: scale-color($cm-red3, $lightness: 20%) !default;
+$cm-yellow1: #f2d600 !default;
 
 
 /* Spacing */
@@ -37,9 +41,9 @@ $cm-space: (
     lg: 24px,
     xl: 48px,
     xxl: 96px
-);
+) !default;
 
 /* Breakpoints */
-$cm-desktop: 1024px;
-$cm-mobile: 384px;
+$cm-desktop: 1024px !default;
+$cm-mobile: 384px !default;
 $cm-tablet: 768px !default;
