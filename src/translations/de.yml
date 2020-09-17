@@ -4,7 +4,7 @@ acceptSelected: Ausgewählte akzeptieren
 app:
   disableAll:
     description: Mit diesem Schalter können Sie alle Anwendungen aktivieren oder deaktivieren.
-    title: Alle anwendungen aktivieren oder deaktivieren
+    title: Alle Anwendungen aktivieren oder deaktivieren
   optOut:
     description: Diese Anwendung wird standardmäßig geladen (Sie können sich jedoch
       abmelden)
