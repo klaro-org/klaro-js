@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Verbesserung des Initialisierungscode um es zu vereinfachen, Klaro als Teil eines JS-Projekts zu nutzen.\n",
+      "en": "- Improved the initialization code to make it easier to use Klaro as a component in a JS project.\n"
+    },
+    "date": "2020-09-17",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "Hs7Bcnqail9GwYsYX1dW391QVcfdQepztfkR7h//1D61ZbntEcjkpbYlK3BpaExD"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "LWKMw1ik6DqRDcPz5Ms06p6au9I9J18XWslRLuIyFS+3uvpbRkKbngjTmOpqisDE"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "QTXSyMRA9c6XwurPosHkAkq3iXKylsfUkABC8zVCsA+pBBtufjYjXg7t18h8jwkg"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "CJ15QG9iODPVeBxbPXoR/G+Ifaf2S21phRNMWuGF5eCoh2fkoyaPQvuuV7TC5XEf"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "dUF712QOQPxYQd1uCb8MmCa4LAXCk9le17AJIkbtV7/10PB0bgGVKXqB7+vMRnmP"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "+bUpReKI/zrQheWG30BRHLSy+HRlBITsSm3G4FVGeNnVsHXtzKndw0mIOu9s2M1+"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "qESL3mZa1wBPpFLe7SItNHykahunwzk01QRARYP7es5TBzSwR5cE5+Bnfafb4t5w"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "aqNtsl77143ZejlyUgF2GsLJ48oQafVQLqPMoyhVoGr1LiE/gn7bxvThGhDTHn5v"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "s9GVy5zeMteVpuJiDD9fjdHgbe+2m5zqvWzG9HYOg1CGPREn75CJsb6mf3ujf4ZZ"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.15"
+  },
+  {
+    "changelog": {
       "de": "- Vorbereitung der IDE-Integration f\u00fcr die Open-Source Version.\n- Verbesserte Funktionalit\u00e4t f\u00fcr das Testen von Konfiguration.\n",
       "en": "- Prepare IDE integration into the open-source version.\n- Improved testing functionality.\n"
     },
