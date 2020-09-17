@@ -149,7 +149,7 @@ function getKlaroConfigName(hashParams, script){
         return hashParams.get('klaro-config')
     }
     // afterwards we check the script tag
-    const klaroConfigName = script.getAttribute('data-klaro-config-name')
+    const klaroConfigName = script.getAttribute('data-config')
     if (klaroConfigName !== null)
         return klaroConfigName
     // if nothing works we return the default value
@@ -160,58 +160,53 @@ function getHashParams(){
     return new Map(decodeURI(location.hash.slice(1)).split("&").map(kv => kv.split("=")).map(kv => (kv.length === 1 ? [kv[0], true] : kv)))
 }
 
-export function setup(){
+export function setup(config){
     const script = currentScript("klaro");
-    if (script !== undefined){
-        const configName = script.getAttribute('data-config') || "klaroConfig"
+    const hashParams = getHashParams();
+
+    const initialize = (opts) => {
+        const fullOpts = {...opts, testing: hashParams.get('klaro-testing')}
+        if (!defaultConfig.noAutoLoad)
+            render(defaultConfig, fullOpts)
+    }
+
+    if (config !== undefined){
+        // we initialize directly with a config
+        defaultConfig = config;
+        doOnceLoaded(() => initialize({}))
+    } else if (script !== null) {
+        // we initialize with a script tag
         const klaroId = getKlaroId(script)
         const klaroApiUrl = getKlaroApiUrl(script)
-        const hashParams = getHashParams()
-        const klaroConfigName = getKlaroConfigName(hashParams, script)
+        const klaroConfigName = getKlaroConfigName(hashParams, script);
         if (klaroId !== null){
+            // we initialize with an API backend
             const api = new KlaroApi(klaroApiUrl, klaroId, {testing: hashParams.get('klaro-testing')})
             api.loadConfig(klaroConfigName).then((config) => {
 
+                // an event handler can interrupt the initialization, e.g. if it wants to perform
+                // its own initialization given the API configs
                 if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
                     return
                 }
                 defaultConfig = config
-
-                const initialize = () => {
-                    if (!defaultConfig.noAutoLoad)
-                        render(defaultConfig, {api: api, testing: hashParams.get('klaro-testing')})
-                }
-                doOnceLoaded(initialize)
+                doOnceLoaded(() => initialize({api: api}))
 
             }).catch((err) => {
                 console.error(err, "cannot load Klaro configs")
                 executeEventHandlers("apiConfigsFailed", err)
             })
         } else {
-            defaultConfig = window[configName]
-            if (defaultConfig !== undefined){
-
-                // deprecated: config settings should only be loaded via the config
-                const scriptStylePrefix = script.getAttribute('data-style-prefix')
-                const scriptNoAutoLoad = script.getAttribute('data-no-auto-load') === "true"
-                if (scriptStylePrefix === undefined)
-                    defaultConfig.stylePrefix = scriptStylePrefix
-
-                if (scriptNoAutoLoad)
-                    defaultConfig.noAutoLoad = true
-
-                const initialize = () => {
-                    if (!defaultConfig.noAutoLoad)
-                        render(defaultConfig)
-                }
-                doOnceLoaded(initialize)
-            }
+            // we initialize with a local config instead
+            const configName = script.getAttribute('data-config') || "klaroConfig"
+            defaultConfig = window[configName];
+            if (defaultConfig !== undefined)
+                doOnceLoaded(() => initialize({}))
         }
-        const showIDE = location.hash === '#klaro-ide'
-        // we show the Klaro IDE
-        if (showIDE){
-            showKlaroIDE(script)
-        }
+    }
+    // If requested, we show the Klaro IDE
+    if (hashParams.has('klaro-ide')){
+        showKlaroIDE(script)
     }
 }
 

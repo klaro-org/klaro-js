@@ -10,7 +10,7 @@
     <title>Klaro as a script</title>
     <script src="main.js"></script>
   </head>
-  <body onload="klaro.show(config);">
+  <body>
     <h1>Klaro Example</h1>
     <p>
       This is a simple example that shows how to embed Klaro in your own JS
@@ -18,7 +18,7 @@
       assign it to the "window" object inside "index.js" so that we can show
       the manager, which would usually be done by your app.
     </p>
-    <button onClick="return klaro.show(config, true);">show manager</button>
-    <button onClick="klaro.getManager(config).resetConsents();klaro.show(config);">reset consent</button>
+    <button onClick="return klaro.show(klaroConfig, true);">show manager</button>
+    <button onClick="klaro.getManager(klaroConfig).resetConsents();klaro.show(klaroConfig);">reset consent</button>
   </body>
 </html>

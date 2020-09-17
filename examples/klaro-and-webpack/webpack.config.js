@@ -28,6 +28,4 @@ if (ENV === 'dev'){
   }
 }
 
-console.log(config)
-
 module.exports = config;
