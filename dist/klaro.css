@@ -1,3 +1,6 @@
+/*
+We declare all variables here as default so that they are easy to override...
+*/
 /* Border, shadows, ... */
 /* Colors */
 /* Spacing */
@@ -345,7 +348,8 @@
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by {
   font-size: 0.8em;
   padding-top: 4px;
-  text-align: center;
+  text-align: right;
+  padding-right: 8px;
 }
 
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a {
@@ -481,7 +485,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    max-width: 360px;
+    max-width: 400px;
   }
 }
 
@@ -554,7 +558,7 @@
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: right;
-  align-items: center;
+  align-items: baseline;
 }
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,

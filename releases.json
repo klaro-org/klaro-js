@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Harmonisierung und Verbesserung (aus unserer Sicht) der \u00dcbersetzungen.\n- Hinzuf\u00fcgen von \u00dcbersetzungen f\u00fcr standardisierte Verarbeitungszwecke.\n",
+      "en": "- Harmonization and improvement (we think) of the default translations.\n- Adding of translations for a set of default processing purposes.\n"
+    },
+    "date": "2020-09-21",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "T2vHwuTFSkplGKkQlq0TI5pZWHrOOL+OOfk65I/j1GDW7QEWHV6wbj8KaTqZrG7S"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "j+Ggusz4PJcrKD0Be91+GXuQtRwaU50Zm4UuN44KjaBEBAXNcvNzkmPr3ez/y065"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "ibt2BxRBnjFpucKINl3vBmkxUvWr3eiiyP+DKSb5rptCcBkCnTrYsrhFesC9cm5D"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "LBJj9N/PBxlPE50l7EoiDCDYn74dBvmwdwjIeJKb+kq+zlwLlbYDXwpYGGMmhLg5"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "V2ST9G5UFRvpyvLk6nEj//iTeUw5kQmXiQoZC0czbkubgMvCQFvb9EW6sqGGfTkt"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "X2GYW2xEiySetLQrrDF/dGNZACrHgNqujF2eEKHykV6SzxXGGXbFjoTgcTNqgxrr"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "/KevbdjdZMJeK+iQ5dPvYdW0ihxWKNLeWaxdHlYjLddUwEPkB4Mau61MwTCvmrge"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "W7FTd5M24pEPe8WrhybWxbuj4qTcb3JpyGSKOEm42qv6Cwe2eatFOIxvxCfsZJ98"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "OnfEiHBjqByoS6PDL6/NMgtTIPXGeCcGv8NOHghWIeCIio/j8Won75pxoJaPRjLq"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.6.16"
+  },
+  {
+    "changelog": {
       "de": "- Verbesserung des Initialisierungscode um es zu vereinfachen, Klaro als Teil eines JS-Projekts zu nutzen.\n",
       "en": "- Improved the initialization code to make it easier to use Klaro as a component in a JS project.\n"
     },
