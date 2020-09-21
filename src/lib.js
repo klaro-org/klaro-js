@@ -149,7 +149,7 @@ function getKlaroConfigName(hashParams, script){
         return hashParams.get('klaro-config')
     }
     // afterwards we check the script tag
-    const klaroConfigName = script.getAttribute('data-config')
+    const klaroConfigName = script.getAttribute('data-klaro-config')
     if (klaroConfigName !== null)
         return klaroConfigName
     // if nothing works we return the default value
@@ -198,7 +198,7 @@ export function setup(config){
             })
         } else {
             // we initialize with a local config instead
-            const configName = script.getAttribute('data-config') || "klaroConfig"
+            const configName = script.getAttribute('data-klaro-config') || "klaroConfig"
             defaultConfig = window[configName];
             if (defaultConfig !== undefined)
                 doOnceLoaded(() => initialize({}))

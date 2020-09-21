@@ -16,7 +16,6 @@ export const PurposeSelect = ({field, prefix, config, t, updateConfig}) => {
         if (value !== '')
             candidates.push({name: value, description: t(['purpose', 'descriptionNotice']), value: `${value} (${t(['purpose', 'add'])})`})
         setCandidates(candidates)
-        console.log(value)
         setSearch(value)
     }
 
