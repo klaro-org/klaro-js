@@ -39,4 +39,29 @@ poweredBy: Zrealizowane z Klaro!
 purposeItem:
   app: aplikacja
   apps: aplikacji
+purposes:
+  advertisement:
+    description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
+      lub opartych na zainteresowaniach ogłoszeń.
+    title: Reklama
+  functional:
+    description: 'Aplikacje te przetwarzają dane osobowe w celu zapewnienia prawidłowego
+      funkcjonowania niniejszej strony internetowej. Aplikacje te np. przechowują
+      Państwa dane logowania, Państwa koszyk zakupów lub zapewniają bezpieczeństwo
+      i stabilność strony internetowej poprzez wykrywanie anomalii w aktywności użytkowników.
+
+      '
+    title: Funkcjonalny
+  marketing:
+    description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu istotnych
+      treści dotyczących produktów, usług lub tematów, którymi mogą być Państwo zainteresowani.
+    title: Marketing
+  performance:
+    description: 'Aplikacje te przetwarzają dane osobowe w celu optymalizacji usług
+      oferowanych przez tę stronę. Umożliwiają one np. operatorowi strony internetowej
+      wykrywanie i rozwiązywanie potencjalnych problemów z interfejsem użytkownika,
+      poprawę doświadczenia użytkownika i optymalizację procesów biznesowych.
+
+      '
+    title: Optymalizacja wydajności i analiza
 save: Z wyjątkiem

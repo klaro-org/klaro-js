@@ -41,4 +41,29 @@ poweredBy: Realizzato con Klaro!
 purposeItem:
   app: applicazione
   apps: applicazioni
+purposes:
+  advertisement:
+    description: Queste applicazioni elaborano le informazioni personali per mostrare
+      annunci pubblicitari personalizzati o basati su interessi.
+    title: Pubblicità
+  functional:
+    description: 'Queste applicazioni elaborano le informazioni personali per garantire
+      il corretto funzionamento di questo sito web. Esse memorizzano ad esempio i
+      dati di accesso, il suo carrello o garantiscono la sicurezza e la stabilità
+      del sito web rilevando le attività anomale dell''utente.
+
+      '
+    title: Funzionale
+  marketing:
+    description: Queste applicazioni elaborano le informazioni personali per mostrarle
+      contenuti rilevanti su prodotti, servizi o argomenti che potrebbero interessarla.
+    title: Marketing
+  performance:
+    description: 'Queste applicazioni elaborano le informazioni personali per ottimizzare
+      il servizio offerto da questo sito web. Consentono ad esempio al gestore del
+      sito web di rilevare e risolvere potenziali problemi di interfaccia utente,
+      migliorare l''esperienza dell''utente e ottimizzare i processi aziendali.
+
+      '
+    title: Ottimizzazione delle prestazioni e analisi
 save: Salva

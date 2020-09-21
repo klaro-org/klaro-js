@@ -14,21 +14,6 @@ app:
     description: This application is always required
     title: (always required)
 close: Close
-purposes:
-    functional:
-        title: Functional
-        description: |
-            These apps process personal information to ensure the correct functioning of this website. They e.g. store your login information, your shopping basket or ensure the security and stability of the website by detecting anomalous user activity.
-    performance:
-        title: Performance optimization & analytics
-        description: |
-          These apps process personal information to optimize the service that this website offers. They e.g. allow the website operator to detect and fix potential user-interface problems, improve the user experience and optimize business processes.
-    marketing:
-        title: Marketing
-        description: These apps process personal information to show you relevant content about products, services or topics that you might be interested in. 
-    advertisement:
-        title: Advertisement
-        description: These apps process personal information to show you personalized or interest-based advertisements.
 consentModal:
   description: Here you can see and customize the information that we collect about
     you.
@@ -54,4 +39,29 @@ poweredBy: Realized with Klaro!
 purposeItem:
   app: app
   apps: apps
+purposes:
+  advertisement:
+    description: These apps process personal information to show you personalized
+      or interest-based advertisements.
+    title: Advertisement
+  functional:
+    description: 'These apps process personal information to ensure the correct functioning
+      of this website. They e.g. store your login information, your shopping basket
+      or ensure the security and stability of the website by detecting anomalous user
+      activity.
+
+      '
+    title: Functional
+  marketing:
+    description: These apps process personal information to show you relevant content
+      about products, services or topics that you might be interested in.
+    title: Marketing
+  performance:
+    description: 'These apps process personal information to optimize the service
+      that this website offers. They e.g. allow the website operator to detect and
+      fix potential user-interface problems, improve the user experience and optimize
+      business processes.
+
+      '
+    title: Performance optimization & analytics
 save: Save

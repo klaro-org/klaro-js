@@ -38,4 +38,31 @@ poweredBy: Gerealiseerd met Klaro!
 purposeItem:
   app: app
   apps: apps
+purposes:
+  advertisement:
+    description: Deze apps verwerken persoonlijke informatie om u gepersonaliseerde
+      of op interesse gebaseerde advertenties te tonen.
+    title: Advertentie
+  functional:
+    description: 'Deze apps verwerken persoonlijke informatie om de correcte werking
+      van deze website te garanderen. Ze slaan bijvoorbeeld uw inloggegevens op, uw
+      winkelmandje of zorgen voor de veiligheid en stabiliteit van de website door
+      het detecteren van afwijkende gebruikersactiviteit.
+
+      '
+    title: Functioneel
+  marketing:
+    description: Deze apps verwerken persoonlijke informatie om u relevante content
+      te laten zien over producten, diensten of onderwerpen waarin u wellicht geïnteresseerd
+      bent.
+    title: Marketing
+  performance:
+    description: 'Deze apps verwerken persoonlijke informatie om de service die deze
+      website biedt te optimaliseren. Ze stellen de beheerder van de website bijvoorbeeld
+      in staat om potentiële problemen met de gebruikersinterface op te sporen en
+      te verhelpen, de gebruikerservaring te verbeteren en de bedrijfsprocessen te
+      optimaliseren.
+
+      '
+    title: Prestatie-optimalisatie & analyse
 save: Opslaan

@@ -40,4 +40,30 @@ poweredBy: Realisiert mit Klaro!
 purposeItem:
   app: Anwendung
   apps: Anwendungen
+purposes:
+  advertisement:
+    description: Diese Anwendungen verarbeiten persönliche Informationen, um Ihnen
+      personalisierte oder interessenbezogene Werbung zu zeigen.
+    title: Anzeigenerstellung
+  functional:
+    description: 'Diese Anwendungen verarbeiten persönliche Daten, um das korrekte
+      Funktionieren dieser Website zu gewährleisten. Sie speichern z.B. Ihre Anmeldedaten,
+      Ihren Warenkorb oder gewährleisten die Sicherheit und Stabilität der Website,
+      indem sie anomale Benutzeraktivitäten erkennen.
+
+      '
+    title: Funktionell
+  marketing:
+    description: Diese Anwendungen verarbeiten persönliche Daten, um Ihnen relevante
+      Inhalte über Produkte, Dienstleistungen oder Themen zu zeigen, die für Sie von
+      Interesse sein könnten.
+    title: Marketing
+  performance:
+    description: 'Diese Anwendungen verarbeiten persönliche Daten, um den auf dieser
+      Website angebotenen Service zu optimieren. Sie ermöglichen es z.B. dem Website-Betreiber,
+      potenzielle Probleme mit der Benutzeroberfläche zu erkennen und zu beheben,
+      die Benutzererfahrung zu verbessern und Geschäftsprozesse zu optimieren.
+
+      '
+    title: Leistungsoptimierung und -analyse
 save: Speichern

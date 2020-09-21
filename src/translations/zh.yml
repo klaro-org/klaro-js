@@ -36,4 +36,21 @@ poweredBy: 与Klaro一起实现!
 purposeItem:
   app: 应用程序
   apps: 应用程序
+purposes:
+  advertisement:
+    description: 这些应用程序处理个人信息，向你展示个性化或基于兴趣的广告。
+    title: 广告
+  functional:
+    description: '这些应用程序会处理个人信息，以确保本网站的正确运作。例如，它们会存储您的登录信息、购物篮或通过检测异常的用户活动来确保网站的安全性和稳定性。
+
+      '
+    title: 功能性
+  marketing:
+    description: 这些应用程序处理个人信息，向你展示你可能感兴趣的产品、服务或主题的相关内容。
+    title: 市场营销
+  performance:
+    description: '这些应用程序处理个人信息以优化本网站提供的服务。例如，它们允许网站运营商检测和修复潜在的用户界面问题，改善用户体验并优化业务流程。
+
+      '
+    title: 性能优化和分析
 save: 挽救

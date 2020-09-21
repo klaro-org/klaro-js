@@ -40,4 +40,30 @@ poweredBy: Realizado com Klaro!
 purposeItem:
   app: aplicativo
   apps: aplicações
+purposes:
+  advertisement:
+    description: Essas aplicações processam informações pessoais para mostrar ao senhor
+      anúncios personalizados ou baseados em interesses.
+    title: Anúncio
+  functional:
+    description: 'Essas aplicações processam informações pessoais para assegurar o
+      correto funcionamento deste website. Eles, por exemplo, armazenam suas informações
+      de login, sua cesta de compras ou asseguram a segurança e estabilidade do website,
+      detectando atividades anômalas do usuário.
+
+      '
+    title: Funcional
+  marketing:
+    description: Essas aplicações processam informações pessoais para mostrar ao senhor
+      conteúdo relevante sobre produtos, serviços ou tópicos que possam ser de seu
+      interesse.
+    title: Marketing
+  performance:
+    description: 'Essas aplicações processam informações pessoais para otimizar o
+      serviço que este website oferece. Eles, por exemplo, permitem ao operador do
+      website detectar e corrigir potenciais problemas de interface com o usuário,
+      melhorar a experiência do usuário e otimizar os processos de negócios.
+
+      '
+    title: Otimização e análise de desempenho
 save: Exceto

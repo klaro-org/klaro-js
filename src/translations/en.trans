@@ -26,6 +26,14 @@ de:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 es:
   acceptAll: f4b2e5d70622acfe
@@ -55,6 +63,14 @@ es:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 fr:
   acceptAll: f4b2e5d70622acfe
@@ -84,6 +100,14 @@ fr:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 it:
   acceptAll: f4b2e5d70622acfe
@@ -113,6 +137,14 @@ it:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 nl:
   acceptAll: f4b2e5d70622acfe
@@ -142,6 +174,14 @@ nl:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 pl:
   acceptAll: f4b2e5d70622acfe
@@ -171,6 +211,14 @@ pl:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 pt:
   acceptAll: f4b2e5d70622acfe
@@ -200,6 +248,14 @@ pt:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458
 zh:
   acceptAll: f4b2e5d70622acfe
@@ -229,4 +285,12 @@ zh:
   poweredBy: 174e3b49be391bc5
   purposeItem.app: 47bdf84a520a7061
   purposeItem.apps: 3a8b7024c20e06ee
+  purposes.advertisement.description: 57ae88118a18a838
+  purposes.advertisement.title: e175f9d813a1ef47
+  purposes.functional.description: 81317d4b311d2f01
+  purposes.functional.title: b6656595756edfce
+  purposes.marketing.description: 8c0ea648af47cac2
+  purposes.marketing.title: f5904cf7a1231a7a
+  purposes.performance.description: 80e618f999290576
+  purposes.performance.title: 75675ebbd3fad3c1
   save: 157dca92e4250458

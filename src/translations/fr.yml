@@ -39,4 +39,31 @@ poweredBy: Réalisé avec Klaro !
 purposeItem:
   app: application
   apps: applications
+purposes:
+  advertisement:
+    description: Ces applications traitent des informations personnelles pour vous
+      présenter des publicités personnalisées ou basées sur des intérêts.
+    title: Publicité
+  functional:
+    description: 'Ces applications traitent des informations personnelles pour assurer
+      le bon fonctionnement de ce site. Elles stockent par exemple vos informations
+      de connexion, votre panier d''achat ou assurent la sécurité et la stabilité
+      du site en détectant les activités anormales des utilisateurs.
+
+      '
+    title: Fonctionnel
+  marketing:
+    description: Ces applications traitent les informations personnelles pour vous
+      présenter un contenu pertinent sur des produits, des services ou des sujets
+      qui pourraient vous intéresser.
+    title: Marketing
+  performance:
+    description: 'Ces applications traitent les informations personnelles afin d''optimiser
+      le service offert par ce site. Elles permettent par exemple à l''opérateur du
+      site web de détecter et de corriger les problèmes potentiels de l''interface
+      utilisateur, d''améliorer l''expérience de l''utilisateur et d''optimiser les
+      processus commerciaux.
+
+      '
+    title: Optimisation et analyse de la performance
 save: Enregistrer
