@@ -57,10 +57,16 @@ export default class ConsentNotice extends React.Component {
         const { modal, confirming } = this.state;
         const { embedded, noticeAsModal, hideLearnMore } = config;
 
-        const purposes = getPurposes(config);
-        const purposesText = purposes
+        // we exclude functional services from this list, as they are always required and
+        // the user cannot decline their use...
+        const purposes = getPurposes(config).filter(purpose => purpose !== 'functional');
+        const purposesTranslations = purposes
             .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
-            .join(', ');
+        let purposesText = ''
+        if (purposesTranslations.length === 1)
+            purposesText = purposesTranslations[0]
+        else
+            purposesText = [...purposesTranslations.slice(0, -2), purposesTranslations.slice(-2).join(' & ')].join(', ');
         const lang = config.lang || language();
 
         let ppUrl;

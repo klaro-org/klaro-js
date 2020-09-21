@@ -138,8 +138,8 @@
     }
 
     .cm-config-controls {
-        margin-top: 4px;
-        margin-bottom: 8px;
+        margin-top: map-get($cm-space, sm);
+        margin-bottom: map-get($cm-space, lg);
         max-width: none;
         display: flex;
         flex-wrap: wrap;

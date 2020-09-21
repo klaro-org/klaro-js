@@ -3,59 +3,58 @@ acceptAll: Accept all
 acceptSelected: Accept selected
 app:
   disableAll:
-    description: Use this switch to enable or disable all apps.
-    title: Enable or disable all apps
+    description: Use this switch to enable or disable all services.
+    title: Enable or disable all services
   optOut:
-    description: This app is loaded by default (but you can opt out)
+    description: This services is loaded by default (but you can opt out)
     title: (opt-out)
   purpose: purpose
   purposes: purposes
   required:
-    description: This application is always required
+    description: This services is always required
     title: (always required)
 close: Close
 consentModal:
-  description: Here you can learn about the apps that we'd like to use on this site
-    and customize your consent.
+  description: Here you can assess and customize the services that we'd like to use
+    on this website. You're in charge! Enable or disable services as you see fit.
   privacyPolicy:
     name: privacy policy
     text: To learn more, please read our {privacyPolicy}.
-  title: Information that we collect
+  title: Services we would like to use
 consentNotice:
-  changeDescription: There were changes since your last visit, please update your
-    consent.
+  changeDescription: There were changes since your last visit, please renew your consent.
   configure: configure
-  description: 'We''d like to process your personal information for the following
-    purposes: {purposes}.'
+  description: Hi! Could we please enable some additional services for {purposes}?
   imprint:
     name: imprint
-  learnMore: Customize
+  learnMore: Let me choose
   privacyPolicy:
     name: privacy policy
   testing: Testing mode!
-decline: Decline
-ok: Accept
+decline: I decline
+ok: That's ok
 poweredBy: Realized with Klaro!
 purposeItem:
-  app: app
-  apps: apps
+  app: service
+  apps: services
 purposes:
   advertisement:
-    description: These apps process personal information to show you personalized
+    description: These services process personal information to show you personalized
       or interest-based advertisements.
     title: Advertisements
   functional:
-    description: 'These apps are essential for the correct functioning of this website.
-      You cannot disable them here as the service would not work correctly otherwise.
+    description: 'These services are essential for the correct functioning of this
+      website. You cannot disable them here as the service would not work correctly
+      otherwise.
 
       '
     title: Service Provision
   marketing:
-    description: These apps process personal information to show you relevant content
-      about products, services or topics that you might be interested in.
+    description: These services process personal information to show you relevant
+      content about products, services or topics that you might be interested in.
     title: Marketing
   performance:
-    description: 'These apps process personal information to optimize the service
+    description: 'These services process personal information to optimize the service
       that this website offers.
 
       '

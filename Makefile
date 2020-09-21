@@ -17,7 +17,7 @@ klaro:
 	npm run-script make
 
 translate:
-	python3 .scripts/update_translations.py
+	python3 .scripts/update_translations.py $(TR)
 
 klaro-no-css:
 	SEPARATE_CSS=1 npm run-script make

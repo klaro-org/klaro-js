@@ -13,6 +13,9 @@
     justify-content: space-between;
     white-space: nowrap;
 
+    span.cm-tabs-more {
+        display: none;
+    }
 
     @media (max-width: $cm-tablet) {
         border-radius: $cm-border-radius;
@@ -86,8 +89,8 @@
 
             a {
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: flex-start;
+                justify-content: left;
                 margin-bottom: -1px;
                 padding: 0.5em 1em;
                 color: #4a4a4a;
@@ -103,9 +106,6 @@
         }
     }
 
-    span.cm-tabs-more {
-        display: none;
-    }
 
 }
 

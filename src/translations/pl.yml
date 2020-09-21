@@ -3,61 +3,62 @@ acceptAll: Zaakceptować wszystkie
 acceptSelected: Zaakceptować wybrany
 app:
   disableAll:
-    description: Za pomocą tego przełącznika można włączać i wyłączać wszystkie aplikacje.
-    title: Włączać lub wyłączać wszystkie aplikacje
+    description: Za pomocą tego przełącznika można włączać lub wyłączać wszystkie
+      usługi.
+    title: Włączać lub wyłączać wszystkie usługi
   optOut:
-    description: Ta aplikacja jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
+    description: Ta usługa jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
     title: (opt-out)
   purpose: Cel
   purposes: Cele
   required:
-    description: Ta aplikacja jest zawsze wymagana
+    description: Usługi te są zawsze wymagane
     title: (zawsze wymagane)
 close: Blisko
 consentModal:
-  description: Tutaj mogą Państwo dowiedzieć się o aplikacjach, z których chcielibyśmy
-    korzystać na tej stronie i dostosować swoją zgodę.
+  description: Tutaj mogą Państwo ocenić i dostosować usługi, z których chcielibyśmy
+    skorzystać na tej stronie. Jesteście Państwo odpowiedzialni! Mogą Państwo włączać
+    lub wyłączać usługi według własnego uznania.
   privacyPolicy:
     name: polityka prywatności
     text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
-  title: Informacje, które zbieramy
+  title: Usługi, z których chcielibyśmy skorzystać
 consentNotice:
-  changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, proszę zaktualizować
-    swoją zgodę.
+  changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, prosimy o odnowienie
+    zgody.
   configure: skonfigurować
-  description: 'Pragniemy przetwarzać Państwa dane osobowe dla następujących celów:
-    {purposes}.'
+  description: Witam! Czy możemy włączyć dodatkowe usługi dla {purposes}?
   imprint:
     name: odcisk
-  learnMore: Dostosować
+  learnMore: Pozwól mi wybrać
   privacyPolicy:
     name: polityka prywatności
   testing: Tryb testowy!
-decline: Spadek
-ok: Zaakceptować
+decline: Odmawiam
+ok: To jest ok.
 poweredBy: Zrealizowane z Klaro!
 purposeItem:
-  app: aplikacja
-  apps: aplikacji
+  app: usługa
+  apps: usług
 purposes:
   advertisement:
-    description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
+    description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
       lub opartych na zainteresowaniach ogłoszeń.
     title: Ogłoszenia
   functional:
-    description: 'Aplikacje te są niezbędne do prawidłowego funkcjonowania tej strony
-      internetowej. Nie mogą Państwo ich tutaj wyłączyć, ponieważ w przeciwnym razie
-      serwis nie działałby prawidłowo.
+    description: 'Usługi te są niezbędne do prawidłowego funkcjonowania niniejszej
+      strony internetowej. Nie mogą Państwo ich tutaj wyłączyć, ponieważ w przeciwnym
+      razie usługa nie działałaby prawidłowo.
 
       '
     title: Świadczenie usług
   marketing:
-    description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu istotnych
+    description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu istotnych
       treści dotyczących produktów, usług lub tematów, którymi mogą być Państwo zainteresowani.
     title: Marketing
   performance:
-    description: 'Aplikacje te przetwarzają dane osobowe w celu optymalizacji usług
-      oferowanych przez tę stronę.
+    description: 'Usługi te przetwarzają dane osobowe w celu optymalizacji usług oferowanych
+      przez tę stronę.
 
       '
     title: Optymalizacja wydajności

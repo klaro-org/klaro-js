@@ -3,62 +3,62 @@ acceptAll: Accepteer alle
 acceptSelected: Geselecteerde
 app:
   disableAll:
-    description: Gebruik deze schakelaar om alle apps in of uit te schakelen.
-    title: Alle apps in- of uitschakelen
+    description: Gebruik deze schakelaar om alle diensten in of uit te schakelen.
+    title: Alle diensten in- of uitschakelen
   optOut:
-    description: Deze app wordt standaard geladen (maar u kunt zich afmelden)
+    description: Deze diensten worden standaard geladen (maar u kunt zich afmelden)
     title: (opt-out)
   purpose: Verwerkingsdoel
   purposes: Verwerkingsdoeleinden
   required:
-    description: Deze toepassing is altijd vereist
+    description: Deze diensten zijn altijd nodig
     title: (altijd nodig)
 close: Sluit
 consentModal:
-  description: Hier kunt u leren over de apps die we op deze site willen gebruiken
-    en uw toestemming aanpassen.
+  description: Hier kunt u de diensten die wij op deze website willen gebruiken beoordelen
+    en aanpassen. U heeft de leiding! Schakel de diensten naar eigen inzicht in of
+    uit.
   privacyPolicy:
     name: privacybeleid
     text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
-  title: Informatie die we verzamelen
+  title: Diensten die we graag willen gebruiken
 consentNotice:
   changeDescription: Er waren veranderingen sinds uw laatste bezoek, gelieve uw toestemming
-    bij te werken.
+    te hernieuwen.
   configure: configureren
-  description: 'Wij willen uw persoonlijke gegevens verwerken voor de volgende doeleinden:
-    {purposes}.'
+  description: Hallo, kunnen wij u een aantal extra diensten aanbieden voor {purposes}?
   imprint:
     name: impressum
-  learnMore: Aanpassen
+  learnMore: Laat me kiezen
   privacyPolicy:
     name: privacybeleid
   testing: Testmodus!
-decline: Daling
-ok: Accepteer
+decline: Ik weiger
+ok: Dat is oké
 poweredBy: Gerealiseerd met Klaro!
 purposeItem:
-  app: app
-  apps: apps
+  app: service
+  apps: diensten
 purposes:
   advertisement:
-    description: Deze apps verwerken persoonlijke informatie om u gepersonaliseerde
+    description: Deze diensten verwerken persoonlijke informatie om u gepersonaliseerde
       of op interesse gebaseerde advertenties te tonen.
     title: Advertenties
   functional:
-    description: 'Deze apps zijn essentieel voor het correct functioneren van deze
-      website. U kunt ze hier niet uitschakelen omdat de dienst anders niet goed zou
-      werken.
+    description: 'Deze diensten zijn essentieel voor het correct functioneren van
+      deze website. U kunt ze hier niet uitschakelen omdat de dienst anders niet correct
+      zou werken.
 
       '
     title: Dienstverlening
   marketing:
-    description: Deze apps verwerken persoonlijke informatie om u relevante content
-      te laten zien over producten, diensten of onderwerpen waarin u wellicht geïnteresseerd
-      bent.
+    description: Deze diensten verwerken persoonlijke informatie om u relevante inhoud
+      te tonen over producten, diensten of onderwerpen waarin u geïnteresseerd zou
+      kunnen zijn.
     title: Marketing
   performance:
-    description: 'Deze apps verwerken persoonlijke informatie om de service die deze
-      website biedt te optimaliseren.
+    description: 'Deze diensten verwerken persoonlijke informatie om de service die
+      deze website biedt te optimaliseren.
 
       '
     title: Optimalisatie van de prestaties

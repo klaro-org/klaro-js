@@ -78,7 +78,10 @@ def translate_struct(ref_lang, target_lang, ref_struct, target_struct, db, token
                 continue # translation is still up-to-date
             print(f"Translating {full_key} from {ref_lang} to {target_lang}...")
             try:
-                translation = deserialize_text(translate(serialize_text(v), ref_lang, target_lang, token))
+                if target_lang == ref_lang:
+                    translation = deserialize_text(serialize_text(v))
+                else:
+                    translation = deserialize_text(translate(serialize_text(v), ref_lang, target_lang, token))
             except:
                 print("Cannot translate, skipping...")
                 continue
@@ -127,6 +130,8 @@ REF_LANG = "en"
 TARGET_LANGS = ["es", "de", "fr", "pt", "it", "nl", "pl", "zh"]
 #TARGET_LANGS = ["de", "fr"]
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        TARGET_LANGS = sys.argv[1].split(",")
     if not TOKEN:
         sys.stderr.write(f"Please provide a DeepL token in the 'TOKEN' environment variable.\n")
         sys.exit(-1)

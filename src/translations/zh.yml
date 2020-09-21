@@ -3,53 +3,53 @@ acceptAll: 照单全收
 acceptSelected: 接受选择
 app:
   disableAll:
-    description: 使用此开关可启用或禁用所有应用程序。
-    title: 启用或关闭所有应用程序
+    description: 使用此开关可启用或禁用所有服务。
+    title: 启用或停用所有服务
   optOut:
-    description: 该应用程序默认加载（但您可以选择退出）。
+    description: 这个服务是默认加载的(但你可以选择退出)
     title: (选择退出)
   purpose: 目的
   purposes: 目的
   required:
-    description: 此项申请是必须的
+    description: 这种服务是必须的
     title: (总是需要)
 close: 密切
 consentModal:
-  description: 在这里，您可以了解我们希望在本网站上使用的应用程序，并自定义您的同意。
+  description: 在这里，您可以评估和定制我们希望在本网站上使用的服务。您是负责人！您可以根据自己的需要启用或禁用服务。启用或禁用您认为合适的服务。
   privacyPolicy:
     name: 隐私政策
     text: 要了解更多，请阅读我们的{privacyPolicy} 。
-  title: 我们收集的信息
+  title: 我们想使用的服务
 consentNotice:
-  changeDescription: 自上次访问后有变化，请更新您的同意书。
+  changeDescription: 自上次访问后有变化，请更新您的同意。
   configure: 配置
-  description: 我们将出于以下目的处理您的个人信息：{purposes} 。
+  description: 你好！能不能为{purposes} 启用一些附加服务？
   imprint:
     name: 印记
-  learnMore: 自定义
+  learnMore: 让我来选
   privacyPolicy:
     name: 隐私政策
   testing: 测试模式！
-decline: 衰落
-ok: 接受
+decline: 我拒绝
+ok: 没事的
 poweredBy: 与Klaro一起实现!
 purposeItem:
-  app: 应用程序
-  apps: 应用程序
+  app: 服务
+  apps: 服务
 purposes:
   advertisement:
-    description: 这些应用程序处理个人信息，向你展示个性化或基于兴趣的广告。
+    description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。
     title: 广告
   functional:
-    description: '这些应用程序对于本网站的正常运行是必不可少的。您不能在这里禁用它们，否则服务将无法正常运行。
+    description: '这些服务对于本网站的正常运行是必不可少的。您不能在这里禁用它们，否则服务将无法正常运行。
 
       '
     title: 服务提供
   marketing:
-    description: 这些应用程序处理个人信息，向你展示你可能感兴趣的产品、服务或主题的相关内容。
+    description: 这些服务会处理个人信息，向您展示您可能感兴趣的产品、服务或主题的相关内容。
     title: 市场营销
   performance:
-    description: '这些应用程序处理个人信息以优化本网站提供的服务。
+    description: '这些服务处理个人信息是为了优化本网站提供的服务。
 
       '
     title: 性能优化

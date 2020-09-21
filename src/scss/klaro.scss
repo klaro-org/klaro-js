@@ -138,7 +138,8 @@
                 .cm-powered-by {
                     font-size: 0.8em;
                     padding-top: 4px;
-                    text-align: center;
+                    text-align: right;
+                    padding-right: 8px;
 
                     a {
                         color: $cm-font-color-dark-deemphasized;
@@ -254,7 +255,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            max-width: 360px;
+            max-width: 400px;
         }
 
         @media (max-width: ($cm-desktop - 1)) {
@@ -322,7 +323,7 @@
                 flex-flow: row;
                 flex-wrap: wrap;
                 justify-content: right;
-                align-items: center;
+                align-items: baseline;
 
                 a,
                 div {

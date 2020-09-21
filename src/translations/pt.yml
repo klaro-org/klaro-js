@@ -3,63 +3,63 @@ acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
 app:
   disableAll:
-    description: Use essa chave para habilitar ou desabilitar todas as aplicações.
-    title: Habilitar ou desabilitar todas as aplicações
+    description: Use essa chave para habilitar ou desabilitar todos os serviços.
+    title: Habilitar ou desabilitar todos os serviços
   optOut:
-    description: Este aplicativo é carregado por padrão (mas o senhor pode optar por
-      não participar)
+    description: Estes serviços são carregados por padrão (mas o senhor pode optar
+      por não participar).
     title: (opt-out)
   purpose: Objetivo
   purposes: Fins
   required:
-    description: Este pedido é sempre necessário
+    description: Esses serviços são sempre necessários
     title: (sempre necessário)
 close: Fechar
 consentModal:
-  description: Aqui o senhor pode tomar conhecimento dos aplicativos que gostaríamos
-    de usar neste site e personalizar o seu consentimento.
+  description: Aqui o senhor pode avaliar e personalizar os serviços que gostaríamos
+    de usar neste website. O senhor está no comando! Habilite ou desabilite os serviços
+    como o senhor julgar conveniente.
   privacyPolicy:
     name: política de privacidade
     text: Para saber mais, por favor, leia nossa {privacyPolicy}.
-  title: Informações que coletamos
+  title: Serviços que gostaríamos de utilizar
 consentNotice:
-  changeDescription: Houve mudanças desde sua última visita, queira atualizar seu
-    consentimento.
+  changeDescription: Houve mudanças desde sua última visita, queira renovar seu consentimento.
   configure: configurar
-  description: 'Gostaríamos de processar suas informações pessoais para os seguintes
-    propósitos: {purposes}.'
+  description: Olá! Poderíamos, por favor, habilitar alguns serviços adicionais para
+    {purposes}?
   imprint:
     name: imprimir
-  learnMore: Personalizar
+  learnMore: Deixe-me escolher
   privacyPolicy:
     name: política de privacidade
   testing: Modo de teste!
-decline: Declínio
-ok: Aceitar
+decline: Recuso-me
+ok: Está tudo bem.
 poweredBy: Realizado com Klaro!
 purposeItem:
-  app: aplicativo
-  apps: aplicações
+  app: serviço
+  apps: serviços
 purposes:
   advertisement:
-    description: Essas aplicações processam informações pessoais para mostrar ao senhor
+    description: Esses serviços processam informações pessoais para mostrar ao senhor
       anúncios personalizados ou baseados em interesses.
     title: Anúncios
   functional:
-    description: 'Essas aplicações são essenciais para o correto funcionamento deste
+    description: 'Esses serviços são essenciais para o correto funcionamento deste
       website. O senhor não pode desativá-los aqui, pois de outra forma o serviço
       não funcionaria corretamente.
 
       '
     title: Prestação de serviços
   marketing:
-    description: Essas aplicações processam informações pessoais para mostrar ao senhor
-      conteúdo relevante sobre produtos, serviços ou tópicos que possam ser de seu
+    description: Esses serviços processam informações pessoais para mostrar ao senhor
+      conteúdo relevante sobre produtos, serviços ou tópicos que possam ser do seu
       interesse.
     title: Marketing
   performance:
-    description: 'Essas aplicações processam informações pessoais para otimizar o
-      serviço que este website oferece.
+    description: 'Esses serviços processam informações pessoais para otimizar o serviço
+      que este website oferece.
 
       '
     title: Otimização do desempenho

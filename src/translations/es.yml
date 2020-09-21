@@ -3,61 +3,59 @@ acceptAll: Aceptar todo
 acceptSelected: Aceptar seleccionados
 app:
   disableAll:
-    description: Utilice este interruptor para activar o desactivar todas las aplicaciones.
-    title: Activar o desactivar todas las aplicaciones
+    description: Utilice este interruptor para activar o desactivar todos los servicios.
+    title: Activar o desactivar todos los servicios
   optOut:
-    description: Esta aplicación está cargada por defecto (pero puedes optar por no
-      hacerlo)
+    description: Este servicio está cargado por defecto (pero puede optar por no hacerlo)
     title: (opt-out)
   purpose: de
   purposes: Fines
   required:
-    description: Esta solicitud siempre se requiere
+    description: Este servicio es siempre necesario
     title: (siempre requerido)
 close: Cerrar
 consentModal:
-  description: Aquí puedes conocer las aplicaciones que nos gustaría usar en este
-    sitio y personalizar tu consentimiento.
+  description: Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar
+    en este sitio web. ¡Usted está a cargo! Habilite o deshabilite los servicios como
+    considere oportuno.
   privacyPolicy:
     name: política de privacidad
     text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
-  title: La información que recogemos
+  title: Servicios que nos gustaría utilizar
 consentNotice:
-  changeDescription: Hubo cambios desde su última visita, por favor, actualice su
-    consentimiento.
+  changeDescription: Hubo cambios desde su última visita, por favor, renueve su consentimiento.
   configure: configurar
-  description: 'Nos gustaría procesar su información personal para los siguientes
-    propósitos: {purposes}.'
+  description: ¡Hola! ¿Podríamos habilitar algunos servicios adicionales para {purposes}?
   imprint:
     name: Imprimir
-  learnMore: Personalizar
+  learnMore: Déjame elegir
   privacyPolicy:
     name: política de privacidad
   testing: ¡Modo de prueba!
-decline: Declive
-ok: Aceptar
+decline: Me niego
+ok: Está bien.
 poweredBy: Realizado con Klaro!
 purposeItem:
-  app: aplicación
-  apps: aplicaciones
+  app: servicio
+  apps: servicios
 purposes:
   advertisement:
-    description: Estas aplicaciones procesan la información personal para mostrarte
-      anuncios personalizados o basados en intereses.
+    description: Estos servicios procesan la información personal para mostrarle anuncios
+      personalizados o basados en intereses.
     title: Anuncios
   functional:
-    description: 'Estas aplicaciones son esenciales para el correcto funcionamiento
-      de este sitio web. No puede desactivarlas aquí ya que el servicio no funcionaría
+    description: 'Estos servicios son esenciales para el correcto funcionamiento de
+      este sitio web. No puede desactivarlos aquí ya que el servicio no funcionaría
       correctamente de otra manera.
 
       '
     title: Prestación de servicios
   marketing:
-    description: Estas aplicaciones procesan la información personal para mostrarle
-      contenido relevante sobre productos, servicios o temas que puedan interesarle.
+    description: Estos servicios procesan la información personal para mostrarle contenido
+      relevante sobre productos, servicios o temas que puedan interesarle.
     title: Marketing
   performance:
-    description: 'Estas aplicaciones procesan la información personal para optimizar
+    description: 'Estos servicios procesan la información personal para optimizar
       el servicio que ofrece este sitio web.
 
       '
