@@ -16,7 +16,8 @@ app:
     title: (siempre requerido)
 close: Cerrar
 consentModal:
-  description: Aquí puede ver y personalizar la información que recogemos sobre usted.
+  description: Aquí puedes conocer las aplicaciones que nos gustaría usar en este
+    sitio y personalizar tu consentimiento.
   privacyPolicy:
     name: política de privacidad
     text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
@@ -25,7 +26,7 @@ consentNotice:
   changeDescription: Hubo cambios desde su última visita, por favor, actualice su
     consentimiento.
   configure: configurar
-  description: 'Recopilamos y procesamos su información personal para los siguientes
+  description: 'Nos gustaría procesar su información personal para los siguientes
     propósitos: {purposes}.'
   imprint:
     name: Imprimir
@@ -43,25 +44,22 @@ purposes:
   advertisement:
     description: Estas aplicaciones procesan la información personal para mostrarte
       anuncios personalizados o basados en intereses.
-    title: Anuncio
+    title: Anuncios
   functional:
-    description: 'Estas aplicaciones procesan la información personal para asegurar
-      el correcto funcionamiento de este sitio web. Por ejemplo, almacenan su información
-      de inicio de sesión, su cesta de la compra o garantizan la seguridad y estabilidad
-      del sitio web mediante la detección de actividades anómalas de los usuarios.
+    description: 'Estas aplicaciones son esenciales para el correcto funcionamiento
+      de este sitio web. No puede desactivarlas aquí ya que el servicio no funcionaría
+      correctamente de otra manera.
 
       '
-    title: Funcional
+    title: Prestación de servicios
   marketing:
     description: Estas aplicaciones procesan la información personal para mostrarle
       contenido relevante sobre productos, servicios o temas que puedan interesarle.
     title: Marketing
   performance:
     description: 'Estas aplicaciones procesan la información personal para optimizar
-      el servicio que ofrece este sitio web. Por ejemplo, permiten al operador del
-      sitio web detectar y solucionar posibles problemas de la interfaz del usuario,
-      mejorar la experiencia del usuario y optimizar los procesos comerciales.
+      el servicio que ofrece este sitio web.
 
       '
-    title: Optimización del rendimiento y análisis
+    title: Optimización del rendimiento
 save: Guardar

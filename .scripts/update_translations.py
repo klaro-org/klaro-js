@@ -46,7 +46,7 @@ def deserialize_struct(struct, translated=False):
     return process_filters(struct)
 
 filtermap = {
-    'capitalize' : lambda v : v.capitalize(),
+    'capitalize' : lambda v : " ".join([vv.capitalize() if i == 0 else vv for (i, vv) in enumerate(v.split(" ")) ]),
 }
 
 def process_filters(struct):

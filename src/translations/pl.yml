@@ -15,8 +15,8 @@ app:
     title: (zawsze wymagane)
 close: Blisko
 consentModal:
-  description: Tutaj mogą Państwo zobaczyć i dostosować informacje, które gromadzimy
-    na Państwa temat.
+  description: Tutaj mogą Państwo dowiedzieć się o aplikacjach, z których chcielibyśmy
+    korzystać na tej stronie i dostosować swoją zgodę.
   privacyPolicy:
     name: polityka prywatności
     text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
@@ -25,7 +25,7 @@ consentNotice:
   changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, proszę zaktualizować
     swoją zgodę.
   configure: skonfigurować
-  description: 'Zbieramy i przetwarzamy Państwa dane osobowe w następujących celach:
+  description: 'Pragniemy przetwarzać Państwa dane osobowe dla następujących celów:
     {purposes}.'
   imprint:
     name: odcisk
@@ -43,25 +43,22 @@ purposes:
   advertisement:
     description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
       lub opartych na zainteresowaniach ogłoszeń.
-    title: Reklama
+    title: Ogłoszenia
   functional:
-    description: 'Aplikacje te przetwarzają dane osobowe w celu zapewnienia prawidłowego
-      funkcjonowania niniejszej strony internetowej. Aplikacje te np. przechowują
-      Państwa dane logowania, Państwa koszyk zakupów lub zapewniają bezpieczeństwo
-      i stabilność strony internetowej poprzez wykrywanie anomalii w aktywności użytkowników.
+    description: 'Aplikacje te są niezbędne do prawidłowego funkcjonowania tej strony
+      internetowej. Nie mogą Państwo ich tutaj wyłączyć, ponieważ w przeciwnym razie
+      serwis nie działałby prawidłowo.
 
       '
-    title: Funkcjonalny
+    title: Świadczenie usług
   marketing:
     description: Aplikacje te przetwarzają dane osobowe w celu pokazania Państwu istotnych
       treści dotyczących produktów, usług lub tematów, którymi mogą być Państwo zainteresowani.
     title: Marketing
   performance:
     description: 'Aplikacje te przetwarzają dane osobowe w celu optymalizacji usług
-      oferowanych przez tę stronę. Umożliwiają one np. operatorowi strony internetowej
-      wykrywanie i rozwiązywanie potencjalnych problemów z interfejsem użytkownika,
-      poprawę doświadczenia użytkownika i optymalizację procesów biznesowych.
+      oferowanych przez tę stronę.
 
       '
-    title: Optymalizacja wydajności i analiza
+    title: Optymalizacja wydajności
 save: Z wyjątkiem

@@ -15,8 +15,8 @@ app:
     title: (toujours requis)
 close: Fermer
 consentModal:
-  description: Ici, vous pouvez voir et personnaliser les informations que nous recueillons
-    à votre sujet.
+  description: Ici, vous pouvez vous renseigner sur les applications que nous aimerions
+    utiliser sur ce site et personnaliser votre consentement.
   privacyPolicy:
     name: politique de confidentialité
     text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
@@ -25,8 +25,8 @@ consentNotice:
   changeDescription: Il y a eu des changements depuis votre dernière visite, veuillez
     mettre à jour votre consentement.
   configure: configurer
-  description: 'Nous recueillons et traitons vos informations personnelles aux fins
-    suivantes : {purposes}.'
+  description: 'Nous aimerions traiter vos informations personnelles aux fins suivantes
+    : {purposes}.'
   imprint:
     name: mentions légales
   learnMore: Personnaliser
@@ -43,15 +43,14 @@ purposes:
   advertisement:
     description: Ces applications traitent des informations personnelles pour vous
       présenter des publicités personnalisées ou basées sur des intérêts.
-    title: Publicité
+    title: Annonces publicitaires
   functional:
-    description: 'Ces applications traitent des informations personnelles pour assurer
-      le bon fonctionnement de ce site. Elles stockent par exemple vos informations
-      de connexion, votre panier d''achat ou assurent la sécurité et la stabilité
-      du site en détectant les activités anormales des utilisateurs.
+    description: 'Ces applications sont indispensables au bon fonctionnement de ce
+      site. Vous ne pouvez pas les désactiver ici car le service ne fonctionnerait
+      pas correctement autrement.
 
       '
-    title: Fonctionnel
+    title: Prestation de services
   marketing:
     description: Ces applications traitent les informations personnelles pour vous
       présenter un contenu pertinent sur des produits, des services ou des sujets
@@ -59,11 +58,8 @@ purposes:
     title: Marketing
   performance:
     description: 'Ces applications traitent les informations personnelles afin d''optimiser
-      le service offert par ce site. Elles permettent par exemple à l''opérateur du
-      site web de détecter et de corriger les problèmes potentiels de l''interface
-      utilisateur, d''améliorer l''expérience de l''utilisateur et d''optimiser les
-      processus commerciaux.
+      le service offert par ce site.
 
       '
-    title: Optimisation et analyse de la performance
+    title: Optimisation de la performance
 save: Enregistrer

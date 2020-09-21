@@ -17,8 +17,8 @@ app:
     title: (sempre richiesto)
 close: Chiudi
 consentModal:
-  description: Qui può vedere e personalizzare le informazioni che raccogliamo su
-    di lei.
+  description: Qui potrà conoscere le applicazioni che vorremmo utilizzare su questo
+    sito e personalizzare il suo consenso.
   privacyPolicy:
     name: informativa sulla privacy
     text: Per saperne di più, legga la nostra {privacyPolicy}.
@@ -27,7 +27,7 @@ consentNotice:
   changeDescription: Ci sono stati dei cambiamenti rispetto alla sua ultima visita,
     la preghiamo di aggiornare il suo consenso.
   configure: configurare
-  description: 'Raccogliamo ed elaboriamo i suoi dati personali per le seguenti finalità:
+  description: 'Desideriamo trattare i suoi dati personali per le seguenti finalità:
     {purposes}.'
   imprint:
     name: impronta
@@ -45,25 +45,22 @@ purposes:
   advertisement:
     description: Queste applicazioni elaborano le informazioni personali per mostrare
       annunci pubblicitari personalizzati o basati su interessi.
-    title: Pubblicità
+    title: Annunci
   functional:
-    description: 'Queste applicazioni elaborano le informazioni personali per garantire
-      il corretto funzionamento di questo sito web. Esse memorizzano ad esempio i
-      dati di accesso, il suo carrello o garantiscono la sicurezza e la stabilità
-      del sito web rilevando le attività anomale dell''utente.
+    description: 'Queste applicazioni sono essenziali per il corretto funzionamento
+      di questo sito web. Non può disattivarle qui, perché altrimenti il servizio
+      non funzionerebbe correttamente.
 
       '
-    title: Funzionale
+    title: Fornitura di servizi
   marketing:
     description: Queste applicazioni elaborano le informazioni personali per mostrarle
       contenuti rilevanti su prodotti, servizi o argomenti che potrebbero interessarla.
     title: Marketing
   performance:
     description: 'Queste applicazioni elaborano le informazioni personali per ottimizzare
-      il servizio offerto da questo sito web. Consentono ad esempio al gestore del
-      sito web di rilevare e risolvere potenziali problemi di interfaccia utente,
-      migliorare l''esperienza dell''utente e ottimizzare i processi aziendali.
+      il servizio offerto da questo sito web.
 
       '
-    title: Ottimizzazione delle prestazioni e analisi
+    title: Ottimizzazione delle prestazioni
 save: Salva

@@ -16,8 +16,8 @@ app:
     title: (sempre necessário)
 close: Fechar
 consentModal:
-  description: Aqui o senhor pode ver e personalizar as informações que coletamos
-    a seu respeito.
+  description: Aqui o senhor pode tomar conhecimento dos aplicativos que gostaríamos
+    de usar neste site e personalizar o seu consentimento.
   privacyPolicy:
     name: política de privacidade
     text: Para saber mais, por favor, leia nossa {privacyPolicy}.
@@ -26,7 +26,7 @@ consentNotice:
   changeDescription: Houve mudanças desde sua última visita, queira atualizar seu
     consentimento.
   configure: configurar
-  description: 'Coletamos e processamos suas informações pessoais para os seguintes
+  description: 'Gostaríamos de processar suas informações pessoais para os seguintes
     propósitos: {purposes}.'
   imprint:
     name: imprimir
@@ -44,15 +44,14 @@ purposes:
   advertisement:
     description: Essas aplicações processam informações pessoais para mostrar ao senhor
       anúncios personalizados ou baseados em interesses.
-    title: Anúncio
+    title: Anúncios
   functional:
-    description: 'Essas aplicações processam informações pessoais para assegurar o
-      correto funcionamento deste website. Eles, por exemplo, armazenam suas informações
-      de login, sua cesta de compras ou asseguram a segurança e estabilidade do website,
-      detectando atividades anômalas do usuário.
+    description: 'Essas aplicações são essenciais para o correto funcionamento deste
+      website. O senhor não pode desativá-los aqui, pois de outra forma o serviço
+      não funcionaria corretamente.
 
       '
-    title: Funcional
+    title: Prestação de serviços
   marketing:
     description: Essas aplicações processam informações pessoais para mostrar ao senhor
       conteúdo relevante sobre produtos, serviços ou tópicos que possam ser de seu
@@ -60,10 +59,8 @@ purposes:
     title: Marketing
   performance:
     description: 'Essas aplicações processam informações pessoais para otimizar o
-      serviço que este website oferece. Eles, por exemplo, permitem ao operador do
-      website detectar e corrigir potenciais problemas de interface com o usuário,
-      melhorar a experiência do usuário e otimizar os processos de negócios.
+      serviço que este website oferece.
 
       '
-    title: Otimização e análise de desempenho
+    title: Otimização do desempenho
 save: Exceto

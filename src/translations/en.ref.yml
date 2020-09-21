@@ -1,13 +1,13 @@
 consentModal:
     title: Information that we collect
-    description: Here you can see and customize the information that we collect about you.
+    description: Here you can learn about the apps that we'd like to use on this site and customize your consent.
     privacyPolicy:
         name: privacy policy
         text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentNotice:
     testing: Testing mode!
     changeDescription: There were changes since your last visit, please update your consent.
-    description: 'We collect and process your personal information for the following purposes: {purposes}.'
+    description: "We'd like to process your personal information for the following purposes: {purposes}."
     learnMore|capitalize: Here you can <tr-snip>customize</tr-snip> your choices, if you like.
     configure: Here you can <tr-snip>configure</tr-snip> your choices.
     privacyPolicy:
@@ -16,18 +16,18 @@ consentNotice:
         name: imprint
 purposes:
     functional:
-        title|capitalize: Functional
+        title|capitalize: Service Provision
         description: |
-            These apps process personal information to ensure the correct functioning of this website. They e.g. store your login information, your shopping basket or ensure the security and stability of the website by detecting anomalous user activity.
+            These apps are essential for the correct functioning of this website. You cannot disable them here as the service would not work correctly otherwise.
     performance:
-        title|capitalize: Performance optimization & analytics
+        title|capitalize: Performance Optimization
         description: |
-          These apps process personal information to optimize the service that this website offers. They e.g. allow the website operator to detect and fix potential user-interface problems, improve the user experience and optimize business processes.
+          These apps process personal information to optimize the service that this website offers.
     marketing:
         title|capitalize: Marketing
         description: These apps process personal information to show you relevant content about products, services or topics that you might be interested in. 
     advertisement:
-        title|capitalize: Advertisement
+        title|capitalize: Advertisements
         description: These apps process personal information to show you personalized or interest-based advertisements.
 purposeItem:
     # we give some additional context for the translation API so it can pick the right word

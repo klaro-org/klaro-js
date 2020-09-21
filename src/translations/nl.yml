@@ -15,7 +15,8 @@ app:
     title: (altijd nodig)
 close: Sluit
 consentModal:
-  description: Hier kunt u de informatie die wij over u verzamelen zien en aanpassen.
+  description: Hier kunt u leren over de apps die we op deze site willen gebruiken
+    en uw toestemming aanpassen.
   privacyPolicy:
     name: privacybeleid
     text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
@@ -24,8 +25,8 @@ consentNotice:
   changeDescription: Er waren veranderingen sinds uw laatste bezoek, gelieve uw toestemming
     bij te werken.
   configure: configureren
-  description: 'Wij verzamelen en verwerken uw persoonlijke gegevens voor de volgende
-    doeleinden: {purposes}.'
+  description: 'Wij willen uw persoonlijke gegevens verwerken voor de volgende doeleinden:
+    {purposes}.'
   imprint:
     name: impressum
   learnMore: Aanpassen
@@ -42,15 +43,14 @@ purposes:
   advertisement:
     description: Deze apps verwerken persoonlijke informatie om u gepersonaliseerde
       of op interesse gebaseerde advertenties te tonen.
-    title: Advertentie
+    title: Advertenties
   functional:
-    description: 'Deze apps verwerken persoonlijke informatie om de correcte werking
-      van deze website te garanderen. Ze slaan bijvoorbeeld uw inloggegevens op, uw
-      winkelmandje of zorgen voor de veiligheid en stabiliteit van de website door
-      het detecteren van afwijkende gebruikersactiviteit.
+    description: 'Deze apps zijn essentieel voor het correct functioneren van deze
+      website. U kunt ze hier niet uitschakelen omdat de dienst anders niet goed zou
+      werken.
 
       '
-    title: Functioneel
+    title: Dienstverlening
   marketing:
     description: Deze apps verwerken persoonlijke informatie om u relevante content
       te laten zien over producten, diensten of onderwerpen waarin u wellicht geïnteresseerd
@@ -58,11 +58,8 @@ purposes:
     title: Marketing
   performance:
     description: 'Deze apps verwerken persoonlijke informatie om de service die deze
-      website biedt te optimaliseren. Ze stellen de beheerder van de website bijvoorbeeld
-      in staat om potentiële problemen met de gebruikersinterface op te sporen en
-      te verhelpen, de gebruikerservaring te verbeteren en de bedrijfsprocessen te
-      optimaliseren.
+      website biedt te optimaliseren.
 
       '
-    title: Prestatie-optimalisatie & analyse
+    title: Optimalisatie van de prestaties
 save: Opslaan

@@ -121,7 +121,7 @@ export default class ConsentNotice extends React.Component {
                 type="button"
                 onClick={this.acceptAndHide}
             >
-                {t(['acceptAll'])}
+                {t(['ok'])}
             </button>
         ) : (
             <button

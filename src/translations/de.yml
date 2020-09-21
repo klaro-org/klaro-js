@@ -16,8 +16,8 @@ app:
     title: (immer erforderlich)
 close: Schließen
 consentModal:
-  description: Hier können Sie die Informationen, die wir über Sie sammeln, einsehen
-    und anpassen.
+  description: Hier können Sie sich über die Anwendungen informieren, die wir auf
+    dieser Site verwenden möchten, und Ihre Zustimmung anpassen.
   privacyPolicy:
     name: Datenschutzerklärung
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
@@ -26,8 +26,8 @@ consentNotice:
   changeDescription: Seit Ihrem letzten Besuch gab es Änderungen, bitte aktualisieren
     Sie Ihre Zustimmung.
   configure: konfigurieren
-  description: 'Wir sammeln und verarbeiten Ihre persönlichen Daten für die folgenden
-    Zwecke: {purposes}.'
+  description: 'Wir möchten Ihre persönlichen Daten für die folgenden Zwecke verarbeiten:
+    {purposes}.'
   imprint:
     name: Impressum
   learnMore: Anpassen
@@ -42,17 +42,16 @@ purposeItem:
   apps: Anwendungen
 purposes:
   advertisement:
-    description: Diese Anwendungen verarbeiten persönliche Informationen, um Ihnen
-      personalisierte oder interessenbezogene Werbung zu zeigen.
-    title: Anzeigenerstellung
+    description: Diese Anwendungen verarbeiten persönliche Daten, um Ihnen personalisierte
+      oder interessenbezogene Werbung zu zeigen.
+    title: Anzeigen
   functional:
-    description: 'Diese Anwendungen verarbeiten persönliche Daten, um das korrekte
-      Funktionieren dieser Website zu gewährleisten. Sie speichern z.B. Ihre Anmeldedaten,
-      Ihren Warenkorb oder gewährleisten die Sicherheit und Stabilität der Website,
-      indem sie anomale Benutzeraktivitäten erkennen.
+    description: 'Diese Anwendungen sind für das korrekte Funktionieren dieser Website
+      unerlässlich. Sie können hier nicht deaktiviert werden, da der Dienst sonst
+      nicht richtig funktionieren würde.
 
       '
-    title: Funktionell
+    title: Dienstbereitstellung
   marketing:
     description: Diese Anwendungen verarbeiten persönliche Daten, um Ihnen relevante
       Inhalte über Produkte, Dienstleistungen oder Themen zu zeigen, die für Sie von
@@ -60,10 +59,8 @@ purposes:
     title: Marketing
   performance:
     description: 'Diese Anwendungen verarbeiten persönliche Daten, um den auf dieser
-      Website angebotenen Service zu optimieren. Sie ermöglichen es z.B. dem Website-Betreiber,
-      potenzielle Probleme mit der Benutzeroberfläche zu erkennen und zu beheben,
-      die Benutzererfahrung zu verbessern und Geschäftsprozesse zu optimieren.
+      Website angebotenen Service zu optimieren.
 
       '
-    title: Leistungsoptimierung und -analyse
+    title: Optimierung der Leistung
 save: Speichern
