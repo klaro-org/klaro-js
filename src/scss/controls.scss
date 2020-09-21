@@ -61,6 +61,11 @@
             padding: map-get($cm-space, md);
             cursor: pointer;
 
+            p {
+                color: $cm-font-color-dark-deemphasized;
+                font-size: 14px;
+            }
+
             &:last-child {
                 border-bottom: 0;
             }

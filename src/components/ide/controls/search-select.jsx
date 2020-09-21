@@ -10,6 +10,12 @@ export const SearchSelect = ({search, label, description, onSelect, setSearch, c
             className="cm-candidate"
         >
             {candidate.value}
+            {
+                candidate.description &&
+                <p>
+                    {candidate.description}
+                </p>
+            }
         </li>
     ));
 

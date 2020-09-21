@@ -6,16 +6,17 @@ export const PurposeSelect = ({field, prefix, config, t, updateConfig}) => {
     const [updated, setUpdated] = useState(false)
     const purposes = t.tv.purposes
     const existingPurposes = new Set(config[field.name])
-    const generateInitialPurposes = () => Array.from(Object.entries(purposes)).filter(([k,]) => !existingPurposes.has(k)).map(([k, v]) => ({name: k, value: t.lang === 'en' ?  `${v.en}` : `${v.en} - ${t(['purposes', k+'?'])}`}))
+    const generateInitialPurposes = () => Array.from(Object.entries(purposes)).filter(([k,]) => !existingPurposes.has(k)).map(([k, v]) => ({name: k, description: t(['purposes', k, 'description']), value: t.lang === 'en' ?  `${v.title.en}` : `${v.title.en} - ${t(['purposes', k, 'title'])}`}))
     const [candidates, setCandidates] = useState(generateInitialPurposes())
     const updateSearch = (value) => {
-        const candidatePurposes = Array.from(Object.entries(purposes)).filter(([k, v]) => !existingPurposes.has(k) && (v.en.toLowerCase().includes(search.toLowerCase()) || t(['purposes', k]).toLowerCase().includes(search.toLowerCase())))
-        let candidates = candidatePurposes.map(cl => ({name: cl[0], value: `${cl[1].en} - ${t(['purposes', cl[0]+'?'])}`}))
-        if (candidates.length > 10 || value === '')
+        const candidatePurposes = Array.from(Object.entries(purposes)).filter(([k, v]) => !existingPurposes.has(k) && (value === '' || k.toLowerCase().includes(search.toLowerCase()) || t(['purposes', k, 'title']).toLowerCase().includes(search.toLowerCase())))
+        let candidates = candidatePurposes.map(cl => ({name: cl[0], description: t(['purposes', cl[0], 'description']), value: `${cl[1].title.en} - ${t(['purposes', cl[0], 'title'])}`}))
+        if (candidates.length > 10)
             candidates = []
         if (value !== '')
-            candidates.push({name: value, value: `${value} (${t(['purpose', 'add'])})`})
+            candidates.push({name: value, description: t(['purpose', 'descriptionNotice']), value: `${value} (${t(['purpose', 'add'])})`})
         setCandidates(candidates)
+        console.log(value)
         setSearch(value)
     }
 

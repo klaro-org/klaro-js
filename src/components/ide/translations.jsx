@@ -11,20 +11,42 @@ function getValue(t, lang, key){
     return dt
 }
 
+function getFallbackValue(tv, lang, key){
+    let dt = tv
+    for(const k of key){
+        if (dt === undefined)
+            break
+        dt = dt[k]
+    }
+    if (dt !== undefined)
+        dt = dt[lang]
+    return dt    
+}
+
 export const TranslationsForKey = ({hintKey, translationKey, noDefault, onChange, name, translations, languages, t, config}) => {
     /*
     Here we list the different translations
     */
     const allLanguages = [...(noDefault ? [] : ['zz']),...languages]
     const items = allLanguages.map(language => {
+        const value = getValue(translations , language, translationKey)
+        const fallbackValue = getFallbackValue(t.tv , language, translationKey)
+        const isDefault = (value && value === fallbackValue) || ((!value) && fallbackValue !== undefined)
+        const changeValue = (v) => {
+            if (v === fallbackValue || v === ''){
+                onChange(language, undefined)
+            }
+            else
+                onChange(language, v)
+        }
         const description = t(['translations', ...hintKey, language === 'zz' ? 'defaultDescription' : 'description'], {name: name, language: t(['languages', language])})
         const label = t(['translations', ...hintKey, language === 'zz' ? 'defaultLabel' : 'label'], {name: name, language: t(['languages', language])})
         return <li key={language}>
             <span className="cm-lang">{language !== 'zz' ? language : '_'}</span>
             <BaseRetractingLabelInput
-                onChange={(value) => onChange(language, value)}
-                label={label}
-                value={getValue(translations, language, translationKey) || ''}
+                onChange={changeValue}
+                label={[...label, ...(isDefault ? [' ',...t(['translations', 'defaultValue'])] : [])]}
+                value={value || fallbackValue || ''}
                 description={description}/>
         </li>
     })
