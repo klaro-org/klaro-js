@@ -35,7 +35,6 @@ export const Demo = ({t: ttt, config}) => {
     const [show, setShow] = useState(0) 
     const [siteUrl, setSiteUrl] = useState('')
     const [lang, setLang] = useState(config.config.languages > 0 ? config.config.languages[0] : 'en')
-    const [modal, setModal] = useState(false) 
     const [testStore, setTestStore] = useState(new TestStore())
     const auxiliaryTestStore = new TestStore()
     const manager = new ConsentManager(config.config, testStore, auxiliaryTestStore);
@@ -67,11 +66,8 @@ export const Demo = ({t: ttt, config}) => {
                 <button className="cm-control-button cm-secondary" onClick={() => {setTestStore(new TestStore());setShow(show + 1);setModal(false)}}>
                     {ttt(['demo', 'reset'])}
                 </button>
-                <button className="cm-control-button" onClick={() => {setShow(show+1);setModal(false)}}>
-                    {ttt(['demo', 'showNotice'])}
-                </button>
-                <button className="cm-control-button" onClick={() => {setShow(show+1);setModal(true)}}>
-                    {ttt(['demo', 'showModal'])}
+                <button className="cm-control-button" onClick={() => {setShow(show+1)}}>
+                    {ttt(['demo', 'showManager'])}
                 </button>
             </div>
         </div>
@@ -79,7 +75,6 @@ export const Demo = ({t: ttt, config}) => {
             lang={lang}
             manager={manager}
             config={config.config}
-            modal={modal}
             show={show}
         />
     </div>

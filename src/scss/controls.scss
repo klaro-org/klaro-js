@@ -205,6 +205,11 @@ p.cm-description {
         color: #888;
         background: #fff;
         text-indent: 5px;
+
+        &[disabled] {
+            background-color: $cm-gray-light;
+        }
+
     }
 }
 
@@ -255,6 +260,6 @@ p.cm-description {
     width: 100%;
 
     &[disabled] {
-        background-color: $cm-gray-medium;
+        background-color: $cm-gray-light;
     }
 }

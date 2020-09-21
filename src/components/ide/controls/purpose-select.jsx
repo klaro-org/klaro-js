@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SearchSelect } from './search-select';
 
-export const PurposeSelect = ({field, prefix, config, t, updateConfig}) => {
+export const PurposeSelect = ({field, disabled, prefix, config, t, updateConfig}) => {
     const [search, setSearch] = useState('')
     const [updated, setUpdated] = useState(false)
     const purposes = t.tv.purposes
@@ -45,6 +45,6 @@ export const PurposeSelect = ({field, prefix, config, t, updateConfig}) => {
         <ul className="cm-purposes">
             {purposeItems}
         </ul>
-        <SearchSelect search={search} onSelect={selectPurpose} setSearch={updateSearch} candidates={candidates} label={t(['fields', ...(prefix || []), field.name, 'label'])} description={t(['fields', ...(prefix || []), field.name, 'description'])} />
+        <SearchSelect disabled={disabled} search={search} onSelect={selectPurpose} setSearch={updateSearch} candidates={candidates} label={t(['fields', ...(prefix || []), field.name, 'label'])} description={t(['fields', ...(prefix || []), field.name, 'description'])} />
     </div>
 }

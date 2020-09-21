@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SearchSelect } from './search-select';
 
-export const LanguageSelect = ({field, config, prefix, t, updateConfig}) => {
+export const LanguageSelect = ({field, disabled, config, prefix, t, updateConfig}) => {
     const [search, setSearch] = useState('')
     const languages = t.tv.languages
     const generateInitialCandidates = () => Array.from(Object.entries(languages)).filter(([k,])=> !config[field.name].includes(k)).map(([k,v]) => ({name: k, value: `${v.en} - ${v[k]} (${k})`}))
@@ -43,6 +43,6 @@ export const LanguageSelect = ({field, config, prefix, t, updateConfig}) => {
         <ul className="cm-languages">
             {languageItems}
         </ul>
-        <SearchSelect search={search} onSelect={selectLanguage} setSearch={updateSearch} candidates={candidates} label={t(['fields', ...(prefix || []), field.name, 'label'])} description={t(['fields', ...(prefix || []), field.name, 'description'])} />
+        <SearchSelect disabled={disabled} search={search} onSelect={selectLanguage} setSearch={updateSearch} candidates={candidates} label={t(['fields', ...(prefix || []), field.name, 'label'])} description={t(['fields', ...(prefix || []), field.name, 'description'])} />
     </div>
 }
