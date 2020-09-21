@@ -13,8 +13,10 @@
     justify-content: space-between;
     white-space: nowrap;
 
-    span.cm-tabs-more {
-        display: none;
+    @media (min-width: $cm-tablet) {
+        span.cm-tabs-more {
+            display: none;
+        }
     }
 
     @media (max-width: $cm-tablet) {
@@ -105,7 +107,6 @@
             }
         }
     }
-
 
 }
 
