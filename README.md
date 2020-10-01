@@ -10,7 +10,7 @@ Klaro [klɛro] is a simple consent management platform (CMP) and privacy tool th
 Klaro supports multiple modes of asking for consent and can display third-party apps individually or grouped
 by purpose.
 
-## Advantages
+## Advantages:
 
 * **Free and Open Source**: No hidden fees, subscriptions or restrictions.
 * **Easy to use**: Simply add a small JS snippet and config to your site and
@@ -27,7 +27,7 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, German, G
   trackers are executed without the consent of the user, even when
   JavaScript is disabled or Klaro itself gets blocked.
 
-## Getting started
+## Getting started with it:
 
 **You can now find more extensive documentation on [our website](https://kiprotect.com/docs/klaro).**
 
