@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Beheben eines Fehlers, der zu Problemen bei der Verwendung von Klaro mit Internet Explorer f\u00fchrte.\n",
+      "en": "- Fixed a bug that caused Klaro to not work with Internet Explorer.\n"
+    },
+    "date": "2020-10-02",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "0GSz4mqvtv3JmgAcKKjN4ZpE2RV4L6UbIrzt44S0Lu7ubLmaLFQSFFIZQf5iD6dk"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "W7FTd5M24pEPe8WrhybWxbuj4qTcb3JpyGSKOEm42qv6Cwe2eatFOIxvxCfsZJ98"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "iND0iwt8wOwEWDw/nY/GDpwmsiJGGi0GSDB12O8XdGfq/UBx2DIBFBPQqMhBqmC9"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "X2GYW2xEiySetLQrrDF/dGNZACrHgNqujF2eEKHykV6SzxXGGXbFjoTgcTNqgxrr"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "nEaY7NY3+NF9U/6xSl0PrOpVFrd1pDRJpKAPSPx4kVM2+m88uFq91GrmO4o+MFCI"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "OnfEiHBjqByoS6PDL6/NMgtTIPXGeCcGv8NOHghWIeCIio/j8Won75pxoJaPRjLq"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "HbhxOHK+By18hq03dVSo7KS7r48WfUZAaKQTQuH+pXyVuqFkp+IF3tMwTi4EIgT6"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "2x0vctZAQ8EqMb9wMVITUhLOVngoGRSKR1swXL1i50qYP0n/mbxEJiK3CeszgbWW"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "0TVUxjBlSOTM+Rof+UIg5PmvMwUl/HG85honvNExZvf6FMv5N2pltx1TvZnwy0JI"
+      }
+    ],
+    "tags": [
+      "bugfixes"
+    ],
+    "version": "0.6.18"
+  },
+  {
+    "changelog": {
       "de": "- \u00c4ndern des (undokumentierten) `klaro-config-name` Parameters.\n",
       "en": "- Changed the (undocumented) `klaro-config-name` parameter.\n"
     },
