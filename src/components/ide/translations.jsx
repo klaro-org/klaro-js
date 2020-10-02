@@ -5,7 +5,11 @@ import { BaseRetractingLabelInput } from './controls';
 
 function getValue(t, lang, key){
     let dt = t[lang]
+    if (dt === undefined)
+        return
     for(const k of key){
+        if (dt === undefined)
+            return
         dt = dt[k]
     }
     return dt
@@ -23,13 +27,13 @@ function getFallbackValue(tv, lang, key){
     return dt    
 }
 
-export const TranslationsForKey = ({hintKey, translationKey, noDefault, onChange, name, translations, languages, t, config}) => {
+export const TranslationsForKey = ({hintKey, translationKey, noDefault, onChange, name, translations, languages, t, config, value, fallbackValue}) => {
     /*
     Here we list the different translations
     */
     const allLanguages = [...(noDefault ? [] : ['zz']),...languages]
     const items = allLanguages.map(language => {
-        const value = getValue(translations , language, translationKey)
+        const value = getValue(translations, language, translationKey)
         const fallbackValue = getFallbackValue(t.tv , language, translationKey)
         const isDefault = (value && value === fallbackValue) || ((!value) && fallbackValue !== undefined)
         const changeValue = (v) => {
@@ -58,36 +62,36 @@ export const TranslationsForKey = ({hintKey, translationKey, noDefault, onChange
     </div>
 }
 
-export const AppTranslations = ({t, config, updateConfig}) => {
-    const updateDescription = (app, language, value) => {
-        updateConfig(['translations', language, 'apps', app.name, 'description'], value)
+export const ServiceTranslations = ({t, config, updateConfig}) => {
+    const updateDescription = (service, language, value) => {
+        updateConfig(['services', service._id, 'translations', language, 'description'], value)
     }
-    const updateTitle = (app, language, value) => {
-        updateConfig(['translations', language, 'apps', app.name, 'title'], value)        
+    const updateTitle = (service, language, value) => {
+        updateConfig(['services', service._id, 'translations', language, 'title'], value)        
     }
-    const appTranslations = config.config.apps.map(app => <React.Fragment key={app.name}>
-        <h3>{app.name}</h3>
+    const serviceTranslations = config.config.services.map(service => <React.Fragment key={service.name}>
+        <h3>{service.name}</h3>
         <TranslationsForKey
-            onChange={(language, value) => updateTitle(app, language, value)}
+            onChange={(language, value) => updateTitle(service, language, value)}
             t={t}
-            hintKey={['apps', 'title']}
-            translationKey={['apps', app.name, 'title']}
-            name={app.name}
-            translations={config.config.translations}
+            hintKey={['services', 'title']}
+            translationKey={['title']}
+            name={service.name}
+            translations={service.translations || {}}
             languages={config.config.languages} />
         <TranslationsForKey
-            onChange={(language, value) => updateDescription(app, language, value)}
+            onChange={(language, value) => updateDescription(service, language, value)}
             t={t}
-            hintKey={['apps', 'description']}
-            translationKey={['apps', app.name, 'description']}
-            name={app.name}
-            translations={config.config.translations}
+            hintKey={['services', 'description']}
+            translationKey={['description']}
+            name={service.name}
+            translations={service.translations || {}}
             noDefault
             languages={config.config.languages} />
     </React.Fragment>)
     return <React.Fragment>
         {
-            appTranslations.length > 0 && appTranslations || <p className="cm-section-description">
+            serviceTranslations.length > 0 && serviceTranslations || <p className="cm-section-description">
                 {t(['translations', 'noTranslations'])}
             </p>
         }
@@ -97,7 +101,7 @@ export const AppTranslations = ({t, config, updateConfig}) => {
 
 export const PurposeTranslations = ({t, config, updateConfig}) => {
     const purposes = new Set()
-    config.config.apps.forEach(app => app.purposes.forEach(purpose => purposes.add(purpose)))
+    config.config.services.forEach(service => service.purposes.forEach(purpose => purposes.add(purpose)))
     const updateDescription = (purpose, language, value) => {
         updateConfig(['translations', language, 'purposes', purpose, 'description'], value)        
     }
@@ -149,17 +153,17 @@ export const PrivacyPolicyUrlTranslations = ({t, config, updateConfig}) => {
 }
 
 const components = {
-    'apps': AppTranslations,
-    'purposes': PurposeTranslations,
-    'privacyPolicyUrl' : PrivacyPolicyUrlTranslations,
+    services: ServiceTranslations,
+    purposes: PurposeTranslations,
+    privacyPolicyUrl : PrivacyPolicyUrlTranslations,
 }
 
 export const Translations = ({t, state, setState, config, updateConfig}) => {
     /*
     - We just show the hiearchy of translation values in the reference translations.
-    - We need translations for the privacyUrl, the apps and the purposes.
+    - We need translations for the privacyUrl, the services and the purposes.
     */
-    state = state || {tab: 'apps'}
+    state = state || {tab: 'services'}
     const Component = components[state.tab]
     const tabs = Array.from(Object.entries(components)).map(([k, v]) => <Tab active={k === state.tab} onClick={() => setState({tab: k})} key={k}>{t(['translations', 'headers', k])}</Tab>)
     return <React.Fragment>

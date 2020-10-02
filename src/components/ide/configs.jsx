@@ -3,7 +3,7 @@ import { List, ListHeader, ListItem, ListColumn } from "./list";
 import { DropdownMenu, MenuItem } from "./dropdown";
 
 export const ConfigItem = ({t, config, onConfigAction, onClick}) => <ListItem onClick={() => onClick(config)} isCard key={config.name}>
-    <ListColumn size="xs cm-status">
+    <ListColumn size="icon cm-status">
         <span title={config.status} className={"cm-status-is-"+config.status}>{config.status === 'active' ? <span>&oplus;</span> : <span>&otimes;</span>}</span>
     </ListColumn>
     <ListColumn size="lg cm-name">
@@ -31,7 +31,7 @@ export const ConfigList = ({ t, configs, onConfigAction, onClick, disabled }) =>
     const items = configs.map(config => <ConfigItem onClick={onClick} onConfigAction={onConfigAction} key={config.name} t={t} config={config} />)
     return <List className="cm-config-list">
         <ListHeader>
-            <ListColumn size="xs">
+            <ListColumn size="icon">
                 {t(['configs', 'status'])}
             </ListColumn>
             <ListColumn size="lg">

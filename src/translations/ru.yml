@@ -1,6 +1,6 @@
 acceptAll: Принять всё
 acceptSelected: Принять выбранные
-app:
+service:
     disableAll:
         description: Используйте этот переключатель, чтобы включить/отключить все приложения.
         title: Переключить все приложения
@@ -40,8 +40,6 @@ decline: Отклонить
 ok: Принять
 poweredBy: Работает на Кларо!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Сохранить

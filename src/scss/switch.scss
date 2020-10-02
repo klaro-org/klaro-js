@@ -31,12 +31,12 @@
 }
 
 .cm-list-input:checked + .cm-list-label .slider {
-    background-color: $cm-green1;
+    @include var(background-color, green1);
 }
 
 .cm-list-input.half-checked:checked + .cm-list-label .slider {
     opacity: 0.6;
-    background-color: $cm-green1;
+    @include var(background-color, green1);
 
     &::before {
         -webkit-transform: translateX(10px);
@@ -47,7 +47,7 @@
 
 .cm-list-input.only-required + .cm-list-label .slider {
     opacity: 0.8;
-    background-color: $cm-green2;
+    @include var(background-color, green2);
 
     &::before {
         -webkit-transform: translateX(10px);
@@ -58,7 +58,7 @@
 
 .cm-list-input.required:checked + .cm-list-label .slider {
     opacity: 0.8;
-    background-color: $cm-green2;
+    @include var(background-color, green2);
     cursor: not-allowed;
 }
 
@@ -131,6 +131,7 @@
 
     input:focus + .slider {
         box-shadow: 0 0 1px $cm-green3;
+        @include var(box-shadow-color, green3);
     }
 
     input:checked + .slider::before {

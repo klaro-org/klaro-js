@@ -1,7 +1,7 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Alle akzeptieren
 acceptSelected: Ausgewählte akzeptieren
-app:
+service:
   disableAll:
     description: Mit diesem Schalter können Sie alle Dienste aktivieren oder deaktivieren.
     title: Alle Dienste aktivieren oder deaktivieren
@@ -39,8 +39,8 @@ decline: Ich lehne ab
 ok: Das ist ok
 poweredBy: Realisiert mit Klaro!
 purposeItem:
-  app: Dienst
-  apps: Dienste
+  service: Dienst
+  services: Dienste
 purposes:
   advertisement:
     description: Diese Dienste verarbeiten persönliche Daten, um Ihnen personalisierte

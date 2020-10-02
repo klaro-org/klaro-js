@@ -1,7 +1,7 @@
 # Warning, this file is partially automatically generated!
 acceptAll: 照单全收
 acceptSelected: 接受选择
-app:
+service:
   disableAll:
     description: 使用此开关可启用或禁用所有服务。
     title: 启用或停用所有服务
@@ -34,8 +34,8 @@ decline: 我拒绝
 ok: 没事的
 poweredBy: 与Klaro一起实现!
 purposeItem:
-  app: 服务
-  apps: 服务
+  service: 服务
+  services: 服务
 purposes:
   advertisement:
     description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。

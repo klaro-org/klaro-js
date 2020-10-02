@@ -1,7 +1,7 @@
 import React from 'react';
 import { Close } from '../icons';
 import ObjectSelector from './object-selector';
-import { Apps } from './apps';
+import { Services } from './services';
 import { Globals } from './globals';
 import { Demo } from './demo';
 import { JSONConfig } from './json-config';
@@ -87,7 +87,7 @@ export class IDEModal extends React.Component {
 
 const tabComponents = {
     globals: Globals,
-    apps: Apps,
+    services: Services,
     translations: Translations,
     testing: Demo,
     json: JSONConfig,
@@ -137,7 +137,7 @@ export class ConfigIDE extends React.Component {
             updateConfig,
             deleteConfig,
         } = this.props;
-        const state = this.props.state || {tab: 'apps'};
+        const state = this.props.state || {tab: 'services'};
         const { tab } = state;
         const Component = tabComponents[tab];
         const componentState = state[tab];
@@ -148,7 +148,7 @@ export class ConfigIDE extends React.Component {
             setState(newState)
         }
         const tabs = [
-            'apps',
+            'services',
             'globals',
             'translations',
             'testing',

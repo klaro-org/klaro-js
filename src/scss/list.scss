@@ -5,13 +5,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-
         padding: map-get($cm-space, sm);
-
-        @media (max-width: $cm-tablet - 1px) {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+        justify-items: flex-end;
 
         @media (min-width: $cm-tablet) {
             span.cm-is-action {
@@ -23,13 +21,6 @@
                     display: inline-block;
                 }
             }
-        }
-
-        @media (min-width: $cm-tablet) {
-            display: flex;
-            flex-direction: row;
-            align-items: top;
-            justify-items: flex-end;
         }
 
         &:last-child {
@@ -44,9 +35,6 @@
             font-weight: 600;
             margin-bottom: map-get($cm-space, xs);
             background: none;
-            @media (max-width: $cm-tablet - 1px) {
-                display: none;
-            }
         }
 
         &.cm-is-card {
@@ -105,16 +93,14 @@
             }
 
             &.cm-is-icon {
-                flex-basis: 20px;
+                flex-basis: 50px;
                 text-align: right;
                 flex-grow: 0;
             }
         }
 
         .cm-content {
-            @media (min-width: $cm-tablet) {
-                flex: 10;
-            }
+            flex: 10;
         }
     }
 }

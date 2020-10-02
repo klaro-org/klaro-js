@@ -2,7 +2,7 @@ acceptAll: ''
 acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
-app:
+service:
     disableAll:
         description: Utilizați acest switch pentru a activa/dezactiva toate aplicațiile.
         title: Comutați între toate aplicațiile
@@ -43,8 +43,6 @@ decline: Renunță
 ok: OK
 poweredBy: Realizat de Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Salvează

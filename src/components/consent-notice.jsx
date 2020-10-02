@@ -3,7 +3,6 @@ import ConsentModal from './consent-modal';
 import { getPurposes } from '../utils/config';
 import Text from './text';
 import { asTitle } from '../utils/strings' 
-import { language } from '../utils/i18n';
 
 export default class ConsentNotice extends React.Component {
     constructor(props) {
@@ -21,9 +20,9 @@ export default class ConsentNotice extends React.Component {
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
         const { modal } = this.state;
-        let changedApps = 0;
+        let changedServices = 0;
         if (setChangedAll)
-            changedApps = this.props.manager.changeAll(changedAllValue);
+            changedServices = this.props.manager.changeAll(changedAllValue);
         const confirmed = this.props.manager.confirmed;
         const saveAndHide = () => {
             this.setState({ confirming: false });
@@ -35,7 +34,7 @@ export default class ConsentNotice extends React.Component {
             !confirmed &&
             (modal || this.props.config.mustConsent)
         ) {
-            if (changedApps === 0) saveAndHide();
+            if (changedServices === 0) saveAndHide();
             else setTimeout(saveAndHide, 1000);
         } else saveAndHide();
     };
@@ -53,7 +52,7 @@ export default class ConsentNotice extends React.Component {
     };
 
     render() {
-        const { config, show, manager, testing, t } = this.props;
+        const { lang, config, show, manager, testing, t } = this.props;
         const { modal, confirming } = this.state;
         const { embedded, noticeAsModal, hideLearnMore } = config;
 
@@ -67,8 +66,6 @@ export default class ConsentNotice extends React.Component {
             purposesText = purposesTranslations[0]
         else
             purposesText = [...purposesTranslations.slice(0, -2), purposesTranslations.slice(-2).join(' & ')].join(', ');
-        const lang = config.lang || language();
-
         let ppUrl;
         // to do: deprecate and remove this 
         if (config.privacyPolicy !== undefined) {
@@ -177,6 +174,7 @@ export default class ConsentNotice extends React.Component {
             return (
                 <ConsentModal
                     t={t}
+                    lang={lang}
                     confirming={confirming}
                     config={config}
                     hide={hideModal}

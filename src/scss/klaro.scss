@@ -15,7 +15,7 @@
         }
 
         a {
-            color: $cm-green1;
+            @include var(color, 'green1');
             text-decoration: none;
         }
 
@@ -26,7 +26,7 @@
         ul,
         li {
             // font-family: inherit;
-            color: $cm-font-color-dark;
+            @include var(color, 'font-color-dark');
         }
 
         p,
@@ -48,7 +48,7 @@
 
         .cm-btn {
             background: #555;
-            color: $cm-font-color-dark;
+            @include var(color, 'font-color-dark');
             border-radius: 6px;
             padding: 6px 10px;
             margin-right: $btn-margin-right;
@@ -66,11 +66,11 @@
             }
 
             &.cm-btn-success {
-                background: $cm-green1;
+                @include var(background, 'green1');
             }
 
             &.cm-btn-info {
-                background: $cm-blue1;
+                @include var(background, 'blue1');
             }
         }
     }
@@ -175,13 +175,13 @@
                     width: auto;
                 }
 
-                ul.cm-apps,
+                ul.cm-services,
                 ul.cm-purposes {
                     padding: 0;
                     margin: 0;
 
                     li.cm-purpose {
-                        .cm-apps {
+                        .cm-services {
                             .cm-caret {
                                 color: #888;
                             }
@@ -198,7 +198,7 @@
                         }
                     }
 
-                    li.cm-app,
+                    li.cm-service,
                     li.cm-purpose {
                         position: relative;
                         line-height: 20px;

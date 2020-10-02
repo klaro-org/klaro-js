@@ -1,6 +1,6 @@
 acceptAll: Tillad alle
 acceptSelected: Tillad udvalgte
-app:
+service:
     disableAll:
         description: Brug denne kontakt til at aktivere/deaktivere alle apps.
         title: Aktiver/deaktiver alle applikatione
@@ -36,8 +36,6 @@ decline: Afvis
 ok: Ok
 poweredBy: Realiseret med Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Gem

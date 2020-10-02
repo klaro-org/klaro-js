@@ -20,25 +20,25 @@ export default class Purposes extends React.Component {
     }
 
     render() {
-        const { config, t, manager } = this.props;
+        const { config, t, manager, lang } = this.props;
         const { consents } = this.state;
-        const { apps } = config;
+        const { services } = config;
 
         const purposes = {};
 
-        for (const app of apps) {
-            for (const purpose of app.purposes) {
+        for (const service of services) {
+            for (const purpose of service.purposes) {
                 if (purposes[purpose] === undefined) purposes[purpose] = [];
-                purposes[purpose].push(app);
+                purposes[purpose].push(service);
             }
         }
 
         const toggle = (purposeKeys, value) => {
             purposeKeys.map((purpose) => {
-                const purposeApps = purposes[purpose];
-                for (const app of purposeApps) {
-                    if (!app.required) {
-                        manager.updateConsent(app.name, value);
+                const purposeServices = purposes[purpose];
+                for (const service of purposeServices) {
+                    if (!service.required) {
+                        manager.updateConsent(service.name, value);
                     }
                 }
             });
@@ -48,19 +48,19 @@ export default class Purposes extends React.Component {
             toggle(Object.keys(purposes), value);
         };
 
-        const checkApps = (apps) => {
+        const checkServices = (services) => {
             const status = {
                 allEnabled: true,
                 onlyRequiredEnabled: true,
                 allDisabled: true,
                 allRequired: true,
             };
-            for (const app of apps) {
-                if (!app.required) status.allRequired = false;
-                if (consents[app.name]) {
-                    if (!app.required) status.onlyRequiredEnabled = false;
+            for (const service of services) {
+                if (!service.required) status.allRequired = false;
+                if (consents[service.name]) {
+                    if (!service.required) status.onlyRequiredEnabled = false;
                     status.allDisabled = false;
-                } else if (!app.required) status.allEnabled = false;
+                } else if (!service.required) status.allEnabled = false;
             }
             if (status.allDisabled) status.onlyRequiredEnabled = false;
             return status;
@@ -70,7 +70,7 @@ export default class Purposes extends React.Component {
             const togglePurpose = (value) => {
                 toggle([purpose], value);
             };
-            const status = checkApps(purposes[purpose]);
+            const status = checkServices(purposes[purpose]);
             return (
                 <li key={purpose} className="cm-purpose">
                     <PurposeItem
@@ -80,9 +80,10 @@ export default class Purposes extends React.Component {
                         required={status.allRequired}
                         consents={consents}
                         name={purpose}
+                        lang={lang}
                         manager={manager}
                         onToggle={togglePurpose}
-                        apps={purposes[purpose]}
+                        services={purposes[purpose]}
                         t={t}
                     />
                 </li>
@@ -90,13 +91,13 @@ export default class Purposes extends React.Component {
         });
 
         const togglablePurposes = Object.keys(purposes).filter((purpose) => {
-            for (const app of purposes[purpose]) {
-                if (!app.required) return true;
+            for (const service of purposes[purpose]) {
+                if (!service.required) return true;
             }
             return false;
         });
 
-        const status = checkApps(apps);
+        const status = checkServices(services);
 
         return (
             <ul className="cm-purposes">
@@ -105,9 +106,9 @@ export default class Purposes extends React.Component {
                     <li className="cm-purpose cm-toggle-all">
                         <PurposeItem
                             name="disableAll"
-                            title={t(['app', 'disableAll', 'title'])}
+                            title={t(['service', 'disableAll', 'title'])}
                             description={t([
-                                'app',
+                                'service',
                                 'disableAll',
                                 'description',
                             ])}
@@ -117,7 +118,8 @@ export default class Purposes extends React.Component {
                             onToggle={toggleAll}
                             manager={manager}
                             consents={consents}
-                            apps={[]}
+                            lang={lang}
+                            services={[]}
                             t={t}
                         />
                     </li>

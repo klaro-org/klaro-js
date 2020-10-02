@@ -17,7 +17,7 @@
     .cm-global-fields,
     .cm-config-controls,
     .cm-translations-fields,
-    .cm-app-fields {
+    .cm-service-fields {
         max-width: 600px;
 
         h1,
@@ -83,7 +83,7 @@
         }
     }
 
-    .cm-app-list,
+    .cm-service-list,
     .cm-config-list {
         .cm-status {
             text-align: left;
@@ -109,7 +109,7 @@
 
 
     p.cm-no-cookies,
-    p.cm-no-apps {
+    p.cm-no-services {
         margin-top: 6px;
         margin-bottom: 6px;
         font-weight: 600;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { AppItems } from './apps';
+import { ServiceItems } from './services';
 import { asTitle } from '../utils/strings';
 
 export default class PurposeItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            appsVisible: false,
+            servicesVisible: false,
         };
     }
 
@@ -15,16 +15,17 @@ export default class PurposeItem extends React.Component {
             allEnabled,
             onlyRequiredEnabled,
             allDisabled,
-            apps,
+            services,
             onToggle,
             name,
+            lang,
             manager,
             consents,
             title,
             description,
             t,
         } = this.props;
-        const { appsVisible } = this.state;
+        const { servicesVisible } = this.state;
         const required = this.props.required || false;
         const purposes = this.props.purposes || [];
         const onChange = (e) => {
@@ -37,9 +38,9 @@ export default class PurposeItem extends React.Component {
         const requiredText = required ? (
             <span
                 className="cm-required"
-                title={t(['!', 'app', 'required', 'description']) || ''}
+                title={t(['!', 'service', 'required', 'description']) || ''}
             >
-                {t(['app', 'required', 'title'])}
+                {t(['service', 'required', 'title'])}
             </span>
         ) : (
             ''
@@ -57,21 +58,21 @@ export default class PurposeItem extends React.Component {
                 </p>
             );
 
-        const toggleAppsVisible = (e) => {
+        const toggleServicesVisible = (e) => {
             e.preventDefault();
-            this.setState({ appsVisible: !appsVisible });
+            this.setState({ servicesVisible: !servicesVisible });
         };
 
-        const toggle = (apps, value) => {
-            apps.map((app) => {
-                if (!app.required) {
-                    manager.updateConsent(app.name, value);
+        const toggle = (services, value) => {
+            services.map((service) => {
+                if (!service.required) {
+                    manager.updateConsent(service.name, value);
                 }
             });
         };
 
-        const appItems = (
-            <AppItems apps={apps} toggle={toggle} consents={consents} t={t} />
+        const serviceItems = (
+            <ServiceItems lang={lang} services={services} toggle={toggle} consents={consents} t={t} />
         );
 
         return (
@@ -116,26 +117,26 @@ export default class PurposeItem extends React.Component {
                     </p>
                     {purposesContent}
                 </div>
-                {apps.length > 0 && (
-                    <div className="cm-apps">
+                {services.length > 0 && (
+                    <div className="cm-services">
                         <div className="cm-caret">
-                            <a href="#" onClick={toggleAppsVisible}>
-                                {(appsVisible && <span>&#8593;</span>) || (
+                            <a href="#" onClick={toggleServicesVisible}>
+                                {(servicesVisible && <span>&#8593;</span>) || (
                                     <span>&#8595;</span>
                                 )}{' '}
-                                {apps.length}{' '}
+                                {services.length}{' '}
                                 {t([
                                     'purposeItem',
-                                    apps.length > 1 ? 'apps' : 'app',
+                                    services.length > 1 ? 'services' : 'service',
                                 ])}
                             </a>
                         </div>
                         <ul
                             className={
-                                'cm-content' + (appsVisible ? ' expanded' : '')
+                                'cm-content' + (servicesVisible ? ' expanded' : '')
                             }
                         >
-                            {appItems}
+                            {serviceItems}
                         </ul>
                     </div>
                 )}

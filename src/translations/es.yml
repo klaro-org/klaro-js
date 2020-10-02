@@ -1,7 +1,7 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Aceptar todo
 acceptSelected: Aceptar seleccionados
-app:
+service:
   disableAll:
     description: Utilice este interruptor para activar o desactivar todos los servicios.
     title: Activar o desactivar todos los servicios
@@ -36,8 +36,8 @@ decline: Me niego
 ok: Está bien.
 poweredBy: Realizado con Klaro!
 purposeItem:
-  app: servicio
-  apps: servicios
+  service: servicio
+  services: servicios
 purposes:
   advertisement:
     description: Estos servicios procesan la información personal para mostrarle anuncios

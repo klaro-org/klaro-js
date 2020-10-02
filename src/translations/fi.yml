@@ -2,7 +2,7 @@ acceptAll: ''
 acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
-app:
+service:
     disableAll:
         description: Aktivoi kaikki päälle/pois.
         title: Valitse kaikki
@@ -40,8 +40,6 @@ decline: Hylkää
 ok: Hyväksy
 poweredBy: Palvelun tarjoaa Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Tallenna

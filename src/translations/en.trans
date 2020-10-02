@@ -24,8 +24,8 @@ de:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -61,8 +61,8 @@ en:
   decline: 0820a606d2e61d90
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -98,8 +98,8 @@ es:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -135,8 +135,8 @@ fr:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -172,8 +172,8 @@ it:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -209,8 +209,8 @@ nl:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -246,8 +246,8 @@ pl:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -283,8 +283,8 @@ pt:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973
@@ -320,8 +320,8 @@ zh:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
-  purposeItem.app: 423b44b87f1b993c
-  purposeItem.apps: e42a806a32247a7f
+  purposeItem.service: 423b44b87f1b993c
+  purposeItem.services: e42a806a32247a7f
   purposes.advertisement.description: c474f0cc6c767aaa
   purposes.advertisement.title: f60f07a4d550cfae
   purposes.functional.description: 20b63de91d6a3973

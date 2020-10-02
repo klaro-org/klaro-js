@@ -2,7 +2,7 @@ acceptAll: ''
 acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
-app:
+service:
     disableAll:
         description: Koristite ovaj prekidač da omogućite/onemogućite sve aplikacije odjednom.
         title: Izmeijeni sve
@@ -40,8 +40,6 @@ decline: Odbij
 ok: U redu
 poweredBy: Pokreće Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Spremi

@@ -18,20 +18,33 @@ $cm-bg-dark: #333 !default;
 $cm-gray-medium: #aaa !default;
 $cm-gray-light: #eee !default;
 $cm-white: #fff !default;
+
 $cm-blue1: #2581c4 !default;
 $cm-blue2: scale-color($cm-blue1, $lightness: 20%) !default;
 $cm-blue3: scale-color($cm-blue2, $lightness: 20%) !default;
 $cm-blue4: scale-color($cm-blue3, $lightness: 20%) !default;
+
 $cm-green1: #1a936f !default;
 $cm-green2: scale-color($cm-green1, $lightness: 20%) !default;
 $cm-green3: scale-color($cm-green2, $lightness: 20%) !default;
 $cm-green4: scale-color($cm-green3, $lightness: 20%) !default;
+
 $cm-red1: #da2c43 !default;
 $cm-red2: scale-color($cm-red1, $lightness: 20%) !default;
 $cm-red3: scale-color($cm-red2, $lightness: 20%) !default;
 $cm-red4: scale-color($cm-red3, $lightness: 20%) !default;
+
 $cm-yellow1: #f2d600 !default;
 
+$vars: (
+    green1: $cm-green1,
+    green2: $cm-green2,
+    green3: $cm-green3,
+    font-color-dark: $cm-font-color-dark,
+    blue1: $cm-blue1,
+    blue2: $cm-blue2,
+    blue3: $cm-blue3,
+);
 
 /* Spacing */
 $cm-space: (
@@ -47,3 +60,8 @@ $cm-space: (
 $cm-desktop: 1024px !default;
 $cm-mobile: 384px !default;
 $cm-tablet: 768px !default;
+
+@mixin var($property, $varName) {
+  #{$property}: map-get($vars, $varName);
+  #{$property}: var(--#{$varName}, map-get($vars, $varName));
+}

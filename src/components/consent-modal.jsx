@@ -1,8 +1,7 @@
 import React from 'react';
 import { Close } from './icons';
-import Apps from './apps';
+import Services from './services';
 import Purposes from './purposes';
-import { language } from '../utils/i18n';
 import Text from './text';
 
 export default class ConsentModal extends React.Component {
@@ -21,10 +20,10 @@ export default class ConsentModal extends React.Component {
             declineAndHide,
             config,
             manager,
+            lang,
             t,
         } = this.props;
         const { embedded } = config;
-        const lang = config.lang || language();
         const groupByPurpose =
             config.groupByPurpose !== undefined ? config.groupByPurpose : true;
 
@@ -101,13 +100,13 @@ export default class ConsentModal extends React.Component {
                 </a>
             );
 
-        let appsOrPurposes;
+        let servicesOrPurposes;
 
         if (groupByPurpose)
-            appsOrPurposes = (
-                <Purposes t={t} config={config} manager={manager} />
+            servicesOrPurposes = (
+                <Purposes t={t} config={config} manager={manager} lang={lang} />
             );
-        else appsOrPurposes = <Apps t={t} config={config} manager={manager} />;
+        else servicesOrPurposes = <Services t={t} config={config} manager={manager} lang={lang} />;
 
         const innerModal = (
             <div className="cm-modal cm-klaro">
@@ -132,7 +131,7 @@ export default class ConsentModal extends React.Component {
                         )}
                     />
                 </div>
-                <div className="cm-body">{appsOrPurposes}</div>
+                <div className="cm-body">{servicesOrPurposes}</div>
                 <div className="cm-footer">
                     <div className="cm-footer-buttons">
                         {declineButton}

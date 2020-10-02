@@ -1,7 +1,7 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
-app:
+service:
   disableAll:
     description: Use essa chave para habilitar ou desabilitar todos os serviços.
     title: Habilitar ou desabilitar todos os serviços
@@ -38,8 +38,8 @@ decline: Recuso-me
 ok: Está tudo bem.
 poweredBy: Realizado com Klaro!
 purposeItem:
-  app: serviço
-  apps: serviços
+  service: serviço
+  services: serviços
 purposes:
   advertisement:
     description: Esses serviços processam informações pessoais para mostrar ao senhor

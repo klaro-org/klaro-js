@@ -1,7 +1,7 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Zaakceptować wszystkie
 acceptSelected: Zaakceptować wybrany
-app:
+service:
   disableAll:
     description: Za pomocą tego przełącznika można włączać lub wyłączać wszystkie
       usługi.
@@ -38,8 +38,8 @@ decline: Odmawiam
 ok: To jest ok.
 poweredBy: Zrealizowane z Klaro!
 purposeItem:
-  app: usługa
-  apps: usług
+  service: usługa
+  services: usług
 purposes:
   advertisement:
     description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych

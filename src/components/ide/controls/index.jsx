@@ -7,4 +7,4 @@ export * from './range';
 export * from './cookies';
 export * from './language-select';
 export * from './purpose-select';
-export * from './app-select';
+export * from './service-select';

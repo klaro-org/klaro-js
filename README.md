@@ -35,21 +35,21 @@ To use the widget on your website, simply embed Klaro as well as a valid config.
 ```html
 <!-- make sure the config gets loaded before Klaro -->
 <script defer type="text/javascript" src="config.js"></script>
-<script defer type="text/javascript" src="https://cdn.kiprotect.com/klaro/latest/klaro.js"></script>
+<script defer type="text/javascript" src="https://cdn.kiprotect.com/klaro/[klaro-version]/klaro.js"></script>
 
 ```
 
-You can replace `latest` with a version number (e.g. `v0.5.30`) to download a specific version of Klaro. Do not forget to change your existing apps/trackers as outlined in the next section as well, so that Klaro can manage them. By default, Klaro will automatically open once the page is fully loaded.
+You should replace `[klaro-version]` with a version number (e.g. `v0.5.30`) to download a specific version of Klaro (we no longer support the `latest` version as it might lead to subtly breaking the many websites that Klaro is deployed on). Do not forget to change your existing apps/trackers as outlined in the next section as well, so that Klaro can manage them. By default, Klaro will automatically open once the page is fully loaded.
 
 We also provide a version of Klaro without stylesheets included, which is useful
-in case you want to provide your own styles: [klaro-no-css.js](https://cdn.kiprotect.com/klaro/latest/klaro-no-css.js). If you use this, make sure to either include your own styles or to include [klaro.min.css](https://cdn.kiprotect.com/klaro/latest/klaro.min.css) separetely, like this:
+in case you want to provide your own styles: [klaro-no-css.js](https://cdn.kiprotect.com/klaro/[klaro-version]/klaro-no-css.js). If you use this, make sure to either include your own styles or to include [klaro.min.css](https://cdn.kiprotect.com/klaro/[klaro-version]/klaro.min.css) separetely, like this:
 
 ```html
-<link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/latest/klaro.min.css" />
+<link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/[klaro-version]/klaro.min.css" />
 ```
 
 We also provide a non-minified version of the stylesheet, which is great if you
-want to make your own version: [klaro.css](https://cdn.kiprotect.com/klaro/latest/klaro.css).
+want to make your own version: [klaro.css](https://cdn.kiprotect.com/klaro/[klaro-version]/klaro.css).
 
 If you wish to open the consent manager manually on user interaction (for example through a link in the privacy policy), you can simply call ```klaro.show()``` via Javascript. Example:
 ```html
