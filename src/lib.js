@@ -1,4 +1,5 @@
 /* globals module, require, VERSION */
+
 import React from 'react'
 import App from './components/app'
 import ConsentManager from './consent-manager'
@@ -14,10 +15,6 @@ let defaultConfig
 const defaultTranslations = new Map([])
 const eventHandlers = {}
 const events = {}
-
-// IE compatibility
-if (window.btoa === undefined)
-    window.btoa = false
 
 // When webpack's hot loading is enabled, enable Preact's support for the
 // React Dev Tools browser extension.

@@ -1,6 +1,6 @@
 export function currentScript(name) {
     // most browser support this (but alas, not IE11)
-    if (document.currentScript !== null) return document.currentScript;
+    if (document.currentScript !== null && document.currentScript !== undefined) return document.currentScript;
     const scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
         const script = scripts[i];
