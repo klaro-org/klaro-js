@@ -2,7 +2,7 @@ acceptAll: ''
 acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
-app:
+service:
     disableAll:
         description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
         title: Összes app átkapcsolása
@@ -40,8 +40,6 @@ decline: Mentés
 ok: Elfogad
 poweredBy: Powered by Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Save

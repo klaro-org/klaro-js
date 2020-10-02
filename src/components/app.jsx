@@ -75,6 +75,7 @@ export default class App extends React.Component {
                     t={t}
                     testing={testing}
                     show={show}
+                    lang={lang}
                     modal={modal}
                     hide={hide}
                     config={config}

@@ -26,20 +26,20 @@ purposes:
     marketing:
         title|capitalize: Marketing
         description: These services process personal information to show you relevant content about products, services or topics that you might be interested in. 
-    advertisement:
-        title|capitalize: Advertisements
+    advertising:
+        title|capitalize: Advertising
         description: These services process personal information to show you personalized or interest-based advertisements.
 purposeItem:
     # we give some additional context for the translation API so it can pick the right word
-    app: A simple <tr-snip>service</tr-snip> that I install on my computer.
-    apps: Several simple <tr-snip>services</tr-snip> that I install on my computer.
+    service: A simple <tr-snip>service</tr-snip> that I install on my computer.
+    services: Several simple <tr-snip>services</tr-snip> that I install on my computer.
 ok|capitalize: That's ok
 save|capitalize: save
 decline|capitalize: I decline
 close|capitalize: close
 acceptAll|capitalize: accept all
 acceptSelected|capitalize: accept selected
-app:
+service:
     disableAll:
         title|capitalize: enable or disable all services
         description: Use this switch to enable or disable all services.

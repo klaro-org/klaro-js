@@ -16,7 +16,7 @@ const KlaroConfigSpec = {
             validators: [],
         },
     ],
-    appConfig: [
+    serviceConfig: [
         {
             name: 'name',
             control: 'RetractingLabelInput',

@@ -1,6 +1,6 @@
 acceptAll: Godtar alle
 acceptSelected: Godtar valgt
-app:
+service:
     disableAll:
         description: Bruk denne for å skru av/på alle apper.
         title: Bytt alle apper
@@ -39,8 +39,6 @@ decline: Avslå
 ok: OK
 poweredBy: Laget med Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Opslaan

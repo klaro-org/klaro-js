@@ -1,9 +1,9 @@
 export function getPurposes(config) {
     const purposes = new Set([]);
-    for (let i = 0; i < config.apps.length; i++) {
-        const appPurposes = config.apps[i].purposes || [];
-        for (let j = 0; j < appPurposes.length; j++)
-            purposes.add(appPurposes[j]);
+    for (let i = 0; i < config.services.length; i++) {
+        const servicePurposes = config.services[i].purposes || [];
+        for (let j = 0; j < servicePurposes.length; j++)
+            purposes.add(servicePurposes[j]);
     }
     return Array.from(purposes);
 }

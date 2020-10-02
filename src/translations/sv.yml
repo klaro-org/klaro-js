@@ -1,6 +1,6 @@
 acceptAll: Acceptera alla
 acceptSelected: Acceptera markerat
-app:
+service:
     disableAll:
         description: Använd detta reglage för att aktivera/avaktivera samtliga appar.
         title: Ändra för alla appar
@@ -38,8 +38,6 @@ decline: Avböj
 ok: OK
 poweredBy: Körs på Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Spara

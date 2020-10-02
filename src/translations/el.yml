@@ -2,7 +2,7 @@ acceptAll: ''
 acceptAll_en: Accept all
 acceptSelected: ''
 acceptSelected_en: Accept selected
-app:
+service:
     disableAll:
         description:
             Χρησιμοποίησε αυτό τον διακόπτη για να ενεργοποιήσεις/απενεργοποιήσεις
@@ -44,8 +44,6 @@ decline: Απόρριπτω
 ok: OK
 poweredBy: Υποστηρίζεται από το Klaro!
 purposeItem:
-    app: ''
-    app_en: application
-    apps: ''
-    apps_en: applications
+    service: ''
+    services: ''
 save: Αποθήκευση

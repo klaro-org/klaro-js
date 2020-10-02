@@ -3,7 +3,7 @@ import { RetractingLabelInput } from './input';
 
 export const CookieForm = ({updateConfig, config, cookie, t}) => {
     const updateCookieConfig = (key, value) => {
-        updateConfig(['apps', config._id, 'cookies', cookie._id, ...key], value)
+        updateConfig(['services', config._id, 'cookies', cookie._id, ...key], value)
     }
     const fields = ['pattern', 'path', 'domain'].map(key => <RetractingLabelInput key={key} t={t} field={{name: key}} config={cookie} prefix={['cookies']} updateConfig={updateCookieConfig} /> )
     return <div className="cm-cookie-form">
@@ -14,7 +14,7 @@ export const CookieForm = ({updateConfig, config, cookie, t}) => {
             <div className="cm-control">
 
             </div>
-            <button className="cm-control-button cm-delete" onClick={() => updateConfig(['apps', config._id, 'cookies', cookie._id], null)}>
+            <button className="cm-control-button cm-delete" onClick={() => updateConfig(['services', config._id, 'cookies', cookie._id], null)}>
                 {t(['cookies', 'delete'])}
             </button>
         </div>
@@ -38,7 +38,7 @@ export const Cookies = ({t,
         </div>
         <div className="cm-config-controls">
             <fieldset>
-                <button className="cm-control-button" onClick={() => updateConfig(['apps', config._id, 'cookies', null], {})}>
+                <button className="cm-control-button" onClick={() => updateConfig(['services', config._id, 'cookies', null], {})}>
                     {t(['cookies', 'add'])}
                 </button>
             </fieldset>

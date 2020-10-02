@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BaseRetractingLabelInput } from './input';
 
-export const SearchSelect = ({search, label, description, onSelect, setSearch, candidates}) => {
+export const SearchSelect = ({search, disabled, label, description, onSelect, setSearch, candidates}) => {
 
     const items = candidates.map((candidate) => (
         <li
@@ -25,15 +25,18 @@ export const SearchSelect = ({search, label, description, onSelect, setSearch, c
 
     return <div className="cm-search-select">
         <form onSubmit={(e) => {e.preventDefault();onSelect()}}>
-        <BaseRetractingLabelInput
-            onChange={setSearch}
-            label={label}
-            description={description}
-            autoComplete="off"
-            value={search}
-        >
-            {searchCandidates}
-        </BaseRetractingLabelInput>
+            <fieldset disabled={disabled}>
+                <BaseRetractingLabelInput
+                    onChange={setSearch}
+                    label={label}
+                    disabled={disabled}
+                    description={description}
+                    autoComplete="off"
+                    value={search}
+                >
+                    {searchCandidates}
+                </BaseRetractingLabelInput>
+            </fieldset>
         </form>
     </div>
 
