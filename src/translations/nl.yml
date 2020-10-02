@@ -1,18 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Accepteer alle
 acceptSelected: Geselecteerde
-service:
-  disableAll:
-    description: Gebruik deze schakelaar om alle diensten in of uit te schakelen.
-    title: Alle diensten in- of uitschakelen
-  optOut:
-    description: Deze diensten worden standaard geladen (maar u kunt zich afmelden)
-    title: (opt-out)
-  purpose: Verwerkingsdoel
-  purposes: Verwerkingsdoeleinden
-  required:
-    description: Deze diensten zijn altijd nodig
-    title: (altijd nodig)
 close: Sluit
 consentModal:
   description: Hier kunt u de diensten die wij op deze website willen gebruiken beoordelen
@@ -44,6 +32,10 @@ purposes:
     description: Deze diensten verwerken persoonlijke informatie om u gepersonaliseerde
       of op interesse gebaseerde advertenties te tonen.
     title: Advertenties
+  advertising:
+    description: Deze diensten verwerken persoonlijke informatie om u gepersonaliseerde
+      of op interesse gebaseerde advertenties te tonen.
+    title: Reclame
   functional:
     description: 'Deze diensten zijn essentieel voor het correct functioneren van
       deze website. U kunt ze hier niet uitschakelen omdat de dienst anders niet correct
@@ -63,3 +55,15 @@ purposes:
       '
     title: Optimalisatie van de prestaties
 save: Opslaan
+service:
+  disableAll:
+    description: Gebruik deze schakelaar om alle diensten in of uit te schakelen.
+    title: Alle diensten in- of uitschakelen
+  optOut:
+    description: Deze diensten worden standaard geladen (maar u kunt zich afmelden)
+    title: (opt-out)
+  purpose: Verwerkingsdoel
+  purposes: Verwerkingsdoeleinden
+  required:
+    description: Deze diensten zijn altijd nodig
+    title: (altijd nodig)

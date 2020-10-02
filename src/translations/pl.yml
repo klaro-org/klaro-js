@@ -1,19 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Zaakceptować wszystkie
 acceptSelected: Zaakceptować wybrany
-service:
-  disableAll:
-    description: Za pomocą tego przełącznika można włączać lub wyłączać wszystkie
-      usługi.
-    title: Włączać lub wyłączać wszystkie usługi
-  optOut:
-    description: Ta usługa jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
-    title: (opt-out)
-  purpose: Cel
-  purposes: Cele
-  required:
-    description: Usługi te są zawsze wymagane
-    title: (zawsze wymagane)
 close: Blisko
 consentModal:
   description: Tutaj mogą Państwo ocenić i dostosować usługi, z których chcielibyśmy
@@ -45,6 +32,10 @@ purposes:
     description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
       lub opartych na zainteresowaniach ogłoszeń.
     title: Ogłoszenia
+  advertising:
+    description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
+      lub opartych na zainteresowaniach ogłoszeń.
+    title: Reklama
   functional:
     description: 'Usługi te są niezbędne do prawidłowego funkcjonowania niniejszej
       strony internetowej. Nie mogą Państwo ich tutaj wyłączyć, ponieważ w przeciwnym
@@ -63,3 +54,16 @@ purposes:
       '
     title: Optymalizacja wydajności
 save: Z wyjątkiem
+service:
+  disableAll:
+    description: Za pomocą tego przełącznika można włączać lub wyłączać wszystkie
+      usługi.
+    title: Włączać lub wyłączać wszystkie usługi
+  optOut:
+    description: Ta usługa jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
+    title: (opt-out)
+  purpose: Cel
+  purposes: Cele
+  required:
+    description: Usługi te są zawsze wymagane
+    title: (zawsze wymagane)

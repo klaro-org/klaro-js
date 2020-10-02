@@ -1,19 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Alle akzeptieren
 acceptSelected: Ausgewählte akzeptieren
-service:
-  disableAll:
-    description: Mit diesem Schalter können Sie alle Dienste aktivieren oder deaktivieren.
-    title: Alle Dienste aktivieren oder deaktivieren
-  optOut:
-    description: Diese Dienste werden standardmäßig geladen (Sie können sich jedoch
-      abmelden)
-    title: (Opt-out)
-  purpose: Zweck
-  purposes: Zwecke
-  required:
-    description: Dieser Service ist immer erforderlich
-    title: (immer erforderlich)
 close: Schließen
 consentModal:
   description: Hier können Sie die Dienste, die wir auf dieser Website nutzen möchten,
@@ -22,7 +9,7 @@ consentModal:
   privacyPolicy:
     name: Datenschutzerklärung
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
-  title: Dienstleistungen, die wir nutzen möchten
+  title: Dienste, die wir nutzen möchten
 consentNotice:
   changeDescription: Seit Ihrem letzten Besuch gab es Änderungen, bitte erneuern Sie
     Ihre Zustimmung.
@@ -46,6 +33,10 @@ purposes:
     description: Diese Dienste verarbeiten persönliche Daten, um Ihnen personalisierte
       oder interessenbezogene Werbung zu zeigen.
     title: Anzeigen
+  advertising:
+    description: Diese Dienste verarbeiten persönliche Informationen, um Ihnen personalisierte
+      oder interessenbezogene Werbung zu zeigen.
+    title: Werbung
   functional:
     description: 'Diese Dienste sind für das korrekte Funktionieren dieser Website
       unerlässlich. Sie können sie hier nicht deaktiviert werden, da der Dienst sonst
@@ -65,3 +56,16 @@ purposes:
       '
     title: Optimierung der Leistung
 save: Speichern
+service:
+  disableAll:
+    description: Mit diesem Schalter können Sie alle Dienste aktivieren oder deaktivieren.
+    title: Alle Dienste aktivieren oder deaktivieren
+  optOut:
+    description: Diese Dienste werden standardmäßig geladen (Sie können sich jedoch
+      abmelden)
+    title: (Opt-out)
+  purpose: Zweck
+  purposes: Zwecke
+  required:
+    description: Dieser Service ist immer erforderlich
+    title: (immer erforderlich)

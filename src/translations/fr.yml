@@ -1,18 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Accepter tout
 acceptSelected: Accepter sélectionné
-service:
-  disableAll:
-    description: Utilisez ce commutateur pour activer ou désactiver tous les services.
-    title: Activer ou désactiver tous les services
-  optOut:
-    description: Ce service est chargé par défaut (mais vous pouvez le désactiver)
-    title: (opt-out)
-  purpose: Fin
-  purposes: Fins
-  required:
-    description: Ce service est toujours nécessaire
-    title: (toujours requis)
 close: Fermer
 consentModal:
   description: Vous pouvez ici évaluer et personnaliser les services que nous aimerions
@@ -45,6 +33,10 @@ purposes:
     description: Ces services traitent les informations personnelles pour vous présenter
       des publicités personnalisées ou basées sur des intérêts.
     title: Annonces publicitaires
+  advertising:
+    description: Ces services traitent les informations personnelles pour vous présenter
+      des publicités personnalisées ou basées sur des intérêts.
+    title: Publicité
   functional:
     description: 'Ces services sont essentiels au bon fonctionnement de ce site. Vous
       ne pouvez pas les désactiver ici car le service ne fonctionnerait pas correctement
@@ -64,3 +56,15 @@ purposes:
       '
     title: Optimisation de la performance
 save: Enregistrer
+service:
+  disableAll:
+    description: Utilisez ce commutateur pour activer ou désactiver tous les services.
+    title: Activer ou désactiver tous les services
+  optOut:
+    description: Ce service est chargé par défaut (mais vous pouvez le désactiver)
+    title: (opt-out)
+  purpose: Objet
+  purposes: Fins
+  required:
+    description: Ce service est toujours nécessaire
+    title: (toujours requis)

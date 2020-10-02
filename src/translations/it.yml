@@ -1,19 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Accettare tutti
 acceptSelected: Accettare selezionato
-service:
-  disableAll:
-    description: Utilizzi questo interruttore per attivare o disattivare tutti i servizi.
-    title: Attivare o disattivare tutti i servizi
-  optOut:
-    description: Questo servizio è caricato di default (ma è possibile scegliere di
-      non usufruirne)
-    title: (opt-out)
-  purpose: Scopo dell
-  purposes: Finalità
-  required:
-    description: Questo servizio è sempre richiesto
-    title: (sempre richiesto)
 close: Chiudi
 consentModal:
   description: Qui può valutare e personalizzare i servizi che vorremmo utilizzare
@@ -45,6 +32,10 @@ purposes:
     description: Questi servizi elaborano le informazioni personali per mostrarle
       annunci pubblicitari personalizzati o basati su interessi.
     title: Annunci
+  advertising:
+    description: Questi servizi elaborano le informazioni personali per mostrarle
+      annunci pubblicitari personalizzati o basati su interessi.
+    title: Pubblicità
   functional:
     description: 'Questi servizi sono essenziali per il corretto funzionamento di
       questo sito web. Non può disattivarli qui perché altrimenti il servizio non
@@ -63,3 +54,16 @@ purposes:
       '
     title: Ottimizzazione delle prestazioni
 save: Salva
+service:
+  disableAll:
+    description: Utilizzi questo interruttore per attivare o disattivare tutti i servizi.
+    title: Attivare o disattivare tutti i servizi
+  optOut:
+    description: Questo servizio è caricato di default (ma è possibile scegliere di
+      non usufruirne)
+    title: (opt-out)
+  purpose: Scopo dell
+  purposes: Finalità
+  required:
+    description: Questo servizio è sempre richiesto
+    title: (sempre richiesto)

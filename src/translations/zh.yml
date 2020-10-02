@@ -1,18 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: 照单全收
 acceptSelected: 接受选择
-service:
-  disableAll:
-    description: 使用此开关可启用或禁用所有服务。
-    title: 启用或停用所有服务
-  optOut:
-    description: 这个服务是默认加载的(但你可以选择退出)
-    title: (选择退出)
-  purpose: 目的
-  purposes: 目的
-  required:
-    description: 这种服务是必须的
-    title: (总是需要)
 close: 密切
 consentModal:
   description: 在这里，您可以评估和定制我们希望在本网站上使用的服务。您是负责人！您可以根据自己的需要启用或禁用服务。启用或禁用您认为合适的服务。
@@ -40,6 +28,9 @@ purposes:
   advertisement:
     description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。
     title: 广告
+  advertising:
+    description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。
+    title: 广告宣传
   functional:
     description: '这些服务对于本网站的正常运行是必不可少的。您不能在这里禁用它们，否则服务将无法正常运行。
 
@@ -54,3 +45,15 @@ purposes:
       '
     title: 性能优化
 save: 挽救
+service:
+  disableAll:
+    description: 使用此开关可启用或禁用所有服务。
+    title: 启用或停用所有服务
+  optOut:
+    description: 这个服务是默认加载的(但你可以选择退出)
+    title: (选择退出)
+  purpose: 目的
+  purposes: 目的
+  required:
+    description: 这种服务是必须的
+    title: (总是需要)

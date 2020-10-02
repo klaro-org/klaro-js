@@ -1,19 +1,6 @@
 # Warning, this file is partially automatically generated!
 acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
-service:
-  disableAll:
-    description: Use essa chave para habilitar ou desabilitar todos os serviços.
-    title: Habilitar ou desabilitar todos os serviços
-  optOut:
-    description: Estes serviços são carregados por padrão (mas o senhor pode optar
-      por não participar).
-    title: (opt-out)
-  purpose: Objetivo
-  purposes: Fins
-  required:
-    description: Esses serviços são sempre necessários
-    title: (sempre necessário)
 close: Fechar
 consentModal:
   description: Aqui o senhor pode avaliar e personalizar os serviços que gostaríamos
@@ -45,6 +32,10 @@ purposes:
     description: Esses serviços processam informações pessoais para mostrar ao senhor
       anúncios personalizados ou baseados em interesses.
     title: Anúncios
+  advertising:
+    description: Esses serviços processam informações pessoais para mostrar ao senhor
+      anúncios personalizados ou baseados em interesses.
+    title: Publicidade
   functional:
     description: 'Esses serviços são essenciais para o correto funcionamento deste
       website. O senhor não pode desativá-los aqui, pois de outra forma o serviço
@@ -64,3 +55,16 @@ purposes:
       '
     title: Otimização do desempenho
 save: Exceto
+service:
+  disableAll:
+    description: Use essa chave para habilitar ou desabilitar todos os serviços.
+    title: Habilitar ou desabilitar todos os serviços
+  optOut:
+    description: Estes serviços são carregados por padrão (mas o senhor pode optar
+      por não participar).
+    title: (opt-out)
+  purpose: Objetivo
+  purposes: Fins
+  required:
+    description: Esses serviços são sempre necessários
+    title: (sempre necessário)
