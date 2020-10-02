@@ -62,6 +62,6 @@ $cm-mobile: 384px !default;
 $cm-tablet: 768px !default;
 
 @mixin var($property, $varName) {
-  #{$property}: map-get($vars, $varName);
-  #{$property}: var(--#{$varName}, map-get($vars, $varName));
+    #{$property}: map-get($vars, $varName);
+    #{$property}: var(--#{$varName}, map-get($vars, $varName));
 }

@@ -47,8 +47,10 @@
         }
 
         .cm-btn {
-            background: #555;
+
             @include var(color, 'font-color-dark');
+
+            background: #555;
             border-radius: 6px;
             padding: 6px 10px;
             margin-right: $btn-margin-right;
