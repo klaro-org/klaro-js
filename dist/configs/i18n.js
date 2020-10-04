@@ -1,20 +1,21 @@
 var klaroI18nConfig = {
+    version: 2,
     cookieName: 'klaro-i18n',
     elementID: 'klaro',
     lang: 'en',
+    default: true,
     noNotice: true,
-    privacyPolicy: {
-        default: '/#privacy',
-        de: '/#datenschutz',
-    },
     poweredBy:
         'https://github.com/KIProtect/klaro/blob/master/dist/configs/i18n.js',
-    default: true,
     translations: {
         // these values will overwrite the defaults. For a full list, have a look
         // at the `src/translations` directory of this repo:
         // https://github.com/KIProtect/klaro/tree/master/src/translations
+        zz: {
+            privacyPolicyUrl: '/#privacy',
+        },
         de: {
+            privacyPolicyUrl: '/#datenschutz',
             consentModal: {
                 title: 'Dies ist der Titel des Zustimmungs-Dialogs',
                 description:
@@ -63,31 +64,8 @@ var klaroI18nConfig = {
                 description: 'Real-time user analytics',
             },
         },
-        tr: {
-            consentModal: {
-                title: 'Bu, izin penceresinin başlığı',
-                description: 'Bu, izin penceresi için açıklama.',
-                privacyPolicy: {
-                    text: 'Bu {privacyPolicy} için bir bağlantı.',
-                    name: 'Gizlilik Politikası (isim)',
-                },
-            },
-            poweredBy: 'Yapılandırmayı Görüntüle',
-            ok: 'Wohoo!',
-            purposes: {
-                analytics: 'Analitik',
-                security: 'Güvenlik',
-                livechat: 'Canlı Sohbet',
-            },
-            googleAnalytics: {
-                description: 'Ziyaretçi istatistiklerini toplama',
-            },
-            mouseflow: {
-                description: 'Gerçek zamanlı kullanıcı istatistiği',
-            },
-        },
     },
-    apps: [
+    services: [
         {
             name: 'googleAnalytics',
             title: 'Google Analytics',

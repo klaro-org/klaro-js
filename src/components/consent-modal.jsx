@@ -95,7 +95,7 @@ export default class ConsentModal extends React.Component {
         let ppLink;
         if (ppUrl !== undefined)
             ppLink = (
-                <a key="ppLink" href={ppUrl} target="_blank" rel="noopener noreferrer">
+                <a key="ppLink" href={ppUrl} target="_blank" rel="noopener">
                     {t(['consentModal', 'privacyPolicy', 'name'])}
                 </a>
             );
@@ -138,18 +138,21 @@ export default class ConsentModal extends React.Component {
                         {acceptButton}
                         {acceptAllButton}
                     </div>
-                    <p className="cm-powered-by">
-                        <a
-                            target="_blank"
-                            href={
-                                config.poweredBy ||
-                                'https://kiprotect.com/klaro'
-                            }
-                            rel="noopener noreferrer"
-                        >
-                            {t(['poweredBy'])}
-                        </a>
-                    </p>
+                    {
+                        !config.disablePoweredBy &&
+                        <p className="cm-powered-by">
+                            <a
+                                target="_blank"
+                                href={
+                                    config.poweredBy ||
+                                    'https://kiprotect.com/klaro'
+                                }
+                                rel="noopener"
+                            >
+                                {t(['poweredBy'])}
+                            </a>
+                        </p>
+                    }
                 </div>
             </div>
         );

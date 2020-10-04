@@ -39,7 +39,9 @@ To use the widget on your website, simply embed Klaro as well as a valid config.
 
 ```
 
-You should replace `[klaro-version]` with a version number (e.g. `v0.5.30`) to download a specific version of Klaro (we no longer support the `latest` version as it might lead to subtly breaking the many websites that Klaro is deployed on). Do not forget to change your existing apps/trackers as outlined in the next section as well, so that Klaro can manage them. By default, Klaro will automatically open once the page is fully loaded.
+You should replace `[klaro-version]` with a version number (e.g. `v0.5.30`) to download a specific version of Klaro. **Important:** We no longer update  `latest` version tag in the CDN as loading Klaro from it might lead to breaking your installation when new major or minor versions are published. We will soon replace the tag with minor version tags (e.g. `0.7`) that will receive automated security upgrades and bugfixes and can be safely used to embed Klaro without risking breaking changes.
+
+Do not forget to change your existing apps/trackers as outlined in the next section as well, so that Klaro can manage them. By default, Klaro will automatically open once the page is fully loaded.
 
 We also provide a version of Klaro without stylesheets included, which is useful
 in case you want to provide your own styles: [klaro-no-css.js](https://cdn.kiprotect.com/klaro/[klaro-version]/klaro-no-css.js). If you use this, make sure to either include your own styles or to include [klaro.min.css](https://cdn.kiprotect.com/klaro/[klaro-version]/klaro.min.css) separetely, like this:

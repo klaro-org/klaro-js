@@ -80,7 +80,7 @@ export default class ServiceItem extends React.Component {
                     {...(required ? { tabIndex: '0' } : {})}
                 >
                     <span className="cm-list-title">
-                        {title || tt(translations, lang, 'zz', ['!', 'title']) || asTitle(name)}
+                        {title || tt(translations, lang, 'zz', ['!', 'title']) || t(['!', name, 'title?']) || asTitle(name)}
                     </span>
                     {requiredText}
                     {optOutText}
@@ -90,7 +90,7 @@ export default class ServiceItem extends React.Component {
                 </label>
                 <div id={`${id}-description`}>
                     <p className="cm-list-description">
-                        {description || tt(translations, lang, 'zz', ['!', 'description']) || ''}
+                        {description || tt(translations, lang, 'zz', ['!', 'description']) || t(['!', name, 'description?']) || ''}
                     </p>
                     {purposesContent}
                 </div>

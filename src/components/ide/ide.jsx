@@ -72,7 +72,7 @@ export class IDEModal extends React.Component {
                                         config.poweredBy ||
                                         'https://kiprotect.com/klaro'
                                     }
-                                    rel="noopener noreferrer"
+                                    rel="noopener"
                                 >
                                     {t(['poweredBy'])}
                                 </a>

@@ -171,6 +171,12 @@ const KlaroConfigSpec = {
             validators: [],
             default: false,
         },
+        {
+            name: 'disablePoweredBy',
+            control: 'Switch',
+            validators: [],
+            default: false,
+        },
     ],
     groups: {},
 };

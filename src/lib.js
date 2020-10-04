@@ -74,6 +74,8 @@ export function render(config, opts){
         return
     opts = opts || {}
 
+    config = validateConfig(config)
+
     executeEventHandlers("render", config, opts)
 
     // we are using a count here so that we're able to repeatedly open the modal...
@@ -157,6 +159,25 @@ function getHashParams(){
     return new Map(decodeURI(location.hash.slice(1)).split("&").map(kv => kv.split("=")).map(kv => (kv.length === 1 ? [kv[0], true] : kv)))
 }
 
+export function validateConfig(config){
+    const validatedConfig = {...config}
+    if (validatedConfig.version === 2)
+        return validatedConfig
+    if (validatedConfig.apps !== undefined && validatedConfig.services === undefined){
+        validatedConfig.services = validatedConfig.apps
+        console.warn("Warning, your configuration file is outdated. Please change `apps` to `services`")
+        delete validatedConfig.apps
+    }
+    if (validatedConfig.translations !== undefined){
+        if (validatedConfig.translations.apps !== undefined && validatedConfig.services === undefined){
+            validatedConfig.translations.services = validatedConfig.translations.apps
+            console.warn("Warning, your configuration file is outdated. Please change `apps` to `services` in the `translations` key")
+            delete validatedConfig.translations.apps
+        }
+    }
+    return validatedConfig
+}
+
 export function setup(config){
     const script = currentScript("klaro");
     const hashParams = getHashParams();
@@ -226,7 +247,7 @@ export function getManager(config){
     config = config || defaultConfig
     const name = config.storageName || config.cookieName || 'default' // deprecated: cookieName
     if (managers[name] === undefined)
-        managers[name] = new ConsentManager(config)
+        managers[name] = new ConsentManager(validateConfig(config))
     return managers[name]
 }
 
