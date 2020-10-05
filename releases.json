@@ -1,6 +1,56 @@
 [
   {
     "changelog": {
+      "de": "- Die Dritt-Dienste wurden von \"Apps\" in \"Dienste\" umbenannt, um innerhalb der Codebasis als auch in der Benutzeroberfl\u00e4che eine einheitliche Terminologie zu verwenden. Der Begriff \"Dienst\" umfasst besser als \"App\" die Dritt-Software die auf Webseiten eingesetzt wird.\n\n**Wichtig:**\n\nDas Format der Konfigurationsdatei \u00e4ndert sich mit diesem Release. Alte Konfigurationsdateien werden aktuell automatisch auf das neue Format umgeschrieben. Wir empfehlen trotzdem, die Konfigurationsdateien folgenderma\u00dfen zu \u00e4ndern:\n\n**Zwingend notwendige \u00c4nderungen**\n\n- Umbenenen der Bezeichnung der Liste von Dritt-Services von `apps` in `services`.\n- Gegebenenfalls Umbennenen des Unterschl\u00fcssels `apps` in `services` innherhalb des\n  `translations` Schl\u00fcssels. Nur notwendig, falls \u00c4nderungen an den Standard\u00fcbersetzungen in\n  vorgenommen wurden.\n\n**\u00c4nderungen an eigenem CSS**\n\nFalls Klaro mit eigenem CSS angepasst wurde und Elemente der Klassen `cm-apps` oder `cm-app` \u00fcberschrieben wurden, m\u00fcssen diese ebenfalls in `cm-services` bzw. `cm-service` umbenannt werden.\n\n**Hinweise zum Upgrade:**\n\nDa bei diesem Upgrade auch CSS-Klassen umbenannt wurden kann es trotz der automatischen Anpassung von Konfigurationsdateien zu Problemen bei der Darstellung von Klaro kommen. Um zu vermeiden, dass bestehende Klaro-Installation hiervon betroffen sind wird dieses Release zun\u00e4chst nicht mit der Version `latest` auf dem CDN publiziert, ein Upgrade muss manuell erfolgen. Wir raten nun generell davon ab, die `latest` Version zu nutzen um solche Probleme in Zukunft zu vermeiden. Um weiterhin automatisierte Bugfixes und kleinere r\u00fcckw\u00e4rtskompatible Anpassungen zu erm\u00f6glichen, werden wir in Zukunft das `latest` Tag im CDN mit Tags ersetzen, die aus der Haupt- und Neben-Versionsnummer eines Releases bestehen, z.B. `0.7`. Dies soll uns erm\u00f6glichen, kritische Upgrades weiterhin automatisch ausliefern zu k\u00f6nnen ohne dabei Inkompatibilit\u00e4ten zu riskieren. Ein Upgrade auf eine neue Haupt- oder Nebenversion soll dann manuell erfolgen.\n",
+      "en": "- We changed the term \"app\" to \"service\" throughout the codebase. This makes the terminology coherent across the UI and codebase, as the term \"service\" is a better description for third-party software running on a website than \"app\".\n\n**Important:**\n\nThe config file format changes slightly with this release. For now, old configurations will be automatically rewritten to the new format upon loading. To avoid incompatibilities in the future, we urge you to perform the following changes in the config file though:\n\n- Change the name of the list of third-party services (formerly apps) from `apps` to `services`.\n- Change the key `apps` to `services` in the `translations` section (only necessary if translations under this key have been overridden)\n\nThis release also changes the names of some CSS classes, so if you have overwritten the `cm-apps` or `cm-app` classes or children thereof, you need to change the class names to `cm-services` or `cm-service`, respectively.\n\nDue to the risk of incompatibilities we decided to not tag this release with the `latest` tag in the CDN, to use it you'll have to upgrade manually therefore. To avoid such problems in the future, we will no longer offer a generic `latest` version of Klaro. Instead, we will create tags for minor versions like `0.7` that will receive regular bugfixes and improvements and can be safely used. Upgrading to new minor and major releases will be done manually, which minimizes the risk of breaking existing installations while still enabling us to deliver critical bugfixes and security updates.\n"
+    },
+    "date": "2020-10-05",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "yVeaDmvDNWY/yodkhPGskEdYwnYWnd8ShWu3QTbpvzOSNHp+r8ct1tkltiG/X5dQ"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "C5tSUBQwRSE6DU4/BhxmdkKCRXrmQD5gMRhYQT6FmotZjlpY4fmAPcdfxnnRoCI5"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "KN+yC1ZgiAvw/Q3eLQ4/5BPYQJwtQpXfrWpHjrqvjmQhUzyuF9hQn09Te9GteRPM"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "fN/d2sy7bPas7L+HROW80M3cTTuU2jBP0UO2Q8tZn3c/dXV6IAkkfnY1LnS/Z8pZ"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "QYm9SD2NjetcsNSJSq7iwWpjOKeLsvHxAV8fP2IVqFmE9yNqxeYgZ6rEzNnv08ZU"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "00F3n5KaiDPtzuQ5R9NJYf9uVGxA7J/yYTpOl2W9VAJifq/DAXLCAwAYiA+RP5Yy"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "LQjRtxlvNG+TDtNXmYZVVz+SOmXruy4ZotVXAKoaTOAT6VC3BmX5JG6t6asdBFsi"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "QrS6Ik+MmTnNqf55wKK/Pu9dc9l54Qbr2YoDyMTkzOgsc1DqKOCAiUNsqgJqiyH3"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "VPUi3TicBIGWQNIhZ1nPGGDN80Jd5qyOuW1WjZICbL6QrRGIpu67CBxNW7/sPryb"
+      }
+    ],
+    "tags": [
+      "improvements",
+      "breaking-changes"
+    ],
+    "version": "0.7.0"
+  },
+  {
+    "changelog": {
       "de": "- Beheben eines Fehlers, der zu Problemen bei der Verwendung von Klaro mit Internet Explorer f\u00fchrte.\n",
       "en": "- Fixed a bug that caused Klaro to not work with Internet Explorer.\n"
     },
