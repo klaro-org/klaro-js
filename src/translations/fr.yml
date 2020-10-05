@@ -29,10 +29,6 @@ purposeItem:
   service: service
   services: services
 purposes:
-  advertisement:
-    description: Ces services traitent les informations personnelles pour vous présenter
-      des publicités personnalisées ou basées sur des intérêts.
-    title: Annonces publicitaires
   advertising:
     description: Ces services traitent les informations personnelles pour vous présenter
       des publicités personnalisées ou basées sur des intérêts.

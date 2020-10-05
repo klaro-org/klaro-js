@@ -28,10 +28,6 @@ purposeItem:
   service: service
   services: diensten
 purposes:
-  advertisement:
-    description: Deze diensten verwerken persoonlijke informatie om u gepersonaliseerde
-      of op interesse gebaseerde advertenties te tonen.
-    title: Advertenties
   advertising:
     description: Deze diensten verwerken persoonlijke informatie om u gepersonaliseerde
       of op interesse gebaseerde advertenties te tonen.

@@ -28,10 +28,6 @@ purposeItem:
   service: servizio
   services: servizi
 purposes:
-  advertisement:
-    description: Questi servizi elaborano le informazioni personali per mostrarle
-      annunci pubblicitari personalizzati o basati su interessi.
-    title: Annunci
   advertising:
     description: Questi servizi elaborano le informazioni personali per mostrarle
       annunci pubblicitari personalizzati o basati su interessi.

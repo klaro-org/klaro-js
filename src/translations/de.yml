@@ -29,10 +29,6 @@ purposeItem:
   service: Dienst
   services: Dienste
 purposes:
-  advertisement:
-    description: Diese Dienste verarbeiten persönliche Daten, um Ihnen personalisierte
-      oder interessenbezogene Werbung zu zeigen.
-    title: Anzeigen
   advertising:
     description: Diese Dienste verarbeiten persönliche Informationen, um Ihnen personalisierte
       oder interessenbezogene Werbung zu zeigen.

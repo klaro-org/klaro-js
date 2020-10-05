@@ -25,9 +25,6 @@ purposeItem:
   service: 服务
   services: 服务
 purposes:
-  advertisement:
-    description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。
-    title: 广告
   advertising:
     description: 这些服务处理个人信息，向您展示个性化或基于兴趣的广告。
     title: 广告宣传

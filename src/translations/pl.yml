@@ -28,10 +28,6 @@ purposeItem:
   service: usługa
   services: usług
 purposes:
-  advertisement:
-    description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
-      lub opartych na zainteresowaniach ogłoszeń.
-    title: Ogłoszenia
   advertising:
     description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
       lub opartych na zainteresowaniach ogłoszeń.
