@@ -62,8 +62,13 @@ export default class Services extends React.Component {
 
         const togglableServices = services.filter((service) => !service.required);
 
-        const allDisabled =
-            togglableServices.filter((service) => consents[service.name]).length === 0;
+        const nEnabled = togglableServices.filter((service) => consents[service.name]).length
+        const nRequired = services.filter((service) => service.required).length
+
+        const allEnabled =
+            nEnabled === togglableServices.length;
+
+        const allDisabled = nEnabled === 0;
 
         const onlyRequiredEnabled =
             services.filter((service) => service.required).length > 0 && allDisabled;
@@ -81,8 +86,8 @@ export default class Services extends React.Component {
                                 'disableAll',
                                 'description',
                             ])}
-                            checked={!allDisabled}
-                            onlyRequiredEnabled={onlyRequiredEnabled}
+                            checked={allEnabled}
+                            onlyRequiredEnabled={!allEnabled && nRequired > 0}
                             onToggle={toggleAll}
                             lang={lang}
                             t={t}
