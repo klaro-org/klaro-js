@@ -24,19 +24,21 @@ export default class ConsentNotice extends React.Component {
         if (setChangedAll)
             changedServices = this.props.manager.changeAll(changedAllValue);
         const confirmed = this.props.manager.confirmed;
-        const saveAndHide = () => {
+        const close = () => {
             this.setState({ confirming: false });
-            this.props.manager.saveAndApplyConsents(eventType);
             this.props.hide();
         };
+        this.props.manager.saveAndApplyConsents(eventType);
         if (
             setChangedAll &&
             !confirmed &&
             (modal || this.props.config.mustConsent)
         ) {
-            if (changedServices === 0) saveAndHide();
-            else setTimeout(saveAndHide, 1000);
-        } else saveAndHide();
+            if (changedServices === 0)
+                close()
+            else
+                setTimeout(close, 800);
+        }
     };
 
     saveAndHide = () => {
