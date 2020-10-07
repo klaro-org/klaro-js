@@ -184,7 +184,7 @@ export function setup(config){
 
     const initialize = (opts) => {
         const fullOpts = {...opts, testing: hashParams.get('klaro-testing')}
-        if (!defaultConfig.noAutoLoad)
+        if (!defaultConfig.noAutoLoad && ((!defaultConfig.testing) || fullOpts.testing))
             render(defaultConfig, fullOpts)
     }
 
