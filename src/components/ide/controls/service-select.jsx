@@ -33,14 +33,12 @@ export const ServiceSelect = ({field, services, prefix, config, t, updateConfig}
         let candidateServices = generateCandidates(searchServices(value))
         if (value !== '')
             candidateServices.unshift({name: value, service: {
-                service: {
-                    spec: {
-                        name: value,
-                        cookies: [],
-                        purposes: [],
-                        requests: [],
-                        version: 1,
-                    }
+                spec: {
+                    name: value,
+                    cookies: [],
+                    purposes: [],
+                    requests: [],
+                    version: 1,
                 }
             }, value: `${value} (${t(['fields', 'services', 'addNew'])})`})
         setCandidates(candidateServices)
