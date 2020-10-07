@@ -1,40 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { SearchSelect } from './search-select';
+import { asTitle } from "../../../utils/strings";
 
-export const ServiceSelect = ({field, lookup, prefix, config, t, updateConfig}) => {
+function getValue(t, lang, key){
+    let dt = t[lang]
+    if (dt === undefined)
+        return
+    for(const k of key){
+        if (dt === undefined)
+            return
+        dt = dt[k]
+    }
+    return dt
+}
+
+export const ServiceSelect = ({field, services, prefix, config, t, updateConfig}) => {
     const [search, setSearch] = useState('')
     const [updated, setUpdated] = useState(false)
-    const existingServices = new Set(config[field.name].map(service => service.name))
-    const generateInitialServices = () => []
-    const [candidates, setCandidates] = useState(generateInitialServices())
+    
+    const serviceTitle = service => getValue(service.spec.translations || {}, t.lang, ['title']) || getValue(service.spec.translations || {}, 'zz', ['title'])  || asTitle(service.name)
+    const generateCandidates = services => services.sort((a, b) => serviceTitle(a) > serviceTitle(b) ? 1 : -1).map(service => ({service: service, name: service.name, value: serviceTitle(service)}))
+    const [candidates, setCandidates] = useState(generateCandidates(services))
+
+    const searchServices = (query) => {
+        if (!query)
+            return services
+        let ms = services.filter(service => serviceTitle(service).toLowerCase().includes(query.toLowerCase()))
+        return ms
+    }
 
     const updateSearch = (value) => {
-        let candidateServices = lookup(value)
-        if (candidates.length > 10 || value === '')
-            candidateServices = []
+        let candidateServices = generateCandidates(searchServices(value))
         if (value !== '')
-            candidateServices.unshift({name: value, service: {}, value: `${value} (${t(['fields', 'services', 'addNew'])})`})
+            candidateServices.unshift({name: value, service: {
+                service: {
+                    spec: {
+                        name: value,
+                        cookies: [],
+                        purposes: [],
+                        requests: [],
+                        version: 1,
+                    }
+                }
+            }, value: `${value} (${t(['fields', 'services', 'addNew'])})`})
         setCandidates(candidateServices)
         setSearch(value)
     }
 
     useEffect(() => {
         if (updated){
-            setCandidates(generateInitialServices())
+            setCandidates(generateCandidates(services))
             setUpdated(false)
         }
     })
 
-    const createService = (service) => {
-        if (service === undefined){
-            if (search !== '' && candidates.length > 0)
-                service = candidates[0]
+    const createService = (candidate) => {
+        if (candidate === undefined){
+            if (candidate !== '' && candidates.length > 0)
+                candidate = candidates[0]
             else
                 return;
-        } 
-        service.cookies = []
-        service.purposes = []
-        updateConfig(['services', null], service)
+        }
+        updateConfig(['services', null], candidate.service.spec)
         setSearch('')
         setUpdated(true);
     }

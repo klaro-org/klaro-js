@@ -131,6 +131,7 @@ export class ConfigIDE extends React.Component {
             controls,
             setState,
             config,
+            services,
             unsetConfig,
             saveConfig,
             resetConfig,
@@ -202,6 +203,7 @@ export class ConfigIDE extends React.Component {
                     state={componentState}
                     setState={setComponentState}
                     disabled={disabled}
+                    services={services}
                     config={config}
                     updateConfig={(...args) =>
                         updateConfig(config.name, ...args)

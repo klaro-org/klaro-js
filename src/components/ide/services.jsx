@@ -37,15 +37,15 @@ export const ServiceList = ({ t, config, disabled, onClick, updateConfig }) => {
     </React.Fragment>
 };
 
-export const ServiceDetails = ({t, service, updateServiceName, updateConfig}) => {
+export const ServiceDetails = ({t, setState, service, updateServiceName, updateConfig}) => {
     if (service === undefined)
         return <div />
     return <div className="cm-service-details">
-        <ServiceConfig service={service} updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} />
+        <ServiceConfig setState={setState} service={service} updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} />
     </div>
 }
 
-export const ServiceConfig = ({ service, updateServiceName, disabled, updateConfig, t }) => {
+export const ServiceConfig = ({ service, setState, updateServiceName, disabled, updateConfig, t }) => {
     const formControls = Spec.serviceConfig.map((serviceField) => {
         const ClassName = Controls[serviceField.control];
         const updateServiceConfig = (k ,v) => {
@@ -67,23 +67,35 @@ export const ServiceConfig = ({ service, updateServiceName, disabled, updateConf
             />
         );
     });
+
+    const unsetService = () => {
+        setState({service: undefined})
+    }
+
     return (
         <React.Fragment>
             <fieldset className="cm-service-fields" disabled={disabled}>
-                <h2>{service.name}</h2>
+                <h2><a onClick={unsetService}>{t(['services','title'])} &rsaquo;</a> {service.name}</h2>
                 {formControls}
             </fieldset>
         </React.Fragment>
     );
 };
 
-export const Services = ({ t, state, setState, config, disabled, updateConfig }) => {
+export const Services = ({ t, tt, state, services, setState, config, disabled, updateConfig }) => {
     state = state || {service: undefined};
     const { service } = state
     let component
     const updateServiceName = (name) => setState({service: name})
+
+    let newServices = []
+
+
+    if (services !== undefined)
+        newServices = services.filter(service => config.config.services.find(configService => configService.name === service.name || configService.id === service.id) === undefined)
+
     if (service !== undefined){
-        component = <ServiceDetails updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} service={config.config.services.find(ap => ap.name === service)} />
+        component = <ServiceDetails setState={setState} updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} service={config.config.services.find(ap => ap.name === service)} />
     } else {
         component = <React.Fragment>
             <ServiceList
@@ -95,7 +107,7 @@ export const Services = ({ t, state, setState, config, disabled, updateConfig })
             />
             <div className="cm-config-controls">
                 <fieldset>
-                    <Controls.ServiceSelect updateConfig={updateConfig} config={config.config} field={{name: 'services'}} t={t} lookup={() => []} />
+                    <Controls.ServiceSelect services={newServices} updateConfig={updateConfig} config={config.config} field={{name: 'services'}} t={t} />
                 </fieldset>
             </div>
         </React.Fragment>

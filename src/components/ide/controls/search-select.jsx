@@ -3,7 +3,7 @@ import { BaseRetractingLabelInput } from './input';
 
 export const SearchSelect = ({search, disabled, label, description, onSelect, setSearch, candidates}) => {
 
-    const items = candidates.map((candidate) => (
+    const items = candidates.slice(0, 10).map((candidate) => (
         <li
             onClick={() => onSelect(candidate)}
             key={candidate.name}
@@ -18,6 +18,9 @@ export const SearchSelect = ({search, disabled, label, description, onSelect, se
             }
         </li>
     ));
+
+    if (candidates.length > 10)
+        items.push(<li key="hasMore" className="cm-candidate">...</li>)
 
     let searchCandidates
     if (items.length > 0)
