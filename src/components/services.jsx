@@ -76,7 +76,7 @@ export default class Services extends React.Component {
         return (
             <ul className="cm-services">
                 {serviceItems}
-                {togglableServices.length > 1 && (
+                {!config.hideToggleAllSlider && togglableServices.length > 1 && (
                     <li className="cm-service cm-toggle-all">
                         <ServiceItem
                             name="disableAll"

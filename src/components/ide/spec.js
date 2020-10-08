@@ -166,6 +166,12 @@ const KlaroConfigSpec = {
             default: false,
         },
         {
+            name: 'hideToggleAllSlider',
+            control: 'Switch',
+            validators: [],
+            default: false
+        },
+        {
             name: 'noticeAsModal',
             control: 'Switch',
             validators: [],
