@@ -1,6 +1,7 @@
 import React from 'react';
 import { ServiceItems } from './services';
 import { asTitle } from '../utils/strings';
+import Text from './text';
 
 export default class PurposeItem extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ export default class PurposeItem extends React.Component {
             onlyRequiredEnabled,
             allDisabled,
             services,
+            config,
             onToggle,
             name,
             lang,
@@ -72,8 +74,10 @@ export default class PurposeItem extends React.Component {
         };
 
         const serviceItems = (
-            <ServiceItems lang={lang} services={services} toggle={toggle} consents={consents} t={t} />
+            <ServiceItems config={config} lang={lang} services={services} toggle={toggle} consents={consents} t={t} />
         );
+
+        const descriptionText = description || t(['!', 'purposes', name, 'description'])
 
         return (
             <React.Fragment>
@@ -110,11 +114,15 @@ export default class PurposeItem extends React.Component {
                     </span>
                 </label>
                 <div id={`${id}-description`}>
-                    <p className="cm-list-description">
-                        {description ||
-                            t(['!', 'purposes', name, 'description']) ||
-                            ''}
-                    </p>
+                    {
+                        descriptionText &&
+                        <p className="cm-list-description">
+                            <Text
+                                config={config}
+                                text={descriptionText}
+                            />
+                        </p>
+                    }
                     {purposesContent}
                 </div>
                 {services.length > 0 && (

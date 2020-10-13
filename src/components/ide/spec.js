@@ -177,6 +177,12 @@ const KlaroConfigSpec = {
             validators: [],
             default: false,
         },
+        {
+            name: 'purposeOrder',
+            control: 'PurposeOrder',
+            validators: [],
+            default: [],
+        },
     ],
     groups: {},
 };

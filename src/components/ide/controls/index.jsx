@@ -8,3 +8,4 @@ export * from './cookies';
 export * from './language-select';
 export * from './purpose-select';
 export * from './service-select';
+export * from './purpose-order';

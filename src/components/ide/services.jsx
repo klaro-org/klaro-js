@@ -18,7 +18,7 @@ export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem on
 </ListItem>
 
 export const ServiceList = ({ t, config, disabled, onClick, updateConfig }) => {
-    const services = config.config.services.map(service => <ServiceItem key={service.name} updateConfig={updateConfig} onClick={onClick} t={t} service={service} />)
+    const services = config.services.map(service => <ServiceItem key={service.name} updateConfig={updateConfig} onClick={onClick} t={t} service={service} />)
     return <React.Fragment>
         { services.length > 0 && 
         <List className="cm-service-list">
@@ -92,10 +92,10 @@ export const Services = ({ t, tt, state, services, setState, config, disabled, u
 
 
     if (services !== undefined)
-        newServices = services.filter(service => config.config.services.find(configService => configService.name === service.name || configService.id === service.id) === undefined)
+        newServices = services.filter(service => config.services.find(configService => configService.name === service.name || configService.id === service.id) === undefined)
 
     if (service !== undefined){
-        component = <ServiceDetails setState={setState} updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} service={config.config.services.find(ap => ap.name === service)} />
+        component = <ServiceDetails setState={setState} updateServiceName={updateServiceName} t={t} updateConfig={updateConfig} service={config.services.find(ap => ap.name === service)} />
     } else {
         component = <React.Fragment>
             <ServiceList
@@ -107,7 +107,7 @@ export const Services = ({ t, tt, state, services, setState, config, disabled, u
             />
             <div className="cm-config-controls">
                 <fieldset>
-                    <Controls.ServiceSelect services={newServices} updateConfig={updateConfig} config={config.config} field={{name: 'services'}} t={t} />
+                    <Controls.ServiceSelect services={newServices} updateConfig={updateConfig} config={config} field={{name: 'services'}} t={t} />
                 </fieldset>
             </div>
         </React.Fragment>

@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SearchSelect } from './search-select';
 import { asTitle } from "../../../utils/strings";
-
-function getValue(t, lang, key){
-    let dt = t[lang]
-    if (dt === undefined)
-        return
-    for(const k of key){
-        if (dt === undefined)
-            return
-        dt = dt[k]
-    }
-    return dt
-}
+import { getValue } from "../utils/i18n";
 
 export const ServiceSelect = ({field, services, prefix, config, t, updateConfig}) => {
     const [search, setSearch] = useState('')

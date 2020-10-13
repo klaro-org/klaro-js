@@ -20,6 +20,63 @@
     .cm-service-fields {
         max-width: 600px;
 
+    }
+
+    .cm-json {
+        .cm-file-import {
+            display: none;
+        }
+
+        .cm-upload-label {
+            cursor: pointer;
+
+            button {
+                pointer-events: none;
+            }
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+    }
+
+    .cm-message {
+        padding: map-get($cm-space, md);
+
+        &.cm-error,
+        &.cm-success {
+            border-radius: $cm-border-radius;
+            box-shadow: $cm-box-shadow-light-sm;
+            color: $cm-white;
+            margin-bottom: map-get($cm-space, lg);
+        }
+
+        &.cm-error {
+            background: $cm-red2;            
+        }
+
+        &.cm-success {
+            background: $cm-green2;
+        }
+    }
+
+    .cm-space-sm {
+        margin-bottom: map-get($cm-space, sm) !important;
+    }
+
+    .cm-space-md {
+        margin-bottom: map-get($cm-space, md) !important;
+    }
+
+    .cm-space-lg {
+        margin-bottom: map-get($cm-space, lg) !important;
+    }
+
+    .cm-json,
+    .cm-global-fields,
+    .cm-config-controls,
+    .cm-translations-fields,
+    .cm-service-fields {
         h1,
         h2,
         h3,
@@ -57,6 +114,37 @@
         margin-top: map-get($cm-space, sm);
         margin-bottom: map-get($cm-space, lg);
         color: #666;
+    }
+
+    .cm-purpose-order {
+        ul {
+            margin-top: map-get($cm-space, md);
+            margin-bottom: map-get($cm-space, md);
+
+            li {
+                display: flex;
+
+                span.cm-buttons {
+                    flex-grow: 0;
+                    box-shadow: $cm-box-shadow-light-sm;
+                    border-radius: $cm-border-radius;
+
+                    a {
+                        padding: map-get($cm-space, md);
+                        display: inline-block;
+
+                        &:hover {
+                            background: $cm-green1;
+                        }
+                    }
+                }
+
+                span.cm-value {
+                    flex-grow: 1;
+                    padding: map-get($cm-space, md);
+                }
+            }
+        }
     }
 
     .cm-translations-fields {
@@ -177,7 +265,7 @@
             }
         }
 
-        button.cm-control-button {
+        .cm-control-button {
             border: 0;
             padding: 12px;
             margin-top: 4px;

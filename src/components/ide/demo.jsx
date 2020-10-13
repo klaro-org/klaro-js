@@ -34,13 +34,13 @@ function getTranslations(config){
 export const Demo = ({t: ttt, config}) => {
     const [show, setShow] = useState(0) 
     const [siteUrl, setSiteUrl] = useState('')
-    const [lang, setLang] = useState(config.config.languages > 0 ? config.config.languages[0] : 'en')
+    const [lang, setLang] = useState(config.languages > 0 ? config.languages[0] : 'en')
     const [testStore, setTestStore] = useState(new TestStore())
     const auxiliaryTestStore = new TestStore()
-    const manager = new ConsentManager(config.config, testStore, auxiliaryTestStore);
-    const trans = getTranslations(config.config)
+    const manager = new ConsentManager(config, testStore, auxiliaryTestStore);
+    const trans = getTranslations(config)
     const tt = (...args) => t(trans, lang, config.fallbackLang || 'zz', ...args)
-    const languages = config.config.languages.map(language => <option key={language} value={language}>{ttt(['languages', language])} ({language})</option>)
+    const languages = config.languages.map(language => <option key={language} value={language}>{ttt(['languages', language])} ({language})</option>)
     const testOnSite = () => {
         window.open(siteUrl+`#klaro-testing&klaro-config=${config.name}`)
     }
@@ -63,7 +63,7 @@ export const Demo = ({t: ttt, config}) => {
                 </select>
             </div>
             <div className="cm-control">
-                <button className="cm-control-button cm-secondary" onClick={() => {setTestStore(new TestStore());setShow(show + 1);setModal(false)}}>
+                <button className="cm-control-button cm-secondary" onClick={() => {setTestStore(new TestStore());setShow(show + 1);}}>
                     {ttt(['demo', 'reset'])}
                 </button>
                 <button className="cm-control-button" onClick={() => {setShow(show+1)}}>
@@ -74,7 +74,7 @@ export const Demo = ({t: ttt, config}) => {
         <App t={tt}
             lang={lang}
             manager={manager}
-            config={config.config}
+            config={config}
             show={show}
         />
     </div>

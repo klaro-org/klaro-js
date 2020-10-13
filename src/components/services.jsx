@@ -1,7 +1,7 @@
 import React from 'react';
 import ServiceItem from './service-item';
 
-export const ServiceItems = ({ services, consents, lang, toggle, t }) => {
+export const ServiceItems = ({ services, config, consents, lang, toggle, t }) => {
     return services.map((service) => {
         const toggleService = (value) => {
             toggle([service], value);
@@ -12,6 +12,7 @@ export const ServiceItems = ({ services, consents, lang, toggle, t }) => {
                 <ServiceItem
                     checked={checked || service.required}
                     onToggle={toggleService}
+                    config={config}
                     lang={lang}
                     t={t}
                     {...service}
@@ -57,7 +58,7 @@ export default class Services extends React.Component {
         };
 
         const serviceItems = (
-            <ServiceItems lang={lang} services={services} t={t} consents={consents} toggle={toggle} />
+            <ServiceItems config={config} lang={lang} services={services} t={t} consents={consents} toggle={toggle} />
         );
 
         const togglableServices = services.filter((service) => !service.required);
@@ -87,6 +88,7 @@ export default class Services extends React.Component {
                                 'description',
                             ])}
                             checked={allEnabled}
+                            config={config}
                             onlyRequiredEnabled={!allEnabled && nRequired > 0}
                             onToggle={toggleAll}
                             lang={lang}

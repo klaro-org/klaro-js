@@ -11,7 +11,7 @@ export const Globals = ({ config, disabled, controls, updateConfig, t }) => {
                 disabled={disabled}
                 key={globalField.name}
                 updateConfig={updateConfig}
-                config={config.config}
+                config={config}
                 t={t}
                 key={globalField.name}
                 field={globalField}

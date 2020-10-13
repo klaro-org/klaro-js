@@ -1,6 +1,7 @@
 import React from 'react';
 import { asTitle } from '../utils/strings';
 import { t as tt } from '../utils/i18n';
+import Text from './text';
 
 // to do: remove the deprecated translation keys [name, 'title'] & [name, 'description']
 
@@ -12,6 +13,7 @@ export default class ServiceItem extends React.Component {
             onToggle,
             name,
             lang,
+            config,
             translations,
             title,
             description,
@@ -57,6 +59,8 @@ export default class ServiceItem extends React.Component {
                 </p>
             );
 
+        const descriptionText = description || tt(translations, lang, 'zz', ['!', 'description']) || t(['!', name, 'description?'])
+
         return (
             <div>
                 <input
@@ -89,9 +93,15 @@ export default class ServiceItem extends React.Component {
                     </span>
                 </label>
                 <div id={`${id}-description`}>
-                    <p className="cm-list-description">
-                        {description || tt(translations, lang, 'zz', ['!', 'description']) || t(['!', name, 'description?']) || ''}
-                    </p>
+                    {
+                        descriptionText &&
+                        <p className="cm-list-description">
+                            <Text
+                                config={config}
+                                text={descriptionText}
+                            />
+                        </p>
+                    }
                     {purposesContent}
                 </div>
             </div>

@@ -15,6 +15,7 @@ consentNotice:
     la preghiamo di rinnovare il suo consenso.
   configure: configurare
   description: Salve, possiamo attivare alcuni servizi aggiuntivi per {purposes}?
+    Può sempre modificare o ritirare il suo consenso in un secondo momento.
   imprint:
     name: impronta
   learnMore: Lasciatemi scegliere
@@ -24,6 +25,9 @@ consentNotice:
 decline: Rifiuto
 ok: Va bene così
 poweredBy: Realizzato con Klaro!
+privacyPolicy:
+  name: informativa sulla privacy
+  text: Per saperne di più, legga la nostra {privacyPolicy}.
 purposeItem:
   service: servizio
   services: servizi

@@ -14,6 +14,7 @@ consentNotice:
   changeDescription: Hubo cambios desde su última visita, por favor, renueve su consentimiento.
   configure: configurar
   description: ¡Hola! ¿Podríamos habilitar algunos servicios adicionales para {purposes}?
+    Siempre puede cambiar o retirar su consentimiento más tarde.
   imprint:
     name: Imprimir
   learnMore: Déjame elegir
@@ -23,6 +24,9 @@ consentNotice:
 decline: Me niego
 ok: Está bien.
 poweredBy: Realizado con Klaro!
+privacyPolicy:
+  name: política de privacidad
+  text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
 purposeItem:
   service: servicio
   services: servicios

@@ -20,24 +20,35 @@ export default class ConsentNotice extends React.Component {
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
         const { modal } = this.state;
+
         let changedServices = 0;
+
         if (setChangedAll)
             changedServices = this.props.manager.changeAll(changedAllValue);
+
         const confirmed = this.props.manager.confirmed;
-        const close = () => {
-            this.setState({ confirming: false });
-            this.props.hide();
-        };
+
         this.props.manager.saveAndApplyConsents(eventType);
+
         if (
             setChangedAll &&
             !confirmed &&
             (modal || this.props.config.mustConsent)
         ) {
+
+            const close = () => {
+                this.setState({confirming: false});
+                this.props.hide();
+            };
+
+            this.setState({confirming: true})
             if (changedServices === 0)
                 close()
-            else
+            else{
                 setTimeout(close, 800);
+            }
+        } else {
+            this.props.hide();
         }
     };
 
@@ -55,12 +66,13 @@ export default class ConsentNotice extends React.Component {
 
     render() {
         const { lang, config, show, manager, testing, t } = this.props;
-        const { modal, confirming } = this.state;
+        const { confirming, modal } = this.state;
         const { embedded, noticeAsModal, hideLearnMore } = config;
 
         // we exclude functional services from this list, as they are always required and
         // the user cannot decline their use...
-        const purposes = getPurposes(config).filter(purpose => purpose !== 'functional');
+        const purposeOrder = config.purposeOrder || []
+        const purposes = getPurposes(config).filter(purpose => purpose !== 'functional').sort((a,b) => purposeOrder.indexOf(a)-purposeOrder.indexOf(b));
         const purposesTranslations = purposes
             .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
         let purposesText = ''
@@ -79,7 +91,9 @@ export default class ConsentNotice extends React.Component {
             }
         } else {
             // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'])
+            ppUrl = t(['!', 'privacyPolicyUrl'], {lang: lang})
+            if (ppUrl !== undefined)
+                ppUrl = ppUrl.join('')
         }
 
 
@@ -101,7 +115,11 @@ export default class ConsentNotice extends React.Component {
                     {t(['consentNotice', 'changeDescription'])}
                 </p>
             );
-        if (!show && !testing) return <div />;
+
+        // we only show the notice if it's explicitly demanded (show=True), if
+        // testing mode is enabled (testing=true) or if there's a confirmation
+        // process/animation going on (confirming=true)
+        if (!show && !testing && !confirming) return <div />;
 
         const noticeIsVisible =
             (!config.mustConsent || noticeAsModal) &&
@@ -141,6 +159,7 @@ export default class ConsentNotice extends React.Component {
         const learnMoreLink = (extraText) =>
             noticeAsModal ? (
                 <button
+                    key="learnMoreLink"
                     className="cm-btn cm-btn-lern-more cm-btn-info"
                     type="button"
                     onClick={showModal}
@@ -150,6 +169,7 @@ export default class ConsentNotice extends React.Component {
                 </button>
             ) : (
                 <a
+                    key="learnMoreLink"
                     className="cm-link cn-learn-more"
                     href="#"
                     onClick={showModal}
@@ -164,7 +184,7 @@ export default class ConsentNotice extends React.Component {
         if (ppUrl !== undefined)
             ppLink = (
                 <a key="ppLink" href={ppUrl}>
-                    {t(['consentNotice', 'privacyPolicy', 'name'])}
+                    {t(['privacyPolicy', 'name'])}
                 </a>
             );
 
@@ -177,15 +197,16 @@ export default class ConsentNotice extends React.Component {
                 <ConsentModal
                     t={t}
                     lang={lang}
-                    confirming={confirming}
                     config={config}
                     hide={hideModal}
+                    confirming={confirming}
                     declineAndHide={this.declineAndHide}
                     saveAndHide={this.saveAndHide}
                     acceptAndHide={this.acceptAndHide}
                     manager={manager}
                 />
             );
+
         const notice = (
             <div
                 className={`cookie-notice ${
@@ -195,14 +216,16 @@ export default class ConsentNotice extends React.Component {
                 }`}
             >
                 <div className="cn-body">
-                    <Text
-                        config={config}
-                        text={t(['consentNotice', 'description'], {
-                            purposes: <strong key="strong">{purposesText}</strong>,
-                            privacyPolicy: ppLink,
-                            learnMoreLink: learnMoreLink(),
-                        })}
-                    />
+                    <p>
+                        <Text
+                            config={config}
+                            text={t(['consentNotice', 'description'], {
+                                purposes: <strong key="strong">{purposesText}</strong>,
+                                privacyPolicy: ppLink,
+                                learnMoreLink: learnMoreLink(),
+                            })}
+                        />
+                    </p>
                     {testing && <p>{t(['consentNotice', 'testing'])}</p>}
                     {changesText}
                     <div className="cn-ok">

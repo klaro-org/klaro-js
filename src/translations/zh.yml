@@ -11,7 +11,7 @@ consentModal:
 consentNotice:
   changeDescription: 自上次访问后有变化，请更新您的同意。
   configure: 配置
-  description: 你好！能不能为{purposes} 启用一些附加服务？
+  description: 你好！我们可以为{purposes} 启用一些额外的服务吗？您可以随时更改或撤回您的同意。
   imprint:
     name: 印记
   learnMore: 让我来选
@@ -21,6 +21,9 @@ consentNotice:
 decline: 我拒绝
 ok: 没事的
 poweredBy: 与Klaro一起实现!
+privacyPolicy:
+  name: 隐私政策
+  text: 要了解更多，请阅读我们的{privacyPolicy} 。
 purposeItem:
   service: 服务
   services: 服务

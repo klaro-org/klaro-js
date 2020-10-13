@@ -65,8 +65,8 @@ export default class Purposes extends React.Component {
             if (status.allDisabled) status.onlyRequiredEnabled = false;
             return status;
         };
-
-        const purposeItems = Object.keys(purposes).map((purpose) => {
+        const purposeOrder = config.purposeOrder || []
+        const purposeItems = Object.keys(purposes).sort((a,b) => purposeOrder.indexOf(a)-purposeOrder.indexOf(b)).map((purpose) => {
             const togglePurpose = (value) => {
                 toggle([purpose], value);
             };
@@ -80,6 +80,7 @@ export default class Purposes extends React.Component {
                         required={status.allRequired}
                         consents={consents}
                         name={purpose}
+                        config={config}
                         lang={lang}
                         manager={manager}
                         onToggle={togglePurpose}
@@ -118,6 +119,7 @@ export default class Purposes extends React.Component {
                             onToggle={toggleAll}
                             manager={manager}
                             consents={consents}
+                            config={config}
                             lang={lang}
                             services={[]}
                             t={t}

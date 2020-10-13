@@ -8,7 +8,7 @@ de:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -16,6 +16,8 @@ de:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -72,7 +74,7 @@ es:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -80,6 +82,8 @@ es:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -109,7 +113,7 @@ fr:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -117,6 +121,8 @@ fr:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -146,7 +152,7 @@ it:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -154,6 +160,8 @@ it:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -183,7 +191,7 @@ nl:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -191,6 +199,8 @@ nl:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -220,7 +230,7 @@ pl:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -228,6 +238,8 @@ pl:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -257,7 +269,7 @@ pt:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -265,6 +277,8 @@ pt:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa
@@ -294,7 +308,7 @@ zh:
   consentModal.title: 0a4e3d80d5dada86
   consentNotice.changeDescription: 742eeec1cf0f0995
   consentNotice.configure: ce3c9e9ba70674d9
-  consentNotice.description: 2087829f3178fdae
+  consentNotice.description: 5a6e9da25dc34a32
   consentNotice.imprint.name: e7444343ba0a70a2
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
@@ -302,6 +316,8 @@ zh:
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
+  privacyPolicy.name: 2b72811d5f06762f
+  privacyPolicy.text: 5f47fb0763139ad7
   purposeItem.service: 423b44b87f1b993c
   purposeItem.services: e42a806a32247a7f
   purposes.advertising.description: c474f0cc6c767aaa

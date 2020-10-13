@@ -1,17 +1,15 @@
+privacyPolicy:
+    name: privacy policy
+    text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentModal:
     title: Services we would like to use
     description: Here you can assess and customize the services that we'd like to use on this website. You're in charge! Enable or disable services as you see fit.
-    privacyPolicy:
-        name: privacy policy
-        text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentNotice:
     testing: Testing mode!
     changeDescription: There were changes since your last visit, please renew your consent.
-    description: "Hi! Could we please enable some additional services for {purposes}?"
+    description: "Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later."
     learnMore|capitalize: Let me choose
     configure: Here you can <tr-snip>configure</tr-snip> your choices.
-    privacyPolicy:
-        name: privacy policy
     imprint:
         name: imprint
 purposes:

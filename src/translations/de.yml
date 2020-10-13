@@ -15,7 +15,7 @@ consentNotice:
     Ihre Zustimmung.
   configure: konfigurieren
   description: Hallo! Könnten wir bitte einige zusätzliche Dienste für {purposes}
-    aktivieren?
+    aktivieren? Sie können Ihre Zustimmung später jederzeit ändern oder zurückziehen.
   imprint:
     name: Impressum
   learnMore: Lassen Sie mich wählen
@@ -25,6 +25,9 @@ consentNotice:
 decline: Ich lehne ab
 ok: Das ist ok
 poweredBy: Realisiert mit Klaro!
+privacyPolicy:
+  name: Datenschutzerklärung
+  text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
 purposeItem:
   service: Dienst
   services: Dienste

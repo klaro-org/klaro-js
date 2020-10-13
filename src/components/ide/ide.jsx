@@ -6,6 +6,7 @@ import { Globals } from './globals';
 import { Demo } from './demo';
 import { JSONConfig } from './json-config';
 import { Configs } from './configs';
+import { Styling } from './styling';
 import { Translations } from './translations';
 import { Tabs, Tab } from './tabs';
 
@@ -91,6 +92,7 @@ const tabComponents = {
     translations: Translations,
     testing: Demo,
     json: JSONConfig,
+    styling: Styling,
 };
 
 export default class IDE extends React.Component {
@@ -152,8 +154,9 @@ export class ConfigIDE extends React.Component {
             'services',
             'globals',
             'translations',
+            'json',
+            'styling',
             'testing',
-//            'json',
         ].map((tb) => (
             <Tab key={tb} onClick={() => changeTab(tb)} active={tab === tb}>
                 {t(['ide', tb])}

@@ -89,14 +89,16 @@ export default class ConsentModal extends React.Component {
             }
         } else {
             // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'])
+            ppUrl = t(['!', 'privacyPolicyUrl'], {lang: lang})
+            if (ppUrl !== undefined)
+                ppUrl = ppUrl.join('')
         }
 
         let ppLink;
         if (ppUrl !== undefined)
             ppLink = (
                 <a key="ppLink" href={ppUrl} target="_blank" rel="noopener">
-                    {t(['consentModal', 'privacyPolicy', 'name'])}
+                    {t(['privacyPolicy', 'name'])}
                 </a>
             );
 
@@ -113,23 +115,24 @@ export default class ConsentModal extends React.Component {
                 <div className="cm-header">
                     {closeLink}
                     <h1 className="title">{t(['consentModal', 'title'])}</h1>
-                    <Text
-                        config={config}
-                        text={[t(['consentModal', 'description'])].concat(
-                            (ppLink &&
-                                [' '].concat(
-                                    t(
-                                        [
-                                            'consentModal',
-                                            'privacyPolicy',
-                                            'text',
-                                        ],
-                                        { privacyPolicy: ppLink }
-                                    )
-                                )) ||
-                                []
-                        )}
-                    />
+                    <p>
+                        <Text
+                            config={config}
+                            text={[t(['consentModal', 'description'])].concat(
+                                (ppLink &&
+                                    [' '].concat(
+                                        t(
+                                            [
+                                                'privacyPolicy',
+                                                'text',
+                                            ],
+                                            { privacyPolicy: ppLink }
+                                        )
+                                    )) ||
+                                    []
+                            )}
+                        />
+                    </p>
                 </div>
                 <div className="cm-body">{servicesOrPurposes}</div>
                 <div className="cm-footer">

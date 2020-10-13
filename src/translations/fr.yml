@@ -15,7 +15,7 @@ consentNotice:
     renouveler votre consentement.
   configure: configurer
   description: Bonjour ! Pourrions-nous activer des services supplémentaires pour
-    {purposes}?
+    {purposes}? Vous pouvez toujours modifier ou retirer votre consentement plus tard.
   imprint:
     name: mentions légales
   learnMore: Laissez-moi choisir
@@ -25,6 +25,9 @@ consentNotice:
 decline: Je refuse
 ok: C'est bon.
 poweredBy: Réalisé avec Klaro !
+privacyPolicy:
+  name: politique de confidentialité
+  text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
 purposeItem:
   service: service
   services: services

@@ -15,6 +15,7 @@ consentNotice:
     te hernieuwen.
   configure: configureren
   description: Hallo, kunnen wij u een aantal extra diensten aanbieden voor {purposes}?
+    U kunt uw toestemming later altijd nog wijzigen of intrekken.
   imprint:
     name: impressum
   learnMore: Laat me kiezen
@@ -24,6 +25,9 @@ consentNotice:
 decline: Ik weiger
 ok: Dat is oké
 poweredBy: Gerealiseerd met Klaro!
+privacyPolicy:
+  name: privacybeleid
+  text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
 purposeItem:
   service: service
   services: diensten
