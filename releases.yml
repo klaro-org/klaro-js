@@ -1,4 +1,34 @@
 - changelog:
+    de: |
+      - Beschreibungen von Diensten und Zwecken werden nun ebenfalls vom `htmlTexts` Parameter erfasst und können als HTML-Texte geschrieben werden.
+      - Zwecke können über den `purposeOrder` Parameter sortiert werden. Dieser kann eine Liste mit Zweckbezeichnungen enthalten, die dann in der gegebenen Reihenfolge im Einwilligungs-Hinweis und -Modal erscheinen.
+    en: |
+      - Descriptions of services and purposes now also respect the `htmlTexts` parameter and can use HTML.
+      - The order in which purposes appear in the notice and modal can be changed via the `purposeOrder` parameter, which can be given a list with purpose names and will display those purposes in the order in which they appear in the list.
+  date: '2020-10-12'
+  files:
+  - name: klaro.js
+    sha384: lYDuRzcriFt98lMiUScryUCrk2M+r0HThmWt7AAFRYyoez8VDI9gyvW2C8UGiQlo
+  - name: klaro.min.css
+    sha384: 0ruyoICRO+4PjPt6vC/nbcP8er/hdefmLm2DOqFxJxRKhwYcv6d7hauthNyeNgWl
+  - name: ide.js
+    sha384: /wrCwRpSxMVk22DyR9U/Q3qboYzaa4ksx4rMpc6aJTKTU0M8iaQ1azWldEWlIhCC
+  - name: translations.js
+    sha384: OhdH+CoKCaeHnh7Up6ts0d7XUlkIGnqcPlOyib4HAyiYhmmZf4jBVeeNEwVWx6Ag
+  - name: klaro-no-translations.js
+    sha384: QrK3xcqMymxeunvQs7PkwjoK1F3BvMTlf+isSHijpJsrVjyVtYvq+0xSRAoK77xX
+  - name: klaro.css
+    sha384: NC8Xna5yey2FyOElyHn4HGhj4eWjk/7+tZmetBhcpGbgfiCENTNvh7qbDIp0FrtE
+  - name: cm.js
+    sha384: f8bb+8elDwj2UAn6R8VjW9U5s/TRVelkwzmwRf7NAULwsTTxRhxT3aFnvqeVA5Kl
+  - name: klaro-no-translations-no-css.js
+    sha384: cVfxjoMh5oU1pWNf2xOupwZYVmi0CDnC6derjcbwEErjDxLM2k+G3CgTjniqrZzc
+  - name: klaro-no-css.js
+    sha384: Vs1zJBwqnNWAVe+3WGWAvGQ5RxL3KBCr4fba8wUw6hm/2OBTz3sw+JVNKk/XN6XN
+  tags:
+  - improvements
+  version: 0.7.2
+- changelog:
     de: '- Anpassen des Verhaltens des "Alle aktivieren/deaktivieren" Sliders bei
       nicht-gruppierten Diensten um es an das Verhalten des Sliders bei gruppierten
       Diensten anzugleichen.
