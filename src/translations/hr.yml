@@ -25,8 +25,6 @@ consentNotice:
     changeDescription:
         Došlo je do promjena od Vaše posljednjeg posjećivanja web stranice,
         molimo Vas da ažurirate svoja odobrenja.
-    configure: ''
-    configure_en: configure
     description:
         'Mi prikupljamo i procesiramo Vaše osobne podatke radi slijedećeg:
         {purposes}.'

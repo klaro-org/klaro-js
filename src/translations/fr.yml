@@ -13,7 +13,6 @@ consentModal:
 consentNotice:
   changeDescription: Il y a eu des changements depuis votre dernière visite, veuillez
     renouveler votre consentement.
-  configure: configurer
   description: Bonjour ! Pourrions-nous activer des services supplémentaires pour
     {purposes}? Vous pouvez toujours modifier ou retirer votre consentement plus tard.
   imprint:

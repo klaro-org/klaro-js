@@ -13,7 +13,6 @@ consentModal:
 consentNotice:
   changeDescription: Ci sono stati dei cambiamenti rispetto alla sua ultima visita,
     la preghiamo di rinnovare il suo consenso.
-  configure: configurare
   description: Salve, possiamo attivare alcuni servizi aggiuntivi per {purposes}?
     Può sempre modificare o ritirare il suo consenso in un secondo momento.
   imprint:

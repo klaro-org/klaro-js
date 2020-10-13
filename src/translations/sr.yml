@@ -27,8 +27,6 @@ consentNotice:
     changeDescription:
         Došlo je do promena od Vaše poslednje posete, molimo Vas da ažurirate
         svoja odobrenja.
-    configure: ''
-    configure_en: configure
     description: 'Mi prikupljamo i procesiramo Vaše lične podatke radi sledećeg: {purposes}.'
     imprint:
         name: ''

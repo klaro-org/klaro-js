@@ -25,8 +25,6 @@ consentNotice:
     changeDescription:
         Son ziyaretinizden bu yana değişiklikler oldu, lütfen seçiminizi
         güncelleyin.
-    configure: ''
-    configure_en: configure
     description: 'Kişisel bilgilerinizi aşağıdaki amaçlarla saklıyor ve işliyoruz: {purposes}.'
     imprint:
         name: ''

@@ -9,7 +9,6 @@ consentNotice:
     changeDescription: There were changes since your last visit, please renew your consent.
     description: "Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later."
     learnMore|capitalize: Let me choose
-    configure: Here you can <tr-snip>configure</tr-snip> your choices.
     imprint:
         name: imprint
 purposes:

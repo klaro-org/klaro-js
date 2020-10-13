@@ -13,7 +13,6 @@ consentModal:
 consentNotice:
   changeDescription: Er waren veranderingen sinds uw laatste bezoek, gelieve uw toestemming
     te hernieuwen.
-  configure: configureren
   description: Hallo, kunnen wij u een aantal extra diensten aanbieden voor {purposes}?
     U kunt uw toestemming later altijd nog wijzigen of intrekken.
   imprint:

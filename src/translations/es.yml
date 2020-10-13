@@ -12,7 +12,6 @@ consentModal:
   title: Servicios que nos gustaría utilizar
 consentNotice:
   changeDescription: Hubo cambios desde su última visita, por favor, renueve su consentimiento.
-  configure: configurar
   description: ¡Hola! ¿Podríamos habilitar algunos servicios adicionales para {purposes}?
     Siempre puede cambiar o retirar su consentimiento más tarde.
   imprint:

@@ -8,7 +8,6 @@ consentModal:
   title: Services we would like to use
 consentNotice:
   changeDescription: There were changes since your last visit, please renew your consent.
-  configure: configure
   description: Hi! Could we please enable some additional services for {purposes}?
     You can always change or withdraw your consent later.
   imprint:

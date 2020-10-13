@@ -28,8 +28,6 @@ consentNotice:
     changeDescription:
         Au existat modificări de la ultima vizită, vă rugăm să actualizați
         consimțământul.
-    configure: ''
-    configure_en: configure
     description:
         'Colectăm și procesăm informațiile dvs. personale în următoarele scopuri:
         {purposes}.'

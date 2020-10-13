@@ -21,14 +21,11 @@ consentModal:
     title: Informationer, som vi gemmer
 consentNotice:
     changeDescription: Der har været ændringer siden dit sidste besøg. Opdater dit valg.
-    configure: ''
-    configure_en: configure
     description:
         'Vi gemmer og behandler dine personlige oplysninger til følgende formål:
         {purposes}.'
     imprint:
         name: ''
-        name_en: imprint
     learnMore: Læs mere
     privacyPolicy:
         name: Datenschutzerklärung

@@ -13,7 +13,6 @@ consentModal:
 consentNotice:
   changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, prosimy o odnowienie
     zgody.
-  configure: skonfigurować
   description: Witam! Czy możemy włączyć dodatkowe usługi dla {purposes}? W każdej
     chwili mogą Państwo później zmienić lub wycofać swoją zgodę.
   imprint:

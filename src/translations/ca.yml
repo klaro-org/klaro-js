@@ -25,7 +25,6 @@ consentNotice:
     changeDescription:
         Hi ha hagut canvis des de la vostra darrera visita. Actualitzeu
         el vostre consentiment.
-    configure: 'null'
     description:
         'Recopilem i processem la vostra informació personal amb les següents
         finalitats: {purposes}.'

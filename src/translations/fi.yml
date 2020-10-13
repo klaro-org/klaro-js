@@ -25,8 +25,6 @@ consentNotice:
     changeDescription:
         Olemme tehneet muutoksia ehtoihin viime vierailusi jälkeen, tarkista
         ehdot.
-    configure: ''
-    configure_en: configure
     description:
         'Keräämme ja käsittelemme henkilötietoja seuraaviin tarkoituksiin:
         {purposes}.'

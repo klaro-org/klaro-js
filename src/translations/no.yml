@@ -24,8 +24,6 @@ consentNotice:
     changeDescription:
         Det har skjedd endringer siden ditt siste besøk, vennligst oppdater
         ditt samtykke.
-    configure: ''
-    configure_en: configure
     description:
         'Vi samler inn og prosesserer din personlige informasjon av følgende
         årsaker: {purposes}.'
