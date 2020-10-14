@@ -10,8 +10,6 @@ consentNotice:
   changeDescription: There were changes since your last visit, please renew your consent.
   description: Hi! Could we please enable some additional services for {purposes}?
     You can always change or withdraw your consent later.
-  imprint:
-    name: imprint
   learnMore: Let me choose
   testing: Testing mode!
 decline: I decline
