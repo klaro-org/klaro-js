@@ -211,16 +211,16 @@ export default class ConsentManager {
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
 
-            if (element.tagName === 'SCRIPT'){
+            if (element.tagName === 'SCRIPT' || element.tagName === 'LINK'){
                 // this element is already active, we do not touch it...
                 if (element.type === type){
                     // eslint-disable-next-line no-console
-                    console.debug(`Skipping script for service ${service.name}, as it already has the correct type...`)
+                    console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type...`)
                     continue
                 }
                 // we create a new script instead of updating the node in
                 // place, as the script won't start correctly otherwise
-                const newElement = document.createElement('script')
+                const newElement = document.createElement(element.tagName)
                 for(const attribute of element.attributes){
                     newElement.setAttribute(attribute.name, attribute.value)
                 }
@@ -232,6 +232,8 @@ export default class ConsentManager {
                     newElement.type = type
                     if (ds.src !== undefined)
                         newElement.src = ds.src
+                    if (ds.href !== undefined)
+                        newElement.href = ds.href
                 } else {
                     newElement.type = 'text/plain'
                 }
