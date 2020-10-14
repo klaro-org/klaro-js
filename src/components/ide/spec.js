@@ -166,7 +166,7 @@ const KlaroConfigSpec = {
             default: false,
         },
         {
-            name: 'hideToggleAllSlider',
+            name: 'hideToggleAll',
             control: 'Switch',
             validators: [],
             default: false
