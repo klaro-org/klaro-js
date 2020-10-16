@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Behebung eines Problems, das bei der Verwendung der ungestylten Klaro-Version in Kombination mit der Klaro API dazu f\u00fchrt, dass die API-Koniguration nicht geladen wird.\n",
+      "en": "- Fixing of a problem that cause the unstyled Klaro version to not work in combination with the API backend.\n"
+    },
+    "date": "2020-10-16",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "YDQZbZADUblaVOPhAyA7wWiCT3jQsBKWLd6cNgkg2spJO97/TuxW8n8H+spDcUnl"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "0ruyoICRO+4PjPt6vC/nbcP8er/hdefmLm2DOqFxJxRKhwYcv6d7hauthNyeNgWl"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "/dG+CfQ1Zrz545A8wpiIXttjAF4wcK4ozC5JbxtYpMwIRSolPFpPr+y5MM6ahXQW"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "aA4232WSgYefGGQwPVNT0FZoMxY9chQva1ft8Uo0WxOJc3/Pa2UNJWR2kfUcBJJo"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "JJ9A/pdP3jQodjxzIHIe5B63bCeF1m/+m1Rd6Yg5uGTTZ+GJf1mHzAzZct7J0uDy"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "1AqLb2U4aDN0hg7IBtz99aux7Axm/tVWhc5dgfG7tS2YQbIO31Ug/Y5ujVQL3tgu"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "f8bb+8elDwj2UAn6R8VjW9U5s/TRVelkwzmwRf7NAULwsTTxRhxT3aFnvqeVA5Kl"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "XrSzHPfihKHs8CUvc4zvwuAs0j31RV07XrK2foXh6hloLl/YBSRGSOrNxYcxSiV/"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "XEuyw2vDGTA8HaZNyvm5er/xooPCwIX1lJDw3K8jG/q4DQVTduGidarX20jF5ozl"
+      }
+    ],
+    "tags": [
+      "bugfixes"
+    ],
+    "version": "0.7.3"
+  },
+  {
+    "changelog": {
       "de": "- Beschreibungen von Diensten und Zwecken werden nun ebenfalls vom `htmlTexts` Parameter erfasst und k\u00f6nnen als HTML-Texte geschrieben werden.\n- Zwecke k\u00f6nnen \u00fcber den `purposeOrder` Parameter sortiert werden. Dieser kann eine Liste mit Zweckbezeichnungen enthalten, die dann in der gegebenen Reihenfolge im Einwilligungs-Hinweis und -Modal erscheinen.\n",
       "en": "- Descriptions of services and purposes now also respect the `htmlTexts` parameter and can use HTML.\n- The order in which purposes appear in the notice and modal can be changed via the `purposeOrder` parameter, which can be given a list with purpose names and will display those purposes in the order in which they appear in the list.\n"
     },
