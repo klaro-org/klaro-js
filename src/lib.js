@@ -126,7 +126,7 @@ function getKlaroId(script){
     const klaroId = script.getAttribute('data-klaro-id')
     if (klaroId !== null)
         return klaroId
-    const regexMatch = /.*\/privacy-managers\/([a-f0-9]+)\/klaro.js/.exec(script.src)
+    const regexMatch = /.*\/privacy-managers\/([a-f0-9]+)\/klaro.*\.js/.exec(script.src)
     if (regexMatch !== null)
         return regexMatch[1]
     return null
@@ -136,7 +136,7 @@ function getKlaroApiUrl(script){
     const klaroApiUrl = script.getAttribute('data-klaro-api-url')
     if (klaroApiUrl !== null)
         return klaroApiUrl
-    const regexMatch = /(http(?:s)?:\/\/[^/]+)\/v1\/privacy-managers\/([a-f0-9]+)\/klaro.js/.exec(script.src)
+    const regexMatch = /(http(?:s)?:\/\/[^/]+)\/v1\/privacy-managers\/([a-f0-9]+)\/klaro.*\.js/.exec(script.src)
     if (regexMatch !== null)
         return regexMatch[1]
     return null
