@@ -15,6 +15,7 @@ const config = {
             },
             purposes: {
                 analytics: "Analytics",
+                styling: "Styling",
             }
         }
     },
@@ -22,6 +23,12 @@ const config = {
         {
             name: "googleAnalytics",
             purposes: ["analytics"],
+        },
+        {
+            name: "bootstrap",
+            title: "Bootstrap (external resource)",
+            description: "Example for embedding external stylesheets.",
+            purposes: ["styling"],
         },
     ],
 };
