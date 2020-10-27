@@ -164,7 +164,7 @@ export default class ConsentNotice extends React.Component {
                     type="button"
                     onClick={showModal}
                 >
-                    {t(['consentNotice', 'configure'])}
+                    {t(['consentNotice', 'learnMore'])}
                     {extraText}
                 </button>
             ) : (
