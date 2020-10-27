@@ -2,8 +2,7 @@ acceptAll: Aceptar todas
 acceptSelected: Aceptar seleccionadas
 close: Pechar
 consentModal:
-  description: Aquí pode avaliar e personalizar os servizos que nos gustaría utilizar neste sitio web. ¡Vostede decide! 
-  Habilite ou deshabilite os servicios como lle conveña.
+  description: Aquí pode avaliar e personalizar os servizos que nos gustaría utilizar neste sitio web. ¡Vostede decide! Habilite ou deshabilite os servicios como lle conveña.
   privacyPolicy:
     name: política de privacidade
     text: Para saber máis, por favor lea a nosa {privacyPolicy}.
