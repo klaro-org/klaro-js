@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Hinzuf\u00fcgen eines fehlenden \u00dcbersetzung-Strings.\n- Verbessern der Verwaltung von `link` Tags durch das Unterst\u00fctzen des `onlyOnce` Parameters.\n- Beim \u00dcberfahren aller Buttons mit der Maus wird nun immer der \"Hand\" Cursor angezeigt.\n",
+      "en": "- Added a missing translation string.\n- Improved the management of `link` tags by supporting the `onlyOnce` behavior.\n- When hovering buttons the \"hand\" cursor will be shown.\n"
+    },
+    "date": "2020-10-27",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "dRZ3TTpPvwkjO2KXzKRdqeJ1B4ZnQX7VeTUGlFnGPvZLCEFJGvn+WdyUFQrLyoPH"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "wHGkpEbAPtlKiRvNvKDWlFSlMPqRe6j+K7pMsM4ZGnCEnfsL3gOjB8yyR0n/d2zq"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "L39Ds34To0DSi5uM5s1ZtS7Z+QFPRZsIg//W4pfjgiPV+wz7P8YOQZOthMnZk9zj"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "GoywK7q9ubZQCbE89SFt2zscCtVO29KbXSXr+/Q4eN79qdaN/3qp5ma91IBVuBiA"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "C9Zyn3RJn+/peVcBVlH+vRInOGeTW8NthUsp74H7/kXfrVvJ+TbcQS0xFGX9Xuea"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "xV3V/xyhnXDsaMUS9MYl0v68rt7Her9u+A2Rk79/jj2xSCuRPducOTdkcEDobLdo"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "DaMqmetrahncLV3B/RvII2B/e4983FbAMUoTx7uvSleQfNvpF+CezDrMl5AOKqv/"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "x8IFIIrf4aOsG9gJi0KkbONJH460/g7j0oUQ6FBIPyTFS65BHvK9dIWPNhzMNT1j"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "cteavCczsfrnYflpeJ4nQ6LQcWjoSfVt5wWpaF4LjfvaXnsGAhU8SRM2yeaHo2cK"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.4"
+  },
+  {
+    "changelog": {
       "de": "- Behebung eines Problems, das bei der Verwendung der ungestylten Klaro-Version in Kombination mit der Klaro API dazu f\u00fchrt, dass die API-Koniguration nicht geladen wird.\n",
       "en": "- Fixing of a problem that cause the unstyled Klaro version to not work in combination with the API backend.\n"
     },
