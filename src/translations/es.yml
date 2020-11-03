@@ -1,55 +1,43 @@
-# Warning, this file is partially automatically generated!
-acceptAll: Aceptar todo
-acceptSelected: Aceptar seleccionados
+acceptAll: Aceptar todas
+acceptSelected: Aceptar seleccionadas
 close: Cerrar
 consentModal:
-  description: Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar
-    en este sitio web. ¡Usted está a cargo! Habilite o deshabilite los servicios como
-    considere oportuno.
+  description: Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar en este sitio web. ¡Usted decide! Habilite o deshabilite los servicios como considere oportuno.
   privacyPolicy:
     name: política de privacidad
-    text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
+    text: Para saber más, por favor lea nuestra {privacyPolicy}.
   title: Servicios que nos gustaría utilizar
 consentNotice:
-  changeDescription: Hubo cambios desde su última visita, por favor, renueve su consentimiento.
+  changeDescription: Ha habido cambios en las cookies desde su última visita. Debe renovar su consentimiento.
   description: ¡Hola! ¿Podríamos habilitar algunos servicios adicionales para {purposes}?
-    Siempre puede cambiar o retirar su consentimiento más tarde.
+    Siempre podrá cambiar o retirar su consentimiento más tarde.
   imprint:
     name: Imprimir
-  learnMore: Déjame elegir
+  learnMore: Quiero elegir
   privacyPolicy:
     name: política de privacidad
   testing: ¡Modo de prueba!
-decline: Me niego
-ok: Está bien.
-poweredBy: Realizado con Klaro!
+decline: Descartar todas
+ok: De acuerdo
+poweredBy: ¡Realizado con Klaro!
 privacyPolicy:
   name: política de privacidad
-  text: Para saber más, por favor lea nuestra {privacyPolicy} de privacidad.
+  text: Para saber más, por favor lea nuestra {privacyPolicy}.
 purposeItem:
   service: servicio
   services: servicios
 purposes:
   advertising:
-    description: Estos servicios procesan la información personal para mostrarle anuncios
-      personalizados o basados en intereses.
+    description: Estos servicios procesan información personal para mostrarle anuncios personalizados o basados en intereses.
     title: Publicidad
   functional:
-    description: 'Estos servicios son esenciales para el correcto funcionamiento de
-      este sitio web. No puede desactivarlos aquí ya que el servicio no funcionaría
-      correctamente de otra manera.
-
-      '
+    description: 'Estos servicios son esenciales para el correcto funcionamiento de este sitio web. No puede desactivarlos ya que la página no funcionaría correctamente.'
     title: Prestación de servicios
   marketing:
-    description: Estos servicios procesan la información personal para mostrarle contenido
-      relevante sobre productos, servicios o temas que puedan interesarle.
+    description: Estos servicios procesan información personal para mostrarle contenido relevante sobre productos, servicios o temas que puedan interesarle.
     title: Marketing
   performance:
-    description: 'Estos servicios procesan la información personal para optimizar
-      el servicio que ofrece este sitio web.
-
-      '
+    description: 'Estos servicios procesan información personal para optimizar el servicio que ofrece este sitio.'
     title: Optimización del rendimiento
 save: Guardar
 service:
@@ -57,10 +45,10 @@ service:
     description: Utilice este interruptor para activar o desactivar todos los servicios.
     title: Activar o desactivar todos los servicios
   optOut:
-    description: Este servicio está cargado por defecto (pero puede optar por no hacerlo)
-    title: (opt-out)
-  purpose: de
-  purposes: Fines
+    description: Este servicio está habilitado por defecto (pero puede optar por lo contrario)
+    title: (desactivar)
+  purpose: Finalidad
+  purposes: Finalidades
   required:
-    description: Este servicio es siempre necesario
+    description: Este servicio es necesario siempre
     title: (siempre requerido)

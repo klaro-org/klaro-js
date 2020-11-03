@@ -11,6 +11,7 @@ import en from './en.yml';
 import es from './es.yml';
 import fi from './fi.yml';
 import fr from './fr.yml';
+import gl from './gl.yml';
 import hu from './hu.yml';
 import hr from './hr.yml';
 import it from './it.yml';
@@ -35,6 +36,7 @@ export default {
     es,
     fi,
     fr,
+    gl,
     hu,
     hr,
     it,

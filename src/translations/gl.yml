@@ -1,0 +1,54 @@
+acceptAll: Aceptar todas
+acceptSelected: Aceptar seleccionadas
+close: Pechar
+consentModal:
+  description: Aquí pode avaliar e personalizar os servizos que nos gustaría utilizar neste sitio web. ¡Vostede decide! Habilite ou deshabilite os servicios como lle conveña.
+  privacyPolicy:
+    name: política de privacidade
+    text: Para saber máis, por favor lea a nosa {privacyPolicy}.
+  title: Servizos que nos gustaría utilizar
+consentNotice:
+  changeDescription: Houbo cambios nas cookies dende a súa última visita. Debe renovar o seu consentimento.
+  description: ¡Ola! ¿Poderíamos habilitar algúns servizos adicionais para {purposes}?
+    Sempre poderá cambiar ou retirar o séu consentimento máis tarde.
+  imprint:
+    name: Imprimir
+  learnMore: Quero elixir
+  privacyPolicy:
+    name: política de privacidade
+  testing: ¡Modo de proba!
+decline: Descartar todas
+ok: De acordo
+poweredBy: ¡Realizado con Klaro!
+privacyPolicy:
+  name: política de privacidade
+  text: Para saber máis, por favor lea a nosa {privacyPolicy}.
+purposeItem:
+  service: servizo
+  services: servizos
+purposes:
+  advertising:
+    description: Estes servizos procesan información persoal para mostrarlle anuncios personalizados ou basados en intereses.
+    title: Publicidade
+  functional:
+    description: 'Estes servizos son esenciais para o correcto funcionamiento deste sitio web. Non pode desactivalos xa que a páxina non funcionaría correctamente.'
+    title: Prestación de servizos
+  marketing:
+    description: Estes servizos procesan información persoal para mostrarlle contido relevante sobre produtos, servizos ou temas que poidan interesarlle.
+    title: Marketing
+  performance:
+    description: 'Estes servizos procesan información persoal para optimizar o servizo que ofrece este sitio.'
+    title: Optimización do rendimento
+save: Gardar
+service:
+  disableAll:
+    description: Utilice este interruptor para activar ou desactivar todos os servizos.
+    title: Activar ou desactivar todos os servizos
+  optOut:
+    description: Este servizo está habilitado por defecto (pero pode optar polo contrario)
+    title: (desactivar)
+  purpose: Finalidade
+  purposes: Finalidades
+  required:
+    description: Este servizo é necesario sempre
+    title: (sempre requirido)
