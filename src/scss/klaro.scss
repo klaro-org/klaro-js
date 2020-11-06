@@ -4,7 +4,14 @@
 .klaro {
     $btn-margin-right: 0.5em;
 
+    &.cm-as-context-notice {
+        height: 100%;
+        padding-bottom: map-get($cm-space, md);
+        padding-top: map-get($cm-space, md);
+    }
+
     .cookie-modal,
+    .context-notice,
     .cookie-notice {
         @import 'switch';
 
@@ -72,9 +79,46 @@
                 @include var(background, 'green1');
             }
 
+            &.cm-btn-success-var {
+                @include var(background, 'green2');
+            }
+
             &.cm-btn-info {
                 @include var(background, 'blue1');
             }
+        }
+    }
+
+    .context-notice {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #eee;
+        border: 1px solid #f0f0f0;
+        border-radius: $cm-border-radius;
+        padding: map-get($cm-space, md);
+
+        p {
+            flex-grow: 0;
+            text-align: center;
+            padding-top: 0;
+            margin-top: 0;
+            color: #000;
+
+            strong {
+                color: #333;
+            }
+
+            a {
+                color: $cm-blue2;
+            }
+        }
+
+        p.cm-buttons {
+            margin-top: map-get($cm-space, md);
         }
     }
 

@@ -92,6 +92,8 @@ export default class ConsentManager {
     changeAll(value){
         let changedServices = 0
         this.config.services.map((service) => {
+            if (service.contextualConsentOnly === true)
+                return
             if(service.required || this.config.required || value) {
                 if (this.updateConsent(service.name, true))
                     changedServices++
@@ -163,7 +165,7 @@ export default class ConsentManager {
         this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType})
     }
 
-    applyConsents(dryRun){
+    applyConsents(dryRun, alwaysConfirmed){
         let changedServices = 0
         for(let i=0;i<this.config.services.length;i++){
             const service = this.config.services[i]
@@ -171,7 +173,7 @@ export default class ConsentManager {
             const optOut = (service.optOut !== undefined ? service.optOut : (this.config.optOut || false))
             const required = (service.required !== undefined ? service.required : (this.config.required || false))
             //opt out and required services are always treated as confirmed
-            const confirmed = this.confirmed || optOut || dryRun
+            const confirmed = this.confirmed || optOut || dryRun || alwaysConfirmed
             const consent = (this.getConsent(service.name) && confirmed) || required
             if (state === consent)
                 continue
@@ -205,17 +207,50 @@ export default class ConsentManager {
 
             const parent = element.parentElement
             const ds = dataset(element)
-            const {type} = ds
+            const {type, src, href} = ds
             const attrs = ['href', 'src']
 
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
+            if (element.tagName === 'DIV' && type === 'placeholder'){
+                if (consent)
+                    element.remove()
+                continue
+            }
+
+            if (element.tagName === 'IFRAME'){
+                // this element is already active, we do not touch it...
+                if (element.src === src){
+                    // eslint-disable-next-line no-console
+                    console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type...`)
+                    continue
+                }
+                // we create a new script instead of updating the node in
+                // place, as the script won't start correctly otherwise
+                const newElement = document.createElement(element.tagName)
+                for(const attribute of element.attributes){
+                    newElement.setAttribute(attribute.name, attribute.value)
+                }
+
+                newElement.innerText = element.innerText
+                newElement.text = element.text
+                if (consent){
+                    newElement.style.display = ds['original-display'] || 'block'
+                    if (ds.src !== undefined)
+                        newElement.src = ds.src
+                } else {
+                    newElement.src = ''
+                }
+                //we remove the original element and insert a new one
+                parent.insertBefore(newElement, element)
+                parent.removeChild(element)
+            }
 
             if (element.tagName === 'SCRIPT' || element.tagName === 'LINK'){
                 // this element is already active, we do not touch it...
-                if (element.type === type){
+                if (element.type === type && element.src === src){
                     // eslint-disable-next-line no-console
-                    console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type...`)
+                    console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type or src...`)
                     continue
                 }
                 // we create a new script instead of updating the node in
@@ -230,10 +265,10 @@ export default class ConsentManager {
 
                 if (consent){
                     newElement.type = type
-                    if (ds.src !== undefined)
-                        newElement.src = ds.src
-                    if (ds.href !== undefined)
-                        newElement.href = ds.href
+                    if (src !== undefined)
+                        newElement.src = src
+                    if (href !== undefined)
+                        newElement.href = href
                 } else {
                     newElement.type = 'text/plain'
                 }

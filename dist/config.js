@@ -2,8 +2,6 @@
 // You can change this by specifying the "data-config" attribute on your
 // script take, e.g. like this:
 // <script src="klaro.js" data-config="myConfigVariableName" />
-// You can also disable auto-loading of the consent notice by adding
-// data-no-auto-load=true to the script tag.
 var klaroConfig = {
     // With the 0.7.0 release we introduce a 'version' paramter that will make
     // if easier for us to keep configuration files backwards-compatible in the future.
@@ -12,6 +10,10 @@ var klaroConfig = {
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
+
+    // Setting this to true will keep Klaro from automatically loading itself
+    // when the page is being loaded.
+    noAutoLoad: false,
 
     // Setting this to true will render the descriptions of the consent
     // modal and consent notice are HTML. Use with care.
@@ -187,6 +189,16 @@ var klaroConfig = {
 
     // This is a list of third-party services that Klaro will manage for you.
     services: [
+        {
+            name: 'twitter',
+            purposes: ['marketing'],
+            contextualConsentOnly: true,
+        },
+        {
+            name: 'youtube',
+            purposes: ['marketing'],
+            contextualConsentOnly: true,
+        },
         {
             // Each service should have a unique (and short) name.
             name: 'matomo',

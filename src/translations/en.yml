@@ -56,3 +56,7 @@ service:
   required:
     description: This services is always required
     title: (always required)
+contextualConsent:
+    description: Do you want to load external content supplied by {title}?
+    acceptOnce: Yes
+    acceptAlways: Always

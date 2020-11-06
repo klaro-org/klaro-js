@@ -47,3 +47,7 @@ service:
     purposes: Processing <tr-snip>purposes</tr-snip>
     purpose: Processing <tr-snip>purpose</tr-snip>
 poweredBy: Realized with Klaro!
+contextualConsent:
+    description: Do you want to load external content supplied by {title}?
+    acceptOnce: Yes
+    acceptAlways: Always

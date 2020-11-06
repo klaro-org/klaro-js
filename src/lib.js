@@ -2,12 +2,13 @@
 
 import React from 'react'
 import App from './components/app'
+import ContextualConsentNotice from './components/contextual-consent-notice'
 import ConsentManager from './consent-manager'
 import KlaroApi from './utils/api';
 import {render as reactRender} from 'react-dom'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
-import {currentScript} from './utils/compat'
+import {currentScript, dataset, applyDataset} from './utils/compat'
 export {update as updateConfig} from './utils/config'
 import './scss/klaro.scss'
 
@@ -99,7 +100,54 @@ export function render(config, opts){
         modal={opts.modal}
         api={opts.api}
         show={showCnt} />, element)
+    renderContextualConsentNotices(manager, tt, lang, config, opts)
     return app
+}
+
+export function renderContextualConsentNotices(manager, tt, lang, config, opts){
+    const notices = []
+    for(const service of config.services){
+        const consent = manager.getConsent(service.name)
+        if (!consent){
+            const elements = document.querySelectorAll("[data-name='"+service.name+"']")
+            for(const element of elements){
+                const ds = dataset(element)
+                if (element.tagName === 'IFRAME' || element.tagName === 'DIV'){
+                    let placeholderElement = element.previousElementSibling
+                    if (placeholderElement !== undefined){
+                        const ds = dataset(placeholderElement)
+                        if (ds.type !== "placeholder" || ds.name !== service.name)
+                            placeholderElement = undefined
+                    }
+                    if (placeholderElement === undefined){
+                        placeholderElement = document.createElement("DIV")
+                        placeholderElement.style.maxWidth = element.width+"px"
+                        placeholderElement.style.height = element.height+"px"
+                        applyDataset({type: 'placeholder', name: service.name}, placeholderElement)
+                        element.parentElement.insertBefore(placeholderElement, element)
+                        const notice = reactRender(<ContextualConsentNotice t={tt}
+                            lang={lang}
+                            manager={manager}
+                            config={config}
+                            service={service}
+                            testing={opts.testing}
+                            api={opts.api} />, placeholderElement)
+                        notices.push(notice)
+
+                    }
+                    if (element.tagName === 'IFRAME'){
+                        ds['src'] = element.src
+                    }
+                    if (ds['original-display'] === undefined)
+                        ds['original-display'] = element.style.display
+                    applyDataset(ds, element)
+                    element.src = undefined
+                    element.style.display = 'none'
+                }
+            }
+        }
+    }
+    return notices
 }
 
 function showKlaroIDE(script) {
