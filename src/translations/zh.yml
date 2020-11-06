@@ -17,6 +17,10 @@ consentNotice:
   privacyPolicy:
     name: 隐私政策
   testing: 测试模式！
+contextualConsent:
+  acceptAlways: 总是
+  acceptOnce: 是的，是的
+  description: 你想加载由{title} 提供的外部内容吗？
 decline: 我拒绝
 ok: 没事的
 poweredBy: 与Klaro一起实现!

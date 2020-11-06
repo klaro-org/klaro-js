@@ -21,6 +21,10 @@ consentNotice:
   privacyPolicy:
     name: Datenschutzerklärung
   testing: Testmodus!
+contextualConsent:
+  acceptAlways: Immer
+  acceptOnce: Ja
+  description: Möchten Sie von {title} bereitgestellte externe Inhalte laden?
 decline: Ich lehne ab
 ok: Das ist ok
 poweredBy: Realisiert mit Klaro!

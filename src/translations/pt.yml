@@ -20,6 +20,10 @@ consentNotice:
   privacyPolicy:
     name: política de privacidade
   testing: Modo de teste!
+contextualConsent:
+  acceptAlways: Sempre
+  acceptOnce: Sim
+  description: O senhor deseja carregar conteúdo externo fornecido por {title}?
 decline: Recuso-me
 ok: Está tudo bem.
 poweredBy: Realizado com Klaro!

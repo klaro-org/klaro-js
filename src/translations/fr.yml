@@ -21,6 +21,10 @@ consentNotice:
   privacyPolicy:
     name: politique de confidentialité
   testing: Mode test !
+contextualConsent:
+  acceptAlways: Toujours
+  acceptOnce: Oui
+  description: Vous souhaitez charger un contenu externe fourni par {title}?
 decline: Je refuse
 ok: C'est bon.
 poweredBy: Réalisé avec Klaro !

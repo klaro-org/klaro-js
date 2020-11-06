@@ -12,6 +12,10 @@ consentNotice:
     You can always change or withdraw your consent later.
   learnMore: Let me choose
   testing: Testing mode!
+contextualConsent:
+  acceptAlways: Always
+  acceptOnce: 'Yes'
+  description: Do you want to load external content supplied by {title}?
 decline: I decline
 ok: That's ok
 poweredBy: Realized with Klaro!
@@ -56,7 +60,3 @@ service:
   required:
     description: This services is always required
     title: (always required)
-contextualConsent:
-    description: Do you want to load external content supplied by {title}?
-    acceptOnce: Yes
-    acceptAlways: Always

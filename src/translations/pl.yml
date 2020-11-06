@@ -21,6 +21,10 @@ consentNotice:
   privacyPolicy:
     name: polityka prywatności
   testing: Tryb testowy!
+contextualConsent:
+  acceptAlways: Zawsze
+  acceptOnce: Tak
+  description: Czy chcą Państwo załadować treści zewnętrzne dostarczane przez {title}?
 decline: Odmawiam
 ok: To jest ok.
 poweredBy: Zrealizowane z Klaro!

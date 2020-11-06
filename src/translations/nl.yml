@@ -21,6 +21,10 @@ consentNotice:
   privacyPolicy:
     name: privacybeleid
   testing: Testmodus!
+contextualConsent:
+  acceptAlways: Altijd
+  acceptOnce: Ja
+  description: Wilt u externe content laden die door {title} wordt aangeleverd ?
 decline: Ik weiger
 ok: Dat is oké
 poweredBy: Gerealiseerd met Klaro!

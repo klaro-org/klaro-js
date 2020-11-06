@@ -13,6 +13,9 @@ de:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -79,6 +82,9 @@ es:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -118,6 +124,9 @@ fr:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -157,6 +166,9 @@ it:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -196,6 +208,9 @@ nl:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -235,6 +250,9 @@ pl:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -274,6 +292,9 @@ pt:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
@@ -313,6 +334,9 @@ zh:
   consentNotice.learnMore: febf32d1d8cf33f3
   consentNotice.privacyPolicy.name: 2b72811d5f06762f
   consentNotice.testing: a520bd8ff913a329
+  contextualConsent.acceptAlways: de9f057a471cdb8d
+  contextualConsent.acceptOnce: 85a39ab345d672ff
+  contextualConsent.description: 4519a97b033bd467
   decline: 9bb898fd8ad06771
   ok: 34425ad2e922ad20
   poweredBy: 174e3b49be391bc5
