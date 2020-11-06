@@ -192,6 +192,8 @@ var klaroConfig = {
         {
             name: 'twitter',
             purposes: ['marketing'],
+            // Setting this to true will exempt this service from the "Accept All"
+            // flow, i.e. clicking on "Accept All" will not enable this service.
             contextualConsentOnly: true,
         },
         {
