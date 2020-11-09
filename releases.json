@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Hinzuf\u00fcgen eines \"Test\" Einwilligungs-Stores, der das Testen von Klaro einfacher gestaltet und u.a. in den interaktiven Tutorials genutzt wird.\n",
+      "en": "- Added a \"test\" consent store that makes testing Klaro easier and is being used e.g. in the interactive tutorials.\n"
+    },
+    "date": "2020-11-09",
+    "files": [
+      {
+        "name": "klaro.js",
+        "sha384": "vj2A4pymRiZQ1TqSo6RxlZD4gw7/PbdL7jKQmYdBR/Dp3KlDxxkIMJwJ1ZXMk4AH"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "lt4Q7q36QtdhHywj7z1uVpnH89hdecluX3H2Qtp1lyw+EdR1Ad0c40KcUe3F1JTu"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "91ScjRXs+XVi/J9C5MXL6QDmzYm0XIbtbQKIf6ZurzRk9IcD/YsGlJTOd5daes/r"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "Z2QxcZ4sKctJDNxfjKXZmLLaZQRMDEjuz8MNPnm1b/fI10dpaA6K8MKZwYTyFS3z"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "9iYuCSzbH6ZioHVxSW+ZGWWhNP9vFXMQQy7fps9EjDCYcZbgY3wq7a2Re4N9O6QH"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "U/gR0XbAAJc37pgSwMs4hAtRpOZL7/grRq+PcLKOq7J0E5dvL9q3gVErYgPXsmHa"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "oCUIuzBpqu0NMuaDc8NbYXueNCagwplVnyHefyJDaVTrJo+EGJjnSuLrVXBqroqw"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "GyClVzmSOq4R9Vaixb/3bhcmdTNFkoMWpP/isiCdioxOAo8n7FbwJcSIWyV+c4gZ"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "1/bs5XjIOBK8rLx97TqCpJbqAH7SbmlQ1CBoPBQiT5f1yR3Q/WDO+dEK2hXMdSXz"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.6"
+  },
+  {
+    "changelog": {
       "de": "- Hinzuf\u00fcgen von kontextbasierten Einwilligungen, die es Nutzern erlauben, f\u00fcr eingebettete externe Inhalte (z.B. Youtube-Videos) kontextbasiert eine Einwilligung zu erteilen.\n",
       "en": "- Added a context-based consent mechanism that allows users to dynamically grant consent for embedded content like Youtube videos.\n"
     },
