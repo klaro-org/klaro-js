@@ -117,9 +117,9 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                     if (placeholderElement !== null){
                         const ds = dataset(placeholderElement)
                         if (ds.type !== "placeholder" || ds.name !== service.name)
-                            placeholderElement = undefined
+                            placeholderElement = null
                     }
-                    if (placeholderElement === undefined){
+                    if (placeholderElement === null){
                         placeholderElement = document.createElement("DIV")
                         placeholderElement.style.maxWidth = element.width+"px"
                         placeholderElement.style.height = element.height+"px"
