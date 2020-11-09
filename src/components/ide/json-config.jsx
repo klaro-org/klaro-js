@@ -58,7 +58,7 @@ export const JSONConfig =({t, config, updateConfig}) => {
                 <label htmlFor="cm-file-import" className="cm-upload-label">
                     <a className="cm-control-button cm-success">&#8613; {t(["json", "import"])}</a>
                 </label>
-                <input onChange={importJSON} ref={ref} class="cm-file-import" id="cm-file-import" type="file"/>
+                <input onChange={importJSON} ref={ref} className="cm-file-import" id="cm-file-import" type="file"/>
                 <a download="klaro-config.json" href={url} className="cm-control-button cm-primary">&#8615; {t(["json", "export"])}</a>
             </fieldset>
         </form>
