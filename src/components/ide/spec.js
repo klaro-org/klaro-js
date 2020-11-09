@@ -42,6 +42,12 @@ const KlaroConfigSpec = {
             default: false,
         },
         {
+            name: 'contextualConsentOnly',
+            control: 'Switch',
+            validators: [],
+            default: false,
+        },
+        {
             name: 'optOut',
             control: 'Switch',
             validators: [],
