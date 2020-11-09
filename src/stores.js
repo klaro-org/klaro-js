@@ -1,5 +1,24 @@
 import {getCookie, setCookie, deleteCookie} from './utils/cookies'
 
+
+export class TestStore {
+    constructor(){
+        this.value = null
+    }
+
+    get() {
+        return this.value
+    }
+
+    set(value) {
+        this.value = value;
+    }
+
+    delete() {
+        this.value = null
+    }
+}
+
 export class CookieStore {
     constructor(manager) {
         this.cookieName = manager.storageName
@@ -68,6 +87,7 @@ export class SessionStorageStore extends StorageStore {
 
 const stores = {
     'cookie': CookieStore,
+    'test': TestStore,
     'localStorage': LocalStorageStore,
     'sessionStorage': SessionStorageStore,
 }
