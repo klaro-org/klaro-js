@@ -114,7 +114,7 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                 const ds = dataset(element)
                 if (element.tagName === 'IFRAME' || element.tagName === 'DIV'){
                     let placeholderElement = element.previousElementSibling
-                    if (placeholderElement !== undefined){
+                    if (placeholderElement !== null){
                         const ds = dataset(placeholderElement)
                         if (ds.type !== "placeholder" || ds.name !== service.name)
                             placeholderElement = undefined
