@@ -17,7 +17,7 @@ var klaroConfig = {
 
     // Setting this to true will render the descriptions of the consent
     // modal and consent notice are HTML. Use with care.
-    htmlTexts: false,
+    htmlTexts: true,
 
     // Setting 'embedded' to true will render the Klaro modal and notice without
     // the modal background, allowing you to e.g. embed them into a specific element
@@ -144,6 +144,7 @@ var klaroConfig = {
         },
         en: {
             consentModal: {
+                title: '<u>test</u>',
                 description:
                     'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
             },
