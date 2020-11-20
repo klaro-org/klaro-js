@@ -114,7 +114,12 @@ export default class ConsentModal extends React.Component {
             <div className="cm-modal cm-klaro">
                 <div className="cm-header">
                     {closeLink}
-                    <h1 className="title">{t(['consentModal', 'title'])}</h1>
+                    <h1 className="title">
+                        <Text
+                            config={config}
+                            text={t(['consentModal', 'title'])}
+                        />
+                    </h1>
                     <p>
                         <Text
                             config={config}
