@@ -141,7 +141,7 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                     if (ds['original-display'] === undefined)
                         ds['original-display'] = element.style.display
                     applyDataset(ds, element)
-                    element.src = undefined
+                    element.src = ''
                     element.style.display = 'none'
                 }
             }
