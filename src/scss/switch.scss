@@ -83,7 +83,7 @@
 .cm-list-description {
     font-size: 14px;
     padding-top: 4px;
-    @include var(color, 'font-color-dark');
+    color: #666;
 }
 
 .cm-list-label {

@@ -227,6 +227,9 @@ export function validateConfig(config){
 }
 
 export function setup(config){
+    // if no window object is given we return immediately
+    if (window === undefined)
+        return;
     const script = currentScript("klaro");
     const hashParams = getHashParams();
 

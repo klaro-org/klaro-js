@@ -55,13 +55,14 @@
 
         .cm-btn {
 
-            @include var(color, 'button-color-dark');
+            @include var(color, 'font-color-dark');
 
             background: #555;
-            border-radius: $cm-button-border-radius;
+            border-radius: 6px;
             padding: 6px 10px;
             margin-right: $btn-margin-right;
             border: 0;
+            padding: 0.4em;
             font-size: 1em;
             cursor: pointer;
 

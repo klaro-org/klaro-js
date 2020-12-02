@@ -25,6 +25,7 @@ export default class ConsentManager {
         this.confirmed = false // true if the user actively confirmed his/her consent
         this.changed = false // true if the service config changed compared to the cookie
         this.states = {} // keep track of the change (enabled, disabled) of individual services
+        this.initialized = {} // keep track of which services have been initialized already
         this.executedOnce = {} //keep track of which services have been executed at least once
         this.watchers = new Set([])
         this.loadConsents()
@@ -166,26 +167,65 @@ export default class ConsentManager {
     }
 
     applyConsents(dryRun, alwaysConfirmed){
+
+        function executeHandler(handler, opts){
+            if (handler === undefined)
+                return
+            let handlerFunction
+            if (typeof handler === 'function'){
+                handlerFunction = handler
+            } else {
+                handlerFunction = new Function('opts', handler)
+            }
+            return handlerFunction(opts)
+        }
+
         let changedServices = 0
+
+        const consents = {}
+
+        // we make sure all services are properly initialized
+        for(let i=0;i<this.config.services.length;i++){
+            const service = this.config.services[i]
+            const vars = service.vars || {}
+            const handlerOpts = {service: service, config: this.config, vars: vars}
+            // we execute the init function of the service (if it is defined)
+            if (!this.initialized[service.name]){
+                this.initialized[service.name] = true
+                executeHandler(service.onInit, handlerOpts)
+            }
+        }
+
         for(let i=0;i<this.config.services.length;i++){
             const service = this.config.services[i]
             const state = this.states[service.name]
+            const vars = service.vars || {}
             const optOut = (service.optOut !== undefined ? service.optOut : (this.config.optOut || false))
             const required = (service.required !== undefined ? service.required : (this.config.required || false))
             //opt out and required services are always treated as confirmed
             const confirmed = this.confirmed || optOut || dryRun || alwaysConfirmed
             const consent = (this.getConsent(service.name) && confirmed) || required
-            if (state === consent)
-                continue
-            changedServices++
+            const handlerOpts = {service: service, config: this.config, vars: vars, consents: this.consents, confirmed: this.confirmed}
+
+            if (state !== consent)
+                changedServices++
+
             if (dryRun)
                 continue
+
+            // we execute custom service handlers (if they are defined)
+            executeHandler(consent ? service.onAccept : service.onDecline, handlerOpts)
             this.updateServiceElements(service, consent)
             this.updateServiceCookies(service, consent)
+
+            // we execute the service callback (if one is defined)
             if (service.callback !== undefined)
                 service.callback(consent, service)
+
+            // we execute the global callback (if one is defined)
             if (this.config.callback !== undefined)
                 this.config.callback(consent, service)
+
             this.states[service.name] = consent
         }
         this.notify('applyConsents', changedServices)
