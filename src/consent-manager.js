@@ -175,14 +175,13 @@ export default class ConsentManager {
             if (typeof handler === 'function'){
                 handlerFunction = handler
             } else {
+                // eslint-disable-next-line no-new-func
                 handlerFunction = new Function('opts', handler)
             }
             return handlerFunction(opts)
         }
 
         let changedServices = 0
-
-        const consents = {}
 
         // we make sure all services are properly initialized
         for(let i=0;i<this.config.services.length;i++){
