@@ -1,4 +1,34 @@
 - changelog:
+    de: '- Behebung eines Problems bei der Definition regulärer Ausdrücke für Cookies.
+
+      '
+    en: '- Fixed a problem with regular expression definition for cookie names.
+
+      '
+  date: '2020-12-23'
+  files:
+  - name: klaro.js
+    sha384: eNIop+YAxY2LcCLJmpz+R3rs8UQiiHlAk/Qch1s0auxZ+JeepoH0m77ludRJKEcn
+  - name: klaro.min.css
+    sha384: lt4Q7q36QtdhHywj7z1uVpnH89hdecluX3H2Qtp1lyw+EdR1Ad0c40KcUe3F1JTu
+  - name: ide.js
+    sha384: V5BO/nA+3QrxXpMN8iphXy9GONRBVLXj6TYI0Hxz6aBOz0SrrEycwpvMU4Xnf5EL
+  - name: translations.js
+    sha384: NaKFO4isfiN2I82Wng5wu5JOdH3LMMoPwJliBOTAGLhlZRxclOVXsUDqio6kvDHv
+  - name: klaro-no-translations.js
+    sha384: QdamZYqnLj7YHIhXIKES2JNHbO1gNT/fqGu05zyEQ2IGaMSQFex7+kfYDMXlpRJZ
+  - name: klaro.css
+    sha384: U/gR0XbAAJc37pgSwMs4hAtRpOZL7/grRq+PcLKOq7J0E5dvL9q3gVErYgPXsmHa
+  - name: cm.js
+    sha384: AElWgrCxMdJkejPCD26fJ1Z1LVK3I/CgbQVJHMBCNMA5Qv7VlrDv6P2yPKg1T1dF
+  - name: klaro-no-translations-no-css.js
+    sha384: NNae+gukev1uEYExINOWGPxhIKjCIGCwhTi+cLEMQ3sW82Eepm4kKUST7YsjmxDi
+  - name: klaro-no-css.js
+    sha384: deBKsyrZGanVHtuokzYXTQcig8kmISX1blI4ge0nkPkAx77Z8JJG4GXkCQM2aWdl
+  tags:
+  - bugfixes
+  version: 0.7.11
+- changelog:
     de: |
       - Hinzufügen von `onAccept`, `onDecline` und `onInit` Event-Callbacks die es erlauben, fortgeschrittene Einwilligungsmechanismen über zusätzlichen Javascript-Code zu implementieren, der dynamisch für einen gegebenen Service geladen werden kann.
       - Beheben eines Fehlers der bei kontextbasierten Einwilligungen dazu führte, dass für das `src` Attribut eines `iframe` der Wert `undefined` gesetzt wurde.
