@@ -5,7 +5,6 @@ export const PurposeSelect = ({field, disabled, prefix, config, t, updateConfig}
     const [search, setSearch] = useState('')
     const [updated, setUpdated] = useState(false)
     const purposes = t.tv.purposes
-    console.log(t.tv.purposes)
     const existingPurposes = new Set(config[field.name])
     const generateInitialPurposes = () => Array.from(Object.entries(purposes)).filter(([k,]) => !existingPurposes.has(k)).map(([k, v]) => ({name: k, description: t(['purposes', k, 'description']), value: t.lang === 'en' ?  `${v.title.en}` : `${v.title.en} - ${t(['purposes', k, 'title'])}`}))
     const [candidates, setCandidates] = useState(generateInitialPurposes())

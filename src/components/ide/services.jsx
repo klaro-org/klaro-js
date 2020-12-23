@@ -4,7 +4,7 @@ import { DropdownMenu, MenuItem } from "./dropdown";
 import * as Controls from './controls';
 import Spec from './spec';
 
-export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem onClick={()=>onClick(service)}isCard key={service.name}>
+export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem onClick={()=>onClick(service)}isCard key={service._id}>
     <ListColumn size="md">
         <p className="cm-name">{service.name}</p>
     </ListColumn>
@@ -18,7 +18,7 @@ export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem on
 </ListItem>
 
 export const ServiceList = ({ t, config, disabled, onClick, updateConfig }) => {
-    const services = config.services.map(service => <ServiceItem key={service.name} updateConfig={updateConfig} onClick={onClick} t={t} service={service} />)
+    const services = config.services.map(service => <ServiceItem key={service._id} updateConfig={updateConfig} onClick={onClick} t={t} service={service} />)
     return <React.Fragment>
         { services.length > 0 && 
         <List className="cm-service-list">

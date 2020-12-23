@@ -378,7 +378,10 @@ export default class ConsentManager {
                 if (cookiePattern === undefined)
                     continue
                 if (!(cookiePattern instanceof RegExp)){
-                    cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')
+                    if (cookiePattern.startsWith('^')) // we assume this is already a regex
+                        cookiePattern = new RegExp(cookiePattern)
+                    else // we assume this is a normal string
+                        cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')
                 }
                 for(let j=0;j<cookies.length;j++){
                     const cookie = cookies[j]
@@ -390,6 +393,11 @@ export default class ConsentManager {
                             "Path:", cookiePath,
                             "Domain:", cookieDomain)
                         deleteCookie(cookie.name, cookiePath, cookieDomain)
+                        // if no cookie domain is given, we also try to delete the cookie with
+                        // domain '.[current domain]' as some services set cookies for this
+                        // dotted domain explicitly (e.g. the Facebook pixel).
+                        if (cookieDomain === undefined)
+                            deleteCookie(cookie.name, cookiePath, '.'+window.location.hostname)
                     }
                 }
             }
