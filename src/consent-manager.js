@@ -247,7 +247,7 @@ export default class ConsentManager {
             const parent = element.parentElement
             const ds = dataset(element)
             const {type, src, href} = ds
-            const attrs = ['href', 'src']
+            const attrs = ['href', 'src', 'type']
 
             //if no consent was given we disable this tracker
             //we remove and add it again to trigger a re-execution
