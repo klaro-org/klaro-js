@@ -242,6 +242,7 @@ export default class ConsentManager {
 
         const elements = document.querySelectorAll("[data-name='"+service.name+"']")
         for(let i=0;i<elements.length;i++){
+
             const element = elements[i]
 
             const parent = element.parentElement
@@ -249,17 +250,21 @@ export default class ConsentManager {
             const {type, src, href} = ds
             const attrs = ['href', 'src']
 
-            //if no consent was given we disable this tracker
-            //we remove and add it again to trigger a re-execution
-            if (element.tagName === 'DIV' && type === 'placeholder'){
-                if (consent)
-                    element.remove()
+            // we handle placeholder elements here...
+            if (type === 'placeholder'){
+                if (consent){
+                    element.style.display = 'none';
+                    ds['original-display'] = element.style.display;
+                }
+                else{
+                    element.style.display = ds['original-display'] || 'block';
+                }
                 continue
             }
 
             if (element.tagName === 'IFRAME'){
                 // this element is already active, we do not touch it...
-                if (element.src === src){
+                if (consent && element.src === src){
                     // eslint-disable-next-line no-console
                     console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type...`)
                     continue
@@ -270,7 +275,6 @@ export default class ConsentManager {
                 for(const attribute of element.attributes){
                     newElement.setAttribute(attribute.name, attribute.value)
                 }
-
                 newElement.innerText = element.innerText
                 newElement.text = element.text
                 if (consent){
@@ -279,15 +283,15 @@ export default class ConsentManager {
                         newElement.src = ds.src
                 } else {
                     newElement.src = ''
+                    newElement.setAttribute('data-original-display', ds['original-display'] || element.style.display)
+                    newElement.style.display = 'none'
                 }
                 //we remove the original element and insert a new one
                 parent.insertBefore(newElement, element)
                 parent.removeChild(element)
-            }
-
-            if (element.tagName === 'SCRIPT' || element.tagName === 'LINK'){
+            } else if (element.tagName === 'SCRIPT' || element.tagName === 'LINK'){
                 // this element is already active, we do not touch it...
-                if (element.type === type && element.src === src){
+                if (consent && element.type === type && element.src === src){
                     // eslint-disable-next-line no-console
                     console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type or src...`)
                     continue
