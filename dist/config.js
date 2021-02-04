@@ -29,6 +29,9 @@ var klaroConfig = {
     // entire groups of services instead of having to enable or disable every service.
     groupByPurpose: true,
 
+    // You can choose if your services group by purpose is expend by default
+    purposeExpended: true,
+
     // How Klaro should store the user's preferences. It can be either 'cookie'
     // (the default) or 'localStorage'.
     storageMethod: 'cookie',

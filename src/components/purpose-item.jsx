@@ -7,7 +7,7 @@ export default class PurposeItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            servicesVisible: false,
+            servicesVisible: this.props.config.purposeExpended !== "undefined" ? this.props.config.purposeExpended : false,
         };
     }
 
