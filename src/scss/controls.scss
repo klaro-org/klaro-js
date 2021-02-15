@@ -36,7 +36,6 @@
 }
 
 .cm-search-select {
-    $cm-border: 1px solid var(color, green1);
 
     margin-top: map-get($cm-space, md);
     margin-bottom: map-get($cm-space, md);
@@ -54,17 +53,21 @@
 
         @include var(background-color, white1);
         @include var(border-radius, border-radius);
+        @include var(border-width, border-width);
+        @include var(border-style, border-style);
+        @include var(border-color, border-color);
 
         position: absolute;
         top: 55px;
         left: 0;
         z-index: 10;
         margin-bottom: 10px;
-        border: $cm-border;
         width: 100%;
 
         .cm-candidate {
-            border-bottom: $cm-border;
+            @include var(border-bottom-width, border-width);
+            @include var(border-bottom-style, border-style);
+            @include var(border-bottom-color, border-color);
             padding: map-get($cm-space, md);
             cursor: pointer;
 
@@ -74,7 +77,7 @@
             }
 
             &:last-child {
-                border-bottom: 0;
+                border-bottom-style: none;
             }
         }
     }
@@ -131,7 +134,7 @@
             order: 2;
 
             &:last-child {
-                border-bottom: 0;
+                border-bottom-style: none;
             }
 
             &.cm-obj-is-active {

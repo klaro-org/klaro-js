@@ -8,9 +8,10 @@ $cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11) !default;
 $cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33) !default;
 
 /* Border styles */
-$cm-border-color: #2581c4 !default;
+$cm-border-color: #444 !default;
 $cm-border-radius: 4px !default;
-$cm-border: 1px solid !default;
+$cm-border-style: solid !default;
+$cm-border-width: 1px !default;
 
 /* Cookie notice positioning */
 $cm-notice-right: 20px !default;
@@ -87,6 +88,8 @@ $vars: (
     dark3: $cm-dark3,
     border-color: $cm-border-color,
     border-radius: $cm-border-radius,
+    border-style: $cm-border-style,
+    border-width: $cm-border-width,
     notice-left: $cm-notice-left,
     notice-right: $cm-notice-right,
     notice-top: $cm-notice-top,

@@ -172,10 +172,11 @@
             }
 
             .cm-footer {
-                @include var(border-top-color, gray1)
+                @include var(border-top-color, gray1);
+                @include var(border-top-width, border-width);
+                @include var(border-top-style, border-style);
 
-                    padding: 1em;
-                border-top: $cm-border;
+                padding: 1em;
 
                 &-buttons {
                     display: flex;
@@ -196,11 +197,12 @@
             }
 
             .cm-header {
-                @include var(border-bottom-color, gray1);
+                @include var(border-bottom-width, border-width);
+                @include var(border-bottom-style, border-style);
+                @include var(border-bottom-color, border-color);
 
                 padding: 1em;
                 padding-right: 24px;
-                border-bottom: $cm-border;
 
                 h1 {
                     margin: 0;
@@ -270,8 +272,11 @@
                         }
 
                         &.cm-toggle-all {
-                            @include var(border-top-color, gray1);
-                            border-top: $cm-border;
+
+                            @include var(border-top-width, border-width);
+                            @include var(border-top-style, border-style);
+                            @include var(border-top-color, border-color);
+
                             padding-top: 1em;
                         }
 
