@@ -22,7 +22,7 @@
         }
 
         a {
-            @include var(color, 'green1');
+            @include var(color, green1);
             text-decoration: none;
         }
 
@@ -33,7 +33,7 @@
         ul,
         li {
             // font-family: inherit;
-            @include var(color, 'color');
+            @include var(color, text-color);
         }
 
         p,
@@ -55,12 +55,13 @@
 
         .cm-btn {
 
-            @include var(color, button-color);
+            @include var(color, button-text-color);
             @include var(background-color, gray1);
-            @include var(border-radius, 'border-radius');
+            @include var(border-radius, border-radius);
             padding: 6px 10px;
             margin-right: $btn-margin-right;
-            border: 0;
+            border-width: 0;
+            border-style: none;
             padding: 0.4em;
             font-size: 1em;
             cursor: pointer;
@@ -70,27 +71,27 @@
             }
 
             &.cm-btn-close {
-                @include var(background-color, 'gray1');
+                @include var(background-color, gray1);
             }
 
             &.cm-btn-success {
-                @include var(background-color, 'green1');
+                @include var(background-color, green1);
             }
 
             &.cm-btn-success-var {
-                @include var(background-color, 'green2');
+                @include var(background-color, green2);
             }
 
             &.cm-btn-info {
-                @include var(background-color, 'blue1');
+                @include var(background-color, blue1);
             }
         }
     }
 
     .context-notice {
-        @include var(border-radius, 'border-radius');
-        @include var(background-color, 'light1');
-        @include var(border-color, 'light2');
+        @include var(border-radius, border-radius);
+        @include var(background-color, light1);
+        @include var(border-color, light2);
 
         display: flex;
         flex-direction: column;
@@ -102,7 +103,7 @@
         padding: map-get($cm-space, md);
 
         p {
-            @include var(color, 'color');
+            @include var(color, text-color);
 
             flex-grow: 0;
             text-align: center;
@@ -110,7 +111,7 @@
             margin-top: 0;
 
             a {
-                @include var(color, 'blue2');
+                @include var(color, blue2);
             }
         }
 
@@ -166,12 +167,12 @@
                 z-index: 1;
 
                 svg {
-                    @include var(stroke, 'color');
+                    @include var(stroke, text-color);
                 }
             }
 
             .cm-footer {
-                @include var(border-top-color, 'gray1')
+                @include var(border-top-color, gray1)
 
                     padding: 1em;
                 border-top: $cm-border;
@@ -189,13 +190,13 @@
                     padding-right: 8px;
 
                     a {
-                        @include var(color, 'color-deemphasized');
+                        @include var(color, text-color-deemphasized);
                     }
                 }
             }
 
             .cm-header {
-                @include var(border-bottom-color, 'gray1');
+                @include var(border-bottom-color, gray1);
 
                 padding: 1em;
                 padding-right: 24px;
@@ -232,7 +233,7 @@
                     li.cm-purpose {
                         .cm-services {
                             .cm-caret {
-                                @include var(color, 'color-deemphasized');
+                                @include var(color, text-color-deemphasized);
                             }
 
                             .cm-content {
@@ -264,12 +265,12 @@
                         }
 
                         p.purposes {
-                            @include var(color, 'color-deemphasized');
+                            @include var(color, text-color-deemphasized);
                             font-size: 0.8em;
                         }
 
                         &.cm-toggle-all {
-                            @include var(border-top-color, 'gray1');
+                            @include var(border-top-color, gray1);
                             border-top: $cm-border;
                             padding-top: 1em;
                         }
@@ -280,7 +281,7 @@
 
                         span.cm-opt-out,
                         span.cm-required {
-                            @include var(color, 'color-deemphasized');
+                            @include var(color, text-color-deemphasized);
                             padding-left: 0.2em;
                             font-size: 0.8em;
                         }
@@ -291,7 +292,7 @@
     }
 
     .cookie-notice:not(.cookie-modal-notice) {
-        @include var(background-color, 'dark1');
+        @include var(background-color, dark1);
         z-index: 999;
 
         position: fixed;
@@ -300,13 +301,13 @@
         right: 0;
 
         @media (min-width: $cm-desktop) {
-            @include var(border-radius, 'border-radius');
-            @include var(position, 'notice-position');
-            @include var(right, 'notice-right');
-            @include var(left, 'notice-left');
-            @include var(bottom, 'notice-bottom');
-            @include var(top, 'notice-top');
-            @include var(max-width, 'notice-max-width');
+            @include var(border-radius, border-radius);
+            @include var(position, notice-position);
+            @include var(right, notice-right);
+            @include var(left, notice-left);
+            @include var(bottom, notice-bottom);
+            @include var(top, notice-top);
+            @include var(max-width, notice-max-width);
             box-shadow: $cm-box-shadow-dark-md;
         }
 

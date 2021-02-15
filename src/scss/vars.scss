@@ -26,7 +26,7 @@ $cm-button-text-color: #eee !default;
 $cm-text-color-deemphasized: #999 !default;
 
 /* White */
-$cm-white: #fff !default;
+$cm-white1: #fff !default;
 
 /* Differently shaded colors */
 
@@ -81,7 +81,7 @@ $vars: (
     light1: $cm-light1,
     light2: $cm-light2,
     light3: $cm-light3,
-    'white': $cm-white,
+    white1: $cm-white1,
     dark1: $cm-dark1,
     dark2: $cm-dark2,
     dark3: $cm-dark3,
@@ -96,9 +96,9 @@ $vars: (
 );
 
 /*
-Use @include var(property, 'varname') to include a variable, e.g.
+Use @include var(property, varname) to include a variable, e.g.
   
-    @include var(background-color, 'white');
+    @include var(background-color, white1);
 
 to create a white background.
 */

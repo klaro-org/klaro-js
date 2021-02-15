@@ -16,19 +16,19 @@
 
         &:focus,
         &:hover {
-            @include var(background-color, 'gray1');
+            @include var(background-color, gray1);
             border-radius: 25px;
         }
     }
 
     > .cm-dropdowncontent {
-        @include var(background-color, 'white');
+        @include var(background-color, white1);
         display: none;
         box-shadow: $cm-box-shadow-dark-sm;
         width: auto;
 
         &.cm-dropdownexpanded {
-            @include var(border-radius, 'border-radius');
+            @include var(border-radius, border-radius);
             display: block;
             position: absolute;
             top: 35px;
@@ -38,8 +38,8 @@
 
         ul.cm-dropdownmenu {
 
-            @include var(border-color, 'border-color');
-            @include var(border-radius, 'border-radius');
+            @include var(border-color, border-color);
+            @include var(border-radius, border-radius);
 
             list-style: none;
             text-align: left;
@@ -47,7 +47,8 @@
             min-width: 200px;
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;
-            border: 1px solid;
+            border-width: 1px;
+            border-style: solid;
 
             li {
                 height: auto;
@@ -67,8 +68,8 @@
                     }
 
                     &:hover {
-                        @include var(background-color, 'blue1');
-                        @include var(color, 'white');
+                        @include var(background-color, blue1);
+                        @include var(color, white1);
                     }
                 }
             }

@@ -3,11 +3,12 @@
 .cm-language-select,
 .cm-purpose-select {
 
-    @include var(border-radius, 'border-radius');
-    @include var(border-color, 'light2');
-    @include var(background-color, 'white');
+    @include var(border-radius, border-radius);
+    @include var(border-color, light2);
+    @include var(background-color, white1);
 
-    border: 1px solid;
+    border-width: 1px;
+    border-style: solid;
     box-shadow: $cm-box-shadow-light-sm;
     padding: map-get($cm-space, md);
     margin-bottom: map-get($cm-space, md);
@@ -17,9 +18,9 @@
         margin-top: -4px;
 
         li {
-            @include var(color, 'white');
-            @include var(border-radius, 'border-radius');
-            @include var(background-color, 'green1');
+            @include var(color, white1);
+            @include var(border-radius, border-radius);
+            @include var(background-color, green1);
 
             display: inline-block;
             margin-right: 4px;
@@ -28,14 +29,14 @@
             font-size: 14px;
 
             a {
-                @include var(color, 'white');
+                @include var(color, white1);
             }
         }
     }
 }
 
 .cm-search-select {
-    $cm-border: 1px solid var(color, 'green1');
+    $cm-border: 1px solid var(color, green1);
 
     margin-top: map-get($cm-space, md);
     margin-bottom: map-get($cm-space, md);
@@ -51,8 +52,8 @@
 
     .cm-candidates {
 
-        @include var(background-color, 'white');
-        @include var(border-radius, 'border-radius');
+        @include var(background-color, white1);
+        @include var(border-radius, border-radius);
 
         position: absolute;
         top: 55px;
@@ -68,7 +69,7 @@
             cursor: pointer;
 
             p {
-                @include var(color, 'font-color-deemphasized');
+                @include var(color, text-color-deemphasized);
                 font-size: 14px;
             }
 
@@ -106,7 +107,7 @@
 
     ul {
 
-        @include var(background-color, 'white');
+        @include var(background-color, white1);
 
         top: 0;
         left: 0;
@@ -119,7 +120,7 @@
 
         li {
 
-            @include var(background-color, 'white');
+            @include var(background-color, white1);
 
             box-shadow: $cm-box-shadow-dark-sm;
             margin: 0;
@@ -134,7 +135,7 @@
             }
 
             &.cm-obj-is-active {
-                @include var(background-color, 'light2');
+                @include var(background-color, light2);
                 display: flex;
                 order: 1;
             }
@@ -153,20 +154,21 @@
             order: 3;
 
             input {
-                @include var(color, 'dark3');
-                @include var(border-radius, 'border-radius');
-                @include var(border-color, 'border-color');
+                @include var(color, dark3);
+                @include var(border-radius, border-radius);
+                @include var(border-color, border-color);
                 flex-grow: 1;
                 flex-shrink: 1;
                 padding: 4px;
                 font-size: 14px;
-                border: 1px solid;
+                border-width: 1px;
+                border-style: solid;
             }
 
             a.cm-btn {
-                @include var(color, 'white');
-                @include var(border-radius, 'border-radius');
-                @include var(background-color, 'border-color');
+                @include var(color, white1);
+                @include var(border-radius, border-radius);
+                @include var(background-color, border-color);
                 padding: 8px;
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -178,7 +180,7 @@
 
         &:not(.cm-is-active) {
             li.cm-obj-is-active {
-                @include var(background-color, 'white');
+                @include var(background-color, white1);
             }
         }
 
@@ -197,7 +199,7 @@
 }
 
 p.cm-description {
-    @include var(color, 'dark2');
+    @include var(color, dark2);
     font-size: 14px;
     padding-top: 2px;
     margin-bottom: 4px;
@@ -208,20 +210,21 @@ p.cm-description {
 
     select {
 
-        @include var(background-color, 'white');
-        @include var(color, 'dark2');
-        @include var(border-radius, 'border-radius');
-        @include var(border-color, 'border-color');
+        @include var(background-color, white1);
+        @include var(color, dark2);
+        @include var(border-radius, border-radius);
+        @include var(border-color, border-color);
 
         display: block;
         width: 100%;
         padding: 12px 5px;
-        border: 1px solid;
+        border-width: 1px;
+        border-style: solid;
         font-size: 16px;
         text-indent: 5px;
 
         &[disabled] {
-            @include var(background-color, 'gray2');
+            @include var(background-color, gray2);
         }
 
     }
@@ -235,9 +238,9 @@ p.cm-description {
     margin-top: 4px;
 
     > .cm-label {
-        @include var(background-color, 'white');
-        @include var(border-radius, 'border-radius');
-        @include var(border-color, 'border-color');
+        @include var(background-color, white1);
+        @include var(border-radius, border-radius);
+        @include var(border-color, border-color);
         position: absolute;
         top: 16px;
         left: 8px;
@@ -251,7 +254,8 @@ p.cm-description {
             color 150ms cubic-bezier(0.47, 0, 0.74, 0.71);
         padding: 0 8px;
         transform: scale(0.75) translateX(-16%) translateY(-26px);
-        border: 1px solid;
+        border-width: 1px;
+        border-style: solid;
     }
     // currently we disable the retracting part
     /*
@@ -265,19 +269,20 @@ p.cm-description {
 
 .cm-input {
 
-    @include var(border-radius, 'border-radius');
-    @include var(background-color, 'white');
-    @include var(border-color, 'green1');
+    @include var(border-radius, border-radius);
+    @include var(background-color, white1);
+    @include var(border-color, green1);
 
     // For some reason, textarea tries to use a system font.
     font-size: 14px;
 
-    border: 1px solid;
+    border-width: 1px;
+    border-style: solid;
     box-sizing: border-box;
     padding: 12px 18px;
     width: 100%;
 
     &[disabled] {
-        @include var(background-color, 'light2');
+        @include var(background-color, light2);
     }
 }

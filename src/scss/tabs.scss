@@ -20,8 +20,8 @@
     }
 
     @media (max-width: $cm-tablet) {
-        @include var(border-radius, 'border-radius');
-        @include var(border-radius, 'border-radius');
+        @include var(border-radius, border-radius);
+        @include var(border-radius, border-radius);
         background: #fff;
         box-shadow: $cm-box-shadow-dark-sm;
 
@@ -102,8 +102,8 @@
 
             &.cm-tab-is-active {
                 a {
-                    @include var(color, 'border-color');
-                    @include var(border-bottom-color, 'border-color');
+                    @include var(color, border-color);
+                    @include var(border-bottom-color, border-color);
                 }
             }
         }
