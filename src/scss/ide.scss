@@ -45,9 +45,9 @@
 
         &.cm-error,
         &.cm-success {
-            border-radius: $cm-border-radius;
+            @include var(border-radius, 'border-radius');
+            @include var(color, 'white');
             box-shadow: $cm-box-shadow-light-sm;
-            color: $cm-white;
             margin-bottom: map-get($cm-space, lg);
         }
 
@@ -56,7 +56,7 @@
         }
 
         &.cm-success {
-            background: $cm-green2;
+            @include var(background, 'green2');
         }
     }
 
@@ -110,10 +110,10 @@
     }
 
     p.cm-section-description {
+        @include var(color, 'dark2');
         text-align: justify;
         margin-top: map-get($cm-space, sm);
         margin-bottom: map-get($cm-space, lg);
-        color: #666;
     }
 
     .cm-purpose-order {
@@ -125,16 +125,16 @@
                 display: flex;
 
                 span.cm-buttons {
+                    @include var(border-radius, 'border-radius');
                     flex-grow: 0;
                     box-shadow: $cm-box-shadow-light-sm;
-                    border-radius: $cm-border-radius;
 
                     a {
                         padding: map-get($cm-space, md);
                         display: inline-block;
 
                         &:hover {
-                            background: $cm-green1;
+                            @include var(background, 'green1');
                         }
                     }
                 }
@@ -149,10 +149,10 @@
 
     .cm-translations-fields {
         .cm-translations-for-key {
+            @include var(border-radius, 'border-radius');
             background: $cm-white;
             box-shadow: $cm-box-shadow-light-sm;
             padding: map-get($cm-space, md);
-            border-radius: $cm-border-radius;
             margin-bottom: map-get($cm-space, lg);
 
             li {
@@ -181,11 +181,11 @@
             }
 
             .cm-status-is-active {
-                color: $cm-green1;
+                @include var(color, 'green1');
             }
 
             .cm-status-is-inactive {
-                color: $cm-red1;
+                @include var(color, 'red1');
             }
         }
 
@@ -206,7 +206,7 @@
     .cm-cookie-config {
         .cm-cookie-forms {
             .cm-cookie-form {
-                border-bottom: 1px solid $cm-gray-medium;
+                border-bottom: 1px solid $cm-gray1;
             }
         }
     }
@@ -220,7 +220,7 @@
             }
 
             &:first-child {
-                border-bottom: 1px solid $cm-gray-medium;
+                border-bottom: 1px solid $cm-gray1;
             }
         }
     }
@@ -256,41 +256,45 @@
             }
 
             select {
+                @include var(border-color, 'green1');
+                @include var(border-radius, 'border-radius');
+                @include var(background-color, 'white');
                 padding: map-get($cm-space, md);
                 display: block;
-                border: 1px solid $cm-green1;
-                border-radius: $cm-border-radius;
-                background: $cm-white;
+                border: 1px solid;
                 margin-bottom: map-get($cm-space, md);
             }
         }
 
         .cm-control-button {
+
+            @include var(border-radius, 'border-radius');
+            @include var(background-color, 'blue2');
+            @include var(color, 'white');
+
             border: 0;
             padding: 12px;
             margin-top: 4px;
             cursor: pointer;
             box-shadow: $cm-box-shadow-dark-sm;
-            background: $cm-blue2;
-            color: #fff;
-            border-radius: $cm-border-radius;
             margin-right: 6px;
 
             &.cm-delete {
+                @include var(background-color, 'red3');
                 float: right;
-                background: #f50;
             }
 
             &.cm-secondary {
-                background: $cm-red2;
+                @include var(background-color, 'red2');
             }
 
             &.cm-success {
-                background: $cm-green1;
+                @include var(background-color, 'green1');
             }
 
             &:disabled {
-                background: #aaa;
+                @include var(background-color, 'light1');
+                @include var(color, 'dark1');
                 cursor: not-allowed;
             }
         }

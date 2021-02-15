@@ -65,6 +65,15 @@ const KlaroConfigSpec = {
             validators: [],
         },
     ],
+    styling: [
+        {
+            name: 'position',
+            control: 'Select',
+            choices: ['bottomLeft', 'bottomRight'],
+            validators: [],
+            default: 'bottomRight',
+        },
+    ],
     globals: [
         {
             name: 'languages',

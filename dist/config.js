@@ -11,6 +11,28 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // You can override CSS style variables here. For IE11, Klaro will
+    // dynamically inject the variables into the CSS. If you still consider
+    // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
+    // with an external stylesheet as the dynamic replacement won't work there.
+    styling: {
+        'font-color': '#333',
+        'font-color-deemphasized': '#777',
+        'button-font-color': '#fff',
+        'background1': '#eee',
+        'green3': '#f00',
+        'border-radius' : '0',
+        // position the notice on the left screen edge
+        'notice-left': '20px',
+        'notice-right': 'auto',
+        // position the notice on the bottom of the screen
+        'notice-top': 'auto',
+        'notice-bottom': '0',
+        // make the notice span the entire screen
+        'notice-max-width': 'calc(100vw - 60px)',
+        'notice-position': 'fixed',
+    },
+
     // Setting this to true will keep Klaro from automatically loading itself
     // when the page is being loaded.
     noAutoLoad: false,

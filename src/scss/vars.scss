@@ -7,44 +7,105 @@ $cm-box-shadow-dark-md: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0
 $cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11) !default;
 $cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33) !default;
 
+/* Border styles */
+$cm-border-color: #2581c4 !default;
 $cm-border-radius: 4px !default;
-$cm-border-dark: 1px solid #555 !default;
+$cm-border: 1px solid !default;
 
-/* Colors */
-$cm-font-color-dark: #eee !default;
-$cm-tab-color: #2581c4 !default;
-$cm-font-color-dark-deemphasized: #999 !default;
-$cm-bg-dark: #333 !default;
-$cm-gray-medium: #aaa !default;
-$cm-gray-light: #eee !default;
+/* Cookie notice positioning */
+$cm-notice-right: 20px !default;
+$cm-notice-left: auto !default;
+$cm-notice-top: auto !default;
+$cm-notice-bottom: 20px !default;
+$cm-notice-max-width: 400px !default;
+$cm-notice-position: fixed !default;
+
+/* Text colors */
+$cm-text-color: #eee !default;
+$cm-button-text-color: #eee !default;
+$cm-text-color-deemphasized: #999 !default;
+
+/* White */
 $cm-white: #fff !default;
 
+/* Differently shaded colors */
+
+// light gray
+$cm-light1: #eee !default;
+$cm-light2: scale-color($cm-light1, $lightness: -20%) !default;
+$cm-light3: scale-color($cm-light2, $lightness: -20%) !default;
+
+// dark gray
+$cm-dark1: #333 !default;
+$cm-dark2: scale-color($cm-dark1, $lightness: 20%) !default;
+$cm-dark3: scale-color($cm-dark2, $lightness: 20%) !default;
+
+// middle gray
+$cm-gray1: #555 !default;
+$cm-gray2: scale-color($cm-gray1, $lightness: 20%) !default;
+$cm-gray3: scale-color($cm-gray2, $lightness: 20%) !default;
+
+// blue
 $cm-blue1: #2581c4 !default;
 $cm-blue2: scale-color($cm-blue1, $lightness: 20%) !default;
 $cm-blue3: scale-color($cm-blue2, $lightness: 20%) !default;
-$cm-blue4: scale-color($cm-blue3, $lightness: 20%) !default;
 
+// green
 $cm-green1: #1a936f !default;
 $cm-green2: scale-color($cm-green1, $lightness: 20%) !default;
 $cm-green3: scale-color($cm-green2, $lightness: 20%) !default;
-$cm-green4: scale-color($cm-green3, $lightness: 20%) !default;
 
+// red
 $cm-red1: #da2c43 !default;
 $cm-red2: scale-color($cm-red1, $lightness: 20%) !default;
 $cm-red3: scale-color($cm-red2, $lightness: 20%) !default;
-$cm-red4: scale-color($cm-red3, $lightness: 20%) !default;
 
-$cm-yellow1: #f2d600 !default;
-
+// all these variables can be tweaked at runtime by specifying them via the
+// 'styling' config parameter.
 $vars: (
+    text-color: $cm-text-color,
+    button-text-color: $cm-button-text-color,
+    color-text-deemphasized: $cm-text-color-deemphasized,
     green1: $cm-green1,
     green2: $cm-green2,
     green3: $cm-green3,
-    font-color-dark: $cm-font-color-dark,
     blue1: $cm-blue1,
     blue2: $cm-blue2,
     blue3: $cm-blue3,
+    red1: $cm-red1,
+    red2: $cm-red2,
+    red3: $cm-red3,
+    gray1: $cm-gray1,
+    gray2: $cm-gray2,
+    gray3: $cm-gray3,
+    light1: $cm-light1,
+    light2: $cm-light2,
+    light3: $cm-light3,
+    'white': $cm-white,
+    dark1: $cm-dark1,
+    dark2: $cm-dark2,
+    dark3: $cm-dark3,
+    border-color: $cm-border-color,
+    border-radius: $cm-border-radius,
+    notice-left: $cm-notice-left,
+    notice-right: $cm-notice-right,
+    notice-top: $cm-notice-top,
+    notice-bottom: $cm-notice-bottom,
+    notice-max-width: $cm-notice-max-width,
+    notice-position: $cm-notice-position,
 );
+
+/*
+Use @include var(property, 'varname') to include a variable, e.g.
+  
+    @include var(background-color, 'white');
+
+to create a white background.
+*/
+@mixin var($property, $varName) {
+    #{$property}: map-get($vars, $varName);
+    #{$property}: var(--#{$varName}, map-get($vars, $varName));
+}
 
 /* Spacing */
 $cm-space: (
@@ -61,7 +122,3 @@ $cm-desktop: 1024px !default;
 $cm-mobile: 384px !default;
 $cm-tablet: 768px !default;
 
-@mixin var($property, $varName) {
-    #{$property}: map-get($vars, $varName);
-    #{$property}: var(--#{$varName}, map-get($vars, $varName));
-}

@@ -1,4 +1,8 @@
 @mixin modal($centerWidth, $windowWidth) {
+
+    @include var(background-color, 'dark1')
+        @include var(color, 'color');
+
     z-index: 1001;
     box-shadow: $cm-box-shadow-dark-md;
 
@@ -10,11 +14,9 @@
 
     position: fixed;
     overflow: auto;
-    background: $cm-bg-dark;
-    color: $cm-font-color-dark;
 
     @media (min-width: $centerWidth) {
-        border-radius: $cm-border-radius;
+        @include var(border-radius, 'border-radius');
         position: relative;
         margin: 0 auto;
         max-width: $windowWidth;

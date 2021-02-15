@@ -8,7 +8,7 @@ import KlaroApi from './utils/api';
 import {render as reactRender} from 'react-dom'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
-import {currentScript, dataset, applyDataset} from './utils/compat'
+import {currentScript, dataset, applyDataset, replaceCSSVariables} from './utils/compat'
 export {update as updateConfig} from './utils/config'
 import './scss/klaro.scss'
 
@@ -69,6 +69,25 @@ export function getConfigTranslations(config){
     return trans
 }
 
+export function injectStyling(config){
+    if (config.styling === undefined)
+        return
+
+    const root = document.documentElement;
+
+    // in modern browsers we can just set the CSS variables
+    for(const [key, value] of Object.entries(config.styling)){
+        root.style.setProperty('--'+key, value)
+    }
+
+    if (window.document.documentMode) {
+        // we dynamically replace the CSS variables in the CSS files as IE
+        // cannot handle them... Sigh.
+        replaceCSSVariables(config.styling)
+    }
+
+}
+
 let cnt = 1
 export function render(config, opts){
     if (config === undefined)
@@ -88,6 +107,8 @@ export function render(config, opts){
 
     if (opts.api !== undefined)
         manager.watch(opts.api)
+
+    injectStyling(config)
 
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)

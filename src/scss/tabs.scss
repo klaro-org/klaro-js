@@ -20,7 +20,8 @@
     }
 
     @media (max-width: $cm-tablet) {
-        border-radius: $cm-border-radius;
+        @include var(border-radius, 'border-radius');
+        @include var(border-radius, 'border-radius');
         background: #fff;
         box-shadow: $cm-box-shadow-dark-sm;
 
@@ -64,7 +65,7 @@
                 display: block;
 
                 &.cm-tab-is-active {
-                    background: $cm-gray-light;
+                    background: $cm-gray2;
                     order: 1;
                 }
             }
@@ -101,8 +102,8 @@
 
             &.cm-tab-is-active {
                 a {
-                    color: $cm-tab-color;
-                    border-bottom-color: $cm-tab-color;
+                    @include var(color, 'border-color');
+                    @include var(border-bottom-color, 'border-color');
                 }
             }
         }
@@ -138,7 +139,7 @@
 
             li.cm-tab-is-active {
                 order: 1;
-                background: $cm-gray-medium;
+                background: $cm-gray1;
                 display: block;
             }
         }

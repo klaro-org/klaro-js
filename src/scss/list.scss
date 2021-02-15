@@ -28,7 +28,7 @@
         }
 
         &:nth-child(2n) {
-            background: #fafafa;
+            @include var(background-color, 'light1');
         }
 
         &.cm-is-header {
@@ -38,9 +38,9 @@
         }
 
         &.cm-is-card {
-            background: #fff;
+            @include var(background-color, 'white');
+            @include var(border-radius, 'border-radius');
             box-shadow: $cm-box-shadow-dark-sm;
-            border-radius: $cm-border-radius;
             margin-bottom: map-get($cm-space, lg);
         }
 

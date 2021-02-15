@@ -16,35 +16,38 @@
 
         &:focus,
         &:hover {
+            @include var(background-color, 'gray1');
             border-radius: 25px;
-            background-color: $cm-gray-medium;
         }
     }
 
     > .cm-dropdowncontent {
+        @include var(background-color, 'white');
         display: none;
-        background: #fff;
         box-shadow: $cm-box-shadow-dark-sm;
         width: auto;
 
         &.cm-dropdownexpanded {
+            @include var(border-radius, 'border-radius');
             display: block;
             position: absolute;
             top: 35px;
             z-index: 100;
             left: 0;
-            border-radius: $cm-border-radius;
         }
 
         ul.cm-dropdownmenu {
+
+            @include var(border-color, 'border-color');
+            @include var(border-radius, 'border-radius');
+
             list-style: none;
             text-align: left;
             max-width: 300px;
             min-width: 200px;
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;
-            border: 1px solid #ececec;
-            border-radius: $cm-border-radius;
+            border: 1px solid;
 
             li {
                 height: auto;
@@ -64,8 +67,8 @@
                     }
 
                     &:hover {
-                        background-color: $cm-blue1;
-                        color: $cm-white;
+                        @include var(background-color, 'blue1');
+                        @include var(color, 'white');
                     }
                 }
             }
