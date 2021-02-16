@@ -1,6 +1,56 @@
 [
   {
     "changelog": {
+      "de": "- Hinzuf\u00fcgen eines `styling` Konfigurationsparameters, der das einfache Anpassen der Benutzeroberfl\u00e4che von Klaro erm\u00f6glicht, entweder durch das Setzen von `Themes` oder \u00fcber die Definition von CSS-Variablen (kompatibel mit IE11 und modernen Browsern).\n- Behebung eines Fehlers der bei der kontextbasierten Einwilligung nicht immer korrekt einen Platzhalter f\u00fcr freizuschaltende Inhalte anzeigte.\n",
+      "en": "- Added a `styling` config parameter that enables the user to easily change the UI of Klaro, either by applying one or several `themes` to it or by defining custom CSS variables (compatible with IE11 and modern browsers).\n- Fixed a bug that caused the placeholder for context-based consents to be missing.\n"
+    },
+    "date": "2021-02-15",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "PCHeQpzsqTR+PIRsm324gsqr2D8m2JnVgY/icHWneZmVtM5slnTgUjWP2yvcz6RG"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "E+n3tM5DJ5cppKlSVwKEiA8vvBvDxSdDHGOGOYzXyFecaLJIglYj2SmfagAVbJc4"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "qZNVqQl968xw6AwJX1SXC8FZCzGx55YKHMlvAfDrAt7jCFdInq4XAcba1TAn7CMf"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "eSzusJyQt4qQt4ntU8Q38bwkPfK3lThmfP9BZ4xB3dbPdLQxodd74/VrFClYtSqB"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "6Hd1M0oP7IWJbTJajj9Y4CO7JNP7oCfb5hG6TzrRaam5f4BrxlVigqyVQfZbrkiK"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "Abh69eN/+8bXUE5fsu+dpcinMs3agnIp0alTIJTKsPMqKszJmLQF+XfXmGUyelNJ"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "+j9DUcWzy5BG+MrSQKXfRCXcMaDn3Gl4O4ZvE8EhOMgGxXd0gtjxkgadmo5xHNm8"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "njXHCFN2WDRPhvwcytGEhlnybnPZk/AIV1jVD/wf/HVhbGf9cpK3BnbNDrpuqQnL"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "zSKi1t4ZsfN3mvC7yDuchoQBtypd83FuDomYmC8rpVneYDVr2Ox9dnL9/jsab8ko"
+      }
+    ],
+    "tags": [
+      "bugfixes",
+      "improvements"
+    ],
+    "version": "0.7.12"
+  },
+  {
+    "changelog": {
       "de": "- Behebung eines Problems bei der Definition regul\u00e4rer Ausdr\u00fccke f\u00fcr Cookies.\n",
       "en": "- Fixed a problem with regular expression definition for cookie names.\n"
     },
