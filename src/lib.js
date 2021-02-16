@@ -71,18 +71,30 @@ export function getConfigTranslations(config){
 
 export const themes = {
     top: {
+        _meta: {
+            incompatibleWith: ['bottom']
+        },
         'notice-top': '20px',
-        'notice-bottom': 'auto',        
+        'notice-bottom': 'auto',
     },
     bottom: {
+        _meta: {
+            incompatibleWith: ['top']
+        },
         'notice-bottom': '20px',
-        'notice-top': 'auto',        
+        'notice-top': 'auto',
     },
     left: {
+        _meta: {
+            incompatibleWith: ['wide']
+        },
         'notice-left': '20px',
         'notice-right': 'auto',
     },
     right: {
+        _meta: {
+            incompatibleWith: ['wide']
+        },
         'notice-right': '20px',
         'notice-left': 'auto',
     },
@@ -126,7 +138,11 @@ export function injectStyling(config){
             const theme = themes[themeName]
             if (theme !== undefined){
                 // we use the theme as the basic styling
-                styling = Object.assign(styling, theme)
+                for(const [key, value] of Object.entries(theme)){
+                    if (key.startsWith('_'))
+                        continue // private attribute e.g. used for compatibility checking
+                    styling[key] = value
+                }
             }
         }
 

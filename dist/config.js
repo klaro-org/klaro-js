@@ -16,16 +16,7 @@ var klaroConfig = {
     // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
     // with an external stylesheet as the dynamic replacement won't work there.
     styling: {
-        'theme': ['light', 'top', 'left'],
-        // position the notice on the left screen edge
-        // 'notice-left': '20px',
-        // 'notice-right': 'auto',
-        // position the notice on the bottom of the screen
-        // 'notice-top': 'auto',
-        // 'notice-bottom': '0',
-        // make the notice span the entire screen
-        // 'notice-max-width': 'calc(100vw - 60px)',
-        // 'notice-position': 'fixed',
+        theme: ['light', 'top', 'wide'],
     },
 
     // Setting this to true will keep Klaro from automatically loading itself
