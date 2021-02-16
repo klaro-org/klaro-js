@@ -81,7 +81,7 @@
         h2,
         h3,
         h4 {
-            font-size: 24px;
+            font-size: 2em;
             text-transform: uppercase;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -89,22 +89,24 @@
         }
 
         h1 {
+            @include var(border-style, border-style);
+            @include var(border-width, border-width);
+            @include var(border-color, light2);
             text-transform: none;
-            border-bottom: 1px solid #aaa;
             margin-bottom: 20px;
             display: inline-block;
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 1.6em;
         }
 
         h3 {
-            font-size: 16px;
+            font-size: 1.3em;
         }
 
         h4 {
-            font-size: 12px;
+            font-size: 1em;
             font-weight: 600;
         }
     }
@@ -206,7 +208,9 @@
     .cm-cookie-config {
         .cm-cookie-forms {
             .cm-cookie-form {
-                border-bottom: 1px solid $cm-gray1;
+                @include var(border-bottom-style, border-style);
+                @include var(border-bottom-width, border-width);
+                @include var(border-bottom-color, light2);
             }
         }
     }
@@ -220,7 +224,9 @@
             }
 
             &:first-child {
-                border-bottom: 1px solid $cm-gray1;
+                @include var(border-bottom-style, border-style);
+                @include var(border-bottom-width, border-width);
+                @include var(border-bottom-color, light2);
             }
         }
     }
@@ -258,12 +264,12 @@
             select {
                 @include var(border-color, green1);
                 @include var(border-radius, border-radius);
+                @include var(border-style, border-style);
+                @include var(border-radius, border-radius);
                 @include var(background-color, white1);
                 padding: map-get($cm-space, md);
-                display: block;
-                border-width: 1px;
-                border-style: solid;
                 margin-bottom: map-get($cm-space, md);
+                display: block;
             }
         }
 
@@ -273,7 +279,6 @@
             @include var(background-color, blue2);
             @include var(color, white1);
 
-            border-width: 0;
             border-style: none;
             padding: 12px;
             margin-top: 4px;

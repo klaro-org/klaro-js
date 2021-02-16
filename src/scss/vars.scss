@@ -8,7 +8,6 @@ $cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11) !default;
 $cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33) !default;
 
 /* Border styles */
-$cm-border-color: #444 !default;
 $cm-border-radius: 4px !default;
 $cm-border-style: solid !default;
 $cm-border-width: 1px !default;
@@ -22,12 +21,17 @@ $cm-notice-max-width: 400px !default;
 $cm-notice-position: fixed !default;
 
 /* Text colors */
-$cm-text-color: #eee !default;
-$cm-button-text-color: #eee !default;
-$cm-text-color-deemphasized: #999 !default;
+$cm-button-text-color: #fff !default;
+
+/* Font Families */
+$cm-font-family: inherit !default;
+$cm-title-font-family: inherit !default;
+$cm-font-size: 14px !default;
 
 /* White */
 $cm-white1: #fff !default;
+$cm-white2: #eee !default;
+$cm-white3: #ddd !default;
 
 /* Differently shaded colors */
 
@@ -40,11 +44,6 @@ $cm-light3: scale-color($cm-light2, $lightness: -20%) !default;
 $cm-dark1: #333 !default;
 $cm-dark2: scale-color($cm-dark1, $lightness: 20%) !default;
 $cm-dark3: scale-color($cm-dark2, $lightness: 20%) !default;
-
-// middle gray
-$cm-gray1: #555 !default;
-$cm-gray2: scale-color($cm-gray1, $lightness: 20%) !default;
-$cm-gray3: scale-color($cm-gray2, $lightness: 20%) !default;
 
 // blue
 $cm-blue1: #2581c4 !default;
@@ -64,29 +63,38 @@ $cm-red3: scale-color($cm-red2, $lightness: 20%) !default;
 // all these variables can be tweaked at runtime by specifying them via the
 // 'styling' config parameter.
 $vars: (
-    text-color: $cm-text-color,
     button-text-color: $cm-button-text-color,
-    color-text-deemphasized: $cm-text-color-deemphasized,
+
+    font-size: $cm-font-size,
+    font-family: $cm-font-family,
+    title-font-family: $cm-title-font-family,
+
     green1: $cm-green1,
     green2: $cm-green2,
     green3: $cm-green3,
+
     blue1: $cm-blue1,
     blue2: $cm-blue2,
     blue3: $cm-blue3,
+
     red1: $cm-red1,
     red2: $cm-red2,
     red3: $cm-red3,
-    gray1: $cm-gray1,
-    gray2: $cm-gray2,
-    gray3: $cm-gray3,
+
     light1: $cm-light1,
     light2: $cm-light2,
     light3: $cm-light3,
-    white1: $cm-white1,
+
     dark1: $cm-dark1,
     dark2: $cm-dark2,
     dark3: $cm-dark3,
-    border-color: $cm-border-color,
+
+    white1: $cm-white1,
+    white2: $cm-white2,
+    white3: $cm-white3,
+
+    // non-color options
+
     border-radius: $cm-border-radius,
     border-style: $cm-border-style,
     border-width: $cm-border-width,

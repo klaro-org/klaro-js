@@ -69,21 +69,51 @@ export function getConfigTranslations(config){
     return trans
 }
 
+export const themes = {
+    light: {
+        'button-text-color': '#fff',
+        'dark1': '#eee',
+        'dark2': '#777',
+        'dark3': '#555',
+        'light1': '#444',
+        'light2': '#666',
+        'light3': '#111',
+        'green3': '#f00',
+    },
+}
+
 export function injectStyling(config){
+
     if (config.styling === undefined)
         return
+
+    let styling = Object.assign({}, config.styling)
+
+    if (styling.theme !== undefined){
+        const theme = themes[styling.theme]
+        if (theme !== undefined){
+            // we use the theme as the basic styling
+            styling = Object.assign({}, theme)
+            // we allow overriding of specific theme variables
+            for(const [key, value] of Object.entries(config.styling)){
+                if (key === 'theme')
+                    continue
+                styling[key] = value
+            }
+        }
+    }
 
     const root = document.documentElement;
 
     // in modern browsers we can just set the CSS variables
-    for(const [key, value] of Object.entries(config.styling)){
+    for(const [key, value] of Object.entries(styling)){
         root.style.setProperty('--'+key, value)
     }
 
     if (window.document.documentMode) {
         // we dynamically replace the CSS variables in the CSS files as IE
         // cannot handle them... Sigh.
-        replaceCSSVariables(config.styling)
+        replaceCSSVariables(styling)
     }
 
 }
@@ -156,6 +186,7 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                         manager={manager}
                         config={config}
                         service={service}
+                        style={ds.style}
                         testing={opts.testing}
                         api={opts.api} />, placeholderElement)
                     notices.push(notice)

@@ -2,7 +2,17 @@
 @import './vars';
 
 .klaro {
+
     $btn-margin-right: 0.5em;
+
+    @include var(font-family, font-family);
+    @include var(font-size, font-size);
+
+    // buttons use their own font-family setting so we need to override it explicitly...
+    button {
+        @include var(font-family, font-family);
+        @include var(font-size, font-size);    
+    }
 
     &.cm-as-context-notice {
         height: 100%;
@@ -14,8 +24,6 @@
     .context-notice,
     .cookie-notice {
         @import 'switch';
-
-        font-size: 14px;
 
         .slider {
             box-shadow: $cm-box-shadow-dark-md;
@@ -32,8 +40,7 @@
         h2,
         ul,
         li {
-            // font-family: inherit;
-            @include var(color, text-color);
+            @include var(color, light1);
         }
 
         p,
@@ -48,6 +55,15 @@
             margin-top: 0.7em;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include var(font-family, title-font-family);
+        }
+
         .cm-link {
             margin-right: 0.5em;
             vertical-align: middle;
@@ -56,11 +72,10 @@
         .cm-btn {
 
             @include var(color, button-text-color);
-            @include var(background-color, gray1);
+            @include var(background-color, dark2);
             @include var(border-radius, border-radius);
             padding: 6px 10px;
             margin-right: $btn-margin-right;
-            border-width: 0;
             border-style: none;
             padding: 0.4em;
             font-size: 1em;
@@ -71,7 +86,7 @@
             }
 
             &.cm-btn-close {
-                @include var(background-color, gray1);
+                @include var(background-color, light2);
             }
 
             &.cm-btn-success {
@@ -90,20 +105,34 @@
 
     .context-notice {
         @include var(border-radius, border-radius);
-        @include var(background-color, light1);
+        @include var(border-style, border-style);
+        @include var(border-width, border-width);
         @include var(border-color, light2);
+        @include var(background-color, light1);
 
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        height: 100%;
-        border: 1px solid;
         padding: map-get($cm-space, md);
+        height: 100%;
+
+        &.cm-dark {
+            @include var(background-color, dark1);
+            @include var(border-color, dark2);
+
+            p {
+                @include var(color, light1);
+
+                a {
+                    @include var(color, blue2);
+                }
+            }
+        }
 
         p {
-            @include var(color, text-color);
+            @include var(color, dark1);
 
             flex-grow: 0;
             text-align: center;
@@ -111,7 +140,7 @@
             margin-top: 0;
 
             a {
-                @include var(color, blue2);
+                @include var(color, green2);
             }
         }
 
@@ -167,12 +196,12 @@
                 z-index: 1;
 
                 svg {
-                    @include var(stroke, text-color);
+                    @include var(stroke, light1);
                 }
             }
 
             .cm-footer {
-                @include var(border-top-color, gray1);
+                @include var(border-top-color, dark2);
                 @include var(border-top-width, border-width);
                 @include var(border-top-style, border-style);
 
@@ -191,7 +220,7 @@
                     padding-right: 8px;
 
                     a {
-                        @include var(color, text-color-deemphasized);
+                        @include var(color, dark2);
                     }
                 }
             }
@@ -199,7 +228,7 @@
             .cm-header {
                 @include var(border-bottom-width, border-width);
                 @include var(border-bottom-style, border-style);
-                @include var(border-bottom-color, border-color);
+                @include var(border-bottom-color, dark2);
 
                 padding: 1em;
                 padding-right: 24px;
@@ -235,7 +264,7 @@
                     li.cm-purpose {
                         .cm-services {
                             .cm-caret {
-                                @include var(color, text-color-deemphasized);
+                                @include var(color, light3);
                             }
 
                             .cm-content {
@@ -267,7 +296,7 @@
                         }
 
                         p.purposes {
-                            @include var(color, text-color-deemphasized);
+                            @include var(color, light3);
                             font-size: 0.8em;
                         }
 
@@ -275,7 +304,7 @@
 
                             @include var(border-top-width, border-width);
                             @include var(border-top-style, border-style);
-                            @include var(border-top-color, border-color);
+                            @include var(border-top-color, dark2);
 
                             padding-top: 1em;
                         }
@@ -286,7 +315,7 @@
 
                         span.cm-opt-out,
                         span.cm-required {
-                            @include var(color, text-color-deemphasized);
+                            @include var(color, dark2);
                             padding-left: 0.2em;
                             font-size: 0.8em;
                         }

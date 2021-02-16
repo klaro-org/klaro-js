@@ -16,7 +16,7 @@
 
         &:focus,
         &:hover {
-            @include var(background-color, gray1);
+            @include var(background-color, light1);
             border-radius: 25px;
         }
     }
@@ -38,8 +38,10 @@
 
         ul.cm-dropdownmenu {
 
-            @include var(border-color, border-color);
             @include var(border-radius, border-radius);
+            @include var(border-style, border-style);
+            @include var(border-width, border-width);
+            @include var(border-color, dark2);
 
             list-style: none;
             text-align: left;
@@ -47,8 +49,6 @@
             min-width: 200px;
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;
-            border-width: 1px;
-            border-style: solid;
 
             li {
                 height: auto;

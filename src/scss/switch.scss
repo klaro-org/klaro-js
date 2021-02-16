@@ -1,6 +1,10 @@
 /* The switch - the box around the slider */
 
 .cm-switch-container {
+    @include var(border-bottom-style, border-style);
+    @include var(border-bottom-width, border-width);
+    @include var(border-bottom-color, light2);
+
     display: block;
     position: relative;
     padding: 10px;
@@ -8,7 +12,6 @@
     line-height: 20px;
     vertical-align: middle;
     min-height: 40px;
-    border-bottom: 1px solid #ccc;
 
     &:last-child {
         border-bottom: 0;
@@ -76,14 +79,14 @@
 }
 
 .cm-list-title {
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 600;
 }
 
 .cm-list-description {
-    font-size: 14px;
+    @include var(color, dark3);
+    font-size: 0.9em;
     padding-top: 4px;
-    color: #666;
 }
 
 .cm-list-label {
@@ -95,13 +98,15 @@
     }
 
     .slider {
+
+        @include var(background-color, white1);
+
         position: absolute;
         cursor: pointer;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
         -webkit-transition: 0.4s;
         transition: 0.4s;
         width: 50px;
@@ -109,13 +114,15 @@
     }
 
     .slider::before {
+
+        @include var(background-color, white2);
+
         position: absolute;
         content: '';
         height: 20px;
         width: 20px;
         left: 5px;
         bottom: 5px;
-        background-color: #fff;
         -webkit-transition: 0.4s;
         transition: 0.4s;
     }
