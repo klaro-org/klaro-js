@@ -70,6 +70,30 @@ export function getConfigTranslations(config){
 }
 
 export const themes = {
+    top: {
+        'notice-top': '20px',
+        'notice-bottom': 'auto',        
+    },
+    bottom: {
+        'notice-bottom': '20px',
+        'notice-top': 'auto',        
+    },
+    left: {
+        'notice-left': '20px',
+        'notice-right': 'auto',
+    },
+    right: {
+        'notice-right': '20px',
+        'notice-left': 'auto',
+    },
+    wide: {
+        // position the notice on the left screen edge
+        'notice-left': '20px',
+        'notice-right': 'auto',
+        // make the notice span the entire screen
+        'notice-max-width': 'calc(100vw - 60px)',
+        'notice-position': 'fixed',
+    },
     light: {
         'button-text-color': '#fff',
         'dark1': '#eee',
@@ -90,17 +114,29 @@ export function injectStyling(config){
     let styling = Object.assign({}, config.styling)
 
     if (styling.theme !== undefined){
-        const theme = themes[styling.theme]
-        if (theme !== undefined){
-            // we use the theme as the basic styling
-            styling = Object.assign({}, theme)
-            // we allow overriding of specific theme variables
-            for(const [key, value] of Object.entries(config.styling)){
-                if (key === 'theme')
-                    continue
-                styling[key] = value
+        let styleThemes = styling.theme
+        if (!(styleThemes instanceof Array)){
+            styleThemes = [styleThemes]
+        }
+
+        // we reset the styling
+        styling = {}
+
+        for(const themeName of styleThemes){
+            const theme = themes[themeName]
+            if (theme !== undefined){
+                // we use the theme as the basic styling
+                styling = Object.assign(styling, theme)
             }
         }
+
+        // we allow overriding of specific theme variables
+        for(const [key, value] of Object.entries(config.styling)){
+            if (key === 'theme')
+                continue
+            styling[key] = value
+        }
+
     }
 
     const root = document.documentElement;
