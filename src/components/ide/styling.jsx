@@ -9,9 +9,9 @@ export const Styling = ({ config, disabled, controls, updateConfig, t }) => {
         return (
             <ClassName
                 disabled={disabled}
-                key={stylingField.name}
-                updateConfig={updateConfig}
-                config={config}
+                prefix={["styling"]}
+                updateConfig={(key, value) =>  updateConfig(['styling', ...key], value, true)}
+                config={config.styling || {themes: []}}
                 t={t}
                 key={stylingField.name}
                 field={stylingField}

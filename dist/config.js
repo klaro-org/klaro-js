@@ -16,7 +16,7 @@ var klaroConfig = {
     // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
     // with an external stylesheet as the dynamic replacement won't work there.
     styling: {
-        theme: ['light', 'top', 'wide'],
+        // theme: ['light', 'top', 'wide'],
     },
 
     // Setting this to true will keep Klaro from automatically loading itself

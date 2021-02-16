@@ -5,10 +5,12 @@ import App from './components/app'
 import ContextualConsentNotice from './components/contextual-consent-notice'
 import ConsentManager from './consent-manager'
 import KlaroApi from './utils/api';
+import {injectStyles} from './utils/styling'
 import {render as reactRender} from 'react-dom'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
-import {currentScript, dataset, applyDataset, replaceCSSVariables} from './utils/compat'
+import {themes} from './themes'
+import {currentScript, dataset, applyDataset} from './utils/compat'
 export {update as updateConfig} from './utils/config'
 import './scss/klaro.scss'
 
@@ -69,107 +71,6 @@ export function getConfigTranslations(config){
     return trans
 }
 
-export const themes = {
-    top: {
-        _meta: {
-            incompatibleWith: ['bottom']
-        },
-        'notice-top': '20px',
-        'notice-bottom': 'auto',
-    },
-    bottom: {
-        _meta: {
-            incompatibleWith: ['top']
-        },
-        'notice-bottom': '20px',
-        'notice-top': 'auto',
-    },
-    left: {
-        _meta: {
-            incompatibleWith: ['wide']
-        },
-        'notice-left': '20px',
-        'notice-right': 'auto',
-    },
-    right: {
-        _meta: {
-            incompatibleWith: ['wide']
-        },
-        'notice-right': '20px',
-        'notice-left': 'auto',
-    },
-    wide: {
-        // position the notice on the left screen edge
-        'notice-left': '20px',
-        'notice-right': 'auto',
-        // make the notice span the entire screen
-        'notice-max-width': 'calc(100vw - 60px)',
-        'notice-position': 'fixed',
-    },
-    light: {
-        'button-text-color': '#fff',
-        'dark1': '#eee',
-        'dark2': '#777',
-        'dark3': '#555',
-        'light1': '#444',
-        'light2': '#666',
-        'light3': '#111',
-        'green3': '#f00',
-    },
-}
-
-export function injectStyling(config){
-
-    if (config.styling === undefined)
-        return
-
-    let styling = Object.assign({}, config.styling)
-
-    if (styling.theme !== undefined){
-        let styleThemes = styling.theme
-        if (!(styleThemes instanceof Array)){
-            styleThemes = [styleThemes]
-        }
-
-        // we reset the styling
-        styling = {}
-
-        for(const themeName of styleThemes){
-            const theme = themes[themeName]
-            if (theme !== undefined){
-                // we use the theme as the basic styling
-                for(const [key, value] of Object.entries(theme)){
-                    if (key.startsWith('_'))
-                        continue // private attribute e.g. used for compatibility checking
-                    styling[key] = value
-                }
-            }
-        }
-
-        // we allow overriding of specific theme variables
-        for(const [key, value] of Object.entries(config.styling)){
-            if (key === 'theme')
-                continue
-            styling[key] = value
-        }
-
-    }
-
-    const root = document.documentElement;
-
-    // in modern browsers we can just set the CSS variables
-    for(const [key, value] of Object.entries(styling)){
-        root.style.setProperty('--'+key, value)
-    }
-
-    if (window.document.documentMode) {
-        // we dynamically replace the CSS variables in the CSS files as IE
-        // cannot handle them... Sigh.
-        replaceCSSVariables(styling)
-    }
-
-}
-
 let cnt = 1
 export function render(config, opts){
     if (config === undefined)
@@ -190,7 +91,7 @@ export function render(config, opts){
     if (opts.api !== undefined)
         manager.watch(opts.api)
 
-    injectStyling(config)
+    injectStyles(config, themes)
 
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)

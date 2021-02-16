@@ -67,11 +67,10 @@ const KlaroConfigSpec = {
     ],
     styling: [
         {
-            name: 'position',
-            control: 'Select',
-            choices: ['bottomLeft', 'bottomRight'],
+            name: 'theme',
+            control: 'ThemesSelect',
             validators: [],
-            default: 'bottomRight',
+            default: [],
         },
     ],
     globals: [

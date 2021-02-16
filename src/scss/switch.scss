@@ -99,7 +99,7 @@
 
     .slider {
 
-        @include var(background-color, white1);
+        @include var(background-color, white2);
 
         position: absolute;
         cursor: pointer;
@@ -115,7 +115,7 @@
 
     .slider::before {
 
-        @include var(background-color, white2);
+        @include var(background-color, white3);
 
         position: absolute;
         content: '';

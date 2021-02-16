@@ -1,6 +1,7 @@
 @import './vars';
 
 .cm-language-select,
+.cm-theme-select,
 .cm-purpose-select {
 
     @include var(border-radius, border-radius);
@@ -14,6 +15,7 @@
     margin-bottom: map-get($cm-space, md);
     
     ul.cm-languages,
+    ul.cm-themes,
     ul.cm-purposes {
         margin-top: -4px;
 

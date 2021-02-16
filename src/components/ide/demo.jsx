@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import translations from '../../translations/index';
 import { t, language } from '../../utils/i18n';
+import { injectStyles } from '../../utils/styling';
+import { themes } from '../../themes';
 import { BaseRetractingLabelInput } from './controls';
 import App from '../app'
 import { convertToMap, update } from '../../utils/maps';
@@ -44,6 +46,13 @@ export const Demo = ({t: ttt, config}) => {
     const testOnSite = () => {
         window.open(siteUrl+`#klaro-testing&klaro-config=${config.name}`)
     }
+
+    const appRef = useRef(null)
+
+    useEffect(() => {
+        injectStyles(config, themes, appRef.current)
+    })
+
     return <div className="cm-demo">
         <p className="cm-section-description">
             {ttt(['demo', 'description'])}
@@ -71,11 +80,13 @@ export const Demo = ({t: ttt, config}) => {
                 </button>
             </div>
         </div>
-        <App t={tt}
-            lang={lang}
-            manager={manager}
-            config={config}
-            show={show}
-        />
+        <div ref={appRef}>
+            <App t={tt}
+                lang={lang}
+                manager={manager}
+                config={config}
+                show={show}
+            />
+        </div>
     </div>
 }
