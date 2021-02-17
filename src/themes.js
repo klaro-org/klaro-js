@@ -41,7 +41,7 @@ export const themes = {
     },
     light: {
         'button-text-color': '#fff',
-        'dark1': '#eee',
+        'dark1': '#fafafa',
         'dark2': '#777',
         'dark3': '#555',
         'light1': '#444',

@@ -7,103 +7,109 @@ $cm-box-shadow-dark-md: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0
 $cm-box-shadow-light-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.11) !default;
 $cm-box-shadow-dark-sm: 0 2px 5px 0 rgba(0, 0, 0, 0.33) !default;
 
+/*
+Variables that begin with $var- should NEVER be used directly in CSS rules.
+they should only be included via the "@include var(property, var-name)"
+mechanism.
+*/
+
 /* Border styles */
-$cm-border-radius: 4px !default;
-$cm-border-style: solid !default;
-$cm-border-width: 1px !default;
+$var-border-radius: 4px !default;
+$var-border-style: solid !default;
+$var-border-width: 1px !default;
 
 /* Cookie notice positioning */
-$cm-notice-right: 20px !default;
-$cm-notice-left: auto !default;
-$cm-notice-top: auto !default;
-$cm-notice-bottom: 20px !default;
-$cm-notice-max-width: 400px !default;
-$cm-notice-position: fixed !default;
+$var-notice-right: 20px !default;
+$var-notice-left: auto !default;
+$var-notice-top: auto !default;
+$var-notice-bottom: 20px !default;
+$var-notice-max-width: 400px !default;
+$var-notice-position: fixed !default;
 
 /* Text colors */
-$cm-button-text-color: #fff !default;
+$var-button-text-color: #fff !default;
 
 /* Font Families */
-$cm-font-family: inherit !default;
-$cm-title-font-family: inherit !default;
-$cm-font-size: 14px !default;
+$var-font-family: inherit !default;
+$var-title-font-family: inherit !default;
+$var-font-size: 14px !default;
 
 /* White */
-$cm-white1: #fff !default;
-$cm-white2: #eee !default;
-$cm-white3: #ddd !default;
+$var-white1: #fff !default;
+$var-white2: #eee !default;
+$var-white3: #ddd !default;
 
 /* Differently shaded colors */
 
 // light gray
-$cm-light1: #eee !default;
-$cm-light2: scale-color($cm-light1, $lightness: -20%) !default;
-$cm-light3: scale-color($cm-light2, $lightness: -20%) !default;
+$var-light1: #fafafa !default;
+$var-light2: scale-color($var-light1, $lightness: -20%) !default;
+$var-light3: scale-color($var-light2, $lightness: -20%) !default;
 
 // dark gray
-$cm-dark1: #333 !default;
-$cm-dark2: scale-color($cm-dark1, $lightness: 20%) !default;
-$cm-dark3: scale-color($cm-dark2, $lightness: 20%) !default;
+$var-dark1: #333 !default;
+$var-dark2: scale-color($var-dark1, $lightness: 20%) !default;
+$var-dark3: scale-color($var-dark2, $lightness: 20%) !default;
 
 // blue
-$cm-blue1: #2581c4 !default;
-$cm-blue2: scale-color($cm-blue1, $lightness: 20%) !default;
-$cm-blue3: scale-color($cm-blue2, $lightness: 20%) !default;
+$var-blue1: #2581c4 !default;
+$var-blue2: scale-color($var-blue1, $lightness: 20%) !default;
+$var-blue3: scale-color($var-blue2, $lightness: 20%) !default;
 
 // green
-$cm-green1: #1a936f !default;
-$cm-green2: scale-color($cm-green1, $lightness: 20%) !default;
-$cm-green3: scale-color($cm-green2, $lightness: 20%) !default;
+$var-green1: #1a936f !default;
+$var-green2: scale-color($var-green1, $lightness: 20%) !default;
+$var-green3: scale-color($var-green2, $lightness: 20%) !default;
 
 // red
-$cm-red1: #da2c43 !default;
-$cm-red2: scale-color($cm-red1, $lightness: 20%) !default;
-$cm-red3: scale-color($cm-red2, $lightness: 20%) !default;
+$var-red1: #da2c43 !default;
+$var-red2: scale-color($var-red1, $lightness: 20%) !default;
+$var-red3: scale-color($var-red2, $lightness: 20%) !default;
 
 // all these variables can be tweaked at runtime by specifying them via the
 // 'styling' config parameter.
 $vars: (
-    button-text-color: $cm-button-text-color,
+    button-text-color: $var-button-text-color,
 
-    font-size: $cm-font-size,
-    font-family: $cm-font-family,
-    title-font-family: $cm-title-font-family,
+    font-size: $var-font-size,
+    font-family: $var-font-family,
+    title-font-family: $var-title-font-family,
 
-    green1: $cm-green1,
-    green2: $cm-green2,
-    green3: $cm-green3,
+    green1: $var-green1,
+    green2: $var-green2,
+    green3: $var-green3,
 
-    blue1: $cm-blue1,
-    blue2: $cm-blue2,
-    blue3: $cm-blue3,
+    blue1: $var-blue1,
+    blue2: $var-blue2,
+    blue3: $var-blue3,
 
-    red1: $cm-red1,
-    red2: $cm-red2,
-    red3: $cm-red3,
+    red1: $var-red1,
+    red2: $var-red2,
+    red3: $var-red3,
 
-    light1: $cm-light1,
-    light2: $cm-light2,
-    light3: $cm-light3,
+    light1: $var-light1,
+    light2: $var-light2,
+    light3: $var-light3,
 
-    dark1: $cm-dark1,
-    dark2: $cm-dark2,
-    dark3: $cm-dark3,
+    dark1: $var-dark1,
+    dark2: $var-dark2,
+    dark3: $var-dark3,
 
-    white1: $cm-white1,
-    white2: $cm-white2,
-    white3: $cm-white3,
+    white1: $var-white1,
+    white2: $var-white2,
+    white3: $var-white3,
 
     // non-color options
 
-    border-radius: $cm-border-radius,
-    border-style: $cm-border-style,
-    border-width: $cm-border-width,
-    notice-left: $cm-notice-left,
-    notice-right: $cm-notice-right,
-    notice-top: $cm-notice-top,
-    notice-bottom: $cm-notice-bottom,
-    notice-max-width: $cm-notice-max-width,
-    notice-position: $cm-notice-position,
+    border-radius: $var-border-radius,
+    border-style: $var-border-style,
+    border-width: $var-border-width,
+    notice-left: $var-notice-left,
+    notice-right: $var-notice-right,
+    notice-top: $var-notice-top,
+    notice-bottom: $var-notice-bottom,
+    notice-max-width: $var-notice-max-width,
+    notice-position: $var-notice-position,
 );
 
 /*
