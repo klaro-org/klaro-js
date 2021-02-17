@@ -91,7 +91,7 @@ export function render(config, opts){
     if (opts.api !== undefined)
         manager.watch(opts.api)
 
-    injectStyles(config, themes)
+    injectStyles(config, themes, element)
 
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
