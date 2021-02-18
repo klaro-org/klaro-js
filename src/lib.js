@@ -5,9 +5,11 @@ import App from './components/app'
 import ContextualConsentNotice from './components/contextual-consent-notice'
 import ConsentManager from './consent-manager'
 import KlaroApi from './utils/api';
+import {injectStyles} from './utils/styling'
 import {render as reactRender} from 'react-dom'
 import {convertToMap, update} from './utils/maps'
 import {t, language} from './utils/i18n'
+import {themes} from './themes'
 import {currentScript, dataset, applyDataset} from './utils/compat'
 export {update as updateConfig} from './utils/config'
 import './scss/klaro.scss'
@@ -89,6 +91,8 @@ export function render(config, opts){
     if (opts.api !== undefined)
         manager.watch(opts.api)
 
+    injectStyles(config, themes)
+
     const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
     const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'zz', ...args)
@@ -108,39 +112,46 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
     const notices = []
     for(const service of config.services){
         const consent = manager.getConsent(service.name)
-        if (!consent){
-            const elements = document.querySelectorAll("[data-name='"+service.name+"']")
-            for(const element of elements){
-                const ds = dataset(element)
-                if (element.tagName === 'IFRAME' || element.tagName === 'DIV'){
-                    let placeholderElement = element.previousElementSibling
-                    if (placeholderElement !== null){
-                        const ds = dataset(placeholderElement)
-                        if (ds.type !== "placeholder" || ds.name !== service.name)
-                            placeholderElement = null
-                    }
-                    if (placeholderElement === null){
-                        placeholderElement = document.createElement("DIV")
-                        placeholderElement.style.maxWidth = element.width+"px"
-                        placeholderElement.style.height = element.height+"px"
-                        applyDataset({type: 'placeholder', name: service.name}, placeholderElement)
-                        element.parentElement.insertBefore(placeholderElement, element)
-                        const notice = reactRender(<ContextualConsentNotice t={tt}
-                            lang={lang}
-                            manager={manager}
-                            config={config}
-                            service={service}
-                            testing={opts.testing}
-                            api={opts.api} />, placeholderElement)
-                        notices.push(notice)
+        const elements = document.querySelectorAll("[data-name='"+service.name+"']")
+        for(const element of elements){
+            const ds = dataset(element)
+            if (ds.type === 'placeholder')
+                continue
+            if (element.tagName === 'IFRAME' || element.tagName === 'DIV'){
+                let placeholderElement = element.previousElementSibling
+                if (placeholderElement !== null){
+                    const ds = dataset(placeholderElement)
+                    if (ds.type !== "placeholder" || ds.name !== service.name)
+                        placeholderElement = null
+                }
+                if (placeholderElement === null){
+                    placeholderElement = document.createElement("DIV")
+                    placeholderElement.style.maxWidth = element.width+"px"
+                    placeholderElement.style.height = element.height+"px"
+                    applyDataset({type: 'placeholder', name: service.name}, placeholderElement)
+                    // if consent is already given, we still insert an invisble placeholder that
+                    // might be revealed later if the user changes the consent decision
+                    if (consent)
+                        placeholderElement.style.display = 'none'
+                    element.parentElement.insertBefore(placeholderElement, element)
+                    const notice = reactRender(<ContextualConsentNotice t={tt}
+                        lang={lang}
+                        manager={manager}
+                        config={config}
+                        service={service}
+                        style={ds.style}
+                        testing={opts.testing}
+                        api={opts.api} />, placeholderElement)
+                    notices.push(notice)
 
-                    }
-                    if (element.tagName === 'IFRAME'){
-                        ds['src'] = element.src
-                    }
-                    if (ds['original-display'] === undefined)
-                        ds['original-display'] = element.style.display
-                    applyDataset(ds, element)
+                }
+                if (element.tagName === 'IFRAME'){
+                    ds['src'] = element.src
+                }
+                if (ds['original-display'] === undefined)
+                    ds['original-display'] = element.style.display
+                applyDataset(ds, element)
+                if (!consent){
                     element.src = ''
                     element.style.display = 'none'
                 }

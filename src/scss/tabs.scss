@@ -20,8 +20,9 @@
     }
 
     @media (max-width: $cm-tablet) {
-        border-radius: $cm-border-radius;
-        background: #fff;
+        @include var(border-radius, border-radius);
+        @include var(border-radius, border-radius);
+        @include var(background-color, white1);
         box-shadow: $cm-box-shadow-dark-sm;
 
         span.cm-tabs-more {
@@ -64,7 +65,7 @@
                 display: block;
 
                 &.cm-tab-is-active {
-                    background: $cm-gray-light;
+                    @include var(background-color, light2);
                     order: 1;
                 }
             }
@@ -76,13 +77,15 @@
     }
 
     ul {
+        @include var(border-bottom-style, border-style);
+        @include var(border-bottom-width, border-width);
+        @include var(border-bottom-color, light2);
         align-items: center;
         display: flex;
         width: 100%;
         flex-grow: 1;
         flex-shrink: 0;
         justify-content: flex-start;
-        border-bottom: 1px solid #dbdbdb;
         margin: 0;
         padding: 0;
 
@@ -90,19 +93,21 @@
             display: block;
 
             a {
+                @include var(border-bottom-style, border-style);
+                @include var(border-bottom-width, border-width);
+                @include var(border-bottom-color, light2);
+                @include var(color, dark2);
                 display: flex;
                 align-items: flex-start;
                 justify-content: left;
                 margin-bottom: -1px;
                 padding: 0.5em 1em;
-                color: #4a4a4a;
-                border-bottom: 1px solid #dbdbdb;
             }
 
             &.cm-tab-is-active {
                 a {
-                    color: $cm-tab-color;
-                    border-bottom-color: $cm-tab-color;
+                    @include var(color, dark3);
+                    @include var(border-bottom-color, dark3);
                 }
             }
         }
@@ -118,13 +123,13 @@
         z-index: 10;
 
         ul {
+            @include var(background-color, white1);
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             position: absolute;
             width: 100%;
             height: auto;
-            background: #fff;
             box-shadow: $cm-box-shadow-dark-sm;
 
             li {
@@ -137,8 +142,8 @@
             }
 
             li.cm-tab-is-active {
+                @include var(background-color, light1);
                 order: 1;
-                background: $cm-gray-medium;
                 display: block;
             }
         }

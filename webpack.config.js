@@ -105,7 +105,14 @@ if (SEPARATE_CSS) {
     config.module.rules.push({
         test: STYLE_FILES,
         use: [
-            'style-loader',
+            {
+                loader: 'style-loader',
+                options: {
+                    attributes: {
+                        'data-context': 'klaro-styles',
+                    },
+                },
+            },
             withEnvSourcemap('css-loader'),
             {
                 loader: 'postcss-loader',

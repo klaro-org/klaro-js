@@ -11,6 +11,14 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // You can override CSS style variables here. For IE11, Klaro will
+    // dynamically inject the variables into the CSS. If you still consider
+    // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
+    // with an external stylesheet as the dynamic replacement won't work there.
+    styling: {
+        // theme: ['light', 'top', 'wide'],
+    },
+
     // Setting this to true will keep Klaro from automatically loading itself
     // when the page is being loaded.
     noAutoLoad: false,

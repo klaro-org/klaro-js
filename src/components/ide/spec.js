@@ -65,6 +65,14 @@ const KlaroConfigSpec = {
             validators: [],
         },
     ],
+    styling: [
+        {
+            name: 'theme',
+            control: 'ThemesSelect',
+            validators: [],
+            default: [],
+        },
+    ],
     globals: [
         {
             name: 'languages',

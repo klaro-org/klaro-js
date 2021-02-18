@@ -1,37 +1,46 @@
 @import './vars';
 
 .cm-language-select,
+.cm-theme-select,
 .cm-purpose-select {
-    border: 1px solid #eee;
-    border-radius: $cm-border-radius;
-    background: $cm-white;
+
+    @include var(border-radius, border-radius);
+    @include var(background-color, white1);
+    @include var(border-style, border-style);
+    @include var(border-width, border-width);
+    @include var(border-color, light2);
+
     box-shadow: $cm-box-shadow-light-sm;
     padding: map-get($cm-space, md);
     margin-bottom: map-get($cm-space, md);
-
+    
     ul.cm-languages,
+    ul.cm-themes,
     ul.cm-purposes {
         margin-top: -4px;
 
         li {
+            @include var(color, light1);
+            @include var(border-radius, border-radius);
+            @include var(border-width, border-width);
+            @include var(border-style, border-style);
+            @include var(border-color, green2);
+            @include var(background-color, green1);
+
             display: inline-block;
             margin-right: 4px;
             margin-top: 4px;
             padding: 2px 4px;
-            background: $cm-green1;
-            color: #fff;
-            font-size: 14px;
-            border-radius: $cm-border-radius;
+            font-size: 0.9em;
 
             a {
-                color: #fff;
+                @include var(color, white1);
             }
         }
     }
 }
 
 .cm-search-select {
-    $cm-border: 1px solid $cm-green1;
 
     margin-top: map-get($cm-space, md);
     margin-bottom: map-get($cm-space, md);
@@ -46,28 +55,34 @@
     }
 
     .cm-candidates {
+
+        @include var(background-color, white1);
+        @include var(border-radius, border-radius);
+        @include var(border-width, border-width);
+        @include var(border-style, border-style);
+        @include var(border-color, white2);
+
         position: absolute;
         top: 55px;
         left: 0;
         z-index: 10;
-        background: #fff;
         margin-bottom: 10px;
-        border: $cm-border;
-        border-radius: $cm-border-radius;
         width: 100%;
 
         .cm-candidate {
-            border-bottom: $cm-border;
+            @include var(border-bottom-width, border-width);
+            @include var(border-bottom-style, border-style);
+            @include var(border-bottom-color, dark3);
             padding: map-get($cm-space, md);
             cursor: pointer;
 
             p {
-                color: $cm-font-color-dark-deemphasized;
-                font-size: 14px;
+                @include var(color, dark2);
+                font-size: 0.9em;
             }
 
             &:last-child {
-                border-bottom: 0;
+                border-bottom-style: none;
             }
         }
     }
@@ -99,33 +114,39 @@
     }
 
     ul {
+
+        @include var(background-color, white1);
+
         top: 0;
         left: 0;
         z-index: 1;
         margin: 0;
-        background: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
 
         li {
-            background: #fff;
+
+            @include var(background-color, white1);
+            @include var(border-bottom-style, border-style);
+            @include var(border-bottom-width, border-width);
+            @include var(border-bottom-color, white2);
+
             box-shadow: $cm-box-shadow-dark-sm;
             margin: 0;
             width: auto;
             display: none;
             width: 100%;
-            border-bottom: 1px solid $cm-gray-medium;
             order: 2;
 
             &:last-child {
-                border-bottom: 0;
+                border-bottom-style: none;
             }
 
             &.cm-obj-is-active {
+                @include var(background-color, light2);
                 display: flex;
-                background: #fafafa;
                 order: 1;
             }
 
@@ -143,21 +164,23 @@
             order: 3;
 
             input {
+                @include var(color, dark1);
+                @include var(border-color, dark2);
+                @include var(border-radius, border-radius);
+                @include var(border-style, border-style);
+                @include var(border-width, border-width);
                 flex-grow: 1;
                 flex-shrink: 1;
                 padding: 4px;
-                font-size: 14px;
-                color: #888;
-                border: 1px solid $cm-tab-color;
-                border-radius: $cm-border-radius;
+                font-size: 0.9em;
             }
 
             a.cm-btn {
+                @include var(color, white1);
+                @include var(border-radius, border-radius);
+                @include var(background-color, dark3);
                 padding: 8px;
-                border-radius: $cm-border-radius;
                 flex-grow: 0;
-                color: #fff;
-                background: $cm-tab-color;
                 flex-shrink: 0;
                 margin-left: 10px;
                 width: auto;
@@ -167,7 +190,7 @@
 
         &:not(.cm-is-active) {
             li.cm-obj-is-active {
-                background: #fff;
+                @include var(background-color, white1);
             }
         }
 
@@ -186,28 +209,31 @@
 }
 
 p.cm-description {
-    font-size: 14px;
+    @include var(color, dark2);
+    font-size: 0.9em;
     padding-top: 2px;
     margin-bottom: 4px;
-    color: #666;
 }
 
 .cm-select {
     margin-top: 16px;
 
     select {
+
+        @include var(background-color, white1);
+        @include var(color, dark2);
+        @include var(border-radius, border-radius);
+        @include var(border-style, border-style);
+        @include var(border-color, white2);
+
         display: block;
         width: 100%;
         padding: 12px 5px;
-        border: 1px solid $cm-tab-color;
-        border-radius: $cm-border-radius;
-        font-size: 16px;
-        color: #888;
-        background: #fff;
+        font-size: 0.9em;
         text-indent: 5px;
 
         &[disabled] {
-            background-color: $cm-gray-light;
+            @include var(background-color, light2);
         }
 
     }
@@ -221,7 +247,11 @@ p.cm-description {
     margin-top: 4px;
 
     > .cm-label {
-        background-color: $cm-white;
+        @include var(background-color, white1);
+        @include var(border-radius, border-radius);
+        @include var(border-style, border-style);
+        @include var(border-width, border-width);
+        @include var(border-color, light2);
         position: absolute;
         top: 16px;
         left: 8px;
@@ -235,8 +265,6 @@ p.cm-description {
             color 150ms cubic-bezier(0.47, 0, 0.74, 0.71);
         padding: 0 8px;
         transform: scale(0.75) translateX(-16%) translateY(-26px);
-        border-radius: $cm-border-radius;
-        border: 1px solid $cm-tab-color;
     }
     // currently we disable the retracting part
     /*
@@ -249,17 +277,21 @@ p.cm-description {
 }
 
 .cm-input {
-    // For some reason, textarea tries to use a system font.
-    font-size: 14px;
 
-    background-color: $cm-white;
-    border: 1px solid $cm-green1;
-    border-radius: $cm-border-radius;
+    @include var(border-radius, border-radius);
+    @include var(background-color, light1);
+    @include var(border-style, border-style);
+    @include var(border-width, border-width);
+    @include var(border-color, green1);
+
+    // For some reason, textarea tries to use a system font.
+    font-size: 0.9em;
+
     box-sizing: border-box;
     padding: 12px 18px;
     width: 100%;
 
     &[disabled] {
-        background-color: $cm-gray-light;
+        @include var(background-color, light2);
     }
 }

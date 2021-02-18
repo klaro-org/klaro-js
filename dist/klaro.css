@@ -2,9 +2,35 @@
 We declare all variables here as default so that they are easy to override...
 */
 /* Border, shadows, ... */
-/* Colors */
+/* Border styles */
+/* Cookie notice positioning */
+/* Text colors */
+/* Font Families */
+/* White */
+/* Differently shaded colors */
+/*
+Use @include var(property, varname) to include a variable, e.g.
+  
+    @include var(background-color, white1);
+
+to create a white background.
+*/
 /* Spacing */
 /* Breakpoints */
+.klaro {
+  font-family: inherit;
+  font-family: var(--font-family, inherit);
+  font-size: 14px;
+  font-size: var(--font-size, 14px);
+}
+
+.klaro button {
+  font-family: inherit;
+  font-family: var(--font-family, inherit);
+  font-size: 14px;
+  font-size: var(--font-size, 14px);
+}
+
 .klaro.cm-as-context-notice {
   height: 100%;
   padding-bottom: 12px;
@@ -15,12 +41,17 @@ We declare all variables here as default so that they are easy to override...
 .klaro .context-notice,
 .klaro .cookie-notice {
   /* The switch - the box around the slider */
-  font-size: 14px;
 }
 
 .klaro .cookie-modal .cm-switch-container,
 .klaro .context-notice .cm-switch-container,
 .klaro .cookie-notice .cm-switch-container {
+  border-bottom-style: solid;
+  border-bottom-style: var(--border-style, solid);
+  border-bottom-width: 1px;
+  border-bottom-width: var(--border-width, 1px);
+  border-bottom-color: #bebebe;
+  border-bottom-color: var(--light2, #bebebe);
   display: block;
   position: relative;
   padding: 10px;
@@ -28,7 +59,6 @@ We declare all variables here as default so that they are easy to override...
   line-height: 20px;
   vertical-align: middle;
   min-height: 40px;
-  border-bottom: 1px solid #ccc;
 }
 
 .klaro .cookie-modal .cm-switch-container:last-child,
@@ -124,16 +154,17 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-list-title,
 .klaro .context-notice .cm-list-title,
 .klaro .cookie-notice .cm-list-title {
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 600;
 }
 
 .klaro .cookie-modal .cm-list-description,
 .klaro .context-notice .cm-list-description,
 .klaro .cookie-notice .cm-list-description {
-  font-size: 14px;
+  color: #7c7c7c;
+  color: var(--dark3, #7c7c7c);
+  font-size: 0.9em;
   padding-top: 4px;
-  color: #666;
 }
 
 .klaro .cookie-modal .cm-list-label,
@@ -153,13 +184,14 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-list-label .slider,
 .klaro .context-notice .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-label .slider {
+  background-color: #eee;
+  background-color: var(--white2, #eee);
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
   transition: 0.4s;
   width: 50px;
   display: inline-block;
@@ -168,13 +200,14 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-list-label .slider::before,
 .klaro .context-notice .cm-list-label .slider::before,
 .klaro .cookie-notice .cm-list-label .slider::before {
+  background-color: #ddd;
+  background-color: var(--white3, #ddd);
   position: absolute;
   content: '';
   height: 20px;
   width: 20px;
   left: 5px;
   bottom: 5px;
-  background-color: #fff;
   transition: 0.4s;
 }
 
@@ -195,7 +228,7 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-notice .cm-list-label input:focus + .slider {
   box-shadow-color: #48dfb2;
   box-shadow-color: var(--green3, #48dfb2);
-  box-shadow: 0 0 1px #48dfb2;
+  box-shadow: 0 0 1px var(color, green3);
 }
 
 .klaro .cookie-modal .cm-list-label input:checked + .slider::before,
@@ -251,7 +284,7 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-notice ul,
 .klaro .cookie-notice li {
   color: #eee;
-  color: var(--font-color-dark, #eee);
+  color: var(--light1, #eee);
 }
 
 .klaro .cookie-modal p,
@@ -276,6 +309,28 @@ We declare all variables here as default so that they are easy to override...
   margin-top: 0.7em;
 }
 
+.klaro .cookie-modal h1,
+.klaro .cookie-modal h2,
+.klaro .cookie-modal h3,
+.klaro .cookie-modal h4,
+.klaro .cookie-modal h5,
+.klaro .cookie-modal h6,
+.klaro .context-notice h1,
+.klaro .context-notice h2,
+.klaro .context-notice h3,
+.klaro .context-notice h4,
+.klaro .context-notice h5,
+.klaro .context-notice h6,
+.klaro .cookie-notice h1,
+.klaro .cookie-notice h2,
+.klaro .cookie-notice h3,
+.klaro .cookie-notice h4,
+.klaro .cookie-notice h5,
+.klaro .cookie-notice h6 {
+  font-family: inherit;
+  font-family: var(--title-font-family, inherit);
+}
+
 .klaro .cookie-modal .cm-link,
 .klaro .context-notice .cm-link,
 .klaro .cookie-notice .cm-link {
@@ -286,13 +341,15 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-btn,
 .klaro .context-notice .cm-btn,
 .klaro .cookie-notice .cm-btn {
-  color: #eee;
-  color: var(--font-color-dark, #eee);
-  background: #555;
-  border-radius: 6px;
+  color: #fff;
+  color: var(--button-text-color, #fff);
+  background-color: #5c5c5c;
+  background-color: var(--dark2, #5c5c5c);
+  border-radius: 4px;
+  border-radius: var(--border-radius, 4px);
   padding: 6px 10px;
   margin-right: 0.5em;
-  border: 0;
+  border-style: none;
   padding: 0.4em;
   font-size: 1em;
   cursor: pointer;
@@ -307,58 +364,80 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-btn.cm-btn-close,
 .klaro .context-notice .cm-btn.cm-btn-close,
 .klaro .cookie-notice .cm-btn.cm-btn-close {
-  background: #aaa;
-  color: #000;
+  background-color: #bebebe;
+  background-color: var(--light2, #bebebe);
 }
 
 .klaro .cookie-modal .cm-btn.cm-btn-success,
 .klaro .context-notice .cm-btn.cm-btn-success,
 .klaro .cookie-notice .cm-btn.cm-btn-success {
-  background: #1a936f;
-  background: var(--green1, #1a936f);
+  background-color: #1a936f;
+  background-color: var(--green1, #1a936f);
 }
 
 .klaro .cookie-modal .cm-btn.cm-btn-success-var,
 .klaro .context-notice .cm-btn.cm-btn-success-var,
 .klaro .cookie-notice .cm-btn.cm-btn-success-var {
-  background: #24cc9a;
-  background: var(--green2, #24cc9a);
+  background-color: #24cc9a;
+  background-color: var(--green2, #24cc9a);
 }
 
 .klaro .cookie-modal .cm-btn.cm-btn-info,
 .klaro .context-notice .cm-btn.cm-btn-info,
 .klaro .cookie-notice .cm-btn.cm-btn-info {
-  background: #2581c4;
-  background: var(--blue1, #2581c4);
+  background-color: #2581c4;
+  background-color: var(--blue1, #2581c4);
 }
 
 .klaro .context-notice {
+  border-radius: 4px;
+  border-radius: var(--border-radius, 4px);
+  border-style: solid;
+  border-style: var(--border-style, solid);
+  border-width: 1px;
+  border-width: var(--border-width, 1px);
+  border-color: #bebebe;
+  border-color: var(--light2, #bebebe);
+  background-color: #eee;
+  background-color: var(--light1, #eee);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  background: #eee;
-  border: 1px solid #f0f0f0;
-  border-radius: 4px;
   padding: 12px;
+  height: 100%;
+}
+
+.klaro .context-notice.cm-dark {
+  background-color: #333;
+  background-color: var(--dark1, #333);
+  border-color: #5c5c5c;
+  border-color: var(--dark2, #5c5c5c);
+}
+
+.klaro .context-notice.cm-dark p {
+  color: #eee;
+  color: var(--light1, #eee);
+}
+
+.klaro .context-notice.cm-dark p a {
+  color: #459cdc;
+  color: var(--blue2, #459cdc);
 }
 
 .klaro .context-notice p {
+  color: #333;
+  color: var(--dark1, #333);
   flex-grow: 0;
   text-align: center;
   padding-top: 0;
   margin-top: 0;
-  color: #000;
-}
-
-.klaro .context-notice p strong {
-  color: #333;
 }
 
 .klaro .context-notice p a {
-  color: #459cdc;
+  color: #24cc9a;
+  color: var(--green2, #24cc9a);
 }
 
 .klaro .context-notice p.cm-buttons {
@@ -400,6 +479,10 @@ We declare all variables here as default so that they are easy to override...
 }
 
 .klaro .cookie-modal .cm-modal.cm-klaro {
+  background-color: #333;
+  background-color: var(--dark1, #333);
+  color: #eee;
+  color: var(--light1, #eee);
   z-index: 1001;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
@@ -409,13 +492,12 @@ We declare all variables here as default so that they are easy to override...
       transform: translateY(-50%);
   position: fixed;
   overflow: auto;
-  background: #333;
-  color: #eee;
 }
 
 @media (min-width: 660px) {
   .klaro .cookie-modal .cm-modal.cm-klaro {
     border-radius: 4px;
+    border-radius: var(--border-radius, 4px);
     position: relative;
     margin: 0 auto;
     max-width: 640px;
@@ -427,6 +509,7 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-modal .hide {
   border-style: none;
   background: none;
+  cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -435,11 +518,17 @@ We declare all variables here as default so that they are easy to override...
 
 .klaro .cookie-modal .cm-modal .hide svg {
   stroke: #eee;
+  stroke: var(--light1, #eee);
 }
 
 .klaro .cookie-modal .cm-modal .cm-footer {
+  border-top-color: #5c5c5c;
+  border-top-color: var(--dark2, #5c5c5c);
+  border-top-width: 1px;
+  border-top-width: var(--border-width, 1px);
+  border-top-style: solid;
+  border-top-style: var(--border-style, solid);
   padding: 1em;
-  border-top: 1px solid #555;
 }
 
 .klaro .cookie-modal .cm-modal .cm-footer-buttons {
@@ -456,13 +545,19 @@ We declare all variables here as default so that they are easy to override...
 }
 
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a {
-  color: #999;
+  color: #5c5c5c;
+  color: var(--dark2, #5c5c5c);
 }
 
 .klaro .cookie-modal .cm-modal .cm-header {
+  border-bottom-width: 1px;
+  border-bottom-width: var(--border-width, 1px);
+  border-bottom-style: solid;
+  border-bottom-style: var(--border-style, solid);
+  border-bottom-color: #5c5c5c;
+  border-bottom-color: var(--dark2, #5c5c5c);
   padding: 1em;
   padding-right: 24px;
-  border-bottom: 1px solid #555;
 }
 
 .klaro .cookie-modal .cm-modal .cm-header h1 {
@@ -496,7 +591,8 @@ We declare all variables here as default so that they are easy to override...
 
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-caret,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-caret {
-  color: #888;
+  color: #989898;
+  color: var(--light3, #989898);
 }
 
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-content,
@@ -540,15 +636,21 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose p.purposes,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service p.purposes,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose p.purposes {
+  color: #989898;
+  color: var(--light3, #989898);
   font-size: 0.8em;
-  color: #999;
 }
 
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service.cm-toggle-all,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose.cm-toggle-all,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service.cm-toggle-all,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose.cm-toggle-all {
-  border-top: 1px solid #555;
+  border-top-width: 1px;
+  border-top-width: var(--border-width, 1px);
+  border-top-style: solid;
+  border-top-style: var(--border-style, solid);
+  border-top-color: #5c5c5c;
+  border-top-color: var(--dark2, #5c5c5c);
   padding-top: 1em;
 }
 
@@ -567,13 +669,15 @@ We declare all variables here as default so that they are easy to override...
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-required,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-opt-out,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-required {
+  color: #5c5c5c;
+  color: var(--dark2, #5c5c5c);
   padding-left: 0.2em;
   font-size: 0.8em;
-  color: #999;
 }
 
 .klaro .cookie-notice:not(.cookie-modal-notice) {
-  background: #333;
+  background-color: #333;
+  background-color: var(--dark1, #333);
   z-index: 999;
   position: fixed;
   width: 100%;
@@ -583,12 +687,21 @@ We declare all variables here as default so that they are easy to override...
 
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4px;
+    border-radius: var(--border-radius, 4px);
     position: fixed;
-    bottom: 20px;
+    position: var(--notice-position, fixed);
     right: 20px;
+    right: var(--notice-right, 20px);
+    left: auto;
+    left: var(--notice-left, auto);
+    bottom: 20px;
+    bottom: var(--notice-bottom, 20px);
+    top: auto;
+    top: var(--notice-top, auto);
     max-width: 400px;
+    max-width: var(--notice-max-width, 400px);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
   }
 }
 
@@ -670,6 +783,10 @@ We declare all variables here as default so that they are easy to override...
 }
 
 .klaro .cookie-modal-notice {
+  background-color: #333;
+  background-color: var(--dark1, #333);
+  color: #eee;
+  color: var(--light1, #eee);
   z-index: 1001;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
@@ -679,8 +796,6 @@ We declare all variables here as default so that they are easy to override...
       transform: translateY(-50%);
   position: fixed;
   overflow: auto;
-  background: #333;
-  color: #eee;
   padding: 1em;
   padding-top: 0.2em;
 }
@@ -688,6 +803,7 @@ We declare all variables here as default so that they are easy to override...
 @media (min-width: 400px) {
   .klaro .cookie-modal-notice {
     border-radius: 4px;
+    border-radius: var(--border-radius, 4px);
     position: relative;
     margin: 0 auto;
     max-width: 400px;
