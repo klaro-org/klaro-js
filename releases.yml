@@ -1,4 +1,30 @@
 - changelog:
+    de: Beheben kleinerer Probleme die bei der kontextuellen Einwilligung auftraten.
+    en: Fixed several small bugs affecting the contextual consent mechanism.
+  date: '2021-02-19'
+  files:
+  - name: klaro-no-translations.js
+    sha384: Mfi7ECn4llAfWj+ebi+ttTszvs4H3qc87YQdyHi/FvKDwIUl4Djtq23ngnKNnGnX
+  - name: klaro-no-css.js
+    sha384: JnZ3xBsd0BmYr1C4VwK0vd1JFjYWzNDKzwqzx0oe/7N78Jv5h3Z0JgTp+Op5hvRs
+  - name: ide.js
+    sha384: P3cSz0yKI2dFSGGdGyXyBocj93G5R3cN2tmgxO+SVINYeHVuMf3yKEL0rS9jUOv5
+  - name: klaro.js
+    sha384: Nh1Eiyw30Kr8+kv68UvXhno+bYywjA6xIi16Ucm4LhgGBgTqffE3KY8D0GMy6GO0
+  - name: translations.js
+    sha384: RC/631PwNxw2unqHmZc0ugYWbB7WqtbKvtMJc9uvFGpqK4NPpoUoitke6SBmMx81
+  - name: klaro-no-translations-no-css.js
+    sha384: hCuB4BPEDkOl7lGwDRinAowL/ISHwItsrH98khWrCzyH3/E0a3jdduLNS6mzKw9Z
+  - name: cm.js
+    sha384: ZeN2m2dvhF+3QQOTvxhVbIW95oywT7Tp0jwAclWMiZClLlkS1Rz9s4kV2LJg37TG
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: klaro.css
+    sha384: NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi
+  tags:
+  - bugfixes
+  version: 0.7.13
+- changelog:
     de: |
       - Hinzufügen eines `styling` Konfigurationsparameters, der das einfache Anpassen der Benutzeroberfläche von Klaro ermöglicht, entweder durch das Setzen von `Themes` oder über die Definition von CSS-Variablen (kompatibel mit IE11 und modernen Browsern).
       - Behebung eines Fehlers der bei der kontextbasierten Einwilligung nicht immer korrekt einen Platzhalter für freizuschaltende Inhalte anzeigte.
