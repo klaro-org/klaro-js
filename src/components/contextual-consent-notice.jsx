@@ -13,7 +13,7 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
     }
     const acceptOnce = () => {
         manager.updateConsent(service.name, true)
-        manager.applyConsents(false, true)
+        manager.applyConsents(false, true, service.name, true)
         manager.updateConsent(service.name, false)
     }
 

@@ -148,8 +148,9 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                 if (element.tagName === 'IFRAME'){
                     ds['src'] = element.src
                 }
-                if (ds['original-display'] === undefined)
+                if (ds['modified-by-klaro'] === undefined && element.style.display === undefined)
                     ds['original-display'] = element.style.display
+                ds['modified-by-klaro'] = 'yes'
                 applyDataset(ds, element)
                 if (!consent){
                     element.src = ''
@@ -262,20 +263,39 @@ export function setup(config){
         if (klaroId !== null){
             // we initialize with an API backend
             const api = new KlaroApi(klaroApiUrl, klaroId, {testing: hashParams.get('klaro-testing')})
-            api.loadConfig(klaroConfigName).then((config) => {
+            if (window.klaroApiConfigs !== undefined){
+                // the configs were already supplied with the Klaro binary
 
-                // an event handler can interrupt the initialization, e.g. if it wants to perform
-                // its own initialization given the API configs
-                if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
+                if (executeEventHandlers("apiConfigsLoaded", window.klaroApiConfigs, api) === true){
                     return
                 }
-                defaultConfig = config
-                doOnceLoaded(() => initialize({api: api}))
 
-            }).catch((err) => {
-                console.error(err, "cannot load Klaro configs")
-                executeEventHandlers("apiConfigsFailed", err)
-            })
+                const config = window.klaroApiConfigs.find(config => config.name === klaroConfigName)
+
+                if (config !== undefined){
+                    defaultConfig = config
+                    doOnceLoaded(() => initialize({api: api}))
+                } else {
+                    executeEventHandlers("apiConfigsFailed", {})
+                }
+
+            } else {
+                // we load the configs separately...
+                api.loadConfig(klaroConfigName).then((config) => {
+
+                    // an event handler can interrupt the initialization, e.g. if it wants to perform
+                    // its own initialization given the API configs
+                    if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
+                        return
+                    }
+                    defaultConfig = config
+                    doOnceLoaded(() => initialize({api: api}))
+
+                }).catch((err) => {
+                    console.error(err, "cannot load Klaro configs")
+                    executeEventHandlers("apiConfigsFailed", err)
+                })
+            }
         } else {
             // we initialize with a local config instead
             const configName = script.getAttribute('data-klaro-config') || "klaroConfig"
