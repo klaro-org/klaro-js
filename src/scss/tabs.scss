@@ -106,8 +106,8 @@
 
             &.cm-tab-is-active {
                 a {
-                    @include var(color, dark3);
-                    @include var(border-bottom-color, dark3);
+                    @include var(color, blue1);
+                    @include var(border-bottom-color, blue1);
                 }
             }
         }

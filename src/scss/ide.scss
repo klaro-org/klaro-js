@@ -52,7 +52,7 @@
         }
 
         &.cm-error {
-            background: $cm-red2;            
+            @include var(background-color, red2);
         }
 
         &.cm-success {

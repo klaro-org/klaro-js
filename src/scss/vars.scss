@@ -36,8 +36,8 @@ $var-font-size: 14px !default;
 
 /* White */
 $var-white1: #fff !default;
-$var-white2: #eee !default;
-$var-white3: #ddd !default;
+$var-white2: scale-color($var-white1, $lightness: -5%) !default;
+$var-white3: scale-color($var-white2, $lightness: -5%) !default;
 
 /* Differently shaded colors */
 
