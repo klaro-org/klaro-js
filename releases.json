@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Verbesserung der automatischen Sprachauswahl.\n",
+      "en": "- Improved the language determination mechanism.\n"
+    },
+    "date": "2021-02-22",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "GcaoIoy4sALFD55tjZGs+Pc041AfwSH03SADYZTGFOVxtruAgtDy38/BeySTt38d"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "Ze5BRjDfd2x9S2Pg/FKsV8mZv+JRcHPbv5wvzw0A/gcW1SOCWYIn32GplVqmev9T"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "YW81uVV3sEjU/M2eHc2ZJbjVMAShSBkgBmLhEY/4rm/C8HspQksqaMpaCzGD6ysE"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "xu/zilZDSYdmHSKIJHxzVofxz8/utP6JCq3WLpodhpg/k3iQTOL3P8JNYS7Qc+Sm"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "RC/631PwNxw2unqHmZc0ugYWbB7WqtbKvtMJc9uvFGpqK4NPpoUoitke6SBmMx81"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "sqcWX5EEz4G1DaZEcBxNVgqLmpeBGUvQGnZ4/ri4ly9dU2hiO+iRWHl++Zyae7xS"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "ZeN2m2dvhF+3QQOTvxhVbIW95oywT7Tp0jwAclWMiZClLlkS1Rz9s4kV2LJg37TG"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "saRaVB1CPt5yr3KC0aV+B3h5D7kwRRb+i4Hd0912y1QLUTtHiX9xdplx5k5v8G6l"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.14"
+  },
+  {
+    "changelog": {
       "de": "Beheben kleinerer Probleme die bei der kontextuellen Einwilligung auftraten.",
       "en": "Fixed several small bugs affecting the contextual consent mechanism."
     },
