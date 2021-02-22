@@ -34,13 +34,13 @@ const format = (str, ...rest) => {
     return splits;
 };
 
-export function language(configLang) {
+export function language(config) {
     // if a langauge is given in the config we always return that
-    if (configLang !== undefined && configLang !== 'zz') return configLang;
+    if (config !== undefined && config.lang !== undefined && config.lang !== 'zz') return config.lang;
     const lang = (
         (typeof window.language === 'string' ? window.language : null) ||
         document.documentElement.lang ||
-        'en'
+        (config !== undefined && config.languages !== undefined && config.languages[0] !== undefined ? config.languages[0] : 'en')
     ).toLowerCase();
     const regex = new RegExp('^([\\w]+)-([\\w]+)$');
     const result = regex.exec(lang);

@@ -93,7 +93,7 @@ export function render(config, opts){
 
     injectStyles(config, themes, element)
 
-    const lang = language(config.lang)
+    const lang = language(config)
     const configTranslations = getConfigTranslations(config)
     const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'zz', ...args)
     const app = reactRender(<App t={tt}

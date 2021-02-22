@@ -14,7 +14,7 @@ const trans = convertToMap(translations)
 let defaultConfig
 
 export function renderIDE(config){
-    const lang = config.lang || language()
+    const lang = language(config)
     const element = getElement(config, true)
     const tt = (...args) => t(trans, lang, config.fallbackLang || 'en', ...args)
     const ide = render(<IDE t={tt} lang={lang} config={config} />, element)

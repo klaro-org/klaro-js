@@ -36,7 +36,7 @@ function getTranslations(config){
 export const Demo = ({t: ttt, config}) => {
     const [show, setShow] = useState(0) 
     const [siteUrl, setSiteUrl] = useState('')
-    const [lang, setLang] = useState(config.languages > 0 ? config.languages[0] : 'en')
+    const [lang, setLang] = useState(config.languages.length > 0 ? config.languages[0] : 'en')
     const [testStore, setTestStore] = useState(new TestStore())
     const auxiliaryTestStore = new TestStore()
     const manager = new ConsentManager(config, testStore, auxiliaryTestStore);
