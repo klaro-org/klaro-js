@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- API-Konfigurationen werden nur geladen, wenn sie als aktiv markiert sind.\n",
+      "en": "- API configs are only being loaded if they're marked as active.\n"
+    },
+    "date": "2021-02-25",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "Yjfq7jjDaKYOg6umkG6ze7+CtaKkpSMtDC+Uny4qwq1bhG+RvGq4xFawIXD45LDh"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "MNyFVUs5t+o1pPQZst6F8Zetof0gp+b+8qoHOPPg3sTCDLv88YiiSTe3iPM2tGLl"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "ayKBmWfFYUT8A0/taPgyiNMV60TZM7Q5zresVaCAOO7CbUe58TISJVvwX1+MmDJP"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "M1ovqmQksK020Vh5EMHcHz2UnCFT+fKT5ELccFvNS4n79A5HaljgPXq8qPGUseg+"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "RC/631PwNxw2unqHmZc0ugYWbB7WqtbKvtMJc9uvFGpqK4NPpoUoitke6SBmMx81"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "wH/9EGZ+sJ840RDP8wYDgaf9Hdtrnf7VzLuu9NtnIs2RIAIQH/pgtxqykmmwTIIe"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "ZeN2m2dvhF+3QQOTvxhVbIW95oywT7Tp0jwAclWMiZClLlkS1Rz9s4kV2LJg37TG"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi"
+      }
+    ],
+    "tags": [
+      "bugfixes"
+    ],
+    "version": "0.7.15"
+  },
+  {
+    "changelog": {
       "de": "- Verbesserung der automatischen Sprachauswahl.\n",
       "en": "- Improved the language determination mechanism.\n"
     },
