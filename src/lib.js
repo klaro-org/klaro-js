@@ -244,9 +244,10 @@ export function setup(config){
         return;
     const script = currentScript("klaro");
     const hashParams = getHashParams();
+    const testing = hashParams.get('klaro-testing');
 
     const initialize = (opts) => {
-        const fullOpts = {...opts, testing: hashParams.get('klaro-testing')}
+        const fullOpts = {...opts, testing: testing}
         if (!defaultConfig.noAutoLoad && ((!defaultConfig.testing) || fullOpts.testing))
             render(defaultConfig, fullOpts)
     }
@@ -262,7 +263,7 @@ export function setup(config){
         const klaroConfigName = getKlaroConfigName(hashParams, script);
         if (klaroId !== null){
             // we initialize with an API backend
-            const api = new KlaroApi(klaroApiUrl, klaroId, {testing: hashParams.get('klaro-testing')})
+            const api = new KlaroApi(klaroApiUrl, klaroId, {testing: testing})
             if (window.klaroApiConfigs !== undefined){
                 // the configs were already supplied with the Klaro binary
 
@@ -270,7 +271,7 @@ export function setup(config){
                     return
                 }
 
-                const config = window.klaroApiConfigs.find(config => config.name === klaroConfigName)
+                const config = window.klaroApiConfigs.find(config => config.name === klaroConfigName && (config.status === 'active' || testing))
 
                 if (config !== undefined){
                     defaultConfig = config
