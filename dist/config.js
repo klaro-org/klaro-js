@@ -55,7 +55,7 @@ var klaroConfig = {
     //cookieDomain: '.github.com',
 
     // You can change to cookie path for the consent manager itself.
-    // Use this to restrict the cookie visibilita to a specific path.
+    // Use this to restrict the cookie visibility to a specific path.
     // If undefined, Klaro will use '/' as cookie path.
     //cookiePath: '/',
 
