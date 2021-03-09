@@ -59,6 +59,8 @@ let config = {
         filename: '[name].js',
         library: '[name]',
         libraryTarget: 'umd',
+        umdNamedDefine: true,
+        globalObject: 'this',
         publicPath: '',
     },
     plugins: [],
@@ -223,6 +225,8 @@ const klaroWithTranslationsConfig = {
             filename: SEPARATE_CSS ? 'klaro-no-css.js' : 'klaro.js',
             library: 'klaro',
             libraryTarget: 'umd',
+            umdNamedDefine: true,
+            globalObject: 'this',
             publicPath: '',
         },
         entry: {
@@ -241,6 +245,8 @@ const klaroWithoutTranslationsConfig = {
                 : 'klaro-no-translations.js',
             library: 'klaro',
             libraryTarget: 'umd',
+            umdNamedDefine: true,
+            globalObject: 'this',
             publicPath: '',
         },
         entry: {
