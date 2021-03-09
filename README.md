@@ -74,6 +74,18 @@ Klaro will then take care of executing the scripts if consent was given (you can
 
 The same method also works for images, stylesheets and other elements with a `src` or `type` attribute.
 
+## Managing third-party modules and libraries through Javascript API
+
+Klaro offers a small but powerful [Javascript API](https://kiprotect.com/docs/klaro/js_api) that allows you to control and monitor consent from your own apps. When loaded as an ordinary script, the API can be accessed via the global klaro project.
+
+To manage third-party modules and libraries available within your app and ensure they only run if the user consents with their use, you can use the `klaro ConsentManager`and native functions such as `getConsent(name)` replacing `name` with the name of the service you listed in your config.
+
+Example:
+```js
+let manager = klaro.getManager();
+if (manager.getConsent('hotjar')) hotjar.initialize(HOTJAR_ID);
+```
+
 ### Configuration file
 
 The consent manager is configured using a config dictionary, which you typically define in a separate JS file. To learn more, simply read the [annotated example config](dist/config.js), which contains descriptions of all valid config options and parameters.
