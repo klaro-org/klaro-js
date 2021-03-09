@@ -86,7 +86,7 @@ export default class KlaroApi {
                     reject(data);
                 } else {
                     // the request was successful
-                    resolve(data);
+                    resolve(data, xhr.status);
                 }
             });
 
