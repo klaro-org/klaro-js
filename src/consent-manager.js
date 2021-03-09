@@ -163,7 +163,7 @@ export default class ConsentManager {
         this.changed = false
         const changes = this.changedConsents()
         this.savedConsents = {...this.consents}
-        this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType})
+        this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType || 'script'})
     }
 
     applyConsents(dryRun, alwaysConfirmed, serviceName, temporary){
@@ -311,7 +311,7 @@ export default class ConsentManager {
                 parent.removeChild(element)
             } else if (element.tagName === 'SCRIPT' || element.tagName === 'LINK'){
                 // this element is already active, we do not touch it...
-                if (consent && element.type === type && element.src === src){
+                if (consent && element.type === (type || "") && element.src === src){
                     // eslint-disable-next-line no-console
                     console.debug(`Skipping ${element.tagName} for service ${service.name}, as it already has the correct type or src...`)
                     continue
@@ -327,7 +327,7 @@ export default class ConsentManager {
                 newElement.text = element.text
 
                 if (consent){
-                    newElement.type = type
+                    newElement.type = type || ""
                     if (src !== undefined)
                         newElement.src = src
                     if (href !== undefined)
