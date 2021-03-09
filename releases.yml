@@ -1,4 +1,35 @@
 - changelog:
+    de: |
+      - Klaro wird nun als UMD-Modul mit Namen erzeugt, was die Einbindung in Umgebungen mit 'require.js' unter bestimmten Umständen vereinfacht.
+      - Bessere Handhabung von SCRIPT-Tags mit undefinierten "type" Attributen.
+    en: |
+      - Klaro is generated as a named UMD module now to make it easier to use in environments that rely on 'require.js'.
+      - Better handling of SCRIPT tags without 'type' attributes.
+  date: '2021-03-09'
+  files:
+  - name: klaro-no-translations.js
+    sha384: rR68ZYr6x0hMxlstD2mREwmMXYy4a5EjMpxDSuIG8RS/8WOBJ1nUorNCdnYCz0im
+  - name: klaro-no-css.js
+    sha384: qb+g2y62pFSCTpgAZv1hrBMvoDKAFdlHeCzaZ4d23dampCWuVvTOHV63QZG8Y+YS
+  - name: ide.js
+    sha384: AslwOmA95SjKF3jdLNJSKbmcpOrbbXtz8/pfKtdoUqSHgHBs9mgKKgtLf/xbDA7o
+  - name: klaro.js
+    sha384: OIzDotK5EDpqiPC4ak5xgzcC4UKpdbpeDH9Zf8wtYdgMM+NvJt/UbCTEFVzVdly9
+  - name: translations.js
+    sha384: lc4oZuzfaXacRJPNS+uvdU1/mwPoeqvzXGVE/hkNWY1ahWvrZKxRPq+xQGmiP0nW
+  - name: klaro-no-translations-no-css.js
+    sha384: VTx6nE4f2IZoeCl8xbU92dpr6oJyz1vt/OPQhPOKnkWjBik0l5FuRk02StY0mlk5
+  - name: cm.js
+    sha384: nzY7iFz9qEIePB1nFJJWEv45P8WhA8kdq0BoADashClq0DzbFS1LrPqXbj/Kdk52
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: klaro.css
+    sha384: NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi
+  tags:
+  - bugfixes
+  - improvements
+  version: 0.7.16
+- changelog:
     de: '- API-Konfigurationen werden nur geladen, wenn sie als aktiv markiert sind.
 
       '
