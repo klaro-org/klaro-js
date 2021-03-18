@@ -256,7 +256,7 @@ export default class ConsentManager {
             const parent = element.parentElement
             const ds = dataset(element)
             const {type, src, href} = ds
-            const attrs = ['href', 'src']
+            const attrs = ['href', 'src', 'type']
 
             // we handle placeholder elements here...
             if (type === 'placeholder'){
