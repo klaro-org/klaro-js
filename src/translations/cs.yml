@@ -1,0 +1,53 @@
+privacyPolicy:
+    name: zásady ochrany soukromí
+    text: Pro další informace si přečtete naše <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
+consentModal:
+    title: Služby, které bychom rádi využili
+    description: Zde můžete posoudit a přizpůsobit služby, které bychom rádi na tomto webu používali. Máte to pod kontrolou! Povolte nebo zakažte služby, jak uznáte za vhodné.
+consentNotice:
+    testing: Testing mode!
+    changeDescription: Od vaší poslední návštěvy došlo ke změnám, obnovte prosím svůj souhlas.
+    description: „Dobrý den! Můžeme povolit některé další služby pro {purposes}? Svůj souhlas můžete kdykoliv změnit nebo odvolat.“
+    learnMore|capitalize: Vyberu si
+účely:
+    functional:
+        title|capitalize: Poskytování služeb
+        description: |
+            Tyto služby jsou nezbytné pro správné fungování tohoto webu. Nelze je zde deaktivovat, protože služba by jinak nefungovala správně.
+    performance:
+        title|capitalize: Optimalizace výkonu
+        description: |
+          V rámci těchto služeb jsou zpracovávány osobní údaje za účelem optimalizace služeb, které jsou na tomto webu poskytovány.
+    marketing:
+        title|capitalize: Marketing
+        description: V rámci těchto služeb jsou zpracovávány osobní údaje, aby se vám zobrazoval relevantní obsah o produktech, službách nebo tématech, které by vás mohly zajímat. 
+    advertising:
+        title|capitalize: Reklama
+        description: V rámci těchto služeb jsou zpracovávány osobní údaje, aby vám zobrazovaly personalizované nebo zájmově orientované reklamy.
+purposeItem:
+    # we give some additional context for the translation API so it can pick the right word
+    service: Jednoduchá služba <tr-snip></tr-snip> , kterou nainstaluji do svého počítače.
+    services: Několik jednoduchých služeb <tr-snip></tr-snip> , které nainstaluji do svého počítače.
+ok|capitalize: To je v pořádku
+save: uložit
+decline|capitalize: Nepřijímám
+close: zavřít
+acceptAll: přijmout vše
+acceptSelected: přijmout vybrané
+service:
+    disableAll:
+        title: povolit nebo zakázat všechny služby
+        description: Pomocí tohoto přepínače můžete povolit nebo zakázat všechny služby.
+    optOut:
+        title: (opt-out)
+        description: Tato služba se načítá ve výchozím nastavení (ale můžete ji zrušit)
+    required:
+        title: (vždy vyžadováno)
+        description: Tato služba je vždy vyžadována
+    purposes: Zpracování  pro účely <tr-snip></tr-snip>
+    purpose: Zpracování pro účely <tr-snip></tr-snip>
+poweredBy: Realizováno pomocí Klaro!
+contextualConsent:
+    description: Chcete načíst externí obsah dodávaný prostřednictvím {title}?
+    acceptOnce: Ano
+    acceptAlways: Vždy

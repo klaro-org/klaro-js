@@ -4,6 +4,7 @@
 import zh from './zh.yml';
 import pt from './pt.yml';
 import ca from './ca.yml';
+import cs from './cs.yml';
 import da from './da.yml';
 import de from './de.yml';
 import el from './el.yml';
@@ -27,6 +28,7 @@ import ru from './ru.yml';
 
 export default {
     ca,
+	cs,
     da,
     de,
     el,
