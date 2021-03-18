@@ -113,6 +113,13 @@ const KlaroConfigSpec = {
             default: '',
         },
         {
+            name: 'cookiePath',
+            applicable: (config) => config.storageMethod === 'cookie',
+            control: 'RetractingLabelInput',
+            validators: [],
+            default: '',
+        },
+        {
             name: 'htmlTexts',
             control: 'Switch',
             validators: [],

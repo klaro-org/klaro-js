@@ -45,6 +45,10 @@ export default class ConsentManager {
         return this.config.cookieDomain || undefined
     }
 
+    get cookiePath(){
+        return this.config.cookiePath || undefined
+    }
+
     get cookieExpiresAfterDays(){
         return this.config.cookieExpiresAfterDays || 120
     }
