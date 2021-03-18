@@ -543,8 +543,8 @@
   },
   {
     "changelog": {
-      "de": "- Hinzuf\u00fcgen von kontextbasierten Einwilligungen, die es Nutzern erlauben, f\u00fcr eingebettete externe Inhalte (z.B. Youtube-Videos) kontextbasiert eine Einwilligung zu erteilen.\n",
-      "en": "- Added a context-based consent mechanism that allows users to dynamically grant consent for embedded content like Youtube videos.\n"
+      "de": "- Hinzuf\u00fcgen von kontextbasierten Einwilligungen, die es Nutzern erlauben, f\u00fcr eingebettete externe Inhalte (z.B. YouTube-Videos) kontextbasiert eine Einwilligung zu erteilen.\n",
+      "en": "- Added a context-based consent mechanism that allows users to dynamically grant consent for embedded content like YouTube videos.\n"
     },
     "date": "2020-11-06",
     "files": [

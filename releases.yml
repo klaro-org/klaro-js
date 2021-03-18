@@ -331,12 +331,12 @@
   version: 0.7.6
 - changelog:
     de: '- Hinzufügen von kontextbasierten Einwilligungen, die es Nutzern erlauben,
-      für eingebettete externe Inhalte (z.B. Youtube-Videos) kontextbasiert eine Einwilligung
+      für eingebettete externe Inhalte (z.B. YouTube-Videos) kontextbasiert eine Einwilligung
       zu erteilen.
 
       '
     en: '- Added a context-based consent mechanism that allows users to dynamically
-      grant consent for embedded content like Youtube videos.
+      grant consent for embedded content like YouTube videos.
 
       '
   date: '2020-11-06'
