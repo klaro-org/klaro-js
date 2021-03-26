@@ -1,7 +1,7 @@
 acceptAll: ''
-acceptAll_en: Accept all
+acceptAll_en: Prihvati sve
 acceptSelected: ''
-acceptSelected_en: Accept selected
+acceptSelected_en: Prihvati odabrane
 service:
     disableAll:
         description: Koristite ovaj prekidač da omogućite/onemogućite sve aplikacije odjednom.
