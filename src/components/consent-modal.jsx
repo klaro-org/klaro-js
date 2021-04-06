@@ -5,11 +5,6 @@ import Purposes from './purposes';
 import Text from './text';
 
 export default class ConsentModal extends React.Component {
-    constructor(props) {
-        super(props);
-        const { manager } = props;
-        manager.restoreSavedConsents();
-    }
 
     render() {
         const {

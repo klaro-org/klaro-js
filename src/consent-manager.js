@@ -93,8 +93,6 @@ export default class ConsentManager {
     changeAll(value){
         let changedServices = 0
         this.config.services.map((service) => {
-            if (service.contextualConsentOnly === true)
-                return
             if(service.required || this.config.required || value) {
                 if (this.updateConsent(service.name, true))
                     changedServices++
@@ -111,11 +109,6 @@ export default class ConsentManager {
         this.consents[name] = value
         this.notify('consents', this.consents)
         return changed
-    }
-
-    restoreSavedConsents(){
-        this.consents = {...this.savedConsents}
-        this.notify('consents', this.consents)
     }
 
     resetConsents(){
@@ -254,6 +247,10 @@ export default class ConsentManager {
             const {type, src, href} = ds
             const attrs = ['href', 'src']
 
+            // we do not change consent state of elements that have been enabled once
+            if (ds['accepted-once'])
+                consent = true
+
             // we handle placeholder elements here...
             if (type === 'placeholder'){
                 if (consent){
@@ -266,12 +263,9 @@ export default class ConsentManager {
                 continue
             }
 
-            if (temporary){
+            if (temporary && consent){
                 // consent was granted for this session
-                if (ds['accepted-once'])
-                    consent = true
-                else if (consent)
-                    element.setAttribute('data-accepted-once', 'yes')
+                element.setAttribute('data-accepted-once', 'yes')
             }
 
             if (element.tagName === 'IFRAME'){

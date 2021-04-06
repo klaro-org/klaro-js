@@ -8,8 +8,12 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
 
     const decline = () => {}
     const accept = () => {
+        console.log(service.name)
         manager.updateConsent(service.name, true)
-        manager.saveAndApplyConsents()
+        if (manager.confirmed) // we permanently save the consent state
+            manager.saveAndApplyConsents()
+        else // we only temporarily accept this
+            manager.applyConsents(false, true, service.name, true)
     }
     const acceptOnce = () => {
         manager.updateConsent(service.name, true)
@@ -51,16 +55,13 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
                 >
                     {t(['contextualConsent', 'acceptOnce'])}
                 </button>
-                {
-                    manager.confirmed &&
-                    <button
-                        className="cm-btn cm-btn-success-var"
-                        type="button"
-                        onClick={accept}
-                    >
-                        {t(['contextualConsent', 'acceptAlways'])}
-                    </button>
-                }
+                <button
+                    className="cm-btn cm-btn-success-var"
+                    type="button"
+                    onClick={accept}
+                >
+                    {t(['contextualConsent', 'acceptAlways'])}
+                </button>
             </p>
         </div>
     </div>

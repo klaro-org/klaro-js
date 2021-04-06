@@ -207,6 +207,7 @@ var klaroConfig = {
         },
         {
             name: 'youtube',
+            default: true,
             purposes: ['marketing'],
             contextualConsentOnly: true,
         },
