@@ -200,16 +200,14 @@ var klaroConfig = {
     services: [
         {
             name: 'twitter',
-            purposes: ['marketing'],
-            // Setting this to true will exempt this service from the "Accept All"
-            // flow, i.e. clicking on "Accept All" will not enable this service.
+            default: false,
             contextualConsentOnly: true,
+            purposes: ['marketing'],
         },
         {
             name: 'youtube',
             default: true,
             purposes: ['marketing'],
-            contextualConsentOnly: true,
         },
         {
             // Each service should have a unique (and short) name.

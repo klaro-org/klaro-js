@@ -8,16 +8,16 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
 
     const decline = () => {}
     const accept = () => {
-        console.log(service.name)
         manager.updateConsent(service.name, true)
-        if (manager.confirmed) // we permanently save the consent state
-            manager.saveAndApplyConsents()
-        else // we only temporarily accept this
-            manager.applyConsents(false, true, service.name, true)
+        if (manager.confirmed){ // we permanently save the consent state
+            manager.saveConsents('contextual-accept')
+            manager.applyConsents(false, true, service.name)
+        } else // we only temporarily accept this
+            manager.applyConsents(false, true, service.name)
     }
     const acceptOnce = () => {
         manager.updateConsent(service.name, true)
-        manager.applyConsents(false, true, service.name, true)
+        manager.applyConsents(false, true, service.name)
         manager.updateConsent(service.name, false)
     }
 

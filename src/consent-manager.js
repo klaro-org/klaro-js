@@ -92,7 +92,7 @@ export default class ConsentManager {
 
     changeAll(value){
         let changedServices = 0
-        this.config.services.map((service) => {
+        this.config.services.filter(service => !service.contextualConsentOnly).map(service => {
             if(service.required || this.config.required || value) {
                 if (this.updateConsent(service.name, true))
                     changedServices++
@@ -159,7 +159,7 @@ export default class ConsentManager {
         this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType || 'script'})
     }
 
-    applyConsents(dryRun, alwaysConfirmed, serviceName, temporary){
+    applyConsents(dryRun, interactive, serviceName){
 
         function executeHandler(handler, opts){
             if (handler === undefined)
@@ -199,7 +199,7 @@ export default class ConsentManager {
             const optOut = (service.optOut !== undefined ? service.optOut : (this.config.optOut || false))
             const required = (service.required !== undefined ? service.required : (this.config.required || false))
             //opt out and required services are always treated as confirmed
-            const confirmed = this.confirmed || optOut || dryRun || alwaysConfirmed
+            const confirmed = this.confirmed || optOut || dryRun || interactive
             const consent = (this.getConsent(service.name) && confirmed) || required
             const handlerOpts = {service: service, config: this.config, vars: vars, consents: this.consents, confirmed: this.confirmed}
 
@@ -211,24 +211,24 @@ export default class ConsentManager {
 
             // we execute custom service handlers (if they are defined)
             executeHandler(consent ? service.onAccept : service.onDecline, handlerOpts)
-            this.updateServiceElements(service, consent, temporary)
-            this.updateServiceCookies(service, consent, temporary)
+            this.updateServiceElements(service, consent)
+            this.updateServiceStorage(service, consent)
 
             // we execute the service callback (if one is defined)
             if (service.callback !== undefined)
-                service.callback(consent, service, temporary)
+                service.callback(consent, service)
 
             // we execute the global callback (if one is defined)
             if (this.config.callback !== undefined)
-                this.config.callback(consent, service, temporary)
+                this.config.callback(consent, service)
 
             this.states[service.name] = consent
         }
-        this.notify('applyConsents', changedServices, serviceName, temporary)
+        this.notify('applyConsents', changedServices, serviceName)
         return changedServices
     }
 
-    updateServiceElements(service, consent, temporary){
+    updateServiceElements(service, consent){
 
         // we make sure we execute this service only once if the option is set
         if (consent){
@@ -247,10 +247,6 @@ export default class ConsentManager {
             const {type, src, href} = ds
             const attrs = ['href', 'src']
 
-            // we do not change consent state of elements that have been enabled once
-            if (ds['accepted-once'])
-                consent = true
-
             // we handle placeholder elements here...
             if (type === 'placeholder'){
                 if (consent){
@@ -261,11 +257,6 @@ export default class ConsentManager {
                     element.style.display = ds['original-display'] || 'block';
                 }
                 continue
-            }
-
-            if (temporary && consent){
-                // consent was granted for this session
-                element.setAttribute('data-accepted-once', 'yes')
             }
 
             if (element.tagName === 'IFRAME'){
@@ -373,7 +364,7 @@ export default class ConsentManager {
 
     }
 
-    updateServiceCookies(service, consent){
+    updateServiceStorage(service, consent){
 
         if (consent)
             return
