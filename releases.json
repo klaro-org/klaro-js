@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Verbesserung des kontextbasierten Einwilligungsmechanismus, um ihn f\u00fcr Anwender einfacher verst\u00e4ndlich zu machen.\n",
+      "en": "- Improved context based consent mechanism to make it less confusing for users.\n"
+    },
+    "date": "2021-04-06",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "CWy6cvEfkDEb/YuJ28DwCg7vLT2ULrv6RYeqyB0aq491hcqRwoul4Xdnf6QwN1nG"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "baWF47FasHXTaqqXGQTHvn4ik6C/BD0kDOUxeh3VirdKBmpHo/Sii3mjGl4Mtlkq"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "3gXbqIMU13tRCYXcVw2c4b1UVGjbnAqMzHhZIrGvuP7/TnXBgFik3WtoBpSTIYPQ"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "kDNytaJDL3Mk9n+cZoYEgOHznhQ0qwCkTXBzoZMV356aCZmUQBFmBr1QPqcJTans"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "lc4oZuzfaXacRJPNS+uvdU1/mwPoeqvzXGVE/hkNWY1ahWvrZKxRPq+xQGmiP0nW"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "3XcIfKyPyu6a9VdwXcTHp6agKVLR702Rws2Pv41YX2vUE3o9SBkO+WEdF7B/ATdG"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "81RxNVprMKo3xcFw0LDy5ayfbuU02t0uZxwQpvnr/4oBBj+d8c42Zfk3j19suVTw"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.17"
+  },
+  {
+    "changelog": {
       "de": "- Klaro wird nun als UMD-Modul mit Namen erzeugt, was die Einbindung in Umgebungen mit 'require.js' unter bestimmten Umst\u00e4nden vereinfacht.\n- Bessere Handhabung von SCRIPT-Tags mit undefinierten \"type\" Attributen.\n",
       "en": "- Klaro is generated as a named UMD module now to make it easier to use in environments that rely on 'require.js'.\n- Better handling of SCRIPT tags without 'type' attributes.\n"
     },
