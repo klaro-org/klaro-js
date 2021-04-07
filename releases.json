@@ -1,6 +1,55 @@
 [
   {
     "changelog": {
+      "de": "- Hinzuf\u00fcgen von tschechischen \u00dcbersetzungen und Verbessern der portugiesischen \u00dcbersetzungen.\n- Entfernen der '...' Platzhalter in der Einwilligungsnotiz, um eine Anpassung der Texte zu vereinfachen.\n- Hinzuf\u00fcgen eines `cookiePath` Parameters, der den Pfad des Klaro-Cookies kontrolliert.\n",
+      "en": "- Added czech translations and improved portuguese ones.\n- Removed the '...' text from the consent notice to make it easier to customize the UI.\n- Added a `cookiePath` parameter that allows to customize the path of the Klaro cookie.\n"
+    },
+    "date": "2021-04-06",
+    "files": [
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "z6waS5EthciIIJy9hXPJHAUr5mgqnOBszH4kyFM4nx+wD4MhMNwWu6UFjYtD07Av"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "xWEQTixCORMeZjwlwurhXmqASyUVkfAlhUd9x8Q9ryhw+8SF6XwJhZXtDQNxYP41"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "bNWPX8LqrDtN10N7H9VPBG9yVZ2KYvM+g40S623L8VARAsdW3zpZ4DyAhuKDwpBV"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "KQbnBU8iDt0SMuhtGjj+8HRiRdU9XaOAu96g6LV/RaM/8BGGeRkhD/9wwZd6py8a"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "6zBDC0cjyYeWHOAYrTH8BIPbXNv3xpGsIcpBb4Lk8JlNZhxZJ3QTEmlvw7/T8QD5"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "SVSC1h/FiS69yZysmz6c+tIBmzdx6odVEgFbic9ZJl7bgj1N/prWICdqs3KiucCU"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "E9ZyocGuB1KnJYIOOs3/DniFdrurNZoat1d0LnvsDhv0DoOp3V8YrvL8ehWXCTjW"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.18"
+  },
+  {
+    "changelog": {
       "de": "- Verbesserung des kontextbasierten Einwilligungsmechanismus, um ihn f\u00fcr Anwender einfacher verst\u00e4ndlich zu machen.\n",
       "en": "- Improved context based consent mechanism to make it less confusing for users.\n"
     },
