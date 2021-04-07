@@ -23,6 +23,7 @@ export class CookieStore {
     constructor(manager) {
         this.cookieName = manager.storageName
         this.cookieDomain = manager.cookieDomain
+        this.cookiePath = manager.cookiePath
         this.cookieExpiresAfterDays = manager.cookieExpiresAfterDays
     }
 
@@ -34,7 +35,7 @@ export class CookieStore {
     }
 
     set(value) {
-        return setCookie(this.cookieName, value, this.cookieExpiresAfterDays, this.cookieDomain)
+        return setCookie(this.cookieName, value, this.cookieExpiresAfterDays, this.cookieDomain, this.cookiePath)
     }
 
     delete() {

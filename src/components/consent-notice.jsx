@@ -156,7 +156,7 @@ export default class ConsentNotice extends React.Component {
             </button>
         );
 
-        const learnMoreLink = (extraText) =>
+        const learnMoreLink = () =>
             noticeAsModal ? (
                 <button
                     key="learnMoreLink"
@@ -165,7 +165,6 @@ export default class ConsentNotice extends React.Component {
                     onClick={showModal}
                 >
                     {t(['consentNotice', 'learnMore'])}
-                    {extraText}
                 </button>
             ) : (
                 <a
@@ -175,7 +174,6 @@ export default class ConsentNotice extends React.Component {
                     onClick={showModal}
                 >
                     {t(['consentNotice', 'learnMore'])}
-                    {extraText}
                 </a>
             );
 
@@ -229,7 +227,7 @@ export default class ConsentNotice extends React.Component {
                     {testing && <p>{t(['consentNotice', 'testing'])}</p>}
                     {changesText}
                     <div className="cn-ok">
-                        {!hideLearnMore && learnMoreLink('...')}
+                        {!hideLearnMore && learnMoreLink()}
                         <div className="cn-buttons">
                             {declineButton}
                             {acceptButton}
