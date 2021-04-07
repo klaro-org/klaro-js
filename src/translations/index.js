@@ -28,7 +28,7 @@ import ru from './ru.yml';
 
 export default {
     ca,
-	cs,
+    cs,
     da,
     de,
     el,
