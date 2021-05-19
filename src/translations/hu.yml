@@ -1,6 +1,6 @@
-acceptAll: ''
+acceptAll: Összes elfogadása
 acceptAll_en: Accept all
-acceptSelected: ''
+acceptSelected: Kiválasztottak elfogadása
 acceptSelected_en: Accept selected
 service:
     disableAll:
@@ -29,15 +29,15 @@ consentNotice:
         'Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra:
         {purposes}.'
     imprint:
-        name: ''
+        name: Impresszum
         name_en: imprint
     learnMore: Tudj meg többet
     privacyPolicy:
         name: adatvédelmi irányelveinket
-decline: Mentés
+decline: Nem fogadom el
 ok: Elfogad
 poweredBy: Powered by Klaro!
 purposeItem:
-    service: ''
-    services: ''
+    service: Szolgáltatás
+    services: Szolgáltatások
 save: Save
