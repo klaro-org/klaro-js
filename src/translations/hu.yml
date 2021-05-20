@@ -1,7 +1,5 @@
 acceptAll: Összes elfogadása
-acceptAll_en: Accept all
 acceptSelected: Kiválasztottak elfogadása
-acceptSelected_en: Accept selected
 service:
     disableAll:
         description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
@@ -30,7 +28,6 @@ consentNotice:
         {purposes}.'
     imprint:
         name: Impresszum
-        name_en: imprint
     learnMore: Tudj meg többet
     privacyPolicy:
         name: adatvédelmi irányelveinket
