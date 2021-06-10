@@ -224,7 +224,7 @@ var klaroConfig = {
             // personal information.
             default: true,
 
-            // The title of you service as listed in the consent modal.
+            // The title of your service as listed in the consent modal.
             title: 'Matomo/Piwik',
 
             // The purpose(s) of this service. Will be listed on the consent notice.
