@@ -1,6 +1,7 @@
 // To create a new translation, add a YAML file with the required entries and
 // link it here using the appropriate language code.
 
+import ar from './ar.yml';
 import zh from './zh.yml';
 import pt from './pt.yml';
 import ca from './ca.yml';
@@ -27,6 +28,7 @@ import pl from './pl.yml';
 import ru from './ru.yml';
 
 export default {
+    ar,
     ca,
     cs,
     da,
