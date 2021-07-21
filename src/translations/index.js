@@ -2,6 +2,7 @@
 // link it here using the appropriate language code.
 
 import ar from './ar.yml';
+import ur from './ur.yml';
 import zh from './zh.yml';
 import pt from './pt.yml';
 import ca from './ca.yml';
@@ -53,4 +54,5 @@ export default {
     tr,
     pl,
     ru,
+    ur
 };
