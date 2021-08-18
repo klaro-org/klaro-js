@@ -27,9 +27,10 @@ export default class App extends React.Component {
         if (api !== undefined) {
             if (modal || show > 0) return;
             if (!this.props.manager.confirmed) {
-                const shownBefore = this.props.manager.auxiliaryStore.getWithKey(
-                    'shown-before'
-                );
+                const shownBefore =
+                    this.props.manager.auxiliaryStore.getWithKey(
+                        'shown-before'
+                    );
                 if (!shownBefore) {
                     api.update(this, 'showNotice', { config: config });
                     this.props.manager.auxiliaryStore.setWithKey(

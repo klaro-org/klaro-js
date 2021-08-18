@@ -16,6 +16,10 @@ export default class ConsentNotice extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.modal !== this.props.modal)
             this.setState({ modal: this.props.modal });
+
+        if (this.noticeRef) {
+            this.noticeRef.focus();
+        }
     }
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
@@ -109,6 +113,12 @@ export default class ConsentNotice extends React.Component {
             if (config.mustConsent && !config.acceptAll) return;
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
+
+            setTimeout(() => {
+                if (this.noticeRef) {
+                    this.noticeRef.focus();
+                }
+            }, 1);
         };
 
         let changesText;
@@ -214,6 +224,11 @@ export default class ConsentNotice extends React.Component {
                 aria-describedby="id-cookie-notice"
                 aria-labelledby="id-cookie-title"
                 id="klaro-cookie-notice"
+                tabIndex="0"
+                autoFocus
+                ref={(div) => {
+                    this.noticeRef = div;
+                }}
                 className={`cookie-notice ${
                     !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
