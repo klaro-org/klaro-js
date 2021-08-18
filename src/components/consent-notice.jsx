@@ -2,7 +2,7 @@ import React from 'react';
 import ConsentModal from './consent-modal';
 import { getPurposes } from '../utils/config';
 import Text from './text';
-import { asTitle } from '../utils/strings' 
+import { asTitle } from '../utils/strings';
 
 export default class ConsentNotice extends React.Component {
     constructor(props) {
@@ -35,16 +35,14 @@ export default class ConsentNotice extends React.Component {
             !confirmed &&
             (modal || this.props.config.mustConsent)
         ) {
-
             const close = () => {
-                this.setState({confirming: false});
+                this.setState({ confirming: false });
                 this.props.hide();
             };
 
-            this.setState({confirming: true})
-            if (changedServices === 0)
-                close()
-            else{
+            this.setState({ confirming: true });
+            if (changedServices === 0) close();
+            else {
                 setTimeout(close, 800);
             }
         } else {
@@ -71,17 +69,24 @@ export default class ConsentNotice extends React.Component {
 
         // we exclude functional services from this list, as they are always required and
         // the user cannot decline their use...
-        const purposeOrder = config.purposeOrder || []
-        const purposes = getPurposes(config).filter(purpose => purpose !== 'functional').sort((a,b) => purposeOrder.indexOf(a)-purposeOrder.indexOf(b));
-        const purposesTranslations = purposes
-            .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
-        let purposesText = ''
+        const purposeOrder = config.purposeOrder || [];
+        const purposes = getPurposes(config)
+            .filter((purpose) => purpose !== 'functional')
+            .sort((a, b) => purposeOrder.indexOf(a) - purposeOrder.indexOf(b));
+        const purposesTranslations = purposes.map(
+            (purpose) =>
+                t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose)
+        );
+        let purposesText = '';
         if (purposesTranslations.length === 1)
-            purposesText = purposesTranslations[0]
+            purposesText = purposesTranslations[0];
         else
-            purposesText = [...purposesTranslations.slice(0, -2), purposesTranslations.slice(-2).join(' & ')].join(', ');
+            purposesText = [
+                ...purposesTranslations.slice(0, -2),
+                purposesTranslations.slice(-2).join(' & '),
+            ].join(', ');
         let ppUrl;
-        // to do: deprecate and remove this 
+        // to do: deprecate and remove this
         if (config.privacyPolicy !== undefined) {
             if (typeof config.privacyPolicy === 'string')
                 ppUrl = config.privacyPolicy;
@@ -91,11 +96,9 @@ export default class ConsentNotice extends React.Component {
             }
         } else {
             // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'], {lang: lang})
-            if (ppUrl !== undefined)
-                ppUrl = ppUrl.join('')
+            ppUrl = t(['!', 'privacyPolicyUrl'], { lang: lang });
+            if (ppUrl !== undefined) ppUrl = ppUrl.join('');
         }
-
 
         const showModal = (e) => {
             e.preventDefault();
@@ -104,6 +107,7 @@ export default class ConsentNotice extends React.Component {
 
         const hideModal = () => {
             if (config.mustConsent && !config.acceptAll) return;
+            document.body.classList.remove('klaro-modal-open');
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
         };
@@ -208,7 +212,7 @@ export default class ConsentNotice extends React.Component {
         const notice = (
             <div
                 className={`cookie-notice ${
-                    (!noticeIsVisible && !testing) ? 'cookie-notice-hidden' : ''
+                    !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
                     embedded ? 'cn-embedded' : ''
                 }`}
@@ -218,7 +222,9 @@ export default class ConsentNotice extends React.Component {
                         <Text
                             config={config}
                             text={t(['consentNotice', 'description'], {
-                                purposes: <strong key="strong">{purposesText}</strong>,
+                                purposes: (
+                                    <strong key="strong">{purposesText}</strong>
+                                ),
                                 privacyPolicy: ppLink,
                                 learnMoreLink: learnMoreLink(),
                             })}
@@ -238,7 +244,6 @@ export default class ConsentNotice extends React.Component {
         );
 
         if (!noticeAsModal) return notice;
-
 
         return (
             <div className="cookie-modal">

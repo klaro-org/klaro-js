@@ -27,9 +27,10 @@ export default class App extends React.Component {
         if (api !== undefined) {
             if (modal || show > 0) return;
             if (!this.props.manager.confirmed) {
-                const shownBefore = this.props.manager.auxiliaryStore.getWithKey(
-                    'shown-before'
-                );
+                const shownBefore =
+                    this.props.manager.auxiliaryStore.getWithKey(
+                        'shown-before'
+                    );
                 if (!shownBefore) {
                     api.update(this, 'showNotice', { config: config });
                     this.props.manager.auxiliaryStore.setWithKey(
@@ -60,7 +61,10 @@ export default class App extends React.Component {
         const { additionalClass, embedded, stylePrefix } = config;
 
         const hide = () => {
-            if (!embedded) this.setState({ show: false });
+            if (!embedded) {
+                document.body.classList.remove('klaro-modal-open');
+                this.setState({ show: false });
+            }
         };
         return (
             <div

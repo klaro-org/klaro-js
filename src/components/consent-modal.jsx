@@ -5,7 +5,6 @@ import Purposes from './purposes';
 import Text from './text';
 
 export default class ConsentModal extends React.Component {
-
     render() {
         const {
             hide,
@@ -84,9 +83,8 @@ export default class ConsentModal extends React.Component {
             }
         } else {
             // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'], {lang: lang})
-            if (ppUrl !== undefined)
-                ppUrl = ppUrl.join('')
+            ppUrl = t(['!', 'privacyPolicyUrl'], { lang: lang });
+            if (ppUrl !== undefined) ppUrl = ppUrl.join('');
         }
 
         let ppLink;
@@ -103,7 +101,10 @@ export default class ConsentModal extends React.Component {
             servicesOrPurposes = (
                 <Purposes t={t} config={config} manager={manager} lang={lang} />
             );
-        else servicesOrPurposes = <Services t={t} config={config} manager={manager} lang={lang} />;
+        else
+            servicesOrPurposes = (
+                <Services t={t} config={config} manager={manager} lang={lang} />
+            );
 
         const innerModal = (
             <div className="cm-modal cm-klaro">
@@ -121,13 +122,9 @@ export default class ConsentModal extends React.Component {
                             text={[t(['consentModal', 'description'])].concat(
                                 (ppLink &&
                                     [' '].concat(
-                                        t(
-                                            [
-                                                'privacyPolicy',
-                                                'text',
-                                            ],
-                                            { privacyPolicy: ppLink }
-                                        )
+                                        t(['privacyPolicy', 'text'], {
+                                            privacyPolicy: ppLink,
+                                        })
                                     )) ||
                                     []
                             )}
@@ -141,8 +138,7 @@ export default class ConsentModal extends React.Component {
                         {acceptButton}
                         {acceptAllButton}
                     </div>
-                    {
-                        !config.disablePoweredBy &&
+                    {!config.disablePoweredBy && (
                         <p className="cm-powered-by">
                             <a
                                 target="_blank"
@@ -155,13 +151,15 @@ export default class ConsentModal extends React.Component {
                                 {t(['poweredBy'])}
                             </a>
                         </p>
-                    }
+                    )}
                 </div>
             </div>
         );
 
         if (embedded)
             return <div className="cookie-modal cm-embedded">{innerModal}</div>;
+
+        document.body.classList.add('klaro-modal-open');
 
         return (
             <div className="cookie-modal">
