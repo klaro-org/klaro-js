@@ -1,4 +1,35 @@
 - changelog:
+    de: '- Verbessern der ungarischen Übersetzungen.
+
+      '
+    en: |
+      - Improved hungarian translations.
+      - Removed the '...' text from the consent notice to make it easier to customize the UI.
+      - Added a `cookiePath` parameter that allows to customize the path of the Klaro cookie.
+  date: '2021-08-25'
+  files:
+  - name: klaro.css
+    sha384: NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi
+  - name: klaro-no-css.js
+    sha384: 3E/mQHLCFlYgDg6nV68yycwvfbzvX6Y04Ok3KVwX5s+ygP8lctWx9WpnT3HTf+iR
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: cm.js
+    sha384: E9ZyocGuB1KnJYIOOs3/DniFdrurNZoat1d0LnvsDhv0DoOp3V8YrvL8ehWXCTjW
+  - name: klaro-no-translations-no-css.js
+    sha384: zljd147QCtftiKf8mKfolVWaZC9z0X7h/fPicSfkHzrTbecNR0DpxZzAvGuF4mag
+  - name: translations.js
+    sha384: wI5PqQtv5cnauUI7jFC1wACx/bHpffJTsztzSnT8eKDxXvFLWVE2f8UBkTYA/dx0
+  - name: ide.js
+    sha384: BwUvoAw8X/pnn/4oHuIrUnAENeCms7OUWub02p6P2+S0uUyd/tOWrLDQGRijDGhs
+  - name: klaro-no-translations.js
+    sha384: NEG/5QnXtJctjlxYtWuQWfnO5iUSHjPHaFueuFonp5PVTLgTcuOWr9mzIuuYnSDC
+  - name: klaro.js
+    sha384: VsnPCd8ZyYyLo64Gj2lUjU21x9FL2QOL4S20bHDlwt+JCOgrRWH01Z92AZ+EsQ2z
+  tags:
+  - improvements
+  version: 0.7.19
+- changelog:
     de: |
       - Hinzufügen von tschechischen Übersetzungen und Verbessern der portugiesischen Übersetzungen.
       - Entfernen der '...' Platzhalter in der Einwilligungsnotiz, um eine Anpassung der Texte zu vereinfachen.
