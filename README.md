@@ -29,7 +29,7 @@ Current languages: Catalan, Croatian, Dutch, English, Finnish, French, Galician,
 
 ## Getting started
 
-**You can now find more extensive documentation on [our website](https://kiprotect.com/docs/klaro).**
+**You can now find more extensive documentation on [our website](https://heyklaro.com/docs/).**
 
 To use the widget on your website, simply embed Klaro as well as a valid config. You can have a look at the [annotated config.js](dist/config.js) to see how it works. If you want to self-host Klaro you can download compiled JS files from the `dist` folder of this repository, or go to [our website](https://kiprotect.com/docs/klaro/releases), where you can find a full list of past Klaro releases. **Do not use the `klaro.js` file from the `src` folder, it will not work in the browser as it's an  ES6 module and needs to be transpiled first (for most browsers at least).** Follow the instructions below to adapt the config to your needs and then include the two files in your website like this:
 ```html
@@ -76,7 +76,7 @@ The same method also works for images, stylesheets and other elements with a `sr
 
 ## Managing third-party modules and libraries through Javascript API
 
-Klaro offers a small but powerful [Javascript API](https://kiprotect.com/docs/klaro/js_api) that allows you to control and monitor consent from your own apps. When loaded as an ordinary script, the API can be accessed via the global klaro project.
+Klaro offers a small but powerful [Javascript API](https://heyklaro.com/docs/api/js_api/) that allows you to control and monitor consent from your own apps. When loaded as an ordinary script, the API can be accessed via the global klaro project.
 
 To manage third-party modules and libraries available within your app and ensure they only run if the user consents with their use, you can use the `klaro ConsentManager`and native functions such as `getConsent(name)` replacing `name` with the name of the service you listed in your config.
 
