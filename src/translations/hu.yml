@@ -31,10 +31,17 @@ consentNotice:
     learnMore: Tudj meg többet
     privacyPolicy:
         name: adatvédelmi irányelveinket
+contextualConsent:
+  acceptAlways: Mindig
+  acceptOnce: Igen
+  description: Betölti a {title} által szolgáltatott külső tartalmat?
 decline: Nem fogadom el
 ok: Elfogad
 poweredBy: Powered by Klaro!
 purposeItem:
-    service: Szolgáltatás
-    services: Szolgáltatások
+  service: Szolgáltatás
+  services: Szolgáltatások
 save: Save
+privacyPolicy:
+  name: adatkezelési tájékoztató
+  text: adatkezelési tájékoztató
