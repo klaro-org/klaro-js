@@ -2,6 +2,36 @@
     de: '- Verbessern der ungarischen Übersetzungen.
 
       '
+    en: '- Improved hungarian translations.
+
+      '
+  date: '2021-10-20'
+  files:
+  - name: klaro.css
+    sha384: NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi
+  - name: klaro-no-css.js
+    sha384: cQ7kh6wUa+LaNf8tgQ1Lj3PZ8WfZkcuMJr4U+hw3yDJJcg1lkWbkSK3v6GUjEaTr
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: cm.js
+    sha384: E9ZyocGuB1KnJYIOOs3/DniFdrurNZoat1d0LnvsDhv0DoOp3V8YrvL8ehWXCTjW
+  - name: klaro-no-translations-no-css.js
+    sha384: ZHRa7gl5GEDUV6SnRXwnAGlRyYeDXQqAiIxhei2AsM6VbO7TVUby+zDuoRInjLZg
+  - name: translations.js
+    sha384: RzD+JOJRDObKfxaw8aUOX40y90Rq0ffXO4tScXrhkxvIIysKG+vwLqUHBGKBctHV
+  - name: ide.js
+    sha384: Jw6QWOeMPCungeIx0Fq2TD+gMqA18gKg13GQUSKw3cUsAgRq7iG/FZFMwW98kKFy
+  - name: klaro-no-translations.js
+    sha384: YBo1OyaqcXicPlPbPBs8qqITpLB0mYZO0rOHCYorqg9S3gTetlR2WXs7L7eFoLEr
+  - name: klaro.js
+    sha384: B5vt3zUrocTmuuljG9SZnKRs4UyolklyWDJIDhXwdU2JRyMVFL4gxVjOR5B62rV/
+  tags:
+  - improvements
+  version: 0.7.20
+- changelog:
+    de: '- Verbessern der ungarischen Übersetzungen.
+
+      '
     en: |
       - Improved hungarian translations.
       - Removed the '...' text from the consent notice to make it easier to customize the UI.
