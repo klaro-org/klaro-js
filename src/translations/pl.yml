@@ -1,22 +1,20 @@
 # Warning, this file is partially automatically generated!
-acceptAll: Zaakceptować wszystkie
-acceptSelected: Zaakceptować wybrany
-close: Blisko
+acceptAll: Zaakceptuj wszystkie
+acceptSelected: Zaakceptuj wybrane
+close: Zamknij
 consentModal:
-  description: Tutaj mogą Państwo ocenić i dostosować usługi, z których chcielibyśmy
-    skorzystać na tej stronie. Jesteście Państwo odpowiedzialni! Mogą Państwo włączać
-    lub wyłączać usługi według własnego uznania.
+  description: Tutaj można ocenić i dostosować usługi, które chcielibyśmy wykorzystać na tej stronie. Włączaj lub wyłączaj usługi według własnego uznania.
   privacyPolicy:
-    name: polityka prywatności
+    name: polityką prywatności
     text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
   title: Usługi, z których chcielibyśmy skorzystać
 consentNotice:
-  changeDescription: Od czasu ostatniej wizyty nastąpiły zmiany, prosimy o odnowienie
+  changeDescription: Od Twojej ostatniej wizyty nastąpiły zmiany, prosimy o odnowienie
     zgody.
-  description: Witam! Czy możemy włączyć dodatkowe usługi dla {purposes}? W każdej
+  description: Czy możemy włączyć dodatkowe usługi dla {purposes}? W każdej
     chwili mogą Państwo później zmienić lub wycofać swoją zgodę.
   imprint:
-    name: odcisk
+    name: Imprint
   learnMore: Pozwól mi wybrać
   privacyPolicy:
     name: polityka prywatności
@@ -26,23 +24,23 @@ contextualConsent:
   acceptOnce: Tak
   description: Czy chcą Państwo załadować treści zewnętrzne dostarczane przez {title}?
 decline: Odmawiam
-ok: To jest ok.
-poweredBy: Zrealizowane z Klaro!
+ok: Ok
+poweredBy: Technologia dostarczona przez Klaro
 privacyPolicy:
   name: polityka prywatności
   text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
 purposeItem:
   service: usługa
-  services: usług
+  services: usługi
 purposes:
   advertising:
     description: Usługi te przetwarzają dane osobowe w celu pokazania Państwu spersonalizowanych
-      lub opartych na zainteresowaniach ogłoszeń.
+      lub opartych na zainteresowaniach reklam.
     title: Reklama
   functional:
     description: 'Usługi te są niezbędne do prawidłowego funkcjonowania niniejszej
       strony internetowej. Nie mogą Państwo ich tutaj wyłączyć, ponieważ w przeciwnym
-      razie usługa nie działałaby prawidłowo.
+      razie strona nie działałaby prawidłowo.
 
       '
     title: Świadczenie usług
@@ -56,12 +54,12 @@ purposes:
 
       '
     title: Optymalizacja wydajności
-save: Z wyjątkiem
+save: Zapisz
 service:
   disableAll:
     description: Za pomocą tego przełącznika można włączać lub wyłączać wszystkie
       usługi.
-    title: Włączać lub wyłączać wszystkie usługi
+    title: Włącz lub wyłącz wszystkie usługi
   optOut:
     description: Ta usługa jest domyślnie załadowana (ale mogą Państwo z niej zrezygnować)
     title: (opt-out)
