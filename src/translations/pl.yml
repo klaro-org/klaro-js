@@ -3,7 +3,7 @@ acceptAll: Zaakceptuj wszystkie
 acceptSelected: Zaakceptuj wybrane
 close: Zamknij
 consentModal:
-  description: Tutaj można ocenić i dostosować usługi, które chcielibyśmy wykorzystać na tej stronie. Włączaj lub wyłączaj usługi według własnego uznania.
+  description: Tutaj mogą Państwo ocenić i dostosować usługi, które chcielibyśmy wykorzystać na tej stronie. Włączaj lub wyłączaj usługi według własnego uznania.
   privacyPolicy:
     name: polityką prywatności
     text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
