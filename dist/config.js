@@ -24,7 +24,7 @@ var klaroConfig = {
     noAutoLoad: false,
 
     // Setting this to true will render the descriptions of the consent
-    // modal and consent notice are HTML. Use with care.
+    // modal and consent notice as HTML. Use with care.
     htmlTexts: true,
 
     // Setting 'embedded' to true will render the Klaro modal and notice without
