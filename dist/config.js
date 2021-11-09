@@ -4,7 +4,7 @@
 // <script src="klaro.js" data-config="myConfigVariableName" />
 var klaroConfig = {
     // With the 0.7.0 release we introduce a 'version' paramter that will make
-    // if easier for us to keep configuration files backwards-compatible in the future.
+    // it easier for us to keep configuration files backwards-compatible in the future.
     version: 1,
 
     // You can customize the ID of the DIV element that Klaro will create
@@ -224,7 +224,7 @@ var klaroConfig = {
             // personal information.
             default: true,
 
-            // The title of you service as listed in the consent modal.
+            // The title of your service as listed in the consent modal.
             title: 'Matomo/Piwik',
 
             // The purpose(s) of this service. Will be listed on the consent notice.
