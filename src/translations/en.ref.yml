@@ -1,33 +1,34 @@
 privacyPolicy:
-    name: privacy policy
-    text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
+  name: privacy policy
+  text: To learn more, please read our <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentModal:
-    title: Services we would like to use
-    description: Here you can assess and customize the services that we'd like to use on this website. You're in charge! Enable or disable services as you see fit.
+  title: Services we would like to use
+  description: Here you can assess and customize the services that we'd like to use on this website. You're in charge! Enable or disable services as you see fit.
 consentNotice:
-    testing: Testing mode!
-    changeDescription: There were changes since your last visit, please renew your consent.
-    description: "Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later."
-    learnMore|capitalize: Let me choose
+  testing: Testing mode!
+  title: Cookie Consent
+  changeDescription: There were changes since your last visit, please renew your consent.
+  description: 'Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later.'
+  learnMore|capitalize: Let me choose
 purposes:
-    functional:
-        title|capitalize: Service Provision
-        description: |
-            These services are essential for the correct functioning of this website. You cannot disable them here as the service would not work correctly otherwise.
-    performance:
-        title|capitalize: Performance Optimization
-        description: |
-          These services process personal information to optimize the service that this website offers.
-    marketing:
-        title|capitalize: Marketing
-        description: These services process personal information to show you relevant content about products, services or topics that you might be interested in. 
-    advertising:
-        title|capitalize: Advertising
-        description: These services process personal information to show you personalized or interest-based advertisements.
+  functional:
+    title|capitalize: Service Provision
+    description: |
+      These services are essential for the correct functioning of this website. You cannot disable them here as the service would not work correctly otherwise.
+  performance:
+    title|capitalize: Performance Optimization
+    description: |
+      These services process personal information to optimize the service that this website offers.
+  marketing:
+    title|capitalize: Marketing
+    description: These services process personal information to show you relevant content about products, services or topics that you might be interested in.
+  advertising:
+    title|capitalize: Advertising
+    description: These services process personal information to show you personalized or interest-based advertisements.
 purposeItem:
-    # we give some additional context for the translation API so it can pick the right word
-    service: A simple <tr-snip>service</tr-snip> that I install on my computer.
-    services: Several simple <tr-snip>services</tr-snip> that I install on my computer.
+  # we give some additional context for the translation API so it can pick the right word
+  service: A simple <tr-snip>service</tr-snip> that I install on my computer.
+  services: Several simple <tr-snip>services</tr-snip> that I install on my computer.
 ok|capitalize: That's ok
 save|capitalize: save
 decline|capitalize: I decline
@@ -35,19 +36,19 @@ close|capitalize: close
 acceptAll|capitalize: accept all
 acceptSelected|capitalize: accept selected
 service:
-    disableAll:
-        title|capitalize: enable or disable all services
-        description: Use this switch to enable or disable all services.
-    optOut:
-        title: (opt-out)
-        description: This services is loaded by default (but you can opt out)
-    required:
-        title: (always required)
-        description: This services is always required
-    purposes: Processing <tr-snip>purposes</tr-snip>
-    purpose: Processing <tr-snip>purpose</tr-snip>
+  disableAll:
+    title|capitalize: enable or disable all services
+    description: Use this switch to enable or disable all services.
+  optOut:
+    title: (opt-out)
+    description: This services is loaded by default (but you can opt out)
+  required:
+    title: (always required)
+    description: This services is always required
+  purposes: Processing <tr-snip>purposes</tr-snip>
+  purpose: Processing <tr-snip>purpose</tr-snip>
 poweredBy: Realized with Klaro!
 contextualConsent:
-    description: Do you want to load external content supplied by {title}?
-    acceptOnce: Yes
-    acceptAlways: Always
+  description: Do you want to load external content supplied by {title}?
+  acceptOnce: Yes
+  acceptAlways: Always

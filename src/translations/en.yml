@@ -3,60 +3,67 @@ acceptAll: Accept all
 acceptSelected: Accept selected
 close: Close
 consentModal:
-  description: Here you can assess and customize the services that we'd like to use
-    on this website. You're in charge! Enable or disable services as you see fit.
-  title: Services we would like to use
+    description:
+        Here you can assess and customize the services that we'd like to use
+        on this website. You're in charge! Enable or disable services as you see fit.
+    title: Services we would like to use
 consentNotice:
-  changeDescription: There were changes since your last visit, please renew your consent.
-  description: Hi! Could we please enable some additional services for {purposes}?
-    You can always change or withdraw your consent later.
-  learnMore: Let me choose
-  testing: Testing mode!
+    changeDescription: There were changes since your last visit, please renew your consent.
+    title: Cookie Consent
+    description:
+        Hi! Could we please enable some additional services for {purposes}?
+        You can always change or withdraw your consent later.
+    learnMore: Let me choose
+    testing: Testing mode!
 contextualConsent:
-  acceptAlways: Always
-  acceptOnce: 'Yes'
-  description: Do you want to load external content supplied by {title}?
+    acceptAlways: Always
+    acceptOnce: 'Yes'
+    description: Do you want to load external content supplied by {title}?
 decline: I decline
 ok: That's ok
 poweredBy: Realized with Klaro!
 privacyPolicy:
-  name: privacy policy
-  text: To learn more, please read our {privacyPolicy}.
+    name: privacy policy
+    text: To learn more, please read our {privacyPolicy}.
 purposeItem:
-  service: service
-  services: services
+    service: service
+    services: services
 purposes:
-  advertising:
-    description: These services process personal information to show you personalized
-      or interest-based advertisements.
-    title: Advertising
-  functional:
-    description: 'These services are essential for the correct functioning of this
-      website. You cannot disable them here as the service would not work correctly
-      otherwise.
+    advertising:
+        description:
+            These services process personal information to show you personalized
+            or interest-based advertisements.
+        title: Advertising
+    functional:
+        description:
+            'These services are essential for the correct functioning of this
+            website. You cannot disable them here as the service would not work correctly
+            otherwise.
 
-      '
-    title: Service Provision
-  marketing:
-    description: These services process personal information to show you relevant
-      content about products, services or topics that you might be interested in.
-    title: Marketing
-  performance:
-    description: 'These services process personal information to optimize the service
-      that this website offers.
+            '
+        title: Service Provision
+    marketing:
+        description:
+            These services process personal information to show you relevant
+            content about products, services or topics that you might be interested in.
+        title: Marketing
+    performance:
+        description:
+            'These services process personal information to optimize the service
+            that this website offers.
 
-      '
-    title: Performance Optimization
+            '
+        title: Performance Optimization
 save: Save
 service:
-  disableAll:
-    description: Use this switch to enable or disable all services.
-    title: Enable or disable all services
-  optOut:
-    description: This services is loaded by default (but you can opt out)
-    title: (opt-out)
-  purpose: purpose
-  purposes: purposes
-  required:
-    description: This services is always required
-    title: (always required)
+    disableAll:
+        description: Use this switch to enable or disable all services.
+        title: Enable or disable all services
+    optOut:
+        description: This services is loaded by default (but you can opt out)
+        title: (opt-out)
+    purpose: purpose
+    purposes: purposes
+    required:
+        description: This services is always required
+        title: (always required)

@@ -17,6 +17,7 @@ export default class ServiceItem extends React.Component {
             translations,
             title,
             description,
+            visible,
             t,
         } = this.props;
         const required = this.props.required || false;
@@ -26,8 +27,12 @@ export default class ServiceItem extends React.Component {
             onToggle(e.target.checked);
         };
         const id = `service-item-${name}`;
+        const titleid = `${id}-title`;
         const purposesText = purposes
-            .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
+            .map(
+                (purpose) =>
+                    t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose)
+            )
             .join(', ');
         const optOutText = optOut ? (
             <span
@@ -54,12 +59,18 @@ export default class ServiceItem extends React.Component {
         if (purposes.length > 0)
             purposesContent = (
                 <p className="purposes">
-                    {t(['service', purposes.length > 1 ? 'purposes' : 'purpose'])}:{' '}
-                    {purposesText}
+                    {t([
+                        'service',
+                        purposes.length > 1 ? 'purposes' : 'purpose',
+                    ])}
+                    : {purposesText}
                 </p>
             );
 
-        const descriptionText = description || tt(translations, lang, 'zz', ['!', 'description']) || t(['!', name, 'description?'])
+        const descriptionText =
+            description ||
+            tt(translations, lang, 'zz', ['!', 'description']) ||
+            t(['!', name, 'description?']);
 
         return (
             <div>
@@ -72,9 +83,11 @@ export default class ServiceItem extends React.Component {
                             ? ' half-checked only-required'
                             : '')
                     }
+                    aria-labelledby={`${titleid}`}
                     aria-describedby={`${id}-description`}
                     disabled={required}
                     checked={checked || required}
+                    tabIndex={visible ? '0' : '-1'}
                     type="checkbox"
                     onChange={onChange}
                 />
@@ -83,8 +96,11 @@ export default class ServiceItem extends React.Component {
                     className="cm-list-label"
                     {...(required ? { tabIndex: '0' } : {})}
                 >
-                    <span className="cm-list-title">
-                        {title || tt(translations, lang, 'zz', ['!', 'title']) || t(['!', name, 'title?']) || asTitle(name)}
+                    <span className="cm-list-title" id={`${titleid}`}>
+                        {title ||
+                            tt(translations, lang, 'zz', ['!', 'title']) ||
+                            t(['!', name, 'title?']) ||
+                            asTitle(name)}
                     </span>
                     {requiredText}
                     {optOutText}
@@ -93,15 +109,11 @@ export default class ServiceItem extends React.Component {
                     </span>
                 </label>
                 <div id={`${id}-description`}>
-                    {
-                        descriptionText &&
+                    {descriptionText && (
                         <p className="cm-list-description">
-                            <Text
-                                config={config}
-                                text={descriptionText}
-                            />
+                            <Text config={config} text={descriptionText} />
                         </p>
-                    }
+                    )}
                     {purposesContent}
                 </div>
             </div>
