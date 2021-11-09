@@ -44,7 +44,7 @@ export class IDEModal extends React.Component {
 
         return (
             <div className={stylePrefix || 'klaro'}>
-                <div className="cookie-modal">
+                <div id="cookieScreen" className="cookie-modal">
                     <div className="cm-bg" onClick={hide} />
                     <div className="cm-modal cm-ide">
                         <div className="cm-header">

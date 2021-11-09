@@ -241,7 +241,7 @@ export default class ConsentNotice extends React.Component {
 
 
         return (
-            <div className="cookie-modal">
+            <div id="cookieScreen" className="cookie-modal">
                 <div className="cm-bg" />
                 {notice}
             </div>
