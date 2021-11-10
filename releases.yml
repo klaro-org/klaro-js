@@ -1,8 +1,38 @@
 - changelog:
+    de: '- Arabische und Urdu-Ãœbersetzungen hinzugefÃ¼gt
+
+      '
+    en: '- Added arabic and urdu translations
+
+      '
+  date: '2021-07-21'
+  files:
+  - name: cm.js
+    sha384: YBacxwX2Ll7eBp6Y/r2va8MiSbiOLOlWa7+W6sqvBj2rM1LB9Mp5mh4DNqsd2Esm
+  - name: ide.js
+    sha384: Ks86EOJV3Z2E1aSRzYWRcxk4QIYYReY7NHzGdmlQdCwtPbCwItF22CevI0l1UOTG
+  - name: klaro-no-css.js
+    sha384: Yy6uY2zWstndd2SKK2n2IpR31ApC+6LMwusW7V9lerS5+N68CIKJGGlCAfPl6Bgm
+  - name: klaro-no-translations-no-css.js
+    sha384: zljd147QCtftiKf8mKfolVWaZC9z0X7h/fPicSfkHzrTbecNR0DpxZzAvGuF4mag
+  - name: klaro-no-translations.js
+    sha384: NEG/5QnXtJctjlxYtWuQWfnO5iUSHjPHaFueuFonp5PVTLgTcuOWr9mzIuuYnSDC
+  - name: klaro.css
+    sha384: LMkal0ra9KThclFuixaoGdiFd5CO9vvSkWm1+gsdcszgmxUHXnaOwHJttuKx33k9
+  - name: klaro.js
+    sha384: 29Upypjv9sL1He50AraMYBaE6HNuf8k+CQhsRSZBUyrTnddR+zQWlYGAEcofP6+j
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: translations.js
+    sha384: qxHJEtp4IDXT2CasdqOIT00OR8cLwCSe9/lhZtCvubfg5iPiOzKUece4ME7Wd2Mu
+  tags:
+  - improvements
+  version: 0.7.19
+- changelog:
     de: |
-      - Hinzufügen von tschechischen Übersetzungen und Verbessern der portugiesischen Übersetzungen.
+      - HinzufÃ¼gen von tschechischen Ãœbersetzungen und Verbessern der portugiesischen Ãœbersetzungen.
       - Entfernen der '...' Platzhalter in der Einwilligungsnotiz, um eine Anpassung der Texte zu vereinfachen.
-      - Hinzufügen eines `cookiePath` Parameters, der den Pfad des Klaro-Cookies kontrolliert.
+      - HinzufÃ¼gen eines `cookiePath` Parameters, der den Pfad des Klaro-Cookies kontrolliert.
     en: |
       - Added czech translations and improved portuguese ones.
       - Removed the '...' text from the consent notice to make it easier to customize the UI.
@@ -31,8 +61,8 @@
   - improvements
   version: 0.7.18
 - changelog:
-    de: '- Verbesserung des kontextbasierten Einwilligungsmechanismus, um ihn für
-      Anwender einfacher verständlich zu machen.
+    de: '- Verbesserung des kontextbasierten Einwilligungsmechanismus, um ihn fÃ¼r
+      Anwender einfacher verstÃ¤ndlich zu machen.
 
       '
     en: '- Improved context based consent mechanism to make it less confusing for
@@ -64,7 +94,7 @@
   version: 0.7.17
 - changelog:
     de: |
-      - Klaro wird nun als UMD-Modul mit Namen erzeugt, was die Einbindung in Umgebungen mit 'require.js' unter bestimmten Umständen vereinfacht.
+      - Klaro wird nun als UMD-Modul mit Namen erzeugt, was die Einbindung in Umgebungen mit 'require.js' unter bestimmten UmstÃ¤nden vereinfacht.
       - Bessere Handhabung von SCRIPT-Tags mit undefinierten "type" Attributen.
     en: |
       - Klaro is generated as a named UMD module now to make it easier to use in environments that rely on 'require.js'.
@@ -181,8 +211,8 @@
   version: 0.7.13
 - changelog:
     de: |
-      - Hinzufügen eines `styling` Konfigurationsparameters, der das einfache Anpassen der Benutzeroberfläche von Klaro ermöglicht, entweder durch das Setzen von `Themes` oder über die Definition von CSS-Variablen (kompatibel mit IE11 und modernen Browsern).
-      - Behebung eines Fehlers der bei der kontextbasierten Einwilligung nicht immer korrekt einen Platzhalter für freizuschaltende Inhalte anzeigte.
+      - HinzufÃ¼gen eines `styling` Konfigurationsparameters, der das einfache Anpassen der BenutzeroberflÃ¤che von Klaro ermÃ¶glicht, entweder durch das Setzen von `Themes` oder Ã¼ber die Definition von CSS-Variablen (kompatibel mit IE11 und modernen Browsern).
+      - Behebung eines Fehlers der bei der kontextbasierten Einwilligung nicht immer korrekt einen Platzhalter fÃ¼r freizuschaltende Inhalte anzeigte.
     en: |
       - Added a `styling` config parameter that enables the user to easily change the UI of Klaro, either by applying one or several `themes` to it or by defining custom CSS variables (compatible with IE11 and modern browsers).
       - Fixed a bug that caused the placeholder for context-based consents to be missing.
@@ -211,7 +241,7 @@
   - improvements
   version: 0.7.12
 - changelog:
-    de: '- Behebung eines Problems bei der Definition regulärer Ausdrücke für Cookies.
+    de: '- Behebung eines Problems bei der Definition regulÃ¤rer AusdrÃ¼cke fÃ¼r Cookies.
 
       '
     en: '- Fixed a problem with regular expression definition for cookie names.
@@ -242,8 +272,8 @@
   version: 0.7.11
 - changelog:
     de: |
-      - Hinzufügen von `onAccept`, `onDecline` und `onInit` Event-Callbacks die es erlauben, fortgeschrittene Einwilligungsmechanismen über zusätzlichen Javascript-Code zu implementieren, der dynamisch für einen gegebenen Service geladen werden kann.
-      - Beheben eines Fehlers der bei kontextbasierten Einwilligungen dazu führte, dass für das `src` Attribut eines `iframe` der Wert `undefined` gesetzt wurde.
+      - HinzufÃ¼gen von `onAccept`, `onDecline` und `onInit` Event-Callbacks die es erlauben, fortgeschrittene Einwilligungsmechanismen Ã¼ber zusÃ¤tzlichen Javascript-Code zu implementieren, der dynamisch fÃ¼r einen gegebenen Service geladen werden kann.
+      - Beheben eines Fehlers der bei kontextbasierten Einwilligungen dazu fÃ¼hrte, dass fÃ¼r das `src` Attribut eines `iframe` der Wert `undefined` gesetzt wurde.
     en: |
       - Added `onAccept`, `onDecline` and `onInit` event callbacks that permit to implement advanced consent mechanisms via custom Javascript code that can be dynamically loaded for a given service.
       - Fixed a bug with the contextual consent mechanism that would cause the `src` of an `iframe` element to be set to `undefined`.
@@ -272,7 +302,7 @@
   - improvements
   version: 0.7.10
 - changelog:
-    de: '- Aktivierung von optionalem HTML-Support für den Titel des Einwilligungsdialogs.
+    de: '- Aktivierung von optionalem HTML-Support fÃ¼r den Titel des Einwilligungsdialogs.
 
       '
     en: '- Enabled optional HTML support for the consent modal title as well.
@@ -302,7 +332,7 @@
   - improvements
   version: 0.7.9
 - changelog:
-    de: '- Weiteres Bugfixing für kontextbasierte Einwilligungen.
+    de: '- Weiteres Bugfixing fÃ¼r kontextbasierte Einwilligungen.
 
       '
     en: '- Further bugfixing for context-based consent mechanism.
@@ -362,7 +392,7 @@
   - bugfixes
   version: 0.7.7
 - changelog:
-    de: '- Hinzufügen eines "Test" Einwilligungs-Stores, der das Testen von Klaro
+    de: '- HinzufÃ¼gen eines "Test" Einwilligungs-Stores, der das Testen von Klaro
       einfacher gestaltet und u.a. in den interaktiven Tutorials genutzt wird.
 
       '
@@ -394,9 +424,9 @@
   - improvements
   version: 0.7.6
 - changelog:
-    de: '- Hinzufügen von kontextbasierten Einwilligungen, die es Nutzern erlauben,
-      für eingebettete externe Inhalte (z.B. YouTube-Videos) kontextbasiert eine Einwilligung
-      zu erteilen.
+    de: '- HinzufÃ¼gen von kontextbasierten Einwilligungen, die es Nutzern erlauben,
+      fÃ¼r eingebettete externe Inhalte (z.B. YouTube-Videos) kontextbasiert eine
+      Einwilligung zu erteilen.
 
       '
     en: '- Added a context-based consent mechanism that allows users to dynamically
@@ -428,9 +458,9 @@
   version: 0.7.5
 - changelog:
     de: |
-      - Hinzufügen eines fehlenden Übersetzung-Strings.
-      - Verbessern der Verwaltung von `link` Tags durch das Unterstützen des `onlyOnce` Parameters.
-      - Beim Überfahren aller Buttons mit der Maus wird nun immer der "Hand" Cursor angezeigt.
+      - HinzufÃ¼gen eines fehlenden Ãœbersetzung-Strings.
+      - Verbessern der Verwaltung von `link` Tags durch das UnterstÃ¼tzen des `onlyOnce` Parameters.
+      - Beim Ãœberfahren aller Buttons mit der Maus wird nun immer der "Hand" Cursor angezeigt.
     en: |
       - Added a missing translation string.
       - Improved the management of `link` tags by supporting the `onlyOnce` behavior.
@@ -460,7 +490,7 @@
   version: 0.7.4
 - changelog:
     de: '- Behebung eines Problems, das bei der Verwendung der ungestylten Klaro-Version
-      in Kombination mit der Klaro API dazu führt, dass die API-Koniguration nicht
+      in Kombination mit der Klaro API dazu fÃ¼hrt, dass die API-Koniguration nicht
       geladen wird.
 
       '
@@ -493,8 +523,8 @@
   version: 0.7.3
 - changelog:
     de: |
-      - Beschreibungen von Diensten und Zwecken werden nun ebenfalls vom `htmlTexts` Parameter erfasst und können als HTML-Texte geschrieben werden.
-      - Zwecke können über den `purposeOrder` Parameter sortiert werden. Dieser kann eine Liste mit Zweckbezeichnungen enthalten, die dann in der gegebenen Reihenfolge im Einwilligungs-Hinweis und -Modal erscheinen.
+      - Beschreibungen von Diensten und Zwecken werden nun ebenfalls vom `htmlTexts` Parameter erfasst und kÃ¶nnen als HTML-Texte geschrieben werden.
+      - Zwecke kÃ¶nnen Ã¼ber den `purposeOrder` Parameter sortiert werden. Dieser kann eine Liste mit Zweckbezeichnungen enthalten, die dann in der gegebenen Reihenfolge im Einwilligungs-Hinweis und -Modal erscheinen.
     en: |
       - Descriptions of services and purposes now also respect the `htmlTexts` parameter and can use HTML.
       - The order in which purposes appear in the notice and modal can be changed via the `purposeOrder` parameter, which can be given a list with purpose names and will display those purposes in the order in which they appear in the list.
@@ -556,26 +586,26 @@
   version: 0.7.1
 - changelog:
     de: |
-      - Die Dritt-Dienste wurden von "Apps" in "Dienste" umbenannt, um innerhalb der Codebasis als auch in der Benutzeroberfläche eine einheitliche Terminologie zu verwenden. Der Begriff "Dienst" umfasst besser als "App" die Dritt-Software die auf Webseiten eingesetzt wird.
+      - Die Dritt-Dienste wurden von "Apps" in "Dienste" umbenannt, um innerhalb der Codebasis als auch in der BenutzeroberflÃ¤che eine einheitliche Terminologie zu verwenden. Der Begriff "Dienst" umfasst besser als "App" die Dritt-Software die auf Webseiten eingesetzt wird.
 
       **Wichtig:**
 
-      Das Format der Konfigurationsdatei ändert sich mit diesem Release. Alte Konfigurationsdateien werden aktuell automatisch auf das neue Format umgeschrieben. Wir empfehlen trotzdem, die Konfigurationsdateien folgendermaßen zu ändern:
+      Das Format der Konfigurationsdatei Ã¤ndert sich mit diesem Release. Alte Konfigurationsdateien werden aktuell automatisch auf das neue Format umgeschrieben. Wir empfehlen trotzdem, die Konfigurationsdateien folgendermaÃŸen zu Ã¤ndern:
 
-      **Zwingend notwendige Änderungen**
+      **Zwingend notwendige Ã„nderungen**
 
       - Umbenenen der Bezeichnung der Liste von Dritt-Services von `apps` in `services`.
-      - Gegebenenfalls Umbennenen des Unterschlüssels `apps` in `services` innherhalb des
-        `translations` Schlüssels. Nur notwendig, falls Änderungen an den Standardübersetzungen in
+      - Gegebenenfalls Umbennenen des UnterschlÃ¼ssels `apps` in `services` innherhalb des
+        `translations` SchlÃ¼ssels. Nur notwendig, falls Ã„nderungen an den StandardÃ¼bersetzungen in
         vorgenommen wurden.
 
-      **Änderungen an eigenem CSS**
+      **Ã„nderungen an eigenem CSS**
 
-      Falls Klaro mit eigenem CSS angepasst wurde und Elemente der Klassen `cm-apps` oder `cm-app` überschrieben wurden, müssen diese ebenfalls in `cm-services` bzw. `cm-service` umbenannt werden.
+      Falls Klaro mit eigenem CSS angepasst wurde und Elemente der Klassen `cm-apps` oder `cm-app` Ã¼berschrieben wurden, mÃ¼ssen diese ebenfalls in `cm-services` bzw. `cm-service` umbenannt werden.
 
       **Hinweise zum Upgrade:**
 
-      Da bei diesem Upgrade auch CSS-Klassen umbenannt wurden kann es trotz der automatischen Anpassung von Konfigurationsdateien zu Problemen bei der Darstellung von Klaro kommen. Um zu vermeiden, dass bestehende Klaro-Installation hiervon betroffen sind wird dieses Release zunächst nicht mit der Version `latest` auf dem CDN publiziert, ein Upgrade muss manuell erfolgen. Wir raten nun generell davon ab, die `latest` Version zu nutzen um solche Probleme in Zukunft zu vermeiden. Um weiterhin automatisierte Bugfixes und kleinere rückwärtskompatible Anpassungen zu ermöglichen, werden wir in Zukunft das `latest` Tag im CDN mit Tags ersetzen, die aus der Haupt- und Neben-Versionsnummer eines Releases bestehen, z.B. `0.7`. Dies soll uns ermöglichen, kritische Upgrades weiterhin automatisch ausliefern zu können ohne dabei Inkompatibilitäten zu riskieren. Ein Upgrade auf eine neue Haupt- oder Nebenversion soll dann manuell erfolgen.
+      Da bei diesem Upgrade auch CSS-Klassen umbenannt wurden kann es trotz der automatischen Anpassung von Konfigurationsdateien zu Problemen bei der Darstellung von Klaro kommen. Um zu vermeiden, dass bestehende Klaro-Installation hiervon betroffen sind wird dieses Release zunÃ¤chst nicht mit der Version `latest` auf dem CDN publiziert, ein Upgrade muss manuell erfolgen. Wir raten nun generell davon ab, die `latest` Version zu nutzen um solche Probleme in Zukunft zu vermeiden. Um weiterhin automatisierte Bugfixes und kleinere rÃ¼ckwÃ¤rtskompatible Anpassungen zu ermÃ¶glichen, werden wir in Zukunft das `latest` Tag im CDN mit Tags ersetzen, die aus der Haupt- und Neben-Versionsnummer eines Releases bestehen, z.B. `0.7`. Dies soll uns ermÃ¶glichen, kritische Upgrades weiterhin automatisch ausliefern zu kÃ¶nnen ohne dabei InkompatibilitÃ¤ten zu riskieren. Ein Upgrade auf eine neue Haupt- oder Nebenversion soll dann manuell erfolgen.
     en: |
       - We changed the term "app" to "service" throughout the codebase. This makes the terminology coherent across the UI and codebase, as the term "service" is a better description for third-party software running on a website than "app".
 
@@ -615,7 +645,7 @@
   version: 0.7.0
 - changelog:
     de: '- Beheben eines Fehlers, der zu Problemen bei der Verwendung von Klaro mit
-      Internet Explorer führte.
+      Internet Explorer fÃ¼hrte.
 
       '
     en: '- Fixed a bug that caused Klaro to not work with Internet Explorer.
@@ -645,7 +675,7 @@
   - bugfixes
   version: 0.6.18
 - changelog:
-    de: '- Ändern des (undokumentierten) `klaro-config-name` Parameters.
+    de: '- Ã„ndern des (undokumentierten) `klaro-config-name` Parameters.
 
       '
     en: '- Changed the (undocumented) `klaro-config-name` parameter.
@@ -676,8 +706,8 @@
   version: 0.6.17
 - changelog:
     de: |
-      - Harmonisierung und Verbesserung (aus unserer Sicht) der Übersetzungen.
-      - Hinzufügen von Übersetzungen für standardisierte Verarbeitungszwecke.
+      - Harmonisierung und Verbesserung (aus unserer Sicht) der Ãœbersetzungen.
+      - HinzufÃ¼gen von Ãœbersetzungen fÃ¼r standardisierte Verarbeitungszwecke.
     en: |
       - Harmonization and improvement (we think) of the default translations.
       - Adding of translations for a set of default processing purposes.
@@ -738,8 +768,8 @@
   version: 0.6.15
 - changelog:
     de: |
-      - Vorbereitung der IDE-Integration für die Open-Source Version.
-      - Verbesserte Funktionalität für das Testen von Konfiguration.
+      - Vorbereitung der IDE-Integration fÃ¼r die Open-Source Version.
+      - Verbesserte FunktionalitÃ¤t fÃ¼r das Testen von Konfiguration.
     en: |
       - Prepare IDE integration into the open-source version.
       - Improved testing functionality.
@@ -767,7 +797,7 @@
   - improvements
   version: 0.6.14
 - changelog:
-    de: '- Änderung der Art, wie das "show" Event erfasst wird.
+    de: '- Ã„nderung der Art, wie das "show" Event erfasst wird.
 
       '
     en: '- Changed the way the "show" event is counted.
@@ -829,7 +859,7 @@
   - improvements
   version: 0.6.12
 - changelog:
-    de: '- Release-Files schließen nun alle JS-Dateien im `dist` Verzeichnis ein,
+    de: '- Release-Files schlieÃŸen nun alle JS-Dateien im `dist` Verzeichnis ein,
       sowie alle JS und (S)CSS Dateien aus dem `src` Verzeichnis ein.
 
       '
@@ -926,7 +956,7 @@
   version: 0.6.9
 - changelog:
     de: |
-      - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu führte,
+      - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu fÃ¼hrte,
       dass keine Metriken beim normalen Speichern erfasst wurden.
     en: |
       - Fixed a problem with the anonymous consent records that prevented records being
@@ -959,7 +989,7 @@
 - changelog:
     de: |
       - Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens,
-        des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungsänderungen.
+        des Protokolls, des Ports und des Dateipfades, sowie Speicherung von ZustimmungsÃ¤nderungen.
       - Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur
         einfachen und komfortablen Konfiguration
     en: |
@@ -1023,7 +1053,7 @@
   - bugfixes
   version: 0.6.6
 - changelog:
-    de: '- Backend-Funktionalität hinzugefügt: Klaro kann optional Konfigurationen
+    de: '- Backend-FunktionalitÃ¤t hinzugefÃ¼gt: Klaro kann optional Konfigurationen
       von einer API laden und Einwilligungsinformationen (anonym) an eine API senden.
 
       '
@@ -1089,8 +1119,8 @@
   version: 0.6.4
 - changelog:
     de: |
-      - Formatierung der Übersetzungen verbessert und Informationen zu fehlenden Übersetzungs-Strings hinzugefügt.
-      - Klaro-Binärdateien / Distribution-Dateien werden wieder eingeschlossen.
+      - Formatierung der Ãœbersetzungen verbessert und Informationen zu fehlenden Ãœbersetzungs-Strings hinzugefÃ¼gt.
+      - Klaro-BinÃ¤rdateien / Distribution-Dateien werden wieder eingeschlossen.
     en: |
       - Improve formatting of translation files and add information about missing translation strings.
       - Include distribution files again.
@@ -1124,8 +1154,8 @@
   version: 0.6.2
 - changelog:
     de: |
-      - Das `lang` Attribut des Klaro div-Elements enthält nun die aktuell eingestellte Sprach Sprache für Klaro, was z.B. die Anpassung von Stylesheets basierend auf der gewählten Sprache einfacher macht.
-      - Der `additionalClass` Parameter wurde hinzugefügt, über welchem dem Klaro-Element zusätzliche CSS-Klassen zugewiesen werden können.
+      - Das `lang` Attribut des Klaro div-Elements enthÃ¤lt nun die aktuell eingestellte Sprach Sprache fÃ¼r Klaro, was z.B. die Anpassung von Stylesheets basierend auf der gewÃ¤hlten Sprache einfacher macht.
+      - Der `additionalClass` Parameter wurde hinzugefÃ¼gt, Ã¼ber welchem dem Klaro-Element zusÃ¤tzliche CSS-Klassen zugewiesen werden kÃ¶nnen.
     en: |
       - Added the language as a `lang` attribute to the Klaro div, to make it easier to e.g. change Klaro's style depending on the language via CSS selectors.
       - Added the `additionalClass` option, which allows adding additional class names to the Klaro div via the config.
@@ -1139,7 +1169,7 @@
   - improvements
   version: 0.6.1
 - changelog:
-    de: '- `noticeAsModal` Parameter hinzugefügt, der das Einwilligungs-Hinweisfenster
+    de: '- `noticeAsModal` Parameter hinzugefÃ¼gt, der das Einwilligungs-Hinweisfenster
       als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung
       zu treffen bevor die Seite genutzt werden kann.
 
@@ -1161,7 +1191,7 @@
 - changelog:
     de: '- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien
       zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
-      für eine technische Erläuterung.
+      fÃ¼r eine technische ErlÃ¤uterung.
 
       '
     en: '- Added `SameSite=Lax` to the Klaro cookie in order to conform to upcoming
@@ -1181,7 +1211,7 @@
 - changelog:
     de: |
       - Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.
-      - Beim Kopieren eines `script` Elements werden nun alle Attribute übernommen.
+      - Beim Kopieren eines `script` Elements werden nun alle Attribute Ã¼bernommen.
     en: |
       - Fixed a problem with the `klaro.resetManagers()` function.
       - Ensured that all attributes of a `script` element are copied over.
@@ -1195,8 +1225,8 @@
   - bugfixes
   version: 0.5.34
 - changelog:
-    de: '- Maximale Größe der Einwilligungs-Notiz auf `360px` erhöht, damit Text in
-      den Buttons nicht gebrochen wird.
+    de: '- Maximale GrÃ¶ÃŸe der Einwilligungs-Notiz auf `360px` erhÃ¶ht, damit Text
+      in den Buttons nicht gebrochen wird.
 
       '
     en: '- Increased the maximum width of the consent notice to `360px` to allow languages
@@ -1214,11 +1244,11 @@
   version: 0.5.33
 - changelog:
     de: |
-      - Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie können jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten Übersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer öffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einfügen, andernfalls wird er "so wie er ist" dargestellt.
+      - Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie kÃ¶nnen jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten Ãœbersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer Ã¶ffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einfÃ¼gen, andernfalls wird er "so wie er ist" dargestellt.
 
-      Wir hoffen, dass diese Änderung es einfacher macht, das Erscheinungsbild der Einverständniserklärung und des Modals anzupassen, ohne auf zusätzliche Konfigurationsparameter zurückgreifen zu müssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterstützen, können wir das tun, ohne das Konfigurationsformat erneut zu brechen.
+      Wir hoffen, dass diese Ã„nderung es einfacher macht, das Erscheinungsbild der EinverstÃ¤ndniserklÃ¤rung und des Modals anzupassen, ohne auf zusÃ¤tzliche Konfigurationsparameter zurÃ¼ckgreifen zu mÃ¼ssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterstÃ¼tzen, kÃ¶nnen wir das tun, ohne das Konfigurationsformat erneut zu brechen.
 
-      Wir entschuldigen uns für die Einführung einer brechenden Konfigurationsänderung, da die Option `extraHTML` zu Beginn recht neu war, die Änderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.
+      Wir entschuldigen uns fÃ¼r die EinfÃ¼hrung einer brechenden KonfigurationsÃ¤nderung, da die Option `extraHTML` zu Beginn recht neu war, die Ã„nderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.
     en: |
       - Removed the `extraHTML` fields from the consent modal and consent notice in favor of allowing HTML in descriptions in general. You can now set `htmlTexts: true` in the config, which will tell Klaro to render the translation strings you provide as HTML content. If a given string does not start with an opening bracket (&lt;), Klaro will still put the resulting HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it "as is".
 
@@ -1236,9 +1266,9 @@
   - feature-update
   version: 0.5.32
 - changelog:
-    de: '- Prüfsummen zu allen lokal erzeugten Builddateien hinzugefügt, z.B. zur
+    de: '- PrÃ¼fsummen zu allen lokal erzeugten Builddateien hinzugefÃ¼gt, z.B. zur
       Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
-      für weitere Einzelheiten hierzu.
+      fÃ¼r weitere Einzelheiten hierzu.
 
       '
     en: '- Added checksums to all build files generated locally, for use e.g. as subresource
@@ -1255,10 +1285,10 @@
   tags: []
   version: 0.5.31
 - changelog:
-    de: '- Es wurde die Konfigurationsoption `groupByPurpose` hinzugefügt, die Anwendungen
+    de: '- Es wurde die Konfigurationsoption `groupByPurpose` hinzugefÃ¼gt, die Anwendungen
       nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt, ganze
       Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren. Dies
-      reduziert auch den Platzbedarf des Modals, was besonders für Websites wichtig
+      reduziert auch den Platzbedarf des Modals, was besonders fÃ¼r Websites wichtig
       ist, die viele Anwendungen von Drittanbietern verwenden.
 
       '

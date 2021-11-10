@@ -5,9 +5,6 @@
     "IE 11",
     "IE 9"
   ],
-  "bugs": {
-    "url": "https://github.com/KIProtect/klaro/issues"
-  },
   "description": "A simple but powerful consent manager.",
   "devDependencies": {
     "@babel/cli": "7.10.4",
@@ -64,10 +61,10 @@
   ],
   "license": "BSD-3-Clause",
   "main": "dist/klaro.js",
-  "name": "klaro",
+  "name": "klaro-micado",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiprotect/klaro.git"
+    "url": "git+https://github.com/micado-eu/klaro"
   },
   "scripts": {
     "lint": "eslint ./src --quiet",
@@ -78,5 +75,5 @@
     "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --host 0.0.0.0 --config webpack.config.js --history-api-fallback",
     "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
   },
-  "version": "0.7.18"
+  "version": "0.7.19"
 }
