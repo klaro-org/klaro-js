@@ -1,4 +1,31 @@
 - changelog:
+    en: |
+      - Fix deleting cookie when domain specified as .example.com
+      - Fix scolling page on accept to klaro div position (bottom of dom)
+  date: '2021-12-20'
+  files:
+  - name: klaro.css
+    sha384: NS72XPKd246k2ryQ8WeBBdK5AS+QPQtolKYbbt69kZdgYHoz0UWEinmOtQXNXLBi
+  - name: klaro.min.css
+    sha384: VuePmq5T37XMu8lZQd7M6GiQdvdDL6/Rd/aXVDq8sfg/bxphobHzCtb4EBLkeKOw
+  - name: klaro-no-css.js
+    sha384: +Q4MEn7BkMBtqd91IKfevRb1XeL2uoqqDufX1fZ0LY8ml+0QMJzwmfCXC18u4JLR
+  - name: cm.js
+    sha384: uB/A7qOOJT6YO+EHdUE510TZHYL/VQ8hO4+zcqZhDUIodw3fNN9uFiwy3Djl2oDf
+  - name: ide.js
+    sha384: rA54GNcdQssxtO7AtLtJiRSkSVb1yiHnSts0BokyuHkBR2wHg4HYzkaxeatnJAsO
+  - name: klaro-no-translations-no-css.js
+    sha384: ZEgXstkOy9o/NMrFkLmxXiUETGsf/v9CRh3WlKBq7EhE7Vp9BrfdfmxA4BEcVqp5
+  - name: klaro-no-translations.js
+    sha384: qwqSjZQEIwUddben+nE6SgMxx8aTsoxLfptj6H6EV6n5hZYcUIacmmtnPXonFnjR
+  - name: klaro.js
+    sha384: FRIIS6QFQHwSgrKRiO7Yaj8r4Ih0fw++2oPKbHQLOC7vKVtr2a50ZYQ8udtvluJe
+  - name: translations.js
+    sha384: ob7bzwDAkn/CaPyQd9MAmtWCSQPH8z4QLjjDGiPqItXRQqnsAZ8ZGtB4AcTk5mUZ
+  tags:
+  - improvements
+  version: 0.7.19
+- changelog:
     de: |
       - Hinzufügen von tschechischen Übersetzungen und Verbessern der portugiesischen Übersetzungen.
       - Entfernen der '...' Platzhalter in der Einwilligungsnotiz, um eine Anpassung der Texte zu vereinfachen.
