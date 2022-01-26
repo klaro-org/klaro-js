@@ -6,7 +6,9 @@ import Text from './text';
 
 export default class ConsentModal extends React.Component {
     componentDidMount() {
-        this.consentModalRef.focus();
+        if(!this.props.config.mustConsent) {
+            this.consentModalRef.focus();
+        }
     }
 
     render() {
