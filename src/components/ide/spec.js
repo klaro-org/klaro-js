@@ -168,6 +168,12 @@ const KlaroConfigSpec = {
             default: false,
         },
         {
+            name: 'collapseConsentOptions',
+            control: 'Switch',
+            validators: [],
+            default: false,
+        },
+        {
             name: 'acceptAll',
             control: 'Switch',
             validators: [],
