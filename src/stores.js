@@ -39,7 +39,7 @@ export class CookieStore {
     }
 
     delete() {
-        return deleteCookie(this.cookieName);
+        return deleteCookie(this.cookieName, this.cookiePath, this.cookieDomain);
     }
 }
 

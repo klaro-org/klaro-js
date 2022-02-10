@@ -10,16 +10,13 @@ export default class ConsentNotice extends React.Component {
         this.state = {
             modal: props.modal,
             confirming: false,
+            collapsed: props.config.collapseConsentOptions
         };
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.modal !== this.props.modal)
             this.setState({ modal: this.props.modal });
-
-        if (this.noticeRef) {
-            this.noticeRef.focus();
-        }
     }
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
@@ -68,7 +65,7 @@ export default class ConsentNotice extends React.Component {
 
     render() {
         const { lang, config, show, manager, testing, t } = this.props;
-        const { confirming, modal } = this.state;
+        const { confirming, modal, collapsed } = this.state;
         const { embedded, noticeAsModal, hideLearnMore } = config;
 
         // we exclude functional services from this list, as they are always required and
@@ -113,12 +110,6 @@ export default class ConsentNotice extends React.Component {
             if (config.mustConsent && !config.acceptAll) return;
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
-
-            setTimeout(() => {
-                if (this.noticeRef) {
-                    this.noticeRef.focus();
-                }
-            }, 1);
         };
 
         let changesText;
@@ -211,6 +202,7 @@ export default class ConsentNotice extends React.Component {
                     config={config}
                     hide={hideModal}
                     confirming={confirming}
+                    collapsed={collapsed}
                     declineAndHide={this.declineAndHide}
                     saveAndHide={this.saveAndHide}
                     acceptAndHide={this.acceptAndHide}
