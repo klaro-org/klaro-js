@@ -1,0 +1,52 @@
+/* The Floating-Button */
+.floating-button {
+    display: block;
+    z-index: 999;
+
+    position: fixed;
+    transition: all 0.2s;
+    cursor: pointer;
+    bottom: 0;
+    right: 20px;
+    box-shadow: $cm-box-shadow-light-sm;
+    @include var(border-top-left-radius, border-radius);
+    @include var(border-top-right-radius, border-radius);
+    text-decoration: none;
+    max-width: 300px;
+    @include var(border-width, border-width);
+    @include var(border-style, border-style);
+    @include var(border-color, green2);
+    color: gray;
+    border-bottom-color: rgb(187, 187, 187);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 14px;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+
+    @media (max-width: 1159px) {
+        bottom: 300px;
+        right: -70px;
+        -webkit-transform: rotate(-90deg) !important;
+        transform: rotate(-90deg) !important;
+    }
+
+    &.is-active,
+    &:hover,
+    &:active {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        @include var(background-color, light1);
+    }
+}
+
+.floating-button-hidden {
+    display: none !important;
+}

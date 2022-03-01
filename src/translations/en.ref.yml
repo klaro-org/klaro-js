@@ -4,6 +4,7 @@ privacyPolicy:
 consentModal:
   title: Services we would like to use
   description: Here you can assess and customize the services that we'd like to use on this website. You're in charge! Enable or disable services as you see fit.
+floatingButtonTitle: Cookies
 consentNotice:
   testing: Testing mode!
   title: Cookie Consent

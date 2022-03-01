@@ -1,5 +1,6 @@
 import React from 'react';
 import ConsentNotice from './consent-notice';
+import FloatingButton from './floating-button';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -78,6 +79,13 @@ export default class App extends React.Component {
                     show={show}
                     lang={lang}
                     modal={modal}
+                    hide={hide}
+                    config={config}
+                    manager={manager}
+                />
+                <FloatingButton
+                    t={t}
+                    show={!show}
                     hide={hide}
                     config={config}
                     manager={manager}

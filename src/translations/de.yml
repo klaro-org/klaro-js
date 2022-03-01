@@ -11,6 +11,7 @@ consentModal:
     name: Datenschutzerklärung
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
   title: Dienste, die wir nutzen möchten
+floatingButtonTitle: Cookies
 consentNotice:
   changeDescription:
     Seit Ihrem letzten Besuch gab es Änderungen, bitte erneuern Sie
