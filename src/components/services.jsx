@@ -1,7 +1,15 @@
 import React from 'react';
 import ServiceItem from './service-item';
 
-export const ServiceItems = ({ services, config, consents, lang, toggle, t }) => {
+export const ServiceItems = ({
+    services,
+    config,
+    consents,
+    lang,
+    toggle,
+    visible,
+    t,
+}) => {
     return services.map((service) => {
         const toggleService = (value) => {
             toggle([service], value);
@@ -14,6 +22,7 @@ export const ServiceItems = ({ services, config, consents, lang, toggle, t }) =>
                     onToggle={toggleService}
                     config={config}
                     lang={lang}
+                    visible={visible}
                     t={t}
                     {...service}
                 />
@@ -58,21 +67,32 @@ export default class Services extends React.Component {
         };
 
         const serviceItems = (
-            <ServiceItems config={config} lang={lang} services={services} t={t} consents={consents} toggle={toggle} />
+            <ServiceItems
+                config={config}
+                lang={lang}
+                services={services}
+                t={t}
+                consents={consents}
+                toggle={toggle}
+            />
         );
 
-        const togglableServices = services.filter((service) => !service.required);
+        const togglableServices = services.filter(
+            (service) => !service.required
+        );
 
-        const nEnabled = togglableServices.filter((service) => consents[service.name]).length
-        const nRequired = services.filter((service) => service.required).length
+        const nEnabled = togglableServices.filter(
+            (service) => consents[service.name]
+        ).length;
+        const nRequired = services.filter((service) => service.required).length;
 
-        const allEnabled =
-            nEnabled === togglableServices.length;
+        const allEnabled = nEnabled === togglableServices.length;
 
         const allDisabled = nEnabled === 0;
 
         const onlyRequiredEnabled =
-            services.filter((service) => service.required).length > 0 && allDisabled;
+            services.filter((service) => service.required).length > 0 &&
+            allDisabled;
 
         return (
             <ul className="cm-services">

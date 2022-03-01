@@ -5,6 +5,11 @@ import Purposes from './purposes';
 import Text from './text';
 
 export default class ConsentModal extends React.Component {
+
+    componentDidMount() {
+        this.consentModalRef.focus();
+    }
+
     render() {
         const {
             hide,
@@ -26,9 +31,14 @@ export default class ConsentModal extends React.Component {
             closeLink = (
                 <button
                     title={t(['close'])}
+                    aria-label={t(['close'])}
                     className="hide"
                     type="button"
                     onClick={hide}
+                    tabIndex="0"
+                    ref={(div) => {
+                        this.consentModalRef = div;
+                    }}
                 >
                     <Close t={t} />
                 </button>
@@ -145,7 +155,7 @@ export default class ConsentModal extends React.Component {
                                 href={
                                     config.poweredBy ||
                                     'https://kiprotect.com/klaro'
-                                }
+                                }   
                                 rel="noopener"
                             >
                                 {t(['poweredBy'])}
@@ -157,12 +167,12 @@ export default class ConsentModal extends React.Component {
         );
 
         if (embedded)
-            return <div className="cookie-modal cm-embedded">{innerModal}</div>;
+            return <div id="cookieScreen" className="cookie-modal cm-embedded">{innerModal}</div>;
 
         document.body.classList.add('klaro-modal-open');
 
         return (
-            <div className="cookie-modal">
+            <div id="cookieScreen" className="cookie-modal">
                 <div className="cm-bg" onClick={hide} />
                 {innerModal}
             </div>

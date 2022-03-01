@@ -34,6 +34,10 @@ consentNotice:
     learnMore: Tudj meg többet
     privacyPolicy:
         name: adatvédelmi irányelveinket
+contextualConsent:
+  acceptAlways: Mindig
+  acceptOnce: Igen
+  description: Be akarod tölteni a {title} által szolgáltatott külső tartalmakat?
 decline: Mentés
 ok: Elfogad
 poweredBy: Powered by Klaro!

@@ -3,7 +3,8 @@ acceptAll: Alle akzeptieren
 acceptSelected: Ausgewählte akzeptieren
 close: Schließen
 consentModal:
-  description: Hier können Sie die Dienste, die wir auf dieser Website nutzen möchten,
+  description:
+    Hier können Sie die Dienste, die wir auf dieser Website nutzen möchten,
     bewerten und anpassen. Sie haben das Sagen! Aktivieren oder deaktivieren Sie die
     Dienste, wie Sie es für richtig halten.
   privacyPolicy:
@@ -11,9 +12,12 @@ consentModal:
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
   title: Dienste, die wir nutzen möchten
 consentNotice:
-  changeDescription: Seit Ihrem letzten Besuch gab es Änderungen, bitte erneuern Sie
+  changeDescription:
+    Seit Ihrem letzten Besuch gab es Änderungen, bitte erneuern Sie
     Ihre Zustimmung.
-  description: Hallo! Könnten wir bitte einige zusätzliche Dienste für {purposes}
+  title: Cookie-Einstellungen
+  description:
+    Hallo! Könnten wir bitte einige zusätzliche Dienste für {purposes}
     aktivieren? Sie können Ihre Zustimmung später jederzeit ändern oder zurückziehen.
   imprint:
     name: Impressum
@@ -36,7 +40,8 @@ purposeItem:
   services: Dienste
 purposes:
   advertising:
-    description: Diese Dienste verarbeiten persönliche Informationen, um Ihnen personalisierte
+    description:
+      Diese Dienste verarbeiten persönliche Informationen, um Ihnen personalisierte
       oder interessenbezogene Werbung zu zeigen.
     title: Werbung
   functional:
@@ -47,12 +52,14 @@ purposes:
       '
     title: Dienstbereitstellung
   marketing:
-    description: Diese Dienste verarbeiten persönliche Daten, um Ihnen relevante Inhalte
+    description:
+      Diese Dienste verarbeiten persönliche Daten, um Ihnen relevante Inhalte
       über Produkte, Dienstleistungen oder Themen zu zeigen, die Sie interessieren
       könnten.
     title: Marketing
   performance:
-    description: 'Diese Dienste verarbeiten personenbezogene Daten, um den von dieser
+    description:
+      'Diese Dienste verarbeiten personenbezogene Daten, um den von dieser
       Website angebotenen Service zu optimieren.
 
       '
@@ -63,7 +70,8 @@ service:
     description: Mit diesem Schalter können Sie alle Dienste aktivieren oder deaktivieren.
     title: Alle Dienste aktivieren oder deaktivieren
   optOut:
-    description: Diese Dienste werden standardmäßig geladen (Sie können sich jedoch
+    description:
+      Diese Dienste werden standardmäßig geladen (Sie können sich jedoch
       abmelden)
     title: (Opt-out)
   purpose: Zweck

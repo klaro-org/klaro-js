@@ -16,6 +16,10 @@ export default class ConsentNotice extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.modal !== this.props.modal)
             this.setState({ modal: this.props.modal });
+
+        if (this.noticeRef) {
+            this.noticeRef.focus();
+        }
     }
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
@@ -110,6 +114,12 @@ export default class ConsentNotice extends React.Component {
             document.body.classList.remove('klaro-modal-open');
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
+
+            setTimeout(() => {
+                if (this.noticeRef) {
+                    this.noticeRef.focus();
+                }
+            }, 1);
         };
 
         let changesText;
@@ -211,6 +221,15 @@ export default class ConsentNotice extends React.Component {
 
         const notice = (
             <div
+                role="dialog"
+                aria-describedby="id-cookie-notice"
+                aria-labelledby="id-cookie-title"
+                id="klaro-cookie-notice"
+                tabIndex="0"
+                autoFocus
+                ref={(div) => {
+                    this.noticeRef = div;
+                }}
                 className={`cookie-notice ${
                     !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
@@ -218,7 +237,12 @@ export default class ConsentNotice extends React.Component {
                 }`}
             >
                 <div className="cn-body">
-                    <p>
+                    {t(['!', 'consentNotice', 'title']) && (
+                        <h2 id="id-cookie-title">
+                            {t(['consentNotice', 'title'])}
+                        </h2>
+                    )}
+                    <p id="id-cookie-notice">
                         <Text
                             config={config}
                             text={t(['consentNotice', 'description'], {
@@ -246,7 +270,7 @@ export default class ConsentNotice extends React.Component {
         if (!noticeAsModal) return notice;
 
         return (
-            <div className="cookie-modal">
+            <div id="cookieScreen" className="cookie-modal">
                 <div className="cm-bg" />
                 {notice}
             </div>

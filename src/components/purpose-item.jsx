@@ -34,8 +34,12 @@ export default class PurposeItem extends React.Component {
             onToggle(e.target.checked);
         };
         const id = `purpose-item-${name}`;
+        const titleid = `${id}-title`;
         const purposesText = purposes
-            .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
+            .map(
+                (purpose) =>
+                    t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose)
+            )
             .join(', ');
         const requiredText = required ? (
             <span
@@ -62,7 +66,22 @@ export default class PurposeItem extends React.Component {
 
         const toggleServicesVisible = (e) => {
             e.preventDefault();
+            const getCurrentExpandedStatus =
+                e.currentTarget.getAttribute('aria-expanded') === 'false'
+                    ? false
+                    : true;
+            e.currentTarget.setAttribute(
+                'aria-expanded',
+                !getCurrentExpandedStatus
+            );
             this.setState({ servicesVisible: !servicesVisible });
+        };
+
+        const handleSpace = (e) => {
+            // Spacebar press
+            if (e.keyCode === 32) {
+                toggleServicesVisible(e);
+            }
         };
 
         const toggle = (services, value) => {
@@ -74,10 +93,19 @@ export default class PurposeItem extends React.Component {
         };
 
         const serviceItems = (
-            <ServiceItems config={config} lang={lang} services={services} toggle={toggle} consents={consents} t={t} />
+            <ServiceItems
+                config={config}
+                lang={lang}
+                services={services}
+                toggle={toggle}
+                consents={consents}
+                visible={servicesVisible}
+                t={t}
+            />
         );
 
-        const descriptionText = description || t(['!', 'purposes', name, 'description'])
+        const descriptionText =
+            description || t(['!', 'purposes', name, 'description']);
 
         return (
             <React.Fragment>
@@ -92,6 +120,7 @@ export default class PurposeItem extends React.Component {
                                 : ' half-checked'
                             : '')
                     }
+                    aria-labelledby={`${titleid}`}
                     aria-describedby={`${id}-description`}
                     disabled={required}
                     checked={
@@ -105,8 +134,10 @@ export default class PurposeItem extends React.Component {
                     className="cm-list-label"
                     {...(required ? { tabIndex: '0' } : {})}
                 >
-                    <span className="cm-list-title">
-                        {title || t(['!', 'purposes', name, 'title?']) || asTitle(name)}
+                    <span className="cm-list-title" id={`${titleid}`}>
+                        {title ||
+                            t(['!', 'purposes', name, 'title?']) ||
+                            asTitle(name)}
                     </span>
                     {requiredText}
                     <span className="cm-switch">
@@ -114,34 +145,40 @@ export default class PurposeItem extends React.Component {
                     </span>
                 </label>
                 <div id={`${id}-description`}>
-                    {
-                        descriptionText &&
+                    {descriptionText && (
                         <p className="cm-list-description">
-                            <Text
-                                config={config}
-                                text={descriptionText}
-                            />
+                            <Text config={config} text={descriptionText} />
                         </p>
-                    }
+                    )}
                     {purposesContent}
                 </div>
                 {services.length > 0 && (
                     <div className="cm-services">
                         <div className="cm-caret">
-                            <a href="#" onClick={toggleServicesVisible}>
+                            <a
+                                href="#"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                tabIndex="0"
+                                onClick={toggleServicesVisible}
+                                onKeyDown={handleSpace}
+                            >
                                 {(servicesVisible && <span>&#8593;</span>) || (
                                     <span>&#8595;</span>
                                 )}{' '}
                                 {services.length}{' '}
                                 {t([
                                     'purposeItem',
-                                    services.length > 1 ? 'services' : 'service',
+                                    services.length > 1
+                                        ? 'services'
+                                        : 'service',
                                 ])}
                             </a>
                         </div>
                         <ul
                             className={
-                                'cm-content' + (servicesVisible ? ' expanded' : '')
+                                'cm-content' +
+                                (servicesVisible ? ' expanded' : '')
                             }
                         >
                             {serviceItems}
