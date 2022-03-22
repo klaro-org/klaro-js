@@ -3,47 +3,47 @@ acceptAll: Tot acceptar
 acceptSelected: Acceptar çò seleccionat
 close: Tampar
 consentModal:
-  description: Here you can assess and customize the services that we'd like to use
-    on this website. You're in charge! Enable or disable services as you see fit.
-  title: Services we would like to use
+  description: Aquí podètz mesurar e personalizar los servicis que volriam utilizar
+    sus aqueste site web. Avètz lo darrièr mot ! Activatz o desactivatz segon vòstra causida.
+  title: Servicis que volriam utilizar
 consentNotice:
-  changeDescription: There were changes since your last visit, please renew your consent.
-  description: Hi! Could we please enable some additional services for {purposes}?
-    You can always change or withdraw your consent later.
+  changeDescription: I aguèt de modificacions dempuèi vòstra darrièra visita, mercés de repassar vòstre consentiment.
+  description: Adieu ! Poiriam activar mai de servici per {purposes} ?
+    Podètz totjorn modificar o tirar vòstre consentiment mai tard.
   learnMore: Me daissar causir
-  testing: Testing mode!
+  testing: Mòde tèst !
 contextualConsent:
-  acceptAlways: Totrjorn
+  acceptAlways: Totjorn
   acceptOnce: 'Òc'
-  description: Do you want to load external content supplied by {title}?
-decline: I decline
-ok: That's ok
+  description: Volètz cargar de contenguts extèrn provesits per {title} ?
+decline: Refusi
+ok: Es bon
 poweredBy: Realizat amb Klaro !
 privacyPolicy:
-  name: privacy policy
-  text: To learn more, please read our {privacyPolicy}.
+  name: politica de confidencialitat
+  text: Per ne saber mai, vejatz nòstra {privacyPolicy}.
 purposeItem:
   service: servici
   services: servicis
 purposes:
   advertising:
-    description: These services process personal information to show you personalized
-      or interest-based advertisements.
+    description: Aquestes servicis tractan d’informacions personalas per vos mostrar
+      de reclamas personalizadas o basadas suls interèsses.
     title: Reclama
   functional:
-    description: 'These services are essential for the correct functioning of this
-      website. You cannot disable them here as the service would not work correctly
-      otherwise.
+    description: 'Aquestes servicis son essencials pel foncionament corrèct d’aqueste
+      site web. Los podètz pas desactivar aquí pr’amor que lo servici foncionariá pas coma cal
+      autrament.
 
       '
-    title: Service Provision
+    title: Servici de provision
   marketing:
-    description: These services process personal information to show you relevant
-      content about products, services or topics that you might be interested in.
+    description: Aquestes servicis tractan d’informacions personalas per vos mostrar
+      de contenguts a prepaus de produits, de servicis o tèmas que poirián vos interessar.
     title: Marketing
   performance:
-    description: 'These services process personal information to optimize the service
-      that this website offers.
+    description: 'Aquestes servicis tractan d’informacions per optimizar lo servici
+       qu’aqueste site web prepausa.
 
       '
     title: Optimizacion de las performanças
@@ -59,4 +59,4 @@ service:
   purposes: finalitat
   required:
     description: Aqueste servici es totjorn requesit
-    title: (totjonr requesit)
+    title: (totjorn requesit)
