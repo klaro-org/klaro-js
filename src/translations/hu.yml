@@ -1,10 +1,10 @@
-acceptAll: ''
+acceptAll: 'Mind elfogad'
 acceptAll_en: Accept all
-acceptSelected: ''
+acceptSelected: 'Kiválasztottat elfogad'
 acceptSelected_en: Accept selected
 service:
     disableAll:
-        description: Használd ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
+        description: Használja ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
         title: Összes app átkapcsolása
     optOut:
         description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
@@ -12,36 +12,36 @@ service:
     purpose: Cél
     purposes: Célok
     required:
-        description: Ez az alkalmazás mindig kötelező
-        title: (mindig kötelező)
+        description: Ez az alkalmazás mindig szükséges
+        title: (mindig szükséges)
 close: Elvet
 consentModal:
-    description: Itt láthatod és testreszabhatod az rólad gyűjtött információkat.
+    description: Itt láthatja és testreszabhatja az önről gyűjtött információkat.
     privacyPolicy:
         name: adatvédelmi irányelveinket
-        text: További információért kérjük, olvassd el az {privacyPolicy}.
+        text: További információért kérjük, olvassa el az {privacyPolicy}.
     title: Információk, amiket gyűjtünk
 consentNotice:
     changeDescription:
-        Az utolsó látogatás óta változások történtek, kérjük, frissítsd
-        a hozzájárulásodat.
+        Az utolsó látogatás óta változások történtek, kérjük, frissítse
+        a hozzájárulását.
     description:
-        'Az személyes adataidat összegyűjtjük és feldolgozzuk az alábbi célokra:
+        'Személyes adatait összegyűjtjük és feldolgozzuk az alábbi célokra::
         {purposes}.'
     imprint:
-        name: ''
+        name: 'impresszum'
         name_en: imprint
-    learnMore: Tudj meg többet
+    learnMore: Tudjon meg többet
     privacyPolicy:
         name: adatvédelmi irányelveinket
 contextualConsent:
   acceptAlways: Mindig
   acceptOnce: Igen
   description: Be akarod tölteni a {title} által szolgáltatott külső tartalmakat?
-decline: Mentés
+decline: Elutasít
 ok: Elfogad
 poweredBy: Powered by Klaro!
 purposeItem:
     service: ''
     services: ''
-save: Save
+save: Mentés
