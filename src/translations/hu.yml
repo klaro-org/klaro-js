@@ -26,7 +26,7 @@ consentNotice:
         Az utolsó látogatás óta változások történtek, kérjük, frissítse
         a hozzájárulását.
     description:
-        'Személyes adatait összegyűjtjük és feldolgozzuk az alábbi célokra::
+        'Személyes adatait összegyűjtjük és feldolgozzuk az alábbi célokra:
         {purposes}.'
     imprint:
         name: 'impresszum'
