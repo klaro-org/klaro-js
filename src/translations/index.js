@@ -18,6 +18,7 @@ import hr from './hr.yml';
 import it from './it.yml';
 import nl from './nl.yml';
 import no from './no.yml';
+import oc from './oc.yml';
 import ro from './ro.yml';
 import sr from './sr.yml';
 import sr_cyrl from './sr_cyrl.yml';
@@ -44,6 +45,7 @@ export default {
     it,
     nl,
     no,
+    oc,
     ro,
     sr,
     sr_cyrl,
