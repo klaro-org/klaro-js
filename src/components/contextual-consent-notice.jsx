@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { asTitle } from '../utils/strings';
 import { t as tt } from '../utils/i18n';
 
-const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => {
+const ContextualConsentNotice = ({manager, style, config, t, lang, service, id}) => {
 
     const [updateCnt, setUpdateCnt] = useState(0)
 
@@ -35,6 +35,7 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
     })
 
     const title = tt(service.translations || {}, lang, 'zz', ['!', 'title']) || t(['!', service.name, 'title?']) || asTitle(service.name)
+    const description = tt(config.translations || {}, lang, 'zz', ['!', service.name, 'contextualDescriptions', id]) || tt(config.translations || {}, lang, 'zz', ['!', service.name, 'contextualDescriptions', 'default']) || t(['contextualConsent','description'], {title: title})
 
     return <div
                 lang={lang}
@@ -45,7 +46,7 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
             >
             <div className={"context-notice"+(style !== undefined ? ` cm-${style}` : "")}>
             <p>
-                {t(['contextualConsent','description'], {title: title})}
+                {description}
             </p>
             <p className="cm-buttons">
                 <button

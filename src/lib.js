@@ -114,6 +114,7 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
         const consent = manager.getConsent(service.name) && manager.confirmed
         const elements = document.querySelectorAll("[data-name='"+service.name+"']")
         for(const element of elements){
+            const dataId = element.getAttribute("data-id")
             const ds = dataset(element)
             if (ds.type === 'placeholder')
                 continue
@@ -139,6 +140,7 @@ export function renderContextualConsentNotices(manager, tt, lang, config, opts){
                         manager={manager}
                         config={config}
                         service={service}
+                        id={dataId}
                         style={ds.style}
                         testing={opts.testing}
                         api={opts.api} />, placeholderElement)

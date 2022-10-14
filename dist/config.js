@@ -123,6 +123,11 @@ var klaroConfig = {
             externalTracker: {
                 description: 'Beispiel für ein externes Tracking Skript',
             },
+            recaptcha: {
+                contextualDescriptions: {
+                    default: 'Möchten Sie Recaptcha laden, um das Kontaktformular anzuzeigen?',
+                }
+            },
             adsense: {
                 description: 'Anzeigen von Werbeanzeigen (Beispiel)',
                 title: 'Google AdSense Werbezeugs',
@@ -166,6 +171,11 @@ var klaroConfig = {
             },
             externalTracker: {
                 description: 'Example of an external tracking script',
+            },
+            recaptcha: {
+                contextualDescriptions: {
+                    default: 'Do you want to load Recaptcha to view the contact form?',
+                }
             },
             adsense: {
                 description: 'Displaying of advertisements (just an example)',
@@ -302,6 +312,11 @@ var klaroConfig = {
             title: 'Intercom',
             default: true,
             purposes: ['livechat'],
+        },
+        {
+            name: 'recaptcha',
+            title: 'Recaptcha',
+            purposes: ['security'],
         },
         {
             name: 'mouseflow',
