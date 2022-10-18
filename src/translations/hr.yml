@@ -15,11 +15,12 @@ service:
         description: Ova aplikacija je uvijek obavezna
         title: (obavezna)
 close: Zatvori
-consentModal:
-    description: Ovdje možete vidjeti i podesiti informacije koje prikupljamo o Vama.
+links:
     privacyPolicy:
         name: pravila privatnosti
         text: Za više informacije pročitajte naša {privacyPolicy}.
+consentModal:
+    description: Ovdje možete vidjeti i podesiti informacije koje prikupljamo o Vama. {privacyPolicyText}
     title: Informacije koje prikupljamo
 consentNotice:
     changeDescription:
@@ -32,8 +33,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Saznajte više
-    privacyPolicy:
-        name: pravila privatnosti
 decline: Odbij
 ok: U redu
 poweredBy: Pokreće Klaro!

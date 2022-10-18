@@ -2,13 +2,14 @@
 acceptAll: Accepter tout
 acceptSelected: Accepter sélectionné
 close: Fermer
-consentModal:
-  description: Vous pouvez ici évaluer et personnaliser les services que nous aimerions
-    utiliser sur ce site. C'est vous qui décidez ! Activez ou désactivez les services
-    comme bon vous semble.
+links:
   privacyPolicy:
     name: politique de confidentialité
     text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
+consentModal:
+  description: Vous pouvez ici évaluer et personnaliser les services que nous aimerions
+    utiliser sur ce site. C'est vous qui décidez ! Activez ou désactivez les services
+    comme bon vous semble. {privacyPolicyText}
   title: Services que nous souhaitons utiliser
 consentNotice:
   changeDescription: Il y a eu des changements depuis votre dernière visite, veuillez
@@ -18,8 +19,6 @@ consentNotice:
   imprint:
     name: mentions légales
   learnMore: Laissez-moi choisir
-  privacyPolicy:
-    name: politique de confidentialité
   testing: Mode test !
 contextualConsent:
   acceptAlways: Toujours
@@ -28,9 +27,6 @@ contextualConsent:
 decline: Je refuse
 ok: C'est bon.
 poweredBy: Réalisé avec Klaro !
-privacyPolicy:
-  name: politique de confidentialité
-  text: Pour en savoir plus, veuillez lire notre {privacyPolicy}.
 purposeItem:
   service: service
   services: services

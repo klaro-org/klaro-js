@@ -14,11 +14,12 @@ service:
         title: (alltid påkrevd)
 close: ''
 close_en: Close
-consentModal:
-    description: Her kan du se og velge hvilken informasjon vi samler inn om deg.
+links:
     privacyPolicy:
         name: personvernerklæring
         text: For å lære mer, vennligst les vår {privacyPolicy}.
+consentModal:
+    description: Her kan du se og velge hvilken informasjon vi samler inn om deg. {privacyPolicyText}
     title: Informasjon vi samler inn
 consentNotice:
     changeDescription:
@@ -31,8 +32,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Lær mer
-    privacyPolicy:
-        name: personvernerklæring
 decline: Avslå
 ok: OK
 poweredBy: Laget med Klaro!

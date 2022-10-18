@@ -2,9 +2,13 @@
 acceptAll: Tot acceptar
 acceptSelected: Acceptar çò seleccionat
 close: Tampar
+links:
+  privacyPolicy:
+    name: politica de confidencialitat
+    text: Per ne saber mai, vejatz nòstra {privacyPolicy}.
 consentModal:
   description: Aquí podètz mesurar e personalizar los servicis que volriam utilizar
-    sus aqueste site web. Avètz lo darrièr mot ! Activatz o desactivatz segon vòstra causida.
+    sus aqueste site web. Avètz lo darrièr mot ! Activatz o desactivatz segon vòstra causida. {privacyPolicyText}
   title: Servicis que volriam utilizar
 consentNotice:
   changeDescription: I aguèt de modificacions dempuèi vòstra darrièra visita, mercés de repassar vòstre consentiment.
@@ -19,9 +23,6 @@ contextualConsent:
 decline: Refusi
 ok: Es bon
 poweredBy: Realizat amb Klaro !
-privacyPolicy:
-  name: politica de confidencialitat
-  text: Per ne saber mai, vejatz nòstra {privacyPolicy}.
 purposeItem:
   service: servici
   services: servicis

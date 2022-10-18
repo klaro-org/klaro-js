@@ -15,11 +15,12 @@ service:
         description: Ez az alkalmazás mindig szükséges
         title: (mindig szükséges)
 close: Elvet
-consentModal:
-    description: Itt láthatja és testreszabhatja az önről gyűjtött információkat.
+links:
     privacyPolicy:
         name: adatvédelmi irányelveinket
         text: További információért kérjük, olvassa el az {privacyPolicy}.
+consentModal:
+    description: Itt láthatja és testreszabhatja az önről gyűjtött információkat. {privacyPolicyText}
     title: Információk, amiket gyűjtünk
 consentNotice:
     changeDescription:
@@ -32,8 +33,6 @@ consentNotice:
         name: 'impresszum'
         name_en: imprint
     learnMore: Tudjon meg többet
-    privacyPolicy:
-        name: adatvédelmi irányelveinket
 contextualConsent:
   acceptAlways: Mindig
   acceptOnce: Igen

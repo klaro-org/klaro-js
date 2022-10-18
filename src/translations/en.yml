@@ -2,10 +2,14 @@
 acceptAll: Accept all
 acceptSelected: Accept selected
 close: Close
+links:
+  privacyPolicy:
+    name: privacy policy
+    text: To learn more, please read our {privacyPolicy}.
 consentModal:
     description:
         Here you can assess and customize the services that we'd like to use
-        on this website. You're in charge! Enable or disable services as you see fit.
+        on this website. You're in charge! Enable or disable services as you see fit. {privacyPolicyText}
     title: Services we would like to use
 consentNotice:
     changeDescription: There were changes since your last visit, please renew your consent.
@@ -22,9 +26,6 @@ contextualConsent:
 decline: I decline
 ok: That's ok
 poweredBy: Realized with Klaro!
-privacyPolicy:
-    name: privacy policy
-    text: To learn more, please read our {privacyPolicy}.
 purposeItem:
     service: service
     services: services

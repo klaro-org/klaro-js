@@ -13,13 +13,14 @@ service:
         description: Это обязательное приложение
         title: (всегда обязательный)
 close: Закрыть
-consentModal:
-    description:
-        Здесь вы можете просмотреть и настроить, какую информацию о вас мы
-        храним.
+links:
     privacyPolicy:
         name: Соглашение
         text: Чтобы узнать больше, пожалуйста, прочитайте наше {privacyPolicy}.
+consentModal:
+    description:
+        Здесь вы можете просмотреть и настроить, какую информацию о вас мы
+        храним. {privacyPolicyText}
     title: Информация, которую мы сохраняем
 consentNotice:
     changeDescription:
@@ -32,8 +33,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Настроить
-    privacyPolicy:
-        name: политика конфиденциальности
 decline: Отклонить
 ok: Принять
 poweredBy: Работает на Кларо!

@@ -2,11 +2,12 @@
 acceptAll: 照单全收
 acceptSelected: 接受选择
 close: 密切
-consentModal:
-  description: 在这里，您可以评估和定制我们希望在本网站上使用的服务。您是负责人！您可以根据自己的需要启用或禁用服务。启用或禁用您认为合适的服务。
+links:
   privacyPolicy:
     name: 隐私政策
     text: 要了解更多，请阅读我们的{privacyPolicy} 。
+consentModal:
+  description: 在这里，您可以评估和定制我们希望在本网站上使用的服务。您是负责人！您可以根据自己的需要启用或禁用服务。启用或禁用您认为合适的服务。{privacyPolicyText}
   title: 我们想使用的服务
 consentNotice:
   changeDescription: 自上次访问后有变化，请更新您的同意。
@@ -14,8 +15,6 @@ consentNotice:
   imprint:
     name: 印记
   learnMore: 让我来选
-  privacyPolicy:
-    name: 隐私政策
   testing: 测试模式！
 contextualConsent:
   acceptAlways: 总是
@@ -24,9 +23,6 @@ contextualConsent:
 decline: 我拒绝
 ok: 没事的
 poweredBy: 与Klaro一起实现!
-privacyPolicy:
-  name: 隐私政策
-  text: 要了解更多，请阅读我们的{privacyPolicy} 。
 purposeItem:
   service: 服务
   services: 服务

@@ -16,13 +16,14 @@ service:
         title: (întotdeauna necesar)
 close: ''
 close_en: Close
-consentModal:
-    description:
-        Aici puteți vedea și personaliza informațiile pe care le colectăm despre
-        dvs.
+links:
     privacyPolicy:
         name: politica privacy
         text: Pentru a afla mai multe, vă rugăm să citiți {privacyPolicy}.
+consentModal:
+    description:
+        Aici puteți vedea și personaliza informațiile pe care le colectăm despre
+        dvs. {privacyPolicyText}
     title: Informațiile pe care le colectăm
 consentNotice:
     changeDescription:
@@ -35,8 +36,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Află mai multe
-    privacyPolicy:
-        name: politica privacy
 decline: Renunță
 ok: OK
 poweredBy: Realizat de Klaro!

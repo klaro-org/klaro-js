@@ -15,11 +15,12 @@ service:
         description: Bu uygulama her zaman gerekli
         title: (her zaman gerekli)
 close: Kapat
-consentModal:
-    description: Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz.
+links:
     privacyPolicy:
         name: Gizlilik Politikası
         text: Daha fazlası için lütfen {privacyPolicy} sayfamızı okuyun.
+consentModal:
+    description: Hakkınızda topladığımız bilgileri burada görebilir ve özelleştirebilirsiniz. {privacyPolicyText}
     title: Sakladığımız bilgiler
 consentNotice:
     changeDescription:
@@ -30,8 +31,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Daha fazla bilgi
-    privacyPolicy:
-        name: Gizlilik Politikası
 decline: Reddet
 ok: Tamam
 poweredBy: Klaro tarafından geliştirildi!

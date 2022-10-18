@@ -2,14 +2,15 @@
 acceptAll: Alle akzeptieren
 acceptSelected: Ausgewählte akzeptieren
 close: Schließen
+links:
+  privacyPolicy:
+    name: Datenschutzerklärung
+    text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
 consentModal:
   description:
     Hier können Sie die Dienste, die wir auf dieser Website nutzen möchten,
     bewerten und anpassen. Sie haben das Sagen! Aktivieren oder deaktivieren Sie die
-    Dienste, wie Sie es für richtig halten.
-  privacyPolicy:
-    name: Datenschutzerklärung
-    text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
+    Dienste, wie Sie es für richtig halten. {privacyPolicyText}
   title: Dienste, die wir nutzen möchten
 consentNotice:
   changeDescription:
@@ -22,8 +23,6 @@ consentNotice:
   imprint:
     name: Impressum
   learnMore: Lassen Sie mich wählen
-  privacyPolicy:
-    name: Datenschutzerklärung
   testing: Testmodus!
 contextualConsent:
   acceptAlways: Immer

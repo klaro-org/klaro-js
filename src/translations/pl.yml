@@ -2,11 +2,12 @@
 acceptAll: Zaakceptuj wszystkie
 acceptSelected: Zaakceptuj wybrane
 close: Zamknij
-consentModal:
-  description: Tutaj mogą Państwo ocenić i dostosować usługi, które chcielibyśmy wykorzystać na tej stronie. Włączaj lub wyłączaj usługi według własnego uznania.
+links:
   privacyPolicy:
     name: polityką prywatności
     text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
+consentModal:
+  description: Tutaj mogą Państwo ocenić i dostosować usługi, które chcielibyśmy wykorzystać na tej stronie. Włączaj lub wyłączaj usługi według własnego uznania. {privacyPolicyText}
   title: Usługi, z których chcielibyśmy skorzystać
 consentNotice:
   changeDescription: Od Twojej ostatniej wizyty nastąpiły zmiany, prosimy o odnowienie
@@ -16,8 +17,6 @@ consentNotice:
   imprint:
     name: Imprint
   learnMore: Pozwól mi wybrać
-  privacyPolicy:
-    name: polityka prywatności
   testing: Tryb testowy!
 contextualConsent:
   acceptAlways: Zawsze
@@ -26,9 +25,6 @@ contextualConsent:
 decline: Odmawiam
 ok: Ok
 poweredBy: Technologia dostarczona przez Klaro
-privacyPolicy:
-  name: polityka prywatności
-  text: Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}.
 purposeItem:
   service: usługa
   services: usługi

@@ -1,6 +1,6 @@
 import React from 'react';
 import ConsentModal from './consent-modal';
-import { getPurposes } from '../utils/config';
+import { getLinks, getPurposes } from '../utils/config';
 import Text from './text';
 import { asTitle } from '../utils/strings';
 
@@ -89,20 +89,6 @@ export default class ConsentNotice extends React.Component {
                 ...purposesTranslations.slice(0, -2),
                 purposesTranslations.slice(-2).join(' & '),
             ].join(', ');
-        let ppUrl;
-        // to do: deprecate and remove this
-        if (config.privacyPolicy !== undefined) {
-            if (typeof config.privacyPolicy === 'string')
-                ppUrl = config.privacyPolicy;
-            else if (typeof config.privacyPolicy === 'object') {
-                ppUrl =
-                    config.privacyPolicy[lang] || config.privacyPolicy.default;
-            }
-        } else {
-            // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'], { lang: lang });
-            if (ppUrl !== undefined) ppUrl = ppUrl.join('');
-        }
 
         const showModal = (e) => {
             e.preventDefault();
@@ -190,15 +176,6 @@ export default class ConsentNotice extends React.Component {
                 </a>
             );
 
-        let ppLink;
-
-        if (ppUrl !== undefined)
-            ppLink = (
-                <a key="ppLink" href={ppUrl}>
-                    {t(['privacyPolicy', 'name'])}
-                </a>
-            );
-
         if (
             modal ||
             (manager.confirmed && !testing) ||
@@ -248,8 +225,8 @@ export default class ConsentNotice extends React.Component {
                                 purposes: (
                                     <strong key="strong">{purposesText}</strong>
                                 ),
-                                privacyPolicy: ppLink,
                                 learnMoreLink: learnMoreLink(),
+                                ...getLinks(config, lang, t)
                             })}
                         />
                     </p>

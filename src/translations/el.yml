@@ -17,13 +17,14 @@ service:
         description: Δεν γίνεται να λειτουργήσει σωστά η εφαρμογή χωρίς αυτό
         title: (απαιτούμενο)
 close: Κλείσιμο
-consentModal:
-    description:
-        Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε
-        σχετικά με εσένα.
+links:
     privacyPolicy:
         name: Πολιτική Απορρήτου
         text: Για περισσότερες πληροφορίες, παρακαλώ διαβάστε την {privacyPolicy}.
+consentModal:
+    description:
+        Εδώ μπορείς να δεις και να ρυθμίσεις τις πληροφορίες που συλλέγουμε
+        σχετικά με εσένα. {privacyPolicyText}
     title: Πληροφορίες που συλλέγουμε
 consentNotice:
     changeDescription:
@@ -36,8 +37,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Περισσότερα
-    privacyPolicy:
-        name: Πολιτική Απορρήτου
 decline: Απόρριπτω
 ok: OK
 poweredBy: Υποστηρίζεται από το Klaro!

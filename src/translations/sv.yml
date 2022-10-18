@@ -15,11 +15,12 @@ service:
         description: Den här applikationen krävs alltid
         title: (Krävs alltid)
 close: Stäng
-consentModal:
-    description: Här kan du se och anpassa vilken information vi samlar om dig.
+links:
     privacyPolicy:
         name: Integritetspolicy
-        text: För att veta mer, läs vår {privacyPolicy}.
+        text: För att veta mer, läs vår {privacyPolicy}
+consentModal:
+    description: Här kan du se och anpassa vilken information vi samlar om dig. {privacyPolicyText}.
     title: Information som vi samlar
 consentNotice:
     changeDescription:
@@ -30,8 +31,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Läs mer
-    privacyPolicy:
-        name: Integritetspolicy
 decline: Avböj
 ok: OK
 poweredBy: Körs på Klaro!

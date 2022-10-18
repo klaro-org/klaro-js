@@ -13,13 +13,14 @@ service:
         description: Aquesta aplicació es necessita sempre
         title: (necessària)
 close: Tanca
-consentModal:
-    description:
-        Aquí podeu veure i personalitzar la informació que recopilem sobre
-        vós.
+links:
     privacyPolicy:
         name: política de privadesa
         text: Per a més informació, consulteu la nostra {privacyPolicy}.
+consentModal:
+    description:
+        Aquí podeu veure i personalitzar la informació que recopilem sobre
+        vós. {privacyPolicyText}
     title: Informació que recopilem
 consentNotice:
     changeDescription:
@@ -31,8 +32,6 @@ consentNotice:
     imprint:
         name: Empremta
     learnMore: Saber-ne més
-    privacyPolicy:
-        name: política de privadesa
 decline: Rebutja
 ok: Accepta
 poweredBy: Funciona amb Klaro!

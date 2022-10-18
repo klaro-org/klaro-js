@@ -1,11 +1,12 @@
 acceptAll: Aceptar todas
 acceptSelected: Aceptar seleccionadas
 close: Pechar
-consentModal:
-  description: Aquí pode avaliar e personalizar os servizos que nos gustaría utilizar neste sitio web. ¡Vostede decide! Habilite ou deshabilite os servicios como lle conveña.
+links:
   privacyPolicy:
     name: política de privacidade
     text: Para saber máis, por favor lea a nosa {privacyPolicy}.
+consentModal:
+  description: Aquí pode avaliar e personalizar os servizos que nos gustaría utilizar neste sitio web. ¡Vostede decide! Habilite ou deshabilite os servicios como lle conveña. {privacyPolicyText}
   title: Servizos que nos gustaría utilizar
 consentNotice:
   changeDescription: Houbo cambios nas cookies dende a súa última visita. Debe renovar o seu consentimento.
@@ -14,15 +15,10 @@ consentNotice:
   imprint:
     name: Imprimir
   learnMore: Quero elixir
-  privacyPolicy:
-    name: política de privacidade
   testing: ¡Modo de proba!
 decline: Descartar todas
 ok: De acordo
 poweredBy: ¡Realizado con Klaro!
-privacyPolicy:
-  name: política de privacidade
-  text: Para saber máis, por favor lea a nosa {privacyPolicy}.
 purposeItem:
   service: servizo
   services: servizos

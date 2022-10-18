@@ -2,13 +2,14 @@
 acceptAll: Aceptar todas
 acceptSelected: Aceptar seleccionadas
 close: Cerrar
-consentModal:
-  description: Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar
-    en este sitio web. ¡Usted decide! Habilite o deshabilite los servicios como considere
-    oportuno.
+links:
   privacyPolicy:
     name: política de privacidad
     text: Para saber más, por favor lea nuestra {privacyPolicy}.
+consentModal:
+  description: Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar
+    en este sitio web. ¡Usted decide! Habilite o deshabilite los servicios como considere
+    oportuno. {privacyPolicyText}
   title: Servicios que nos gustaría utilizar
 consentNotice:
   changeDescription: Ha habido cambios en las cookies desde su última visita. Debe
@@ -18,8 +19,6 @@ consentNotice:
   imprint:
     name: Imprimir
   learnMore: Quiero elegir
-  privacyPolicy:
-    name: política de privacidad
   testing: ¡Modo de prueba!
 contextualConsent:
   acceptAlways: Siempre
@@ -28,9 +27,6 @@ contextualConsent:
 decline: Descartar todas
 ok: De acuerdo
 poweredBy: ¡Realizado con Klaro!
-privacyPolicy:
-  name: política de privacidad
-  text: Para saber más, por favor lea nuestra {privacyPolicy}.
 purposeItem:
   service: servicio
   services: servicios

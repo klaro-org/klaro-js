@@ -17,11 +17,12 @@ service:
         description: Ova aplikacija je uvek neophodna
         title: (neophodna)
 close: Zatvori
-consentModal:
-    description: Ovde možete videti i podesiti informacije koje prikupljamo o Vama.
+links:
     privacyPolicy:
         name: politiku privatnosti
         text: Za više informacije pročitajte našu {privacyPolicy}.
+consentModal:
+    description: Ovde možete videti i podesiti informacije koje prikupljamo o Vama. {privacyPolicyText}
     title: Informacije koje prikupljamo
 consentNotice:
     changeDescription:
@@ -32,8 +33,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Saznajte više
-    privacyPolicy:
-        name: politiku privatnosti
 decline: Odbij
 ok: U redu
 poweredBy: Pokreće Klaro!

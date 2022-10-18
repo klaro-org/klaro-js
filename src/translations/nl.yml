@@ -2,13 +2,14 @@
 acceptAll: Accepteer alle
 acceptSelected: Geselecteerde
 close: Sluit
-consentModal:
-  description: Hier kunt u de diensten die wij op deze website willen gebruiken beoordelen
-    en aanpassen. U heeft de leiding! Schakel de diensten naar eigen inzicht in of
-    uit.
+links:
   privacyPolicy:
     name: privacybeleid
     text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
+consentModal:
+  description: Hier kunt u de diensten die wij op deze website willen gebruiken beoordelen
+    en aanpassen. U heeft de leiding! Schakel de diensten naar eigen inzicht in of
+    uit. {privacyPolicyText}
   title: Diensten die we graag willen gebruiken
 consentNotice:
   changeDescription: Er waren veranderingen sinds uw laatste bezoek, gelieve uw toestemming
@@ -18,8 +19,6 @@ consentNotice:
   imprint:
     name: impressum
   learnMore: Laat me kiezen
-  privacyPolicy:
-    name: privacybeleid
   testing: Testmodus!
 contextualConsent:
   acceptAlways: Altijd
@@ -28,9 +27,6 @@ contextualConsent:
 decline: Ik weiger
 ok: Dat is oké
 poweredBy: Gerealiseerd met Klaro!
-privacyPolicy:
-  name: privacybeleid
-  text: Voor meer informatie kunt u ons {privacyPolicy} lezen.
 purposeItem:
   service: service
   services: diensten

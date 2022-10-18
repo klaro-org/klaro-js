@@ -1,9 +1,10 @@
-privacyPolicy:
-    name: zásady ochrany soukromí
-    text: Pro další informace si přečtete naše <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
+links:
+    privacyPolicy:
+        name: zásady ochrany soukromí
+        text: Pro další informace si přečtete naše <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
 consentModal:
     title: Služby, které bychom rádi využili
-    description: Zde můžete posoudit a přizpůsobit služby, které bychom rádi na tomto webu používali. Máte to pod kontrolou! Povolte nebo zakažte služby, jak uznáte za vhodné.
+    description: Zde můžete posoudit a přizpůsobit služby, které bychom rádi na tomto webu používali. Máte to pod kontrolou! Povolte nebo zakažte služby, jak uznáte za vhodné. {privacyPolicyText}
 consentNotice:
     testing: Testing mode!
     changeDescription: Od vaší poslední návštěvy došlo ke změnám, obnovte prosím svůj souhlas.

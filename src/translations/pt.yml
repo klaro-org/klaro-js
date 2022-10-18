@@ -2,13 +2,14 @@
 acceptAll: Aceitar todos
 acceptSelected: Aceitar selecionados
 close: Fechar
-consentModal:
-  description: Aqui você pode avaliar e personalizar os serviços que gostaríamos
-    de usar neste website. Você está no comando! Habilite ou desabilite os serviços
-    como julgar conveniente.
+links:
   privacyPolicy:
     name: política de privacidade
     text: Para saber mais, por favor, leia nossa {privacyPolicy}.
+consentModal:
+  description: Aqui você pode avaliar e personalizar os serviços que gostaríamos
+    de usar neste website. Você está no comando! Habilite ou desabilite os serviços
+    como julgar conveniente. {privacyPolicyText}
   title: Serviços que gostaríamos de utilizar
 consentNotice:
   changeDescription: Houve mudanças desde sua última visita, queira renovar seu consentimento.
@@ -17,8 +18,6 @@ consentNotice:
   imprint:
     name: imprimir
   learnMore: Deixe-me escolher
-  privacyPolicy:
-    name: política de privacidade
   testing: Modo de teste!
 contextualConsent:
   acceptAlways: Sempre
@@ -27,9 +26,6 @@ contextualConsent:
 decline: Recusar
 ok: Aceito.
 poweredBy: Realizado com Klaro!
-privacyPolicy:
-  name: política de privacidade
-  text: Para saber mais, por favor, leia nossa {privacyPolicy}.
 purposeItem:
   service: serviço
   services: serviços

@@ -15,11 +15,12 @@ service:
         description: Sivusto vaatii tämän aina
         title: (vaaditaan)
 close: Sulje
-consentModal:
-    description: Voit tarkastella ja muokata sinusta keräämiämme tietoja.
+links:
     privacyPolicy:
         name: tietosuojasivultamme
         text: Voit lukea lisätietoja {privacyPolicy}.
+consentModal:
+    description: Voit tarkastella ja muokata sinusta keräämiämme tietoja. {privacyPolicyText}
     title: Keräämämme tiedot
 consentNotice:
     changeDescription:
@@ -32,8 +33,6 @@ consentNotice:
         name: ''
         name_en: imprint
     learnMore: Lue lisää
-    privacyPolicy:
-        name: tietosuojasivultamme
 decline: Hylkää
 ok: Hyväksy
 poweredBy: Palvelun tarjoaa Klaro!

@@ -3,6 +3,7 @@ import { Close } from './icons';
 import Services from './services';
 import Purposes from './purposes';
 import Text from './text';
+import { getLinks } from '../utils/config';
 
 export default class ConsentModal extends React.Component {
     componentDidMount() {
@@ -81,29 +82,6 @@ export default class ConsentModal extends React.Component {
             );
         }
 
-        let ppUrl;
-        // to do: deprecate and remove this (also, this is duplicated from the notice)
-        if (config.privacyPolicy !== undefined) {
-            if (typeof config.privacyPolicy === 'string')
-                ppUrl = config.privacyPolicy;
-            else if (typeof config.privacyPolicy === 'object') {
-                ppUrl =
-                    config.privacyPolicy[lang] || config.privacyPolicy.default;
-            }
-        } else {
-            // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'], { lang: lang });
-            if (ppUrl !== undefined) ppUrl = ppUrl.join('');
-        }
-
-        let ppLink;
-        if (ppUrl !== undefined)
-            ppLink = (
-                <a key="ppLink" href={ppUrl} target="_blank" rel="noopener">
-                    {t(['privacyPolicy', 'name'])}
-                </a>
-            );
-
         let servicesOrPurposes;
 
         if (groupByPurpose)
@@ -128,15 +106,9 @@ export default class ConsentModal extends React.Component {
                     <p>
                         <Text
                             config={config}
-                            text={[t(['consentModal', 'description'])].concat(
-                                (ppLink &&
-                                    [' '].concat(
-                                        t(['privacyPolicy', 'text'], {
-                                            privacyPolicy: ppLink,
-                                        })
-                                    )) ||
-                                    []
-                            )}
+                            text={t(['consentModal', 'description'], {
+                                ...getLinks(config, lang, t)
+                            })}
                         />
                     </p>
                 </div>
