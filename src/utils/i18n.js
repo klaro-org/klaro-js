@@ -50,7 +50,7 @@ export function language(config) {
     return result[1];
 }
 
-function hget(d, key, defaultValue) {
+function hget(d, key, defaultValue, type = 'string') {
     let kl = key;
     if (!Array.isArray(kl)) kl = [kl];
     let cv = d;
@@ -61,7 +61,7 @@ function hget(d, key, defaultValue) {
             let cvn;
             if (cv instanceof Map) cvn = cv.get(kle);
             else cvn = cv[kle];
-            if (cvn !== undefined && typeof cvn === "string")
+            if (cvn !== undefined && typeof cvn === type)
                 // we only assign it if the value exists
                 cv = cvn;
         } else {
@@ -69,9 +69,9 @@ function hget(d, key, defaultValue) {
             else cv = cv[kl[i]];
         }
     }
-    if (cv === undefined || !(typeof cv === "string")) return defaultValue;
+    if (cv === undefined || !(typeof cv === type)) return defaultValue;
     // we convert empty strings to 'undefined'
-    if (cv === '') return undefined;
+    if (type === 'string' && cv === '') return undefined;
     return cv;
 }
 
@@ -83,6 +83,16 @@ export function t(trans, lang, fallbackLang, key, ...params) {
         returnUndefined = true;
     }
     if (!Array.isArray(kl)) kl = [kl];
+    if (kl[0] === '#') {
+        kl = kl.slice(1);
+        let subKeys = [];
+        let fallbackMap, mainMap;
+        if (fallbackLang !== undefined) fallbackMap = hget(trans, [fallbackLang, ...kl], undefined, 'object');
+        if (fallbackMap !== undefined && fallbackMap instanceof Map) subKeys = Array.from(fallbackMap.keys());
+        mainMap = hget(trans, [lang, ...kl], undefined, 'object');
+        if (mainMap !== undefined && mainMap instanceof Map) subKeys = [...subKeys, ...Array.from(mainMap.keys())];
+        return subKeys.reduce((a, v) => { if(!a.includes(v)) a.push(v); return a; } ,[]);
+    }
     let value = hget(trans, [lang, ...kl]);
     // if a fallback language is defined, we try to look up the translation for
     // that language instead...

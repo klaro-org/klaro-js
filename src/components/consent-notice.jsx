@@ -1,6 +1,6 @@
 import React from 'react';
 import ConsentModal from './consent-modal';
-import { getLinks, getPurposes } from '../utils/config';
+import {getLinks, getPurposes} from '../utils/config';
 import Text from './text';
 import { asTitle } from '../utils/strings';
 
@@ -226,7 +226,7 @@ export default class ConsentNotice extends React.Component {
                                     <strong key="strong">{purposesText}</strong>
                                 ),
                                 learnMoreLink: learnMoreLink(),
-                                ...getLinks(config, lang, t)
+                                ...getLinks(t)
                             })}
                         />
                     </p>

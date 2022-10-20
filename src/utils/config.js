@@ -10,15 +10,26 @@ export function getPurposes(config) {
     return Array.from(purposes);
 }
 
-export function getLinks(config, lang, t) {
-    if (undefined === config.translations[lang].links) return {};
-    return Object.keys(config.translations[lang].links).reduce((a, key) => {
-        const linkUrl = t(['links', key, 'url']);
-        const linkName= t(['links', key, 'name']);
+export function getLinks(t) {
+    // First block is for retrocompatibility.
+    if (undefined !== t(['!', 'privacyPolicyUrl'])) {
+        const linkUrl = t(['!', 'privacyPolicyUrl']);
+        const linkName = t(['!', 'consentModal', 'privacyPolicy', 'name']) || t(['!', 'consentNotice', 'privacyPolicy', 'name']) || t(['!', 'privacyPolicy', 'name']) || t(['!', 'links', 'privacyPolicy', 'name'], links);
+        if (undefined === linkUrl || undefined === linkName) return {};
+        let links = {privacyPolicy: (<a key='privacyPolicy' href={linkUrl}>{linkName}</a>)};
+        const linkText = t(['!', 'consentModal', 'privacyPolicy', 'text'], links) || t(['!', 'privacyPolicy', 'text'], links) || t(['!', 'links', 'privacyPolicy', 'text'], links);
+        if (undefined !== linkText) {
+            links['privacyPolicyText'] = (<Fragment key='privacyPolicyText'>{linkText}</Fragment>)
+        }
+        return links;
+    }
+    return t(['#', 'links']).reduce((a, key) => {
+        const linkUrl = t(['!', 'links', key, 'url']);
+        const linkName= t(['!', 'links', key, 'name']);
         if (undefined === linkUrl) return a;
         if (undefined === linkName) return a;
         a[key] = (<a key={key} href={linkUrl}>{linkName}</a>);
-        const linkText = t(['links', key, 'text'], a);
+        const linkText = t(['!', 'links', key, 'text'], a);
         if (undefined === linkText) return a;
         a[key + 'Text'] = (<Fragment key={key + 'Text'}>{linkText}</Fragment>);
         return a;

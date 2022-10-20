@@ -3,11 +3,22 @@ import { Close } from './icons';
 import Services from './services';
 import Purposes from './purposes';
 import Text from './text';
-import { getLinks } from '../utils/config';
+import {getLinks} from "../utils/config";
 
 export default class ConsentModal extends React.Component {
     componentDidMount() {
         this.consentModalRef.focus();
+    }
+
+    getDescription(t) {
+        const replacements = getLinks(t);
+        let description = t(['consentModal', 'description'], replacements);
+        // Then we try to detect old configurations to add the cookies policy text to the description.
+        if (undefined === t(['!', 'privacyPolicyUrl'])) return description;
+        console.warn('privacyPolicyUrl is deprecated, please use links in your configuration');
+        if (t(['consentModal', 'description']).includes('{privacyPolicyText}')) return description;
+        if (undefined === replacements.privacyPolicyText) return description;
+        return description.concat(replacements.privacyPolicyText);
     }
 
     render() {
@@ -106,9 +117,7 @@ export default class ConsentModal extends React.Component {
                     <p>
                         <Text
                             config={config}
-                            text={t(['consentModal', 'description'], {
-                                ...getLinks(config, lang, t)
-                            })}
+                            text={this.getDescription(t)}
                         />
                     </p>
                 </div>
