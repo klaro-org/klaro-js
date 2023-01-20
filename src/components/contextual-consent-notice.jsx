@@ -55,13 +55,19 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
                 >
                     {t(['contextualConsent', 'acceptOnce'])}
                 </button>
-                <button
+                {manager.store.get() !== null ? <button
                     className="cm-btn cm-btn-success-var"
                     type="button"
                     onClick={accept}
                 >
                     {t(['contextualConsent', 'acceptAlways'])}
                 </button>
+                    : '' }
+
+                {manager.store.get() === null && config.openSettingsInContextualMode ? <>
+                    <p>Um diesem Dienst dauerhaft zustimmen zu können, musst du {title} in den <a>Cookie-Einstellungen</a> zustimmen</p>
+                </>
+                    : '' }
             </p>
         </div>
     </div>

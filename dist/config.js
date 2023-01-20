@@ -19,6 +19,9 @@ var klaroConfig = {
         theme: ['light', 'top', 'wide'],
     },
 
+    // If you want to open the settings from contextual consent overlays.
+    openSettingsInContextualMode: true,
+
     // Setting this to true will keep Klaro from automatically loading itself
     // when the page is being loaded.
     noAutoLoad: false,
