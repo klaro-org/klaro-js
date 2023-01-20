@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { asTitle } from '../utils/strings';
 import { t as tt } from '../utils/i18n';
+import { show as showModal } from '../lib'
 
 const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => {
 
@@ -20,6 +21,11 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
         manager.applyConsents(false, true, service.name)
         manager.updateConsent(service.name, false)
     }
+    const handleShowModal = (e) => {
+        e.preventDefault()
+        // force opening consent manager
+        showModal(config, true)
+    };
 
     const { additionalClass, embedded, stylePrefix } = config;
 
@@ -35,7 +41,17 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
     })
 
     const title = tt(service.translations || {}, lang, 'zz', ['!', 'title']) || t(['!', service.name, 'title?']) || asTitle(service.name)
-
+    const modalLink = () => (
+        <a
+            key="modalLink"
+            className="ccn-modal-link"
+            href="#"
+            onClick={handleShowModal}
+        >
+            {t(['contextualConsent', 'modalLinkText'])}
+        </a>
+    )
+    
     return <div
                 lang={lang}
                 className={
@@ -63,15 +79,15 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
                     {t(['contextualConsent', 'acceptAlways'])}
                 </button>
                     : '' }
-
-                {manager.store.get() === null && config.openSettingsInContextualMode ? <>
-                    <p>Um diesem Dienst dauerhaft zustimmen zu können, musst du {title} in den <a>Cookie-Einstellungen</a> zustimmen</p>
-                </>
-                    : '' }
             </p>
+            {manager.store.get() === null && config.showDescriptionEmptyStore ? <>
+                <p className="ccn-description-empty-store">
+                    {t(['contextualConsent','descriptionEmptyStore'], {title: title, link: modalLink()})}
+                </p>
+            </>
+                : '' }
         </div>
     </div>
 }
 
 export default ContextualConsentNotice
-

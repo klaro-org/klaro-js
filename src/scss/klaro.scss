@@ -147,6 +147,12 @@
         p.cm-buttons {
             margin-top: map-get($cm-space, md);
         }
+
+        // contextual consent notice
+        p.ccn-description-empty-store {
+            margin-top: map-get($cm-space, md);
+            @include var(font-size, font-size);
+        }
     }
 
     .cookie-modal {

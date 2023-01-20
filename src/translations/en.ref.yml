@@ -52,3 +52,5 @@ contextualConsent:
   description: Do you want to load external content supplied by {title}?
   acceptOnce: Yes
   acceptAlways: Always
+  descriptionEmptyStore: To agree to this service permanently, you must accept {title} in the {link}.
+  modalLinkText: Consent Manager

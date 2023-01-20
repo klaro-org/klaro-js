@@ -19,6 +19,8 @@ contextualConsent:
     acceptAlways: Always
     acceptOnce: 'Yes'
     description: Do you want to load external content supplied by {title}?
+    descriptionEmptyStore: To agree to this service permanently, you must accept {title} in the {link}.
+    modalLinkText: Consent Manager
 decline: I decline
 ok: That's ok
 poweredBy: Realized with Klaro!
