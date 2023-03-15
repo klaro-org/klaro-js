@@ -1,6 +1,6 @@
-acceptAll: ''
+acceptAll: Hyväksy kaikki
 acceptAll_en: Accept all
-acceptSelected: ''
+acceptSelected: Hyväksy valitut
 acceptSelected_en: Accept selected
 service:
     disableAll:
@@ -38,6 +38,6 @@ decline: Hylkää
 ok: Hyväksy
 poweredBy: Palvelun tarjoaa Klaro!
 purposeItem:
-    service: ''
-    services: ''
+    service: palvelu
+    services: palvelut
 save: Tallenna
