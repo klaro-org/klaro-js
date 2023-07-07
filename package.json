@@ -16,9 +16,9 @@
     "@babel/plugin-proposal-object-rest-spread": "7.17.3",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
+    "autoprefixer": "^10.4.2",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.3",
-    "autoprefixer": "^10.4.2",
     "classnames": "^2.3.1",
     "core-js": "^3.21.1",
     "cross-env": "^7.0.3",
@@ -79,5 +79,9 @@
     "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --host 127.0.0.1 --config webpack.config.js --history-api-fallback",
     "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
   },
-  "version": "0.7.18"
+  "version": "0.7.18",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0"
+  }
 }

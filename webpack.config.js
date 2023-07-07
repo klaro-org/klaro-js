@@ -10,6 +10,10 @@ const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
+new webpack.DefinePlugin({
+    __REACT_DEVTOOLS_GLOBAL_HOOK__: '({ isDisabled: true })',
+});
+
 const BundleAnalyzerPlugin =
     require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -188,6 +192,7 @@ if (APP_DEV_MODE === 'server') {
                     'GET, POST, PUT, DELETE, PATCH, OPTIONS',
                 'Access-Control-Allow-Headers':
                     'X-Requested-With, content-type, Authorization',
+                'Content-Security-Policy': " style-src 'self'",
             },
             allowedHosts: 'all',
         },
