@@ -274,7 +274,12 @@ export default class ConsentManager {
                 // place, as the script won't start correctly otherwise
                 const newElement = document.createElement(element.tagName)
                 for(const attribute of element.attributes){
-                    newElement.setAttribute(attribute.name, attribute.value)
+                    if (attribute.name === 'style') {
+                        const [styleProperty, styleValue] = attribute.value.split(':')
+                        newElement.style[styleProperty.trim()] = styleValue.trim()
+                    } else {
+                        newElement.setAttribute(attribute.name, attribute.value)
+                    }
                 }
                 newElement.innerText = element.innerText
                 newElement.text = element.text
