@@ -11,6 +11,9 @@ var klaroConfig = {
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
 
+    // Shows a small flaoting button to open settings modal.
+    showFloatingButton: true,
+
     // You can override CSS style variables here. For IE11, Klaro will
     // dynamically inject the variables into the CSS. If you still consider
     // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
@@ -253,10 +256,13 @@ var klaroConfig = {
             // An optional callback function that will be called each time
             // the consent state for the service changes (true=consented). Passes
             // the `service` config as the second parameter as well.
-            callback: function(consent, service) {
+            callback: function (consent, service) {
                 // This is an example callback function.
                 console.log(
-                    'User consent for service ' + service.name + ': consent=' + consent
+                    'User consent for service ' +
+                        service.name +
+                        ': consent=' +
+                        consent
                 );
                 // To be used in conjunction with Matomo 'requireCookieConsent' Feature, Matomo 3.14.0 or newer
                 // For further Information see https://matomo.org/faq/new-to-piwik/how-can-i-still-track-a-visitor-without-cookies-even-if-they-decline-the-cookie-consent/
@@ -320,7 +326,7 @@ var klaroConfig = {
             title: 'Surveillance Camera',
             purposes: ['security'],
         },
-/*        {
+        /*        {
             name: 'googleFonts',
             title: 'Google Fonts',
             purposes: ['styling'],
