@@ -22,7 +22,7 @@
             console.debug("External tracker loaded!")
         }
         function showKlaro(config, modal){
-            var element = document.getElementById("klaro").children[0];
+            var element = document.getElementById("klaroRoot").children[0];
             if (element !== undefined){
                 if (element.classList !== undefined)
                     element.classList.add("wiggle")
@@ -116,7 +116,7 @@
 <body>
     <!-- by default, klaro will be appended in the klaro div, or will create one at the end of the body if none exists.
         it's recommended to have klaro at the top of your content so that screen reader users can be notified early -->
-    <div id="klaro"></div>
+    <div id="klaroRoot"></div>
     <img data-hide=true data-title="We're watching you (for your own safety)" class="camera"
         data-src="assets/Surveillance-camera-small.png" data-name="camera" />
     <section class="hero is-info is-medium is-bold">

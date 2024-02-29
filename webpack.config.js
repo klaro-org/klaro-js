@@ -23,12 +23,9 @@ let config = {
     context: SRC_DIR,
     resolve: {
         symlinks: false,
-        extensions: ['.jsx', '.js'],
+        extensions: ['.jsx', '.js', '.tsx', '.ts'],
         modules: [SRC_DIR, 'node_modules'],
-        alias: {
-            react: 'preact/compat',
-            'react-dom': 'preact/compat',
-        },
+        alias: {},
     },
     module: {
         rules: [
@@ -44,6 +41,11 @@ let config = {
                 test: /\.jsx?/,
                 include: [SRC_DIR],
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
         ],
     },
@@ -153,6 +155,7 @@ if (APP_ENV === 'dev') {
     };
 }
 
+
 if (APP_DEV_MODE === 'server') {
     config = {
         ...config,
@@ -260,8 +263,13 @@ const klaroWithoutTranslationsConfig = {
     },
 };
 
-module.exports = [
-    config,
-    klaroWithoutTranslationsConfig,
-    klaroWithTranslationsConfig,
-];
+if (APP_DEV_MODE === 'server') {
+    // we only serve the regular version
+    module.exports = klaroWithTranslationsConfig;
+} else {
+    // we build all variations
+    module.exports = [
+        klaroWithoutTranslationsConfig,
+        klaroWithTranslationsConfig,
+    ];    
+}

@@ -61,7 +61,6 @@ export const ServiceConfig = ({ service, setState, updateServiceName, disabled, 
                 updateConfig={updateServiceConfig}
                 config={service}
                 t={t}
-                key={serviceField.name}
                 field={serviceField}
                 {...(serviceField.controlProps || {})}
             />

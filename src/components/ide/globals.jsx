@@ -13,7 +13,6 @@ export const Globals = ({ config, disabled, controls, updateConfig, t }) => {
                 updateConfig={updateConfig}
                 config={config}
                 t={t}
-                key={globalField.name}
                 field={globalField}
                 {...(globalField.controlProps || {})}
             />
