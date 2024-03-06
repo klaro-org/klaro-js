@@ -38,7 +38,7 @@ let config = {
             },
             {
                 test: /\.yaml|yml$/,
-                use: ['json-loader', 'yaml-loader'],
+                use: ['yaml-loader'],
             },
             {
                 test: /\.jsx?/,
@@ -174,12 +174,13 @@ if (APP_DEV_MODE === 'server') {
                 overlay: true,
             },
 
-            proxy: {
-                '/api': {
-                    target: 'http://localhost:5000/',
-                    secure: false,
-                },
-            },
+            proxy: [
+              {
+                context: ['/api'],
+                target: 'http://localhost:5000',
+                secure: false,
+              },
+            ],
 
             // we enable CORS requests (useful for testing)
             headers: {
