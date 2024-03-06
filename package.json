@@ -26,7 +26,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.0",
     "file-loader": "^6.2.0",
-    "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.8.1",
     "postcss-loader": "^8.1.1",
     "preact": "^10.19.6",
