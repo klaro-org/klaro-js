@@ -18,13 +18,20 @@ const config = {
   },
 };
 
-if (ENV === 'dev'){
+if (ENV === 'dev') {
   console.log("Starting dev server!");
   config.mode = 'development';
   config.devServer = {
-    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
     compress: true,
-    port: 9000
+    port: 9000,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    historyApiFallback: true,
+    client: {
+      overlay: true,
+    }
   }
 }
 
