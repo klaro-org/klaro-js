@@ -1,3 +1,5 @@
+
+@use "sass:map";
 @import './vars';
 
 .cm-language-select,
@@ -11,9 +13,9 @@
     @include var(border-color, light2);
 
     box-shadow: $cm-box-shadow-light-sm;
-    padding: map-get($cm-space, md);
-    margin-bottom: map-get($cm-space, md);
-    
+    padding: map.get($cm-space, md);
+    margin-bottom: map.get($cm-space, md);
+
     ul.cm-languages,
     ul.cm-themes,
     ul.cm-purposes {
@@ -42,8 +44,8 @@
 
 .cm-search-select {
 
-    margin-top: map-get($cm-space, md);
-    margin-bottom: map-get($cm-space, md);
+    margin-top: map.get($cm-space, md);
+    margin-bottom: map.get($cm-space, md);
     display: flex;
 
     input:not(:focus) ~ .cm-candidates {
@@ -73,7 +75,7 @@
             @include var(border-bottom-width, border-width);
             @include var(border-bottom-style, border-style);
             @include var(border-bottom-color, dark3);
-            padding: map-get($cm-space, md);
+            padding: map.get($cm-space, md);
             cursor: pointer;
 
             p {

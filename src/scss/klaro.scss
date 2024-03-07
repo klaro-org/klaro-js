@@ -1,3 +1,4 @@
+@use "sass:map";
 @import './modal';
 @import './vars';
 
@@ -11,13 +12,13 @@
     // buttons use their own font-family setting so we need to override it explicitly...
     button {
         @include var(font-family, font-family);
-        @include var(font-size, font-size);    
+        @include var(font-size, font-size);
     }
 
     &.cm-as-context-notice {
         height: 100%;
-        padding-bottom: map-get($cm-space, md);
-        padding-top: map-get($cm-space, md);
+        padding-bottom: map.get($cm-space, md);
+        padding-top: map.get($cm-space, md);
     }
 
     .cookie-modal,
@@ -115,7 +116,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        padding: map-get($cm-space, md);
+        padding: map.get($cm-space, md);
         height: 100%;
 
         &.cm-dark {
@@ -145,7 +146,7 @@
         }
 
         p.cm-buttons {
-            margin-top: map-get($cm-space, md);
+            margin-top: map.get($cm-space, md);
         }
     }
 

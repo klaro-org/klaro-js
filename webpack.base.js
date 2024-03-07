@@ -90,7 +90,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("node-sass"),
+                    implementation: require.resolve("dart-sass"),
                     sassOptions: {
                         sourceMap: APP_ENV === 'development',
                         outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed',
@@ -125,7 +125,10 @@ if (SEPARATE_CSS) {
             },
             // withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
             {
-                loader: 'sass-loader'
+                loader: 'sass-loader',
+                options: {
+                    implementation: require.resolve("dart-sass"),
+                },
             },
         ],
     });

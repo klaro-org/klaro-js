@@ -79,6 +79,7 @@
   "version": "0.7.18",
   "dependencies": {
     "@babel/eslint-parser": "^7.23.10",
+    "dart-sass": "^1.25.0",
     "webpack-merge": "^5.10.0"
   }
 }
