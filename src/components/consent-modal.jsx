@@ -6,7 +6,9 @@ import Text from './text';
 
 export default class ConsentModal extends React.Component {
     componentDidMount() {
-        this.consentModalRef.focus();
+        if(this.consentModalRef) {
+            this.consentModalRef.focus();
+        }
     }
 
     render() {
@@ -154,7 +156,7 @@ export default class ConsentModal extends React.Component {
                                 href={
                                     config.poweredBy ||
                                     'https://kiprotect.com/klaro'
-                                }   
+                                }
                                 rel="noopener"
                             >
                                 {t(['poweredBy'])}
