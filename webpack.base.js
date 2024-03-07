@@ -4,6 +4,8 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
+const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ANALYZE_BUNDLE = process.env.ANALYZE_BUNDLE !== undefined;
 
@@ -48,7 +50,7 @@ let config = {
     },
     output: {
         path: BUILD_DIR,
-        filename: '[name].js',
+        filename: SEPARATE_CSS ? '[name]-no-css.js' : '[name].js',
         library: '[name]',
         libraryTarget: 'umd',
         publicPath: '',
@@ -61,7 +63,6 @@ if (ANALYZE_BUNDLE) {
 }
 
 const APP_ENV = process.env.APP_ENV || 'development';
-const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 
 if (SEPARATE_CSS) {
