@@ -19,6 +19,11 @@ var klaroConfig = {
         theme: ['light', 'top', 'wide'],
     },
 
+    // You can show a description in contextual consent overlays for store 
+    // being empty. In that case the accept always button is omitted. 
+    // The description contains a link for opening the consent manager. 
+    showDescriptionEmptyStore: true,
+
     // Setting this to true will keep Klaro from automatically loading itself
     // when the page is being loaded.
     noAutoLoad: false,

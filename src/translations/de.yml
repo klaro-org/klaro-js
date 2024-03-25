@@ -29,6 +29,8 @@ contextualConsent:
   acceptAlways: Immer
   acceptOnce: Ja
   description: Möchten Sie von {title} bereitgestellte externe Inhalte laden?
+  descriptionEmptyStore: Um diesem Dienst dauerhaft zustimmen zu können, müssen Sie {title} in den {link} zustimmen.
+  modalLinkText: Cookie-Einstellungen
 decline: Ich lehne ab
 ok: Das ist ok
 poweredBy: Realisiert mit Klaro!
