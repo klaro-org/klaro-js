@@ -1,6 +1,84 @@
 [
   {
     "changelog": {
+      "de": "- Beheben eines Problem mit der kontextbasierten Einwilligung, durch welchen der \"Immer\" Button auch angezeigt wurde, wenn der Nutzer noch kein Einverst\u00e4ndnis erkl\u00e4rt hat.\n- Aktualisieren aller Softwarepakete.\n",
+      "en": "- Fixing of a problem with the context-based consent, which caused the \"Always\" button to show up even if the user didn't consent / decline in the main notice yet.\n- Update all packages.\n"
+    },
+    "date": "2024-03-26",
+    "files": [
+      {
+        "name": "ide-no-css.js",
+        "sha384": "yyO4SDCGcnANvY3tRA5O2QRVtgH1+WH7SICvd14LLP96BKs12G3mRPyq08p1cBOE"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "6/xRAWz8G3dYIFtpxWKmHDoWzuyJfFGl8O3WqAU1yQ0q6ZcGjly2m1m4EIWSxmuH"
+      },
+      {
+        "name": "ide.min.css",
+        "sha384": "MAmnC2yswKm9V8VikUUANguG7hHSi9hLK9TkBBGUmExifJENYwwjQGY+tfWGxfm8"
+      },
+      {
+        "name": "klaro-no-translations.min.css",
+        "sha384": "taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "uvZqFv9EnLVH1fv1GyknVwNCxmy2AbeLeMjSP6JFDuXvmj0scIbBAje68S+aITpt"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "xgB8u9XRzOp6gUz/0vYrysp53h9wmHgTZB6Dc3spA6qlXYk7TpNkv6DArNoivgFj"
+      },
+      {
+        "name": "klaro-no-translations.css",
+        "sha384": "9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+"
+      },
+      {
+        "name": "cm-no-css.js",
+        "sha384": "hZzMU22G4tzapCv4ZKey0nD4s8S7HbtmBSTvXJlHTHrOOVGHBrXxflrM+4ypKH+m"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "7AKljCGM9Go7uNy8kW7tyEK6z1MmX2MCpI5H1SPpqZRx87pWSu5TSelYBkdapaDf"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "P5Yin1IOQWGwAOkWZJPihGPuN94hz/rkjTgluPQmSel8+XZJtYXeeMWqYp4s346m"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "wumjpOLv2PrMkF7QJGknib0kSndOkPKjODiD9Tt4/VI7Yp3FRGkU9TnkzW0fZ8YV"
+      },
+      {
+        "name": "ide.css",
+        "sha384": "MoSEv8TFLC51H1l7a6lGxXgsixDxQb7It2dSHgWKpyDUYMA8q9aaYa6AI2+w8KZk"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "96+g506kdyxsbQhjdXOhnPXI5CVRGltQ05hL+BkHLgMDCwdIUGNyLw3Ar2aaVPKx"
+      },
+      {
+        "name": "translations-no-css.js",
+        "sha384": "70fL+SvwhYMs3fDGsOyvPGHWjRkk1umpFEDeafR5vnTsJHayAS3U795ClpPT8ROR"
+      }
+    ],
+    "tags": [
+      "improvements",
+      "bugfixes"
+    ],
+    "version": "0.7.19"
+  },
+  {
+    "changelog": {
       "de": "- Hinzuf\u00fcgen von tschechischen \u00dcbersetzungen und Verbessern der portugiesischen \u00dcbersetzungen.\n- Entfernen der '...' Platzhalter in der Einwilligungsnotiz, um eine Anpassung der Texte zu vereinfachen.\n- Hinzuf\u00fcgen eines `cookiePath` Parameters, der den Pfad des Klaro-Cookies kontrolliert.\n",
       "en": "- Added czech translations and improved portuguese ones.\n- Removed the '...' text from the consent notice to make it easier to customize the UI.\n- Added a `cookiePath` parameter that allows to customize the path of the Klaro cookie.\n"
     },
