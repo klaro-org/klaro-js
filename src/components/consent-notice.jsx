@@ -236,7 +236,7 @@ export default class ConsentNotice extends React.Component {
                 }`}
             >
                 <div className="cn-body">
-                    {t(['!', 'consentNotice', 'title']) && (
+                    {t(['!', 'consentNotice', 'title']) && config.showNoticeTitle && (
                         <h2 id="id-cookie-title">
                             {t(['consentNotice', 'title'])}
                         </h2>
