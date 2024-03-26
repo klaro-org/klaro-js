@@ -1,4 +1,50 @@
 - changelog:
+    de: '- Das vorherige Release schloss leider die SourceMaps von Klaro mit ein,
+      wodurch die Binärdateien sehr groß wurden. Dieses Release behebt dies.
+
+      '
+    en: '- The previous release included source maps in the production build, which
+      made the release binaries very large. This release fixes that.
+
+      '
+  date: '2024-03-26'
+  files:
+  - name: ide-no-css.js
+    sha384: VwY3Td3vsaIWMt+OypXSq93ugbjfAoaXwZxZjd0EmTy2EA78f9G+3t6lgwhaV5mC
+  - name: klaro-no-translations-no-css.js
+    sha384: bj1+3bR8rJN+Hz6ljuw+GFi6iEET867g/3WUChq1ibUoN3cz/AdyZI0m7A7mKKdI
+  - name: ide.min.css
+    sha384: MAmnC2yswKm9V8VikUUANguG7hHSi9hLK9TkBBGUmExifJENYwwjQGY+tfWGxfm8
+  - name: klaro-no-translations.min.css
+    sha384: taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY
+  - name: ide.js
+    sha384: FULhaeyljc2IYWu+DAsh6HbIiDMbUYz3biBXw0GfbEsmf5DGSncfSawYOi5BTb2a
+  - name: klaro-no-translations.js
+    sha384: /yK6Xk2fzwKxKaeoTR8lNG7/fOGNZuzOKvoEp1JL/vNsEdUXifnUg0qfJq9RPlGm
+  - name: klaro-no-translations.css
+    sha384: 9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+
+  - name: cm-no-css.js
+    sha384: yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB
+  - name: klaro.min.css
+    sha384: taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY
+  - name: translations.js
+    sha384: a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE
+  - name: klaro-no-css.js
+    sha384: 5xUOogNyppbLreUUKblww3jyJnLIWaRSOkT2hR4EgPJc559nPSUzry9p+TKTLCuz
+  - name: cm.js
+    sha384: yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB
+  - name: ide.css
+    sha384: MoSEv8TFLC51H1l7a6lGxXgsixDxQb7It2dSHgWKpyDUYMA8q9aaYa6AI2+w8KZk
+  - name: klaro.css
+    sha384: 9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+
+  - name: klaro.js
+    sha384: Anjy7aYGDeZs1k2SqWaZi/CQvxlXMbc7gpAA9gRjh3XQEV1nfFzQdFTLXLswakh3
+  - name: translations-no-css.js
+    sha384: a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE
+  tags:
+  - bugfixes
+  version: 0.7.20
+- changelog:
     de: |
       - Beheben eines Problem mit der kontextbasierten Einwilligung, durch welchen der "Immer" Button auch angezeigt wurde, wenn der Nutzer noch kein Einverständnis erklärt hat.
       - Aktualisieren aller Softwarepakete.
