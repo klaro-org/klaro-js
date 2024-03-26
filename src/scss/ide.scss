@@ -1,4 +1,5 @@
-// to do: replace this with @use as soon as it's supported by node-sass
+
+@use "sass:map";
 @import './modal';
 @import './vars';
 
@@ -41,14 +42,14 @@
     }
 
     .cm-message {
-        padding: map-get($cm-space, md);
+        padding: map.get($cm-space, md);
 
         &.cm-error,
         &.cm-success {
             @include var(border-radius, border-radius);
             @include var(color, white1);
             box-shadow: $cm-box-shadow-light-sm;
-            margin-bottom: map-get($cm-space, lg);
+            margin-bottom: map.get($cm-space, lg);
         }
 
         &.cm-error {
@@ -61,15 +62,15 @@
     }
 
     .cm-space-sm {
-        margin-bottom: map-get($cm-space, sm) !important;
+        margin-bottom: map.get($cm-space, sm) !important;
     }
 
     .cm-space-md {
-        margin-bottom: map-get($cm-space, md) !important;
+        margin-bottom: map.get($cm-space, md) !important;
     }
 
     .cm-space-lg {
-        margin-bottom: map-get($cm-space, lg) !important;
+        margin-bottom: map.get($cm-space, lg) !important;
     }
 
     .cm-json,
@@ -114,14 +115,14 @@
     p.cm-section-description {
         @include var(color, dark2);
         text-align: justify;
-        margin-top: map-get($cm-space, sm);
-        margin-bottom: map-get($cm-space, lg);
+        margin-top: map.get($cm-space, sm);
+        margin-bottom: map.get($cm-space, lg);
     }
 
     .cm-purpose-order {
         ul {
-            margin-top: map-get($cm-space, md);
-            margin-bottom: map-get($cm-space, md);
+            margin-top: map.get($cm-space, md);
+            margin-bottom: map.get($cm-space, md);
 
             li {
                 display: flex;
@@ -132,7 +133,7 @@
                     box-shadow: $cm-box-shadow-light-sm;
 
                     a {
-                        padding: map-get($cm-space, md);
+                        padding: map.get($cm-space, md);
                         display: inline-block;
 
                         &:hover {
@@ -143,7 +144,7 @@
 
                 span.cm-value {
                     flex-grow: 1;
-                    padding: map-get($cm-space, md);
+                    padding: map.get($cm-space, md);
                 }
             }
         }
@@ -154,8 +155,8 @@
             @include var(border-radius, border-radius);
             @include var(background-color, white1);
             box-shadow: $cm-box-shadow-light-sm;
-            padding: map-get($cm-space, md);
-            margin-bottom: map-get($cm-space, lg);
+            padding: map.get($cm-space, md);
+            margin-bottom: map.get($cm-space, lg);
 
             li {
                 display: flex;
@@ -220,7 +221,7 @@
             .cm-retracting-label-input {
                 width: auto;
                 flex-grow: 1;
-                margin-right: map-get($cm-space, md);
+                margin-right: map.get($cm-space, md);
             }
 
             &:first-child {
@@ -232,8 +233,8 @@
     }
 
     .cm-config-controls {
-        margin-top: map-get($cm-space, sm);
-        margin-bottom: map-get($cm-space, lg);
+        margin-top: map.get($cm-space, sm);
+        margin-bottom: map.get($cm-space, lg);
         max-width: none;
         display: flex;
         flex-wrap: wrap;
@@ -242,11 +243,11 @@
         justify-content: space-between;
 
         h2 {
-            margin-right: map-get($cm-space, lg);
+            margin-right: map.get($cm-space, lg);
             display: block;
             flex-grow: 1;
         }
-        
+
         .cm-control {
             flex-shrink: 1;
             display: inline-block;
@@ -267,8 +268,8 @@
                 @include var(border-style, border-style);
                 @include var(border-radius, border-radius);
                 @include var(background-color, white1);
-                padding: map-get($cm-space, md);
-                margin-bottom: map-get($cm-space, md);
+                padding: map.get($cm-space, md);
+                margin-bottom: map.get($cm-space, md);
                 display: block;
             }
         }
