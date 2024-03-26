@@ -151,7 +151,7 @@
 
         // contextual consent notice
         p.ccn-description-empty-store {
-            margin-top: map-get($cm-space, md);
+            margin-top: map-get($cm-space, lg);            
             @include var(font-size, font-size);
         }
     }

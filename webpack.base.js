@@ -91,7 +91,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("dart-sass"),
+                    implementation: require.resolve("sass"),
                     sassOptions: {
                         sourceMap: APP_ENV === 'development',
                         outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed',
@@ -128,7 +128,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("dart-sass"),
+                    implementation: require.resolve("sass"),
                 },
             },
         ],
