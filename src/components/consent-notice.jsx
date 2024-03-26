@@ -225,7 +225,7 @@ export default class ConsentNotice extends React.Component {
                 aria-labelledby="id-cookie-title"
                 id="klaro-cookie-notice"
                 tabIndex="0"
-                autoFocus
+                autofocus={config.autoFocus}
                 ref={(div) => {
                     this.noticeRef = div;
                 }}
