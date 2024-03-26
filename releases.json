@@ -1,6 +1,83 @@
 [
   {
     "changelog": {
+      "de": "- Die Autofokus-Eigenschaft wird nur bei Aktivierung der entsprechenden Option `autoFocus` genutzt.\n",
+      "en": "- The autofocus will only be enabled when using the `autoFocus` option.\n"
+    },
+    "date": "2024-03-26",
+    "files": [
+      {
+        "name": "ide-no-css.js",
+        "sha384": "SylK0SrqNm3MooUby7jPe+5xkY63HjIX014p6kLd/ZshJHsorFj5e1rRNLXogIfs"
+      },
+      {
+        "name": "klaro-no-translations-no-css.js",
+        "sha384": "gH8O/LbMBOb4GvnQY6t8L8yIKHJvGj1RY1d2J9fYuATsxADhIoZ6QhG7sD6Z52/J"
+      },
+      {
+        "name": "ide.min.css",
+        "sha384": "MAmnC2yswKm9V8VikUUANguG7hHSi9hLK9TkBBGUmExifJENYwwjQGY+tfWGxfm8"
+      },
+      {
+        "name": "klaro-no-translations.min.css",
+        "sha384": "taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY"
+      },
+      {
+        "name": "ide.js",
+        "sha384": "3fNbx8o+S9M93spmBSKydHg9uXUX64t08gKfmGgP2+//eSlK6EPFsnwCznWxU5Hh"
+      },
+      {
+        "name": "klaro-no-translations.js",
+        "sha384": "o2mkYNY8HKYJF3LlgtpgwsasA2qJ0j03wAouqUiEJpoNOXxIjHy6/jj/IZGVw5gZ"
+      },
+      {
+        "name": "klaro-no-translations.css",
+        "sha384": "9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+"
+      },
+      {
+        "name": "cm-no-css.js",
+        "sha384": "yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB"
+      },
+      {
+        "name": "klaro.min.css",
+        "sha384": "taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY"
+      },
+      {
+        "name": "translations.js",
+        "sha384": "a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE"
+      },
+      {
+        "name": "klaro-no-css.js",
+        "sha384": "gbHapy+he0c0UfGLjIFH6bcO03Ojfs8HQvJqZCNK46p7rnEq+9yFVv/KwSI7GCsy"
+      },
+      {
+        "name": "cm.js",
+        "sha384": "yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB"
+      },
+      {
+        "name": "ide.css",
+        "sha384": "MoSEv8TFLC51H1l7a6lGxXgsixDxQb7It2dSHgWKpyDUYMA8q9aaYa6AI2+w8KZk"
+      },
+      {
+        "name": "klaro.css",
+        "sha384": "9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+"
+      },
+      {
+        "name": "klaro.js",
+        "sha384": "rVRC46lTERibmjDTC2gTrwxUkuDGs4MgOkxWDvRT57/guCeQkwzwItLmcXHSs7jv"
+      },
+      {
+        "name": "translations-no-css.js",
+        "sha384": "a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE"
+      }
+    ],
+    "tags": [
+      "improvements"
+    ],
+    "version": "0.7.22"
+  },
+  {
+    "changelog": {
       "de": "- Der Titel des Dialogs wird nur bei Aktivierung der entsprechenden Option `showNoticeTitle` angezeigt.\n",
       "en": "- The title of the consent dialog is only shown when enabled through the config option `showNoticeTitle`.\n"
     },
