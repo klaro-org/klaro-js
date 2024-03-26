@@ -42,6 +42,12 @@ var klaroConfig = {
     // entire groups of services instead of having to enable or disable every service.
     groupByPurpose: true,
 
+    // You can make the consent notice autofocused by enabling the following option
+    autoFocus: false,
+
+    // You can show a title in the consent notice by enabling the following option
+    showNoticeTitle: false,
+
     // How Klaro should store the user's preferences. It can be either 'cookie'
     // (the default) or 'localStorage'.
     storageMethod: 'cookie',
