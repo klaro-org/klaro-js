@@ -82,5 +82,5 @@
     "make-dev": "cross-env APP_ENV=dev webpack serve --mode development --config webpack.config.js",
     "make-watch": "cross-env APP_ENV=dev webpack --mode development --watch --config webpack.config.js"
   },
-  "version": "0.7.20"
+  "version": "0.7.21"
 }

@@ -1,4 +1,50 @@
 - changelog:
+    de: '- Der Titel des Dialogs wird nur bei Aktivierung der entsprechenden Option
+      `showNoticeTitle` angezeigt.
+
+      '
+    en: '- The title of the consent dialog is only shown when enabled through the
+      config option `showNoticeTitle`.
+
+      '
+  date: '2024-03-26'
+  files:
+  - name: ide-no-css.js
+    sha384: aqr7FrpYwyWg9n0x1WDFiNXRPDtioQxRP9gfp0r4vcsP+FE7MKVOXpZb+BkddTmr
+  - name: klaro-no-translations-no-css.js
+    sha384: Wqy9TNjy1QG4hZC0QqCy2LQXo5XHheKr6n0+Ych/zvYhmFZuZHrIUB5NhvDx/Ftn
+  - name: ide.min.css
+    sha384: MAmnC2yswKm9V8VikUUANguG7hHSi9hLK9TkBBGUmExifJENYwwjQGY+tfWGxfm8
+  - name: klaro-no-translations.min.css
+    sha384: taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY
+  - name: ide.js
+    sha384: AF7rWL+s2PzVImkJbH5+WBp8ysWsToZs08eon3Eklb6uT/OTyeqgNWpPL6nKla5i
+  - name: klaro-no-translations.js
+    sha384: KcLKr1KueLO9xXH0e0gLlwBCrAg1Q/I/vW/BDhh/FK8MUr/F3VxdaRWMA9rqIDiC
+  - name: klaro-no-translations.css
+    sha384: 9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+
+  - name: cm-no-css.js
+    sha384: yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB
+  - name: klaro.min.css
+    sha384: taFXrNMi1VZwc+Zky3cqPQ5bod5e1b2OIvxdRIOsdrP6eJlkh89oUgWoYAJfhCiY
+  - name: translations.js
+    sha384: a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE
+  - name: klaro-no-css.js
+    sha384: 9o1L4wzI2DQMo2qeHDFGS9jdtFIM8/I7nx0sD0FRkyTalNuEqz9NbQwio8FwMAPx
+  - name: cm.js
+    sha384: yRsNrcU1sNaaP6msapYqDq4RTIZVeaorkTyy5clAMuXKYcBRLn+MSQmaOPPJtMVB
+  - name: ide.css
+    sha384: MoSEv8TFLC51H1l7a6lGxXgsixDxQb7It2dSHgWKpyDUYMA8q9aaYa6AI2+w8KZk
+  - name: klaro.css
+    sha384: 9j6OUW77CtVqDfwWS5czIRGR8jSI0mQxvjzQqbFpSqv8Tw8IqnO+0m6u6NsnqTO+
+  - name: klaro.js
+    sha384: 6NDLRXNl3eUl8JbXKc5blvICjddmy0wVa71SEBwBB7BCfcoP1Ltj/1AttNF3/WPz
+  - name: translations-no-css.js
+    sha384: a2W1u3EpX/LrA3g5uyQS/6Y0KmyQ8E6XHcXBfq30743z6Xj3lDcRw+q8B5zAJKwE
+  tags:
+  - improvements
+  version: 0.7.21
+- changelog:
     de: '- Das vorherige Release schloss leider die SourceMaps von Klaro mit ein,
       wodurch die Binärdateien sehr groß wurden. Dieses Release behebt dies.
 
