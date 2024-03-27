@@ -1,3 +1,6 @@
+@use "sass:map";
+@use 'sass:color';
+
 /*
 We declare all variables here as default so that they are easy to override...
 */
@@ -36,35 +39,35 @@ $var-font-size: 14px !default;
 
 /* White */
 $var-white1: #fff !default;
-$var-white2: scale-color($var-white1, $lightness: -5%) !default;
-$var-white3: scale-color($var-white2, $lightness: -5%) !default;
+$var-white2: color.scale($var-white1, $lightness: -5%) !default;
+$var-white3: color.scale($var-white2, $lightness: -5%) !default;
 
 /* Differently shaded colors */
 
 // light gray
 $var-light1: #fafafa !default;
-$var-light2: scale-color($var-light1, $lightness: -20%) !default;
-$var-light3: scale-color($var-light2, $lightness: -20%) !default;
+$var-light2: color.scale($var-light1, $lightness: -20%) !default;
+$var-light3: color.scale($var-light2, $lightness: -20%) !default;
 
 // dark gray
 $var-dark1: #333 !default;
-$var-dark2: scale-color($var-dark1, $lightness: 20%) !default;
-$var-dark3: scale-color($var-dark2, $lightness: 20%) !default;
+$var-dark2: color.scale($var-dark1, $lightness: 20%) !default;
+$var-dark3: color.scale($var-dark2, $lightness: 20%) !default;
 
 // blue
 $var-blue1: #2581c4 !default;
-$var-blue2: scale-color($var-blue1, $lightness: 20%) !default;
-$var-blue3: scale-color($var-blue2, $lightness: 20%) !default;
+$var-blue2: color.scale($var-blue1, $lightness: 20%) !default;
+$var-blue3: color.scale($var-blue2, $lightness: 20%) !default;
 
 // green
 $var-green1: #1a936f !default;
-$var-green2: scale-color($var-green1, $lightness: 20%) !default;
-$var-green3: scale-color($var-green2, $lightness: 20%) !default;
+$var-green2: color.scale($var-green1, $lightness: 20%) !default;
+$var-green3: color.scale($var-green2, $lightness: 20%) !default;
 
 // red
 $var-red1: #da2c43 !default;
-$var-red2: scale-color($var-red1, $lightness: 20%) !default;
-$var-red3: scale-color($var-red2, $lightness: 20%) !default;
+$var-red2: color.scale($var-red1, $lightness: 20%) !default;
+$var-red3: color.scale($var-red2, $lightness: 20%) !default;
 
 // all these variables can be tweaked at runtime by specifying them via the
 // 'styling' config parameter.
@@ -114,14 +117,14 @@ $vars: (
 
 /*
 Use @include var(property, varname) to include a variable, e.g.
-  
+
     @include var(background-color, white1);
 
 to create a white background.
 */
 @mixin var($property, $varName) {
-    #{$property}: map-get($vars, $varName);
-    #{$property}: var(--#{$varName}, map-get($vars, $varName));
+    #{$property}: map.get($vars, $varName);
+    #{$property}: var(--#{$varName}, map.get($vars, $varName));
 }
 
 /* Spacing */
@@ -138,4 +141,3 @@ $cm-space: (
 $cm-desktop: 1024px !default;
 $cm-mobile: 384px !default;
 $cm-tablet: 768px !default;
-

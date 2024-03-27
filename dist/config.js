@@ -19,6 +19,11 @@ var klaroConfig = {
         theme: ['light', 'top', 'wide'],
     },
 
+    // You can show a description in contextual consent overlays for store 
+    // being empty. In that case the accept always button is omitted. 
+    // The description contains a link for opening the consent manager. 
+    showDescriptionEmptyStore: true,
+
     // Setting this to true will keep Klaro from automatically loading itself
     // when the page is being loaded.
     noAutoLoad: false,
@@ -36,6 +41,12 @@ var klaroConfig = {
     // if you have a large number of services. Users can then enable or disable
     // entire groups of services instead of having to enable or disable every service.
     groupByPurpose: true,
+
+    // You can make the consent notice autofocused by enabling the following option
+    autoFocus: false,
+
+    // You can show a title in the consent notice by enabling the following option
+    showNoticeTitle: false,
 
     // How Klaro should store the user's preferences. It can be either 'cookie'
     // (the default) or 'localStorage'.

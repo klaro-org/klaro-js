@@ -1,3 +1,4 @@
+@use "sass:map";
 @import './vars';
 
 .cm-list {
@@ -5,7 +6,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: map-get($cm-space, sm);
+        padding: map.get($cm-space, sm);
         display: flex;
         flex-direction: row;
         align-items: top;
@@ -33,7 +34,7 @@
 
         &.cm-is-header {
             font-weight: 600;
-            margin-bottom: map-get($cm-space, xs);
+            margin-bottom: map.get($cm-space, xs);
             background: none;
         }
 
@@ -41,7 +42,7 @@
             @include var(background-color, white1);
             @include var(border-radius, border-radius);
             box-shadow: $cm-box-shadow-dark-sm;
-            margin-bottom: map-get($cm-space, lg);
+            margin-bottom: map.get($cm-space, lg);
         }
 
         &.cm-is-clickable {
@@ -69,7 +70,7 @@
         .cm-col {
             align-content: center;
             flex-basis: 0;
-            margin: map-get($cm-space, sm);
+            margin: map.get($cm-space, sm);
             flex-grow: 1;
 
             &.cm-is-xs {

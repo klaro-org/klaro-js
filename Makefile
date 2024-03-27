@@ -11,7 +11,6 @@ release:
 
 npm:
 	npm ci
-	npm install
 
 klaro:
 	npm run-script make
