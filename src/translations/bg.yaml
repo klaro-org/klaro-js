@@ -1,0 +1,54 @@
+privacyPolicy:
+  name: политика на поверителност
+  text: За да разберете повече, моля прочетете нашата <tr-hint v="privacy policy">{privacyPolicy}</tr-hint>.
+consentModal:
+  title: Услуги, които бихем искали да използваме
+  description: Тук можете да оцените и персонализирате услугите, които бихме искали да използвате на този уебсайт. Вие отговаряте за това! Разрешавайте или забранявайте услугите, както намерите за добре.
+consentNotice:
+  testing: Тестов мод!
+  title: Съгласие за използване на бисквитки
+  changeDescription: Има промени след последното Ви посещение, моля, подновете съгласието си.
+  description: 'Здравейте! Можем ли да разрешим някои допълнителни услуги за {purposes}? Винаги можете да промените или оттеглите съгласието си по-късно.'
+  learnMore|capitalize: Нека да избера
+purposes:
+  functional:
+    title|capitalize: Предоставяне на услуги
+    description: |
+      Тези услуги са от съществено значение за правилното функциониране на този уебсайт. Не можете да ги деактивирате тук, тъй като в противен случай услугата няма да работи правилно.
+  performance:
+    title|capitalize: Оптимизиране на производителността
+    description: |
+      Тези услуги обработват лична информация, за да оптимизират услугите, които предлага този уебсайт.
+  marketing:
+    title|capitalize: Маркетинг
+    description: Тези услуги обработват лична информация, за да ви показват подходящо съдържание за продукти, услуги или теми, които може да ви интересуват.
+  advertising:
+    title|capitalize: Рекламиране
+    description: Тези услуги обработват лична информация, за да ви показват персонализирани или базирани на интереси реклами.
+purposeItem:
+  # we give some additional context for the translation API so it can pick the right word
+  service: Проста <tr-snip>услуга</tr-snip>, която инсталирам на компютъра си.
+  services: Няколко прости <tr-snip>услуги</tr-snip>, които инсталирам на компютъра си.
+ok|capitalize: Съгласен съм
+save|capitalize: запази
+decline|capitalize: Отказвам
+close|capitalize: Затваряне
+acceptAll|capitalize: Позволяване на всички
+acceptSelected|capitalize: Позволи за избраните
+service:
+  disableAll:
+    title|capitalize: разрешаване или забраняване на всички услуги
+    description: Използвайте този бутони, за да разрешите или забраните всички услуги.
+  optOut:
+    title: (вкл-изкл)
+    description: Тези услуги са включени по подразбиране (може да ги вкл-изкл)
+  required:
+    title: (изисква се винаги)
+    description: Тези услуги са винаги необходими
+  purposes: Processing <tr-snip>purposes</tr-snip>
+  purpose: Processing <tr-snip>purpose</tr-snip>
+poweredBy: Realized with Klaro!
+contextualConsent:
+  description: Искате ли да заредите външно съдържание, предоставено от {title}?
+  acceptOnce: Да
+  acceptAlways: Винаги
