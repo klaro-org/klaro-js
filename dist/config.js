@@ -9,7 +9,7 @@ var klaroConfig = {
 
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.
-    elementID: 'klaro',
+    elementID: 'klaroRoot',
 
     // You can override CSS style variables here. For IE11, Klaro will
     // dynamically inject the variables into the CSS. If you still consider
