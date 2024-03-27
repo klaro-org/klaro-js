@@ -29,8 +29,7 @@
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.8.1",
     "postcss-loader": "^8.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "preact": "^10.19.6",
     "style-loader": "^3.3.4",
     "stylelint": "^16.2.1",
     "stylelint-config-sass-guidelines": "^11.0.0",
@@ -81,9 +80,9 @@
     "lint-fix": "eslint ./src --fix",
     "lint-scss": "stylelint ./src/scss/*.scss --quiet",
     "lint-scss-fix": "stylelint ./src/scss/*.scss --fix",
-    "make": "cross-env APP_ENV=production cross-env cross-env webpack --config webpack.config.js",
-    "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --host 127.0.0.1 --config webpack.config.js --history-api-fallback",
-    "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
+    "make": "cross-env APP_ENV=production webpack --mode production --config webpack.config.js",
+    "make-dev": "cross-env APP_ENV=dev webpack serve --mode development --config webpack.config.js",
+    "make-watch": "cross-env APP_ENV=dev webpack --mode development --watch --config webpack.config.js"
   },
   "version": "0.7.18"
 }

@@ -16,7 +16,7 @@ let config = {
     devtool: 'inline-source-map',
     resolve: {
         symlinks: false,
-        extensions: ['.jsx', '.js'],
+        extensions: ['.jsx', '.js', '.tsx', '.ts'],
         modules: [SRC_DIR, 'node_modules'],
         alias: {
             react: 'preact/compat',
@@ -38,6 +38,11 @@ let config = {
                 exclude: /node_modules/,
                 include: [SRC_DIR],
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             }
         ],
     },
