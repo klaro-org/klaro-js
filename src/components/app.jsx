@@ -61,7 +61,10 @@ export default class App extends React.Component {
         const { additionalClass, embedded, stylePrefix } = config;
 
         const hide = () => {
-            if (!embedded) this.setState({ show: false });
+            if (!embedded) {
+                document.body.classList.remove('klaro-modal-open');
+                this.setState({ show: false });
+            }
         };
         return (
             <div

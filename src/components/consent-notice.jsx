@@ -111,6 +111,7 @@ export default class ConsentNotice extends React.Component {
 
         const hideModal = () => {
             if (config.mustConsent && !config.acceptAll) return;
+            document.body.classList.remove('klaro-modal-open');
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
 

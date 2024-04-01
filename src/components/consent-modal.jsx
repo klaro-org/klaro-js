@@ -5,6 +5,7 @@ import Purposes from './purposes';
 import Text from './text';
 
 export default class ConsentModal extends React.Component {
+
     componentDidMount() {
         if(this.consentModalRef) {
             this.consentModalRef.focus();
@@ -169,6 +170,8 @@ export default class ConsentModal extends React.Component {
 
         if (embedded)
             return <div id="cookieScreen" className="cookie-modal cm-embedded">{innerModal}</div>;
+
+        document.body.classList.add('klaro-modal-open');
 
         return (
             <div id="cookieScreen" className="cookie-modal">
