@@ -312,6 +312,9 @@ export default class ConsentManager {
                     newElement.setAttribute(attribute.name, attribute.value)
                 }
 
+                if (element.hasAttribute('nonce')) {
+                    newElement.setAttribute('nonce', element.nonce)
+                }
                 newElement.innerText = element.innerText
                 newElement.text = element.text
 
