@@ -6,7 +6,8 @@ const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
 const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+    require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ANALYZE_BUNDLE = process.env.ANALYZE_BUNDLE !== undefined;
 
 let config = {
@@ -38,15 +39,15 @@ let config = {
                 exclude: /node_modules/,
                 include: [SRC_DIR],
                 loader: 'babel-loader',
-            }
+            },
         ],
     },
     entry: {
-        'klaro': path.join(SRC_DIR, 'klaro.js'),
+        klaro: path.join(SRC_DIR, 'klaro.js'),
         'klaro-no-translations': path.join(SRC_DIR, 'klaro.js'),
         cm: path.join(SRC_DIR, 'consent-manager.js'),
         translations: path.join(SRC_DIR, 'translations.js'),
-        ide: path.join(SRC_DIR, 'ide.js')
+        ide: path.join(SRC_DIR, 'ide.js'),
     },
     output: {
         path: BUILD_DIR,
@@ -54,6 +55,7 @@ let config = {
         library: '[name]',
         libraryTarget: 'umd',
         publicPath: '',
+        globalObject: 'this',
     },
     plugins: [],
 };
@@ -91,7 +93,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("sass"),
+                    implementation: require.resolve('sass'),
                     sassOptions: {
                         sourceMap: APP_ENV === 'development',
                         outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed',
@@ -102,10 +104,8 @@ if (SEPARATE_CSS) {
     });
     config.plugins.push(
         new MiniCssExtractPlugin({
-            filename: NO_MINIFY_CSS
-                      ? '[name].css'
-                      : '[name].min.css',
-        }),
+            filename: NO_MINIFY_CSS ? '[name].css' : '[name].min.css',
+        })
     );
 } else {
     config.module.rules.push({
@@ -128,7 +128,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("sass"),
+                    implementation: require.resolve('sass'),
                 },
             },
         ],
