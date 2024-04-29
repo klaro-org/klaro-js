@@ -9,7 +9,6 @@
     "url": "https://github.com/KIProtect/klaro/issues"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.23.10",
     "sass": "^1.25.0",
     "webpack-merge": "^5.10.0"
   },
@@ -17,6 +16,7 @@
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-class-properties": "7.16.7",
     "@babel/plugin-proposal-object-rest-spread": "7.17.3",
     "@babel/preset-env": "7.24.0",
