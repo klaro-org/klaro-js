@@ -35,7 +35,7 @@ const format = (str, ...rest) => {
 };
 
 export function language(config) {
-    // if a langauge is given in the config we always return that
+    // if a language is given in the config we always return that
     if (config !== undefined && config.lang !== undefined && config.lang !== 'zz') return config.lang;
     const lang = (
         (typeof window.language === 'string' ? window.language : null) ||
