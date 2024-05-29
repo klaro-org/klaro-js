@@ -13,6 +13,12 @@ export default class ConsentNotice extends React.Component {
         };
     }
 
+    componentDidMount() {
+        if (this.props.config.autoFocus && this.noticeRef) {
+            this.noticeRef.focus()
+        }
+    }
+
     componentDidUpdate(prevProps) {
         if (prevProps.modal !== this.props.modal)
             this.setState({ modal: this.props.modal });
