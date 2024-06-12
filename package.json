@@ -57,7 +57,8 @@
     "src/**/*.ts",
     "src/**/*.jsx",
     "src/**/*.tsx",
-    "src/**/*.yml"
+    "src/**/*.yml",
+    "dist/**/*"
   ],
   "homepage": "https://klaro.kiprotect.com/",
   "keywords": [
