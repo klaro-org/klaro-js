@@ -1,47 +1,55 @@
-acceptAll: 'Mind elfogad'
-acceptAll_en: Accept all
-acceptSelected: 'Kiválasztottat elfogad'
-acceptSelected_en: Accept selected
-service:
-    disableAll:
-        description: Használja ezt a kapcsolót az összes alkalmazás engedélyezéséhez/letiltásához.
-        title: Összes app átkapcsolása
-    optOut:
-        description: Ez az alkalmazás alapértelmezés szerint betöltött (de ki lehet kapcsolni)
-        title: (leiratkozás)
-    purpose: Cél
-    purposes: Célok
-    required:
-        description: Ez az alkalmazás mindig szükséges
-        title: (mindig szükséges)
-close: Elvet
+privacyPolicy:
+  name: adatvédelmi szabályzat
+  text: Ha többet szeretne megtudni, kérjük, olvassa el az <tr-hint v="privacy policy">{privacyPolicy}</tr-hint> dokumentumot.
 consentModal:
-    description: Itt láthatja és testreszabhatja az önről gyűjtött információkat.
-    privacyPolicy:
-        name: adatvédelmi irányelveinket
-        text: További információért kérjük, olvassa el az {privacyPolicy}.
-    title: Információk, amiket gyűjtünk
+  title: Az általunk használni kívánt szolgáltatások
+  description: Itt beállíthatja vagy testreszabhatja a weboldalon általunk használni kívánt szolgáltatásokat. Ön a kezében van a döntés! Engedélyezze vagy tiltsa a szolgáltatásokat ahogy jónak látja.
 consentNotice:
-    changeDescription:
-        Az utolsó látogatás óta változások történtek, kérjük, frissítse
-        a hozzájárulását.
-    description:
-        'Személyes adatait összegyűjtjük és feldolgozzuk az alábbi célokra:
-        {purposes}.'
-    imprint:
-        name: 'impresszum'
-        name_en: imprint
-    learnMore: Tudjon meg többet
-    privacyPolicy:
-        name: adatvédelmi irányelveinket
-contextualConsent:
-  acceptAlways: Mindig
-  acceptOnce: Igen
-  description: Be akarod tölteni a {title} által szolgáltatott külső tartalmakat?
-decline: Elutasít
-ok: Elfogad
-poweredBy: Powered by Klaro!
+  testing: Teszt üzemmód!
+  title: Süti jóváhagyás
+  changeDescription: Utolsó látogatása óta változások történtek. Kérjük újítsa meg jóváhagyását.
+  description: 'Kérhetjük, hogy engedélyezzen néhány kiegészítő szolgáltatást amelynek célja: {purposes}? Később bármikor módosíthatja vagy visszavonhatja jováhagyását.'
+  learnMore|capitalize: Hadd válasszak
+purposes:
+  functional:
+    title|capitalize: Szolgáltatás előkészítés
+    description: |
+      Ezek a szolgáltatások elengedhetetlenek a weboldal megfelelő működéséhez. Nem tilthatja le azokat, mert a szolgáltatás nem működne megfelelően.
+  performance:
+    title|capitalize: Teljesítmény finomhangolás
+    description: |
+      Ezek a szolgáltatások személyes adatokkal dolgoznak a weboldal által kínált szolgáltatás optimalizálása érdekében.
+  marketing:
+    title|capitalize: Marketing
+    description: Ezek a szolgáltatások személyes adatokkal dolgoznak, hogy megfelelő tartalmat jelenítsenek a termékekről, szolgáltatásokról vagy témakörökről amelyek érdekelhetik.
+  advertising:
+    title|capitalize: Hirdetés
+    description: Ezek a szolgáltatások személyes adatokkal dolgoznak, hogy testre szabott vagy érdeklődési kör alapú hirdetéseket jelenítsenek meg.
 purposeItem:
-    service: ''
-    services: ''
-save: Mentés
+  service: Egy<tr-snip>service</tr-snip> amelyet telepítek a számítógépemen.
+  services: Néhány <tr-snip>services</tr-snip> amelyet telepítek a számítógépemen.
+ok|capitalize: Rendben van
+save|capitalize: Mentés
+decline|capitalize: Elutasítom
+close|capitalize: Bezárás
+acceptAll|capitalize: Mindet elfogadom
+acceptSelected|capitalize: Kiválasztottakat elfogadom
+service:
+  disableAll:
+    title|capitalize: Minden szolgáltatás engedélyezése vagy tiltása
+    description: Használja ezt a kapcsolót az összes szolgáltatás engedélyezéséhez vagy tiltásához.
+  optOut:
+    title: (kihagyható)
+    description: Ez a szolgáltatás alapértelmezetten betöltődik (de kikapcsolható)
+  required:
+    title: (mindig szükséges)
+    description: Ez a szolgáltatás mindig szükséges
+  purposes: <tr-snip>purposes</tr-snip> feldolgozás
+  purpose: <tr-snip>purpose</tr-snip> feldolgozás
+poweredBy: Klaróval megvalósítva!
+contextualConsent:
+  description: Szeretné betölteni azt a külső tartalmat, amelyet {title} szolgáltat?
+  acceptOnce: Igen
+  acceptAlways: Mindig
+  descriptionEmptyStore: Amennyiben beleegyezik ebbe a szolgáltatásba, el kell fogadnia a következőket: {title} itt: {link}.
+  modalLinkText: Jóváhagyás kezelő
